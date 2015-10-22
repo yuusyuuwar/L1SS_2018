@@ -6,8 +6,13 @@
 package launcher;
 
 import java.awt.Toolkit;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import javax.swing.JDialog;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -29,21 +34,37 @@ public class Launcher {
         Updater updater = new Updater();
         File auto = new File("./auto_update.txt");
         if (!auto.exists()) {
-            launch();
-        } else {
-            updater.check_update();
-            if (updater.update_app || updater.update_data) {
-                updater.setLayout(null);
-                updater.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-                updater.addWindowListener(updater);
-                updater.setTitle("LSS updater");
-                updater.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - 200, Toolkit.getDefaultToolkit().getScreenSize().height / 2 - 60);
-                updater.setResizable(false);
-                updater.init();
-                updater.setVisible(true);
-            } else {
-                launch();
+            try {
+                auto.createNewFile();
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(auto))) {
+                    writer.write("yes");
+                }
+            } catch (IOException ex) {
             }
+        }
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(auto)));
+            if (reader.readLine().equals("yes")) {
+                updater.check_update();
+                if (updater.update_app || updater.update_data) {
+                    updater.setLayout(null);
+                    updater.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                    updater.addWindowListener(updater);
+                    updater.setTitle("LSS updater");
+                    updater.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - 200, Toolkit.getDefaultToolkit().getScreenSize().height / 2 - 60);
+                    updater.setResizable(false);
+                    updater.init();
+                    updater.setVisible(true);
+                } else {
+                    launch();
+                }
+            } else {
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(auto))) {
+                    writer.write("no");
+                }
+            }
+        } catch (IOException ex) {
+
         }
     }
 

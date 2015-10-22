@@ -40,7 +40,7 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
 
     String app_ver;
     String data_ver;
-    
+
     String curr_app_ver;
     String curr_data_ver;
 
@@ -80,6 +80,12 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
     void check_update() {
         try {
             BufferedReader reader;
+            File v = new File("./version.txt");
+
+            if (!v.exists()) {
+                v.createNewFile();
+                update_version("0.0.0", "0.0.0");
+            }
             reader = new BufferedReader(new InputStreamReader(new FileInputStream("./version.txt")));
             curr_app_ver = reader.readLine();
             curr_data_ver = reader.readLine();
@@ -138,9 +144,9 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
         try (InputStream input = http.getInputStream()) {
             File app = new File("./dist/LSS.jar");
             if (!app.exists()) {
-                File backup = new File("./dist/LSS_"+curr_app_ver+".jar");
+                File backup = new File("./dist/LSS_" + curr_app_ver + ".jar");
                 app.renameTo(backup);
-                
+
                 app = new File("./dist/LSS.jar");
                 app.createNewFile();
             }
@@ -160,14 +166,18 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
         http.setRequestMethod("GET");
         http.connect();
 
-        
         try (InputStream input = http.getInputStream()) {
+            File data_foloder = new File("./data");
+            if (!data_foloder.exists()) {
+                data_foloder.mkdir();
+            }
+
             File data = new File("./data/E.zip");
             if (!data.exists()) {
-                File backup = new File("./data/E_"+curr_app_ver+".jar");
+                File backup = new File("./data/E_" + curr_app_ver + ".zip");
                 data.renameTo(backup);
-                
-                data = new File("./dist/LSS.jar");
+
+                data = new File("./data/E.zip");
                 data.createNewFile();
             }
             if (!data.exists()) {
@@ -197,6 +207,7 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
     }
 
     boolean failed = false;
+
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
@@ -252,22 +263,25 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
                 Launcher.launch();
                 break;
             case "ok":
-                if(failed) {
+                if (failed) {
                     System.exit(0);
                 }
                 Launcher.launch();
                 break;
             case "nocheck":
                 File f = new File("./auto_update.txt");
-                if (cb.isSelected() && f.exists()) {
-                    f.delete();
-                }
-                if (!cb.isSelected() && !f.exists()) {
-                    try {
-                        f.createNewFile();
-                    } catch (IOException ex) {
 
+                if (cb.isSelected()) {
+                    try (BufferedWriter writer = new BufferedWriter(new FileWriter(f))) {
+                        writer.write("no");
+                    } catch (IOException ex) {
                     }
+                } else {
+                    try (BufferedWriter writer = new BufferedWriter(new FileWriter(f))) {
+                        writer.write("yes");
+                    } catch (IOException ex) {
+                    }
+
                 }
                 break;
         }

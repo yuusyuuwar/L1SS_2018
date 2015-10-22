@@ -1407,6 +1407,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         refresh();
         try {
+            
+            
             try (BufferedReader br = new BufferedReader(new FileReader("./res/default"))) {
                 lab_default.setText(br.readLine());
                 pre_load_res();
@@ -1857,6 +1859,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     final void refresh() {
         File res = new File("./res");
+        if(!res.exists()) {
+            res.mkdir();
+        }
+        
         File list[] = res.listFiles((File dir, String name1) -> name1.endsWith(".txt"));
         cb_res.removeAllItems();
         for (File f : list) {
