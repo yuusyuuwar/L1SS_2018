@@ -1731,6 +1731,27 @@ public class Calculator implements Common {
         hit_short = base_hit_short;
         hit_long = base_hit_long;
 
+        double cr = buki.critical_rate;
+        double wh = buki.double_hit_rate;
+        double we = buki.week_point_exposure;
+
+        if (ui.cb_mag_auto.isSelected()) {
+            ui.tf_buki_sp_rate.setEnabled(false);
+        } else {
+            ui.tf_buki_sp_rate.setEnabled(true);
+            switch (buki.type) {
+                case "クロウ":
+                    cr = Double.parseDouble(ui.tf_buki_sp_rate.getText());
+                    break;
+                case "デュアルブレード":
+                    wh = Double.parseDouble(ui.tf_buki_sp_rate.getText());
+                    break;
+                case "チェーンソード":
+                    we = Double.parseDouble(ui.tf_buki_sp_rate.getText());
+                    break;
+            }
+        }
+
         // 武器オプション,武器強化数,エンチャント
         hit_short += buki.op.HIT_SHORT + buki.enchant / 2 + buff.HIT_SHORT;
         hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG
@@ -1936,7 +1957,7 @@ public class Calculator implements Common {
                         + (1.0 - cri_long * 0.01) * dmg_small_ave;
                 break;
             default:
-                cri_short += buki.critical_rate * 100;
+                cri_short += cr * 100;
                 if (ui.cb_buff[E_SF].isSelected()) {
                     cri_short = 100;
                 }
@@ -1950,28 +1971,28 @@ public class Calculator implements Common {
         if (buki.type.equals("デュアルブレード")) {
             if (buki.name.equals("轟音のデュアルブレード(KR)")) {
 //                        ui.sp_sub.setText("+" + buki.enchant + "%");
-                dmg_big_ave *= 2.0 * (buki.double_hit_rate + buki.enchant * 0.01)
-                        + (1.0 - (buki.double_hit_rate + buki.enchant * 0.01));
-                dmg_small_ave *= 2.0 * (buki.double_hit_rate + buki.enchant * 0.01)
-                        + (1.0 - (buki.double_hit_rate + buki.enchant * 0.01));
+                dmg_big_ave *= 2.0 * (wh + buki.enchant * 0.01)
+                        + (1.0 - (wh + buki.enchant * 0.01));
+                dmg_small_ave *= 2.0 * (wh + buki.enchant * 0.01)
+                        + (1.0 - (wh + buki.enchant * 0.01));
 
                 //ダブルヒットに銀特効＋悪魔特効を乗せる
-                dmg_undead *= 2.0 * (buki.double_hit_rate + buki.enchant * 0.01)
-                        + (1.0 - (buki.double_hit_rate + buki.enchant * 0.01));
-                dmg_cursed *= 2.0 * (buki.double_hit_rate + buki.enchant * 0.01)
-                        + (1.0 - (buki.double_hit_rate + buki.enchant * 0.01));
+                dmg_undead *= 2.0 * (wh + buki.enchant * 0.01)
+                        + (1.0 - (wh + buki.enchant * 0.01));
+                dmg_cursed *= 2.0 * (wh + buki.enchant * 0.01)
+                        + (1.0 - (wh + buki.enchant * 0.01));
 
             } else {
-                dmg_big_ave *= 2.0 * buki.double_hit_rate
-                        + (1.0 - buki.double_hit_rate);
-                dmg_small_ave *= 2.0 * buki.double_hit_rate
+                dmg_big_ave *= 2.0 * wh
+                        + (1.0 - wh);
+                dmg_small_ave *= 2.0 * wh
                         + (1.0 - buki.double_hit_rate);
 
                 //ダブルヒットに銀特効＋悪魔特効を乗せる
-                dmg_undead *= 2.0 * buki.double_hit_rate
-                        + (1.0 - buki.double_hit_rate);
-                dmg_cursed *= 2.0 * buki.double_hit_rate
-                        + (1.0 - buki.double_hit_rate);
+                dmg_undead *= 2.0 * wh
+                        + (1.0 - wh);
+                dmg_cursed *= 2.0 * wh
+                        + (1.0 - wh);
             }
         }
 
@@ -2171,7 +2192,7 @@ public class Calculator implements Common {
             dmg_big_ave += 10;
             dmg_small_ave += 10;
         }
-        
+
         //バフ効果
         switch (buki.type) {
             case "ガントレット":

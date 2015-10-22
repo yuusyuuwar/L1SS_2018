@@ -142,12 +142,18 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
         http.connect();
 
         try (InputStream input = http.getInputStream()) {
-            File app = new File("./dist/LSS.jar");
+            
+            File data_foloder = new File("./bin");
+            if (!data_foloder.exists()) {
+                data_foloder.mkdir();
+            }
+            
+            File app = new File("./bin/LSS.jar");
             if (!app.exists()) {
-                File backup = new File("./dist/LSS_" + curr_app_ver + ".jar");
+                File backup = new File("./bin/LSS_" + curr_app_ver + ".jar");
                 app.renameTo(backup);
 
-                app = new File("./dist/LSS.jar");
+                app = new File("./bin/LSS.jar");
                 app.createNewFile();
             }
             try (OutputStream output = new FileOutputStream(app, false)) {

@@ -70,7 +70,7 @@ public class Launcher {
 
     static void launch() {
         try {
-            ProcessBuilder p = new ProcessBuilder("java", "-jar", "./dist/LSS.jar");
+            ProcessBuilder p = new ProcessBuilder("java", "-jar", "./bin/LSS.jar");
             p.start();
         } catch (IOException ex) {
         }

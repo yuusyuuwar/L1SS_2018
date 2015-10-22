@@ -30,7 +30,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFileChooser;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -143,7 +142,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JComboBox cb_morph_type;
     JComboBox cb_morph_level;
 
-    JTextField tf_sp_rate;
+    JTextField tf_buki_sp_rate;
     JLabel lab_sp_sub;
     JTextField tf_mag_rate;
     JTextField tf_mag_delay;
@@ -459,13 +458,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_ac_short = new JLabel();
         lab_ac_long = new JLabel();
         lab_dmg_short.setBounds(420, 25 + 10, 150, 25);
-        lab_dmg_long.setBounds(420, 25 + 25+ 10, 150, 25);
-        lab_dmg_mag.setBounds(420, 25 + 50+ 10, 150, 25);
-        lab_hit_short.setBounds(420 + 125, 25+ 10, 250, 25);
-        lab_hit_long.setBounds(420 + 125, 25 + 25+ 10, 250, 25);
-        lab_hit_mag.setBounds(420 + 125, 25 + 50+ 10, 150, 25);
-        lab_ac_short.setBounds(420 + 125 + 100, 25+ 10, 150, 25);
-        lab_ac_long.setBounds(420 + 125 + 100, 25 + 25+ 10, 150, 25);
+        lab_dmg_long.setBounds(420, 25 + 25 + 10, 150, 25);
+        lab_dmg_mag.setBounds(420, 25 + 50 + 10, 150, 25);
+        lab_hit_short.setBounds(420 + 125, 25 + 10, 250, 25);
+        lab_hit_long.setBounds(420 + 125, 25 + 25 + 10, 250, 25);
+        lab_hit_mag.setBounds(420 + 125, 25 + 50 + 10, 150, 25);
+        lab_ac_short.setBounds(420 + 125 + 100, 25 + 10, 150, 25);
+        lab_ac_long.setBounds(420 + 125 + 100, 25 + 25 + 10, 150, 25);
         panels[0].add(lab_dmg_short);
         panels[0].add(lab_dmg_long);
         panels[0].add(lab_dmg_mag);
@@ -485,15 +484,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         // 分間ダメージ
         lab_tmp = new JLabel("対通常");
-        lab_tmp.setBounds(420, 50 + 50+ 10, 50, 25);
+        lab_tmp.setBounds(420, 50 + 50 + 10, 50, 25);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("対悪魔");
-        lab_tmp.setBounds(420, 50 + 50 + 25+ 10, 50, 25);
+        lab_tmp.setBounds(420, 50 + 50 + 25 + 10, 50, 25);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("対不死");
-        lab_tmp.setBounds(420, 50 + 50 + 50+ 10, 50, 25);
+        lab_tmp.setBounds(420, 50 + 50 + 50 + 10, 50, 25);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
@@ -501,9 +500,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_hit_rate = new JLabel();
         lab_mag_info1 = new JLabel();
         lab_mag_info2 = new JLabel();
-        lab_hit_rate.setBounds(420 + 200, 50 + 50+ 10, 200, 25);
-        lab_mag_info1.setBounds(420 + 200, 50 + 75+ 10, 200, 25);
-        lab_mag_info2.setBounds(420 + 200, 50 + 100+ 10, 200, 25);
+        lab_hit_rate.setBounds(420 + 200, 50 + 50 + 10, 200, 25);
+        lab_mag_info1.setBounds(420 + 200, 50 + 75 + 10, 200, 25);
+        lab_mag_info2.setBounds(420 + 200, 50 + 100 + 10, 200, 25);
         panels[0].add(lab_hit_rate);
         panels[0].add(lab_mag_info1);
         panels[0].add(lab_mag_info2);
@@ -514,9 +513,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_dmg_normal = new JLabel();
         lab_dmg_cursed = new JLabel();
         lab_dmg_undead = new JLabel();
-        lab_dmg_normal.setBounds(420 + 50, 50 + 50+ 10, 400, 25);
-        lab_dmg_cursed.setBounds(420 + 50, 50 + 75+ 10, 150, 25);
-        lab_dmg_undead.setBounds(420 + 50, 50 + 100+ 10, 150, 25);
+        lab_dmg_normal.setBounds(420 + 50, 50 + 50 + 10, 400, 25);
+        lab_dmg_cursed.setBounds(420 + 50, 50 + 75 + 10, 150, 25);
+        lab_dmg_undead.setBounds(420 + 50, 50 + 100 + 10, 150, 25);
         panels[0].add(lab_dmg_normal);
         panels[0].add(lab_dmg_cursed);
         panels[0].add(lab_dmg_undead);
@@ -733,11 +732,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_mag_rate = new JLabel("魔法発動率");
         lab_mag_delay = new JLabel("魔法ディレイ");
         lab_mag_power = new JLabel("魔法威力");
-        tf_sp_rate = new JFormattedTextField(0.0);
-        tf_mag_rate = new JFormattedTextField(0.0);
-        tf_mag_delay = new JFormattedTextField(0.0);
-        tf_mag_power = new JFormattedTextField(0.0);
-        tf_sp_rate.setText("0.0");
+        tf_buki_sp_rate = new JTextField("0");
+        tf_mag_rate = new JTextField("0.0");
+        tf_mag_delay = new JTextField("0.0");
+        tf_mag_power = new JTextField("0.0");
+        tf_buki_sp_rate.setText("0.0");
         tf_mag_rate.setText("0.0");
         tf_mag_delay.setText("0.0");
         tf_mag_power.setText("0.0");
@@ -746,12 +745,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_mag_rate.setBounds(420, 200 + 50 + 25 + 25 + 15 + 25, 100, 25);
         lab_mag_delay.setBounds(420 + 200, 200 + 25 + 25 + 25 + 15 + 25, 100, 25);
         lab_mag_power.setBounds(420 + 200, 200 + 50 + 25 + 25 + 15 + 25, 100, 25);
-        tf_sp_rate.setBounds(420 + 80, 200 + 25 + 25 + 25 + 15 + 25, 80, 25);
+        tf_buki_sp_rate.setBounds(420 + 80, 200 + 25 + 25 + 25 + 15 + 25, 80, 25);
         tf_mag_rate.setBounds(420 + 80, 200 + 50 + 25 + 25 + 15 + 25, 80, 25);
         tf_mag_delay.setBounds(420 + 280, 200 + 25 + 25 + 25 + 15 + 25, 80, 25);
         tf_mag_power.setBounds(420 + 280, 200 + 50 + 25 + 25 + 15 + 25, 80, 25);
         panels[0].add(lab_sp_rate);
-        panels[0].add(tf_sp_rate);
+        panels[0].add(tf_buki_sp_rate);
         panels[0].add(lab_sp_sub);
         panels[0].add(lab_mag_rate);
         panels[0].add(tf_mag_rate);
@@ -759,7 +758,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(tf_mag_delay);
         panels[0].add(lab_mag_power);
         panels[0].add(tf_mag_power);
-        tf_sp_rate.addActionListener(this);
+        tf_buki_sp_rate.addActionListener(this);
         tf_mag_rate.addActionListener(this);
         tf_mag_delay.addActionListener(this);
         tf_mag_power.addActionListener(this);
@@ -787,12 +786,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(620, 350 + 25 + 25 - 13 + 25, 80, 25);
         panels[0].add(lab_tmp);
         tf_weight = new JTextField();
-        tf_weight.setBounds(700, 350 + 25  + 25, 80, 25);
+        tf_weight.setBounds(700, 350 + 25 + 25, 80, 25);
         tf_weight.setHorizontalAlignment(SwingConstants.CENTER);
         tf_weight.setEditable(false);
         panels[0].add(tf_weight);
         tf_weight2 = new JTextField();
-        tf_weight2.setBounds(700, 350 + 25 + 25  + 25, 80, 25);
+        tf_weight2.setBounds(700, 350 + 25 + 25 + 25, 80, 25);
         tf_weight2.setHorizontalAlignment(SwingConstants.CENTER);
         tf_weight2.setEditable(false);
         panels[0].add(tf_weight2);
@@ -808,7 +807,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 //        cb_weight_auto.setBounds(420 + 280, 380 + 25 + 20, 80, 25);
 //        panels[0].add(cb_weight_auto);
 //        cb_weight_auto.addActionListener(this);
-
         lab_tmp = new JLabel("耐性");
         lab_tmp.setBounds(420, 425 + 5 + 30, 80, 25);
         panels[0].add(lab_tmp);
@@ -979,14 +977,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[P_S] = new JCheckBox("シャイニングオーラ");
         cb_buff[P_S].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_S].setToolTipText("AC-8");
-        
+
         String list_ba[] = {"2-4人", "5-6人", "7-8人"};
         cb_buff_group[P_BA] = new WideComboBox(list_ba);
         cb_buff_group[P_BA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_BA] = new JCheckBox("ブレイブアバター");
         cb_buff[P_BA].setBounds(0, 20 * col++, 100, 20);
         cb_buff[P_BA].setToolTipText("PTメンバー数に応じた能力上昇");
-        
+
         col++;
 
         lab_tmp = new JLabel("騎士技術");
@@ -1001,7 +999,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[K_SC].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_SC].setToolTipText("盾装備時 ER+15");
 
-        
         cb_buff[K_CB] = new JCheckBox("カウンターバリア");
         cb_buff[K_CB].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_CB].setToolTipText("両手剣装備時 一定確率で近接攻撃回避+反撃");
@@ -1407,8 +1404,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         refresh();
         try {
-            
-            
+
             try (BufferedReader br = new BufferedReader(new FileReader("./res/default"))) {
                 lab_default.setText(br.readLine());
                 pre_load_res();
@@ -1614,17 +1610,17 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
                                 switch (calc.buki.type) {
                                     case "クロウ":
-                                        tf_sp_rate.setEnabled(true);
-                                        tf_sp_rate.setText(Double.toString(calc.buki.critical_rate));
+                                        tf_buki_sp_rate.setEnabled(true);
+                                        tf_buki_sp_rate.setText(Double.toString(calc.buki.critical_rate));
                                         break;
                                     case "デュアルブレード":
-                                        tf_sp_rate.setEnabled(true);
-                                        tf_sp_rate.setText(Double
+                                        tf_buki_sp_rate.setEnabled(true);
+                                        tf_buki_sp_rate.setText(Double
                                                 .toString(calc.buki.double_hit_rate));
                                         break;
                                     case "チェーンソード":
-                                        tf_sp_rate.setEnabled(true);
-                                        tf_sp_rate.setText(Double
+                                        tf_buki_sp_rate.setEnabled(true);
+                                        tf_buki_sp_rate.setText(Double
                                                 .toString(calc.buki.week_point_exposure));
                                         break;
                                     default:
@@ -1639,8 +1635,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                             cb_eq[1].setSelectedIndex(0);
                                             cb_eq_en[1].setSelectedIndex(0);
                                         }
-                                        tf_sp_rate.setEnabled(false);
-                                        tf_sp_rate.setText("0.0");
+                                        tf_buki_sp_rate.setEnabled(false);
+                                        tf_buki_sp_rate.setText("0.0");
                                         break;
                                 }
 
@@ -1859,10 +1855,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     final void refresh() {
         File res = new File("./res");
-        if(!res.exists()) {
+        if (!res.exists()) {
             res.mkdir();
         }
-        
+
         File list[] = res.listFiles((File dir, String name1) -> name1.endsWith(".txt"));
         cb_res.removeAllItems();
         for (File f : list) {
@@ -2102,7 +2098,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             if (cb_arrow.getSelectedItem() != null) {
                 this.ARROW[channel] = cb_arrow.getSelectedItem().toString();
             }
-            this.SP_R[channel] = Double.parseDouble(tf_sp_rate.getText());
+            this.SP_R[channel] = Double.parseDouble(tf_buki_sp_rate.getText());
             this.MAG_R[channel] = Double.parseDouble(tf_mag_rate.getText());
             this.MAG_D[channel] = Double.parseDouble(tf_mag_delay.getText());
             this.MAG_P[channel] = Double.parseDouble(tf_mag_power.getText());
@@ -2121,7 +2117,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             cb_elem_2.setSelectedIndex(this.ELEM2[channel]);
             cb_ts_elem.setSelectedIndex(this.TS_ELEM[channel]);
             cb_arrow.setSelectedItem(this.ARROW[channel]);
-            tf_sp_rate.setText(Double.toString(this.SP_R[channel]));
+            tf_buki_sp_rate.setText(Double.toString(this.SP_R[channel]));
             tf_mag_rate.setText(Double.toString(this.MAG_R[channel]));
             tf_mag_delay.setText(Double.toString(this.MAG_D[channel]));
             tf_mag_power.setText(Double.toString(this.MAG_P[channel]));
@@ -2252,7 +2248,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         Element e_morph_manually = document.createElement("変身設定");
         e_morph_manually.setTextContent(Boolean.toString(cb_speed_auto.isSelected()));
         root.appendChild(e_morph_manually);
-        
+
         Element e_buki_manually = document.createElement("武器設定");
         e_buki_manually.setTextContent(Boolean.toString(cb_mag_auto.isSelected()));
         root.appendChild(e_buki_manually);
@@ -2296,8 +2292,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         pattern.appendChild(e_pattern_r2);
         e_pattern_r2.setTextContent(cb_pattern_r2.getSelectedItem().toString());
 
-        
-        
         for (int i = 0; i < cb_eq_ch.getItemCount(); i++) {
             Element e_equip = document.createElement("装備");
             e_equip.setAttribute("id", Integer.toString(i));
@@ -2389,10 +2383,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         Node n_morph_manually = document.getDocumentElement().getElementsByTagName("変身設定").item(0);
         cb_speed_auto.setSelected(Boolean.parseBoolean(n_morph_manually.getTextContent()));
-        
+
         Node n_buki_manually = document.getDocumentElement().getElementsByTagName("武器設定").item(0);
         cb_mag_auto.setSelected(Boolean.parseBoolean(n_buki_manually.getTextContent()));
-        
+
         if (!cb_speed_auto.isSelected()) {
             tf_speed.setText(n_morph_manually.getAttributes().getNamedItem("速度").getNodeValue());
             tf_acc.setText(n_morph_manually.getAttributes().getNamedItem("加速").getNodeValue());
@@ -2484,4 +2478,5 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         calc.update();
     }
+
 }
