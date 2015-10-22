@@ -40,6 +40,9 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
 
     String app_ver;
     String data_ver;
+    
+    String curr_app_ver;
+    String curr_data_ver;
 
     JButton no = new JButton("いいえ");
     JButton yes = new JButton("はい");
@@ -78,11 +81,11 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
         try {
             BufferedReader reader;
             reader = new BufferedReader(new InputStreamReader(new FileInputStream("./version.txt")));
-            String curr_app_ver = reader.readLine();
-            String curr_data_ver = reader.readLine();
+            curr_app_ver = reader.readLine();
+            curr_data_ver = reader.readLine();
             reader.close();
 
-            URL url = new URL("http://line-zatta.up.seesaa.net/image/version.txt");
+            URL url = new URL("https://github.com/F-node/L1SS/raw/master/LSS/version.txt");
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
             http.setRequestMethod("GET");
             http.connect();
@@ -127,7 +130,7 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
     }
 
     void download_app() throws IOException {
-        URL url = new URL("http://line-zatta.up.seesaa.net/image/LSS.jar");
+        URL url = new URL("https://github.com/F-node/L1SS/raw/master/LSS/dist/LSS.jar");
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         http.setRequestMethod("GET");
         http.connect();
@@ -135,6 +138,10 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
         try (InputStream input = http.getInputStream()) {
             File app = new File("./dist/LSS.jar");
             if (!app.exists()) {
+                File backup = new File("./dist/LSS_"+curr_app_ver+".jar");
+                app.renameTo(backup);
+                
+                app = new File("./dist/LSS.jar");
                 app.createNewFile();
             }
             try (OutputStream output = new FileOutputStream(app, false)) {
@@ -148,13 +155,21 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
     }
 
     void download_data() throws IOException {
-        URL url = new URL("http://line-zatta.up.seesaa.net/image/E.zip");
+        URL url = new URL("https://github.com/F-node/L1SS/raw/master/LSS/data/E.zip");
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         http.setRequestMethod("GET");
         http.connect();
 
+        
         try (InputStream input = http.getInputStream()) {
             File data = new File("./data/E.zip");
+            if (!data.exists()) {
+                File backup = new File("./data/E_"+curr_app_ver+".jar");
+                data.renameTo(backup);
+                
+                data = new File("./dist/LSS.jar");
+                data.createNewFile();
+            }
             if (!data.exists()) {
                 data.createNewFile();
             }

@@ -52,7 +52,6 @@ public class Launcher {
             ProcessBuilder p = new ProcessBuilder("java", "-jar", "./dist/LSS.jar");
             p.start();
         } catch (IOException ex) {
-            System.out.println("起動に失敗しました");
         }
         System.exit(0);
     }
