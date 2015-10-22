@@ -1,0 +1,421 @@
+package lss;
+
+public class Morph implements Common {
+
+    int data[][][] = new int[12][2][buki_type_list.length + 2];
+
+    {
+        data[L1][PHI][W_D] = 75;
+        data[L1][PHI][W_LS] = 72;
+        data[L1][PHI][W_TS] = 65;
+        data[L1][PHI][W_A] = 65;
+        data[L1][PHI][W_L] = 68;
+        data[L1][PHI][W_CS] = 68;
+        data[L1][PHI][W_S] = 72;
+        data[L1][PHI][W_DB] = 72;
+        data[L1][PHI][W_C] = 72;
+        data[L1][PHI][W_K] = 72;
+        data[L1][PHI][W_DA] = 72;
+        data[L1][PHI][W_B] = 60;
+        data[L1][PHI][W_G] = 60;
+        data[L1][PHI][MAIN] = 64;
+        data[L1][PHI][SUB] = 59;
+
+        data[L15][PHI][W_D] = 80;
+        data[L15][PHI][W_LS] = 76;
+        data[L15][PHI][W_TS] = 68;
+        data[L15][PHI][W_A] = 68;
+        data[L15][PHI][W_L] = 72;
+        data[L15][PHI][W_CS] = 72;
+        data[L15][PHI][W_S] = 76;
+        data[L15][PHI][W_DB] = 76;
+        data[L15][PHI][W_C] = 76;
+        data[L15][PHI][W_K] = 76;
+        data[L15][PHI][W_DA] = 76;
+        data[L15][PHI][W_B] = 62;
+        data[L15][PHI][W_G] = 62;
+        data[L15][PHI][MAIN] = 68;
+        data[L15][PHI][SUB] = 62;
+
+        data[L30][PHI][W_D] = 84;
+        data[L30][PHI][W_LS] = 80;
+        data[L30][PHI][W_TS] = 72;
+        data[L30][PHI][W_A] = 72;
+        data[L30][PHI][W_L] = 75;
+        data[L30][PHI][W_CS] = 75;
+        data[L30][PHI][W_S] = 80;
+        data[L30][PHI][W_DB] = 80;
+        data[L30][PHI][W_C] = 80;
+        data[L30][PHI][W_K] = 80;
+        data[L30][PHI][W_DA] = 80;
+        data[L30][PHI][W_B] = 65;
+        data[L30][PHI][W_G] = 65;
+        data[L30][PHI][MAIN] = 71;
+        data[L30][PHI][SUB] = 65;
+
+        data[L45][PHI][W_D] = 90;
+        data[L45][PHI][W_LS] = 84;
+        data[L45][PHI][W_TS] = 75;
+        data[L45][PHI][W_A] = 75;
+        data[L45][PHI][W_L] = 80;
+        data[L45][PHI][W_CS] = 80;
+        data[L45][PHI][W_S] = 84;
+        data[L45][PHI][W_DB] = 84;
+        data[L45][PHI][W_C] = 84;
+        data[L45][PHI][W_K] = 84;
+        data[L45][PHI][W_DA] = 84;
+        data[L45][PHI][W_B] = 68;
+        data[L45][PHI][W_G] = 68;
+        data[L45][PHI][MAIN] = 75;
+        data[L45][PHI][SUB] = 68;
+
+        data[L50][PHI][W_D] = 96;
+        data[L50][PHI][W_LS] = 90;
+        data[L50][PHI][W_TS] = 80;
+        data[L50][PHI][W_A] = 80;
+        data[L50][PHI][W_L] = 84;
+        data[L50][PHI][W_CS] = 84;
+        data[L50][PHI][W_S] = 90;
+        data[L50][PHI][W_DB] = 90;
+        data[L50][PHI][W_C] = 90;
+        data[L50][PHI][W_K] = 90;
+        data[L50][PHI][W_DA] = 90;
+        data[L50][PHI][W_B] = 72;
+        data[L50][PHI][W_G] = 72;
+        data[L50][PHI][MAIN] = 75;
+        data[L50][PHI][SUB] = 68;
+
+        data[L52][PHI][W_D] = 102;
+        data[L52][PHI][W_LS] = 96;
+        data[L52][PHI][W_TS] = 84;
+        data[L52][PHI][W_A] = 84;
+        data[L52][PHI][W_L] = 90;
+        data[L52][PHI][W_CS] = 90;
+        data[L52][PHI][W_S] = 96;
+        data[L52][PHI][W_DB] = 96;
+        data[L52][PHI][W_C] = 96;
+        data[L52][PHI][W_K] = 96;
+        data[L52][PHI][W_DA] = 96;
+        data[L52][PHI][W_B] = 75;
+        data[L52][PHI][W_G] = 75;
+        data[L52][PHI][MAIN] = 80;
+        data[L52][PHI][SUB] = 72;
+
+        data[L55][PHI][W_D] = 110;
+        data[L55][PHI][W_LS] = 102;
+        data[L55][PHI][W_TS] = 90;
+        data[L55][PHI][W_A] = 90;
+        data[L55][PHI][W_L] = 96;
+        data[L55][PHI][W_CS] = 96;
+        data[L55][PHI][W_S] = 102;
+        data[L55][PHI][W_DB] = 102;
+        data[L55][PHI][W_C] = 102;
+        data[L55][PHI][W_K] = 102;
+        data[L55][PHI][W_DA] = 102;
+        data[L55][PHI][W_B] = 80;
+        data[L55][PHI][W_G] = 80;
+        data[L55][PHI][MAIN] = 80;
+        data[L55][PHI][SUB] = 72;
+
+        data[L60][PHI][W_D] = 110;
+        data[L60][PHI][W_LS] = 102;
+        data[L60][PHI][W_TS] = 90;
+        data[L60][PHI][W_A] = 90;
+        data[L60][PHI][W_L] = 96;
+        data[L60][PHI][W_CS] = 96;
+        data[L60][PHI][W_S] = 102;
+        data[L60][PHI][W_DB] = 102;
+        data[L60][PHI][W_C] = 102;
+        data[L60][PHI][W_K] = 102;
+        data[L60][PHI][W_DA] = 102;
+        data[L60][PHI][W_B] = 80;
+        data[L60][PHI][W_G] = 80;
+        data[L60][PHI][MAIN] = 80;
+        data[L60][PHI][SUB] = 72;
+
+        data[L65][PHI][W_D] = 110;
+        data[L65][PHI][W_LS] = 102;
+        data[L65][PHI][W_TS] = 90;
+        data[L65][PHI][W_A] = 90;
+        data[L65][PHI][W_L] = 96;
+        data[L65][PHI][W_CS] = 96;
+        data[L65][PHI][W_S] = 102;
+        data[L65][PHI][W_DB] = 102;
+        data[L65][PHI][W_C] = 102;
+        data[L65][PHI][W_K] = 102;
+        data[L65][PHI][W_DA] = 102;
+        data[L65][PHI][W_B] = 80;
+        data[L65][PHI][W_G] = 80;
+        data[L65][PHI][MAIN] = 80;
+        data[L65][PHI][SUB] = 72;
+
+        data[L70][PHI][W_D] = 110;
+        data[L70][PHI][W_LS] = 102;
+        data[L70][PHI][W_TS] = 90;
+        data[L70][PHI][W_A] = 90;
+        data[L70][PHI][W_L] = 96;
+        data[L70][PHI][W_CS] = 96;
+        data[L70][PHI][W_S] = 102;
+        data[L70][PHI][W_DB] = 102;
+        data[L70][PHI][W_C] = 102;
+        data[L70][PHI][W_K] = 102;
+        data[L70][PHI][W_DA] = 102;
+        data[L70][PHI][W_B] = 80;
+        data[L70][PHI][W_G] = 80;
+        data[L70][PHI][MAIN] = 85;
+        data[L70][PHI][SUB] = 75;
+
+        data[L75][PHI][W_D] = 120;
+        data[L75][PHI][W_LS] = 110;
+        data[L75][PHI][W_TS] = 96;
+        data[L75][PHI][W_A] = 96;
+        data[L75][PHI][W_L] = 102;
+        data[L75][PHI][W_CS] = 102;
+        data[L75][PHI][W_S] = 110;
+        data[L75][PHI][W_DB] = 110;
+        data[L75][PHI][W_C] = 110;
+        data[L75][PHI][W_K] = 110;
+        data[L75][PHI][W_DA] = 110;
+        data[L75][PHI][W_B] = 84;
+        data[L75][PHI][W_G] = 84;
+        data[L75][PHI][MAIN] = 85;
+        data[L75][PHI][SUB] = 75;
+
+        data[L80][PHI][W_D] = 130;
+        data[L80][PHI][W_LS] = 210;
+        data[L80][PHI][W_TS] = 102;
+        data[L80][PHI][W_A] = 102;
+        data[L80][PHI][W_L] = 110;
+        data[L80][PHI][W_CS] = 1190;
+        data[L80][PHI][W_S] = 120;
+        data[L80][PHI][W_DB] = 120;
+        data[L80][PHI][W_C] = 120;
+        data[L80][PHI][W_K] = 120;
+        data[L80][PHI][W_DA] = 120;
+        data[L80][PHI][W_B] = 90;
+        data[L80][PHI][W_G] = 90;
+        data[L80][PHI][MAIN] = 85;
+        data[L80][PHI][SUB] = 75;
+
+        data[L1][MAG][W_D] = 70;
+        data[L1][MAG][W_LS] = 67;
+        data[L1][MAG][W_TS] = 61;
+        data[L1][MAG][W_A] = 61;
+        data[L1][MAG][W_L] = 64;
+        data[L1][MAG][W_CS] = 64;
+        data[L1][MAG][W_S] = 67;
+        data[L1][MAG][W_DB] = 67;
+        data[L1][MAG][W_C] = 67;
+        data[L1][MAG][W_K] = 67;
+        data[L1][MAG][W_DA] = 67;
+        data[L1][MAG][W_B] = 0;
+        data[L1][MAG][W_G] = 0;
+        data[L1][MAG][MAIN] = 68;
+        data[L1][MAG][SUB] = 62;
+
+        data[L15][MAG][W_D] = 74;
+        data[L15][MAG][W_LS] = 71;
+        data[L15][MAG][W_TS] = 65;
+        data[L15][MAG][W_A] = 65;
+        data[L15][MAG][W_L] = 67;
+        data[L15][MAG][W_CS] = 67;
+        data[L15][MAG][W_S] = 71;
+        data[L15][MAG][W_DB] = 71;
+        data[L15][MAG][W_C] = 71;
+        data[L15][MAG][W_K] = 71;
+        data[L15][MAG][W_DA] = 71;
+        data[L15][MAG][W_B] = 0;
+        data[L15][MAG][W_G] = 0;
+        data[L15][MAG][MAIN] = 72;
+        data[L15][MAG][SUB] = 65;
+
+        data[L30][MAG][W_D] = 79;
+        data[L30][MAG][W_LS] = 71;
+        data[L30][MAG][W_TS] = 68;
+        data[L30][MAG][W_A] = 68;
+        data[L30][MAG][W_L] = 71;
+        data[L30][MAG][W_CS] = 71;
+        data[L30][MAG][W_S] = 75;
+        data[L30][MAG][W_DB] = 75;
+        data[L30][MAG][W_C] = 75;
+        data[L30][MAG][W_K] = 75;
+        data[L30][MAG][W_DA] = 75;
+        data[L30][MAG][W_B] = 0;
+        data[L30][MAG][W_G] = 0;
+        data[L30][MAG][MAIN] = 75;
+        data[L30][MAG][SUB] = 68;
+
+        data[L45][MAG][W_D] = 84;
+        data[L45][MAG][W_LS] = 79;
+        data[L45][MAG][W_TS] = 71;
+        data[L45][MAG][W_A] = 71;
+        data[L45][MAG][W_L] = 75;
+        data[L45][MAG][W_CS] = 75;
+        data[L45][MAG][W_S] = 79;
+        data[L45][MAG][W_DB] = 79;
+        data[L45][MAG][W_C] = 79;
+        data[L45][MAG][W_K] = 79;
+        data[L45][MAG][W_DA] = 79;
+        data[L45][MAG][W_B] = 0;
+        data[L45][MAG][W_G] = 0;
+        data[L45][MAG][MAIN] = 79;
+        data[L45][MAG][SUB] = 72;
+
+        data[L50][MAG][W_D] = 89;
+        data[L50][MAG][W_LS] = 84;
+        data[L50][MAG][W_TS] = 75;
+        data[L50][MAG][W_A] = 75;
+        data[L50][MAG][W_L] = 79;
+        data[L50][MAG][W_CS] = 79;
+        data[L50][MAG][W_S] = 84;
+        data[L50][MAG][W_DB] = 84;
+        data[L50][MAG][W_C] = 84;
+        data[L50][MAG][W_K] = 84;
+        data[L50][MAG][W_DA] = 84;
+        data[L50][MAG][W_B] = 0;
+        data[L50][MAG][W_G] = 0;
+        data[L50][MAG][MAIN] = 84;
+        data[L50][MAG][SUB] = 75;
+
+        data[L52][MAG][W_D] = 96;
+        data[L52][MAG][W_LS] = 90;
+        data[L52][MAG][W_TS] = 80;
+        data[L52][MAG][W_A] = 80;
+        data[L52][MAG][W_L] = 84;
+        data[L52][MAG][W_CS] = 84;
+        data[L52][MAG][W_S] = 90;
+        data[L52][MAG][W_DB] = 90;
+        data[L52][MAG][W_C] = 90;
+        data[L52][MAG][W_K] = 90;
+        data[L52][MAG][W_DA] = 90;
+        data[L52][MAG][W_B] = 0;
+        data[L52][MAG][W_G] = 0;
+        data[L52][MAG][MAIN] = 84;
+        data[L52][MAG][SUB] = 75;
+
+        data[L55][MAG][W_D] = 103;
+        data[L55][MAG][W_LS] = 96;
+        data[L55][MAG][W_TS] = 85;
+        data[L55][MAG][W_A] = 85;
+        data[L55][MAG][W_L] = 90;
+        data[L55][MAG][W_CS] = 90;
+        data[L55][MAG][W_S] = 96;
+        data[L55][MAG][W_DB] = 96;
+        data[L55][MAG][W_C] = 96;
+        data[L55][MAG][W_K] = 96;
+        data[L55][MAG][W_DA] = 96;
+        data[L55][MAG][W_B] = 0;
+        data[L55][MAG][W_G] = 0;
+        data[L55][MAG][MAIN] = 84;
+        data[L55][MAG][SUB] = 75;
+
+        data[L60][MAG][W_D] = 103;
+        data[L60][MAG][W_LS] = 96;
+        data[L60][MAG][W_TS] = 85;
+        data[L60][MAG][W_A] = 85;
+        data[L60][MAG][W_L] = 90;
+        data[L60][MAG][W_CS] = 90;
+        data[L60][MAG][W_S] = 96;
+        data[L60][MAG][W_DB] = 96;
+        data[L60][MAG][W_C] = 96;
+        data[L60][MAG][W_K] = 96;
+        data[L60][MAG][W_DA] = 96;
+        data[L60][MAG][W_B] = 0;
+        data[L60][MAG][W_G] = 0;
+        data[L60][MAG][MAIN] = 84;
+        data[L60][MAG][SUB] = 75;
+
+        data[L65][MAG][W_D] = 103;
+        data[L65][MAG][W_LS] = 96;
+        data[L65][MAG][W_TS] = 85;
+        data[L65][MAG][W_A] = 85;
+        data[L65][MAG][W_L] = 90;
+        data[L65][MAG][W_CS] = 90;
+        data[L65][MAG][W_S] = 96;
+        data[L65][MAG][W_DB] = 96;
+        data[L65][MAG][W_C] = 96;
+        data[L65][MAG][W_K] = 96;
+        data[L65][MAG][W_DA] = 96;
+        data[L65][MAG][W_B] = 0;
+        data[L65][MAG][W_G] = 0;
+        data[L65][MAG][MAIN] = 84;
+        data[L65][MAG][SUB] = 75;
+
+        data[L70][MAG][W_D] = 103;
+        data[L70][MAG][W_LS] = 96;
+        data[L70][MAG][W_TS] = 85;
+        data[L70][MAG][W_A] = 85;
+        data[L70][MAG][W_L] = 90;
+        data[L70][MAG][W_CS] = 90;
+        data[L70][MAG][W_S] = 96;
+        data[L70][MAG][W_DB] = 96;
+        data[L70][MAG][W_C] = 96;
+        data[L70][MAG][W_K] = 96;
+        data[L70][MAG][W_DA] = 96;
+        data[L70][MAG][W_B] = 0;
+        data[L70][MAG][W_G] = 0;
+        data[L70][MAG][MAIN] = 90;
+        data[L70][MAG][SUB] = 79;
+
+        data[L75][MAG][W_D] = 112;
+        data[L75][MAG][W_LS] = 103;
+        data[L75][MAG][W_TS] = 90;
+        data[L75][MAG][W_A] = 90;
+        data[L75][MAG][W_L] = 97;
+        data[L75][MAG][W_CS] = 97;
+        data[L75][MAG][W_S] = 103;
+        data[L75][MAG][W_DB] = 103;
+        data[L75][MAG][W_C] = 103;
+        data[L75][MAG][W_K] = 103;
+        data[L75][MAG][W_DA] = 103;
+        data[L75][MAG][W_B] = 0;
+        data[L75][MAG][W_G] = 0;
+        data[L75][MAG][MAIN] = 90;
+        data[L75][MAG][SUB] = 79;
+
+        data[L80][MAG][W_D] = 122;
+        data[L80][MAG][W_LS] = 112;
+        data[L80][MAG][W_TS] = 97;
+        data[L80][MAG][W_A] = 97;
+        data[L80][MAG][W_L] = 104;
+        data[L80][MAG][W_CS] = 104;
+        data[L80][MAG][W_S] = 112;
+        data[L80][MAG][W_DB] = 112;
+        data[L80][MAG][W_C] = 112;
+        data[L80][MAG][W_K] = 112;
+        data[L80][MAG][W_DA] = 112;
+        data[L80][MAG][W_B] = 0;
+        data[L80][MAG][W_G] = 0;
+        data[L80][MAG][MAIN] = 90;
+        data[L80][MAG][SUB] = 79;
+
+    }
+
+    int getSpeed(int level, int mode, int type) {
+        if (level < 15) {
+            return data[L1][mode][type];
+        } else if (level < 30) {
+            return data[L15][mode][type];
+        } else if (level < 45) {
+            return data[L30][mode][type];
+        } else if (level < 50) {
+            return data[L45][mode][type];
+        } else if (level < 52) {
+            return data[L50][mode][type];
+        } else if (level < 55) {
+            return data[L52][mode][type];
+        } else if (level < 60) {
+            return data[L55][mode][type];
+        } else if (level < 65) {
+            return data[L60][mode][type];
+        } else if (level < 70) {
+            return data[L65][mode][type];
+        } else if (level < 75) {
+            return data[L70][mode][type];
+        } else if (level < 80) {
+            return data[L75][mode][type];
+        } else {
+            return data[L80][mode][type];
+        }
+    }
+}
