@@ -1391,14 +1391,14 @@ public class Calculator implements Common {
             acc *= acc_1;
         }
         if (ui.cb_buff[ACC2].isSelected()) {
-            switch(ui.cb_buff_group[ACC2].getSelectedIndex()) {
-                case 0 :
+            switch (ui.cb_buff_group[ACC2].getSelectedIndex()) {
+                case 0:
                     acc *= acc_2;
                     break;
-                case 1 :
+                case 1:
                     acc *= acc_ew;
                     break;
-            } 
+            }
         }
         if (ui.cb_buff[ACC3].isSelected()) {
             acc *= acc_3;
@@ -2127,10 +2127,17 @@ public class Calculator implements Common {
         }
 
         if (buki.magic_name.equals("HP吸収")) {
-            drain_small += ((dmg_small_ave + dmg_element1) / 8 + 1)
-                    * rate - 0.75 * rate;
-            drain_big += ((dmg_big_ave + dmg_element1) / 8 + 1)
-                    * rate - 0.75 * rate;
+            drain_small = ((dmg_small_ave + dmg_element1) / 8 + 1) - 0.75;
+            drain_big = ((dmg_big_ave + dmg_element1) / 8 + 1) - 0.75;
+            ui.lab_mag_info2
+                    .setText("魔法ダメージ "
+                            + format_dmg.format(drain_small)
+                            + "/"
+                            + format_dmg.format(drain_big)
+                            + "  "
+                            + format_rate.format(rate));
+            drain_small *= rate;
+            drain_big *= rate;
         } else {
             magic *= rate;
         }
@@ -2345,19 +2352,16 @@ public class Calculator implements Common {
             case "HP吸収":
                 ui.lab_mag_rate.setEnabled(true);
                 ui.lab_mag_info1.setText("魔法：" + buki.magic_name);
-                ui.lab_mag_info2
-                        .setText("魔法ダメージ "
-                                + format_dmg.format(drain_small)
-                                + "/"
-                                + format_dmg.format(drain_big)
-                                + "  "
-                                + format_rate.format(rate));
                 break;
             default:
                 ui.lab_mag_info1.setText("魔法："
                         + buki.magic_name);
-                ui.lab_mag_info2.setText(
-                        "魔法ダメージ " + format_dmg.format(magic / rate) + "  " + format_rate.format(rate));
+                if (rate != 0) {
+                    ui.lab_mag_info2.setText(
+                            "魔法ダメージ " + format_dmg.format(magic / rate) + "  " + format_rate.format(rate));
+                } else {
+                    ui.lab_mag_info2.setText("");
+                }
                 break;
         }
         ui.lab_hit_rate.setText("命中率：" + format_rate.format(hit_rate));

@@ -515,8 +515,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_mag_info1 = new JLabel();
         lab_mag_info2 = new JLabel();
         lab_hit_rate.setBounds(420 + 200, 50 + 50 + 10, 200, 25);
-        lab_mag_info1.setBounds(420 + 200, 50 + 75 + 10, 200, 25);
-        lab_mag_info2.setBounds(420 + 200, 50 + 100 + 10, 200, 25);
+        lab_mag_info1.setBounds(420 + 200, 50 + 75 + 10, 300, 25);
+        lab_mag_info2.setBounds(420 + 200, 50 + 100 + 10, 300, 25);
         panels[0].add(lab_hit_rate);
         panels[0].add(lab_mag_info1);
         panels[0].add(lab_mag_info2);
