@@ -91,6 +91,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel lab_dr;
     JLabel lab_mr;
 
+    JLabel lab_pot1;
+    JLabel lab_pot2;
+
     JLabel lab_dmg_short, lab_dmg_long, lab_dmg_mag;
     JLabel lab_hit_short, lab_hit_long, lab_hit_mag;
     JLabel lab_ac_short, lab_ac_long;
@@ -365,89 +368,97 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
-        lab_tmp = new JLabel("AC");
-        lab_tmp.setBounds(200 + 25, 50 + 25 - 10, 200, 25);
-        panels[0].add(lab_tmp);
-        commons.add(lab_tmp);
-        lab_tmp = new JLabel("MR");
-        lab_tmp.setBounds(260 + 25, 50 + 25 - 10, 200, 25);
-        panels[0].add(lab_tmp);
-        commons.add(lab_tmp);
-        lab_tmp = new JLabel("DR");
-        lab_tmp.setBounds(320 + 25, 50 + 25 - 10, 200, 25);
-        panels[0].add(lab_tmp);
-        commons.add(lab_tmp);
-        lab_tmp = new JLabel("DG");
-        lab_tmp.setBounds(200 + 25, 75 + 25 - 10, 200, 25);
-        panels[0].add(lab_tmp);
-        commons.add(lab_tmp);
-        lab_tmp = new JLabel("ER");
-        lab_tmp.setBounds(260 + 25, 75 + 25 - 10, 200, 25);
-        panels[0].add(lab_tmp);
-        commons.add(lab_tmp);
-
         lab_tmp = new JLabel("HP");
-        lab_tmp.setBounds(200 + 25, 50 - 10, 200, 25);
+        lab_tmp.setBounds(200 + 25, 45, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("MP");
-        lab_tmp.setBounds(200 + 60 + 25, 50 - 10, 200, 25);
+        lab_tmp.setBounds(200 + 60 + 25, 45, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
+        lab_hp = new JLabel();
+        lab_hp.setBounds(230 + 25, 45, 70, 20);
+        lab_mp = new JLabel();
+        lab_mp.setBounds(290 + 25, 45, 70, 20);
+
+        lab_tmp = new JLabel("AC");
+        lab_tmp.setBounds(200 + 25, 45 + 20, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("MR");
+        lab_tmp.setBounds(260 + 25, 45 + 20, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("DR");
+        lab_tmp.setBounds(320 + 25, 45 + 20, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_ac = new JLabel();
+        lab_mr = new JLabel();
+        lab_dr = new JLabel();
+        lab_ac.setBounds(200 + 30 + 25, 45 + 20, 200, 20);
+        lab_mr.setBounds(200 + 90 + 25, 45 + 20, 200, 20);
+        lab_dr.setBounds(200 + 150 + 25, 45 + 20, 200, 20);
+        panels[0].add(lab_ac);
+        commons.add(lab_ac);
+        panels[0].add(lab_mr);
+        commons.add(lab_mr);
+        panels[0].add(lab_dr);
+        commons.add(lab_dr);
+
+        lab_tmp = new JLabel("DG");
+        lab_tmp.setBounds(200 + 25, 45 + 40, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("ER");
+        lab_tmp.setBounds(260 + 25, 45 + 40, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_dg = new JLabel();
+        lab_er = new JLabel();
+        lab_dg.setBounds(200 + 30 + 25, 45 + 40, 200, 20);
+        lab_er.setBounds(200 + 90 + 25, 45 + 40, 200, 20);
+        panels[0].add(lab_dg);
+        commons.add(lab_dg);
+        panels[0].add(lab_er);
+        commons.add(lab_er);
 
         lab_tmp = new JLabel("HPR");
-        lab_tmp.setBounds(200 + 25, 125 - 10, 200, 25);
+        lab_tmp.setBounds(200 + 25, 45 + 60, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("MPR");
-        lab_tmp.setBounds(200 + 25, 150 - 10, 200, 25);
+        lab_tmp.setBounds(200 + 25, 45 + 80, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
-
-        lab_hp = new JLabel();
-        lab_hp.setBounds(230 + 25, 50 - 10, 70, 25);
-        lab_mp = new JLabel();
-        lab_mp.setBounds(290 + 25, 50 - 10, 70, 25);
         panels[0].add(lab_hp);
         panels[0].add(lab_mp);
         commons.add(lab_hp);
         commons.add(lab_mp);
 
-        lab_ac = new JLabel();
-        lab_mr = new JLabel();
-        lab_dr = new JLabel();
-        lab_dg = new JLabel();
-        lab_er = new JLabel();
-        lab_ac.setBounds(200 + 30 + 25, 50 + 25 - 10, 200, 25);
-        lab_mr.setBounds(200 + 90 + 25, 50 + 25 - 10, 200, 25);
-        lab_dr.setBounds(200 + 150 + 25, 50 + 25 - 10, 200, 25);
-        lab_dg.setBounds(200 + 30 + 25, 75 + 25 - 10, 200, 25);
-        lab_er.setBounds(200 + 90 + 25, 75 + 25 - 10, 200, 25);
-
-        panels[0].add(lab_ac);
-        commons.add(lab_ac);
-        panels[0].add(lab_mr);
-        commons.add(lab_mr);
-        panels[0].add(lab_dg);
-        commons.add(lab_dg);
-        panels[0].add(lab_er);
-        commons.add(lab_er);
-        panels[0].add(lab_dr);
-        commons.add(lab_dr);
-
         lab_hpr = new JLabel();
         lab_mpr = new JLabel();
-        lab_hpr.setBounds(200 + 40 + 25, 125 - 10, 200, 25);
-        lab_mpr.setBounds(200 + 40 + 25, 150 - 10, 200, 25);
+        lab_hpr.setBounds(200 + 40 + 25, 45 + 60, 200, 20);
+        lab_mpr.setBounds(200 + 40 + 25, 45 + 80, 200, 20);
         panels[0].add(lab_hpr);
         panels[0].add(lab_mpr);
         commons.add(lab_hpr);
         commons.add(lab_mpr);
 
-        lab_pot = new JLabel();
-        lab_pot.setBounds(200 + 100 + 25, 125 - 10, 200, 25);
+        lab_pot = new JLabel("É|Å[ÉVÉáÉìâÒïúó ");
+        lab_pot.setBounds(200 + 25, 45 + 100, 200, 20);
         panels[0].add(lab_pot);
         commons.add(lab_pot);
+
+        lab_pot1 = new JLabel();
+        lab_pot1.setBounds(200 + 25 + 100, 45 + 100, 100, 20);
+        panels[0].add(lab_pot1);
+        commons.add(lab_pot1);
+        
+        lab_pot2 = new JLabel();
+        lab_pot2.setBounds(200 + 25 + 130, 45 + 100, 100, 20);
+        panels[0].add(lab_pot2);
+        commons.add(lab_pot2);
 
         lab_dmg_short = new JLabel();
         lab_dmg_long = new JLabel();
@@ -457,14 +468,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_hit_mag = new JLabel();
         lab_ac_short = new JLabel();
         lab_ac_long = new JLabel();
-        lab_dmg_short.setBounds(420, 25 + 10, 150, 25);
-        lab_dmg_long.setBounds(420, 25 + 25 + 10, 150, 25);
-        lab_dmg_mag.setBounds(420, 25 + 50 + 10, 150, 25);
-        lab_hit_short.setBounds(420 + 125, 25 + 10, 250, 25);
-        lab_hit_long.setBounds(420 + 125, 25 + 25 + 10, 250, 25);
-        lab_hit_mag.setBounds(420 + 125, 25 + 50 + 10, 150, 25);
-        lab_ac_short.setBounds(420 + 125 + 100, 25 + 10, 150, 25);
-        lab_ac_long.setBounds(420 + 125 + 100, 25 + 25 + 10, 150, 25);
+        lab_dmg_short.setBounds(420, 25 + 10, 150, 20);
+        lab_dmg_long.setBounds(420, 25 + 25 + 10, 150, 20);
+        lab_dmg_mag.setBounds(420, 25 + 50 + 10, 150, 20);
+        lab_hit_short.setBounds(420 + 125, 25 + 10, 250, 20);
+        lab_hit_long.setBounds(420 + 125, 25 + 25 + 10, 250, 20);
+        lab_hit_mag.setBounds(420 + 125, 25 + 50 + 10, 150, 20);
+        lab_ac_short.setBounds(420 + 125 + 100, 25 + 10, 150, 20);
+        lab_ac_long.setBounds(420 + 125 + 100, 25 + 25 + 10, 150, 20);
         panels[0].add(lab_dmg_short);
         panels[0].add(lab_dmg_long);
         panels[0].add(lab_dmg_mag);
@@ -925,7 +936,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[B_DEX] = new JCheckBox("DEX");
         cb_buff[B_DEX].setBounds(0, 20 * col++, 100, 20);
 
-        String list_ac[] = {"-2", "-5", "-5", "-7", "-10"};
+        String list_ac[] = {"-2", "-5", "-6", "-7", "-10"};
         cb_buff_group[B_AC] = new WideComboBox(list_ac);
         cb_buff_group[B_AC].setBounds(100, 20 * col, 80, 20);
         cb_buff[B_AC] = new JCheckBox("AC");

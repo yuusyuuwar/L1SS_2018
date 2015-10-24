@@ -102,7 +102,7 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
 
             reader.close();
 
-            File app = new File("./dist/LSS.jar");
+            File app = new File("./bin/LSS.jar");
             File data = new File("./data/E.zip");
 
             if (!app.exists() || !data.exists()) {

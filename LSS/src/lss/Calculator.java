@@ -2655,21 +2655,17 @@ public class Calculator implements Common {
         for (String split : buff.effect.split(",")) {
             if (split.contains("ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê")) {
                 String[] a = split.split(" ");
-                for (int i = 1; i < a.length; i++) {
-                    if (a[i].contains("%")) {
-                        pot_rate += Integer.parseInt(a[i].split("%")[0]);
-                    } else {
-                        pot += Integer.parseInt(a[i]);
-                    }
+                if (a[1].contains("%")) {
+                    pot_rate += Integer.parseInt(a[1].split("%")[0]);
+                }
+                if (a[2].contains("+")) {
+                    pot += Integer.parseInt(a[2]);
                 }
 
             }
         }
-        if (pot_rate > 0) {
-            ui.lab_pot.setText("POT‰ñ•œ—Ê +" + pot_rate + "% " + "+" + pot);
-        } else {
-            ui.lab_pot.setText("");
-        }
+        ui.lab_pot1.setText("+" + pot_rate + "%");
+        ui.lab_pot2.setText("+" + pot);
 
         createToolTip();
     }

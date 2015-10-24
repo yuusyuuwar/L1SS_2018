@@ -464,11 +464,11 @@ public class Bougu implements Common {
                         break;
                     case 7:
                         op2.HP = 50;
-                        op2.effect = "ポーション回復量 +6% + 4,";
+                        op2.effect = "ポーション回復量 +6% +4,";
                         break;
                     case 8:
                         op2.HP = 50;
-                        op2.effect = "ポーション回復量 +8% + 6,";
+                        op2.effect = "ポーション回復量 +8% +6,";
                         break;
                 }
 
