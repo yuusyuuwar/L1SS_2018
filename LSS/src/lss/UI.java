@@ -454,7 +454,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_pot1.setBounds(200 + 25 + 100, 45 + 100, 100, 20);
         panels[0].add(lab_pot1);
         commons.add(lab_pot1);
-        
+
         lab_pot2 = new JLabel();
         lab_pot2.setBounds(200 + 25 + 130, 45 + 100, 100, 20);
         panels[0].add(lab_pot2);
@@ -2133,6 +2133,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             tf_mag_delay.setText(Double.toString(this.MAG_D[channel]));
             tf_mag_power.setText(Double.toString(this.MAG_P[channel]));
             tb_ts_sp.setSelected(TS_SP[channel]);
+
+            if (calc.buki.element_enchant) {
+                cb_elem_1.setEnabled(true);
+            } else {
+                cb_elem_1.setSelectedIndex(0);
+                cb_elem_1.setEnabled(false);
+            }
         }
 
         @Override
