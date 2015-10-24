@@ -149,7 +149,7 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
             }
             
             File app = new File("./bin/LSS.jar");
-            if (!app.exists()) {
+            if (app.exists()) {
                 File backup = new File("./bin/LSS_" + curr_app_ver + ".jar");
                 app.renameTo(backup);
 
@@ -179,7 +179,7 @@ public class Updater extends JDialog implements ActionListener, WindowListener {
             }
 
             File data = new File("./data/E.zip");
-            if (!data.exists()) {
+            if (data.exists()) {
                 File backup = new File("./data/E_" + curr_app_ver + ".zip");
                 data.renameTo(backup);
 

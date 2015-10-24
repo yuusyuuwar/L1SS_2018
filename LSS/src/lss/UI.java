@@ -214,15 +214,18 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     void init() {
 
+        boolean error = false;
+        
         BufferedReader reader;
         try {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream("./version.txt")));
             version = reader.readLine();
         } catch (IOException ex) {
+            error = true;
         }
 
         setTitle("Lineage Status Simulator ver " + version);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
         setResizable(false);
 

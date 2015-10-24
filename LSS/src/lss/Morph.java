@@ -182,11 +182,11 @@ public class Morph implements Common {
         data[L75][PHI][SUB] = 75;
 
         data[L80][PHI][W_D] = 130;
-        data[L80][PHI][W_LS] = 210;
+        data[L80][PHI][W_LS] = 120;
         data[L80][PHI][W_TS] = 102;
         data[L80][PHI][W_A] = 102;
         data[L80][PHI][W_L] = 110;
-        data[L80][PHI][W_CS] = 1190;
+        data[L80][PHI][W_CS] = 110;
         data[L80][PHI][W_S] = 120;
         data[L80][PHI][W_DB] = 120;
         data[L80][PHI][W_C] = 120;

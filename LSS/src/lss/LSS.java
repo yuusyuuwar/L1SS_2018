@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -36,10 +37,15 @@ public class LSS implements WindowListener {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
         }
+
+        Thread.setDefaultUncaughtExceptionHandler((Thread t, Throwable e) -> {
+            show_error(e);
+        });
         lss = new LSS();
         ui = new UI();
         calc = new Calculator(ui);
         ui.addWindowListener(lss);
+        
         try {
             File f = new File("./loc.txt");
             if (f.exists()) {
@@ -51,8 +57,17 @@ public class LSS implements WindowListener {
             }
         } catch (IOException ex) {
         }
-        ui.init();
+
+        try {
+            ui.init();
+        } catch (Exception ex) {
+        }
         calc = new Calculator(ui);
+    }
+
+    static void show_error(Throwable e) {
+        JOptionPane.showMessageDialog(ui, e.toString(), "ÉGÉâÅ[Ç™î≠ê∂ÇµÇ‹ÇµÇΩ", JOptionPane.ERROR_MESSAGE);
+        System.exit(0);
     }
 
     @Override
@@ -81,6 +96,8 @@ public class LSS implements WindowListener {
             }
         } catch (IOException ex) {
         }
+
+        System.exit(0);
     }
 
     @Override
