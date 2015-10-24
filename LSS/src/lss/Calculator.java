@@ -1391,34 +1391,14 @@ public class Calculator implements Common {
             acc *= acc_1;
         }
         if (ui.cb_buff[ACC2].isSelected()) {
-            switch (cls) {
-                case P:
+            switch(ui.cb_buff_group[ACC2].getSelectedIndex()) {
+                case 0 :
                     acc *= acc_2;
                     break;
-                case K:
-                    acc *= acc_2;
+                case 1 :
+                    acc *= acc_ew;
                     break;
-                case W:
-                    ui.cb_buff[ACC2].setSelected(false);
-                    break;
-                case E:
-                    if (ui.cb_buff[E_DB].isSelected()) {
-                        ui.cb_buff[ACC2].setSelected(false);
-                    } else {
-                        acc *= acc_ew;
-                    }
-                    break;
-                case D:
-                    ui.cb_buff[ACC2].setSelected(false);
-                    break;
-                case R:
-                    acc *= acc_2;
-                    break;
-                case I:
-                    break;
-                case F:
-                    acc *= acc_2;
-            }
+            } 
         }
         if (ui.cb_buff[ACC3].isSelected()) {
             acc *= acc_3;

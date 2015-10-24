@@ -23,8 +23,8 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class LSS implements WindowListener {
 
-    static LSS lss = new LSS();
-    static UI ui = new UI();
+    static LSS lss;
+    static UI ui;
     static Calculator calc;
 
     /**
@@ -32,11 +32,13 @@ public class LSS implements WindowListener {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
         }
+        lss = new LSS();
+        ui = new UI();
+        calc = new Calculator(ui);
         ui.addWindowListener(lss);
         try {
             File f = new File("./loc.txt");
