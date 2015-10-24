@@ -2127,8 +2127,8 @@ public class Calculator implements Common {
         }
 
         if (buki.magic_name.equals("HP吸収")) {
-            drain_small = ((dmg_small_ave + dmg_element1) / 8 + 1) - 0.75;
-            drain_big = ((dmg_big_ave + dmg_element1) / 8 + 1) - 0.75;
+            drain_small = ((dmg_small_ave + dmg_element1) / 8 + 1) - 0.5;
+            drain_big = ((dmg_big_ave + dmg_element1) / 8 + 1) - 0.5;
             ui.lab_mag_info2
                     .setText("魔法ダメージ "
                             + format_dmg.format(drain_small)
