@@ -91,6 +91,9 @@ public class Buff implements Common {
             if (line.startsWith("‹|–½’†—¦=")) {
                 HIT_LONG = Integer.parseInt(line.split("=")[1]);
             }
+            if (line.startsWith("–‚–@–½’†=")) {
+                HIT_MAGIC = Integer.parseInt(line.split("=")[1]);
+            }
             if (line.startsWith("SP=")) {
                 SP = Integer.parseInt(line.split("=")[1]);
             }

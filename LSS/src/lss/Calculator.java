@@ -62,6 +62,7 @@ public class Calculator implements Common {
     private int base_hit_magic;
     int hit_short;
     int hit_long;
+    int hit_magic;
     private final int[] dmg_buki_ele1 = new int[elem_list.length];
     private final int[] dmg_buki_ele2 = new int[elem_list.length];
 
@@ -718,7 +719,7 @@ public class Calculator implements Common {
                     buff.SP += 1;
                     buff.effect += "特殊攻撃(パック/パオ),";
                     break;
-                    
+
                 case 28:
                     buff.SP += 2;
                     buff.HP += 80;
@@ -1637,11 +1638,14 @@ public class Calculator implements Common {
         dmg_magic = base_dmg_magic + buff.d_magic;
         sp = buff.SP + buki.op.SP;
 
+        hit_magic = base_hit_magic;
+
         for (Bougu bougu1 : bougu) {
             dmg_short += bougu1.op.d_short + bougu1.op2.d_short;
             dmg_long += bougu1.op.d_long + bougu1.op2.d_long;
             dmg_magic += bougu1.op.d_magic + bougu1.op2.d_magic;
             sp += bougu1.op.SP + bougu1.op2.SP;
+            hit_magic += bougu1.op.HIT_MAGIC + bougu1.op2.HIT_MAGIC;
         }
 
         int st_int = _ST[BASE][INT] + _ST[REM][INT] + _ST[LEVEL][INT]
@@ -1920,10 +1924,10 @@ public class Calculator implements Common {
             case "キーリンク":
                 double a = 1 + 3.0 / 32.0 * (int_beta - 12);
                 double b;
-                if (ui.s_target_mr.getValue() - base_hit_magic <= 100) {
-                    b = 1.0 - 0.01 * ((ui.s_target_mr.getValue() - base_hit_magic) / 2);
+                if (ui.s_target_mr.getValue() - hit_magic <= 100) {
+                    b = 1.0 - 0.01 * ((ui.s_target_mr.getValue() - hit_magic) / 2);
                 } else {
-                    b = 0.6 - 0.01 * ((ui.s_target_mr.getValue() - base_hit_magic) / 10);
+                    b = 0.6 - 0.01 * ((ui.s_target_mr.getValue() - hit_magic) / 10);
                 }
                 dmg_big_ave *= a;
                 dmg_big_ave += buki.enchant + base_dmg_magic;
@@ -2305,7 +2309,7 @@ public class Calculator implements Common {
                 if (speed != 0.0) {
                     speed = FSCalclator.calc(t, speed * acc);
                 }
-                
+
                 double n = speed * t / 60;
                 double w0 = Math.pow((1 - week_rate * hit), n);
                 double w1 = (week_rate * hit) * Math.pow((1 - week_rate * hit), n - 1)
@@ -2315,7 +2319,6 @@ public class Calculator implements Common {
                 double w3 = 1 - w0 - w1 - w2;
                 week = (20 * w1 + 40 * w2 + 60 * w3) * 3 * hit;
                 week *= 60 / t;
-                
 
             } else {
                 if (ui.cb_speed_auto.isSelected()) {
@@ -2394,7 +2397,7 @@ public class Calculator implements Common {
         ui.lab_ac_short.setText("(最大命中AC : " + Integer.toString(19 - hit_short) + ")");
         ui.lab_hit_long.setText("命中(遠) : " + hit_long);
         ui.lab_ac_long.setText("(最大命中AC : " + Integer.toString(19 - hit_long) + ")");
-        ui.lab_hit_mag.setText("命中(魔) : " + base_hit_magic);
+        ui.lab_hit_mag.setText("命中(魔) : " + hit_magic);
 
 //        ui.lab_sp.setText("SP " + sp);
 //        ui.lab_ml.setText("ML " + ml);
@@ -2920,10 +2923,10 @@ public class Calculator implements Common {
         double b;
         if (magic_name.equals("エルブンアロー")) {
             b = 1.0;
-        } else if (ui.s_target_mr.getValue() - base_hit_magic <= 100) {
-            b = 1.0 - 0.01 * ((ui.s_target_mr.getValue() - base_hit_magic) / 2);
+        } else if (ui.s_target_mr.getValue() - hit_magic <= 100) {
+            b = 1.0 - 0.01 * ((ui.s_target_mr.getValue() - hit_magic) / 2);
         } else {
-            b = 0.6 - 0.01 * ((ui.s_target_mr.getValue() - base_hit_magic) / 10);
+            b = 0.6 - 0.01 * ((ui.s_target_mr.getValue() - hit_magic) / 10);
         }
         if (ui.cb_buff[I_IA].isSelected()) {
             return (dmg_magic * a + base_dmg_magic) * b * (1 - cri)
