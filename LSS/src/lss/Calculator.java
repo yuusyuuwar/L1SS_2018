@@ -2294,14 +2294,13 @@ public class Calculator implements Common {
                 && ui.cb_magic.getSelectedItem()
                 != null) {
             if (ui.cb_magic.getSelectedItem().equals("フォースレイヤー")) {
-                double week_rate = buki.week_point_exposure;
+                double week_rate = we;
                 double t = 60.0 / (polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), MAIN) * acc) + 2.0;
                 t = key_delay * ((int) (t / key_delay) + 1.0);
                 if (speed != 0.0) {
-                    fs_rate = FSCalclator.calc(t, speed * acc) / (speed * acc);
+                    speed = FSCalclator.calc(t, speed * acc);
                 }
-                speed *= fs_rate;
-                speed *= acc;
+                
                 double n = speed * t / 60;
                 double w0 = Math.pow((1 - week_rate * hit), n);
                 double w1 = (week_rate * hit) * Math.pow((1 - week_rate * hit), n - 1)
@@ -2311,6 +2310,7 @@ public class Calculator implements Common {
                 double w3 = 1 - w0 - w1 - w2;
                 week = (20 * w1 + 40 * w2 + 60 * w3) * 3 * hit;
                 week *= 60 / t;
+                
 
             } else {
                 if (ui.cb_speed_auto.isSelected()) {
@@ -2324,18 +2324,18 @@ public class Calculator implements Common {
             speed *= acc;
         }
 
-        dmg_small_ave += week + magic + drain_small;
-        dmg_big_ave += week + magic + drain_big;
+        dmg_small_ave += magic + drain_small;
+        dmg_big_ave += magic + drain_big;
 
-        ui.lab_dmg_normal.setText(Integer.toString((int) (dmg_small_ave * hit * speed + mag_dmg_min))
+        ui.lab_dmg_normal.setText(Integer.toString((int) (dmg_small_ave * hit * speed + mag_dmg_min + week))
                 + " / " + Integer.toString(
-                        (int) (dmg_big_ave * hit * speed + mag_dmg_min)));
-        ui.lab_dmg_cursed.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed) * hit * speed + mag_dmg_min))
+                        (int) (dmg_big_ave * hit * speed + mag_dmg_min + week)));
+        ui.lab_dmg_cursed.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed) * hit * speed + mag_dmg_min + week))
                 + " / " + Integer.toString(
-                        (int) ((dmg_big_ave + dmg_cursed) * hit * speed + mag_dmg_min)));
-        ui.lab_dmg_undead.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min))
+                        (int) ((dmg_big_ave + dmg_cursed) * hit * speed + mag_dmg_min + week)));
+        ui.lab_dmg_undead.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week))
                 + " / " + Integer.toString(
-                        (int) ((dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min)));
+                        (int) ((dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week)));
 
         switch (buki.magic_name) {
             case "":
