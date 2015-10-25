@@ -431,11 +431,13 @@ public class Bougu implements Common {
                         op2.HP = 50;
                         op2.d_long = 3;
                         op2.d_short = 3;
+                        op2.SP = 1;
                         break;
                     case 8:
                         op2.HP = 50;
                         op2.d_long = 4;
                         op2.d_short = 4;
+                        op2.SP = 2;
                         break;
                 }
             }
