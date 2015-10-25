@@ -718,6 +718,11 @@ public class Calculator implements Common {
                     buff.SP += 1;
                     buff.effect += "特殊攻撃(パック/パオ),";
                     break;
+                    
+                case 28:
+                    buff.SP += 2;
+                    buff.HP += 80;
+                    break;
             }
         }
 
