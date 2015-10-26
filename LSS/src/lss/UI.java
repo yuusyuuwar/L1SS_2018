@@ -215,7 +215,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     void init() {
 
         boolean error = false;
-        
+
         BufferedReader reader;
         try {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream("./version.txt")));
@@ -1245,7 +1245,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "ブルート", "ブルート(努力する)", "ブルート(賢い)", "ブルート(聡明な)", "ブルート(光る)",
             "ブルート(眩しい)", "ジャイアント", "ジャイアント(努力する)", "ジャイアント(賢い)",
             "ジャイアント(聡明な)", "ジャイアント(光る)", "ジャイアント(眩しい)",
-            "パック/パオ(0段階)", "パック/パオ(1段階)", "パック/パオ(2段階)", "パック/パオ(3段階)","リッチ"};
+            "パック/パオ(0段階)", "パック/パオ(1段階)", "パック/パオ(2段階)", "パック/パオ(3段階)", "リッチ"};
         cb_buff_group[ITEM_MD] = new WideComboBox(list_md);
         cb_buff_group[ITEM_MD].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_MD] = new JCheckBox("マジックドール");
@@ -2368,8 +2368,26 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             Node item = n_base.getChildNodes().item(i);
             if (item.hasAttributes()) {
                 for (int j = 0; j < Integer.parseInt(item.getAttributes().getNamedItem("num").getNodeValue()); j++) {
-                    ActionEvent a = new ActionEvent(this, 0, item.getAttributes().getNamedItem("val").getNodeValue() + "_UP");
-                    calc.update();
+                    switch (item.getAttributes().getNamedItem("val").getNodeValue()) {
+                        case "STR":
+                            calc.addRem(STR);
+                            break;
+                        case "DEX":
+                            calc.addRem(DEX);
+                            break;
+                        case "CON":
+                            calc.addRem(CON);
+                            break;
+                        case "WIS":
+                            calc.addRem(WIS);
+                            break;
+                        case "INT":
+                            calc.addRem(INT);
+                            break;
+                        case "CHA":
+                            calc.addRem(CHA);
+                            break;
+                    }
                 }
             }
         }

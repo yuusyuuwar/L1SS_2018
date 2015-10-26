@@ -432,21 +432,21 @@ public class Calculator implements Common {
                 }
 
             }
-            for (int j = 0; j < 5; j++) {
-                int e_st = ui.cb_elixir[j].getSelectedIndex() - 1;
-                if (e_st < 0) {
-                    continue;
-                }
-                if (ui.cb_elixir_level[j].getSelectedIndex() + 1 == i + 51
-                        && i + 51 <= level) {
-                    if (_ST[BASE][e_st] + _ST[REM][e_st] + _ST[LEVEL][e_st]
-                            + _ST[ELIXIR][e_st] < 45) {
-                        _ST[ELIXIR][e_st]++;
-                    } else {
-                        ui.cb_elixir[j].setSelectedIndex(0);
-                    }
-                }
-            }
+//            for (int j = 0; j < 5; j++) {
+//                int e_st = ui.cb_elixir[j].getSelectedIndex() - 1;
+//                if (e_st < 0) {
+//                    continue;
+//                }
+//                if (ui.cb_elixir_level[j].getSelectedIndex() + 1 == i + 51
+//                        && i + 51 <= level) {
+//                    if (_ST[BASE][e_st] + _ST[REM][e_st] + _ST[LEVEL][e_st]
+//                            + _ST[ELIXIR][e_st] < 45) {
+//                        _ST[ELIXIR][e_st]++;
+//                    } else {
+//                        ui.cb_elixir[j].setSelectedIndex(0);
+//                    }
+//                }
+//            }
         }
         ui.lev.repaint();
         if (ui.cb_elem_1.getSelectedIndex() > 0) {
