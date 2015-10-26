@@ -2202,6 +2202,11 @@ public class Calculator implements Common {
                     + (1.0 - (db_rate + lv_bonus));
             dmg_small_ave *= 2.0 * (db_rate + lv_bonus)
                     + (1.0 - (db_rate + lv_bonus));
+            
+            dmg_undead *=  2.0 * (db_rate + lv_bonus)
+                    + (1.0 - (db_rate + lv_bonus));
+            dmg_cursed *=  2.0 * (db_rate + lv_bonus)
+                    + (1.0 - (db_rate + lv_bonus));
         }
 
         //•Ší‘®«
@@ -2253,6 +2258,9 @@ public class Calculator implements Common {
                     + (0.15 - (0.15 * 0.1)) * (dmg_small_ave + ex)
                     + (1.0 - 0.15) * dmg_small_ave;
             ex = 0.0;
+            
+            dmg_undead *= (1 - 0.15 * 0.1) + 0.15 * 0.1 * 2.0;
+            dmg_cursed *= (1 - 0.15 * 0.1) + 0.15 * 0.1 * 2.0;
         }
         dmg_big_ave += ex * 0.15;
         dmg_small_ave += ex * 0.15;
@@ -2273,6 +2281,14 @@ public class Calculator implements Common {
                         + 1.0 * (1.0 - bs_rate);
                 dmg_big_ave -= 0.25 * bs_rate;
                 dmg_small_ave -= 0.25 * bs_rate;
+                
+                dmg_undead *= 1.5 * bs_rate
+                        + 1.0 * (1.0 - bs_rate);
+                dmg_cursed *= 1.5 * bs_rate
+                        + 1.0 * (1.0 - bs_rate);
+                
+                dmg_undead -= 0.25 * bs_rate;
+                dmg_cursed -= 0.25 * bs_rate;
             }
         }
 
@@ -2285,6 +2301,14 @@ public class Calculator implements Common {
 
                 dmg_big_ave -= 0.25 * ef_rate;
                 dmg_small_ave -= 0.25 * ef_rate;
+                
+                dmg_undead *= 1.5 * ef_rate
+                        + 1.0 * (1.0 - ef_rate);
+                dmg_cursed *= 1.5 * ef_rate
+                        + 1.0 * (1.0 - ef_rate);
+                
+                dmg_undead -= 0.25 * ef_rate;
+                dmg_cursed -= 0.25 * ef_rate;
             }
         }
 
@@ -2297,6 +2321,15 @@ public class Calculator implements Common {
 
                 dmg_big_ave -= 0.25 * 0.3333;
                 dmg_small_ave -= 0.25 * 0.3333;
+                
+                
+                dmg_undead *= 1.5 * 0.3333
+                        + 1.0 * (1.0 - 0.3333);
+                dmg_cursed *= 1.5 * 0.3333
+                        + 1.0 * (1.0 - 0.3333);
+                
+                dmg_undead -= 0.25 * 0.3333;
+                dmg_cursed -= 0.25 * 0.3333;
             } else {
                 ui.cb_buff[P_B].setSelected(false);
             }
