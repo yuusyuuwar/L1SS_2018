@@ -623,7 +623,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         String right_list[] = {"右腕", "生命の紋様", "魔法の紋様", "防御の紋様", "防御の紋様II", "耐火の紋様",
             "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様"};
         String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II"};
-        String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン",};
+        String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン"
+                ,"力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
         String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術士たちの護符"};
         cb_pattern_l = new WideComboBox(left_list);
         cb_pattern_r = new WideComboBox(right_list);

@@ -1293,33 +1293,63 @@ public class Calculator implements Common {
         }
 
         //エリクサールーン
-        if (ui.cb_pattern_l2.getSelectedIndex() > 0 && ui.cb_pattern_l2.getSelectedIndex() < st_list.length + 1) {
-            buff.ST[ui.cb_pattern_l2.getSelectedIndex() - 1]++;
+        int e = ui.cb_pattern_l2.getSelectedIndex();
+        boolean q = false;
+        if (e > 0) {
+            if (e > 5) {
+                e -= 5;
+                q = true;
+            }
+            buff.ST[e - 1]++;
 
             switch (cls) {
                 case P:
                     buff.DR += 3;
+                    if(q) {
+                        buff.HIT_SHORT += 2;
+                    }
                     break;
                 case K:
                     buff.HP += 50;
+                    if(q) {
+                        buff.d_short += 1;
+                    }
                     break;
                 case E:
                     buff.MP += 50;
+                    if(q) {
+                        buff.d_long += 1;
+                    }
                     break;
                 case W:
                     buff.MPR += 3;
+                    if(q) {
+                        buff.SP += 1;
+                    }
                     break;
                 case D:
                     buff.AC -= 3;
+                    if(q) {
+                        buff.MP += 30;
+                    }
                     break;
                 case R:
                     buff.HIT_SHORT += 3;
+                    if(q) {
+                        buff.DR += 1;
+                    }
                     break;
                 case I:
-                    buff.weight += 0.10;
+                    buff.weight += 0.05;
+                    if(q) {
+                        buff.HP += 50;
+                    }
                     break;
                 case F:
                     buff.MR += 5;
+                    if(q) {
+                        buff.HP += 50;
+                    }
                     break;
             }
 
