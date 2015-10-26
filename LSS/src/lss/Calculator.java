@@ -2650,8 +2650,10 @@ public class Calculator implements Common {
                 if (a[1].contains("%")) {
                     pot_rate += Integer.parseInt(a[1].split("%")[0]);
                 }
-                if (a[2].contains("+")) {
-                    pot += Integer.parseInt(a[2]);
+                if (a.length >= 2) {
+                    if (a[2].contains("+")) {
+                        pot += Integer.parseInt(a[2]);
+                    }
                 }
 
             }
@@ -2863,6 +2865,7 @@ public class Calculator implements Common {
                 _rem--;
             }
         }
+        ui.lab_rem.setText(Integer.toString(_rem));
     }
 
     void removeRem(int st) {
@@ -2870,10 +2873,14 @@ public class Calculator implements Common {
             _ST[REM][st]--;
             _rem++;
         }
+        ui.lab_rem.setText(Integer.toString(_rem));
     }
 
     private void rem_reset() {
         _rem = rem_data[cls];
+        if (ui.lab_rem != null) {
+            ui.lab_rem.setText(Integer.toString(_rem));
+        }
         for (int i = 0; i < st_list.length; i++) {
             _ST[REM][i] = 0;
             _ST[BASE][i] = st_data[cls][BASE][i];

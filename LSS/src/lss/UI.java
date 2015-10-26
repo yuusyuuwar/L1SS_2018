@@ -350,7 +350,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(0, 50 + 120, 30, 20);
         panels[1].add(lab_tmp);
 
-        lab_rem = new JLabel("");
+        lab_rem = new JLabel("", JLabel.CENTER);
         lab_rem.setBounds(30, 50 + 120, 20, 20);
         panels[0].add(lab_rem);
 
