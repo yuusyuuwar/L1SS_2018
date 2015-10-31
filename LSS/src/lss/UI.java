@@ -172,8 +172,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     LEV lev = new LEV();
 
     //パネル３
-    JCheckBox[] cb_buff = new JCheckBox[77];
-    JComboBox[] cb_buff_group = new JComboBox[77];
+    JCheckBox[] cb_buff = new JCheckBox[78];
+    JComboBox[] cb_buff_group = new JComboBox[78];
 
     //パネル４
     JComboBox cb_npc_level;
@@ -621,7 +621,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "魅力の紋様", "腕力の紋様II", "機敏の紋様II", "知力の紋様II", "剣士の紋様", "術士の紋様",
             "剣士の紋様II", "術士の紋様II", "弓士の紋様II"};
         String right_list[] = {"右腕", "生命の紋様", "魔法の紋様", "防御の紋様", "防御の紋様II", "耐火の紋様",
-            "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様"};
+            "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様","偉大なる者の遺物"};
         String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II"};
         String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン"
                 ,"力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
@@ -699,6 +699,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_morph_level.addItem("70");
         cb_morph_level.addItem("75");
         cb_morph_level.addItem("80");
+        cb_morph_level.addItem("82");
+        cb_morph_level.addItem("85");
 
         cb_morph_level.setBounds(420 + 280, 175 + 5 + 25, 80, 25);
         cb_morph_level.addActionListener(this);
@@ -1273,6 +1275,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[VIP] = new JCheckBox("VIP");
         cb_buff[VIP].setBounds(200 * row, 20 * col++, 150, 20);
+        
+        cb_buff[CLAY] = new JCheckBox("クレイ");
+        cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
+        
 
         for (JCheckBox buff : cb_buff) {
             if (buff != null) {

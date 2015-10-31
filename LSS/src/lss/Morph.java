@@ -2,7 +2,7 @@ package lss;
 
 public class Morph implements Common {
 
-    int data[][][] = new int[12][2][buki_type_list.length + 2];
+    int data[][][] = new int[14][2][buki_type_list.length + 2];
 
     {
         data[L1][PHI][W_D] = 75;
@@ -197,6 +197,38 @@ public class Morph implements Common {
         data[L80][PHI][MAIN] = 85;
         data[L80][PHI][SUB] = 75;
 
+        data[L82][PHI][W_D] = 134;
+        data[L82][PHI][W_LS] = 124;
+        data[L82][PHI][W_TS] = 106;
+        data[L82][PHI][W_A] = 106;
+        data[L82][PHI][W_L] = 114;
+        data[L82][PHI][W_CS] = 114;
+        data[L82][PHI][W_S] = 124;
+        data[L82][PHI][W_DB] = 124;
+        data[L82][PHI][W_C] = 124;
+        data[L82][PHI][W_K] = 124;
+        data[L82][PHI][W_DA] = 124;
+        data[L82][PHI][W_B] = 92;
+        data[L82][PHI][W_G] = 92;
+        data[L82][PHI][MAIN] = 85;
+        data[L82][PHI][SUB] = 75;
+
+        data[L85][PHI][W_D] = 138;
+        data[L85][PHI][W_LS] = 128;
+        data[L85][PHI][W_TS] = 110;
+        data[L85][PHI][W_A] = 110;
+        data[L85][PHI][W_L] = 118;
+        data[L85][PHI][W_CS] = 118;
+        data[L85][PHI][W_S] = 128;
+        data[L85][PHI][W_DB] = 128;
+        data[L85][PHI][W_C] = 128;
+        data[L85][PHI][W_K] = 128;
+        data[L85][PHI][W_DA] = 128;
+        data[L85][PHI][W_B] = 96;
+        data[L85][PHI][W_G] = 96;
+        data[L85][PHI][MAIN] = 85;
+        data[L85][PHI][SUB] = 75;
+
         data[L1][MAG][W_D] = 70;
         data[L1][MAG][W_LS] = 67;
         data[L1][MAG][W_TS] = 61;
@@ -389,6 +421,38 @@ public class Morph implements Common {
         data[L80][MAG][MAIN] = 90;
         data[L80][MAG][SUB] = 79;
 
+        data[L82][MAG][W_D] = 122;
+        data[L82][MAG][W_LS] = 112;
+        data[L82][MAG][W_TS] = 97;
+        data[L82][MAG][W_A] = 97;
+        data[L82][MAG][W_L] = 104;
+        data[L82][MAG][W_CS] = 104;
+        data[L82][MAG][W_S] = 112;
+        data[L82][MAG][W_DB] = 112;
+        data[L82][MAG][W_C] = 112;
+        data[L82][MAG][W_K] = 112;
+        data[L82][MAG][W_DA] = 112;
+        data[L82][MAG][W_B] = 0;
+        data[L82][MAG][W_G] = 0;
+        data[L82][MAG][MAIN] = 90;
+        data[L82][MAG][SUB] = 79;
+
+        data[L85][MAG][W_D] = 122;
+        data[L85][MAG][W_LS] = 112;
+        data[L85][MAG][W_TS] = 97;
+        data[L85][MAG][W_A] = 97;
+        data[L85][MAG][W_L] = 104;
+        data[L85][MAG][W_CS] = 104;
+        data[L85][MAG][W_S] = 112;
+        data[L85][MAG][W_DB] = 112;
+        data[L85][MAG][W_C] = 112;
+        data[L85][MAG][W_K] = 112;
+        data[L85][MAG][W_DA] = 112;
+        data[L85][MAG][W_B] = 0;
+        data[L85][MAG][W_G] = 0;
+        data[L85][MAG][MAIN] = 90;
+        data[L85][MAG][SUB] = 79;
+
     }
 
     int getSpeed(int level, int mode, int type) {
@@ -414,8 +478,12 @@ public class Morph implements Common {
             return data[L70][mode][type];
         } else if (level < 80) {
             return data[L75][mode][type];
-        } else {
+        } else if (level < 82) {
             return data[L80][mode][type];
+        } else if (level < 85) {
+            return data[L82][mode][type];
+        } else {
+            return data[L85][mode][type];
         }
     }
 }

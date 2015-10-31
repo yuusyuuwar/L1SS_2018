@@ -71,6 +71,8 @@ public interface Common {
     final int L70 = 9;
     final int L75 = 10;
     final int L80 = 11;
+    final int L82 = 12;
+    final int L85 = 13;
 
     final String[] eq_list = {"武器", "武器", "シールド", "ヘルム", "グローブ", "シャツ",
         "アーマー", "クローク", "ブーツ", "ゲートル", "ベルト", "イアリング", "イアリング", "アミュレット", "リング", "リング",
@@ -162,6 +164,7 @@ public interface Common {
     final int BS = 74;
     final int SEC = 75;
     final int F_G = 76;
+    final int CLAY = 77;
 
     final String[] ailment_list = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
     final int STONE = 0;

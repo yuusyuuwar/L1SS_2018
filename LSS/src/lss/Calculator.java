@@ -1178,6 +1178,19 @@ public class Calculator implements Common {
             buff.AC -= 8;
         }
 
+        if (ui.cb_buff[CLAY].isSelected()) {
+            buff.HP += 100;
+            buff.MP += 50;
+            buff.HPR += 3;
+            buff.MPR += 3;
+            buff.d_short += 1;
+            buff.d_long += 1;
+            buff.HIT_SHORT += 5;
+            buff.element_resist[EARTH] += 30;
+            buff.element_coefficient[EARTH] += (int) (30 / 3.125);
+            ui.cb_buff[UI.W_DW].setSelected(true);
+        }
+
         switch (ui.cb_pattern_l.getSelectedIndex()) {
             case 1:
                 buff.ST[STR]++;
@@ -1289,7 +1302,13 @@ public class Calculator implements Common {
                 buff.HP += 80;
                 buff.MP += 50;
                 break;
-
+            case 13:
+                buff.AC -= 3;
+                buff.d_short += 3;
+                buff.d_long += 3;
+                buff.SP += 3;
+                buff.MR += 10;
+                break;
         }
 
         //エリクサールーン
@@ -1305,49 +1324,49 @@ public class Calculator implements Common {
             switch (cls) {
                 case P:
                     buff.DR += 3;
-                    if(q) {
+                    if (q) {
                         buff.HIT_SHORT += 2;
                     }
                     break;
                 case K:
                     buff.HP += 50;
-                    if(q) {
+                    if (q) {
                         buff.d_short += 1;
                     }
                     break;
                 case E:
                     buff.MP += 50;
-                    if(q) {
+                    if (q) {
                         buff.d_long += 1;
                     }
                     break;
                 case W:
                     buff.MPR += 3;
-                    if(q) {
+                    if (q) {
                         buff.SP += 1;
                     }
                     break;
                 case D:
                     buff.AC -= 3;
-                    if(q) {
+                    if (q) {
                         buff.MP += 30;
                     }
                     break;
                 case R:
                     buff.HIT_SHORT += 3;
-                    if(q) {
+                    if (q) {
                         buff.DR += 1;
                     }
                     break;
                 case I:
                     buff.weight += 0.05;
-                    if(q) {
+                    if (q) {
                         buff.HP += 50;
                     }
                     break;
                 case F:
                     buff.MR += 5;
-                    if(q) {
+                    if (q) {
                         buff.HP += 50;
                     }
                     break;
@@ -2202,10 +2221,10 @@ public class Calculator implements Common {
                     + (1.0 - (db_rate + lv_bonus));
             dmg_small_ave *= 2.0 * (db_rate + lv_bonus)
                     + (1.0 - (db_rate + lv_bonus));
-            
-            dmg_undead *=  2.0 * (db_rate + lv_bonus)
+
+            dmg_undead *= 2.0 * (db_rate + lv_bonus)
                     + (1.0 - (db_rate + lv_bonus));
-            dmg_cursed *=  2.0 * (db_rate + lv_bonus)
+            dmg_cursed *= 2.0 * (db_rate + lv_bonus)
                     + (1.0 - (db_rate + lv_bonus));
         }
 
@@ -2258,7 +2277,7 @@ public class Calculator implements Common {
                     + (0.15 - (0.15 * 0.1)) * (dmg_small_ave + ex)
                     + (1.0 - 0.15) * dmg_small_ave;
             ex = 0.0;
-            
+
             dmg_undead *= (1 - 0.15 * 0.1) + 0.15 * 0.1 * 2.0;
             dmg_cursed *= (1 - 0.15 * 0.1) + 0.15 * 0.1 * 2.0;
         }
@@ -2281,12 +2300,12 @@ public class Calculator implements Common {
                         + 1.0 * (1.0 - bs_rate);
                 dmg_big_ave -= 0.25 * bs_rate;
                 dmg_small_ave -= 0.25 * bs_rate;
-                
+
                 dmg_undead *= 1.5 * bs_rate
                         + 1.0 * (1.0 - bs_rate);
                 dmg_cursed *= 1.5 * bs_rate
                         + 1.0 * (1.0 - bs_rate);
-                
+
                 dmg_undead -= 0.25 * bs_rate;
                 dmg_cursed -= 0.25 * bs_rate;
             }
@@ -2301,12 +2320,12 @@ public class Calculator implements Common {
 
                 dmg_big_ave -= 0.25 * ef_rate;
                 dmg_small_ave -= 0.25 * ef_rate;
-                
+
                 dmg_undead *= 1.5 * ef_rate
                         + 1.0 * (1.0 - ef_rate);
                 dmg_cursed *= 1.5 * ef_rate
                         + 1.0 * (1.0 - ef_rate);
-                
+
                 dmg_undead -= 0.25 * ef_rate;
                 dmg_cursed -= 0.25 * ef_rate;
             }
@@ -2321,13 +2340,12 @@ public class Calculator implements Common {
 
                 dmg_big_ave -= 0.25 * 0.3333;
                 dmg_small_ave -= 0.25 * 0.3333;
-                
-                
+
                 dmg_undead *= 1.5 * 0.3333
                         + 1.0 * (1.0 - 0.3333);
                 dmg_cursed *= 1.5 * 0.3333
                         + 1.0 * (1.0 - 0.3333);
-                
+
                 dmg_undead -= 0.25 * 0.3333;
                 dmg_cursed -= 0.25 * 0.3333;
             } else {
