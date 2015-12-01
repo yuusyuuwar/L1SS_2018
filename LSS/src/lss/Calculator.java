@@ -748,7 +748,7 @@ public class Calculator implements Common {
                     buff.MR += 5;
                     break;
                 case 5:
-                    buff.AC -= 3;
+                    buff.AC -= 5;
                     buff.MR += 10;
                     break;
                 case 6:
