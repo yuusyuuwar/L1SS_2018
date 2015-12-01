@@ -1752,10 +1752,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                 calc.buki2.checkEnchant();
 
                                 if (calc.buki2.element_enchant) {
-                                    cb_elem_1.setEnabled(true);
+                                    cb_elem_2.setEnabled(true);
                                 } else {
-                                    cb_elem_1.setSelectedIndex(0);
-                                    cb_elem_1.setEnabled(false);
+                                    cb_elem_2.setSelectedIndex(0);
+                                    cb_elem_2.setEnabled(false);
                                 }
                                 break;
                             default:

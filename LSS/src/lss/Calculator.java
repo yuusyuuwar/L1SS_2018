@@ -1365,35 +1365,34 @@ public class Calculator implements Common {
                     }
                     break;
                 case F:
-                    buff.MR += 5;
+                    buff.HP += 50;
                     if (q) {
-                        buff.HP += 50;
+                        buff.MR += 5;
                     }
                     break;
             }
-
-            switch (ui.cb_pattern_r2.getSelectedIndex()) {
-                case 1:
-                    buff.HPR += 2;
-                    break;
-                case 2:
-                    buff.MPR++;
-                    break;
-                case 3:
-                    buff.d_short++;
-                    buff.HIT_SHORT += 2;
-                    buff.MR += 5;
-                    break;
-                case 4:
-                    buff.d_long++;
-                    buff.HIT_LONG += 2;
-                    buff.MR += 5;
-                    break;
-                case 5:
-                    buff.SP++;
-                    buff.MR += 5;
-                    break;
-            }
+        }
+        switch (ui.cb_pattern_r2.getSelectedIndex()) {
+            case 1:
+                buff.HPR += 2;
+                break;
+            case 2:
+                buff.MPR++;
+                break;
+            case 3:
+                buff.d_short++;
+                buff.HIT_SHORT += 2;
+                buff.MR += 5;
+                break;
+            case 4:
+                buff.d_long++;
+                buff.HIT_LONG += 2;
+                buff.MR += 5;
+                break;
+            case 5:
+                buff.SP++;
+                buff.MR += 5;
+                break;
         }
 
         if (ui.cb_buff[B_STR].isSelected()) {
