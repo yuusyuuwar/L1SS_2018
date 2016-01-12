@@ -449,10 +449,11 @@ public class Calculator implements Common {
 //            }
         }
         ui.lev.repaint();
+
+        for (int i = 0; i < elem_list.length; i++) {
+            dmg_buki_ele1[i] = 0;
+        }
         if (ui.cb_elem_1.getSelectedIndex() > 0) {
-            for (int i = 0; i < elem_list.length; i++) {
-                dmg_buki_ele1[i] = 0;
-            }
 
             int x = (ui.cb_elem_1.getSelectedIndex() - 1) % 5;
             int e = (ui.cb_elem_1.getSelectedIndex() - 1) / 5;
