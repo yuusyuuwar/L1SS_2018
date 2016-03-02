@@ -27,6 +27,8 @@ public class Buff implements Common {
     int ER;
     double weight;
     String effect = "";
+    
+    int PVP;
 
     int[] ailment = new int[ailment_list.length];
 

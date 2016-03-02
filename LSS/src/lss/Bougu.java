@@ -207,9 +207,283 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
+        
+        if (name.contains("スナッパー")) {
+            if (name.contains("祝福された")) {
+                if (name.contains("勇士")) {
+                    switch (enchant) {
+                        case 8:
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                            op2.HIT_SHORT++;
+                            op2.HIT_LONG++;
+                        case 7:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                            op2.HIT_SHORT++;
+                            op2.HIT_LONG++;
+                            op2.AC++;
+                        case 6:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.HIT_SHORT++;
+                            op2.HIT_LONG++;
+                        case 5:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.HIT_SHORT++;
+                            op2.HIT_LONG++;
+                        case 4:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.HIT_SHORT++;
+                            op2.HIT_LONG++;
+                            op2.AC--;
+                        case 3:
+                            op2.HP += 10;
+                            op2.AC += 4;
+                            System.out.println("u");
+                    }
+                } else if (name.contains("知恵")) {
+                    switch (enchant) {
+                        case 8:
+                            op2.PVP++;
+                            op2.SP++;
+                            op2.HP += 10;
+                            op2.MP += 5;
+                        case 7:
+                            op2.PVP++;
+                            op2.SP++;
+                            op2.HP += 5;
+                            op2.MP += 5;
+                            op2.AC++;
+                        case 6:
+                            op2.HP += 5;
+                            op2.MP += 10;
+                        case 5:
+                            op2.HP += 5;
+                            op2.SP++;
+                        case 4:
+                            op2.HP += 5;
+                            op2.SP++;
+                            op2.AC++;
+                        case 3:
+                            op2.AC -= 3;
+                            op2.HP += 20;
+
+                    }
+                } else if (name.contains("体力")) {
+                    switch (enchant) {
+                        case 8:
+                            op2.HP += 10;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 7:
+                            op2.HP += 10;
+                            op2.AC--;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 6:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                        case 5:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 4:
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.HP += 5;
+                            op2.AC--;
+                        case 3:
+                            op2.HP += 30;
+                            op2.AC -= 3;
+                    }
+                } else if (name.contains("魔法抵抗")) {
+                    switch (enchant) {
+                        case 8:
+                            op2.MR++;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 7:
+                            op2.HP += 5;
+                            op2.MR++;
+                            op2.AC--;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 6:
+                            op2.HP += 5;
+                            op2.MR++;
+                            op2.d_long++;
+                            op2.d_short++;
+                        case 5:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 4:
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.HP += 5;
+                            op2.AC--;
+                        case 3:
+                            op2.HP += 30;
+                            op2.AC -= 3;
+                    }
+                } else if (name.contains("集中") || name.contains("マナ") || name.contains("回復")) {
+                    switch (enchant) {
+                        case 8:
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 7:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 6:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                        case 5:
+                            op2.HP += 5;
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.PVP++;
+                        case 4:
+                            op2.d_long++;
+                            op2.d_short++;
+                            op2.HP += 5;
+                            op2.AC--;
+                        case 3:
+                            op2.HP += 30;
+                            op2.AC -= 3;
+                    }
+                }
+            } else if (name.contains("勇士")) {
+                switch (enchant) {
+                    case 8:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.PVP++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 7:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.PVP++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 6:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 5:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.PVP++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 4:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 3:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 2:
+                        op2.AC--;
+                    case 1:
+                        op2.AC--;
+                }
+            } else if (name.contains("知恵")) {
+                switch (enchant) {
+                    case 8:
+                        op2.HP += 5;
+                        op2.PVP++;
+                        op2.SP++;
+                    case 7:
+                        op2.HP += 5;
+                        op2.PVP++;
+                    case 6:
+                        op2.HP += 5;
+                        op2.SP++;
+                    case 5:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 4:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 3:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 2:
+                        op2.AC--;
+                    case 1:
+                        op2.HP += 5;
+                }
+            } else {
+                switch (enchant) {
+                    case 8:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.PVP++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 7:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.PVP++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 6:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 5:
+                        op2.HP += 5;
+                        op2.d_long++;
+                        op2.d_short++;
+                        op2.PVP++;
+                        op2.HIT_SHORT++;
+                        op2.HIT_LONG++;
+                    case 4:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 3:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 2:
+                        op2.HP += 5;
+                        op2.AC--;
+                    case 1:
+                        op2.HP += 15;
+                }
+            }
+        }
+        
 
         if (name.equals("血戦のマント")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.AC = -2;
             }
@@ -228,7 +502,6 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("血戦のケープ")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.AC = -2;
             }
@@ -246,7 +519,6 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("血戦のクローク")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.AC = -2;
             }
@@ -265,21 +537,18 @@ public class Bougu implements Common {
         }
 
         if (name.equals("リッチローブ(KR)")) {
-            op2 = new Buff();
             if (enchant >= 3) {
                 op2.SP = enchant - 2;
             }
         }
 
         if (name.equals("憤怒のグローブ(KR)")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.HIT_SHORT = enchant - 4;
             }
         }
 
         if (name.equals("幸運のサークレット")) {
-            op2 = new Buff();
             if (enchant > 0) {
                 op2.SP = 1;
             }
@@ -288,9 +557,13 @@ public class Bougu implements Common {
         if (name.equals("大魔法使いの帽子")) {
             op2.MP = 10 * enchant;
         }
+        
+        
+        if (name.equals("シンセシスゲートル")) {
+            op2.HP = 5 * enchant;
+        }
 
         if (name.equals("血戦のグローブ")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.HP = 30;
             }
@@ -308,7 +581,6 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("血戦のブレイサー")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.HP = 30;
             }
@@ -326,7 +598,6 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("血戦のミトン")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.HP = 30;
             }
@@ -345,7 +616,6 @@ public class Bougu implements Common {
         }
 
         if (name.equals("血戦のグリーブ")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.HP = 25;
             }
@@ -363,7 +633,6 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("血戦のブーツ")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.HP = 25;
             }
@@ -381,7 +650,6 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("血戦のバスキン")) {
-            op2 = new Buff();
             if (enchant >= 5) {
                 op2.HP = 25;
             }
@@ -401,7 +669,6 @@ public class Bougu implements Common {
 
         if (type.equals("リング") || type.equals("アミュレット")
                 || type.equals("イアリング") || type.equals("ベルト")) {
-            op2 = new Buff();
 
             if (tokusei.equals("情熱")) {
                 switch (enchant) {
