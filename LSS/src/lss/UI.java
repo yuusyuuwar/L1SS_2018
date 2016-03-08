@@ -200,6 +200,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JButton bt_del_res;
     JLabel lab_default;
 
+    JTextField tf_e_hp;
+    JTextField tf_e_hpr;
+    JComboBox cb_e_type;
+    JComboBox cb_e_size;
+    JLabel lab_time;
+
     ZipFile eq_files;
     ArrayList<ZipEntry>[] eq_entrys = new ArrayList[eq_list.length];
 
@@ -621,10 +627,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "魅力の紋様", "腕力の紋様II", "機敏の紋様II", "知力の紋様II", "剣士の紋様", "術士の紋様",
             "剣士の紋様II", "術士の紋様II", "弓士の紋様II"};
         String right_list[] = {"右腕", "生命の紋様", "魔法の紋様", "防御の紋様", "防御の紋様II", "耐火の紋様",
-            "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様","偉大なる者の遺物"};
+            "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様", "偉大なる者の遺物"};
         String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II"};
-        String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン"
-                ,"力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
+        String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
         String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術士たちの護符"};
         cb_pattern_l = new WideComboBox(left_list);
         cb_pattern_r = new WideComboBox(right_list);
@@ -1275,10 +1280,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[VIP] = new JCheckBox("VIP");
         cb_buff[VIP].setBounds(200 * row, 20 * col++, 150, 20);
-        
+
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
-        
 
         for (JCheckBox buff : cb_buff) {
             if (buff != null) {
@@ -1433,6 +1437,51 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         } catch (FileNotFoundException ex) {
         } catch (IOException ex) {
         }
+
+        lab_tmp = new JLabel("簡易計算機", SwingConstants.CENTER);
+        lab_tmp.setBounds(420, 250, 200, 25);
+        panels[3].add(lab_tmp);
+
+        lab_tmp = new JLabel("HP", SwingConstants.CENTER);
+        lab_tmp.setBounds(420, 300, 100, 25);
+        panels[3].add(lab_tmp);
+        tf_e_hp = new JTextField("4000");
+        tf_e_hp.setBounds(520, 300, 100, 25);
+        tf_e_hp.addActionListener(this);
+        panels[3].add(tf_e_hp);
+
+        lab_tmp = new JLabel("HPR [/5sec]", SwingConstants.CENTER);
+        lab_tmp.setBounds(420, 325, 100, 25);
+        panels[3].add(lab_tmp);
+        tf_e_hpr = new JTextField("250");
+        tf_e_hpr.setBounds(520, 325, 100, 25);
+        tf_e_hpr.addActionListener(this);
+        panels[3].add(tf_e_hpr);
+
+        lab_tmp = new JLabel("タイプ", SwingConstants.CENTER);
+        lab_tmp.setBounds(420, 350, 100, 25);
+        panels[3].add(lab_tmp);
+        String[] type_list = {"通常", "悪魔", "不死"};
+        cb_e_type = new JComboBox(type_list);
+        cb_e_type.setBounds(520, 350, 100, 25);
+        cb_e_type.addActionListener(this);
+        panels[3].add(cb_e_type);
+
+        lab_tmp = new JLabel("サイズ", SwingConstants.CENTER);
+        lab_tmp.setBounds(420, 375, 100, 25);
+        panels[3].add(lab_tmp);
+        String[] size_list = {"小", "大"};
+        cb_e_size = new JComboBox(size_list);
+        cb_e_size.setBounds(520, 375, 100, 25);
+        cb_e_size.addActionListener(this);
+        panels[3].add(cb_e_size);
+
+        lab_tmp = new JLabel("戦闘時間(推定)", SwingConstants.CENTER);
+        lab_tmp.setBounds(420, 425, 100, 25);
+        panels[3].add(lab_tmp);
+        lab_time = new JLabel();
+        lab_time.setBounds(520, 425, 100, 25);
+        panels[3].add(lab_time);
 
 //        String[] kago_list = {"なし", "水竜", "ハロウィン"};
 //        cb_kago = new JComboBox(kago_list);
@@ -1925,6 +1974,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 cb_target_dg.setSelectedIndex(Integer.parseInt(reader.readLine()));
                 cb_sonsyou.setSelected(Boolean.parseBoolean(reader.readLine()));
                 cb_hittyuu.setSelected(Boolean.parseBoolean(reader.readLine()));
+                
+                tf_e_hp.setText(reader.readLine());
+                tf_e_hpr.setText(reader.readLine());
+                cb_e_type.setSelectedItem(reader.readLine());
+                cb_e_size.setSelectedItem(reader.readLine());
             }
         } catch (IOException ex) {
         }
@@ -1955,6 +2009,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     writer.write(Boolean.toString(cb_sonsyou.isSelected()));
                     writer.newLine();
                     writer.write(Boolean.toString(cb_hittyuu.isSelected()));
+                    writer.newLine();
+                    writer.write(tf_e_hp.getText());
+                    writer.newLine();
+                    writer.write(tf_e_hpr.getText());
+                    writer.newLine();
+                    writer.write((String)cb_e_type.getSelectedItem());
+                    writer.newLine();
+                    writer.write((String)cb_e_size.getSelectedItem());
                     writer.flush();
                 }
             } catch (IOException ex) {

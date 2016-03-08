@@ -2426,6 +2426,73 @@ public class Calculator implements Common {
                 + " / " + Integer.toString(
                         (int) ((dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week)));
 
+        switch ((String) ui.cb_e_size.getSelectedItem()) {
+            case "小":
+                double ATK = 0;
+                switch ((String) ui.cb_e_type.getSelectedItem()) {
+                    case "通常":
+                        ATK = dmg_small_ave * hit * speed + mag_dmg_min + week;
+                        break;
+                    case "悪魔":
+                        ATK = (dmg_small_ave + dmg_cursed) * hit * speed + mag_dmg_min + week;
+                        break;
+                    case "不死":
+                        ATK = (dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
+                }
+
+                double HP = Integer.parseInt(ui.tf_e_hp.getText());
+                double HPR = Integer.parseInt(ui.tf_e_hpr.getText());
+
+                ATK /= 60;
+                ATK *= 5;
+
+                double TIME = HP / (ATK - HPR);
+                TIME *= 5;
+
+                if (TIME < 0) {
+                    ui.lab_time.setText("INF");
+                } else {
+
+                    int MIN = (int) (TIME / 60);
+                    int SEC = (int) (TIME % 60);
+
+                    ui.lab_time.setText(Integer.toString((MIN)) + "分 " + Integer.toString((SEC)) + "秒");
+                }
+                break;
+            case "大":
+                ATK = 0;
+                switch ((String) ui.cb_e_type.getSelectedItem()) {
+                    case "通常":
+                        ATK = dmg_big_ave * hit * speed + mag_dmg_min + week;
+                        break;
+                    case "悪魔":
+                        ATK = (dmg_big_ave + dmg_cursed) * hit * speed + mag_dmg_min + week;
+                        break;
+                    case "不死":
+                        ATK = (dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
+                }
+                
+                HP = Integer.parseInt(ui.tf_e_hp.getText());
+                HPR = Integer.parseInt(ui.tf_e_hpr.getText());
+
+                ATK /= 60;
+                ATK *= 5;
+
+                TIME = HP / (ATK - HPR);
+                TIME *= 5;
+
+                if (TIME < 0) {
+                    ui.lab_time.setText("INF");
+                } else {
+
+                    int MIN = (int) (TIME / 60);
+                    int SEC = (int) (TIME % 60);
+
+                    ui.lab_time.setText(Integer.toString((MIN)) + "分 " + Integer.toString((SEC)) + "秒");
+                }
+                break;
+        }
+
         switch (buki.magic_name) {
             case "":
                 ui.lab_mag_info1.setText("魔法：なし");
