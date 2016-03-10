@@ -2007,8 +2007,8 @@ public class Calculator implements Common {
         }
 
         if (buki.type.equals("デュアルブレード")) {
-            if (buki.name.equals("轟音のデュアルブレード(KR)")) {
-//                        ui.sp_sub.setText("+" + buki.enchant + "%");
+            if (buki.name.equals("轟音のデュアルブレード(KR)") && ui.cb_mag_auto.isSelected()) {
+                ui.tf_buki_sp_rate.setText(Double.toString(((int)((wh + buki.enchant * 0.01)*100))/100.0));
                 dmg_big_ave *= 2.0 * (wh + buki.enchant * 0.01)
                         + (1.0 - (wh + buki.enchant * 0.01));
                 dmg_small_ave *= 2.0 * (wh + buki.enchant * 0.01)
@@ -2471,7 +2471,7 @@ public class Calculator implements Common {
                     case "不死":
                         ATK = (dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
                 }
-                
+
                 HP = Integer.parseInt(ui.tf_e_hp.getText());
                 HPR = Integer.parseInt(ui.tf_e_hpr.getText());
 

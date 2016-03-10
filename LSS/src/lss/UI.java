@@ -1371,6 +1371,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         String dg_list[] = {"+50", "0", "-50"};
         cb_target_dg = new JComboBox(dg_list);
         cb_target_dg.setSelectedIndex(1);
+        cb_target_dg.addActionListener(this);
 
         cb_target_dg.setBounds(100, 250, 100, 25);
         panels[3].add(cb_target_dg);
@@ -1428,15 +1429,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[3].add(lab_default);
 
         refresh();
-        try {
-
-            try (BufferedReader br = new BufferedReader(new FileReader("./res/default"))) {
-                lab_default.setText(br.readLine());
-                pre_load_res();
-            }
-        } catch (FileNotFoundException ex) {
-        } catch (IOException ex) {
-        }
 
         lab_tmp = new JLabel("簡易計算機", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 250, 200, 25);
@@ -1482,6 +1474,16 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_time = new JLabel();
         lab_time.setBounds(520, 425, 100, 25);
         panels[3].add(lab_time);
+        
+        
+        try {
+            try (BufferedReader br = new BufferedReader(new FileReader("./res/default"))) {
+                lab_default.setText(br.readLine());
+                pre_load_res();
+            }
+        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
+        }
 
 //        String[] kago_list = {"なし", "水竜", "ハロウィン"};
 //        cb_kago = new JComboBox(kago_list);
@@ -1530,7 +1532,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        
         if (e.getActionCommand().equals("change_default")) {
             try {
                 lab_default.setText((String) cb_res.getSelectedItem());
@@ -1942,6 +1944,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     }
 
     final void pre_load_res() {
+        
+        
         try {
             File res = new File("./res/" + lab_default.getText() + ".txt");
             try (BufferedReader reader = new BufferedReader(new FileReader(res))) {
@@ -1955,8 +1959,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 cb_target_dg.setSelectedIndex(Integer.parseInt(reader.readLine()));
                 cb_sonsyou.setSelected(Boolean.parseBoolean(reader.readLine()));
                 cb_hittyuu.setSelected(Boolean.parseBoolean(reader.readLine()));
+                
+                tf_e_hp.setText(reader.readLine());
+                tf_e_hpr.setText(reader.readLine());
+                cb_e_type.setSelectedItem(reader.readLine());
+                cb_e_size.setSelectedItem(reader.readLine());
             }
         } catch (IOException ex) {
+        } catch (Exception ex) {
+            System.out.println(ex);
         }
     }
 
