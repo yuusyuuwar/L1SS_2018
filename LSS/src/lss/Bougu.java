@@ -207,7 +207,13 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
-        
+
+        if (name.equals("輝く魔力のグローブ")) {
+            if (enchant > 4) {
+                op2.c_weight += 60 * (enchant - 4);
+            }
+        }
+
         if (name.contains("スナッパー")) {
             if (name.contains("祝福された")) {
                 if (name.contains("勇士")) {
@@ -481,7 +487,6 @@ public class Bougu implements Common {
                 }
             }
         }
-        
 
         if (name.equals("血戦のマント")) {
             if (enchant >= 5) {
@@ -557,8 +562,7 @@ public class Bougu implements Common {
         if (name.equals("大魔法使いの帽子")) {
             op2.MP = 10 * enchant;
         }
-        
-        
+
         if (name.equals("シンセシスゲートル")) {
             op2.HP = 5 * enchant;
         }

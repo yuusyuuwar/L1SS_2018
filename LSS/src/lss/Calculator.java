@@ -619,7 +619,7 @@ public class Calculator implements Common {
                     buff.effect += "特殊攻撃(クラスタシアン/ウェアウルフ),";
                     break;
                 case 1:
-                    buff.weight += 0.2;
+                    buff.r_weight += 0.2;
                     break;
                 case 2:
                     buff.effect += "MP回復 +15,";
@@ -655,51 +655,51 @@ public class Calculator implements Common {
                     buff.MPR += 4;
                     break;
                 case 17:// ブルート
-                    buff.weight += 0.02;
+                    buff.r_weight += 0.02;
                 case 16:
-                    buff.weight += 0.02;
+                    buff.r_weight += 0.02;
                 case 15:
-                    buff.weight += 0.02;
+                    buff.r_weight += 0.02;
                     buff.d_short++;
                 case 14:
-                    buff.weight += 0.02;
+                    buff.r_weight += 0.02;
                 case 13:
-                    buff.weight += 0.02;
+                    buff.r_weight += 0.02;
                     buff.HPR += 15;
                 case 12:
-                    buff.weight += 0.10;
+                    buff.r_weight += 0.10;
                     ui.cb_buff[ACC1].setSelected(true);
                     break;
                 case 23:// ジャイアント
-                    buff.weight += 0.10;
+                    buff.r_weight += 0.10;
                     buff.AC--;
                     buff.MR += 5;
                     buff.effect += "ダメージ軽減 +20,ヴァンパイアリックタッチ,";
                     break;
                 case 22:
-                    buff.weight += 0.10;
+                    buff.r_weight += 0.10;
                     buff.AC--;
                     buff.MR += 5;
                     buff.effect += "ダメージ軽減 +17,";
                     break;
                 case 21:
-                    buff.weight += 0.10;
+                    buff.r_weight += 0.10;
                     buff.AC--;
                     buff.MR += 5;
                     buff.effect += "ダメージ軽減 +14,";
                     break;
                 case 20:
-                    buff.weight += 0.10;
+                    buff.r_weight += 0.10;
                     buff.AC--;
                     buff.effect += "ダメージ軽減 +11,";
                     break;
                 case 19:
-                    buff.weight += 0.10;
+                    buff.r_weight += 0.10;
                     buff.AC--;
                     buff.effect += "ダメージ軽減 +8,";
                     break;
                 case 18:
-                    buff.weight += 0.10;
+                    buff.r_weight += 0.10;
                     buff.effect += "ダメージ軽減 +5,";
                     break;
                 case 24:
@@ -1360,7 +1360,7 @@ public class Calculator implements Common {
                     }
                     break;
                 case I:
-                    buff.weight += 0.05;
+                    buff.r_weight += 0.05;
                     if (q) {
                         buff.HP += 50;
                     }
@@ -1577,7 +1577,7 @@ public class Calculator implements Common {
             buff.MP += 120;
             buff.MR += 10;
             buff.AC -= 5;
-            buff.weight += 0.1;
+            buff.r_weight += 0.1;
         }
 
         if (ui.cb_buff[SEC].isSelected()) {
@@ -2600,19 +2600,30 @@ public class Calculator implements Common {
 
         int con = _ST[BASE][CON] + _ST[REM][CON] + _ST[LEVEL][CON]
                 + _ST[ELIXIR][CON] + _ST[ENCHANT][CON];
-        double equip = 0;
+        double r_eq = 0;
 
         for (Bougu bougu1 : bougu) {
-            equip += bougu1.op.weight;
+            r_eq += bougu1.op.r_weight;
+            r_eq += bougu1.op2.r_weight;
         }
-        equip += buff.weight;
+        r_eq += buff.r_weight;
 
         int weight = (int) ((str + con) / 2) * 100 + 1000;
 
         ui.pure_status_bonus[1][3].setText(Integer.toString(weight));
         ui.pure_status_bonus[1][13].setText(Integer.toString(weight));
 
-        weight *= 1 + equip;
+        weight *= 1 + r_eq;
+        
+        int c_eq = 0;
+        
+        for (Bougu bougu1 : bougu) {
+            c_eq += bougu1.op.c_weight;
+            c_eq += bougu1.op2.c_weight;
+        }
+        
+        weight += c_eq;
+        
         if (ui.cb_buff[I_RW].isSelected()) {
             ui.cb_buff[W_DW].setSelected(false);
             weight += 180;

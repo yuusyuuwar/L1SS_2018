@@ -25,9 +25,10 @@ public class Buff implements Common {
     int DR;
     int MR;
     int ER;
-    double weight;
+    double r_weight;
+    int c_weight;
     String effect = "";
-    
+
     int PVP;
 
     int[] ailment = new int[ailment_list.length];
@@ -106,7 +107,10 @@ public class Buff implements Common {
                 MR = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("d—ÊŒyŒ¸=")) {
-                weight = Double.parseDouble(line.split("=")[1]);
+                r_weight = Double.parseDouble(line.split("=")[1]);
+            }
+            if (line.startsWith("Šd—Ê=")) {
+                c_weight = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("“Áê=")) {
                 effect = line.split("=")[1];
