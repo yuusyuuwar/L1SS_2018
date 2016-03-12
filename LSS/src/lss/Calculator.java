@@ -101,13 +101,12 @@ public class Calculator implements Common {
     int dg;
     double enemy_hit_rate;
     int cbdmg;
-    int hp;
-    int mp;
+    double hp;
+    double mp;
     int mr;
     int cls = P;
 
     int res_ele[] = new int[elem_list.length];
-    int res_ele_c[] = new int[elem_list.length];
     int res_ail[] = new int[ailment_list.length];
 
     DecimalFormat format_dmg = new DecimalFormat("#0.0");
@@ -587,7 +586,6 @@ public class Calculator implements Common {
             buff.MPR += 4;
             buff.MR += 15;
             buff.element_resist[WATER] += 20;
-            buff.element_coefficient[WATER] += (int) (20 / 3.125);
         }
         if (set8 == 3) {
             buff.AC -= 5;
@@ -596,7 +594,6 @@ public class Calculator implements Common {
             buff.HP += 100;
             buff.MPR += 4;
             buff.element_resist[WATER] += 20;
-            buff.element_coefficient[WATER] += (int) (20 / 3.125);
         }
         if (set9 == 3) {
             buff.HPR += 4;
@@ -870,13 +867,9 @@ public class Calculator implements Common {
                     buff.HPR += 2;
                     buff.MR += 10;
                     buff.element_resist[FIRE] += 10;
-                    buff.element_coefficient[FIRE] += (int) (10 / 3.125);
                     buff.element_resist[WATER] += 10;
-                    buff.element_coefficient[WATER] += (int) (10 / 3.125);
                     buff.element_resist[WIND] += 10;
-                    buff.element_coefficient[WIND] += (int) (10 / 3.125);
                     buff.element_resist[EARTH] += 10;
-                    buff.element_coefficient[EARTH] += (int) (10 / 3.125);
                     break;
                 case 1:
                     buff.DR += 2;
@@ -886,13 +879,9 @@ public class Calculator implements Common {
                     buff.MPR += 2;
                     buff.MR += 10;
                     buff.element_resist[FIRE] += 10;
-                    buff.element_coefficient[FIRE] += (int) (10 / 3.125);
                     buff.element_resist[WATER] += 10;
-                    buff.element_coefficient[WATER] += (int) (10 / 3.125);
                     buff.element_resist[WIND] += 10;
-                    buff.element_coefficient[WIND] += (int) (10 / 3.125);
                     buff.element_resist[EARTH] += 10;
-                    buff.element_coefficient[EARTH] += (int) (10 / 3.125);
                     break;
                 case 0:
                     buff.DR += 2;
@@ -902,13 +891,9 @@ public class Calculator implements Common {
                     buff.MPR += 2;
                     buff.MR += 10;
                     buff.element_resist[FIRE] += 10;
-                    buff.element_coefficient[FIRE] += (int) (10 / 3.125);
                     buff.element_resist[WATER] += 10;
-                    buff.element_coefficient[WATER] += (int) (10 / 3.125);
                     buff.element_resist[WIND] += 10;
-                    buff.element_coefficient[WIND] += (int) (10 / 3.125);
                     buff.element_resist[EARTH] += 10;
-                    buff.element_coefficient[EARTH] += (int) (10 / 3.125);
                     break;
 
             }
@@ -1029,13 +1014,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[E_RE].isSelected()) {
             if (cls == E) {
                 buff.element_resist[FIRE] += 10;
-                buff.element_coefficient[FIRE] += (int) (10 / 3.125);
                 buff.element_resist[WATER] += 10;
-                buff.element_coefficient[WATER] += (int) (10 / 3.125);
                 buff.element_resist[WIND] += 10;
-                buff.element_coefficient[WIND] += (int) (10 / 3.125);
                 buff.element_resist[EARTH] += 10;
-                buff.element_coefficient[EARTH] += (int) (10 / 3.125);
             } else {
                 ui.cb_buff[E_RE].setSelected(false);
             }
@@ -1188,7 +1169,6 @@ public class Calculator implements Common {
             buff.d_long += 1;
             buff.HIT_SHORT += 5;
             buff.element_resist[EARTH] += 30;
-            buff.element_coefficient[EARTH] += (int) (30 / 3.125);
             ui.cb_buff[UI.W_DW].setSelected(true);
         }
 
@@ -1266,29 +1246,21 @@ public class Calculator implements Common {
                 break;
             case 5:
                 buff.element_resist[FIRE] += 30;
-                buff.element_coefficient[FIRE] += (int) (30 / 3.125);
                 break;
             case 6:
                 buff.element_resist[WATER] += 30;
-                buff.element_coefficient[WATER] += (int) (30 / 3.125);
                 break;
             case 7:
                 buff.element_resist[WIND] += 30;
-                buff.element_coefficient[WIND] += (int) (30 / 3.125);
                 break;
             case 8:
                 buff.element_resist[EARTH] += 30;
-                buff.element_coefficient[EARTH] += (int) (30 / 3.125);
                 break;
             case 9:
                 buff.element_resist[FIRE] += 30;
-                buff.element_coefficient[FIRE] += (int) (30 / 3.125);
                 buff.element_resist[WATER] += 30;
-                buff.element_coefficient[WATER] += (int) (30 / 3.125);
                 buff.element_resist[WIND] += 30;
-                buff.element_coefficient[WIND] += (int) (30 / 3.125);
                 buff.element_resist[EARTH] += 30;
-                buff.element_coefficient[EARTH] += (int) (30 / 3.125);
                 break;
             case 10:
                 buff.AC -= 9;
@@ -1931,9 +1903,16 @@ public class Calculator implements Common {
                     if (ui.cb_sonsyou.isSelected() && !buki.arrow_name.equals("çKâ^ÇÃÉAÉçÅ[")) {
                         dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.d_long + buki.enchant;
                         dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.d_long + buki.enchant;
+                        
+                        dmg_big_max = buki.arrow_big / 2 + buki.op.d_long + buki.enchant;
+                        dmg_small_max = buki.arrow_small / 2 + buki.op.d_long + buki.enchant;
+                        
                     } else {
                         dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.d_long + buki.enchant;
                         dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.d_long + buki.enchant;
+                        
+                        dmg_big_max = buki.arrow_big + buki.op.d_long + buki.enchant;
+                        dmg_small_max = buki.arrow_small  + buki.op.d_long + buki.enchant;
                     }
                     if (buki.arrow_material.equals("ÉVÉãÉoÅ[")
                             || buki.arrow_material.equals("É~ÉXÉäÉã")
@@ -2440,13 +2419,13 @@ public class Calculator implements Common {
                         ATK = (dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
                 }
 
-                double HP = Integer.parseInt(ui.tf_e_hp.getText());
-                double HPR = Integer.parseInt(ui.tf_e_hpr.getText());
+                double E_HP = Integer.parseInt(ui.tf_e_hp.getText());
+                double E_HPR = Integer.parseInt(ui.tf_e_hpr.getText());
 
                 ATK /= 60;
                 ATK *= 5;
 
-                double TIME = HP / (ATK - HPR);
+                double TIME = E_HP / (ATK - E_HPR);
                 TIME *= 5;
 
                 if (TIME < 0) {
@@ -2454,9 +2433,9 @@ public class Calculator implements Common {
                 } else {
 
                     int MIN = (int) (TIME / 60);
-                    int SEC = (int) (TIME % 60);
+                    int S = (int) (TIME % 60);
 
-                    ui.lab_time.setText(Integer.toString((MIN)) + "ï™ " + Integer.toString((SEC)) + "ïb");
+                    ui.lab_time.setText(Integer.toString((MIN)) + "ï™ " + Integer.toString((S)) + "ïb");
                 }
                 break;
             case "ëÂ":
@@ -2472,13 +2451,13 @@ public class Calculator implements Common {
                         ATK = (dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
                 }
 
-                HP = Integer.parseInt(ui.tf_e_hp.getText());
-                HPR = Integer.parseInt(ui.tf_e_hpr.getText());
+                E_HP = Integer.parseInt(ui.tf_e_hp.getText());
+                E_HPR = Integer.parseInt(ui.tf_e_hpr.getText());
 
                 ATK /= 60;
                 ATK *= 5;
 
-                TIME = HP / (ATK - HPR);
+                TIME = E_HP / (ATK - E_HPR);
                 TIME *= 5;
 
                 if (TIME < 0) {
@@ -2486,9 +2465,9 @@ public class Calculator implements Common {
                 } else {
 
                     int MIN = (int) (TIME / 60);
-                    int SEC = (int) (TIME % 60);
+                    int S = (int) (TIME % 60);
 
-                    ui.lab_time.setText(Integer.toString((MIN)) + "ï™ " + Integer.toString((SEC)) + "ïb");
+                    ui.lab_time.setText(Integer.toString((MIN)) + "ï™ " + Integer.toString((S)) + "ïb");
                 }
                 break;
         }
@@ -2665,17 +2644,13 @@ public class Calculator implements Common {
 
         calcHPMP();
 
-        for (int i = 0; i < elem_list.length; i++) {
-            res_ele[i] = buff.element_resist[i];
-            res_ele_c[i] = buff.element_coefficient[i];
-        }
+        System.arraycopy(buff.element_resist, 0, res_ele, 0, elem_list.length);
         System.arraycopy(buff.ailment, 0, res_ail, 0, ailment_list.length);
 
         for (Bougu bougu1 : bougu) {
 
             for (int i = 0; i < elem_list.length; i++) {
                 res_ele[i] += bougu1.op.element_resist[i] + bougu1.op2.element_resist[i];
-                res_ele_c[i] += (int) ((bougu1.op.element_resist[i] + bougu1.op2.element_resist[i]) / 3.125);
             }
             for (int i = 0; i < ailment_list.length; i++) {
                 res_ail[i] += bougu1.op.ailment[i];
@@ -2686,10 +2661,7 @@ public class Calculator implements Common {
             if (res_ele[i] > 100) {
                 res_ele[i] = 100;
             }
-            if (res_ele_c[i] > 32) {
-                res_ele_c[i] = 32;
-            }
-            ui.lab_elem[i].setText(elem_list[i] + " " + res_ele[i] + " (" + res_ele_c[i] + ")");
+            ui.lab_elem[i].setText(elem_list[i] + " " + res_ele[i]);
         }
         for (int i = 0; i < ailment_list.length; i++) {
             ui.lab_ailment[i].setText(ailment_list[i] + " " + res_ail[i]);
@@ -3004,8 +2976,8 @@ public class Calculator implements Common {
         hp = (int) (hp + eq_hp + hpp);
         mp = (int) (mp + eq_mp + mpp);
 
-        ui.lab_hp.setText(Integer.toString(hp));
-        ui.lab_mp.setText(Integer.toString(mp));
+        ui.lab_hp.setText(Integer.toString((int)hp));
+        ui.lab_mp.setText(Integer.toString((int)mp));
 
     }
 

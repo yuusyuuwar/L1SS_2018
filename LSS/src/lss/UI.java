@@ -1312,8 +1312,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             s_target_res[i].setBounds(100, 25 + i * 25, 100, 25);
             s_target_res[i].addChangeListener(this);
             panels[3].add(s_target_res[i]);
-            lab_target_resist[i] = new JLabel("0");
-            lab_target_resist[i].setBounds(220, 25 + i * 25, 100, 25);
+            lab_target_resist[i] = new JLabel("0", SwingConstants.CENTER);
+            lab_target_resist[i].setBounds(200, 25 + i * 25, 100, 25);
             panels[3].add(lab_target_resist[i]);
         }
 

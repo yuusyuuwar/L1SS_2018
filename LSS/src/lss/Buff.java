@@ -8,7 +8,6 @@ public class Buff implements Common {
     int AC;
     int ST[] = new int[st_list.length];
     int[] element_resist = new int[elem_list.length];
-    int element_coefficient[] = new int[elem_list.length];
     int element_dmg_c[] = new int[elem_list.length];
     int element_dmg_f[] = new int[elem_list.length];
     int HP;
