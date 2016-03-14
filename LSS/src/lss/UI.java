@@ -1089,10 +1089,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_WS].setToolTipText("遠距離命中+6");
         cb_buff[E_SE] = new JCheckBox("ストームアイ");
         cb_buff[E_SE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SE].setToolTipText("風属性追加打撃+4 遠距離命中+4");
+        cb_buff[E_SE].setToolTipText("風属性追加打撃+3 遠距離命中+2");
         cb_buff[E_SS] = new JCheckBox("ストームショット");
         cb_buff[E_SS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SS].setToolTipText("風属性追加打撃+6 遠距離命中+");
+        cb_buff[E_SS].setToolTipText("風属性追加打撃+6 遠距離命中+3");
 
         col++;
 

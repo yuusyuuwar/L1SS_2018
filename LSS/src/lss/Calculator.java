@@ -109,6 +109,8 @@ public class Calculator implements Common {
     int res_ele[] = new int[elem_list.length];
     int res_ail[] = new int[ailment_list.length];
 
+    double buff_mp;
+
     DecimalFormat format_dmg = new DecimalFormat("#0.0");
     DecimalFormat format_rate = new DecimalFormat("#0.0%");
     DecimalFormat format_rate_2 = new DecimalFormat("#0.00");
@@ -404,6 +406,8 @@ public class Calculator implements Common {
 
         level = ui.cb_lev.getSelectedIndex() + 1;
         ui.lev.level = level;
+
+        buff_mp = 0;
 
         for (int i = 0; i < 6; i++) {
             _ST[LEVEL][i] = 0;
@@ -974,15 +978,16 @@ public class Calculator implements Common {
         if (ui.cb_buff[K_RA].isSelected()) {
             if (level >= 50 && cls == K) {
                 buff.DR += (level - 50) / 5 + 1;
+                buff_mp += 7 / 3.0;
             } else {
                 ui.cb_buff[K_RA].setSelected(false);
             }
         }
 
         if (ui.cb_buff[K_SC].isSelected()) {
-            if (level >= 50 && cls == K
-                    && bougu[0].type.equals("シールド")) {
+            if (level >= 50 && cls == K) {
                 buff.ER += 15;
+                buff_mp += 10 / 3.0;
             } else {
                 ui.cb_buff[K_SC].setSelected(false);
             }
@@ -990,6 +995,7 @@ public class Calculator implements Common {
         if (ui.cb_buff[K_CB].isSelected()) {
             if (level >= 50 && cls == K
                     && buki.type.equals("両手剣")) {
+                buff_mp += 10 / 1.0;
                 // CB効果未実装
             } else {
                 ui.cb_buff[K_CB].setSelected(false);
@@ -998,6 +1004,7 @@ public class Calculator implements Common {
         if (ui.cb_buff[K_BA].isSelected()) {
             if (level >= 60 && cls == K) {
                 buff.HIT_SHORT += 6;
+                buff_mp += 10 / 1.0;
             } else {
                 ui.cb_buff[K_BA].setSelected(false);
             }
@@ -1006,6 +1013,8 @@ public class Calculator implements Common {
         if (ui.cb_buff[E_RM].isSelected()) {
             if (cls == E) {
                 buff.MR += 10;
+                buff_mp += 5 / 10.0;
+                System.out.println(buff_mp);
             } else {
                 ui.cb_buff[E_RM].setSelected(false);
             }
@@ -1017,6 +1026,7 @@ public class Calculator implements Common {
                 buff.element_resist[WATER] += 10;
                 buff.element_resist[WIND] += 10;
                 buff.element_resist[EARTH] += 10;
+                buff_mp += 10 / 10.0;
             } else {
                 ui.cb_buff[E_RE].setSelected(false);
             }
@@ -1025,6 +1035,7 @@ public class Calculator implements Common {
         if (ui.cb_buff[E_CM].isSelected()) {
             if (cls == E) {
                 buff.ST[WIS] += 3;
+                buff_mp += 10 / 10.0;
             } else {
                 ui.cb_buff[E_CM].setSelected(false);
             }
@@ -1033,6 +1044,7 @@ public class Calculator implements Common {
             if (cls == E) {
                 buff.element_dmg_c[FIRE] += 6;
                 buff.HIT_SHORT += 6;
+                buff_mp += 30 / 16.0;
             } else {
                 ui.cb_buff[E_BW].setSelected(false);
             }
@@ -1040,6 +1052,7 @@ public class Calculator implements Common {
         if (ui.cb_buff[E_FW].isSelected()) {
             if (ui.cb_buff[E_BW].isSelected()) {
                 ui.cb_buff[E_FW].setSelected(false);
+                buff_mp += 15 / 16.0;
             } else {
                 buff.element_dmg_c[FIRE] += 4;
             }
@@ -1053,10 +1066,12 @@ public class Calculator implements Common {
                     buff.HPR += 15;
                 }
             }
+            buff_mp += 20 / 5.33;
         }
         if (ui.cb_buff[D_DE].isSelected()) {
             if (cls == D) {
                 buff.ER += 12;
+                buff_mp += 15 / 0.5;
             } else {
                 ui.cb_buff[D_DE].setSelected(false);
             }
@@ -1064,6 +1079,7 @@ public class Calculator implements Common {
         if (ui.cb_buff[D_SA].isSelected()) {
             if (cls == D) {
                 buff.MR += 5;
+                buff_mp *= 12 / 16.0;
             } else {
                 ui.cb_buff[D_SA].setSelected(false);
             }
@@ -1073,11 +1089,13 @@ public class Calculator implements Common {
                 ui.cb_buff[E_AP].setSelected(false);
             } else {
                 buff.ER += 5;
+                buff_mp += 30 / 16.0;
             }
         }
         if (ui.cb_buff[E_SS].isSelected()) {
             buff.element_dmg_f[WIND] += 6;
             buff.HIT_LONG += 3;
+            buff_mp += 30 / 16.0;
         }
         if (ui.cb_buff[E_SE].isSelected()) {
             if (ui.cb_buff[E_SS].isSelected()) {
@@ -1085,6 +1103,7 @@ public class Calculator implements Common {
             } else {
                 buff.element_dmg_f[WIND] += 3;
                 buff.HIT_LONG += 2;
+                buff_mp += 40 / 16.0;
             }
         }
         if (ui.cb_buff[E_WS].isSelected()) {
@@ -1093,10 +1112,12 @@ public class Calculator implements Common {
                 ui.cb_buff[E_WS].setSelected(false);
             } else {
                 buff.HIT_LONG += 6;
+                buff_mp += 15 / 16.0;
             }
         }
         if (ui.cb_buff[E_EG].isSelected()) {
             buff.DR += 2;
+            buff_mp += 30 / 10.0;
         }
         if (ui.cb_buff[W_BSK].isSelected()) {
             buff.d_short += 5;
@@ -1903,16 +1924,16 @@ public class Calculator implements Common {
                     if (ui.cb_sonsyou.isSelected() && !buki.arrow_name.equals("幸運のアロー")) {
                         dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.d_long + buki.enchant;
                         dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.d_long + buki.enchant;
-                        
+
                         dmg_big_max = buki.arrow_big / 2 + buki.op.d_long + buki.enchant;
                         dmg_small_max = buki.arrow_small / 2 + buki.op.d_long + buki.enchant;
-                        
+
                     } else {
                         dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.d_long + buki.enchant;
                         dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.d_long + buki.enchant;
-                        
+
                         dmg_big_max = buki.arrow_big + buki.op.d_long + buki.enchant;
-                        dmg_small_max = buki.arrow_small  + buki.op.d_long + buki.enchant;
+                        dmg_small_max = buki.arrow_small + buki.op.d_long + buki.enchant;
                     }
                     if (buki.arrow_material.equals("シルバー")
                             || buki.arrow_material.equals("ミスリル")
@@ -1987,7 +2008,7 @@ public class Calculator implements Common {
 
         if (buki.type.equals("デュアルブレード")) {
             if (buki.name.equals("轟音のデュアルブレード(KR)") && ui.cb_mag_auto.isSelected()) {
-                ui.tf_buki_sp_rate.setText(Double.toString(((int)((wh + buki.enchant * 0.01)*100))/100.0));
+                ui.tf_buki_sp_rate.setText(Double.toString(((int) ((wh + buki.enchant * 0.01) * 100)) / 100.0));
                 dmg_big_ave *= 2.0 * (wh + buki.enchant * 0.01)
                         + (1.0 - (wh + buki.enchant * 0.01));
                 dmg_small_ave *= 2.0 * (wh + buki.enchant * 0.01)
@@ -2053,13 +2074,13 @@ public class Calculator implements Common {
         switch (buki.type) {
             case "ボウ":
             case "ガントレット":
-                hit = HitRateCalculator.calc(!(ui.cb_mode_pc.getSelectedIndex() == 0), hit_long, 10 - ui.cb_target_ac.getSelectedIndex(), ui.cb_target_dg.getSelectedIndex() == 0, ui.cb_target_dg.getSelectedIndex() == 2);
+                hit = HitRateCalculator.calc(ui.cb_mode_pc.getSelectedIndex() == 0, hit_long, 10 - ui.cb_target_ac.getSelectedIndex(), ui.cb_target_dg.getSelectedIndex() == 0, ui.cb_target_dg.getSelectedIndex() == 2);
                 break;
             case "キーリンク":
                 hit = 1.0;
                 break;
             default:
-                hit = HitRateCalculator.calc(!(ui.cb_mode_pc.getSelectedIndex() == 0), hit_short, 10 - ui.cb_target_ac.getSelectedIndex(), ui.cb_target_dg.getSelectedIndex() == 0, ui.cb_target_dg.getSelectedIndex() == 2);
+                hit = HitRateCalculator.calc(ui.cb_mode_pc.getSelectedIndex() == 0, hit_short, 10 - ui.cb_target_ac.getSelectedIndex(), ui.cb_target_dg.getSelectedIndex() == 0, ui.cb_target_dg.getSelectedIndex() == 2);
                 break;
         }
 
@@ -2593,16 +2614,16 @@ public class Calculator implements Common {
         ui.pure_status_bonus[1][13].setText(Integer.toString(weight));
 
         weight *= 1 + r_eq;
-        
+
         int c_eq = 0;
-        
+
         for (Bougu bougu1 : bougu) {
             c_eq += bougu1.op.c_weight;
             c_eq += bougu1.op2.c_weight;
         }
-        
+
         weight += c_eq;
-        
+
         if (ui.cb_buff[I_RW].isSelected()) {
             ui.cb_buff[W_DW].setSelected(false);
             weight += 180;
@@ -2976,8 +2997,8 @@ public class Calculator implements Common {
         hp = (int) (hp + eq_hp + hpp);
         mp = (int) (mp + eq_mp + mpp);
 
-        ui.lab_hp.setText(Integer.toString((int)hp));
-        ui.lab_mp.setText(Integer.toString((int)mp));
+        ui.lab_hp.setText(Integer.toString((int) hp));
+        ui.lab_mp.setText(Integer.toString((int) mp));
 
     }
 
