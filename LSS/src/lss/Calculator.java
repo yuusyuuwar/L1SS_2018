@@ -539,8 +539,8 @@ public class Calculator implements Common {
         }
 
         if (set10 >= 3) {
-            buff.d_short += 2;
-            buff.d_long += 2;
+            buff.DMG_SHORT += 2;
+            buff.DMG_LONG += 2;
             buff.HIT_SHORT += 2;
             buff.HIT_LONG += 2;
         }
@@ -555,8 +555,8 @@ public class Calculator implements Common {
         }
 
         if (set1 >= 3) {
-            buff.d_short += 2;
-            buff.d_long += 2;
+            buff.DMG_SHORT += 2;
+            buff.DMG_LONG += 2;
             buff.HIT_SHORT += 2;
             buff.HIT_LONG += 2;
         }
@@ -638,7 +638,7 @@ public class Calculator implements Common {
                     buff.ailment[FREEZE] += 7;
                     break;
                 case 7:
-                    buff.d_long++;
+                    buff.DMG_LONG++;
                     buff.HIT_LONG++;
                     break;
                 case 8:
@@ -648,8 +648,8 @@ public class Calculator implements Common {
                     buff.effect += "回避,";
                     break;
                 case 10:
-                    buff.d_short += 2;
-                    buff.d_long += 2;
+                    buff.DMG_SHORT += 2;
+                    buff.DMG_LONG += 2;
                     buff.MPR += 2;
                     break;
                 case 11:
@@ -661,7 +661,7 @@ public class Calculator implements Common {
                     buff.r_weight += 0.02;
                 case 15:
                     buff.r_weight += 0.02;
-                    buff.d_short++;
+                    buff.DMG_SHORT++;
                 case 14:
                     buff.r_weight += 0.02;
                 case 13:
@@ -704,20 +704,20 @@ public class Calculator implements Common {
                     buff.effect += "ダメージ軽減 +5,";
                     break;
                 case 24:
-                    buff.d_short += 1;
+                    buff.DMG_SHORT += 1;
                     break;
                 case 25:
-                    buff.d_short += 1;
-                    buff.d_long += 1;
+                    buff.DMG_SHORT += 1;
+                    buff.DMG_LONG += 1;
                     break;
                 case 26:
-                    buff.d_short += 1;
-                    buff.d_long += 1;
+                    buff.DMG_SHORT += 1;
+                    buff.DMG_LONG += 1;
                     buff.SP += 1;
                     break;
                 case 27:
-                    buff.d_short += 2;
-                    buff.d_long += 2;
+                    buff.DMG_SHORT += 2;
+                    buff.DMG_LONG += 2;
                     buff.SP += 1;
                     buff.effect += "特殊攻撃(パック/パオ),";
                     break;
@@ -802,14 +802,14 @@ public class Calculator implements Common {
         if (ui.cb_buff[ITEM_SEA].isSelected()) {
             switch (ui.cb_buff_group[ITEM_SEA].getSelectedIndex()) {
                 case 0:
-                    buff.d_short += 3;
-                    buff.d_long += 3;
+                    buff.DMG_SHORT += 3;
+                    buff.DMG_LONG += 3;
                     buff.HIT_SHORT += 3;
                     buff.HIT_LONG += 3;
                     buff.SP += 3;
                 case 1:
-                    buff.d_short += 2;
-                    buff.d_long += 2;
+                    buff.DMG_SHORT += 2;
+                    buff.DMG_LONG += 2;
                     buff.HIT_SHORT += 2;
                     buff.HIT_LONG += 2;
                     break;
@@ -877,7 +877,7 @@ public class Calculator implements Common {
                     break;
                 case 1:
                     buff.DR += 2;
-                    buff.d_long += 2;
+                    buff.DMG_LONG += 2;
                     buff.HIT_LONG += 1;
                     buff.HPR += 2;
                     buff.MPR += 2;
@@ -889,7 +889,7 @@ public class Calculator implements Common {
                     break;
                 case 0:
                     buff.DR += 2;
-                    buff.d_short += 2;
+                    buff.DMG_SHORT += 2;
                     buff.HIT_SHORT += 1;
                     buff.HPR += 2;
                     buff.MPR += 2;
@@ -1042,7 +1042,7 @@ public class Calculator implements Common {
         }
         if (ui.cb_buff[E_BW].isSelected()) {
             if (cls == E) {
-                buff.element_dmg_c[FIRE] += 6;
+                buff.ELEM_DMG_SHORT[FIRE] += 6;
                 buff.HIT_SHORT += 6;
                 buff_mp += 30 / 16.0;
             } else {
@@ -1054,7 +1054,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_FW].setSelected(false);
                 buff_mp += 15 / 16.0;
             } else {
-                buff.element_dmg_c[FIRE] += 4;
+                buff.ELEM_DMG_SHORT[FIRE] += 4;
             }
         }
         // ネイチャーズタッチ
@@ -1070,7 +1070,7 @@ public class Calculator implements Common {
         }
         if (ui.cb_buff[D_DE].isSelected()) {
             if (cls == D) {
-                buff.ER += 12;
+                buff.ER += 18;
                 buff_mp += 15 / 0.5;
             } else {
                 ui.cb_buff[D_DE].setSelected(false);
@@ -1093,7 +1093,7 @@ public class Calculator implements Common {
             }
         }
         if (ui.cb_buff[E_SS].isSelected()) {
-            buff.element_dmg_f[WIND] += 6;
+            buff.ELEM_DMG_LONG[WIND] += 6;
             buff.HIT_LONG += 3;
             buff_mp += 30 / 16.0;
         }
@@ -1101,7 +1101,7 @@ public class Calculator implements Common {
             if (ui.cb_buff[E_SS].isSelected()) {
                 ui.cb_buff[E_SE].setSelected(false);
             } else {
-                buff.element_dmg_f[WIND] += 3;
+                buff.ELEM_DMG_LONG[WIND] += 3;
                 buff.HIT_LONG += 2;
                 buff_mp += 40 / 16.0;
             }
@@ -1120,7 +1120,8 @@ public class Calculator implements Common {
             buff_mp += 30 / 10.0;
         }
         if (ui.cb_buff[W_BSK].isSelected()) {
-            buff.d_short += 5;
+            buff.DMG_SHORT += 5;
+            buff.HIT_SHORT += 5;
             buff.HPR -= 255;
             buff.AC += 10;
         }
@@ -1129,6 +1130,9 @@ public class Calculator implements Common {
         }
         if (ui.cb_buff[R_DS].isSelected()) {
             buff.DR += 5;
+            if (level >= 80) {
+                buff.DR += (int) ((level - 80) / 2) + 1;
+            }
         }
         if (ui.cb_buff[R_ANTHARAS].isSelected()) {
             if (ui.cb_buff[R_FAFURION].isSelected()
@@ -1170,8 +1174,8 @@ public class Calculator implements Common {
             buff.ST[WIS]++;
         }
         if (ui.cb_buff[I_IO].isSelected()) {
-            buff.d_short += 4;
-            buff.d_long += 4;
+            buff.DMG_SHORT += 4;
+            buff.DMG_LONG += 4;
             buff.HIT_SHORT += 4;
         }
         if (ui.cb_buff[I_IR].isSelected()) {
@@ -1186,8 +1190,8 @@ public class Calculator implements Common {
             buff.MP += 50;
             buff.HPR += 3;
             buff.MPR += 3;
-            buff.d_short += 1;
-            buff.d_long += 1;
+            buff.DMG_SHORT += 1;
+            buff.DMG_LONG += 1;
             buff.HIT_SHORT += 5;
             buff.element_resist[EARTH] += 30;
             ui.cb_buff[UI.W_DW].setSelected(true);
@@ -1234,7 +1238,7 @@ public class Calculator implements Common {
             case 12:
                 buff.ST[STR]++;
                 buff.HP += 100;
-                buff.d_short++;
+                buff.DMG_SHORT++;
                 buff.HPR += 8;
                 break;
             case 13:
@@ -1247,7 +1251,7 @@ public class Calculator implements Common {
                 buff.ST[DEX]++;
                 buff.HP += 80;
                 buff.MP += 50;
-                buff.d_long++;
+                buff.DMG_LONG++;
                 buff.HPR += 5;
                 buff.MPR += 3;
                 break;
@@ -1298,8 +1302,8 @@ public class Calculator implements Common {
                 break;
             case 13:
                 buff.AC -= 3;
-                buff.d_short += 3;
-                buff.d_long += 3;
+                buff.DMG_SHORT += 3;
+                buff.DMG_LONG += 3;
                 buff.SP += 3;
                 buff.MR += 10;
                 break;
@@ -1325,13 +1329,13 @@ public class Calculator implements Common {
                 case K:
                     buff.HP += 50;
                     if (q) {
-                        buff.d_short += 1;
+                        buff.DMG_SHORT += 1;
                     }
                     break;
                 case E:
                     buff.MP += 50;
                     if (q) {
-                        buff.d_long += 1;
+                        buff.DMG_LONG += 1;
                     }
                     break;
                 case W:
@@ -1374,12 +1378,12 @@ public class Calculator implements Common {
                 buff.MPR++;
                 break;
             case 3:
-                buff.d_short++;
+                buff.DMG_SHORT++;
                 buff.HIT_SHORT += 2;
                 buff.MR += 5;
                 break;
             case 4:
-                buff.d_long++;
+                buff.DMG_LONG++;
                 buff.HIT_LONG += 2;
                 buff.MR += 5;
                 break;
@@ -1481,33 +1485,16 @@ public class Calculator implements Common {
         }
 
         if (ui.cb_buff[P_BA].isSelected()) {
-            switch (ui.cb_buff_group[P_BA].getSelectedIndex()) {
-                case 0:
-                    buff.MR += 8;
-                    buff.ST[STR] += 1;
-                    buff.ST[DEX] += 1;
-                    buff.ST[INT] += 1;
-                    break;
-                case 1:
-                    buff.MR += 9;
-                    buff.ailment[STUN] += 2;
-                    buff.ST[STR] += 1;
-                    buff.ST[DEX] += 1;
-                    buff.ST[INT] += 1;
-                    break;
-                case 2:
-                    buff.MR += 10;
-                    buff.ailment[STUN] += 2;
-                    buff.ailment[HOLD] += 2;
-                    buff.ST[STR] += 1;
-                    buff.ST[DEX] += 1;
-                    buff.ST[INT] += 1;
-                    break;
-            }
+            buff.MR += 10;
+            buff.ailment[STUN] += 2;
+            buff.ailment[HOLD] += 2;
+            buff.ST[STR] += 1;
+            buff.ST[DEX] += 1;
+            buff.ST[INT] += 1;
         }
         if (ui.cb_buff[P_G].isSelected()) {
             buff.HIT_SHORT += 5;
-            buff.d_short += 5;
+            buff.DMG_SHORT += 5;
         }
 
         if (ui.cb_buff[B_AC].isSelected()) {
@@ -1675,17 +1662,17 @@ public class Calculator implements Common {
             base_hit_magic += 3;
         }
 
-        dmg_short = base_dmg_short + buff.d_short;
-        dmg_long = base_dmg_long + buff.d_long;
-        dmg_magic = base_dmg_magic + buff.d_magic;
+        dmg_short = base_dmg_short + buff.DMG_SHORT;
+        dmg_long = base_dmg_long + buff.DMG_LONG;
+        dmg_magic = base_dmg_magic + buff.DMG_MAGIC;
         sp = buff.SP + buki.op.SP;
 
         hit_magic = base_hit_magic;
 
         for (Bougu bougu1 : bougu) {
-            dmg_short += bougu1.op.d_short + bougu1.op2.d_short;
-            dmg_long += bougu1.op.d_long + bougu1.op2.d_long;
-            dmg_magic += bougu1.op.d_magic + bougu1.op2.d_magic;
+            dmg_short += bougu1.op.DMG_SHORT + bougu1.op2.DMG_SHORT;
+            dmg_long += bougu1.op.DMG_LONG + bougu1.op2.DMG_LONG;
+            dmg_magic += bougu1.op.DMG_MAGIC + bougu1.op2.DMG_MAGIC;
             sp += bougu1.op.SP + bougu1.op2.SP;
             hit_magic += bougu1.op.HIT_MAGIC + bougu1.op2.HIT_MAGIC;
         }
@@ -1753,7 +1740,7 @@ public class Calculator implements Common {
         if (buki.type.equals("キーリンク")) {
             dmg_short = 0;
             for (int i = 0; i < 4; i++) {
-                buff.element_dmg_c[i] = 0;
+                buff.ELEM_DMG_SHORT[i] = 0;
             }
         }
 
@@ -1787,6 +1774,26 @@ public class Calculator implements Common {
         hit_short += buki.op.HIT_SHORT + buki.enchant / 2 + buff.HIT_SHORT;
         hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG
                 + buff.HIT_SHORT;
+        
+        //属性矢
+        if(buki.type.equals("ボウ")) {
+            if(buki.arrow_name.contains("霊")) {
+                switch(buki.arrow_name) {
+                    case "火霊のブラックミスリルアロー" :
+                        buff.ELEM_DMG_LONG[FIRE] += 3;
+                        break;
+                    case "水霊のブラックミスリルアロー" :
+                        buff.ELEM_DMG_LONG[WATER] += 3;
+                        break;
+                    case "風霊のブラックミスリルアロー" :
+                        buff.ELEM_DMG_LONG[WIND] += 3;
+                        break;
+                    case "地霊のブラックミスリルアロー" :
+                        buff.ELEM_DMG_LONG[EARTH] += 3;
+                        break;
+                }
+            }
+        }
 
         for (Bougu bougu1 : bougu) {
             hit_short += bougu1.op.HIT_SHORT;
@@ -1794,8 +1801,11 @@ public class Calculator implements Common {
         }
 
         //属性ダメージ
-        dmg_short += (int) ((buff.element_dmg_c[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
-        dmg_long += (int) ((buff.element_dmg_f[WIND]) * (32.0 - ui.s_target_res[WIND].getValue() * 32 / 100) / 32.0);
+        dmg_short += (int) ((buff.ELEM_DMG_SHORT[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_long += (int) ((buff.ELEM_DMG_LONG[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_long += (int) ((buff.ELEM_DMG_LONG[WATER]) * (32.0 - ui.s_target_res[WATER].getValue() * 32 / 100) / 32.0);
+        dmg_long += (int) ((buff.ELEM_DMG_LONG[WIND]) * (32.0 - ui.s_target_res[WIND].getValue() * 32 / 100) / 32.0);
+        dmg_long += (int) ((buff.ELEM_DMG_LONG[EARTH]) * (32.0 - ui.s_target_res[EARTH].getValue() * 32 / 100) / 32.0);
 
         dmg_element1 = 0;
         dmg_element2 = 0;
@@ -1875,11 +1885,11 @@ public class Calculator implements Common {
         if (cls == F
                 && ui.cb_eq[1].getSelectedIndex() != 0) {
 
-            dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.d_short + buki.enchant + buki.magic_enchant;
-            dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.d_short + buki.enchant + buki.magic_enchant;
+            dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+            dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
-            dmg_big_max = buki.big + buki.op.d_short + buki.enchant + buki.magic_enchant;
-            dmg_small_max = buki.small + buki.op.d_short + buki.enchant + buki.magic_enchant;
+            dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+            dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
             if (buki.material.equals("シルバー")
                     || buki.material.equals("ミスリル")
@@ -1892,11 +1902,11 @@ public class Calculator implements Common {
                 dmg_cursed /= 2.0;
             }
 
-            dmg_big_ave2 = (1.0 + buki2.big) / 2 + buki2.op.d_short + buki2.enchant + buki2.magic_enchant;
-            dmg_small_ave2 = (1.0 + buki2.small) / 2 + buki2.op.d_short + buki2.enchant + buki2.magic_enchant;
+            dmg_big_ave2 = (1.0 + buki2.big) / 2 + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
+            dmg_small_ave2 = (1.0 + buki2.small) / 2 + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
 
-            dmg_big_max2 = buki2.big + buki2.op.d_short + buki2.enchant + buki2.magic_enchant;
-            dmg_small_max2 = buki2.small + buki2.op.d_short + buki2.enchant + buki2.magic_enchant;
+            dmg_big_max2 = buki2.big + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
+            dmg_small_max2 = buki2.small + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
 
             if (buki2.material.equals("シルバー")
                     || buki2.material.equals("ミスリル")
@@ -1922,18 +1932,18 @@ public class Calculator implements Common {
                 case "ガントレット":
 
                     if (ui.cb_sonsyou.isSelected() && !buki.arrow_name.equals("幸運のアロー")) {
-                        dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.d_long + buki.enchant;
-                        dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.d_long + buki.enchant;
+                        dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.DMG_LONG + buki.enchant;
+                        dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.DMG_LONG + buki.enchant;
 
-                        dmg_big_max = buki.arrow_big / 2 + buki.op.d_long + buki.enchant;
-                        dmg_small_max = buki.arrow_small / 2 + buki.op.d_long + buki.enchant;
+                        dmg_big_max = buki.arrow_big / 2 + buki.op.DMG_LONG + buki.enchant;
+                        dmg_small_max = buki.arrow_small / 2 + buki.op.DMG_LONG + buki.enchant;
 
                     } else {
-                        dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.d_long + buki.enchant;
-                        dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.d_long + buki.enchant;
+                        dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.DMG_LONG + buki.enchant;
+                        dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.DMG_LONG + buki.enchant;
 
-                        dmg_big_max = buki.arrow_big + buki.op.d_long + buki.enchant;
-                        dmg_small_max = buki.arrow_small + buki.op.d_long + buki.enchant;
+                        dmg_big_max = buki.arrow_big + buki.op.DMG_LONG + buki.enchant;
+                        dmg_small_max = buki.arrow_small + buki.op.DMG_LONG + buki.enchant;
                     }
                     if (buki.arrow_material.equals("シルバー")
                             || buki.arrow_material.equals("ミスリル")
@@ -1946,11 +1956,11 @@ public class Calculator implements Common {
                     dmg_small_ave = buki.x * (1.0 + buki.y) / 2 + buki.z;
                     break;
                 default:
-                    dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.d_short + buki.enchant + buki.magic_enchant;
-                    dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.d_short + buki.enchant + buki.magic_enchant;
+                    dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+                    dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
-                    dmg_big_max = buki.big + buki.op.d_short + buki.enchant + buki.magic_enchant;
-                    dmg_small_max = buki.small + buki.op.d_short + buki.enchant + buki.magic_enchant;
+                    dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+                    dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
                     if (buki.material.equals("シルバー")
                             || buki.material.equals("ミスリル")
@@ -2007,7 +2017,7 @@ public class Calculator implements Common {
         }
 
         if (buki.type.equals("デュアルブレード")) {
-            if (buki.name.equals("轟音のデュアルブレード(KR)") && ui.cb_mag_auto.isSelected()) {
+            if ((buki.name.contains("轟音") || buki.name.contains("咆哮")) && ui.cb_mag_auto.isSelected()) {
                 ui.tf_buki_sp_rate.setText(Double.toString(((int) ((wh + buki.enchant * 0.01) * 100)) / 100.0));
                 dmg_big_ave *= 2.0 * (wh + buki.enchant * 0.01)
                         + (1.0 - (wh + buki.enchant * 0.01));
@@ -3110,26 +3120,26 @@ public class Calculator implements Common {
         if (buki.op.HIT_SHORT > 0) {
             buki_text += " 攻撃成功+" + buki.op.HIT_SHORT;
         }
-        if (buki.op.d_short > 0) {
-            buki_text += " 追加打撃+" + buki.op.d_short;
+        if (buki.op.DMG_SHORT > 0) {
+            buki_text += " 追加打撃+" + buki.op.DMG_SHORT;
         }
         if (buki.op.HIT_SHORT < 0) {
             buki_text += " 攻撃成功" + buki.op.HIT_SHORT;
         }
-        if (buki.op.d_long < 0) {
-            buki_text += " 追加打撃" + buki.op.d_long;
+        if (buki.op.DMG_LONG < 0) {
+            buki_text += " 追加打撃" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_LONG > 0) {
             buki_text += " 攻撃成功+" + buki.op.HIT_LONG;
         }
-        if (buki.op.d_long > 0) {
-            buki_text += " 追加打撃+" + buki.op.d_long;
+        if (buki.op.DMG_LONG > 0) {
+            buki_text += " 追加打撃+" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_LONG < 0) {
             buki_text += " 攻撃成功" + buki.op.HIT_LONG;
         }
-        if (buki.op.d_long < 0) {
-            buki_text += " 追加打撃" + buki.op.d_long;
+        if (buki.op.DMG_LONG < 0) {
+            buki_text += " 追加打撃" + buki.op.DMG_LONG;
         }
 
         if (buki.op.HP > 0) {

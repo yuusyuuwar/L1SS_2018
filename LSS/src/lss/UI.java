@@ -972,7 +972,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[W_BSK] = new JCheckBox("バーサーカー");
         cb_buff[W_BSK].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[W_BSK].setToolTipText("AC+10 近接打撃+5 HP自然回復不可");
+        cb_buff[W_BSK].setToolTipText("AC+10 近接打撃+5 近接命中+5 HP自然回復不可");
 
         cb_buff[W_DW] = new JCheckBox("ディクリースウェイト");
         cb_buff[W_DW].setBounds(0, 20 * col++, 150, 20);
@@ -1000,12 +1000,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[P_S].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_S].setToolTipText("AC-8");
 
-        String list_ba[] = {"2-4人", "5-6人", "7-8人"};
-        cb_buff_group[P_BA] = new WideComboBox(list_ba);
-        cb_buff_group[P_BA].setBounds(100, 20 * col, 80, 20);
+        //String list_ba[] = {"2-4人", "5-6人", "7-8人"};
+        //cb_buff_group[P_BA] = new WideComboBox(list_ba);
+        //cb_buff_group[P_BA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_BA] = new JCheckBox("ブレイブアバター");
         cb_buff[P_BA].setBounds(0, 20 * col++, 100, 20);
-        cb_buff[P_BA].setToolTipText("PTメンバー数に応じた能力上昇");
+        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
 
         col++;
 
@@ -1122,7 +1122,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[D_UD].setToolTipText("DG+50");
         cb_buff[D_DE] = new JCheckBox("ドレスイベイジョン");
         cb_buff[D_DE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_DE].setToolTipText("ER+12");
+        cb_buff[D_DE].setToolTipText("ER+18");
         cb_buff[D_SA] = new JCheckBox("シャドウアーマー");
         cb_buff[D_SA].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_SA].setToolTipText("MR+5");
@@ -1135,10 +1135,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[R_DS] = new JCheckBox("ドラゴンスキン");
         cb_buff[R_DS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_DS].setToolTipText("DR+5");
+        cb_buff[R_DS].setToolTipText("DR+5 Lv80でDR6 以降Lv2ごとにDR+1");
         cb_buff[R_MB] = new JCheckBox("モータルボディー");
         cb_buff[R_MB].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_MB].setToolTipText("一定確率で30ダメージの反撃");
+        cb_buff[R_MB].setToolTipText("一定確率でAC/2（最低40）ダメージの反撃");
         cb_buff[R_ANTHARAS] = new JCheckBox("覚醒[アンタラス]");
         cb_buff[R_ANTHARAS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[R_ANTHARAS].setToolTipText("AC-3 ホールド耐性+10");

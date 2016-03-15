@@ -141,8 +141,8 @@ public class Bougu implements Common {
         if (op.ST[CHA] < 0) {
             text += " CHA" + op.ST[CHA];
         }
-        if (op.d_short + op2.d_short > 0) {
-            text += " 追加打撃+" + (op.d_short + op2.d_short);
+        if (op.DMG_SHORT + op2.DMG_SHORT > 0) {
+            text += " 追加打撃+" + (op.DMG_SHORT + op2.DMG_SHORT);
         }
         if (op.HIT_SHORT + op2.HIT_SHORT > 0) {
             text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
@@ -150,8 +150,8 @@ public class Bougu implements Common {
         if (op.HIT_LONG + op2.HIT_LONG > 0) {
             text += " 弓命中率+" + (op.HIT_LONG + op2.HIT_LONG);
         }
-        if (op.d_long + op2.d_long > 0) {
-            text += " 遠距離ダメージ+" + (op.d_long + op2.d_long);
+        if (op.DMG_LONG + op2.DMG_LONG > 0) {
+            text += " 遠距離ダメージ+" + (op.DMG_LONG + op2.DMG_LONG);
         }
         if (op.SP + op2.SP > 0) {
             text += " 魔力+" + (op.SP + op2.SP);
@@ -207,6 +207,13 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
+        
+        
+        if(name.contains("アンタラスグランド")) {
+            if(enchant > 6) {
+                op2.DR += enchant - 6;
+            }
+        }
 
         if (name.equals("輝く魔力のグローブ")) {
             if (enchant > 4) {
@@ -219,35 +226,35 @@ public class Bougu implements Common {
                 if (name.contains("勇士")) {
                     switch (enchant) {
                         case 8:
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
                         case 7:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
                             op2.AC++;
                         case 6:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
                         case 5:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
                         case 4:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
                             op2.AC--;
@@ -288,27 +295,27 @@ public class Bougu implements Common {
                     switch (enchant) {
                         case 8:
                             op2.HP += 10;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 7:
                             op2.HP += 10;
                             op2.AC--;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 6:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                         case 5:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 4:
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.HP += 5;
                             op2.AC--;
                         case 3:
@@ -319,29 +326,29 @@ public class Bougu implements Common {
                     switch (enchant) {
                         case 8:
                             op2.MR++;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 7:
                             op2.HP += 5;
                             op2.MR++;
                             op2.AC--;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 6:
                             op2.HP += 5;
                             op2.MR++;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                         case 5:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 4:
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.HP += 5;
                             op2.AC--;
                         case 3:
@@ -351,26 +358,26 @@ public class Bougu implements Common {
                 } else if (name.contains("集中") || name.contains("マナ") || name.contains("回復")) {
                     switch (enchant) {
                         case 8:
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 7:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 6:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                         case 5:
                             op2.HP += 5;
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.PVP++;
                         case 4:
-                            op2.d_long++;
-                            op2.d_short++;
+                            op2.DMG_LONG++;
+                            op2.DMG_SHORT++;
                             op2.HP += 5;
                             op2.AC--;
                         case 3:
@@ -382,28 +389,28 @@ public class Bougu implements Common {
                 switch (enchant) {
                     case 8:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
                     case 7:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
                     case 6:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
                     case 5:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
@@ -448,28 +455,28 @@ public class Bougu implements Common {
                 switch (enchant) {
                     case 8:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
                     case 7:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
                     case 6:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
                     case 5:
                         op2.HP += 5;
-                        op2.d_long++;
-                        op2.d_short++;
+                        op2.DMG_LONG++;
+                        op2.DMG_SHORT++;
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
@@ -514,7 +521,7 @@ public class Bougu implements Common {
                 op2.MR = 20;
             }
             if (enchant >= 7) {
-                op2.d_long = 1;
+                op2.DMG_LONG = 1;
             }
             if (enchant >= 8) {
                 op2.DR = 1;
@@ -581,7 +588,7 @@ public class Bougu implements Common {
                 op2.MP = 20;
             }
             if (enchant >= 9) {
-                op2.d_short = 1;
+                op2.DMG_SHORT = 1;
             }
         }
         if (name.equals("血戦のブレイサー")) {
@@ -598,7 +605,7 @@ public class Bougu implements Common {
                 op2.MP = 20;
             }
             if (enchant >= 9) {
-                op2.d_long = 1;
+                op2.DMG_LONG = 1;
             }
         }
         if (name.equals("血戦のミトン")) {
@@ -690,24 +697,24 @@ public class Bougu implements Common {
                         break;
                     case 5:
                         op2.HP = 40;
-                        op2.d_long = 1;
-                        op2.d_short = 1;
+                        op2.DMG_LONG = 1;
+                        op2.DMG_SHORT = 1;
                         break;
                     case 6:
                         op2.HP = 40;
-                        op2.d_long = 2;
-                        op2.d_short = 2;
+                        op2.DMG_LONG = 2;
+                        op2.DMG_SHORT = 2;
                         break;
                     case 7:
                         op2.HP = 50;
-                        op2.d_long = 3;
-                        op2.d_short = 3;
+                        op2.DMG_LONG = 3;
+                        op2.DMG_SHORT = 3;
                         op2.SP = 1;
                         break;
                     case 8:
                         op2.HP = 50;
-                        op2.d_long = 4;
-                        op2.d_short = 4;
+                        op2.DMG_LONG = 4;
+                        op2.DMG_SHORT = 4;
                         op2.SP = 2;
                         break;
                 }
@@ -800,26 +807,26 @@ public class Bougu implements Common {
                     case 5:
                         op2.HP = 35;
                         op2.AC = -3;
-                        op2.d_short = 1;
-                        op2.d_long = 1;
+                        op2.DMG_SHORT = 1;
+                        op2.DMG_LONG = 1;
                         break;
                     case 6:
                         op2.HP = 40;
                         op2.AC = -3;
-                        op2.d_short = 2;
-                        op2.d_long = 2;
+                        op2.DMG_SHORT = 2;
+                        op2.DMG_LONG = 2;
                         break;
                     case 7:
                         op2.HP = 45;
                         op2.AC = -3;
-                        op2.d_short = 3;
-                        op2.d_long = 3;
+                        op2.DMG_SHORT = 3;
+                        op2.DMG_LONG = 3;
                         break;
                     case 8:
                         op2.HP = 50;
                         op2.AC = -3;
-                        op2.d_short = 4;
-                        op2.d_long = 4;
+                        op2.DMG_SHORT = 4;
+                        op2.DMG_LONG = 4;
                         break;
                 }
             }

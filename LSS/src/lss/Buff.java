@@ -8,17 +8,17 @@ public class Buff implements Common {
     int AC;
     int ST[] = new int[st_list.length];
     int[] element_resist = new int[elem_list.length];
-    int element_dmg_c[] = new int[elem_list.length];
-    int element_dmg_f[] = new int[elem_list.length];
+    int[] ELEM_DMG_SHORT = new int[elem_list.length];
+    int[] ELEM_DMG_LONG = new int[elem_list.length];
     int HP;
     int MP;
     int HPR;
     int MPR;
-    int d_short;
-    int d_long;
+    int DMG_SHORT;
+    int DMG_LONG;
     int HIT_SHORT;
     int HIT_LONG;
-    int d_magic;
+    int DMG_MAGIC;
     int HIT_MAGIC;
     int SP;
     int DR;
@@ -82,10 +82,10 @@ public class Buff implements Common {
                 MPR = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("í«â¡ë≈åÇ=")) {
-                d_short = Integer.parseInt(line.split("=")[1]);
+                DMG_SHORT = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("ã|ë≈åÇíl=")) {
-                d_long = Integer.parseInt(line.split("=")[1]);
+                DMG_LONG = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("çUåÇê¨å˜=")) {
                 HIT_SHORT = Integer.parseInt(line.split("=")[1]);
