@@ -2440,6 +2440,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     }
 
     private void loadDocument(Document document) {
+        calc.rem_reset();
         cb_cls.setSelectedItem(document.getDocumentElement().getElementsByTagName("ƒNƒ‰ƒX").item(0).getTextContent());
         cb_lev.setSelectedItem(document.getDocumentElement().getElementsByTagName("ƒŒƒxƒ‹").item(0).getTextContent());
 

@@ -1774,21 +1774,21 @@ public class Calculator implements Common {
         hit_short += buki.op.HIT_SHORT + buki.enchant / 2 + buff.HIT_SHORT;
         hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG
                 + buff.HIT_SHORT;
-        
+
         //属性矢
-        if(buki.type.equals("ボウ")) {
-            if(buki.arrow_name.contains("霊")) {
-                switch(buki.arrow_name) {
-                    case "火霊のブラックミスリルアロー" :
+        if (buki.type.equals("ボウ")) {
+            if (buki.arrow_name.contains("霊")) {
+                switch (buki.arrow_name) {
+                    case "火霊のブラックミスリルアロー":
                         buff.ELEM_DMG_LONG[FIRE] += 3;
                         break;
-                    case "水霊のブラックミスリルアロー" :
+                    case "水霊のブラックミスリルアロー":
                         buff.ELEM_DMG_LONG[WATER] += 3;
                         break;
-                    case "風霊のブラックミスリルアロー" :
+                    case "風霊のブラックミスリルアロー":
                         buff.ELEM_DMG_LONG[WIND] += 3;
                         break;
-                    case "地霊のブラックミスリルアロー" :
+                    case "地霊のブラックミスリルアロー":
                         buff.ELEM_DMG_LONG[EARTH] += 3;
                         break;
                 }
@@ -1931,7 +1931,7 @@ public class Calculator implements Common {
                 case "ボウ":
                 case "ガントレット":
 
-                    if (ui.cb_sonsyou.isSelected() && !buki.arrow_name.equals("幸運のアロー")) {
+                    if (ui.cb_sonsyou.isSelected() && !(buki.arrow_name.equals("幸運のアロー") || buki.op.effect.contains("貫通効果"))) {
                         dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.DMG_LONG + buki.enchant;
                         dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.DMG_LONG + buki.enchant;
 
@@ -3038,7 +3038,7 @@ public class Calculator implements Common {
         ui.lab_rem.setText(Integer.toString(_rem));
     }
 
-    private void rem_reset() {
+    void rem_reset() {
         _rem = rem_data[cls];
         if (ui.lab_rem != null) {
             ui.lab_rem.setText(Integer.toString(_rem));
@@ -3174,6 +3174,9 @@ public class Calculator implements Common {
         }
         if (buki.op.ST[CHA] > 0) {
             buki_text += " CHA+" + buki.op.ST[CHA];
+        }
+        if (!buki.op.effect.equals("")) {
+            buki_text += " " + buki.op.effect;
         }
         ui.cb_eq[0].setToolTipText(buki_text);
 
