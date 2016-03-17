@@ -548,7 +548,7 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("リッチローブ(KR)")) {
+        if (name.contains("リッチローブ")) {
             if (enchant >= 3) {
                 op2.SP = enchant - 2;
             }

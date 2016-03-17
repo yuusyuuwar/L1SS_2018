@@ -1474,8 +1474,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_time = new JLabel();
         lab_time.setBounds(520, 425, 100, 25);
         panels[3].add(lab_time);
-        
-        
+
         try {
             try (BufferedReader br = new BufferedReader(new FileReader("./res/default"))) {
                 lab_default.setText(br.readLine());
@@ -1532,7 +1531,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         if (e.getActionCommand().equals("change_default")) {
             try {
                 lab_default.setText((String) cb_res.getSelectedItem());
@@ -1543,6 +1542,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             } catch (IOException ex) {
             }
             return;
+        }
+
+        if (e.getActionCommand().equals("ow_res")) {
+            ow_res();
         }
 
         if (e.getActionCommand().equals("save_res")) {
@@ -1943,9 +1946,44 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         res.delete();
     }
 
+    final void ow_res() {
+        try {
+            File res = new File("./res/" + (String) cb_res.getSelectedItem() + ".txt");
+            
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(res))) {
+                for (int i = 0; i < elem_list.length; i++) {
+                    writer.write(Integer.toString(s_target_res[i].getValue()));
+                    writer.newLine();
+                }
+                writer.write(Integer.toString(s_target_mr.getValue()));
+                writer.newLine();
+                writer.write(Integer.toString(cb_mode_pc.getSelectedIndex()));
+                writer.newLine();
+                writer.write(Integer.toString(cb_target_ac.getSelectedIndex()));
+                writer.newLine();
+                writer.write(Integer.toString(cb_target_dr.getSelectedIndex()));
+                writer.newLine();
+                writer.write(Integer.toString(cb_target_dg.getSelectedIndex()));
+                writer.newLine();
+                writer.write(Boolean.toString(cb_sonsyou.isSelected()));
+                writer.newLine();
+                writer.write(Boolean.toString(cb_hittyuu.isSelected()));
+                writer.newLine();
+                writer.write(tf_e_hp.getText());
+                writer.newLine();
+                writer.write(tf_e_hpr.getText());
+                writer.newLine();
+                writer.write((String) cb_e_type.getSelectedItem());
+                writer.newLine();
+                writer.write((String) cb_e_size.getSelectedItem());
+                writer.flush();
+            }
+        } catch (IOException ex) {
+        }
+    }
+
     final void pre_load_res() {
-        
-        
+
         try {
             File res = new File("./res/" + lab_default.getText() + ".txt");
             try (BufferedReader reader = new BufferedReader(new FileReader(res))) {
@@ -1959,7 +1997,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 cb_target_dg.setSelectedIndex(Integer.parseInt(reader.readLine()));
                 cb_sonsyou.setSelected(Boolean.parseBoolean(reader.readLine()));
                 cb_hittyuu.setSelected(Boolean.parseBoolean(reader.readLine()));
-                
+
                 tf_e_hp.setText(reader.readLine());
                 tf_e_hpr.setText(reader.readLine());
                 cb_e_type.setSelectedItem(reader.readLine());
@@ -1985,7 +2023,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 cb_target_dg.setSelectedIndex(Integer.parseInt(reader.readLine()));
                 cb_sonsyou.setSelected(Boolean.parseBoolean(reader.readLine()));
                 cb_hittyuu.setSelected(Boolean.parseBoolean(reader.readLine()));
-                
+
                 tf_e_hp.setText(reader.readLine());
                 tf_e_hpr.setText(reader.readLine());
                 cb_e_type.setSelectedItem(reader.readLine());
@@ -2025,9 +2063,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     writer.newLine();
                     writer.write(tf_e_hpr.getText());
                     writer.newLine();
-                    writer.write((String)cb_e_type.getSelectedItem());
+                    writer.write((String) cb_e_type.getSelectedItem());
                     writer.newLine();
-                    writer.write((String)cb_e_size.getSelectedItem());
+                    writer.write((String) cb_e_size.getSelectedItem());
                     writer.flush();
                 }
             } catch (IOException ex) {
