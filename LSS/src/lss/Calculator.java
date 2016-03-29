@@ -723,8 +723,11 @@ public class Calculator implements Common {
                     break;
 
                 case 28:
+                    buff.AC -= 2;
+                    buff.DR += 2;
                     buff.SP += 2;
-                    buff.HP += 80;
+                    buff.HP += 40;
+                    buff.effect += "MP回復 +16,";
                     break;
             }
         }
@@ -794,6 +797,99 @@ public class Calculator implements Common {
                 case 17:
                     buff.HIT_SHORT += 4;
                     buff.HIT_LONG += 4;
+                    break;
+            }
+        }
+        
+        if(ui.cb_buff[ITEM_MD2].isSelected()) {
+            switch((String)ui.cb_buff_group[ITEM_MD2].getSelectedItem()) {
+                case "カカシ":
+                    buff.HP += 50;
+                    break;
+                case "スノーマン":
+                    buff.DMG_SHORT += 1;
+                    buff.HIT_SHORT += 1;
+                    break;
+                case "マーメイド":
+                    break;
+                case "ラヴァゴーレム":
+                    buff.DMG_SHORT += 1;
+                    buff.DR += 1;
+                    break;
+                case "ジャイアント":
+                    buff.DR += 1;
+                    break;
+                case "ブラックエルダー":
+                    buff.effect += "MP回復 +15,";
+                    buff.effect += "コールライトニング,";
+                    break;
+                case "サキュバスクイーン":
+                    buff.effect += "MP回復 +15,";
+                    buff.SP += 1;
+                    break;
+                case "ドレイク":
+                    buff.DMG_LONG += 2;
+                    buff.effect += "MP回復 +6,";
+                    break;
+                case "キングバグベアー":
+                    buff.ailment[STUN] += 8;
+                    buff.effect += "MP回復 +10,";
+                    break;
+                case "ダイアゴーレム":
+                    buff.DR += 2;
+                    break;
+                case "サイクロプス":
+                    buff.AC -= 1;
+                    buff.DMG_SHORT += 6;
+                    buff.DMG_LONG += 6;
+                    buff.SP += 4;
+                    buff.effect += "アースジェイル,";
+                    break;
+                case "ナイトバルド":
+                    buff.AC -= 2;
+                    buff.DMG_SHORT += 4;
+                    buff.HIT_SHORT += 2;
+                    buff.DR += 2;
+                    buff.HP += 120;
+                    buff.effect += "MP回復 +8,";
+                    break;
+                case "シアー":
+                    buff.AC -= 2;
+                    buff.DMG_LONG += 4;
+                    buff.HIT_LONG += 2;
+                    buff.DR += 2;
+                    buff.HP += 80;
+                    buff.effect +="MP回復 +12,";
+                    break;
+                case "デスナイト":
+                    buff.AC -= 2;
+                    buff.DMG_SHORT += 8;
+                    buff.DMG_LONG += 8;
+                    buff.SP += 5;
+                    buff.effect += "ヘルファイアー,";
+                    break;
+                case "デーモン":
+                    buff.AC -= 4;
+                    buff.DMG_SHORT += 6;
+                    buff.HIT_SHORT += 4;
+                    buff.DR += 4;
+                    buff.HP += 120;
+                    buff.effect += "MP回復 +8,";
+                    break;
+                case "覚醒パオ":
+                    buff.AC -= 4;
+                    buff.SP += 3;
+                    buff.DR += 4;
+                    buff.HP += 40;
+                    buff.effect += "MP回復 +16,";
+                    break;
+                case "マミーロード":
+                    buff.AC -= 4;
+                    buff.DMG_LONG += 6;
+                    buff.HIT_LONG += 4;
+                    buff.DR += 4;
+                    buff.HP += 80;
+                    buff.effect += "MP回復 +12,";
                     break;
             }
         }

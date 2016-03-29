@@ -172,8 +172,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     LEV lev = new LEV();
 
     //パネル３
-    JCheckBox[] cb_buff = new JCheckBox[78];
-    JComboBox[] cb_buff_group = new JComboBox[78];
+    JCheckBox[] cb_buff = new JCheckBox[79];
+    JComboBox[] cb_buff_group = new JComboBox[79];
 
     //パネル４
     JComboBox cb_npc_level;
@@ -1256,7 +1256,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "パック/パオ(0段階)", "パック/パオ(1段階)", "パック/パオ(2段階)", "パック/パオ(3段階)", "リッチ"};
         cb_buff_group[ITEM_MD] = new WideComboBox(list_md);
         cb_buff_group[ITEM_MD].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_MD] = new JCheckBox("マジックドール");
+        cb_buff[ITEM_MD] = new JCheckBox("旧マジックドール");
         cb_buff[ITEM_MD].setBounds(200 * row, 20 * col++, 100, 20);
 
         String list_md_op[] = {"AC-2", "AC-4", "AC-5/DR+2",
@@ -1269,6 +1269,18 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff_group[ITEM_MD_OP].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_MD_OP] = new JCheckBox("パック/パオ OP");
         cb_buff[ITEM_MD_OP].setBounds(200 * row, 20 * col++, 100, 20);
+
+        String list_md2[] = {"カカシ", "スノーマン", "マーメイド", "ラヴァゴーレム",
+            "ジャイアント", "ブラックエルダー", "サキュバスクイーン", "ドレイク", "キングバグベアー", "ダイアゴーレム",
+            "サイクロプス", "ナイトバルド", "シアー",
+            "デスナイト", "デーモン", "覚醒パオ", "マミーロード"
+        };
+        
+        cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);
+        cb_buff_group[ITEM_MD2].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[ITEM_MD2] = new JCheckBox("新マジックドール");
+        cb_buff[ITEM_MD2].setBounds(200 * row, 20 * col++, 100, 20);
+        
 
         String list_koma[] = {"3種類", "5種類"};
         cb_buff_group[KOMA] = new WideComboBox(list_koma);
@@ -1949,7 +1961,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     final void ow_res() {
         try {
             File res = new File("./res/" + (String) cb_res.getSelectedItem() + ".txt");
-            
+
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(res))) {
                 for (int i = 0; i < elem_list.length; i++) {
                     writer.write(Integer.toString(s_target_res[i].getValue()));
