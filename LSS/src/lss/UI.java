@@ -32,6 +32,7 @@ import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
@@ -67,6 +68,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JTabbedPane tabpane;
     JPanel panels[] = new JPanel[4];
 
+    File f_save_path = new File("./save");
+
     //UIパーツ
     //共通
     JLabel[] lab_st = new JLabel[st_list.length];
@@ -84,6 +87,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     JButton bt_save;
     JButton bt_load;
+    JButton bt_ow;
 
     JLabel lab_ac;
     JLabel lab_dg;
@@ -218,6 +222,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     ArrayList<ZipEntry> arrow_entrys = new ArrayList();
     ArrayList<ZipEntry> sting_entrys = new ArrayList();
 
+    File file;
+
     void init() {
 
         boolean error = false;
@@ -258,6 +264,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //共通
         //----------
         JLabel lab_tmp;
+
+        bt_ow = new JButton("上書き");
+        bt_ow.setBounds(450, 0, 100, 25);
+        panels[0].add(bt_ow);
+        commons.add(bt_ow);
+        bt_ow.addActionListener(this);
+        bt_ow.setActionCommand("ow");
+        bt_ow.setEnabled(false);
 
         bt_save = new JButton("保存");
         bt_save.setBounds(550, 0, 100, 25);
@@ -1275,12 +1289,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "サイクロプス", "ナイトバルド", "シアー",
             "デスナイト", "デーモン", "覚醒パオ", "マミーロード"
         };
-        
+
         cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);
         cb_buff_group[ITEM_MD2].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_MD2] = new JCheckBox("新マジックドール");
         cb_buff[ITEM_MD2].setBounds(200 * row, 20 * col++, 100, 20);
-        
 
         String list_koma[] = {"3種類", "5種類"};
         cb_buff_group[KOMA] = new WideComboBox(list_koma);
@@ -1578,20 +1591,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             return;
         }
 
-        if (e.getActionCommand().equals("save")) {
+        if (e.getActionCommand().equals("ow")) {
             mem.copy_to_mem(curr);
 
-            JFileChooser fc = new JFileChooser();
-            fc.setFileFilter(new FileNameExtensionFilter("*.xml", "xml"));
-            int ret = fc.showSaveDialog(this);
-
-            File f = null;
-            if (ret == JFileChooser.APPROVE_OPTION) {
-                f = fc.getSelectedFile();
-            }
+            File f = file;
             if (f != null) {
-                if (!f.getName().endsWith(".xml")) {
-                    f = new File(fc.getSelectedFile().getPath() + ".xml");
+                int ret = JOptionPane.showConfirmDialog(this, f.getName() + "を上書きします", "確認", JOptionPane.YES_NO_OPTION);
+                if (ret == JOptionPane.NO_OPTION) {
+                    return;
                 }
                 try {
                     try (FileOutputStream fos = new FileOutputStream(f)) {
@@ -1612,9 +1619,68 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
             return;
         }
+
+        if (e.getActionCommand().equals("save")) {
+            mem.copy_to_mem(curr);
+
+            JFileChooser fc;
+            if (f_save_path == null) {
+                fc = new JFileChooser();
+            } else {
+                fc = new JFileChooser(f_save_path);
+            }
+            fc.setFileFilter(new FileNameExtensionFilter("*.xml", "xml"));
+
+            int ret = fc.showSaveDialog(this);
+
+            File f = null;
+            if (ret == JFileChooser.APPROVE_OPTION) {
+                f = fc.getSelectedFile();
+            }
+            if (f != null) {
+                if (f.exists()) {
+                    int c = JOptionPane.showConfirmDialog(this, f.getName() + "を上書きします", "確認", JOptionPane.YES_NO_OPTION);
+                    if (c == JOptionPane.NO_OPTION) {
+                        return;
+                    }
+                }
+
+                file = f;
+                setTitle(file.getPath());
+
+                if (!f.getName().endsWith(".xml")) {
+                    f = new File(fc.getSelectedFile().getPath() + ".xml");
+                }
+                try {
+                    try (FileOutputStream fos = new FileOutputStream(f)) {
+                        StreamResult result = new StreamResult(fos);
+
+                        TransformerFactory transFactory = TransformerFactory.newInstance();
+                        Transformer transformer = transFactory.newTransformer();
+
+                        transformer.setOutputProperty("encoding", "UTF-8");
+                        transformer.setOutputProperty("indent", "yes");
+
+                        DOMSource source = new DOMSource(createDocument());
+                        transformer.transform(source, result);
+                    }
+                } catch (IOException | IllegalArgumentException | ParserConfigurationException | TransformerException ex) {
+
+                }
+            }
+            bt_ow.setEnabled(file != null);
+
+            return;
+        }
         if (e.getActionCommand().equals("load")) {
-            JFileChooser fc = new JFileChooser();
-            fc.setFileFilter(new FileNameExtensionFilter("*.sim *.xml", "sim", "xml"));
+            JFileChooser fc;
+            if (f_save_path == null) {
+                fc = new JFileChooser();
+            } else {
+                fc = new JFileChooser(f_save_path);
+            }
+            fc.setFileFilter(new FileNameExtensionFilter("*.xml", "xml"));
+
             int ret = fc.showOpenDialog(this);
             File f = null;
             if (ret == JFileChooser.APPROVE_OPTION) {
@@ -1628,11 +1694,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                         DocumentBuilder builder = factory.newDocumentBuilder();
                         Document document = builder.parse(f);
                         loadDocument(document);
+
+                        file = f;
+                        setTitle(file.getPath());
                     }
                 } catch (IOException | NumberFormatException ex) {
                 } catch (ParserConfigurationException | SAXException ex) {
                 }
             }
+            bt_ow.setEnabled(file != null);
             return;
         }
 

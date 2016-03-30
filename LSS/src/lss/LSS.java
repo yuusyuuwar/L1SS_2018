@@ -33,6 +33,7 @@ public class LSS implements WindowListener {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
@@ -45,14 +46,24 @@ public class LSS implements WindowListener {
         ui = new UI();
         calc = new Calculator(ui);
         ui.addWindowListener(lss);
-        
+
         try {
+            File save = new File("./save");
+            if (!save.exists()) {
+                save.mkdir();
+            }
+
             File f = new File("./loc.txt");
             if (f.exists()) {
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(f)))) {
                     int x = Integer.parseInt(reader.readLine());
                     int y = Integer.parseInt(reader.readLine());
                     ui.setLocation(x, y);
+
+                    String path = reader.readLine();
+                    if (path != null) {
+                        ui.f_save_path = new File(path);
+                    }
                 }
             }
         } catch (IOException ex) {
@@ -83,6 +94,12 @@ public class LSS implements WindowListener {
                     writer.write(Integer.toString(ui.getX()));
                     writer.newLine();
                     writer.write(Integer.toString(ui.getY()));
+                    writer.newLine();
+                    if (ui.file != null) {
+                        writer.write(ui.file.getParent());
+                    } else {
+                        writer.write(ui.f_save_path.getPath());
+                    }
                     writer.flush();
                 }
             } else {
@@ -91,6 +108,12 @@ public class LSS implements WindowListener {
                     writer.write(Integer.toString(ui.getX()));
                     writer.newLine();
                     writer.write(Integer.toString(ui.getY()));
+                    writer.newLine();
+                    if (ui.file != null) {
+                        writer.write(ui.file.getParent());
+                    } else {
+                        writer.write(ui.f_save_path.getPath());
+                    }
                     writer.flush();
                 }
             }
