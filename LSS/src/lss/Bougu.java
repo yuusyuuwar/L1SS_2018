@@ -238,7 +238,7 @@ public class Bougu implements Common {
                             op2.PVP++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
-                            op2.AC++;
+                            op2.AC--;
                         case 6:
                             op2.HP += 5;
                             op2.DMG_LONG++;
@@ -260,8 +260,7 @@ public class Bougu implements Common {
                             op2.AC--;
                         case 3:
                             op2.HP += 10;
-                            op2.AC += 4;
-                            System.out.println("u");
+                            op2.AC -= 4;
                     }
                 } else if (name.contains("ímåb")) {
                     switch (enchant) {
@@ -275,7 +274,7 @@ public class Bougu implements Common {
                             op2.SP++;
                             op2.HP += 5;
                             op2.MP += 5;
-                            op2.AC++;
+                            op2.AC--;
                         case 6:
                             op2.HP += 5;
                             op2.MP += 10;
@@ -285,7 +284,7 @@ public class Bougu implements Common {
                         case 4:
                             op2.HP += 5;
                             op2.SP++;
-                            op2.AC++;
+                            op2.AC--;
                         case 3:
                             op2.AC -= 3;
                             op2.HP += 20;

@@ -800,9 +800,9 @@ public class Calculator implements Common {
                     break;
             }
         }
-        
-        if(ui.cb_buff[ITEM_MD2].isSelected()) {
-            switch((String)ui.cb_buff_group[ITEM_MD2].getSelectedItem()) {
+
+        if (ui.cb_buff[ITEM_MD2].isSelected()) {
+            switch ((String) ui.cb_buff_group[ITEM_MD2].getSelectedItem()) {
                 case "カカシ":
                     buff.HP += 50;
                     break;
@@ -859,7 +859,7 @@ public class Calculator implements Common {
                     buff.HIT_LONG += 2;
                     buff.DR += 2;
                     buff.HP += 80;
-                    buff.effect +="MP回復 +12,";
+                    buff.effect += "MP回復 +12,";
                     break;
                 case "デスナイト":
                     buff.AC -= 2;
@@ -2321,17 +2321,19 @@ public class Calculator implements Common {
 
         //ダブルブレイク
         if (ui.cb_buff[D_DB].isSelected()) {
-            double lv_bonus = ((level - 45) / 5) * 0.01;
+            if (buki_id == W_DB || buki_id == W_C) {
+                double lv_bonus = ((level - 45) / 5) * 0.01;
 
-            dmg_big_ave *= 2.0 * (db_rate + lv_bonus)
-                    + (1.0 - (db_rate + lv_bonus));
-            dmg_small_ave *= 2.0 * (db_rate + lv_bonus)
-                    + (1.0 - (db_rate + lv_bonus));
+                dmg_big_ave *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
+                dmg_small_ave *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
 
-            dmg_undead *= 2.0 * (db_rate + lv_bonus)
-                    + (1.0 - (db_rate + lv_bonus));
-            dmg_cursed *= 2.0 * (db_rate + lv_bonus)
-                    + (1.0 - (db_rate + lv_bonus));
+                dmg_undead *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
+                dmg_cursed *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
+            }
         }
 
         //武器属性
