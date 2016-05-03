@@ -1997,7 +1997,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         calc.buki.enchant = cb_eq_en[0].getSelectedIndex();
-        calc.buki2.enchant = cb_eq_en[0].getSelectedIndex();
+        calc.buki2.enchant = cb_eq_en[1].getSelectedIndex();
         calc.buki.checkEnchant();
         calc.buki2.checkEnchant();
         for (int i = 2; i < eq_list.length; i++) {

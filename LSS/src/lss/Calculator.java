@@ -482,8 +482,16 @@ public class Calculator implements Common {
         int set7 = 0, set8 = 0;// 極寒、アイスクイーンセット
         int set9 = 0;// 修練者セット
         int set10 = 0, set11 = 0, set12 = 0;//釣りセット
+        int set13 = 0;//軍王セット
 
         for (Bougu bougu1 : bougu) {
+            if (bougu1.name.equals("魔霊軍王のローブ")
+                    || bougu1.name.equals("冥法軍王のマント")
+                    || bougu1.name.equals("暗殺軍王のグローブ")
+                    || bougu1.name.equals("魔獣軍王のブーツ")) {
+                set13++;
+            }
+
             if (bougu1.name.equals("シャイニングイアリング")) {
                 set10++;
                 set11++;
@@ -602,6 +610,14 @@ public class Calculator implements Common {
         if (set9 == 3) {
             buff.HPR += 4;
             buff.MPR += 1;
+        }
+
+        if (set13 == 4) {
+            buff.HP += 30;
+            buff.HPR += 10;
+            buff.MP += 30;
+            buff.MPR += 10;
+            buff.ST[CHA] += 3;
         }
 
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
@@ -1680,7 +1696,7 @@ public class Calculator implements Common {
         }
 
         for (int i = 0; i < 6; i++) {
-            buff.ST[i] += buki.op.ST[i];
+            buff.ST[i] += buki.op.ST[i] + buki2.op.ST[i];
             for (Bougu bougu1 : bougu) {
                 buff.ST[i] += bougu1.op.ST[i] + bougu1.op2.ST[i];
             }
@@ -1761,7 +1777,7 @@ public class Calculator implements Common {
         dmg_short = base_dmg_short + buff.DMG_SHORT;
         dmg_long = base_dmg_long + buff.DMG_LONG;
         dmg_magic = base_dmg_magic + buff.DMG_MAGIC;
-        sp = buff.SP + buki.op.SP;
+        sp = buff.SP + buki.op.SP + buki2.op.SP;
 
         hit_magic = base_hit_magic;
 
@@ -1892,8 +1908,8 @@ public class Calculator implements Common {
         }
 
         for (Bougu bougu1 : bougu) {
-            hit_short += bougu1.op.HIT_SHORT;
-            hit_long += bougu1.op.HIT_LONG + bougu1.op.HIT_SHORT;
+            hit_short += bougu1.op.HIT_SHORT + bougu1.op2.HIT_SHORT;
+            hit_long += bougu1.op.HIT_LONG + bougu1.op.HIT_SHORT + bougu1.op2.HIT_LONG + bougu1.op2.HIT_SHORT;
         }
 
         //属性ダメージ
@@ -1990,12 +2006,10 @@ public class Calculator implements Common {
             if (buki.material.equals("シルバー")
                     || buki.material.equals("ミスリル")
                     || buki.material.equals("オリハルコン")) {
-                dmg_undead = (1.0 + 20) / 2;
-                dmg_undead /= 2.0;
+                dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
             }
             if (ui.tb_blessed1.isSelected()) {
-                dmg_cursed = (1.0 + 3) / 2 + 3;
-                dmg_cursed /= 2.0;
+                dmg_cursed += ((1.0 + 3.0) / 2.0 + 3.0) / 2.0;
             }
 
             dmg_big_ave2 = (1.0 + buki2.big) / 2 + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
@@ -2007,13 +2021,10 @@ public class Calculator implements Common {
             if (buki2.material.equals("シルバー")
                     || buki2.material.equals("ミスリル")
                     || buki2.material.equals("オリハルコン")) {
-                dmg_undead = (1.0 + 20) / 2 / 2;
-            } else {
-                dmg_undead = 0;
+                dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
             }
             if (ui.tb_blessed2.isSelected()) {
-                dmg_cursed = (1.0 + 3) / 2 + 3;
-                dmg_cursed /= 2.0;
+                dmg_cursed += ((1.0 + 3.0) / 2.0 + 3.0) / 2.0;
             }
 
             dmg_big_ave = (dmg_big_ave + dmg_big_ave2) / 2.0;

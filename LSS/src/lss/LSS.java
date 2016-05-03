@@ -34,6 +34,7 @@ public class LSS implements WindowListener {
     public static void main(String[] args) {
         // TODO code application logic here
 
+
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+<クラス>ドラゴンナイト</クラス>
+<レベル>85</レベル>
+<ステータス>
+<base>
+<data num="0" val="STR"/>
+<data num="0" val="DEX"/>
+<data num="0" val="CON"/>
+<data num="0" val="INT"/>
+<data num="0" val="WIS"/>
+<data num="0" val="CHA"/>
+</base>
+<level>
+<data lev="51" val="---"/>
+<data lev="52" val="---"/>
+<data lev="53" val="---"/>
+<data lev="54" val="---"/>
+<data lev="55" val="---"/>
+<data lev="56" val="---"/>
+<data lev="57" val="---"/>
+<data lev="58" val="---"/>
+<data lev="59" val="---"/>
+<data lev="60" val="---"/>
+<data lev="61" val="---"/>
+<data lev="62" val="---"/>
+<data lev="63" val="---"/>
+<data lev="64" val="---"/>
+<data lev="65" val="---"/>
+<data lev="66" val="---"/>
+<data lev="67" val="---"/>
+<data lev="68" val="---"/>
+<data lev="69" val="---"/>
+<data lev="70" val="---"/>
+<data lev="71" val="---"/>
+<data lev="72" val="---"/>
+<data lev="73" val="---"/>
+<data lev="74" val="---"/>
+<data lev="75" val="---"/>
+<data lev="76" val="---"/>
+<data lev="77" val="---"/>
+<data lev="78" val="---"/>
+<data lev="79" val="---"/>
+<data lev="80" val="---"/>
+<data lev="81" val="---"/>
+<data lev="82" val="---"/>
+<data lev="83" val="---"/>
+<data lev="84" val="---"/>
+<data lev="85" val="---"/>
+<data lev="86" val="---"/>
+<data lev="87" val="---"/>
+<data lev="88" val="---"/>
+</level>
+<elixir>
+<data lev="50" val="---"/>
+<data lev="55" val="---"/>
+<data lev="60" val="---"/>
+<data lev="65" val="---"/>
+<data lev="70" val="---"/>
+</elixir>
+</ステータス>
+<変身>近/遠特化</変身>
+<変身レベル>85</変身レベル>
+<変身設定>true</変身設定>
+<武器設定>true</武器設定>
+<エンチャント>
+<data id="0" val="true"/>
+<data id="1" select="0" val="true"/>
+<data id="2" val="false"/>
+<data id="3" select="1" val="false"/>
+<data id="4" select="1" val="false"/>
+<data id="5" select="0" val="false"/>
+<data id="6" select="2" val="false"/>
+<data id="7" val="false"/>
+<data id="8" val="false"/>
+<data id="9" val="false"/>
+<data id="10" val="false"/>
+<data id="11" val="false"/>
+<data id="12" val="false"/>
+<data id="13" val="false"/>
+<data id="14" val="false"/>
+<data id="15" val="false"/>
+<data id="16" val="false"/>
+<data id="17" val="false"/>
+<data id="18" val="false"/>
+<data id="19" val="false"/>
+<data id="20" val="false"/>
+<data id="21" val="false"/>
+<data id="24" val="false"/>
+<data id="25" val="false"/>
+<data id="26" val="false"/>
+<data id="27" val="false"/>
+<data id="29" val="false"/>
+<data id="30" val="false"/>
+<data id="31" val="false"/>
+<data id="32" val="false"/>
+<data id="33" val="false"/>
+<data id="34" val="false"/>
+<data id="35" val="false"/>
+<data id="36" val="false"/>
+<data id="37" val="false"/>
+<data id="38" val="false"/>
+<data id="39" val="false"/>
+<data id="40" val="false"/>
+<data id="41" val="false"/>
+<data id="42" val="false"/>
+<data id="43" val="false"/>
+<data id="44" val="false"/>
+<data id="45" val="false"/>
+<data id="46" val="false"/>
+<data id="47" val="false"/>
+<data id="48" val="false"/>
+<data id="49" val="false"/>
+<data id="50" val="false"/>
+<data id="51" val="false"/>
+<data id="52" select="0" val="false"/>
+<data id="53" select="0" val="false"/>
+<data id="54" select="0" val="false"/>
+<data id="55" select="0" val="false"/>
+<data id="56" select="0" val="false"/>
+<data id="58" select="0" val="false"/>
+<data id="59" val="false"/>
+<data id="61" val="false"/>
+<data id="62" val="false"/>
+<data id="64" select="0" val="false"/>
+<data id="65" val="false"/>
+<data id="66" val="false"/>
+<data id="67" val="false"/>
+<data id="68" val="false"/>
+<data id="69" val="false"/>
+<data id="70" val="false"/>
+<data id="71" val="false"/>
+<data id="72" val="false"/>
+<data id="75" val="false"/>
+<data id="76" val="false"/>
+<data id="77" val="false"/>
+<data id="78" select="0" val="false"/>
+</エンチャント>
+<文様>
+<左手>左腕</左手>
+<右手>右腕</右手>
+<背中>背中</背中>
+<左腕>左手</左腕>
+<右腕>右手</右腕>
+</文様>
+<装備 id="0">
+<武器 blessed="false" element="0" enchant="0" id="0" mag_delay="0.0" mag_power="0.0" mag_rate="0.0" sp_rate="0.0">エンシェントソード</武器>
+<武器 blessed="false" element="0" enchant="0" id="1">武器</武器>
+<シールド enchant="0" id="2">シールド</シールド>
+<ヘルム enchant="0" id="3">ヘルム</ヘルム>
+<グローブ enchant="0" id="4">グローブ</グローブ>
+<シャツ element="0" enchant="0" id="5" tokusei="false">シャツ</シャツ>
+<アーマー enchant="0" id="6">アーマー</アーマー>
+<クローク enchant="0" id="7">クローク</クローク>
+<ブーツ enchant="0" id="8">ブーツ</ブーツ>
+<ゲートル enchant="0" id="9">ゲートル</ゲートル>
+<ベルト enchant="0" id="10">ベルト</ベルト>
+<イアリング enchant="0" id="11">イアリング</イアリング>
+<イアリング enchant="0" id="12">イアリング</イアリング>
+<アミュレット enchant="0" id="13">アミュレット</アミュレット>
+<リング enchant="0" id="14">リング</リング>
+<リング enchant="0" id="15">リング</リング>
+<リング enchant="0" id="16">リング</リング>
+<リング enchant="0" id="17">リング</リング>
+<ルーン enchant="0" id="18">ルーン</ルーン>
+<ルーン enchant="0" id="19">ルーン</ルーン>
+<アロー/>
+</装備>
+<装備 id="1">
+<武器 blessed="false" element="0" enchant="0" id="0" mag_delay="0.0" mag_power="0.0" mag_rate="-1.0" sp_rate="0.0">武器</武器>
+<武器 blessed="false" element="0" enchant="0" id="1">武器</武器>
+<シールド enchant="0" id="2">シールド</シールド>
+<ヘルム enchant="0" id="3">ヘルム</ヘルム>
+<グローブ enchant="0" id="4">グローブ</グローブ>
+<シャツ element="0" enchant="0" id="5" tokusei="false">シャツ</シャツ>
+<アーマー enchant="0" id="6">アーマー</アーマー>
+<クローク enchant="0" id="7">クローク</クローク>
+<ブーツ enchant="0" id="8">ブーツ</ブーツ>
+<ゲートル enchant="0" id="9">ゲートル</ゲートル>
+<ベルト enchant="0" id="10">ベルト</ベルト>
+<イアリング enchant="0" id="11">イアリング</イアリング>
+<イアリング enchant="0" id="12">イアリング</イアリング>
+<アミュレット enchant="0" id="13">アミュレット</アミュレット>
+<リング enchant="0" id="14">リング</リング>
+<リング enchant="0" id="15">リング</リング>
+<リング enchant="0" id="16">リング</リング>
+<リング enchant="0" id="17">リング</リング>
+<ルーン enchant="0" id="18">ルーン</ルーン>
+<ルーン enchant="0" id="19">ルーン</ルーン>
+<アロー/>
+</装備>
+<装備 id="2">
+<武器 blessed="false" element="0" enchant="0" id="0" mag_delay="0.0" mag_power="0.0" mag_rate="-1.0" sp_rate="0.0">武器</武器>
+<武器 blessed="false" element="0" enchant="0" id="1">武器</武器>
+<シールド enchant="0" id="2">シールド</シールド>
+<ヘルム enchant="0" id="3">ヘルム</ヘルム>
+<グローブ enchant="0" id="4">グローブ</グローブ>
+<シャツ element="0" enchant="0" id="5" tokusei="false">シャツ</シャツ>
+<アーマー enchant="0" id="6">アーマー</アーマー>
+<クローク enchant="0" id="7">クローク</クローク>
+<ブーツ enchant="0" id="8">ブーツ</ブーツ>
+<ゲートル enchant="0" id="9">ゲートル</ゲートル>
+<ベルト enchant="0" id="10">ベルト</ベルト>
+<イアリング enchant="0" id="11">イアリング</イアリング>
+<イアリング enchant="0" id="12">イアリング</イアリング>
+<アミュレット enchant="0" id="13">アミュレット</アミュレット>
+<リング enchant="0" id="14">リング</リング>
+<リング enchant="0" id="15">リング</リング>
+<リング enchant="0" id="16">リング</リング>
+<リング enchant="0" id="17">リング</リング>
+<ルーン enchant="0" id="18">ルーン</ルーン>
+<ルーン enchant="0" id="19">ルーン</ルーン>
+<アロー/>
+</装備>
+<魔法使用>フォースレイヤー</魔法使用>
+<重量>33 %</重量>
+</root>
