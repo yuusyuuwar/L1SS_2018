@@ -64,77 +64,82 @@
 <変身設定>true</変身設定>
 <武器設定>true</武器設定>
 <エンチャント>
-<data id="0" val="true"/>
-<data id="1" select="0" val="true"/>
-<data id="2" val="false"/>
-<data id="3" select="1" val="false"/>
-<data id="4" select="1" val="false"/>
-<data id="5" select="0" val="false"/>
-<data id="6" select="2" val="false"/>
-<data id="7" val="false"/>
-<data id="8" val="false"/>
-<data id="9" val="false"/>
-<data id="10" val="false"/>
-<data id="11" val="false"/>
-<data id="12" val="false"/>
-<data id="13" val="false"/>
-<data id="14" val="false"/>
-<data id="15" val="false"/>
-<data id="16" val="false"/>
-<data id="17" val="false"/>
-<data id="18" val="false"/>
-<data id="19" val="false"/>
-<data id="20" val="false"/>
-<data id="21" val="false"/>
-<data id="24" val="false"/>
-<data id="25" val="false"/>
-<data id="26" val="false"/>
-<data id="27" val="false"/>
-<data id="29" val="false"/>
-<data id="30" val="false"/>
-<data id="31" val="false"/>
-<data id="32" val="false"/>
-<data id="33" val="false"/>
-<data id="34" val="false"/>
-<data id="35" val="false"/>
-<data id="36" val="false"/>
-<data id="37" val="false"/>
-<data id="38" val="false"/>
-<data id="39" val="false"/>
-<data id="40" val="false"/>
-<data id="41" val="false"/>
-<data id="42" val="false"/>
-<data id="43" val="false"/>
-<data id="44" val="false"/>
-<data id="45" val="false"/>
-<data id="46" val="false"/>
-<data id="47" val="false"/>
-<data id="48" val="false"/>
-<data id="49" val="false"/>
-<data id="50" val="false"/>
-<data id="51" val="false"/>
-<data id="52" select="0" val="false"/>
-<data id="53" select="0" val="false"/>
-<data id="54" select="0" val="false"/>
-<data id="55" select="0" val="false"/>
-<data id="56" select="0" val="false"/>
-<data id="58" select="0" val="false"/>
-<data id="59" val="false"/>
-<data id="61" val="false"/>
-<data id="62" val="false"/>
-<data id="64" select="0" val="false"/>
-<data id="65" val="false"/>
-<data id="66" val="false"/>
-<data id="67" val="false"/>
-<data id="68" val="false"/>
-<data id="69" val="false"/>
-<data id="70" val="false"/>
-<data id="71" val="false"/>
-<data id="72" val="false"/>
-<data id="75" val="false"/>
-<data id="76" val="false"/>
-<data id="77" val="false"/>
-<data id="78" select="0" val="false"/>
+<data cons="false" id="0" val="true"/>
+<data cons="false" id="1" select="0" val="true"/>
+<data cons="false" id="2" val="false"/>
+<data cons="false" id="3" select="1" val="false"/>
+<data cons="false" id="4" select="1" val="false"/>
+<data cons="false" id="5" select="0" val="false"/>
+<data cons="false" id="6" select="2" val="false"/>
+<data cons="false" id="7" val="false"/>
+<data cons="false" id="8" val="false"/>
+<data cons="false" id="9" val="false"/>
+<data cons="false" id="10" val="false"/>
+<data cons="false" id="11" val="false"/>
+<data cons="false" id="12" val="false"/>
+<data cons="false" id="13" val="false"/>
+<data cons="false" id="14" val="false"/>
+<data cons="false" id="15" val="false"/>
+<data cons="false" id="16" val="false"/>
+<data cons="false" id="17" val="false"/>
+<data cons="false" id="18" val="false"/>
+<data cons="false" id="19" val="false"/>
+<data cons="false" id="20" val="false"/>
+<data cons="false" id="21" val="false"/>
+<data cons="false" id="22" val="false"/>
+<data cons="false" id="23" val="false"/>
+<data cons="false" id="24" val="false"/>
+<data cons="false" id="25" val="false"/>
+<data cons="false" id="26" val="false"/>
+<data cons="false" id="27" val="false"/>
+<data cons="false" id="29" val="false"/>
+<data cons="false" id="30" val="false"/>
+<data cons="false" id="31" val="false"/>
+<data cons="false" id="32" val="false"/>
+<data cons="false" id="33" val="false"/>
+<data cons="false" id="34" val="false"/>
+<data cons="false" id="35" val="false"/>
+<data cons="false" id="36" val="false"/>
+<data cons="false" id="37" val="false"/>
+<data cons="false" id="38" val="false"/>
+<data cons="false" id="39" val="false"/>
+<data cons="false" id="40" val="false"/>
+<data cons="true" id="41" val="true"/>
+<data cons="false" id="42" val="false"/>
+<data cons="false" id="43" val="false"/>
+<data cons="false" id="44" val="false"/>
+<data cons="false" id="45" val="false"/>
+<data cons="false" id="46" val="false"/>
+<data cons="false" id="47" val="false"/>
+<data cons="false" id="48" val="false"/>
+<data cons="false" id="49" val="false"/>
+<data cons="false" id="50" val="false"/>
+<data cons="false" id="51" val="false"/>
+<data cons="false" id="52" select="0" val="false"/>
+<data cons="false" id="53" select="0" val="false"/>
+<data cons="false" id="54" select="0" val="false"/>
+<data cons="false" id="55" select="0" val="false"/>
+<data cons="false" id="56" select="0" val="false"/>
+<data cons="false" id="58" select="0" val="false"/>
+<data cons="false" id="59" val="false"/>
+<data cons="false" id="61" val="false"/>
+<data cons="false" id="62" val="false"/>
+<data cons="false" id="64" select="0" val="false"/>
+<data cons="false" id="65" val="false"/>
+<data cons="false" id="66" val="false"/>
+<data cons="false" id="67" val="false"/>
+<data cons="false" id="68" val="false"/>
+<data cons="false" id="69" val="false"/>
+<data cons="false" id="70" val="false"/>
+<data cons="false" id="71" val="false"/>
+<data cons="false" id="72" val="false"/>
+<data cons="false" id="75" val="false"/>
+<data cons="false" id="76" val="false"/>
+<data cons="false" id="77" val="false"/>
+<data cons="false" id="78" select="0" val="false"/>
+<data cons="false" id="79" val="false"/>
+<data cons="false" id="80" val="false"/>
+<data cons="false" id="81" val="false"/>
 </エンチャント>
 <文様>
 <左手>左腕</左手>

@@ -5,6 +5,7 @@
  */
 package lss;
 
+import java.awt.Color;
 import java.text.DecimalFormat;
 import static lss.Common.R;
 
@@ -109,7 +110,7 @@ public class Calculator implements Common {
     int res_ele[] = new int[elem_list.length];
     int res_ail[] = new int[ailment_list.length];
 
-    double buff_mp;
+    double cons_mp;
 
     DecimalFormat format_dmg = new DecimalFormat("#0.0");
     DecimalFormat format_rate = new DecimalFormat("#0.0%");
@@ -406,8 +407,6 @@ public class Calculator implements Common {
 
         level = ui.cb_lev.getSelectedIndex() + 1;
         ui.lev.level = level;
-
-        buff_mp = 0;
 
         for (int i = 0; i < 6; i++) {
             _ST[LEVEL][i] = 0;
@@ -976,6 +975,21 @@ public class Calculator implements Common {
         // 料理
         if (ui.cb_buff[ITEM_COOKING].isSelected()) {
             switch (ui.cb_buff_group[ITEM_COOKING].getSelectedIndex()) {
+                case 3:
+                    buff.DR += 5;
+                    buff.SP += 2;
+                    buff.DMG_LONG += 2;
+                    buff.HIT_LONG += 2;
+                    buff.DMG_SHORT += 2;
+                    buff.HIT_SHORT += 2;
+                    buff.HPR += 3;
+                    buff.MPR += 4;
+                    buff.MR += 15;
+                    buff.element_resist[FIRE] += 10;
+                    buff.element_resist[WIND] += 10;
+                    buff.element_resist[EARTH] += 10;
+                    buff.element_resist[WATER] += 10;
+                    break;
                 case 2:
                     buff.DR += 2;
                     buff.SP += 2;
@@ -1024,6 +1038,9 @@ public class Calculator implements Common {
                     break;
                 case 2:
                     buff.DR += 3;
+                    break;
+                case 3:
+                    buff.DR += 5;
                     break;
             }
         }
@@ -1087,10 +1104,15 @@ public class Calculator implements Common {
             }
         }
 
+        cons_mp = 0;
+
         if (ui.cb_buff[K_RA].isSelected()) {
             if (level >= 50 && cls == K) {
                 buff.DR += (level - 50) / 5 + 1;
-                buff_mp += 7 / 3.0;
+                if (ui.cb_buff[K_RA].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 7.0 / 3;
+                }
+
             } else {
                 ui.cb_buff[K_RA].setSelected(false);
             }
@@ -1099,7 +1121,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[K_SC].isSelected()) {
             if (level >= 50 && cls == K) {
                 buff.ER += 15;
-                buff_mp += 10 / 3.0;
+                if (ui.cb_buff[K_SC].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 10.0 / 3;
+                }
             } else {
                 ui.cb_buff[K_SC].setSelected(false);
             }
@@ -1107,7 +1131,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[K_CB].isSelected()) {
             if (level >= 50 && cls == K
                     && buki.type.equals("両手剣")) {
-                buff_mp += 10 / 1.0;
+                if (ui.cb_buff[K_CB].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 10.0 / 1;
+                }
                 // CB効果未実装
             } else {
                 ui.cb_buff[K_CB].setSelected(false);
@@ -1116,7 +1142,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[K_BA].isSelected()) {
             if (level >= 60 && cls == K) {
                 buff.HIT_SHORT += 6;
-                buff_mp += 10 / 1.0;
+                if (ui.cb_buff[K_BA].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 10.0 / 1;
+                }
             } else {
                 ui.cb_buff[K_BA].setSelected(false);
             }
@@ -1125,8 +1153,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[E_RM].isSelected()) {
             if (cls == E) {
                 buff.MR += 10;
-                buff_mp += 5 / 10.0;
-                System.out.println(buff_mp);
+                if (ui.cb_buff[E_RM].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 5.0 / 20;
+                }
             } else {
                 ui.cb_buff[E_RM].setSelected(false);
             }
@@ -1138,7 +1167,9 @@ public class Calculator implements Common {
                 buff.element_resist[WATER] += 10;
                 buff.element_resist[WIND] += 10;
                 buff.element_resist[EARTH] += 10;
-                buff_mp += 10 / 10.0;
+                if (ui.cb_buff[E_RE].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 10.0 / 20;
+                }
             } else {
                 ui.cb_buff[E_RE].setSelected(false);
             }
@@ -1147,7 +1178,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[E_CM].isSelected()) {
             if (cls == E) {
                 buff.ST[WIS] += 3;
-                buff_mp += 10 / 10.0;
+                if (ui.cb_buff[E_CM].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 10.0 / 20;
+                }
             } else {
                 ui.cb_buff[E_CM].setSelected(false);
             }
@@ -1156,7 +1189,9 @@ public class Calculator implements Common {
             if (cls == E) {
                 buff.ELEM_DMG_SHORT[FIRE] += 6;
                 buff.HIT_SHORT += 6;
-                buff_mp += 30 / 16.0;
+                if (ui.cb_buff[E_BW].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 30.0 / 16;
+                }
             } else {
                 ui.cb_buff[E_BW].setSelected(false);
             }
@@ -1164,8 +1199,10 @@ public class Calculator implements Common {
         if (ui.cb_buff[E_FW].isSelected()) {
             if (ui.cb_buff[E_BW].isSelected()) {
                 ui.cb_buff[E_FW].setSelected(false);
-                buff_mp += 15 / 16.0;
             } else {
+                if (ui.cb_buff[E_FW].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 15.0 / 16;
+                }
                 buff.ELEM_DMG_SHORT[FIRE] += 4;
             }
         }
@@ -1178,12 +1215,17 @@ public class Calculator implements Common {
                     buff.HPR += 15;
                 }
             }
-            buff_mp += 20 / 5.33;
+            if (ui.cb_buff[E_NT].getForeground().equals(Color.BLUE)) {
+                cons_mp += 20.0 / 5;
+            }
         }
         if (ui.cb_buff[D_DE].isSelected()) {
             if (cls == D) {
                 buff.ER += 18;
-                buff_mp += 15 / 0.5;
+
+                if (ui.cb_buff[D_DE].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 15.0 / 3;
+                }
             } else {
                 ui.cb_buff[D_DE].setSelected(false);
             }
@@ -1191,7 +1233,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[D_SA].isSelected()) {
             if (cls == D) {
                 buff.MR += 5;
-                buff_mp *= 12 / 16.0;
+                if (ui.cb_buff[D_SA].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 12.0 / 16;
+                }
             } else {
                 ui.cb_buff[D_SA].setSelected(false);
             }
@@ -1201,13 +1245,17 @@ public class Calculator implements Common {
                 ui.cb_buff[E_AP].setSelected(false);
             } else {
                 buff.ER += 5;
-                buff_mp += 30 / 16.0;
+                if (ui.cb_buff[E_AP].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 30.0 / 16;
+                }
             }
         }
         if (ui.cb_buff[E_SS].isSelected()) {
             buff.ELEM_DMG_LONG[WIND] += 6;
             buff.HIT_LONG += 3;
-            buff_mp += 30 / 16.0;
+            if (ui.cb_buff[E_SS].getForeground().equals(Color.BLUE)) {
+                cons_mp += 30.0 / 16;
+            }
         }
         if (ui.cb_buff[E_SE].isSelected()) {
             if (ui.cb_buff[E_SS].isSelected()) {
@@ -1215,7 +1263,9 @@ public class Calculator implements Common {
             } else {
                 buff.ELEM_DMG_LONG[WIND] += 3;
                 buff.HIT_LONG += 2;
-                buff_mp += 40 / 16.0;
+                if (ui.cb_buff[E_SE].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 40.0 / 16;
+                }
             }
         }
         if (ui.cb_buff[E_WS].isSelected()) {
@@ -1224,21 +1274,31 @@ public class Calculator implements Common {
                 ui.cb_buff[E_WS].setSelected(false);
             } else {
                 buff.HIT_LONG += 6;
-                buff_mp += 15 / 16.0;
+                if (ui.cb_buff[E_WS].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 15.0 / 16;
+                }
             }
         }
         if (ui.cb_buff[E_EG].isSelected()) {
             buff.DR += 2;
-            buff_mp += 30 / 10.0;
+            if (ui.cb_buff[E_EG].getForeground().equals(Color.BLUE)) {
+                cons_mp += 30.0 / 10;
+            }
         }
         if (ui.cb_buff[W_BSK].isSelected()) {
             buff.DMG_SHORT += 5;
             buff.HIT_SHORT += 5;
             buff.HPR -= 255;
             buff.AC += 10;
+            if (ui.cb_buff[W_BSK].getForeground().equals(Color.BLUE)) {
+                cons_mp += 40.0 / 5;
+            }
         }
         if (ui.cb_buff[W_BA].isSelected()) {
             buff.AC -= 3;
+            if (ui.cb_buff[W_BA].getForeground().equals(Color.BLUE)) {
+                cons_mp += 20.0 / 30;
+            }
         }
         if (ui.cb_buff[R_DS].isSelected()) {
             buff.DR += 5;
@@ -1253,6 +1313,9 @@ public class Calculator implements Common {
             } else {
                 buff.AC -= 3;
                 buff.ailment[HOLD] += 10;
+                if (ui.cb_buff[R_ANTHARAS].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 10.0 / 10;
+                }
             }
         }
         if (ui.cb_buff[R_FAFURION].isSelected()) {
@@ -1261,6 +1324,9 @@ public class Calculator implements Common {
                 ui.cb_buff[R_FAFURION].setSelected(false);
             } else {
                 buff.ailment[FREEZE] += 10;
+                if (ui.cb_buff[R_FAFURION].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 30.0 / 10;
+                }
             }
         }
         if (ui.cb_buff[R_VALAKAS].isSelected()) {
@@ -1270,13 +1336,22 @@ public class Calculator implements Common {
             } else {
                 buff.HIT_SHORT += 5;
                 buff.ailment[STUN] += 10;
+                if (ui.cb_buff[R_VALAKAS].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 50.0 / 10;
+                }
             }
         }
         if (ui.cb_buff[I_CON].isSelected()) {
             buff.MPR += 2;
+            if (ui.cb_buff[I_CON].getForeground().equals(Color.BLUE)) {
+                cons_mp += 30.0 / 10;
+            }
         }
         if (ui.cb_buff[I_PAT].isSelected()) {
             buff.DR += 2;
+            if (ui.cb_buff[I_PAT].getForeground().equals(Color.BLUE)) {
+                cons_mp += 25.0 / 10;
+            }
         }
         if (ui.cb_buff[I_INS].isSelected()) {
             buff.ST[STR]++;
@@ -1284,17 +1359,29 @@ public class Calculator implements Common {
             buff.ST[CON]++;
             buff.ST[INT]++;
             buff.ST[WIS]++;
+            if (ui.cb_buff[I_INS].getForeground().equals(Color.BLUE)) {
+                cons_mp += 60.0 / 10;
+            }
         }
         if (ui.cb_buff[I_IO].isSelected()) {
             buff.DMG_SHORT += 4;
             buff.DMG_LONG += 4;
             buff.HIT_SHORT += 4;
+            if (ui.cb_buff[I_IO].getForeground().equals(Color.BLUE)) {
+                cons_mp += 20.0 / 2;
+            }
         }
         if (ui.cb_buff[I_IR].isSelected()) {
             buff.SP += 2;
+            if (ui.cb_buff[I_IR].getForeground().equals(Color.BLUE)) {
+                cons_mp += 20.0 / 2;
+            }
         }
         if (ui.cb_buff[I_ID].isSelected()) {
             buff.AC -= 8;
+            if (ui.cb_buff[I_ID].getForeground().equals(Color.BLUE)) {
+                cons_mp += 40.0 / 2;
+            }
         }
 
         if (ui.cb_buff[CLAY].isSelected()) {
@@ -1509,9 +1596,15 @@ public class Calculator implements Common {
             switch (ui.cb_buff_group[B_STR].getSelectedIndex()) {
                 case 0:
                     buff.ST[STR] += 3;
+                    if (ui.cb_buff[B_STR].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 10.0 / 16;
+                    }
                     break;
                 case 1:
                     buff.ST[STR] += 5;
+                    if (ui.cb_buff[B_STR].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 50.0 / 20;
+                    }
                     break;
                 case 2:
                     buff.ST[STR] += 6;
@@ -1525,9 +1618,15 @@ public class Calculator implements Common {
             switch (ui.cb_buff_group[B_DEX].getSelectedIndex()) {
                 case 0:
                     buff.ST[DEX] += 3;
+                    if (ui.cb_buff[B_DEX].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 10.0 / 16;
+                    }
                     break;
                 case 1:
                     buff.ST[DEX] += 5;
+                    if (ui.cb_buff[B_DEX].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 50.0 / 20;
+                    }
                     break;
                 case 2:
                     buff.ST[DEX] += 6;
@@ -1552,12 +1651,20 @@ public class Calculator implements Common {
         }
 
         if (ui.cb_buff[ACC1].isSelected()) {
+            if (ui.cb_buff[ACC1].getForeground().equals(Color.BLUE)) {
+                cons_mp += 40.0 / 20;
+            }
             acc *= acc_1;
         }
         if (ui.cb_buff[ACC2].isSelected()) {
             switch (ui.cb_buff_group[ACC2].getSelectedIndex()) {
                 case 0:
                     acc *= acc_2;
+                    if (ui.cb_buff[ACC2].getForeground().equals(Color.BLUE)) {
+                        if (cls == E) {
+                            cons_mp = 20.0 / 8;
+                        }
+                    }
                     break;
                 case 1:
                     acc *= acc_ew;
@@ -1575,25 +1682,40 @@ public class Calculator implements Common {
                     buki.magic_enchant = 1;
                     buki2.magic_enchant = 1;
                     buff.HIT_SHORT += 1;
+                    if (ui.cb_buff[BUKI].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 10.0 / 20;
+                    }
                     break;
                 case 1:
                     buki.magic_enchant = 2;
                     buki2.magic_enchant = 2;
+                    if (ui.cb_buff[BUKI].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 20.0 / 30;
+                    }
                     break;
                 case 2:
                     buki.magic_enchant = 2;
                     buki2.magic_enchant = 2;
                     buff.HIT_SHORT += 2;
+                    if (ui.cb_buff[BUKI].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 20.0 / 20;
+                    }
                     break;
                 case 3:
                     buki.magic_enchant = 5;
                     buki2.magic_enchant = 5;
+                    if (ui.cb_buff[BUKI].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 20.0 / 3;
+                    }
                     break;
             }
         }
 
         if (ui.cb_buff[P_S].isSelected()) {
             buff.AC -= 8;
+            if (ui.cb_buff[P_S].getForeground().equals(Color.BLUE)) {
+                cons_mp += 25.0 / 10;
+            }
         }
 
         if (ui.cb_buff[P_BA].isSelected()) {
@@ -1607,24 +1729,36 @@ public class Calculator implements Common {
         if (ui.cb_buff[P_G].isSelected()) {
             buff.HIT_SHORT += 5;
             buff.DMG_SHORT += 5;
+            if (ui.cb_buff[P_G].getForeground().equals(Color.BLUE)) {
+                cons_mp += 25.0 / 10;
+            }
         }
 
         if (ui.cb_buff[B_AC].isSelected()) {
             switch (ui.cb_buff_group[B_AC].getSelectedIndex()) {
                 case 0://シールド
                     buff.AC += -2;
+                    if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 8.0 / 30;
+                    }
                     break;
                 case 1://四季P
                     buff.AC += -5;
                     break;
                 case 2://アーススキン
                     buff.AC += -6;
+                    if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 15.0 / 16;
+                    }
                     break;
                 case 3://アースブレス
                     buff.AC += -7;
                     break;
                 case 4://アイアンスキン
                     buff.AC += -10;
+                    if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
+                        cons_mp += 30.0 / 16;
+                    }
                     break;
             }
 
@@ -2115,6 +2249,11 @@ public class Calculator implements Common {
                 cri_short += cr * 100;
                 if (ui.cb_buff[E_SF].isSelected()) {
                     cri_short = 100;
+                    if (ui.cb_buff[E_SF].isSelected()) {
+                        if (ui.cb_buff[E_SF].getForeground().equals(Color.BLUE)) {
+                            cons_mp += 30.0 / 2;
+                        }
+        }
                 }
                 dmg_big_ave = (cri_short * 0.01) * dmg_big_max
                         + (1.0 - cri_short * 0.01) * dmg_big_ave;
@@ -2360,6 +2499,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[I_IA].isSelected()) {
             dmg_big_ave += 10;
             dmg_small_ave += 10;
+            if (ui.cb_buff[I_IA].getForeground().equals(Color.BLUE)) {
+                cons_mp += 50.0 / 2;
+            }
         }
 
         //バフ効果
@@ -2427,6 +2569,10 @@ public class Calculator implements Common {
 
                 dmg_undead -= 0.25 * bs_rate;
                 dmg_cursed -= 0.25 * bs_rate;
+
+                if (ui.cb_buff[D_BS].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 20.0 / 5;
+                }
             }
         }
 
@@ -2447,6 +2593,9 @@ public class Calculator implements Common {
 
                 dmg_undead -= 0.25 * ef_rate;
                 dmg_cursed -= 0.25 * ef_rate;
+                if (ui.cb_buff[E_EF].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 20.0 / 5;
+                }
             }
         }
 
@@ -2467,6 +2616,10 @@ public class Calculator implements Common {
 
                 dmg_undead -= 0.25 * 0.3333;
                 dmg_cursed -= 0.25 * 0.3333;
+
+                if (ui.cb_buff[P_B].getForeground().equals(Color.BLUE)) {
+                    cons_mp += 25.0 / 10;
+                }
             } else {
                 ui.cb_buff[P_B].setSelected(false);
             }
@@ -2690,7 +2843,36 @@ public class Calculator implements Common {
         if (ui.tb_ts_sp.isSelected()) {
             equip_ac += -1;
         }
-        base_ac = 10 - (int) (dex / 3) - (int) (level / 6);
+
+        int c = 6;
+        switch (cls) {
+            case P:
+                c = 6;
+                break;
+            case K:
+                c = 6;
+                break;
+            case E:
+                c = 7;
+                break;
+            case W:
+                c = 8;
+                break;
+            case D:
+                c = 6;
+                break;
+            case R:
+                c = 6;
+                break;
+            case I:
+                c = 8;
+                break;
+            case F:
+                c = 6;
+                break;
+        }
+        base_ac = 10 - (int) (dex / 3) - (int) (level / c);
+
         base_er = (int) (dex / 2) + (int) (level / _C[ER][DEX][cls]);
 
         ui.pure_status_bonus[1][8].setText(Integer.toString(base_ac));
@@ -2709,8 +2891,17 @@ public class Calculator implements Common {
             dr += bougu1.op2.DR;
         }
         dg = 0;
-        if (ui.cb_buff[D_UD].isSelected() || ui.cb_buff[I_MI].isSelected()) {
+        if (ui.cb_buff[D_UD].isSelected()) {
             dg = 50;
+            if (ui.cb_buff[D_UD].getForeground().equals(Color.BLUE)) {
+                cons_mp += 20.0 / 3;
+            }
+        }
+        if (ui.cb_buff[I_MI].isSelected()) {
+            dg = 50;
+            if (ui.cb_buff[I_MI].getForeground().equals(Color.BLUE)) {
+                cons_mp += 10.0 / 20;
+            }
         }
         ui.lab_ac.setText(Integer.toString(ac));
         ui.lab_dg.setText(Integer.toString(dg));
@@ -2746,9 +2937,15 @@ public class Calculator implements Common {
         if (ui.cb_buff[I_RW].isSelected()) {
             ui.cb_buff[W_DW].setSelected(false);
             weight += 180;
+            if (ui.cb_buff[I_RW].getForeground().equals(Color.BLUE)) {
+                cons_mp += 40.0 / 30;
+            }
         }
         if (ui.cb_buff[W_DW].isSelected()) {
             weight += 150;
+            if (ui.cb_buff[W_DW].getForeground().equals(Color.BLUE)) {
+                cons_mp += 10.0 / 30;
+            }
         }
         if (weight > 5400) {
             weight = 5400;
@@ -3111,6 +3308,9 @@ public class Calculator implements Common {
         } else if (ui.cb_buff[W_ADS].isSelected()) {
             hpp += 0.2 * hp;
             mpp += 0.2 * mp;
+            if (ui.cb_buff[W_ADS].getForeground().equals(Color.BLUE)) {
+                cons_mp += 20.0 / 20;
+            }
         }
 
         hp = (int) (hp + eq_hp + hpp);
@@ -3118,6 +3318,35 @@ public class Calculator implements Common {
 
         ui.lab_hp.setText(Integer.toString((int) hp));
         ui.lab_mp.setText(Integer.toString((int) mp));
+        
+        
+        if (ui.cb_buff[D_MA].isSelected()) {
+            if (ui.cb_buff[D_MA].getForeground().equals(Color.BLUE)) {
+                cons_mp += 10.0 / 16;
+            }
+        }
+        if (ui.cb_buff[D_VR].isSelected()) {
+            if (ui.cb_buff[D_MA].getForeground().equals(Color.BLUE)) {
+                cons_mp += 20.0 / 5;
+            }
+        }
+        if (ui.cb_buff[E_EV].isSelected()) {
+            if (ui.cb_buff[E_EV].getForeground().equals(Color.BLUE)) {
+                cons_mp += 30.0 / 16;
+            }
+        }
+        if (ui.cb_buff[E_AF].isSelected()) {
+            if (ui.cb_buff[E_AF].getForeground().equals(Color.BLUE)) {
+                cons_mp += 30.0 / 16;
+            }
+        }
+        if (ui.cb_buff[E_WW].isSelected()) {
+            if (ui.cb_buff[E_WW].getForeground().equals(Color.BLUE)) {
+                cons_mp += 15.0 / 16;
+            }
+        }
+        
+        ui.lab_cons_mp.setText(Double.toString((int) (cons_mp * (1.0 - red_mp * 0.01) * 100 )/ 100.0));
 
     }
 

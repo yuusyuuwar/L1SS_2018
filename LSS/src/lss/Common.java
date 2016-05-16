@@ -166,6 +166,11 @@ public interface Common {
     final int F_G = 76;
     final int CLAY = 77;
     final int ITEM_MD2 = 78;
+    
+    final int D_MA = 79;
+    final int D_VR = 80;
+    
+    final int E_WW = 81;
 
     final String[] ailment_list = {"Î‰»", "‡–°", "“€Œ‹", "ˆÃˆÅ", "‹Câ", "S‘©", "‹°•|"};
     final int STONE = 0;
