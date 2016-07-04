@@ -195,6 +195,10 @@ public class Bougu implements Common {
         if (op.ailment[DARKNESS] > 0) {
             text += " 暗闇耐性+" + op.ailment[DARKNESS];
         }
+        if (op.PVP + op2.PVP > 0) {
+            text += " PVPダメージ+" + (op.PVP + op2.PVP);
+        }
+
         if (!op.effect.equals("")) {
             text += " " + op.effect;
         }
@@ -207,10 +211,9 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
-        
-        
-        if(name.contains("アンタラスグランド")) {
-            if(enchant > 6) {
+
+        if (name.contains("アンタラスグランド")) {
+            if (enchant > 6) {
                 op2.DR += enchant - 6;
             }
         }
@@ -679,6 +682,16 @@ public class Bougu implements Common {
 
         if (type.equals("リング") || type.equals("アミュレット")
                 || type.equals("イアリング") || type.equals("ベルト")) {
+
+            //シークレットオプション
+            if (name.contains("月光の") || name.contains("星の")) {
+                if (enchant == 7) {
+                    op2.PVP = 1;
+                }
+                if (enchant == 8) {
+                    op2.PVP = 2;
+                }
+            }
 
             if (tokusei.equals("情熱")) {
                 switch (enchant) {
