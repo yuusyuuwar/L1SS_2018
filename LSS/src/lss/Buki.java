@@ -38,6 +38,8 @@ public class Buki implements Common {
     double magic_power = 0;
     double magic_delay = 0;
 
+    int hit_stun = 0;
+
     private void reset() {
         small = 0;
         big = 0;
@@ -68,6 +70,8 @@ public class Buki implements Common {
         magic_power = 0;
         magic_delay = 0;
         magic_rate_plus = 0;
+
+        hit_stun = 0;
     }
 
     void load(BufferedReader reader) {
@@ -150,6 +154,9 @@ public class Buki implements Common {
                     week_point_exposure = Double
                             .parseDouble(line.split("=")[1]);
                 }
+                if (line.startsWith("スタン成功=")) {
+                    hit_stun = Integer.parseInt(line.split("=")[1]);
+                }
             }
         } catch (IOException | NullPointerException e) {
             System.err.println(e);
@@ -183,6 +190,11 @@ public class Buki implements Common {
         if (name.equals("瞑想のスタッフ")) {
             op2 = new Buff();
             op2.MPR += enchant;
+        }
+        if (enchant > 10) {
+            op2.DMG_SHORT = enchant - 10;
+            op2.DMG_LONG = enchant - 10;
+            op2.DMG_MAGIC = enchant - 10;
         }
     }
 }

@@ -159,6 +159,18 @@ public class Bougu implements Common {
         if (op.SP < 0) {
             text += " 魔力" + op.SP;
         }
+        if (op.DR + op2.DR > 0) {
+            text += " ダメージ低下" + (op.DR + op2.DR);
+        }
+        if (op.CRI_SHORT + op2.CRI_SHORT > 0) {
+            text += " 近距離クリティカル+" + (op.CRI_SHORT + op2.CRI_SHORT);
+        }
+        if (op.CRI_LONG + op2.CRI_LONG > 0) {
+            text += " 遠距離クリティカル+" + (op.CRI_LONG + op2.CRI_LONG);
+        }
+        if (op.CRI_MAGIC + op2.CRI_MAGIC > 0) {
+            text += " 魔法クリティカル+" + (op.CRI_MAGIC + op2.CRI_MAGIC);
+        }
         if (op.element_resist[FIRE] > 0) {
             text += " 火の属性" + op.element_resist[FIRE];
         }
@@ -211,6 +223,52 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
+
+        if (name.equals("古代弓射手のガーダー")) {
+            if (enchant >= 9) {
+                op2.DMG_LONG = 3;
+            } else if (enchant >= 7) {
+                op2.DMG_LONG = 2;
+            } else if (enchant >= 5) {
+                op2.DMG_LONG = 1;
+            }
+        }
+        if (name.equals("古代闘士のガーダー")) {
+            if (enchant >= 9) {
+                op2.DMG_SHORT = 3;
+            } else if (enchant >= 7) {
+                op2.DMG_SHORT = 2;
+            } else if (enchant >= 5) {
+                op2.DMG_SHORT = 1;
+            }
+        }
+        if (name.equals("体力のガーダー")) {
+            if (enchant >= 9) {
+                op2.HP = 75;
+            } else if (enchant >= 7) {
+                op2.HP = 50;
+            } else if (enchant >= 5) {
+                op2.HP = 25;
+            }
+        }
+        if (name.equals("守護のガーダー")) {
+            if (enchant >= 9) {
+                op2.DR = 3;
+            } else if (enchant >= 7) {
+                op2.DR = 2;
+            } else if (enchant >= 5) {
+                op2.DR = 1;
+            }
+        }
+        if (name.equals("ウィザードのガーダー")) {
+            if (enchant >= 9) {
+                op2.SP = 3;
+            } else if (enchant >= 7) {
+                op2.SP = 2;
+            } else if (enchant >= 5) {
+                op2.SP = 1;
+            }
+        }
 
         if (name.contains("アンタラスグランド")) {
             if (enchant > 6) {

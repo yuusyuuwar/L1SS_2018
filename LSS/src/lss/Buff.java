@@ -16,10 +16,13 @@ public class Buff implements Common {
     int MPR;
     int DMG_SHORT;
     int DMG_LONG;
+    int DMG_MAGIC;
     int HIT_SHORT;
     int HIT_LONG;
-    int DMG_MAGIC;
     int HIT_MAGIC;
+    int CRI_SHORT;
+    int CRI_LONG;
+    int CRI_MAGIC;
     int SP;
     int DR;
     int MR;
@@ -134,6 +137,15 @@ public class Buff implements Common {
             }
             if (line.startsWith("恐怖=")) {
                 ailment[TERROR] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("近距離クリティカル=")) {
+               CRI_SHORT = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("遠距離クリティカル=")) {
+               CRI_LONG = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("魔法クリティカル=")) {
+               CRI_MAGIC = Integer.parseInt(line.split("=")[1]);
             }
 
         }

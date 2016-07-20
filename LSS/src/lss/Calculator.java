@@ -475,6 +475,12 @@ public class Calculator implements Common {
 
         buff = new Buff();
 
+        if (bougu[0].name.equals("エルヴンシールド")) {
+            if (cls == E) {
+                buff.MR += 5;
+            }
+        }
+
         // セット効果
         int set1 = 0, set2 = 0, set3 = 0;// 王家セット
         int set4 = 0, set5 = 0, set6 = 0;// 浄化セット
@@ -1286,8 +1292,8 @@ public class Calculator implements Common {
             }
         }
         if (ui.cb_buff[W_BSK].isSelected()) {
-            buff.DMG_SHORT += 5;
-            buff.HIT_SHORT += 5;
+            buff.DMG_SHORT += 2;
+            buff.HIT_SHORT += 8;
             buff.HPR -= 255;
             buff.AC += 10;
             if (ui.cb_buff[W_BSK].getForeground().equals(Color.BLUE)) {
@@ -1535,6 +1541,7 @@ public class Calculator implements Common {
                     buff.MP += 50;
                     if (q) {
                         buff.DMG_LONG += 1;
+                        buff.DMG_SHORT += 1;
                     }
                     break;
                 case W:
@@ -1921,7 +1928,13 @@ public class Calculator implements Common {
             dmg_magic += bougu1.op.DMG_MAGIC + bougu1.op2.DMG_MAGIC;
             sp += bougu1.op.SP + bougu1.op2.SP;
             hit_magic += bougu1.op.HIT_MAGIC + bougu1.op2.HIT_MAGIC;
+            cri_short += bougu1.op.CRI_SHORT + bougu1.op2.CRI_SHORT;
+            cri_long += bougu1.op.CRI_LONG + bougu1.op2.CRI_LONG;
+            cri_magic += bougu1.op.CRI_MAGIC + bougu1.op2.CRI_MAGIC;
         }
+        cri_short += buki.op.CRI_SHORT + buki.op2.CRI_SHORT;
+        cri_long += buki.op.CRI_LONG + buki.op2.CRI_LONG;
+        cri_magic += buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC;
 
         int st_int = _ST[BASE][INT] + _ST[REM][INT] + _ST[LEVEL][INT]
                 + _ST[ENCHANT][INT] + _ST[ELIXIR][INT];
@@ -2131,11 +2144,11 @@ public class Calculator implements Common {
         if (cls == F
                 && ui.cb_eq[1].getSelectedIndex() != 0) {
 
-            dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
-            dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+            dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
+            dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
-            dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
-            dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+            dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
+            dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
             if (buki.material.equals("シルバー")
                     || buki.material.equals("ミスリル")
@@ -2146,11 +2159,11 @@ public class Calculator implements Common {
                 dmg_cursed += ((1.0 + 3.0) / 2.0 + 3.0) / 2.0;
             }
 
-            dmg_big_ave2 = (1.0 + buki2.big) / 2 + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
-            dmg_small_ave2 = (1.0 + buki2.small) / 2 + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
+            dmg_big_ave2 = (1.0 + buki2.big) / 2 + buki2.op.DMG_SHORT + buki2.op2.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
+            dmg_small_ave2 = (1.0 + buki2.small) / 2 + buki2.op.DMG_SHORT + buki2.op2.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
 
-            dmg_big_max2 = buki2.big + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
-            dmg_small_max2 = buki2.small + buki2.op.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
+            dmg_big_max2 = buki2.big + buki2.op.DMG_SHORT + buki2.op2.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
+            dmg_small_max2 = buki2.small + buki2.op.DMG_SHORT + buki2.op2.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
 
             if (buki2.material.equals("シルバー")
                     || buki2.material.equals("ミスリル")
@@ -2173,18 +2186,18 @@ public class Calculator implements Common {
                 case "ガントレット":
 
                     if (ui.cb_sonsyou.isSelected() && !(buki.arrow_name.equals("幸運のアロー") || buki.op.effect.contains("貫通効果"))) {
-                        dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.DMG_LONG + buki.enchant;
-                        dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.DMG_LONG + buki.enchant;
+                        dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
 
-                        dmg_big_max = buki.arrow_big / 2 + buki.op.DMG_LONG + buki.enchant;
-                        dmg_small_max = buki.arrow_small / 2 + buki.op.DMG_LONG + buki.enchant;
+                        dmg_big_max = buki.arrow_big / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_small_max = buki.arrow_small / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
 
                     } else {
-                        dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.DMG_LONG + buki.enchant;
-                        dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.DMG_LONG + buki.enchant;
+                        dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
 
-                        dmg_big_max = buki.arrow_big + buki.op.DMG_LONG + buki.enchant;
-                        dmg_small_max = buki.arrow_small + buki.op.DMG_LONG + buki.enchant;
+                        dmg_big_max = buki.arrow_big + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_small_max = buki.arrow_small + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
                     }
                     if (buki.arrow_material.equals("シルバー")
                             || buki.arrow_material.equals("ミスリル")
@@ -2197,11 +2210,11 @@ public class Calculator implements Common {
                     dmg_small_ave = buki.x * (1.0 + buki.y) / 2 + buki.z;
                     break;
                 default:
-                    dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
-                    dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+                    dmg_big_ave = (1.0 + buki.big) / 2 + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
+                    dmg_small_ave = (1.0 + buki.small) / 2 + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
-                    dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
-                    dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.enchant + buki.magic_enchant;
+                    dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
+                    dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
                     if (buki.material.equals("シルバー")
                             || buki.material.equals("ミスリル")
@@ -2230,10 +2243,10 @@ public class Calculator implements Common {
                     b = 0.6 - 0.01 * ((ui.s_target_mr.getValue() - hit_magic) / 10);
                 }
                 dmg_big_ave *= a;
-                dmg_big_ave += buki.enchant + base_dmg_magic;
+                dmg_big_ave += buki.enchant + base_dmg_magic + buki.op.DMG_MAGIC + buki.op2.DMG_MAGIC;
                 dmg_big_ave *= b;
                 dmg_small_ave *= a;
-                dmg_small_ave += buki.enchant + base_dmg_magic;
+                dmg_small_ave += buki.enchant + base_dmg_magic + buki.op.DMG_MAGIC + buki.op2.DMG_MAGIC;
                 dmg_small_ave *= b;
                 dmg_small_ave *= cri_magic * 0.01 * 1.5 + (1 - cri_magic * 0.01) * 1.0;
                 dmg_big_ave -= 0.5;
@@ -2253,7 +2266,7 @@ public class Calculator implements Common {
                         if (ui.cb_buff[E_SF].getForeground().equals(Color.BLUE)) {
                             cons_mp += 30.0 / 2;
                         }
-        }
+                    }
                 }
                 dmg_big_ave = (cri_short * 0.01) * dmg_big_max
                         + (1.0 - cri_short * 0.01) * dmg_big_ave;
@@ -2892,15 +2905,15 @@ public class Calculator implements Common {
         }
         dg = 0;
         if (ui.cb_buff[D_UD].isSelected()) {
-            dg = 50;
+            dg = 60;
             if (ui.cb_buff[D_UD].getForeground().equals(Color.BLUE)) {
                 cons_mp += 20.0 / 3;
             }
         }
         if (ui.cb_buff[I_MI].isSelected()) {
-            dg = 50;
+            dg = 60;
             if (ui.cb_buff[I_MI].getForeground().equals(Color.BLUE)) {
-                cons_mp += 10.0 / 20;
+                cons_mp += 20.0 / 20;
             }
         }
         ui.lab_ac.setText(Integer.toString(ac));
@@ -2936,9 +2949,9 @@ public class Calculator implements Common {
 
         if (ui.cb_buff[I_RW].isSelected()) {
             ui.cb_buff[W_DW].setSelected(false);
-            weight += 180;
+            weight += 480;
             if (ui.cb_buff[I_RW].getForeground().equals(Color.BLUE)) {
-                cons_mp += 40.0 / 30;
+                cons_mp += 50.0 / 30;
             }
         }
         if (ui.cb_buff[W_DW].isSelected()) {
@@ -3318,8 +3331,7 @@ public class Calculator implements Common {
 
         ui.lab_hp.setText(Integer.toString((int) hp));
         ui.lab_mp.setText(Integer.toString((int) mp));
-        
-        
+
         if (ui.cb_buff[D_MA].isSelected()) {
             if (ui.cb_buff[D_MA].getForeground().equals(Color.BLUE)) {
                 cons_mp += 10.0 / 16;
@@ -3345,8 +3357,8 @@ public class Calculator implements Common {
                 cons_mp += 15.0 / 16;
             }
         }
-        
-        ui.lab_cons_mp.setText(Double.toString((int) (cons_mp * (1.0 - red_mp * 0.01) * 100 )/ 100.0));
+
+        ui.lab_cons_mp.setText(Double.toString((int) (cons_mp * (1.0 - red_mp * 0.01) * 100) / 100.0));
 
     }
 
@@ -3478,6 +3490,20 @@ public class Calculator implements Common {
         }
         if (buki.op.DMG_LONG < 0) {
             buki_text += " 追加打撃" + buki.op.DMG_LONG;
+        }
+
+        if (buki.op.CRI_SHORT + buki.op2.CRI_SHORT > 0) {
+            buki_text += " 近距離クリティカル+" + (buki.op.CRI_SHORT + buki.op2.CRI_SHORT);
+        }
+        if (buki.op.CRI_LONG + buki.op2.CRI_LONG > 0) {
+            buki_text += " 遠距離クリティカル+" + (buki.op.CRI_LONG + buki.op2.CRI_LONG);
+        }
+        if (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC > 0) {
+            buki_text += " 魔法クリティカル+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
+        }
+
+        if (buki.hit_stun > 0) {
+            buki_text += " スタン成功" + buki.hit_stun;
         }
 
         if (buki.op.HP > 0) {
