@@ -191,7 +191,7 @@ public class Buki implements Common {
             op2 = new Buff();
             op2.MPR += enchant;
         }
-        if (enchant > 10) {
+        if (enchant >= 10) {
             op2.DMG_SHORT = enchant - 10;
             op2.DMG_LONG = enchant - 10;
             op2.DMG_MAGIC = enchant - 10;

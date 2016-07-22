@@ -900,125 +900,208 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.equals("ルームティス レッド イアリング")) {
-                switch (enchant) {
+            if (name.contains("ルームティス レッド イアリング")) {
+                int e = enchant;
+                if(name.contains("祝福された")) {
+                    e++;
+                }
+                switch (e) {
                     case 0:
-                        op.HP = 10;
+                        op2.HP = 10;
                         break;
                     case 1:
-                        op.HP = 30;
+                        op2.HP = 30;
                         break;
                     case 2:
-                        op.HP = 40;
+                        op2.HP = 40;
                         break;
                     case 3:
-                        op.HP = 50;
-                        op.DR = 1;
+                        op2.HP = 50;
+                        op2.DR = 1;
                         break;
                     case 4:
-                        op.HP = 60;
-                        op.DR = 1;
+                        op2.HP = 60;
+                        op2.DR = 1;
                         break;
                     case 5:
-                        op.HP = 70;
-                        op.DR = 2;
-                        op.effect = "ダメージ軽減+20 2%,";
+                        op2.HP = 70;
+                        op2.DR = 2;
+                        op2.effect = "ダメージ軽減+20 2%,";
                         break;
                     case 6:
-                        op.HP = 80;
-                        op.DR = 3;
-                        op.effect = "ダメージ軽減+20 3%,";
+                        op2.HP = 80;
+                        op2.DR = 3;
+                        op2.effect = "ダメージ軽減+20 3%,";
                         break;
                     case 7:
-                        op.HP = 90;
-                        op.DR = 4;
-                        op.effect = "ダメージ軽減+20 4%,";
+                        op2.HP = 90;
+                        op2.DR = 4;
+                        op2.effect = "ダメージ軽減+20 4%,";
                         break;
                     case 8:
-                        op.HP = 100;
-                        op.DR = 5;
-                        op.effect = "ダメージ軽減+20 5%,";
+                        op2.HP = 100;
+                        op2.DR = 5;
+                        op2.effect = "ダメージ軽減+20 5%,";
+                        break;
+                    case 9:
+                        op2.HP = 150;
+                        op2.DR = 6;
+                        op2.effect = "ダメージ軽減+20 6%,";
                         break;
                 }
             }
-            if (name.equals("ルームティス パープル イアリング")) {
-                switch (enchant) {
+            if (name.contains("ルームティス パープル イアリング")) {
+                int e = enchant;
+                if(name.contains("祝福された")) {
+                    e++;
+                }
+                switch (e) {
                     case 0:
-                        op.MP = 5;
-                        op.MR = 2;
+                        op2.MP = 5;
+                        op2.MR = 2;
                         break;
                     case 1:
-                        op.MP = 15;
-                        op.MR = 5;
+                        op2.MP = 15;
+                        op2.MR = 5;
                         break;
                     case 2:
-                        op.MP = 20;
-                        op.MR = 6;
+                        op2.MP = 20;
+                        op2.MR = 6;
                         break;
                     case 3:
-                        op.MP = 35;
-                        op.MR = 7;
-                        op.SP = 1;
+                        op2.MP = 35;
+                        op2.MR = 7;
+                        op2.SP = 1;
                         break;
                     case 4:
-                        op.MP = 40;
-                        op.MR = 8;
-                        op.SP = 1;
+                        op2.MP = 40;
+                        op2.MR = 8;
+                        op2.SP = 1;
                         break;
                     case 5:
-                        op.MP = 55;
-                        op.MR = 9;
-                        op.SP = 2;
+                        op2.MP = 55;
+                        op2.MR = 9;
+                        op2.SP = 2;
                         break;
                     case 6:
-                        op.MP = 60;
-                        op.MR = 10;
-                        op.SP = 2;
+                        op2.MP = 60;
+                        op2.MR = 10;
+                        op2.SP = 2;
                         break;
                     case 7:
-                        op.MP = 75;
-                        op.MR = 12;
-                        op.SP = 3;
+                        op2.MP = 75;
+                        op2.MR = 12;
+                        op2.SP = 3;
                         break;
                     case 8:
-                        op.MP = 100;
-                        op.MR = 15;
-                        op.SP = 3;
+                        op2.MP = 100;
+                        op2.MR = 15;
+                        op2.SP = 3;
+                        break;
+                    case 9:
+                        op2.MP = 130;
+                        op2.MR = 20;
+                        op2.SP = 4;
                         break;
                 }
             }
-            if (name.equals("ルームティス ブルー イアリング")) {
-                switch (enchant) {
+            if (name.contains("ルームティス ブルー イアリング")) {
+                int e = enchant;
+                if(name.contains("祝福された")) {
+                    e++;
+                }
+                switch (e) {
                     case 0:
-                        op.effect = "ポーション回復量 +2% +2,";
+                        op2.effect = "ポーション回復量 +2% +2,";
                         break;
                     case 1:
-                        op.effect = "ポーション回復量 +6% +6,";
+                        op2.effect = "ポーション回復量 +6% +6,";
                         break;
                     case 2:
-                        op.effect = "ポーション回復量 +8% +8,";
+                        op2.effect = "ポーション回復量 +8% +8,";
                         break;
                     case 3:
-                        op.effect = "ポーション回復量 +10% +10,";
+                        op2.effect = "ポーション回復量 +10% +10,";
                         break;
                     case 4:
-                        op.effect = "ポーション回復量 +12% +12,";
+                        op2.effect = "ポーション回復量 +12% +12,";
                         break;
                     case 5:
-                        op.AC = -1;
-                        op.effect = "ポーション回復量 +14% +14,";
+                        op2.AC = -1;
+                        op2.effect = "ポーション回復量 +14% +14,";
                         break;
                     case 6:
-                        op.AC = -2;
-                        op.effect = "ポーション回復量 +16% +16,";
+                        op2.AC = -2;
+                        op2.effect = "ポーション回復量 +16% +16,";
                         break;
                     case 7:
-                        op.AC = -2;
-                        op.effect = "ポーション回復量 +18% +18,";
+                        op2.AC = -2;
+                        op2.effect = "ポーション回復量 +18% +18,";
                         break;
                     case 8:
-                        op.AC = -3;
-                        op.effect = "ポーション回復量 +20% +20,";
+                        op2.AC = -3;
+                        op2.effect = "ポーション回復量 +20% +20,";
+                        break;
+                    case 9:
+                        op2.AC = -4;
+                        op2.effect = "ポーション回復量 +22% +22,";
+                        break;
+                }
+            }
+            if (name.contains("ルームティス ブラック イアリング")) {
+                int e = enchant;
+                if(name.contains("祝福された")) {
+                    e++;
+                }
+                switch (e) {
+                    case 0:
+                        op2.AC = -1;
+                        break;
+                    case 1:
+                        op2.AC = -2;
+                        break;
+                    case 2:
+                        op2.AC = -3;
+                        break;
+                    case 3:
+                        op2.AC = -4;
+                        op2.DMG_SHORT = 1;
+                        op2.DMG_LONG = 1;
+                        break;
+                    case 4:
+                        op2.AC = -5;
+                        op2.DMG_SHORT = 1;
+                        op2.DMG_LONG = 1;
+                        break;
+                    case 5:
+                        op2.AC = -6;
+                        op2.DMG_SHORT = 2;
+                        op2.DMG_LONG = 2;
+                        op2.effect = "追加ダメージ +20 2%,";
+                        break;
+                    case 6:
+                        op2.AC = -7;
+                        op2.DMG_SHORT = 3;
+                        op2.DMG_LONG = 3;
+                        op2.effect = "追加ダメージ +20 3%,";
+                        break;
+                    case 7:
+                        op2.AC = -8;
+                        op2.DMG_SHORT = 4;
+                        op2.DMG_LONG = 4;
+                        op2.effect = "追加ダメージ +20 4%,";
+                        break;
+                    case 8:
+                        op2.AC = -9;
+                        op2.DMG_SHORT = 5;
+                        op2.DMG_LONG = 5;
+                        op2.effect = "追加ダメージ +20 5%,";
+                        break;
+                    case 9:
+                        op2.AC = -10;
+                        op2.DMG_SHORT = 6;
+                        op2.DMG_LONG = 6;
+                        op2.effect = "追加ダメージ +20 6%,";
                         break;
                 }
             }

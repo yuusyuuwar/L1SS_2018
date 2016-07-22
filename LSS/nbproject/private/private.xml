@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="5">
         <file>
             <url>src/lss/Calculator.java</url>
-            <bookmark id="2">
+            <bookmark id="4">
                 <name/>
-                <line>1112</line>
+                <line>2654</line>
                 <key/>
             </bookmark>
-            <bookmark id="3">
+            <bookmark id="5">
                 <name/>
-                <line>2906</line>
+                <line>3127</line>
                 <key/>
             </bookmark>
         </file>
@@ -18,6 +18,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Bougu.java</file>
+            <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Buki.java</file>
             <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Common.java</file>
             <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Calculator.java</file>
         </group>

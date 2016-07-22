@@ -475,6 +475,12 @@ public class Calculator implements Common {
 
         buff = new Buff();
 
+        for (Bougu b : bougu) {
+            buff.effect += b.op.effect;
+            buff.effect += b.op2.effect;
+            buff.PVP += b.op.PVP + b.op2.PVP;
+        }
+
         if (bougu[0].name.equals("エルヴンシールド")) {
             if (cls == E) {
                 buff.MR += 5;
@@ -2517,6 +2523,11 @@ public class Calculator implements Common {
             }
         }
 
+        //PVP
+        if (ui.cb_mode_pc.getSelectedIndex() == 1) {
+            dmg_small_ave += buff.PVP;
+        }
+
         //バフ効果
         switch (buki.type) {
             case "ガントレット":
@@ -2642,7 +2653,24 @@ public class Calculator implements Common {
             dmg_big_ave += (75 - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * 0.05;
             dmg_small_ave += (75 - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * 0.05;
         }
-
+        int dmg_rate = 0;
+        int dmg = 0;
+        for (String split : buff.effect.split(",")) {
+            if (split.contains("追加ダメージ")) {
+                String[] a = split.split(" ");
+                if (a[1].contains("+")) {
+                    dmg += Integer.parseInt(a[1]);
+                }
+                if (a.length >= 2) {
+                    if (a[2].contains("%")) {
+                        dmg_rate += Integer.parseInt(a[2].split("%")[0]);
+                    }
+                }
+                System.out.println(dmg + " " + dmg_rate);
+                System.out.println((dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0));
+                dmg_big_ave += (dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0);
+            }
+        }
 //        if (ui.i2h.isSelected()) {
 //            dmg_big_ave *= 0.5;
 //            dmg_small_ave *= 0.5;
@@ -3097,11 +3125,6 @@ public class Calculator implements Common {
 
         int hpr2 = 0;
         int mpr2 = 0;
-
-        for (Bougu b : bougu) {
-            buff.effect += b.op.effect;
-            buff.effect += b.op2.effect;
-        }
 
         for (String split : buff.effect.split(",")) {
             if (split.contains("HP回復")) {
