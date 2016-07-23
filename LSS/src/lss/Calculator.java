@@ -2591,8 +2591,12 @@ public class Calculator implements Common {
                 dmg_cursed *= 1.5 * bs_rate
                         + 1.0 * (1.0 - bs_rate);
 
-                dmg_undead -= 0.25 * bs_rate;
-                dmg_cursed -= 0.25 * bs_rate;
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * bs_rate;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * bs_rate;
+                }
 
                 if (ui.cb_buff[D_BS].getForeground().equals(Color.BLUE)) {
                     cons_mp += 20.0 / 5;
@@ -2615,8 +2619,12 @@ public class Calculator implements Common {
                 dmg_cursed *= 1.5 * ef_rate
                         + 1.0 * (1.0 - ef_rate);
 
-                dmg_undead -= 0.25 * ef_rate;
-                dmg_cursed -= 0.25 * ef_rate;
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * ef_rate;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * ef_rate;
+                }
                 if (ui.cb_buff[E_EF].getForeground().equals(Color.BLUE)) {
                     cons_mp += 20.0 / 5;
                 }
@@ -2638,8 +2646,12 @@ public class Calculator implements Common {
                 dmg_cursed *= 1.5 * 0.3333
                         + 1.0 * (1.0 - 0.3333);
 
-                dmg_undead -= 0.25 * 0.3333;
-                dmg_cursed -= 0.25 * 0.3333;
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * 0.3333;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * 0.3333;
+                }
 
                 if (ui.cb_buff[P_B].getForeground().equals(Color.BLUE)) {
                     cons_mp += 25.0 / 10;
