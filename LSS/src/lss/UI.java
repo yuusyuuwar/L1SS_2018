@@ -587,7 +587,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
-            if (i >= 18) {
+            if (i >= 19) {
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
             }

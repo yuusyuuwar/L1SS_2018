@@ -223,6 +223,99 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
+        
+        if(name.equals("地竜のTシャツ")) {
+            switch(enchant) {
+                case 5:
+                    op2.MR = 4;
+                    break;
+                case 6:
+                    op2.MR = 5;
+                    break;
+                case 7:
+                    op2.MR = 6;
+                    break;
+                case 8:
+                    op2.MR = 8;
+                    break;
+                case 9:
+                    op2.MR = 11;
+                    op2.DR = 2;
+                    break;
+                case 10:
+                    op2.MR = 14;
+                    op2.DR = 3;
+            }
+        }
+        if(name.equals("火竜のTシャツ")) {
+            switch(enchant) {
+                case 5:
+                    op2.HP = 20;
+                    break;
+                case 6:
+                    op2.HP = 30;
+                    break;
+                case 7:
+                    op2.HP = 50;
+                    break;
+                case 8:
+                    op2.HP = 70;
+                    break;
+                case 9:
+                    op2.HP = 90;
+                    op2.DMG_SHORT = 1;
+                    break;
+                case 10:
+                    op2.HP = 100;
+                    op2.DMG_SHORT = 2;
+            }
+        }
+        if(name.equals("風竜のTシャツ")) {
+            switch(enchant) {
+                case 5:
+                    op2.HP = 20;
+                    break;
+                case 6:
+                    op2.HP = 30;
+                    break;
+                case 7:
+                    op2.HP = 50;
+                    break;
+                case 8:
+                    op2.HP = 70;
+                    break;
+                case 9:
+                    op2.HP = 90;
+                    op2.DMG_LONG = 1;
+                    break;
+                case 10:
+                    op2.HP = 100;
+                    op2.DMG_LONG = 2;
+            }
+        }
+        if(name.equals("水竜のTシャツ")) {
+            switch(enchant) {
+                case 5:
+                    op2.HP = 20;
+                    break;
+                case 6:
+                    op2.HP = 30;
+                    break;
+                case 7:
+                    op2.HP = 50;
+                    break;
+                case 8:
+                    op2.HP = 70;
+                    break;
+                case 9:
+                    op2.HP = 90;
+                    op2.SP = 1;
+                    break;
+                case 10:
+                    op2.HP = 100;
+                    op2.SP = 2;
+            }
+        }
 
         if (name.equals("古代弓射手のガーダー")) {
             if (enchant >= 9) {
@@ -739,7 +832,11 @@ public class Bougu implements Common {
         }
 
         if (type.equals("リング") || type.equals("アミュレット")
-                || type.equals("イアリング") || type.equals("ベルト")) {
+                || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン")) {
+
+            if (name.equals("回復の紋様")) {
+                op2.effect = "ポーション回復量 +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
+            }
 
             //シークレットオプション
             if (name.contains("月光の") || name.contains("星の")) {
@@ -902,7 +999,7 @@ public class Bougu implements Common {
             }
             if (name.contains("ルームティス レッド イアリング")) {
                 int e = enchant;
-                if(name.contains("祝福された")) {
+                if (name.contains("祝福された")) {
                     e++;
                 }
                 switch (e) {
@@ -952,7 +1049,7 @@ public class Bougu implements Common {
             }
             if (name.contains("ルームティス パープル イアリング")) {
                 int e = enchant;
-                if(name.contains("祝福された")) {
+                if (name.contains("祝福された")) {
                     e++;
                 }
                 switch (e) {
@@ -1007,7 +1104,7 @@ public class Bougu implements Common {
             }
             if (name.contains("ルームティス ブルー イアリング")) {
                 int e = enchant;
-                if(name.contains("祝福された")) {
+                if (name.contains("祝福された")) {
                     e++;
                 }
                 switch (e) {
@@ -1050,7 +1147,7 @@ public class Bougu implements Common {
             }
             if (name.contains("ルームティス ブラック イアリング")) {
                 int e = enchant;
-                if(name.contains("祝福された")) {
+                if (name.contains("祝福された")) {
                     e++;
                 }
                 switch (e) {

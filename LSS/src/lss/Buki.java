@@ -187,8 +187,8 @@ public class Buki implements Common {
     }
 
     public void checkEnchant() {
+        op2 = new Buff();
         if (name.equals("瞑想のスタッフ")) {
-            op2 = new Buff();
             op2.MPR += enchant;
         }
         if (enchant >= 10) {
