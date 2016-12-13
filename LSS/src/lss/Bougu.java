@@ -189,23 +189,23 @@ public class Bougu implements Common {
         if (mr_enchant > 0) {
             text += " (強化毎にMR+" + mr_enchant + ")";
         }
-        if (op.ailment[STUN] > 0) {
-            text += " スタン耐性+" + op.ailment[STUN];
+        if (op.ailment[STUN] + op2.ailment[STUN] > 0) {
+            text += " スタン耐性+" + (op.ailment[STUN] + op2.ailment[STUN]);
         }
-        if (op.ailment[HOLD] > 0) {
-            text += " ホールド耐性+" + op.ailment[HOLD];
+        if (op.ailment[HOLD] + op2.ailment[HOLD] > 0) {
+            text += " ホールド耐性+" + (op.ailment[HOLD] + op2.ailment[HOLD]);
         }
-        if (op.ailment[SLEEP] > 0) {
-            text += " 睡眠耐性+" + op.ailment[SLEEP];
+        if (op.ailment[SLEEP] + op2.ailment[SLEEP] > 0) {
+            text += " 睡眠耐性+" + (op.ailment[SLEEP] + op2.ailment[SLEEP]);
         }
-        if (op.ailment[FREEZE] > 0) {
-            text += " 凍結耐性+" + op.ailment[FREEZE];
+        if (op.ailment[FREEZE] + op2.ailment[FREEZE] > 0) {
+            text += " 凍結耐性+" + (op.ailment[FREEZE] + op2.ailment[FREEZE]);
         }
-        if (op.ailment[STONE] > 0) {
-            text += " 石化耐性+" + op.ailment[STONE];
+        if (op.ailment[STONE] + op2.ailment[STONE] > 0) {
+            text += " 石化耐性+" + (op.ailment[STONE] + op2.ailment[STONE]);
         }
-        if (op.ailment[DARKNESS] > 0) {
-            text += " 暗闇耐性+" + op.ailment[DARKNESS];
+        if (op.ailment[DARKNESS] + op2.ailment[DARKNESS] > 0) {
+            text += " 暗闇耐性+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
         }
         if (op.PVP + op2.PVP > 0) {
             text += " PVPダメージ+" + (op.PVP + op2.PVP);
@@ -223,9 +223,9 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
-        
-        if(name.equals("地竜のTシャツ")) {
-            switch(enchant) {
+
+        if (name.equals("地竜のTシャツ")) {
+            switch (enchant) {
                 case 5:
                     op2.MR = 4;
                     break;
@@ -247,8 +247,8 @@ public class Bougu implements Common {
                     op2.DR = 3;
             }
         }
-        if(name.equals("火竜のTシャツ")) {
-            switch(enchant) {
+        if (name.equals("火竜のTシャツ")) {
+            switch (enchant) {
                 case 5:
                     op2.HP = 20;
                     break;
@@ -270,8 +270,8 @@ public class Bougu implements Common {
                     op2.DMG_SHORT = 2;
             }
         }
-        if(name.equals("風竜のTシャツ")) {
-            switch(enchant) {
+        if (name.equals("風竜のTシャツ")) {
+            switch (enchant) {
                 case 5:
                     op2.HP = 20;
                     break;
@@ -293,8 +293,8 @@ public class Bougu implements Common {
                     op2.DMG_LONG = 2;
             }
         }
-        if(name.equals("水竜のTシャツ")) {
-            switch(enchant) {
+        if (name.equals("水竜のTシャツ")) {
+            switch (enchant) {
                 case 5:
                     op2.HP = 20;
                     break;
@@ -385,6 +385,7 @@ public class Bougu implements Common {
                             op2.PVP++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
+                            op2.ailment[STUN] += 2;
                         case 7:
                             op2.HP += 5;
                             op2.DMG_LONG++;
@@ -393,12 +394,14 @@ public class Bougu implements Common {
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
                             op2.AC--;
+                            op2.ailment[STUN] += 2;
                         case 6:
                             op2.HP += 5;
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
                             op2.HIT_SHORT++;
                             op2.HIT_LONG++;
+                            op2.ailment[STUN] += 5;
                         case 5:
                             op2.HP += 5;
                             op2.DMG_LONG++;
@@ -423,15 +426,18 @@ public class Bougu implements Common {
                             op2.SP++;
                             op2.HP += 10;
                             op2.MP += 5;
+                            op2.ailment[STUN] += 2;
                         case 7:
                             op2.PVP++;
                             op2.SP++;
                             op2.HP += 5;
                             op2.MP += 5;
                             op2.AC--;
+                            op2.ailment[STUN] += 2;
                         case 6:
                             op2.HP += 5;
                             op2.MP += 10;
+                            op2.ailment[STUN] += 5;
                         case 5:
                             op2.HP += 5;
                             op2.SP++;
@@ -451,16 +457,19 @@ public class Bougu implements Common {
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
                             op2.PVP++;
+                            op2.ailment[STUN] += 2;
                         case 7:
                             op2.HP += 10;
                             op2.AC--;
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
                             op2.PVP++;
+                            op2.ailment[STUN] += 2;
                         case 6:
                             op2.HP += 5;
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
+                            op2.ailment[STUN] += 5;
                         case 5:
                             op2.HP += 5;
                             op2.DMG_LONG++;
@@ -482,6 +491,7 @@ public class Bougu implements Common {
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
                             op2.PVP++;
+                            op2.ailment[STUN] += 2;
                         case 7:
                             op2.HP += 5;
                             op2.MR++;
@@ -489,11 +499,13 @@ public class Bougu implements Common {
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
                             op2.PVP++;
+                            op2.ailment[STUN] += 2;
                         case 6:
                             op2.HP += 5;
                             op2.MR++;
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
+                            op2.ailment[STUN] += 5;
                         case 5:
                             op2.HP += 5;
                             op2.DMG_LONG++;
@@ -514,15 +526,18 @@ public class Bougu implements Common {
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
                             op2.PVP++;
+                            op2.ailment[STUN] += 2;
                         case 7:
                             op2.HP += 5;
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
                             op2.PVP++;
+                            op2.ailment[STUN] += 2;
                         case 6:
                             op2.HP += 5;
                             op2.DMG_LONG++;
                             op2.DMG_SHORT++;
+                            op2.ailment[STUN] += 5;
                         case 5:
                             op2.HP += 5;
                             op2.DMG_LONG++;
@@ -547,6 +562,7 @@ public class Bougu implements Common {
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
+                        op2.ailment[STUN] += 2;
                     case 7:
                         op2.HP += 5;
                         op2.DMG_LONG++;
@@ -554,12 +570,14 @@ public class Bougu implements Common {
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
+                        op2.ailment[STUN] += 2;
                     case 6:
                         op2.HP += 5;
                         op2.DMG_LONG++;
                         op2.DMG_SHORT++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
+                        op2.ailment[STUN] += 5;
                     case 5:
                         op2.HP += 5;
                         op2.DMG_LONG++;
@@ -584,15 +602,18 @@ public class Bougu implements Common {
                         op2.HP += 5;
                         op2.PVP++;
                         op2.SP++;
+                        op2.ailment[STUN] += 2;
                     case 7:
                         op2.HP += 5;
                         op2.PVP++;
+                        op2.ailment[STUN] += 2;
                     case 6:
                         op2.HP += 5;
                         op2.SP++;
+                        op2.ailment[STUN] += 5;
                     case 5:
                         op2.HP += 5;
-                        op2.AC--;
+                        op2.SP++;
                     case 4:
                         op2.HP += 5;
                         op2.AC--;
@@ -600,6 +621,7 @@ public class Bougu implements Common {
                         op2.HP += 5;
                         op2.AC--;
                     case 2:
+                        op2.HP += 5;
                         op2.AC--;
                     case 1:
                         op2.HP += 5;
@@ -613,6 +635,7 @@ public class Bougu implements Common {
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
+                        op2.ailment[STUN] += 2;
                     case 7:
                         op2.HP += 5;
                         op2.DMG_LONG++;
@@ -620,12 +643,14 @@ public class Bougu implements Common {
                         op2.PVP++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
+                        op2.ailment[STUN] += 2;
                     case 6:
                         op2.HP += 5;
                         op2.DMG_LONG++;
                         op2.DMG_SHORT++;
                         op2.HIT_SHORT++;
                         op2.HIT_LONG++;
+                        op2.ailment[STUN] += 5;
                     case 5:
                         op2.HP += 5;
                         op2.DMG_LONG++;

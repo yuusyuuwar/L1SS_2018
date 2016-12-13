@@ -139,6 +139,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     WideComboBox cb_pattern_l2;
     WideComboBox cb_pattern_r2;
 
+    JComboBox cb_alterstone_en;
+    JComboBox[] cb_alterstone_op = new JComboBox[3];
+
     JTextField tf_weight;
     JTextField tf_weight2;
 //    JCheckBox cb_weight_auto;
@@ -270,7 +273,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         JLabel lab_tmp;
 
         bt_ow = new JButton("上書き");
-        bt_ow.setBounds(450, 0, 100, 25);
+        bt_ow.setBounds(450, 0, 100, 20);
         panels[0].add(bt_ow);
         commons.add(bt_ow);
         bt_ow.addActionListener(this);
@@ -278,67 +281,67 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         bt_ow.setEnabled(false);
 
         bt_save = new JButton("保存");
-        bt_save.setBounds(550, 0, 100, 25);
+        bt_save.setBounds(550, 0, 100, 20);
         panels[0].add(bt_save);
         commons.add(bt_save);
         bt_save.addActionListener(this);
         bt_save.setActionCommand("save");
 
         bt_load = new JButton("読込");
-        bt_load.setBounds(650, 0, 100, 25);
+        bt_load.setBounds(650, 0, 100, 20);
         panels[0].add(bt_load);
         commons.add(bt_load);
         bt_load.addActionListener(this);
         bt_load.setActionCommand("load");
 
         cb_cls = new WideComboBox(class_list2);
-        cb_cls.setBounds(0, 0, 100, 25);
+        cb_cls.setBounds(0, 0, 100, 20);
         cb_cls.addActionListener(this);
         cb_cls.setActionCommand("reset");
         panels[0].add(cb_cls);
         commons.add(cb_cls);
 
         lab_tmp = new JLabel("レベル");
-        lab_tmp.setBounds(120, 0, 30, 25);
+        lab_tmp.setBounds(120, 0, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
         lab_tmp = new JLabel("-");
-        lab_tmp.setBounds(55, 30, 20, 20);
+        lab_tmp.setBounds(55, 40, 20, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
         lab_tmp = new JLabel("+");
-        lab_tmp.setBounds(75, 30, 20, 20);
+        lab_tmp.setBounds(75, 40, 40, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
-        String lev_list[] = new String[88];
+        String lev_list[] = new String[92];
         for (int i = 0; i < lev_list.length; i++) {
             lev_list[i] = Integer.toString(i + 1);
         }
         cb_lev = new WideComboBox(lev_list);
         cb_lev.addActionListener(this);
-        cb_lev.setBounds(160, 0, 50, 25);
+        cb_lev.setBounds(160, 0, 50, 20);
         panels[0].add(cb_lev);
         commons.add(cb_lev);
 
         for (int i = 0; i < st_list.length; i++) {
 
             lab_st[i] = new JLabel(st_list[i]);
-            lab_st[i].setBounds(0, 50 + i * 20, 30, 20);
+            lab_st[i].setBounds(0, 60 + i * 20, 30, 20);
             panels[0].add(lab_st[i]);
             commons.add(lab_st[i]);
 
             bt_down[i] = new JButton();
-            bt_down[i].setBounds(50, 50 + i * 20, 20, 20);
+            bt_down[i].setBounds(50, 60 + i * 20, 20, 20);
             bt_down[i].setActionCommand(st_list[i] + "/down");
             bt_down[i].addActionListener(this);
             panels[0].add(bt_down[i]);
             commons.add(bt_down[i]);
 
             bt_up[i] = new JButton();
-            bt_up[i].setBounds(70, 50 + i * 20, 20, 20);
+            bt_up[i].setBounds(70, 60 + i * 20, 20, 20);
             bt_up[i].setActionCommand(st_list[i] + "/up");
             bt_up[i].addActionListener(this);
             panels[0].add(bt_up[i]);
@@ -346,16 +349,16 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
             lab_st_sum[i] = new JLabel("0", SwingConstants.CENTER);
             lab_st_sum[i].setHorizontalTextPosition(SwingConstants.CENTER);
-            lab_st_sum[i].setBounds(30, 50 + 20 * i, 20, 20);
+            lab_st_sum[i].setBounds(30, 60 + 20 * i, 20, 20);
             lab_st_base[i] = new JLabel("0", SwingConstants.CENTER);
             lab_st_base[i].setHorizontalTextPosition(SwingConstants.CENTER);
-            lab_st_base[i].setBounds(100, 50 + 20 * i, 20, 20);
+            lab_st_base[i].setBounds(100, 60 + 20 * i, 20, 20);
             lab_st_add[i] = new JLabel("0", SwingConstants.CENTER);
             lab_st_add[i].setHorizontalTextPosition(SwingConstants.CENTER);
-            lab_st_add[i].setBounds(160, 50 + 20 * i, 20, 20);
+            lab_st_add[i].setBounds(160, 60 + 20 * i, 20, 20);
             lab_st_lev[i] = new JLabel("0", SwingConstants.CENTER);
             lab_st_lev[i].setHorizontalTextPosition(SwingConstants.CENTER);
-            lab_st_lev[i].setBounds(130, 50 + 20 * i, 20, 20);
+            lab_st_lev[i].setBounds(130, 60 + 20 * i, 20, 20);
 
             panels[0].add(lab_st_sum[i]);
             panels[0].add(lab_st_base[i]);
@@ -368,66 +371,64 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         lab_tmp = new JLabel("REM");
-        lab_tmp.setBounds(0, 50 + 120, 30, 20);
+        lab_tmp.setBounds(0, 60 + 120, 30, 20);
         panels[0].add(lab_tmp);
         lab_tmp = new JLabel("REM");
-        lab_tmp.setBounds(0, 50 + 120, 30, 20);
+        lab_tmp.setBounds(0, 60 + 120, 30, 20);
         panels[1].add(lab_tmp);
 
         lab_rem = new JLabel("", JLabel.CENTER);
-        lab_rem.setBounds(30, 50 + 120, 20, 20);
+        lab_rem.setBounds(30, 60 + 120, 20, 20);
         panels[0].add(lab_rem);
 
         lab_tmp = new JLabel("初期", JLabel.CENTER);
-        lab_tmp.setBounds(100, 25, 30, 25);
+        lab_tmp.setBounds(100, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("LV", JLabel.CENTER);
-        lab_tmp.setBounds(130, 25, 30, 25);
+        lab_tmp.setBounds(130, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("追加", JLabel.CENTER);
-        lab_tmp.setBounds(160, 25, 30, 25);
+        lab_tmp.setBounds(160, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("合計", JLabel.CENTER);
-        lab_tmp.setBounds(20, 25, 30, 25);
+        lab_tmp.setBounds(20, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
-        int a = 10;
-
         lab_tmp = new JLabel("HP");
-        lab_tmp.setBounds(200 + 25, 45 - a, 200, 20);
+        lab_tmp.setBounds(200 + 25, 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("MP");
-        lab_tmp.setBounds(200 + 60 + 25, 45 - a, 200, 20);
+        lab_tmp.setBounds(200 + 60 + 25, 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_hp = new JLabel();
-        lab_hp.setBounds(230 + 25, 45 - a, 70, 20);
+        lab_hp.setBounds(230 + 25, 40, 70, 20);
         lab_mp = new JLabel();
-        lab_mp.setBounds(290 + 25, 45 - a, 70, 20);
+        lab_mp.setBounds(290 + 25, 40, 70, 20);
 
         lab_tmp = new JLabel("AC");
-        lab_tmp.setBounds(200 + 25, 45 + 20 - a, 200, 20);
+        lab_tmp.setBounds(200 + 25, 40 + 20, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("MR");
-        lab_tmp.setBounds(260 + 25, 45 + 20 - a, 200, 20);
+        lab_tmp.setBounds(260 + 25, 40 + 20, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("DR");
-        lab_tmp.setBounds(320 + 25, 45 + 20 - a, 200, 20);
+        lab_tmp.setBounds(320 + 25, 40 + 20, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_ac = new JLabel();
         lab_mr = new JLabel();
         lab_dr = new JLabel();
-        lab_ac.setBounds(200 + 30 + 25, 45 + 20 - a, 200, 20);
-        lab_mr.setBounds(200 + 90 + 25, 45 + 20 - a, 200, 20);
-        lab_dr.setBounds(200 + 150 + 25, 45 + 20 - a, 200, 20);
+        lab_ac.setBounds(200 + 30 + 25, 40 + 20, 200, 20);
+        lab_mr.setBounds(200 + 90 + 25, 40 + 20, 200, 20);
+        lab_dr.setBounds(200 + 150 + 25, 40 + 20, 200, 20);
         panels[0].add(lab_ac);
         commons.add(lab_ac);
         panels[0].add(lab_mr);
@@ -436,28 +437,28 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         commons.add(lab_dr);
 
         lab_tmp = new JLabel("DG");
-        lab_tmp.setBounds(200 + 25, 45 + 40 - a, 200, 20);
+        lab_tmp.setBounds(200 + 25, 40 + 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("ER");
-        lab_tmp.setBounds(260 + 25, 45 + 40 - a, 200, 20);
+        lab_tmp.setBounds(260 + 25, 40 + 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_dg = new JLabel();
         lab_er = new JLabel();
-        lab_dg.setBounds(200 + 30 + 25, 45 + 40 - a, 200, 20);
-        lab_er.setBounds(200 + 90 + 25, 45 + 40 - a, 200, 20);
+        lab_dg.setBounds(200 + 30 + 25, 40 + 40, 200, 20);
+        lab_er.setBounds(200 + 90 + 25, 40 + 40, 200, 20);
         panels[0].add(lab_dg);
         commons.add(lab_dg);
         panels[0].add(lab_er);
         commons.add(lab_er);
 
         lab_tmp = new JLabel("HPR");
-        lab_tmp.setBounds(200 + 25, 45 + 60 - a, 200, 20);
+        lab_tmp.setBounds(200 + 25, 40 + 60, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("MPR");
-        lab_tmp.setBounds(200 + 25, 45 + 80 - a, 200, 20);
+        lab_tmp.setBounds(200 + 25, 40 + 80, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         panels[0].add(lab_hp);
@@ -467,34 +468,34 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         lab_hpr = new JLabel();
         lab_mpr = new JLabel();
-        lab_hpr.setBounds(200 + 40 + 25, 45 + 60 - a, 200, 20);
-        lab_mpr.setBounds(200 + 40 + 25, 45 + 80 - a, 200, 20);
+        lab_hpr.setBounds(200 + 40 + 25, 40 + 60, 200, 20);
+        lab_mpr.setBounds(200 + 40 + 25, 40 + 80, 200, 20);
         panels[0].add(lab_hpr);
         panels[0].add(lab_mpr);
         commons.add(lab_hpr);
         commons.add(lab_mpr);
 
         lab_tmp = new JLabel("MP消費");
-        lab_tmp.setBounds(200 + 25, 45 + 100 - a, 200, 20);
+        lab_tmp.setBounds(200 + 25, 40 + 100, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_cons_mp = new JLabel();
-        lab_cons_mp.setBounds(200 + 50 + 25, 45 + 100 - a, 200, 20);
+        lab_cons_mp.setBounds(200 + 50 + 25, 40 + 100, 200, 20);
         panels[0].add(lab_cons_mp);
         commons.add(lab_cons_mp);
 
         lab_pot = new JLabel("ポーション回復量");
-        lab_pot.setBounds(200 + 25, 45 + 120 - a, 200, 20);
+        lab_pot.setBounds(200 + 25, 40 + 120, 200, 20);
         panels[0].add(lab_pot);
         commons.add(lab_pot);
 
         lab_pot1 = new JLabel();
-        lab_pot1.setBounds(200 + 25 + 100, 45 + 120 - a, 100, 20);
+        lab_pot1.setBounds(200 + 25 + 100, 40 + 120, 100, 20);
         panels[0].add(lab_pot1);
         commons.add(lab_pot1);
 
         lab_pot2 = new JLabel();
-        lab_pot2.setBounds(200 + 25 + 130, 45 + 120 - a, 100, 20);
+        lab_pot2.setBounds(200 + 25 + 130, 40 + 120, 100, 20);
         panels[0].add(lab_pot2);
         commons.add(lab_pot2);
 
@@ -506,14 +507,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_hit_mag = new JLabel();
         lab_ac_short = new JLabel();
         lab_ac_long = new JLabel();
-        lab_dmg_short.setBounds(420, 25 + 10, 150, 20);
-        lab_dmg_long.setBounds(420, 25 + 25 + 10, 150, 20);
-        lab_dmg_mag.setBounds(420, 25 + 50 + 10, 150, 20);
-        lab_hit_short.setBounds(420 + 125, 25 + 10, 250, 20);
-        lab_hit_long.setBounds(420 + 125, 25 + 25 + 10, 250, 20);
-        lab_hit_mag.setBounds(420 + 125, 25 + 50 + 10, 150, 20);
-        lab_ac_short.setBounds(420 + 125 + 100, 25 + 10, 150, 20);
-        lab_ac_long.setBounds(420 + 125 + 100, 25 + 25 + 10, 150, 20);
+        lab_dmg_short.setBounds(420, 20 + 20, 150, 20);
+        lab_dmg_long.setBounds(420, 20 + 20 + 20, 150, 20);
+        lab_dmg_mag.setBounds(420, 20 + 40 + 20, 150, 20);
+        lab_hit_short.setBounds(420 + 175, 20 + 20, 250, 20);
+        lab_hit_long.setBounds(420 + 175, 20 + 20 + 20, 250, 20);
+        lab_hit_mag.setBounds(420 + 175, 20 + 40 + 20, 150, 20);
+        lab_ac_short.setBounds(420 + 125 + 100, 20 + 20, 150, 20);
+        lab_ac_long.setBounds(420 + 125 + 100, 20 + 20 + 20, 150, 20);
         panels[0].add(lab_dmg_short);
         panels[0].add(lab_dmg_long);
         panels[0].add(lab_dmg_mag);
@@ -533,15 +534,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         // 分間ダメージ
         lab_tmp = new JLabel("対通常");
-        lab_tmp.setBounds(420, 50 + 50 + 10, 50, 25);
+        lab_tmp.setBounds(420, 50 + 60 + 10, 50, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("対悪魔");
-        lab_tmp.setBounds(420, 50 + 50 + 25 + 10, 50, 25);
+        lab_tmp.setBounds(420, 50 + 60 + 20 + 10, 50, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
         lab_tmp = new JLabel("対不死");
-        lab_tmp.setBounds(420, 50 + 50 + 50 + 10, 50, 25);
+        lab_tmp.setBounds(420, 50 + 60 + 40 + 10, 50, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
@@ -549,9 +550,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_hit_rate = new JLabel();
         lab_mag_info1 = new JLabel();
         lab_mag_info2 = new JLabel();
-        lab_hit_rate.setBounds(420 + 200, 50 + 50 + 10, 200, 25);
-        lab_mag_info1.setBounds(420 + 200, 50 + 75 + 10, 300, 25);
-        lab_mag_info2.setBounds(420 + 200, 50 + 100 + 10, 300, 25);
+        lab_hit_rate.setBounds(420 + 200, 70 + 40 + 10, 200, 20);
+        lab_mag_info1.setBounds(420 + 200, 70 + 60 + 10, 300, 20);
+        lab_mag_info2.setBounds(420 + 200, 70 + 89 + 10, 300, 20);
         panels[0].add(lab_hit_rate);
         panels[0].add(lab_mag_info1);
         panels[0].add(lab_mag_info2);
@@ -562,9 +563,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_dmg_normal = new JLabel();
         lab_dmg_cursed = new JLabel();
         lab_dmg_undead = new JLabel();
-        lab_dmg_normal.setBounds(420 + 50, 50 + 50 + 10, 400, 25);
-        lab_dmg_cursed.setBounds(420 + 50, 50 + 75 + 10, 150, 25);
-        lab_dmg_undead.setBounds(420 + 50, 50 + 100 + 10, 150, 25);
+        lab_dmg_normal.setBounds(420 + 50, 70 + 40 + 10, 400, 20);
+        lab_dmg_cursed.setBounds(420 + 50, 70 + 60 + 10, 150, 20);
+        lab_dmg_undead.setBounds(420 + 50, 70 + 80 + 10, 150, 20);
         panels[0].add(lab_dmg_normal);
         panels[0].add(lab_dmg_cursed);
         panels[0].add(lab_dmg_undead);
@@ -578,12 +579,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         for (int i = 0, cnt = 1; i < eq_list.length; i++, cnt++) {
 
             cb_eq_en[i] = new JComboBox();
-            cb_eq_en[i].setBounds(200 * (cnt % 2), 200 + 5 + (cnt - ((cnt + 1) / 2)) * 25, 50, 25);
+            cb_eq_en[i].setBounds(200 * (cnt % 2), 220 + (cnt - ((cnt + 1) / 2)) * 20, 50, 20);
             panels[0].add(cb_eq_en[i]);
             cb_eq_en[i].addActionListener(this);
 
             cb_eq[i] = new WideComboBox();
-            cb_eq[i].setBounds(50 + 200 * (cnt % 2), 200 + 5 + (cnt - ((cnt + 1) / 2)) * 25, 150, 25);
+            cb_eq[i].setBounds(50 + 200 * (cnt % 2), 220 + (cnt - ((cnt + 1) / 2)) * 20, 150, 20);
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
@@ -609,42 +610,42 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "地霊:4段", "地霊:5段"};
 
         cb_elem_1 = new JComboBox(buki_elem_list);
-        cb_elem_1.setBounds(50, 200 + 5, 75, 25);
+        cb_elem_1.setBounds(50, 220, 75, 20);
         cb_elem_1.addActionListener(this);
         panels[0].add(cb_elem_1);
 
         cb_elem_2 = new JComboBox(buki_elem_list);
-        cb_elem_2.setBounds(50, 200 + 5 + 25, 75, 25);
+        cb_elem_2.setBounds(50, 220 + 20, 75, 20);
         cb_elem_2.addActionListener(this);
         panels[0].add(cb_elem_2);
 
         String ts_ele_list[] = {"0段階", "1段階", "2段階", "3段階", "4段階", "5段階"};
 
         cb_ts_elem = new JComboBox(ts_ele_list);
-        cb_ts_elem.setBounds(50, 275 + 5 + 25, 75, 25);
+        cb_ts_elem.setBounds(50, 220 + 80, 75, 20);
         cb_ts_elem.addActionListener(this);
         panels[0].add(cb_ts_elem);
 
         tb_ts_sp = new JToggleButton("特製");
-        tb_ts_sp.setBounds(50 + 75, 275 + 5 + 25, 75, 25);
+        tb_ts_sp.setBounds(50 + 75, 220 + 80, 75, 20);
         panels[0].add(tb_ts_sp);
         tb_ts_sp.setEnabled(false);
         tb_ts_sp.addActionListener(this);
 
         tb_blessed1 = new JToggleButton("祝福");
-        tb_blessed1.setBounds(125, 200 + 5, 75, 25);
+        tb_blessed1.setBounds(125, 220, 75, 20);
         tb_blessed1.addActionListener(this);
         panels[0].add(tb_blessed1);
 
         tb_blessed2 = new JToggleButton("祝福");
-        tb_blessed2.setBounds(125, 200 + 5 + 25, 75, 25);
+        tb_blessed2.setBounds(125, 220 + 20, 75, 20);
         tb_blessed2.addActionListener(this);
         panels[0].add(tb_blessed2);
 
         cb_arrow = new JComboBox();
         cb_arrow.addActionListener(this);
         cb_arrow.setActionCommand("アロー");
-        cb_arrow.setBounds(250, 225 + 5 + 25, 150, 25);
+        cb_arrow.setBounds(250, 220 + 40, 150, 20);
         panels[0].add(cb_arrow);
 
         tb_blessed2.setEnabled(false);
@@ -659,17 +660,17 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様", "偉大なる者の遺物"};
         String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II"};
         String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
-        String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術士たちの護符"};
+        String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術士たちの護符", "勇猛のオルターストーン", "魔弾のオルターストーン", "叡智のオルターストーン"};
         cb_pattern_l = new WideComboBox(left_list);
         cb_pattern_r = new WideComboBox(right_list);
         cb_pattern_c = new WideComboBox(center_list);
         cb_pattern_l2 = new WideComboBox(left2_list);
         cb_pattern_r2 = new WideComboBox(right2_list);
-        cb_pattern_l.setBounds(0, 400 + 110, 80, 25);
-        cb_pattern_r.setBounds(80, 400 + 110, 80, 25);
-        cb_pattern_c.setBounds(160, 400 + 110, 80, 25);
-        cb_pattern_l2.setBounds(240, 400 + 110, 80, 25);
-        cb_pattern_r2.setBounds(320, 400 + 110, 80, 25);
+        cb_pattern_l.setBounds(250, 400 + 80 - 10, 100, 20);
+        cb_pattern_r.setBounds(50, 400 + 80 - 10, 100, 20);
+        cb_pattern_c.setBounds(150, 400 + 90 - 10, 100, 20);
+        cb_pattern_l2.setBounds(250, 400 + 100 - 10, 100, 20);
+        cb_pattern_r2.setBounds(50, 400 + 100 - 10, 100, 20);
         cb_pattern_l.addActionListener(this);
         cb_pattern_r.addActionListener(this);
         cb_pattern_c.addActionListener(this);
@@ -681,43 +682,61 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(cb_pattern_l2);
         panels[0].add(cb_pattern_r2);
 
+        
+        String[] en_list = {"", "+1", "+2", "+3", "+4", "+5"};
+        cb_alterstone_en = new JComboBox(en_list);
+        cb_alterstone_en.setBounds(0, 400 + 120, 50, 20);
+        cb_alterstone_en.addActionListener(this);
+        panels[0].add(cb_alterstone_en);
+
+        String[] alterstone_op_list = {"", "近距離命中 +2", "遠距離命中 +2", "魔法致命打",
+            "遠距離ダメージ +1", "SP +1", "魔法消耗減少",
+            "一撃必殺(1％の確立で追加ダメージ50)", "近距離ダメージ +1"};
+
+        for (int i = 0; i < cb_alterstone_op.length; i++) {
+            cb_alterstone_op[i] = new WideComboBox(alterstone_op_list);
+            cb_alterstone_op[i].setBounds(100 + 100 * i, 400 + 120, 100, 20);
+            cb_alterstone_op[i].addActionListener(this);
+            panels[0].add(cb_alterstone_op[i]);
+        }
+
         String ch_list[] = {"パターン1", "パターン2", "パターン3"};
         cb_eq_ch = new JComboBox(ch_list);
         cb_eq_ch.addActionListener(mem);
         cb_eq_ch.setActionCommand("ch");
-        cb_eq_ch.setBounds(50, 175 + 5, 100, 25);
+        cb_eq_ch.setBounds(50, 200, 100, 20);
         panels[0].add(cb_eq_ch);
 
         bt_copy = new JButton("Copy");
         bt_copy.addActionListener(mem);
         bt_copy.setActionCommand("copy");
-        bt_copy.setBounds(150, 175 + 5, 80, 25);
+        bt_copy.setBounds(160, 200, 80, 20);
         panels[0].add(bt_copy);
 
         bt_paste = new JButton("Paste");
         bt_paste.addActionListener(mem);
         bt_paste.setActionCommand("paste");
-        bt_paste.setBounds(230, 175 + 5, 80, 25);
+        bt_paste.setBounds(240, 200, 80, 20);
         panels[0].add(bt_paste);
 
         bt_reset = new JButton("Reset");
         bt_reset.addActionListener(mem);
         bt_reset.setActionCommand("reset");
-        bt_reset.setBounds(310, 175 + 5, 70, 25);
+        bt_reset.setBounds(320, 200, 80, 20);
         panels[0].add(bt_reset);
 
         JLabel polymorph_label = new JLabel("変身");
-        polymorph_label.setBounds(420, 175 + 5 + 25, 100, 25);
+        polymorph_label.setBounds(420, 200, 100, 20);
         panels[0].add(polymorph_label);
         cb_morph_type = new JComboBox();
         cb_morph_type.addItem("近/遠特化");
         cb_morph_type.addItem("魔法特化");
-        cb_morph_type.setBounds(420 + 80, 175 + 5 + 25, 80, 25);
+        cb_morph_type.setBounds(420 + 80, 200, 80, 20);
         cb_morph_type.addActionListener(this);
         panels[0].add(cb_morph_type);
 
         JLabel polymorph_level_label = new JLabel("変身レベル");
-        polymorph_level_label.setBounds(420 + 200, 175 + 5 + 25, 100, 25);
+        polymorph_level_label.setBounds(420 + 200, 200, 100, 20);
         panels[0].add(polymorph_level_label);
         cb_morph_level = new JComboBox();
         cb_morph_level.addItem("自動");
@@ -736,45 +755,45 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_morph_level.addItem("82");
         cb_morph_level.addItem("85");
 
-        cb_morph_level.setBounds(420 + 280, 175 + 5 + 25, 80, 25);
+        cb_morph_level.setBounds(420 + 280, 200, 80, 20);
         cb_morph_level.addActionListener(this);
         panels[0].add(cb_morph_level);
 
         lab_tmp = new JLabel("攻撃速度");
-        lab_tmp.setBounds(420, 200 + 5 + 25, 200, 25);
+        lab_tmp.setBounds(420, 200 + 20, 200, 20);
         panels[0].add(lab_tmp);
         tf_speed = new JTextField();
-        tf_speed.setBounds(500, 200 + 5 + 25, 80, 25);
+        tf_speed.setBounds(500, 200 + 20, 80, 20);
         tf_speed.addActionListener(this);
         panels[0].add(tf_speed);
 
         lab_tmp = new JLabel("倍率");
-        lab_tmp.setBounds(420, 225 + 5 + 25, 200, 25);
+        lab_tmp.setBounds(420, 200 + 40, 200, 20);
         panels[0].add(lab_tmp);
         tf_acc = new JTextField();
-        tf_acc.setBounds(500, 225 + 5 + 25, 80, 25);
+        tf_acc.setBounds(500, 200 + 40, 80, 20);
         tf_acc.addActionListener(this);
         panels[0].add(tf_acc);
 
         lab_tmp = new JLabel("攻魔");
-        lab_tmp.setBounds(620, 200 + 5 + 25, 200, 25);
+        lab_tmp.setBounds(620, 200 + 20, 200, 20);
         panels[0].add(lab_tmp);
         tf_magic_speed_main = new JTextField();
-        tf_magic_speed_main.setBounds(700, 200 + 5 + 25, 80, 25);
+        tf_magic_speed_main.setBounds(700, 200 + 20, 80, 20);
         tf_magic_speed_main.addActionListener(this);
         panels[0].add(tf_magic_speed_main);
 
         lab_tmp = new JLabel("補魔");
-        lab_tmp.setBounds(620, 225 + 5 + 25, 200, 25);
+        lab_tmp.setBounds(620, 200 + 40, 200, 20);
         panels[0].add(lab_tmp);
         tf_magic_speed_sub = new JTextField();
-        tf_magic_speed_sub.setBounds(700, 225 + 5 + 25, 80, 25);
+        tf_magic_speed_sub.setBounds(700, 200 + 40, 80, 20);
         tf_magic_speed_sub.addActionListener(this);
         panels[0].add(tf_magic_speed_sub);
 
         cb_speed_auto = new JCheckBox("自動入力");
         cb_speed_auto.setSelected(true);
-        cb_speed_auto.setBounds(420 + 280, 200 + 50 + 5 + 25, 80, 25);
+        cb_speed_auto.setBounds(420 + 280, 200 + 60, 80, 20);
         panels[0].add(cb_speed_auto);
         cb_speed_auto.addActionListener(this);
 
@@ -791,15 +810,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         tf_mag_rate.setText("0.0");
         tf_mag_delay.setText("0.0");
         tf_mag_power.setText("0.0");
-        lab_sp_rate.setBounds(420, 200 + 25 + 25 + 25 + 15 + 25, 100, 25);
-        lab_sp_sub.setBounds(420 + 160, 200 + 25 + 25 + 25 + 15 + 25, 40, 25);
-        lab_mag_rate.setBounds(420, 200 + 50 + 25 + 25 + 15 + 25, 100, 25);
-        lab_mag_delay.setBounds(420 + 200, 200 + 25 + 25 + 25 + 15 + 25, 100, 25);
-        lab_mag_power.setBounds(420 + 200, 200 + 50 + 25 + 25 + 15 + 25, 100, 25);
-        tf_buki_sp_rate.setBounds(420 + 80, 200 + 25 + 25 + 25 + 15 + 25, 80, 25);
-        tf_mag_rate.setBounds(420 + 80, 200 + 50 + 25 + 25 + 15 + 25, 80, 25);
-        tf_mag_delay.setBounds(420 + 280, 200 + 25 + 25 + 25 + 15 + 25, 80, 25);
-        tf_mag_power.setBounds(420 + 280, 200 + 50 + 25 + 25 + 15 + 25, 80, 25);
+        lab_sp_rate.setBounds(420, 300, 100, 20);
+        lab_sp_sub.setBounds(420 + 160, 300, 40, 20);
+        lab_mag_rate.setBounds(420, 300 + 20, 100, 20);
+        lab_mag_delay.setBounds(420 + 200, 300, 100, 20);
+        lab_mag_power.setBounds(420 + 200, 300 + 20, 100, 20);
+        tf_buki_sp_rate.setBounds(420 + 80, 300, 80, 20);
+        tf_mag_rate.setBounds(420 + 80, 300 + 20, 80, 20);
+        tf_mag_delay.setBounds(420 + 280, 300, 80, 20);
+        tf_mag_power.setBounds(420 + 280, 300 + 20, 80, 20);
         panels[0].add(lab_sp_rate);
         panels[0].add(tf_buki_sp_rate);
         panels[0].add(lab_sp_sub);
@@ -816,40 +835,40 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_mag_auto = new JCheckBox("自動入力");
         cb_mag_auto.setSelected(true);
-        cb_mag_auto.setBounds(420 + 280, 200 + 50 + 25 + 25 + 25 + 15 + 25, 80, 25);
+        cb_mag_auto.setBounds(420 + 280, 300 + 40, 80, 20);
         panels[0].add(cb_mag_auto);
         cb_mag_auto.addActionListener(this);
 
         lab_tmp = new JLabel("魔法使用");
-        lab_tmp.setBounds(420, 200 + 75 + 25 + 25 + 25 + 25 + 25, 80, 25);
+        lab_tmp.setBounds(420, 380, 80, 20);
         cb_magic = new WideComboBox();
         cb_magic.addItem("");
         cb_magic.setSelectedIndex(0);
         cb_magic.addActionListener(this);
-        cb_magic.setBounds(420 + 80, 350 + 25 + 25, 80, 25);
+        cb_magic.setBounds(420 + 80, 380, 80, 20);
         panels[0].add(lab_tmp);
         panels[0].add(cb_magic);
 
         lab_tmp = new JLabel("重量");
-        lab_tmp.setBounds(420, 350 + 25 + 25 + 25, 150, 25);
+        lab_tmp.setBounds(420, 380 + 20, 150, 20);
         panels[0].add(lab_tmp);
         lab_tmp = new JLabel("所持可能量");
-        lab_tmp.setBounds(620, 350 + 25 + 25 - 13 + 25, 80, 25);
+        lab_tmp.setBounds(620, 380 + 10, 80, 20);
         panels[0].add(lab_tmp);
         tf_weight = new JTextField();
-        tf_weight.setBounds(700, 350 + 25 + 25, 80, 25);
+        tf_weight.setBounds(700, 380, 80, 20);
         tf_weight.setHorizontalAlignment(SwingConstants.CENTER);
         tf_weight.setEditable(false);
         panels[0].add(tf_weight);
         tf_weight2 = new JTextField();
-        tf_weight2.setBounds(700, 350 + 25 + 25 + 25, 80, 25);
+        tf_weight2.setBounds(700, 380 + 20, 80, 20);
         tf_weight2.setHorizontalAlignment(SwingConstants.CENTER);
         tf_weight2.setEditable(false);
         panels[0].add(tf_weight2);
 
         String[] w_list = {"33 %", "50 %", "66 %", "82 %"};
         cb_weight = new JComboBox(w_list);
-        cb_weight.setBounds(500, 380 + 20 + 25, 80, 25);
+        cb_weight.setBounds(500, 380 + 20, 80, 20);
         cb_weight.addActionListener(this);
         panels[0].add(cb_weight);
 
@@ -859,17 +878,17 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 //        panels[0].add(cb_weight_auto);
 //        cb_weight_auto.addActionListener(this);
         lab_tmp = new JLabel("耐性");
-        lab_tmp.setBounds(420, 425 + 5 + 30, 80, 25);
+        lab_tmp.setBounds(420, 440, 80, 25);
         panels[0].add(lab_tmp);
 
         for (int i = 0; i < elem_list.length; i++) {
             lab_elem[i] = new JLabel();
-            lab_elem[i].setBounds(420 + 60 + 80 * i, 350 + 25 + 50 + 5 + 30, 100, 25);
+            lab_elem[i].setBounds(420 + 60 + 80 * i, 440, 100, 20);
             panels[0].add(lab_elem[i]);
         }
         for (int i = 0; i < ailment_list.length; i++) {
             lab_ailment[i] = new JLabel();
-            lab_ailment[i].setBounds(420 + 60 + 80 * (i % 4), 350 + 50 + 25 * (i / 4) + 50 + 5 + 30, 100, 25);
+            lab_ailment[i].setBounds(420 + 60 + 80 * (i % 4), 440 + 20 + 20 * (i / 4), 100, 20);
             panels[0].add(lab_ailment[i]);
         }
 
@@ -878,7 +897,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //----------
         for (int i = 0; i < st_list.length; i++) {
             JLabel lab4 = new JLabel(st_list[i], SwingConstants.CENTER);
-            lab4.setBounds(30 + 150 * i, 195, 100, 25);
+            lab4.setBounds(30 + 150 * i, 195, 100, 20);
             panels[1].add(lab4);
         }
 
@@ -911,8 +930,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         for (int i = 0; i < pure_status_bonus[0].length; i++) {
 
             pure_status_bonus[1][i] = new JLabel("0");
-            pure_status_bonus[0][i].setBounds(30 + 150 * (i / 5), 220 + 25 * (i % 5), 100, 25);
-            pure_status_bonus[1][i].setBounds(130 + 150 * (i / 5), 220 + 25 * (i % 5), 50, 25);
+            pure_status_bonus[0][i].setBounds(30 + 150 * (i / 5), 220 + 20 * (i % 5), 100, 20);
+            pure_status_bonus[1][i].setBounds(130 + 150 * (i / 5), 220 + 20 * (i % 5), 50, 20);
             if (pure_status_bonus[0][i].getText().equals("")) {
                 continue;
             }
@@ -920,9 +939,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[1].add(pure_status_bonus[1][i]);
         }
 
-        lev.put(panels[1], 0, 350);
+        lev.put(panels[1], 0, 330);
         lev.addActionListener(this);
         lev.setSelfCheck();
+        
+        lab_tmp = new JLabel("エリクサー");
+        lab_tmp.setBounds(30, 480, 100, 20);
+        panels[1].add(lab_tmp);
+        
 
         String elixir_list[] = {"---", "STR", "DEX", "CON", "INT", "WIS",
             "CHA"};
@@ -1001,7 +1025,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[W_BSK] = new JCheckBox("バーサーカー");
         cb_buff[W_BSK].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[W_BSK].setToolTipText("AC+10 近接打撃+5 近接命中+5 HP自然回復不可");
+        cb_buff[W_BSK].setToolTipText("AC+10 近接打撃+2 近接命中+8 HP自然回復不可");
 
         cb_buff[W_DW] = new JCheckBox("ディクリースウェイト");
         cb_buff[W_DW].setBounds(0, 20 * col++, 150, 20);
@@ -1273,7 +1297,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[ITEM_COOKING] = new JCheckBox("料理");
         cb_buff[ITEM_COOKING].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_dessert[] = {"試練の鶏スープ", "幻想のバシリスクの卵スープ", "幻想のショートケーキ", "小粋な携帯飲料"};
+        String list_dessert[] = {"修練の鶏スープ", "幻想のバシリスクの卵スープ", "幻想のショートケーキ", "小粋な携帯飲料"};
         cb_buff_group[ITEM_DESSERT] = new WideComboBox(list_dessert);
         cb_buff_group[ITEM_DESSERT].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_DESSERT] = new JCheckBox("デザート");
