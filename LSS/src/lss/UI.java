@@ -666,11 +666,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_pattern_c = new WideComboBox(center_list);
         cb_pattern_l2 = new WideComboBox(left2_list);
         cb_pattern_r2 = new WideComboBox(right2_list);
-        cb_pattern_l.setBounds(250, 400 + 80 - 10, 100, 20);
-        cb_pattern_r.setBounds(50, 400 + 80 - 10, 100, 20);
-        cb_pattern_c.setBounds(150, 400 + 90 - 10, 100, 20);
-        cb_pattern_l2.setBounds(250, 400 + 100 - 10, 100, 20);
-        cb_pattern_r2.setBounds(50, 400 + 100 - 10, 100, 20);
+        cb_pattern_l.setBounds(250, 400 + 80, 100, 20);
+        cb_pattern_r.setBounds(50, 400 + 80, 100, 20);
+        cb_pattern_c.setBounds(150, 400 + 90, 100, 20);
+        cb_pattern_l2.setBounds(250, 400 + 100, 100, 20);
+        cb_pattern_r2.setBounds(50, 400 + 100, 100, 20);
         cb_pattern_l.addActionListener(this);
         cb_pattern_r.addActionListener(this);
         cb_pattern_c.addActionListener(this);
@@ -682,7 +682,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(cb_pattern_l2);
         panels[0].add(cb_pattern_r2);
 
-        
         String[] en_list = {"", "+1", "+2", "+3", "+4", "+5"};
         cb_alterstone_en = new JComboBox(en_list);
         cb_alterstone_en.setBounds(0, 400 + 120, 50, 20);
@@ -691,7 +690,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         String[] alterstone_op_list = {"", "近距離命中 +2", "遠距離命中 +2", "魔法致命打",
             "遠距離ダメージ +1", "SP +1", "魔法消耗減少",
-            "一撃必殺(1％の確立で追加ダメージ50)", "近距離ダメージ +1"};
+            "一撃必殺(1％確率で追加ダメージ50)", "近距離ダメージ +1"};
 
         for (int i = 0; i < cb_alterstone_op.length; i++) {
             cb_alterstone_op[i] = new WideComboBox(alterstone_op_list);
@@ -942,11 +941,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lev.put(panels[1], 0, 330);
         lev.addActionListener(this);
         lev.setSelfCheck();
-        
+
         lab_tmp = new JLabel("エリクサー");
         lab_tmp.setBounds(30, 480, 100, 20);
         panels[1].add(lab_tmp);
-        
 
         String elixir_list[] = {"---", "STR", "DEX", "CON", "INT", "WIS",
             "CHA"};
@@ -2571,6 +2569,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         Element e_pattern_r2 = document.createElement("右腕");
         pattern.appendChild(e_pattern_r2);
         e_pattern_r2.setTextContent(cb_pattern_r2.getSelectedItem().toString());
+        
+        Element e_alterstone = document.createElement("オルターストーン");
+        e_alterstone.setAttribute("enchant", (String)cb_alterstone_en.getSelectedItem());
+        e_alterstone.setAttribute("op1", (String)cb_alterstone_op[0].getSelectedItem());
+        e_alterstone.setAttribute("op2", (String)cb_alterstone_op[1].getSelectedItem());
+        e_alterstone.setAttribute("op3", (String)cb_alterstone_op[2].getSelectedItem());
+        root.appendChild(e_alterstone);
 
         for (int i = 0; i < cb_eq_ch.getItemCount(); i++) {
             Element e_equip = document.createElement("装備");
@@ -2731,6 +2736,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     cb_pattern_r2.setSelectedItem(pattern.getChildNodes().item(i).getTextContent());
                     break;
             }
+        }
+
+        if (document.getDocumentElement().getElementsByTagName("オルターストーン").getLength() == 1) {
+            Node alterstone = document.getDocumentElement().getElementsByTagName("オルターストーン").item(0);
+            cb_alterstone_en.setSelectedItem(alterstone.getAttributes().getNamedItem("enchant").getNodeValue());
+            cb_alterstone_op[0].setSelectedItem(alterstone.getAttributes().getNamedItem("op1").getNodeValue());
+            cb_alterstone_op[1].setSelectedItem(alterstone.getAttributes().getNamedItem("op2").getNodeValue());
+            cb_alterstone_op[2].setSelectedItem(alterstone.getAttributes().getNamedItem("op3").getNodeValue());
         }
 
         for (int i = 0; i < cb_eq_ch.getItemCount(); i++) {

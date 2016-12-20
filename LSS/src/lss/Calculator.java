@@ -1586,7 +1586,7 @@ public class Calculator implements Common {
 
         //オルターストーン
         if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
-            
+
             ui.cb_alterstone_en.setEnabled(true);
             if (ui.cb_alterstone_en.getSelectedIndex() >= 3) {
                 ui.cb_alterstone_op[0].setEnabled(true);
@@ -1614,6 +1614,8 @@ public class Calculator implements Common {
                         buff.DMG_SHORT += 1;
                         break;
                 }
+            } else {
+                ui.cb_alterstone_op[0].setEnabled(false);
             }
             if (ui.cb_alterstone_en.getSelectedIndex() >= 4) {
                 ui.cb_alterstone_op[1].setEnabled(true);
@@ -1641,6 +1643,8 @@ public class Calculator implements Common {
                         buff.DMG_SHORT += 1;
                         break;
                 }
+            } else {
+                ui.cb_alterstone_op[1].setEnabled(false);
             }
             if (ui.cb_alterstone_en.getSelectedIndex() >= 5) {
                 ui.cb_alterstone_op[2].setEnabled(true);
@@ -1668,7 +1672,14 @@ public class Calculator implements Common {
                         buff.DMG_SHORT += 1;
                         break;
                 }
+            } else {
+                ui.cb_alterstone_op[2].setEnabled(false);
             }
+        } else {
+            ui.cb_alterstone_en.setEnabled(false);
+            ui.cb_alterstone_op[0].setEnabled(false);
+            ui.cb_alterstone_op[1].setEnabled(false);
+            ui.cb_alterstone_op[2].setEnabled(false);
         }
 
         switch (ui.cb_pattern_r2.getSelectedIndex()) {
@@ -1697,25 +1708,21 @@ public class Calculator implements Common {
                 switch (ui.cb_alterstone_en.getSelectedIndex()) {
                     case 1:
                         buff.HP += 20;
-                        System.out.println("1"+buff.HP);
                         break;
                     case 2:
                         buff.HP += 25;
                         buff.MP += 5;
-                        System.out.println("2"+buff.HP);
                         break;
                     case 3:
                         buff.HP += 30;
                         buff.MP += 10;
                         buff.ST[STR] += 1;
-                        System.out.println("3"+buff.HP);
                         break;
                     case 4:
                         buff.HP += 40;
                         buff.MP += 20;
                         buff.ST[STR] += 1;
                         buff.HIT_SHORT += 1;
-                        System.out.println("4"+buff.HP);
                         break;
                     case 5:
                         buff.HP += 50;
@@ -1723,7 +1730,6 @@ public class Calculator implements Common {
                         buff.ST[STR] += 1;
                         buff.HIT_SHORT += 1;
                         buff.DMG_SHORT += 1;
-                        System.out.println("5"+buff.HP);
                         break;
                 }
                 break;
@@ -2762,6 +2768,16 @@ public class Calculator implements Common {
             }
         }
 
+        //オルターストーン
+        if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
+            if (ui.cb_alterstone_op[0].getSelectedIndex() == 7
+                    || ui.cb_alterstone_op[1].getSelectedIndex() == 7
+                    || ui.cb_alterstone_op[2].getSelectedIndex() == 7) {
+                dmg_big_ave += 0.01 * 50;
+                dmg_small_ave += 0.01 * 50;
+            }
+        }
+
         if (ui.cb_buff[D_BS].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * bs_rate
@@ -3054,15 +3070,11 @@ public class Calculator implements Common {
         //仮
         ui.lab_hit_short.setText("命中(近) : " + hit_short);
         ui.lab_hit_long.setText("命中(遠) : " + hit_long);
-        
-        
+
 //        ui.lab_hit_short.setText("命中(近) : " + hit_short);
 //        ui.lab_ac_short.setText("(最大命中AC : " + Integer.toString(19 - hit_short) + ")");
 //        ui.lab_hit_long.setText("命中(遠) : " + hit_long);
 //        ui.lab_ac_long.setText("(最大命中AC : " + Integer.toString(19 - hit_long) + ")");
-        
-        
-        
         ui.lab_hit_mag.setText("命中(魔) : " + hit_magic);
 
 //        ui.lab_sp.setText("SP " + sp);
