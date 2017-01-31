@@ -159,6 +159,9 @@ public class Bougu implements Common {
         if (op.SP < 0) {
             text += " 魔力" + op.SP;
         }
+        if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
+            text += " 魔法命中+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
+        }
         if (op.DR + op2.DR > 0) {
             text += " ダメージ低下" + (op.DR + op2.DR);
         }
@@ -733,6 +736,12 @@ public class Bougu implements Common {
         }
 
         if (name.equals("憤怒のグローブ(KR)")) {
+            if (enchant >= 5) {
+                op2.HIT_SHORT = enchant - 4;
+            }
+        }
+        
+        if (name.equals("激昂のグローブ")) {
             if (enchant >= 5) {
                 op2.HIT_SHORT = enchant - 4;
             }

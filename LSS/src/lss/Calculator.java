@@ -495,8 +495,16 @@ public class Calculator implements Common {
         int set9 = 0;// 修練者セット
         int set10 = 0, set11 = 0, set12 = 0;//釣りセット
         int set13 = 0;//軍王セット
+        int set14 = 0;//DKセット
 
         for (Bougu bougu1 : bougu) {
+            if(bougu1.name.equals("デスナイトヘルム")
+                    || bougu1.name.equals("デスナイトグローブ")
+                    ||bougu1.name.equals("デスナイトアーマー")
+                    ||bougu1.name.equals("デスナイトブーツ")) {
+                set14++;
+            }
+            
             if (bougu1.name.equals("魔霊軍王のローブ")
                     || bougu1.name.equals("冥法軍王のマント")
                     || bougu1.name.equals("暗殺軍王のグローブ")
@@ -630,6 +638,14 @@ public class Calculator implements Common {
             buff.MP += 30;
             buff.MPR += 10;
             buff.ST[CHA] += 3;
+        }
+        
+        if(set14 == 4) {
+            buff.AC -= 10;
+            buff.ST[STR] += 2;
+            buff.DMG_SHORT += 2;
+            ui.cb_morph_level.setSelectedItem("80");
+            ui.cb_morph_type.setSelectedItem("近/遠特化");
         }
 
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
