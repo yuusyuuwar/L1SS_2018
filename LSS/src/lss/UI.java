@@ -1340,7 +1340,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         String list_md2[] = {"カカシ", "スノーマン", "マーメイド", "ラヴァゴーレム",
             "ジャイアント", "ブラックエルダー", "サキュバスクイーン", "ドレイク", "キングバグベアー", "ダイアゴーレム",
             "サイクロプス", "ナイトバルド", "シアー",
-            "デスナイト", "デーモン", "覚醒パオ", "マミーロード"
+            "デスナイト", "デーモン", "覚醒パオ", "マミーロード",
+            "アイリス","バンパイア","バランカ","アイスクイーン"
         };
 
         cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);
@@ -1368,14 +1369,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             if (buff != null) {
                 panels[2].add(buff);
                 buff.addMouseListener(mp);
-//                buff.addActionListener(this);
+                buff.addActionListener(this);
             }
         }
 
         for (JComboBox buff_group : cb_buff_group) {
             if (buff_group != null) {
                 panels[2].add(buff_group);
-//                buff_group.addActionListener(this);
+                buff_group.addActionListener(this);
             }
         }
 

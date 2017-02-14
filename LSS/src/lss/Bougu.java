@@ -186,7 +186,7 @@ public class Bougu implements Common {
         if (op.element_resist[EARTH] > 0) {
             text += " 地の属性" + op.element_resist[EARTH];
         }
-        if (op.MR > 0) {
+        if (op.MR + op2.MR > 0) {
             text += " 魔法防御+" + (op.MR + op2.MR);
         }
         if (mr_enchant > 0) {
@@ -226,6 +226,93 @@ public class Bougu implements Common {
     public void checkEnchant() {
 
         op2 = new Buff();
+
+        if (name.contains("テイパーガーダー")) {
+            if (name.contains("腕力")) {
+                switch (enchant) {
+                    case 5:
+                        op2.HIT_SHORT = 1;
+                        break;
+                    case 6:
+                        op2.HIT_SHORT = 2;
+                        op2.DMG_SHORT = 1;
+                        break;
+                    case 7:
+                        op2.HIT_SHORT = 2;
+                        op2.DMG_SHORT = 1;
+                        op2.ST[STR] = 1;
+                        break;
+                    case 8:
+                        op2.HIT_SHORT = 2;
+                        op2.DMG_SHORT = 2;
+                        op2.ST[STR] = 1;
+                        op2.PVP = 1;
+                        break;
+                    case 9:
+                        op2.HIT_SHORT = 3;
+                        op2.DMG_SHORT = 3;
+                        op2.ST[STR] = 1;
+                        op2.PVP = 2;
+                        break;
+                }
+            }
+            if (name.contains("機敏")) {
+                switch (enchant) {
+                    case 5:
+                        op2.HIT_LONG = 1;
+                        break;
+                    case 6:
+                        op2.HIT_LONG = 2;
+                        op2.DMG_LONG = 1;
+                        break;
+                    case 7:
+                        op2.HIT_LONG = 2;
+                        op2.DMG_LONG = 1;
+                        op2.ST[DEX] = 1;
+                        break;
+                    case 8:
+                        op2.HIT_LONG = 2;
+                        op2.DMG_LONG = 2;
+                        op2.ST[DEX] = 1;
+                        op2.PVP = 1;
+                        break;
+                    case 9:
+                        op2.HIT_LONG = 3;
+                        op2.DMG_LONG = 3;
+                        op2.ST[DEX] = 1;
+                        op2.PVP = 2;
+                        break;
+                }
+            }
+            if (name.contains("知力")) {
+                switch (enchant) {
+                    case 5:
+                        op2.MPR = 2;
+                        break;
+                    case 6:
+                        op2.MPR = 2;
+                        op2.SP = 1;
+                        break;
+                    case 7:
+                        op2.MPR = 4;
+                        op2.SP = 1;
+                        op2.ST[INT] = 1;
+                        break;
+                    case 8:
+                        op2.MPR = 4;
+                        op2.SP = 2;
+                        op2.ST[INT] = 1;
+                        op2.PVP = 1;
+                        break;
+                    case 9:
+                        op2.MPR = 6;
+                        op2.SP = 3;
+                        op2.ST[INT] = 1;
+                        op2.PVP = 2;
+                        break;
+                }
+            }
+        }
 
         if (name.equals("地竜のTシャツ")) {
             switch (enchant) {
@@ -740,7 +827,7 @@ public class Bougu implements Common {
                 op2.HIT_SHORT = enchant - 4;
             }
         }
-        
+
         if (name.equals("激昂のグローブ")) {
             if (enchant >= 5) {
                 op2.HIT_SHORT = enchant - 4;
@@ -905,18 +992,21 @@ public class Bougu implements Common {
                         op2.HP = 40;
                         op2.DMG_LONG = 2;
                         op2.DMG_SHORT = 2;
+                        op2.MR = 1;
                         break;
                     case 7:
                         op2.HP = 50;
                         op2.DMG_LONG = 3;
                         op2.DMG_SHORT = 3;
                         op2.SP = 1;
+                        op2.MR = 3;
                         break;
                     case 8:
                         op2.HP = 50;
                         op2.DMG_LONG = 4;
                         op2.DMG_SHORT = 4;
                         op2.SP = 2;
+                        op2.MR = 5;
                         break;
                 }
             }
@@ -938,18 +1028,27 @@ public class Bougu implements Common {
                     case 5:
                         op2.HP = 40;
                         op2.effect = "ポーション回復量 +2% +0,";
+                        op2.effect += "回復悪化防御 +2% (恐怖),";
                         break;
                     case 6:
+                        op2.AC--;
                         op2.HP = 40;
                         op2.effect = "ポーション回復量 +4% +2,";
+                        op2.effect += "回復悪化防御 +4% (恐怖),";
                         break;
                     case 7:
+                        op2.AC -= 2;
                         op2.HP = 50;
                         op2.effect = "ポーション回復量 +6% +4,";
+                        op2.effect += "回復悪化防御 +6% (恐怖),";
+                        op2.ailment[STUN] += 2;
                         break;
                     case 8:
+                        op2.AC -= 3;
                         op2.HP = 50;
                         op2.effect = "ポーション回復量 +8% +6,";
+                        op2.effect += "回復悪化防御 +8% (恐怖),";
+                        op2.ailment[STUN] += 3;
                         break;
                 }
 
@@ -974,14 +1073,17 @@ public class Bougu implements Common {
                         op2.DR = 1;
                         break;
                     case 6:
+                        op2.HP = 20;
                         op2.MP = 40;
                         op2.DR = 2;
                         break;
                     case 7:
+                        op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
                         break;
                     case 8:
+                        op2.HP = 40;
                         op2.MP = 50;
                         op2.DR = 4;
                         break;
