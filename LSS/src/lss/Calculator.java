@@ -3013,18 +3013,18 @@ public class Calculator implements Common {
             speed *= acc;
         }
 
-        dmg_small_ave += magic + drain_small + fsdmg;
-        dmg_big_ave += magic + drain_big + fsdmg;
+        dmg_small_ave += magic + drain_small;
+        dmg_big_ave += magic + drain_big;
 
-        ui.lab_dmg_normal.setText(Integer.toString((int) (dmg_small_ave * hit * speed + mag_dmg_min + week))
+        ui.lab_dmg_normal.setText(Integer.toString((int) (dmg_small_ave * hit * speed + mag_dmg_min + week + fsdmg))
                 + " / " + Integer.toString(
-                        (int) (dmg_big_ave * hit * speed + mag_dmg_min + week)));
-        ui.lab_dmg_cursed.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed) * hit * speed + mag_dmg_min + week))
+                        (int) (dmg_big_ave * hit * speed + mag_dmg_min + week + fsdmg)));
+        ui.lab_dmg_cursed.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed) * hit * speed + mag_dmg_min + week + fsdmg))
                 + " / " + Integer.toString(
-                        (int) ((dmg_big_ave + dmg_cursed) * hit * speed + mag_dmg_min + week)));
-        ui.lab_dmg_undead.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week))
+                        (int) ((dmg_big_ave + dmg_cursed) * hit * speed + mag_dmg_min + week + fsdmg)));
+        ui.lab_dmg_undead.setText(Integer.toString((int) ((dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week + fsdmg))
                 + " / " + Integer.toString(
-                        (int) ((dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week)));
+                        (int) ((dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week + fsdmg)));
 
         switch ((String) ui.cb_e_size.getSelectedItem()) {
             case "¬":

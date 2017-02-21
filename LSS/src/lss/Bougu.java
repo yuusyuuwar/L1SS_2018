@@ -957,6 +957,175 @@ public class Bougu implements Common {
 
             if (name.equals("回復の紋様")) {
                 op2.effect = "ポーション回復量 +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
+                op2.effect += "回復悪化防御 +" + (enchant * 2 + 2) + "%,";
+            }
+
+            switch (name) {
+                case "腕力の紋様":
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "ポーション回復量 +6% +6,";
+                            op2.effect += "回復悪化防御 +6%,";
+                            break;
+                        case 4:
+                            op2.effect = "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 5:
+                            op2.effect = "ポーション回復量 +9% +9,";
+                            op2.effect += "回復悪化防御 +9%,";
+                            op2.HIT_SHORT = 1;
+                            break;
+                        case 6:
+                            op2.effect = "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            op2.HIT_SHORT = 1;
+                            op2.DMG_SHORT = 1;
+                            break;
+                        case 7:
+                            op2.effect = "ポーション回復量 +11% +11,";
+                            op2.effect += "回復悪化防御 +11%,";
+                            op2.HIT_SHORT = 2;
+                            op2.DMG_SHORT = 2;
+                            break;
+                        case 8:
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.HIT_SHORT = 3;
+                            op2.DMG_SHORT = 3;
+                            break;
+                        case 9:
+                            op2.effect = "ポーション回復量 +13% +13,";
+                            op2.effect += "回復悪化防御 +13%,";
+                            op2.HIT_SHORT = 4;
+                            op2.DMG_SHORT = 4;
+                            break;
+                        case 10:
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.HIT_SHORT = 5;
+                            op2.DMG_SHORT = 5;
+                            break;
+                    }
+                    break;
+                case "機敏の紋様":
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "ポーション回復量 +6% +6,";
+                            op2.effect += "回復悪化防御 +6%,";
+                            break;
+                        case 4:
+                            op2.effect = "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 5:
+                            op2.effect = "ポーション回復量 +9% +9,";
+                            op2.effect += "回復悪化防御 +9%,";
+                            op2.HIT_LONG = 1;
+                            break;
+                        case 6:
+                            op2.effect = "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            op2.HIT_LONG = 1;
+                            op2.DMG_LONG = 1;
+                            break;
+                        case 7:
+                            op2.effect = "ポーション回復量 +11% +11,";
+                            op2.effect += "回復悪化防御 +11%,";
+                            op2.HIT_LONG = 2;
+                            op2.DMG_LONG = 2;
+                            break;
+                        case 8:
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.HIT_LONG = 3;
+                            op2.DMG_LONG = 3;
+                            break;
+                        case 9:
+                            op2.effect = "ポーション回復量 +13% +13,";
+                            op2.effect += "回復悪化防御 +13%,";
+                            op2.HIT_LONG = 4;
+                            op2.DMG_LONG = 4;
+                            break;
+                        case 10:
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.HIT_LONG = 5;
+                            op2.DMG_LONG = 5;
+                            break;
+                    }
+                    break;
+                case "知力の紋様":
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "ポーション回復量 +6% +6,";
+                            op2.effect += "回復悪化防御 +6%,";
+                            break;
+                        case 4:
+                            op2.effect = "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 5:
+                            op2.effect = "ポーション回復量 +9% +9,";
+                            op2.effect += "回復悪化防御 +9%,";
+                            op2.HIT_MAGIC = 1;
+                            break;
+                        case 6:
+                            op2.effect = "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            op2.HIT_MAGIC = 1;
+                            op2.SP = 1;
+                            break;
+                        case 7:
+                            op2.effect = "ポーション回復量 +11% +11,";
+                            op2.effect += "回復悪化防御 +11%,";
+                            op2.HIT_MAGIC = 2;
+                            op2.SP = 2;
+                            break;
+                        case 8:
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.HIT_MAGIC = 3;
+                            op2.SP = 3;
+                            break;
+                        case 9:
+                            op2.effect = "ポーション回復量 +13% +13,";
+                            op2.effect += "回復悪化防御 +13%,";
+                            op2.HIT_MAGIC = 4;
+                            op2.SP = 4;
+                            break;
+                        case 10:
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.HIT_MAGIC = 5;
+                            op2.SP = 5;
+                            break;
+                    }
+                    break;
             }
 
             //シークレットオプション
