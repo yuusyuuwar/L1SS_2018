@@ -5,19 +5,21 @@
             <url>src/lss/Calculator.java</url>
             <bookmark id="4">
                 <name/>
-                <line>2935</line>
+                <line>2943</line>
                 <key/>
             </bookmark>
             <bookmark id="5">
                 <name/>
-                <line>3418</line>
+                <line>3426</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Buff.java</file>
             <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Bougu.java</file>
+            <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Morph.java</file>
             <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Buki.java</file>
             <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/UI.java</file>
             <file>file:/C:/Users/user/Documents/L1SS/LSS/src/lss/Common.java</file>

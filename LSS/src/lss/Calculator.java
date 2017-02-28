@@ -2083,6 +2083,14 @@ public class Calculator implements Common {
             buff.MR += 2;
             buff.DR += 1;
         }
+        
+        if(ui.cb_buff[BS_COIN].isSelected()) {
+            buff.HP += 20;
+            buff.MP += 13;
+            buff.AC -= 2;
+            buff.DR += 3;
+            buff.ailment[DARKNESS] += 10;
+        }
 
         //重量ペナルティ
         switch (ui.cb_weight.getSelectedIndex()) {

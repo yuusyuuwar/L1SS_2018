@@ -171,6 +171,8 @@ public interface Common {
     final int D_VR = 80;
     
     final int E_WW = 81;
+    
+    final int BS_COIN = 82;
 
     final String[] ailment_list = {"Î‰»", "‡–°", "“€Œ‹", "ˆÃˆÅ", "‹Câ", "S‘©", "‹°•|"};
     final int STONE = 0;

@@ -183,8 +183,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     LEV lev = new LEV();
 
     //パネル３
-    JCheckBox[] cb_buff = new JCheckBox[82];
-    JComboBox[] cb_buff_group = new JComboBox[82];
+    JCheckBox[] cb_buff = new JCheckBox[83];
+    JComboBox[] cb_buff_group = new JComboBox[83];
 
     //パネル４
     JComboBox cb_npc_level;
@@ -1262,7 +1262,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[F_AG].setToolTipText("DR増加 -AC/5");
         cb_buff[F_CR] = new JCheckBox("クラッシュ");
         cb_buff[F_CR].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_CR].setToolTipText("D一定確率でダメージ増加 Lv/2");
+        cb_buff[F_CR].setToolTipText("一定確率でダメージ増加 Lv/2");
         cb_buff[F_FU] = new JCheckBox("フューリー");
         cb_buff[F_FU].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[F_FU].setToolTipText("クラッシュ発動時、一定確率でダメージ2倍");
@@ -1362,6 +1362,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
+        
+        cb_buff[BS_COIN] = new JCheckBox("黒蛇の気");
+        cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ減少+3 闇耐性+10");
 
         MP mp = new MP();
 

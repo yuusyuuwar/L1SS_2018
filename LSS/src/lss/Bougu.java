@@ -955,13 +955,13 @@ public class Bougu implements Common {
         if (type.equals("リング") || type.equals("アミュレット")
                 || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン")) {
 
-            if (name.equals("回復の紋様")) {
+            if (name.equals("回復の紋章")) {
                 op2.effect = "ポーション回復量 +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
                 op2.effect += "回復悪化防御 +" + (enchant * 2 + 2) + "%,";
             }
 
             switch (name) {
-                case "腕力の紋様":
+                case "腕力の紋章":
                     switch (enchant) {
                         case 1:
                             op2.effect = "ポーション回復量 +2% +2,";
@@ -1016,7 +1016,7 @@ public class Bougu implements Common {
                             break;
                     }
                     break;
-                case "機敏の紋様":
+                case "機敏の紋章":
                     switch (enchant) {
                         case 1:
                             op2.effect = "ポーション回復量 +2% +2,";
@@ -1071,7 +1071,7 @@ public class Bougu implements Common {
                             break;
                     }
                     break;
-                case "知力の紋様":
+                case "知力の紋章":
                     switch (enchant) {
                         case 1:
                             op2.effect = "ポーション回復量 +2% +2,";
