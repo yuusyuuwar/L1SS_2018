@@ -111,7 +111,7 @@ class LEV implements Common ,ActionListener {
             target.add(label[i]);
         }
         for (int i = 0; i < 6; i++) {
-            JLabel lab = new JLabel(st_list[i]);
+            JLabel lab = new JLabel(ST_LIST[i]);
             lab.setBounds(x, y + i * h + h, 30, h);
             target.add(lab);
         }

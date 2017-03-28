@@ -11,7 +11,7 @@ package lss;
  */
 public interface Common {
     
-    final String[] st_list = {"STR", "DEX", "CON", "INT", "WIS", "CHA"};
+    final String[] ST_LIST = {"STR", "DEX", "CON", "INT", "WIS", "CHA"};
     final int STR = 0;
     final int DEX = 1;
     final int CON = 2;
@@ -19,8 +19,8 @@ public interface Common {
     final int WIS = 4;
     final int CHA = 5;
 
-    final String[] class_list = {"P", "K", "E", "W", "D", "R", "I", "F"};
-    final String[] class_list2 = {"君主", "ナイト", "エルフ", "ウィザード", "ダークエルフ", "ドラゴンナイト", "イリュージョニスト", "ウォリアー"};
+    final String[] CLASS_LIST = {"P", "K", "E", "W", "D", "R", "I", "F"};
+    final String[] CLASS_LIST2 = {"君主", "ナイト", "エルフ", "ウィザード", "ダークエルフ", "ドラゴンナイト", "イリュージョニスト", "ウォリアー"};
     final int P = 0;
     final int K = 1;
     final int E = 2;
@@ -30,13 +30,13 @@ public interface Common {
     final int I = 6;
     final int F = 7;
 
-    final String[] elem_list = {"火", "水", "風", "地"};
+    final String[] ELEM_LIST = {"火", "水", "風", "地"};
     final int FIRE = 0;
     final int WATER = 1;
     final int WIND = 2;
     final int EARTH = 3;
 
-    final String[] buki_type_list = {"ダガー", "片手剣", "両手剣", "スタッフ", "鈍器",
+    final String[] BUKI_TYPE_LIST = {"ダガー", "片手剣", "両手剣", "スタッフ", "鈍器",
         "デュアルブレード", "クロウ", "槍", "ボウ", "ガントレット", "キーリンク", "チェーンソード", "双斧"};
     final int W_D = 0;
     final int W_LS = 1;
@@ -74,7 +74,7 @@ public interface Common {
     final int L82 = 12;
     final int L85 = 13;
 
-    final String[] eq_list = {"武器", "武器", "シールド", "ヘルム", "グローブ", "シャツ",
+    final String[] EQ_LIST = {"武器", "武器", "シールド", "ヘルム", "グローブ", "シャツ",
         "アーマー", "クローク", "ブーツ", "ゲートル", "ベルト", "イアリング", "イアリング", "アミュレット", "リング", "リング",
         "リング", "リング", "ルーン", "ルーン","ドロン","エンブレム"};
 
@@ -174,7 +174,7 @@ public interface Common {
     
     final int BS_COIN = 82;
 
-    final String[] ailment_list = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
+    final String[] AILMENT_LIST = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
     final int STONE = 0;
     final int SLEEP = 1;
     final int FREEZE = 2;
@@ -183,17 +183,17 @@ public interface Common {
     final int HOLD = 5;
     final int TERROR = 6;
 
-    final String[] enemy_type_list = {"通常", "悪魔", "不死"};
+    final String[] ENEMY_TYPE_LIST = {"通常", "悪魔", "不死"};
     final int NORMAL = 0;
     final int CURSED = 1;
     final int UNDEAD = 2;
 
-    String eq_en_list[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8",
+    String[] EQ_EN_LIST = {"0", "1", "2", "3", "4", "5", "6", "7", "8",
         "9", "10", "11", "12", "13", "14", "15"};
-    String eq_elem_list[] = {"無属性", "火霊:1段", "火霊:2段", "火霊:3段", "火霊:4段",
+    String[] EQ_ELEM_LIST = {"無属性", "火霊:1段", "火霊:2段", "火霊:3段", "火霊:4段",
         "火霊:5段", "水霊:1段", "水霊:2段", "水霊:3段", "水霊:4段", "水霊:5段", "風霊:1段",
         "風霊:2段", "風霊:3段", "風霊:4段", "風霊:5段", "地霊:1段", "地霊:2段", "地霊:3段",
         "地霊:4段", "地霊:5段"};
 
-    String eq_ts_list[] = {"0段階", "1段階", "2段階", "3段階", "4段階", "5段階"};
+    String[] EQ_TS_LIST = {"0段階", "1段階", "2段階", "3段階", "4段階", "5段階"};
 }

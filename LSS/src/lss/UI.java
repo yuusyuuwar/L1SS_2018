@@ -53,7 +53,6 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import static lss.Common.eq_list;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -75,15 +74,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     //UIパーツ
     //共通
-    JLabel[] lab_st = new JLabel[st_list.length];
-    JLabel[] lab_st_sum = new JLabel[st_list.length];
-    JLabel[] lab_st_base = new JLabel[st_list.length];
-    JLabel[] lab_st_lev = new JLabel[st_list.length];
-    JLabel[] lab_st_add = new JLabel[st_list.length];
+    JLabel[] lab_st = new JLabel[ST_LIST.length];
+    JLabel[] lab_st_sum = new JLabel[ST_LIST.length];
+    JLabel[] lab_st_base = new JLabel[ST_LIST.length];
+    JLabel[] lab_st_lev = new JLabel[ST_LIST.length];
+    JLabel[] lab_st_add = new JLabel[ST_LIST.length];
     JLabel lab_rem;
 
-    JButton[] bt_down = new JButton[st_list.length];
-    JButton[] bt_up = new JButton[st_list.length];
+    JButton[] bt_down = new JButton[ST_LIST.length];
+    JButton[] bt_up = new JButton[ST_LIST.length];
 
     JComboBox cb_lev;
     JComboBox cb_cls;
@@ -114,6 +113,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel lab_hp;
     JLabel lab_mp;
 
+    JLabel lab_hpr;
+    JLabel lab_mpr;
+    JLabel lab_cons_mp;
+    JLabel lab_pot;
+
     //共通パーツ入れ
     ArrayList<JComponent> commons = new ArrayList<>();
 
@@ -123,8 +127,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JButton bt_paste;
     JButton bt_reset;
 
-    WideComboBox[] cb_eq = new WideComboBox[eq_list.length];
-    JComboBox[] cb_eq_en = new JComboBox[eq_list.length];
+    WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];
+    JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];
     JComboBox cb_elem_1;
     JComboBox cb_elem_2;
     JComboBox cb_ts_elem;
@@ -167,13 +171,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JCheckBox cb_mag_auto;
     JComboBox cb_magic;
 
-    JLabel lab_hpr;
-    JLabel lab_mpr;
-    JLabel lab_cons_mp;
-    JLabel[] lab_elem = new JLabel[elem_list.length];
-    JLabel[] lab_ailment = new JLabel[ailment_list.length];
-
-    JLabel lab_pot;
+    JLabel[] lab_elem = new JLabel[ELEM_LIST.length];
+    JLabel[] lab_ailment = new JLabel[AILMENT_LIST.length];
 
     //パネル２
     JLabel[][] pure_status_bonus = new JLabel[2][25];
@@ -188,8 +187,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     //パネル４
     JComboBox cb_npc_level;
-    JSlider[] s_target_res = new JSlider[elem_list.length];
-    JLabel[] lab_target_resist = new JLabel[elem_list.length];
+    JSlider[] s_target_res = new JSlider[ELEM_LIST.length];
+    JLabel[] lab_target_resist = new JLabel[ELEM_LIST.length];
     JComboBox cb_target_dr;
     JSlider s_target_mr;
     JLabel lab_target_mr;
@@ -218,7 +217,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel lab_time;
 
     ZipFile eq_files;
-    ArrayList<ZipEntry>[] eq_entrys = new ArrayList[eq_list.length];
+    ArrayList<ZipEntry>[] eq_entrys = new ArrayList[EQ_LIST.length];
 
     {
         for (int i = 0; i < eq_entrys.length; i++) {
@@ -294,7 +293,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         bt_load.addActionListener(this);
         bt_load.setActionCommand("load");
 
-        cb_cls = new WideComboBox(class_list2);
+        cb_cls = new WideComboBox(CLASS_LIST2);
         cb_cls.setBounds(0, 0, 100, 20);
         cb_cls.addActionListener(this);
         cb_cls.setActionCommand("reset");
@@ -326,23 +325,23 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(cb_lev);
         commons.add(cb_lev);
 
-        for (int i = 0; i < st_list.length; i++) {
+        for (int i = 0; i < ST_LIST.length; i++) {
 
-            lab_st[i] = new JLabel(st_list[i]);
+            lab_st[i] = new JLabel(ST_LIST[i]);
             lab_st[i].setBounds(0, 60 + i * 20, 30, 20);
             panels[0].add(lab_st[i]);
             commons.add(lab_st[i]);
 
             bt_down[i] = new JButton();
             bt_down[i].setBounds(50, 60 + i * 20, 20, 20);
-            bt_down[i].setActionCommand(st_list[i] + "/down");
+            bt_down[i].setActionCommand(ST_LIST[i] + "/down");
             bt_down[i].addActionListener(this);
             panels[0].add(bt_down[i]);
             commons.add(bt_down[i]);
 
             bt_up[i] = new JButton();
             bt_up[i].setBounds(70, 60 + i * 20, 20, 20);
-            bt_up[i].setActionCommand(st_list[i] + "/up");
+            bt_up[i].setActionCommand(ST_LIST[i] + "/up");
             bt_up[i].addActionListener(this);
             panels[0].add(bt_up[i]);
             commons.add(bt_up[i]);
@@ -552,7 +551,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_mag_info2 = new JLabel();
         lab_hit_rate.setBounds(420 + 200, 70 + 40 + 10, 200, 20);
         lab_mag_info1.setBounds(420 + 200, 70 + 60 + 10, 300, 20);
-        lab_mag_info2.setBounds(420 + 200, 70 + 89 + 10, 300, 20);
+        lab_mag_info2.setBounds(420 + 200, 70 + 80 + 10, 300, 20);
         panels[0].add(lab_hit_rate);
         panels[0].add(lab_mag_info1);
         panels[0].add(lab_mag_info2);
@@ -576,7 +575,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //----------
         //パネル１
         //----------
-        for (int i = 0, cnt = 1; i < eq_list.length; i++, cnt++) {
+        for (int i = 0, cnt = 1; i < EQ_LIST.length; i++, cnt++) {
 
             cb_eq_en[i] = new JComboBox();
             cb_eq_en[i].setBounds(200 * (cnt % 2), 220 + (cnt - ((cnt + 1) / 2)) * 20, 50, 20);
@@ -880,12 +879,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(420, 440, 80, 25);
         panels[0].add(lab_tmp);
 
-        for (int i = 0; i < elem_list.length; i++) {
+        for (int i = 0; i < ELEM_LIST.length; i++) {
             lab_elem[i] = new JLabel();
             lab_elem[i].setBounds(420 + 60 + 80 * i, 440, 100, 20);
             panels[0].add(lab_elem[i]);
         }
-        for (int i = 0; i < ailment_list.length; i++) {
+        for (int i = 0; i < AILMENT_LIST.length; i++) {
             lab_ailment[i] = new JLabel();
             lab_ailment[i].setBounds(420 + 60 + 80 * (i % 4), 440 + 20 + 20 * (i / 4), 100, 20);
             panels[0].add(lab_ailment[i]);
@@ -894,8 +893,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //----------
         //パネル２
         //----------
-        for (int i = 0; i < st_list.length; i++) {
-            JLabel lab4 = new JLabel(st_list[i], SwingConstants.CENTER);
+        for (int i = 0; i < ST_LIST.length; i++) {
+            JLabel lab4 = new JLabel(ST_LIST[i], SwingConstants.CENTER);
             lab4.setBounds(30 + 150 * i, 195, 100, 20);
             panels[1].add(lab4);
         }
@@ -1341,7 +1340,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "ジャイアント", "ブラックエルダー", "サキュバスクイーン", "ドレイク", "キングバグベアー", "ダイアゴーレム",
             "サイクロプス", "ナイトバルド", "シアー",
             "デスナイト", "デーモン", "覚醒パオ", "マミーロード",
-            "アイリス","バンパイア","バランカ","アイスクイーン"
+            "アイリス", "バンパイア", "バランカ", "アイスクイーン"
         };
 
         cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);
@@ -1357,12 +1356,16 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[SEC] = new JCheckBox("セキュリティ");
         cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
+
+        String list_vip[] = {"Red", "Gold", "Platinum"};
+        cb_buff_group[VIP] = new WideComboBox(list_vip);
+        cb_buff_group[VIP].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[VIP] = new JCheckBox("VIP");
-        cb_buff[VIP].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[VIP].setBounds(200 * row, 20 * col++, 100, 20);
 
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
-        
+
         cb_buff[BS_COIN] = new JCheckBox("黒蛇の気");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ減少+3 闇耐性+10");
@@ -1390,8 +1393,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp = new JLabel("耐性", SwingConstants.CENTER);
         lab_tmp.setBounds(0, 0, 200, 25);
         panels[3].add(lab_tmp);
-        for (int i = 0; i < elem_list.length; i++) {
-            JLabel lab = new JLabel(elem_list[i], SwingConstants.CENTER);
+        for (int i = 0; i < ELEM_LIST.length; i++) {
+            JLabel lab = new JLabel(ELEM_LIST[i], SwingConstants.CENTER);
             lab.setBounds(0, 25 + i * 25, 100, 25);
             panels[3].add(lab);
             s_target_res[i] = new JSlider(-100, 100, 0);
@@ -1814,7 +1817,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         //装備の読み込み
-        for (int i = 0; i < eq_list.length; i++) {
+        for (int i = 0; i < EQ_LIST.length; i++) {
             if (e.getSource().equals(cb_eq[i])) {
                 try {
                     if (cb_eq[i].getSelectedIndex() >= 0) {
@@ -1968,7 +1971,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                             .setSelectedIndex(calc.bougu[i - 2].safety + 1);
                                 }
                                 calc.bougu[i - 2].checkEnchant();
-                                if (eq_list[i].equals("シャツ")) {
+                                if (EQ_LIST[i].equals("シャツ")) {
                                     cb_ts_elem.setSelectedIndex(0);
 
                                     if (calc.bougu[i - 2].element_enchant) {
@@ -2061,11 +2064,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         calc.buki2.enchant = cb_eq_en[1].getSelectedIndex();
         calc.buki.checkEnchant();
         calc.buki2.checkEnchant();
-        for (int i = 2; i < eq_list.length; i++) {
+        for (int i = 2; i < EQ_LIST.length; i++) {
             calc.bougu[i - 2].enchant = cb_eq_en[i].getSelectedIndex();
             calc.bougu[i - 2].checkEnchant();
         }
-        for (int i = 0; i < elem_list.length; i++) {
+        for (int i = 0; i < ELEM_LIST.length; i++) {
             calc.bougu[3].op.element_resist[i] = cb_ts_elem.getSelectedIndex() * 2;
         }
         calc.update();
@@ -2094,7 +2097,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             File res = new File("./res/" + (String) cb_res.getSelectedItem() + ".txt");
 
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(res))) {
-                for (int i = 0; i < elem_list.length; i++) {
+                for (int i = 0; i < ELEM_LIST.length; i++) {
                     writer.write(Integer.toString(s_target_res[i].getValue()));
                     writer.newLine();
                 }
@@ -2130,7 +2133,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         try {
             File res = new File("./res/" + lab_default.getText() + ".txt");
             try (BufferedReader reader = new BufferedReader(new FileReader(res))) {
-                for (int i = 0; i < elem_list.length; i++) {
+                for (int i = 0; i < ELEM_LIST.length; i++) {
                     s_target_res[i].setValue(Integer.parseInt(reader.readLine()));
                 }
                 s_target_mr.setValue(Integer.parseInt(reader.readLine()));
@@ -2156,7 +2159,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         try {
             File res = new File("./res/" + (String) cb_res.getSelectedItem() + ".txt");
             try (BufferedReader reader = new BufferedReader(new FileReader(res))) {
-                for (int i = 0; i < elem_list.length; i++) {
+                for (int i = 0; i < ELEM_LIST.length; i++) {
                     s_target_res[i].setValue(Integer.parseInt(reader.readLine()));
                 }
                 s_target_mr.setValue(Integer.parseInt(reader.readLine()));
@@ -2184,7 +2187,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     res.createNewFile();
                 }
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(res))) {
-                    for (int i = 0; i < elem_list.length; i++) {
+                    for (int i = 0; i < ELEM_LIST.length; i++) {
                         writer.write(Integer.toString(s_target_res[i].getValue()));
                         writer.newLine();
                     }
@@ -2226,7 +2229,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             eq_files = new ZipFile("./data/E.zip", S_JIS);
             arrow_entrys.clear();
 
-            for (int i = 0; i < eq_list.length; i++) {
+            for (int i = 0; i < EQ_LIST.length; i++) {
                 cb_eq[i].removeAllItems();
                 eq_entrys[i].clear();
 
@@ -2242,7 +2245,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                         sting_entrys.add(entry);
                     }
 
-                    if (entry.getName().startsWith("E/" + eq_list[i])) {
+                    if (entry.getName().startsWith("E/" + EQ_LIST[i])) {
                         try (InputStream is = eq_files.getInputStream(entry); InputStreamReader ir = new InputStreamReader(is); BufferedReader br = new BufferedReader(ir)) {
 
                             String line;
@@ -2251,7 +2254,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                     eq = line;
                                 }
                             }
-                            if (eq.contains(class_list[cb_cls.getSelectedIndex()]) || eq.contains("ALL")) {
+                            if (eq.contains(CLASS_LIST[cb_cls.getSelectedIndex()]) || eq.contains("ALL")) {
                                 eq_entrys[i].add(entry);
                             }
                         }
@@ -2306,8 +2309,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         final int CH = 3;
 
         private Memory() {
-            this.EQ = new String[eq_list.length][CH];
-            this.EN = new int[eq_list.length][CH];
+            this.EQ = new String[EQ_LIST.length][CH];
+            this.EN = new int[EQ_LIST.length][CH];
             this.BL1 = new boolean[CH];
             this.ELEM1 = new int[CH];
             this.BL2 = new boolean[CH];
@@ -2320,8 +2323,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             this.MAG_P = new double[CH];
             this.TS_SP = new boolean[CH];
             for (int n = 0; n < CH; n++) {
-                for (int i = 0; i < eq_list.length; i++) {
-                    this.EQ[i][n] = eq_list[i];
+                for (int i = 0; i < EQ_LIST.length; i++) {
+                    this.EQ[i][n] = EQ_LIST[i];
                     this.EN[i][n] = 0;
                 }
                 this.BL1[n] = false;
@@ -2340,8 +2343,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         void clear() {
             for (int n = 0; n < CH; n++) {
-                for (int i = 0; i < eq_list.length; i++) {
-                    this.EQ[i][n] = eq_list[i];
+                for (int i = 0; i < EQ_LIST.length; i++) {
+                    this.EQ[i][n] = EQ_LIST[i];
                     this.EN[i][n] = 0;
                 }
                 this.BL1[n] = false;
@@ -2359,7 +2362,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         void copy_to_mem(int channel) {
-            for (int i = 0; i < eq_list.length; i++) {
+            for (int i = 0; i < EQ_LIST.length; i++) {
                 if (cb_eq[i].getSelectedItem() != null) {
                     this.EQ[i][channel] = cb_eq[i].getSelectedItem().toString();
                 }
@@ -2381,7 +2384,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         private void load_from_mem(int channel) {
-            for (int i = 0; i < eq_list.length; i++) {
+            for (int i = 0; i < EQ_LIST.length; i++) {
                 cb_eq[i].setSelectedIndex(0);
                 cb_eq[i].setSelectedItem(this.EQ[i][channel]);
                 cb_eq_en[i].setSelectedIndex(this.EN[i][channel]);
@@ -2416,7 +2419,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
             if (e.getActionCommand().equals("reset")) {
 
-                for (int i = 0; i < eq_list.length; i++) {
+                for (int i = 0; i < EQ_LIST.length; i++) {
                     cb_eq[i].setSelectedIndex(0);
                     cb_eq_en[i].setSelectedIndex(0);
                 }
@@ -2464,7 +2467,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         if (e.getSource().equals(s_target_mr)) {
             lab_target_mr.setText(Integer.toString(s_target_mr.getValue()));
         }
-        for (int i = 0; i < elem_list.length; i++) {
+        for (int i = 0; i < ELEM_LIST.length; i++) {
             if (e.getSource().equals(s_target_res[i])) {
                 lab_target_resist[i].setText(Integer.toString(s_target_res[i].getValue()));
             }
@@ -2574,23 +2577,23 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         Element e_pattern_r2 = document.createElement("右腕");
         pattern.appendChild(e_pattern_r2);
         e_pattern_r2.setTextContent(cb_pattern_r2.getSelectedItem().toString());
-        
+
         Element e_alterstone = document.createElement("オルターストーン");
-        e_alterstone.setAttribute("enchant", (String)cb_alterstone_en.getSelectedItem());
-        e_alterstone.setAttribute("op1", (String)cb_alterstone_op[0].getSelectedItem());
-        e_alterstone.setAttribute("op2", (String)cb_alterstone_op[1].getSelectedItem());
-        e_alterstone.setAttribute("op3", (String)cb_alterstone_op[2].getSelectedItem());
+        e_alterstone.setAttribute("enchant", (String) cb_alterstone_en.getSelectedItem());
+        e_alterstone.setAttribute("op1", (String) cb_alterstone_op[0].getSelectedItem());
+        e_alterstone.setAttribute("op2", (String) cb_alterstone_op[1].getSelectedItem());
+        e_alterstone.setAttribute("op3", (String) cb_alterstone_op[2].getSelectedItem());
         root.appendChild(e_alterstone);
 
         for (int i = 0; i < cb_eq_ch.getItemCount(); i++) {
             Element e_equip = document.createElement("装備");
             e_equip.setAttribute("id", Integer.toString(i));
             root.appendChild(e_equip);
-            for (int j = 0; j < eq_list.length; j++) {
-                Element e_equip_data = document.createElement(eq_list[j]);
+            for (int j = 0; j < EQ_LIST.length; j++) {
+                Element e_equip_data = document.createElement(EQ_LIST[j]);
                 e_equip_data.setAttribute("id", Integer.toString(j));
                 e_equip_data.setAttribute("enchant", Integer.toString(mem.EN[j][i]));
-                if (eq_list[j].equals("武器")) {
+                if (EQ_LIST[j].equals("武器")) {
                     if (j == 0) {
                         e_equip_data.setAttribute("element", Integer.toString(mem.ELEM1[i]));
                         e_equip_data.setAttribute("blessed", Boolean.toString(mem.BL1[i]));
@@ -2605,7 +2608,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     }
 
                 }
-                if (eq_list[j].equals("シャツ")) {
+                if (EQ_LIST[j].equals("シャツ")) {
                     e_equip_data.setAttribute("element", Integer.toString(mem.TS_ELEM[i]));
                     e_equip_data.setAttribute("tokusei", Boolean.toString(mem.TS_SP[i]));
                 }
@@ -2761,7 +2764,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     int id = Integer.parseInt(item.getAttributes().getNamedItem("id").getNodeValue());
                     mem.EQ[id][cn] = item.getTextContent();
                     mem.EN[id][cn] = Integer.parseInt(item.getAttributes().getNamedItem("enchant").getNodeValue());
-                    if (eq_list[id].equals("武器")) {
+                    if (EQ_LIST[id].equals("武器")) {
                         if (id == 0) {
                             mem.ELEM1[cn] = Integer.parseInt(item.getAttributes().getNamedItem("element").getNodeValue());
                             mem.BL1[cn] = Boolean.parseBoolean(item.getAttributes().getNamedItem("blessed").getNodeValue());
@@ -2775,7 +2778,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                             mem.BL2[cn] = Boolean.parseBoolean(item.getAttributes().getNamedItem("blessed").getNodeValue());
                         }
                     }
-                    if (eq_list[id].equals("シャツ")) {
+                    if (EQ_LIST[id].equals("シャツ")) {
                         mem.TS_ELEM[cn] = Integer.parseInt(item.getAttributes().getNamedItem("element").getNodeValue());
                         if (item.getAttributes().getNamedItem("tokusei") != null) {
                             mem.TS_SP[cn] = Boolean.parseBoolean(item.getAttributes().getNamedItem("tokusei").getNodeValue());

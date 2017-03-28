@@ -6,10 +6,10 @@ import java.io.IOException;
 public class Buff implements Common {
 
     int AC;
-    int ST[] = new int[st_list.length];
-    int[] element_resist = new int[elem_list.length];
-    int[] ELEM_DMG_SHORT = new int[elem_list.length];
-    int[] ELEM_DMG_LONG = new int[elem_list.length];
+    int ST[] = new int[ST_LIST.length];
+    int[] element_resist = new int[ELEM_LIST.length];
+    int[] ELEM_DMG_SHORT = new int[ELEM_LIST.length];
+    int[] ELEM_DMG_LONG = new int[ELEM_LIST.length];
     int HP;
     int MP;
     int HPR;
@@ -33,7 +33,7 @@ public class Buff implements Common {
 
     int PVP;
 
-    int[] ailment = new int[ailment_list.length];
+    int[] ailment = new int[AILMENT_LIST.length];
 
     public void loadOption(BufferedReader reader) throws IOException {
         reader.reset();

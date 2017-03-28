@@ -20,8 +20,8 @@ public class Calculator implements Common {
     private final int LEVEL = 2;
     private final int ENCHANT = 3;
     private final int ELIXIR = 4;
-    private final int[][] _ST = new int[5][st_list.length];
-    private final int[][][] _C = new int[5][st_list.length][class_list.length];
+    private final int[][] _ST = new int[5][ST_LIST.length];
+    private final int[][][] _C = new int[5][ST_LIST.length][CLASS_LIST.length];
 
     private final int D_SHORT = 0;
     private final int H_SHORT = 1;
@@ -54,8 +54,8 @@ public class Calculator implements Common {
 
     int level = 1;
     private int _rem = 0;
-    private final int[][][] st_data = new int[class_list.length][2][6];
-    private final int[] rem_data = new int[class_list.length];
+    private final int[][][] st_data = new int[CLASS_LIST.length][2][6];
+    private final int[] rem_data = new int[CLASS_LIST.length];
     private int base_dmg_short;
     private int base_dmg_long;
     private int base_dmg_magic;
@@ -65,8 +65,8 @@ public class Calculator implements Common {
     int hit_short;
     int hit_long;
     int hit_magic;
-    private final int[] dmg_buki_ele1 = new int[elem_list.length];
-    private final int[] dmg_buki_ele2 = new int[elem_list.length];
+    private final int[] dmg_buki_ele1 = new int[ELEM_LIST.length];
+    private final int[] dmg_buki_ele2 = new int[ELEM_LIST.length];
 
     private int mb;
     private int sp;
@@ -92,7 +92,7 @@ public class Calculator implements Common {
     final Buki buki = new Buki();
     final Buki buki2 = new Buki();
 
-    final Bougu bougu[] = new Bougu[eq_list.length - 2];
+    final Bougu bougu[] = new Bougu[EQ_LIST.length - 2];
     private int base_ac;
     private int equip_ac;
     private int base_er;
@@ -108,8 +108,8 @@ public class Calculator implements Common {
     int mr;
     int cls = P;
 
-    int res_ele[] = new int[elem_list.length];
-    int res_ail[] = new int[ailment_list.length];
+    int res_ele[] = new int[ELEM_LIST.length];
+    int res_ail[] = new int[AILMENT_LIST.length];
 
     double cons_mp;
 
@@ -453,7 +453,7 @@ public class Calculator implements Common {
         }
         ui.lev.repaint();
 
-        for (int i = 0; i < elem_list.length; i++) {
+        for (int i = 0; i < ELEM_LIST.length; i++) {
             dmg_buki_ele1[i] = 0;
         }
         if (ui.cb_elem_1.getSelectedIndex() > 0) {
@@ -464,7 +464,7 @@ public class Calculator implements Common {
             dmg_buki_ele1[e] = d[x];
         }
         if (ui.cb_elem_2.getSelectedIndex() > 0) {
-            for (int i = 0; i < elem_list.length; i++) {
+            for (int i = 0; i < ELEM_LIST.length; i++) {
                 dmg_buki_ele2[i] = 0;
             }
 
@@ -649,7 +649,7 @@ public class Calculator implements Common {
         }
 
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
-            if (cls == W) {
+            if (cls == W || cls == I) {
                 buff.SP += 2;
                 buff.MPR += 2;
             } else {
@@ -2070,12 +2070,31 @@ public class Calculator implements Common {
 //                }
 //            }
 //        }
+        ui.cb_buff[VIP].setToolTipText("");
         if (ui.cb_buff[VIP].isSelected()) {
-            buff.HP += 120;
-            buff.MP += 120;
-            buff.MR += 10;
-            buff.AC -= 5;
-            buff.r_weight += 0.1;
+            switch ((String) ui.cb_buff_group[VIP].getSelectedItem()) {
+                case "Red":
+                    ui.cb_buff[VIP].setToolTipText("HP+120 MP+120 MR+10 AC-5");
+                    buff.HP += 120;
+                    buff.MP += 120;
+                    buff.MR += 10;
+                    buff.AC -= 5;
+                    break;
+                case "Gold":
+                    ui.cb_buff[VIP].setToolTipText("HP+150 MP+120 MR+10 AC-5");
+                    buff.HP += 150;
+                    buff.MP += 120;
+                    buff.MR += 10;
+                    buff.AC -= 5;
+                    break;
+                case "Platinum":
+                    ui.cb_buff[VIP].setToolTipText("HP+150 MP+150 MR+120 AC-5");
+                    buff.HP += 150;
+                    buff.MP += 150;
+                    buff.MR += 12;
+                    buff.AC -= 5;
+                    break;
+            }
         }
 
         if (ui.cb_buff[SEC].isSelected()) {
@@ -2083,8 +2102,8 @@ public class Calculator implements Common {
             buff.MR += 2;
             buff.DR += 1;
         }
-        
-        if(ui.cb_buff[BS_COIN].isSelected()) {
+
+        if (ui.cb_buff[BS_COIN].isSelected()) {
             buff.HP += 20;
             buff.MP += 13;
             buff.AC -= 2;
@@ -2342,7 +2361,7 @@ public class Calculator implements Common {
         dmg_element1 = 0;
         dmg_element2 = 0;
 
-        for (int i = 0; i < elem_list.length; i++) {
+        for (int i = 0; i < ELEM_LIST.length; i++) {
             dmg_element1 += (int) (dmg_buki_ele1[i] * (32.0 - ui.s_target_res[i].getValue() * 32 / 100) / 32.0);
             dmg_element2 += (int) (dmg_buki_ele2[i] * (32.0 - ui.s_target_res[i].getValue() * 32 / 100) / 32.0);
         }
@@ -2365,8 +2384,8 @@ public class Calculator implements Common {
                 buki_id = W_DA;
                 d_axe = true;
             } else {
-                for (int i = 0; i < buki_type_list.length; i++) {
-                    if (buki.type.equals(buki_type_list[i])) {
+                for (int i = 0; i < BUKI_TYPE_LIST.length; i++) {
+                    if (buki.type.equals(BUKI_TYPE_LIST[i])) {
                         if (ui.cb_morph_level.getSelectedIndex() == 0) {
                             speed = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), i);
                             magic_main = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), MAIN);
@@ -3131,7 +3150,7 @@ public class Calculator implements Common {
         ui.lab_hit_rate.setText("–½’†—¦F" + format_rate.format(hit_rate));
 
         for (int i = 0;
-                i < st_list.length;
+                i < ST_LIST.length;
                 i++) {
             ui.lab_st_sum[i].setText(Integer.toString(_ST[BASE][i] + _ST[REM][i]
                     + _ST[LEVEL][i] + _ST[ENCHANT][i] + _ST[ELIXIR][i]));
@@ -3321,27 +3340,27 @@ public class Calculator implements Common {
 
         calcHPMP();
 
-        System.arraycopy(buff.element_resist, 0, res_ele, 0, elem_list.length);
-        System.arraycopy(buff.ailment, 0, res_ail, 0, ailment_list.length);
+        System.arraycopy(buff.element_resist, 0, res_ele, 0, ELEM_LIST.length);
+        System.arraycopy(buff.ailment, 0, res_ail, 0, AILMENT_LIST.length);
 
         for (Bougu bougu1 : bougu) {
 
-            for (int i = 0; i < elem_list.length; i++) {
+            for (int i = 0; i < ELEM_LIST.length; i++) {
                 res_ele[i] += bougu1.op.element_resist[i] + bougu1.op2.element_resist[i];
             }
-            for (int i = 0; i < ailment_list.length; i++) {
+            for (int i = 0; i < AILMENT_LIST.length; i++) {
                 res_ail[i] += bougu1.op.ailment[i] + bougu1.op2.ailment[i];
             }
         }
 
-        for (int i = 0; i < elem_list.length; i++) {
+        for (int i = 0; i < ELEM_LIST.length; i++) {
             if (res_ele[i] > 100) {
                 res_ele[i] = 100;
             }
-            ui.lab_elem[i].setText(elem_list[i] + " " + res_ele[i]);
+            ui.lab_elem[i].setText(ELEM_LIST[i] + " " + res_ele[i]);
         }
-        for (int i = 0; i < ailment_list.length; i++) {
-            ui.lab_ailment[i].setText(ailment_list[i] + " " + res_ail[i]);
+        for (int i = 0; i < AILMENT_LIST.length; i++) {
+            ui.lab_ailment[i].setText(AILMENT_LIST[i] + " " + res_ail[i]);
         }
 
         int hpr = 0;
@@ -3715,7 +3734,7 @@ public class Calculator implements Common {
         if (ui.lab_rem != null) {
             ui.lab_rem.setText(Integer.toString(_rem));
         }
-        for (int i = 0; i < st_list.length; i++) {
+        for (int i = 0; i < ST_LIST.length; i++) {
             _ST[REM][i] = 0;
             _ST[BASE][i] = st_data[cls][BASE][i];
         }
