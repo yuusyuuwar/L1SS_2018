@@ -2718,7 +2718,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     }
                 } catch (NullPointerException e) {
                 }
-                if (cb_buff_group[id] != null) {
+                if (cb_buff_group[id] != null && item.getAttributes().getNamedItem("select") != null) {
                     cb_buff_group[id].setSelectedIndex(Integer.parseInt(item.getAttributes().getNamedItem("select").getNodeValue()));
                 }
             }
