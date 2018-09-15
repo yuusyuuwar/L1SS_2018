@@ -3306,9 +3306,10 @@ public class Calculator implements Common {
                 cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
-        if (weight > 5400) {
-            weight = 5400;
-        }
+        //所持可能な重量の上限を5400から無制限に変更
+        //if (weight > 5400) {
+        //    weight = 5400;
+        //}
 
         ui.tf_weight2.setText(Integer.toString(weight));
         //重量表示
