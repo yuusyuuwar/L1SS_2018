@@ -142,22 +142,30 @@ public class Bougu implements Common {
             text += " CHA" + op.ST[CHA];
         }
         if (op.DMG_SHORT + op2.DMG_SHORT > 0) {
-            text += " 追加打撃+" + (op.DMG_SHORT + op2.DMG_SHORT);
+            //text += " 追加打撃+" + (op.DMG_SHORT + op2.DMG_SHORT);
+            text += " 近距離ダメージ+" + (op.DMG_SHORT + op2.DMG_SHORT);
         }
         if (op.HIT_SHORT + op2.HIT_SHORT > 0) {
-            text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
+            //text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
+            text += " 近距離命中+" + (op.HIT_SHORT + op2.HIT_SHORT);
         }
-        if (op.HIT_LONG + op2.HIT_LONG > 0) {
-            text += " 弓命中率+" + (op.HIT_LONG + op2.HIT_LONG);
-        }
+        //if (op.HIT_LONG + op2.HIT_LONG > 0) {
+        //    text += " 弓命中率+" + (op.HIT_LONG + op2.HIT_LONG);
+        //}
         if (op.DMG_LONG + op2.DMG_LONG > 0) {
             text += " 遠距離ダメージ+" + (op.DMG_LONG + op2.DMG_LONG);
         }
+        //弓命中率から遠距離命中に名称変更し表示位置を遠距離ダメージの後にする
+        if (op.HIT_LONG + op2.HIT_LONG > 0) {
+            text += " 遠距離命中+" + (op.HIT_LONG + op2.HIT_LONG);
+        }
         if (op.SP + op2.SP > 0) {
-            text += " 魔力+" + (op.SP + op2.SP);
+            //text += " 魔力+" + (op.SP + op2.SP);
+			text += " SP+" + (op.SP + op2.SP);
         }
         if (op.SP < 0) {
-            text += " 魔力" + op.SP;
+            //text += " 魔力" + op.SP;
+			text += " SP" + op.SP;
         }
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
             text += " 魔法命中+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
@@ -211,7 +219,12 @@ public class Bougu implements Common {
             text += " 暗闇耐性+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
         }
         if (op.PVP + op2.PVP > 0) {
-            text += " PVPダメージ+" + (op.PVP + op2.PVP);
+            //text += " PVPダメージ+" + (op.PVP + op2.PVP);
+            text += " PVP追加ダメージ+" + (op.PVP + op2.PVP);
+        }
+        //所持重量の追加
+        if (op.c_weight + op2.c_weight > 0) {
+            text += " 所持重量+" + (op.c_weight + op2.c_weight);
         }
 
         if (!op.effect.equals("")) {
@@ -973,9 +986,9 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[STR] = 1;
             }
-            //+10強化オプション[ダメージ軽減+1]
+            //+10強化オプション[最大HP+80]
             if (enchant >= 10) {
-                op2.DR = 1;
+                op2.HP = 80;
             }
         }
         if (name.equals("血戦のブーツ")) {
@@ -994,9 +1007,9 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[DEX] = 1;
             }
-            //+10強化オプション[ダメージ軽減+1]
+            //+10強化オプション[最大HP+80]
             if (enchant >= 10) {
-                op2.DR = 1;
+                op2.HP = 80;
             }
         }
         if (name.equals("血戦のバスキン")) {
@@ -1015,9 +1028,9 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[INT] = 1;
             }
-            //+10強化オプション[ダメージ軽減+1]
+            //+10強化オプション[最大HP+80]
             if (enchant >= 10) {
-                op2.DR = 1;
+                op2.HP = 80;
             }
         }
 
