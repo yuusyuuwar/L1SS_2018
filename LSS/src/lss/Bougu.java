@@ -780,6 +780,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[STR] = 1;
             }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
+            }
         }
         if (name.equals("血戦のケープ")) {
             if (enchant >= 5) {
@@ -797,6 +801,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[DEX] = 1;
             }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
+            }                
         }
         if (name.equals("血戦のクローク")) {
             if (enchant >= 5) {
@@ -813,6 +821,10 @@ public class Bougu implements Common {
             }
             if (enchant >= 9) {
                 op2.ST[INT] = 1;
+            }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
             }
         }
 
@@ -864,6 +876,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.DMG_SHORT = 1;
             }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
         }
         if (name.equals("血戦のブレイサー")) {
             if (enchant >= 5) {
@@ -881,6 +897,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.DMG_LONG = 1;
             }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
         }
         if (name.equals("血戦のミトン")) {
             if (enchant >= 5) {
@@ -897,6 +917,10 @@ public class Bougu implements Common {
             }
             if (enchant >= 9) {
                 op2.SP = 1;
+            }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
             }
         }
 
@@ -916,6 +940,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[STR] = 1;
             }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
         }
         if (name.equals("血戦のブーツ")) {
             if (enchant >= 5) {
@@ -933,6 +961,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[DEX] = 1;
             }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
         }
         if (name.equals("血戦のバスキン")) {
             if (enchant >= 5) {
@@ -949,6 +981,10 @@ public class Bougu implements Common {
             }
             if (enchant >= 9) {
                 op2.ST[INT] = 1;
+            }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
             }
         }
 
@@ -1334,21 +1370,25 @@ public class Bougu implements Common {
                         op2.HP = 80;
                         op2.DR = 3;
                         op2.effect = "ダメージ軽減+20 3%,";
+                        op2.AC = -7;
                         break;
                     case 7:
                         op2.HP = 90;
                         op2.DR = 4;
                         op2.effect = "ダメージ軽減+20 4%,";
+                        op2.AC = -8;
                         break;
                     case 8:
                         op2.HP = 100;
                         op2.DR = 5;
                         op2.effect = "ダメージ軽減+20 5%,";
+                        op2.AC = -9;
                         break;
                     case 9:
                         op2.HP = 150;
                         op2.DR = 6;
                         op2.effect = "ダメージ軽減+20 6%,";
+                        op2.AC = -10;
                         break;
                 }
             }
