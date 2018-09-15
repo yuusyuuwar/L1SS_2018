@@ -3866,35 +3866,49 @@ public class Calculator implements Common {
     void createToolTip() {
 
         String buki_text = "";
-        buki_text += "打撃値" + buki.small + "/" + buki.big;
+            //buki_text += "打撃値" + buki.small + "/" + buki.big;
+            buki_text += "ダメージ" + buki.small + "/" + buki.big;
         if (buki.two_hands) {
             buki_text += " 両手武器";
         }
-        if (buki.op.HIT_SHORT > 0) {
-            buki_text += " 攻撃成功+" + buki.op.HIT_SHORT;
-        }
         if (buki.op.DMG_SHORT > 0) {
-            buki_text += " 追加打撃+" + buki.op.DMG_SHORT;
-        }
-        if (buki.op.HIT_SHORT < 0) {
-            buki_text += " 攻撃成功" + buki.op.HIT_SHORT;
+            //buki_text += " 追加打撃+" + buki.op.DMG_SHORT;
+            buki_text += " 近距離ダメージ+" + buki.op.DMG_SHORT;
         }
         if (buki.op.DMG_LONG < 0) {
-            buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            //buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            buki_text += " 近距離ダメージ" + buki.op.DMG_LONG;
         }
-        if (buki.op.HIT_LONG > 0) {
-            buki_text += " 攻撃成功+" + buki.op.HIT_LONG;
+        if (buki.op.HIT_SHORT > 0) {
+            //buki_text += " 攻撃成功+" + buki.op.HIT_SHORT;
+            buki_text += " 近距離命中+" + buki.op.HIT_SHORT;
+        }
+            if (buki.op.HIT_SHORT < 0) {
+            //buki_text += " 攻撃成功" + buki.op.HIT_SHORT;
+            buki_text += " 近距離命中" + buki.op.HIT_SHORT;
         }
         if (buki.op.DMG_LONG > 0) {
-            buki_text += " 追加打撃+" + buki.op.DMG_LONG;
-        }
-        if (buki.op.HIT_LONG < 0) {
-            buki_text += " 攻撃成功" + buki.op.HIT_LONG;
+            //buki_text += " 追加打撃+" + buki.op.DMG_LONG;
+            buki_text += " 遠距離ダメージ+" + buki.op.DMG_LONG;
         }
         if (buki.op.DMG_LONG < 0) {
-            buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            //buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            buki_text += " 遠距離ダメージ" + buki.op.DMG_LONG;
         }
-
+        if (buki.op.HIT_LONG > 0) {
+            //buki_text += " 攻撃成功+" + buki.op.HIT_LONG;
+            buki_text += " 遠距離命中+" + buki.op.HIT_LONG;
+        }
+        if (buki.op.HIT_LONG < 0) {
+            //buki_text += " 攻撃成功" + buki.op.HIT_LONG;
+            buki_text += " 遠距離命中" + buki.op.HIT_LONG;
+        }
+        if (buki.op.HIT_MAGIC > 0) {
+            buki_text += " 魔法命中+" + buki.op.HIT_MAGIC;
+        }
+        if (buki.op.HIT_MAGIC < 0) {
+            buki_text += " 魔法命中" + buki.op.HIT_MAGIC;
+        }
         if (buki.op.CRI_SHORT + buki.op2.CRI_SHORT > 0) {
             buki_text += " 近距離クリティカル+" + (buki.op.CRI_SHORT + buki.op2.CRI_SHORT);
         }
@@ -3904,11 +3918,10 @@ public class Calculator implements Common {
         if (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC > 0) {
             buki_text += " 魔法クリティカル+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
-
         if (buki.hit_stun > 0) {
-            buki_text += " スタン成功" + buki.hit_stun;
+            //buki_text += " スタン成功" + buki.hit_stun;
+            buki_text += " スタン命中" + buki.hit_stun;
         }
-
         if (buki.op.HP > 0) {
             buki_text += " HP+" + buki.op.HP;
         }
@@ -3920,9 +3933,6 @@ public class Calculator implements Common {
         }
         if (buki.op.MPR > 0) {
             buki_text += " MP自然回復+" + buki.op.MPR;
-        }
-        if (buki.op.SP > 0) {
-            buki_text += " 魔力+" + buki.op.SP;
         }
         if (buki.op.ST[STR] > 0) {
             buki_text += " STR+" + buki.op.ST[STR];
@@ -3941,6 +3951,10 @@ public class Calculator implements Common {
         }
         if (buki.op.ST[CHA] > 0) {
             buki_text += " CHA+" + buki.op.ST[CHA];
+        }
+        if (buki.op.SP > 0) {
+            //buki_text += " 魔力+" + buki.op.SP;
+            buki_text += " SP+" + buki.op.SP;
         }
         if (!buki.op.effect.equals("")) {
             buki_text += " " + buki.op.effect;
