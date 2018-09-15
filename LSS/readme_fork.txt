@@ -3,9 +3,20 @@
 変更点
 2018/09/16
 Update
+LSS/src/lss/Common.java
+パネル1のアミュレットとイアリングの入力位置の入替
+LSS/data/E.zip
+削除
+	02_フォノスファイターアミュレット.txt
+変更
+	02_闘士のアミュレット.txt
+	name=フォノスファイターアミュレットを闘士のアミュレットへ変更
+
+Update
 LSS/data/E.zip
 武器の新規追加	
 	真レイピア
+
 Update
 LSS/src/lss/Calculator.java
 武器ツールチップの表示名、順序の修正
