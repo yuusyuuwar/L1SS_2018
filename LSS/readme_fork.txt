@@ -1,6 +1,21 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/16
+Update
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+オルターストーン6段階追加
+DKセット装備時に追加ボーナスが3倍になる不具合
+80変身時と近/遠特化変身時にボーナスが累積
+DKセット装備時のボーナスよりその所在をコメントアウト
+DKセット装備時に80変身には自動的にはならない
+参考：2017/05/11 hasu0703/L1SSでy_ikedaさんのコミット
+
+LSS/src/lss/Morph.java
+UIのパネル1の変身レベル(LV85をLV84)の問題の修正
+(LV84では速度が変更にならず、LV85で変更された問題）
+
 2018/09/15
 Update
 LSS/src/lss/Calculator.java
@@ -53,7 +68,6 @@ LSS/src/lss/Calculator.java
 
 LSS/data/E.zip
 武器防具の新規追加及び修正
-
 
 防具新規追加
 	ユニコーンのゲートル(5種類)

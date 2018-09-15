@@ -644,8 +644,9 @@ public class Calculator implements Common {
             buff.AC -= 10;
             buff.ST[STR] += 2;
             buff.DMG_SHORT += 2;
-            ui.cb_morph_level.setSelectedItem("80");
-            ui.cb_morph_type.setSelectedItem("近/遠特化");
+            //  下記メソッド実行のたびに追加ボーナスが累積される模様（本来＋2個で追加ボーナスが3倍になる）
+            //ui.cb_morph_level.setSelectedItem("80");
+            //ui.cb_morph_type.setSelectedItem("近/遠特化");
         }
 
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
@@ -1799,6 +1800,16 @@ public class Calculator implements Common {
                         buff.HIT_SHORT += 1;
                         buff.DMG_SHORT += 1;
                         break;
+                    //オルターストーン6段階
+                    case 6:
+                        buff.HP += 60;
+                        buff.MP += 40;
+                        buff.ST[STR] += 1;
+                        buff.HIT_SHORT += 1;
+                        buff.DMG_SHORT += 1;
+                        buff.MR += 5;
+                        buff.DR += 1;
+                        break;                       
                 }
                 break;
             case 7:
@@ -1830,6 +1841,16 @@ public class Calculator implements Common {
                         buff.HIT_LONG += 1;
                         buff.DMG_LONG += 1;
                         break;
+                    //オルターストーン6段階   
+                    case 6:   
+                        buff.HP += 50;
+                        buff.MP += 50;
+                        buff.ST[DEX] += 1;
+                        buff.HIT_LONG += 1;
+                        buff.DMG_LONG += 1;
+                        buff.MR += 5;
+                        buff.DR += 1;
+                        break;
                 }
                 break;
             case 8:
@@ -1859,6 +1880,16 @@ public class Calculator implements Common {
                         buff.ST[INT] += 1;
                         buff.MPR += 1;
                         buff.SP += 1;
+                        break;
+                    //オルターストーン6段階
+                    case 6:
+                        buff.HP += 40;
+                        buff.MP += 60;
+                        buff.ST[INT] += 1;
+                        buff.MPR += 1;
+                        buff.SP += 1;
+                        buff.MR += 5;
+                        buff.DR += 1;
                         break;
                 }
                 break;
