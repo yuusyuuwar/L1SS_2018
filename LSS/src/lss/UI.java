@@ -182,8 +182,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     LEV lev = new LEV();
 
     //パネル３
-    JCheckBox[] cb_buff = new JCheckBox[83];
-    JComboBox[] cb_buff_group = new JComboBox[83];
+    
+    //y_ikedaさんによる修正を参考に
+    //JCheckBox[] cb_buff = new JCheckBox[83];
+    //JComboBox[] cb_buff_group = new JComboBox[83];
+    //L_HST = 83;(成長の果実）を追加した為、変更(0から83の計84個分)
+    JCheckBox[] cb_buff = new JCheckBox[84];
+    JComboBox[] cb_buff_group = new JComboBox[84];   
 
     //パネル４
     JComboBox cb_npc_level;
@@ -225,8 +230,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
     }
 
-    ArrayList<ZipEntry> arrow_entrys = new ArrayList();
-    ArrayList<ZipEntry> sting_entrys = new ArrayList();
+    //表記の修正(y_ikedaさんの修正より)
+    //ArrayList<ZipEntry> arrow_entrys = new ArrayList();
+    //ArrayList<ZipEntry> sting_entrys = new ArrayList();
+    ArrayList<ZipEntry> arrow_entrys = new ArrayList<>();
+    ArrayList<ZipEntry> sting_entrys = new ArrayList<>();
 
     File file;
 
@@ -1370,6 +1378,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[BS_COIN] = new JCheckBox("黒蛇の気");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ減少+3 闇耐性+10");
+
+        //y_ikedaさんによる修正を参考に
+        String list_hst[] = {"1個", "2個", "3個", "4個", "5個"};
+        cb_buff_group[L_HST] = new WideComboBox(list_hst);
+        cb_buff_group[L_HST].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[L_HST] = new JCheckBox("成長の果実");
+        cb_buff[L_HST].setBounds(200 * row, 20 * col++, 100, 20);        
 
         MP mp = new MP();
 

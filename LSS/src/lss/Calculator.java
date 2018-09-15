@@ -2111,6 +2111,36 @@ public class Calculator implements Common {
             buff.ailment[DARKNESS] += 10;
         }
 
+        //y_ikedaさんによる修正を参考に
+        if (ui.cb_buff[L_HST].isSelected()) {
+            switch ((String) ui.cb_buff_group[L_HST].getSelectedItem()) {
+                case "1個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP20% AC-1");
+                    buff.AC -= 1;
+                    break;
+                case "2個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP30% AC-2 DR+1");
+                    buff.AC -= 2;
+                    buff.DR += 1;
+                    break;
+                case "3個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP40% AC-3 DR+2");
+                    buff.AC -= 3;
+                    buff.DR += 2;
+                    break;
+                case "4個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP40% AC-4 DR+2");
+                    buff.AC -= 4;
+                    buff.DR += 2;
+                    break;
+                case "5個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP40% AC-5 DR+2");
+                    buff.AC -= 5;
+                    buff.DR += 2;
+                    break;
+            }
+        }
+
         //重量ペナルティ
         switch (ui.cb_weight.getSelectedIndex()) {
             case 0:

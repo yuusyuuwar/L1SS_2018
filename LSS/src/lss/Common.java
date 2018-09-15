@@ -174,6 +174,8 @@ public interface Common {
     final int E_WW = 81;
     
     final int BS_COIN = 82;
+    //y_ikeda‚³‚ñ‚É‚æ‚éC³‚ğQl‚É
+    final int L_HST = 83;       //¬’·‚Ì‰ÊÀ
 
     final String[] AILMENT_LIST = {"Î‰»", "‡–°", "“€Œ‹", "ˆÃˆÅ", "‹Câ", "S‘©", "‹°•|"};
     final int STONE = 0;

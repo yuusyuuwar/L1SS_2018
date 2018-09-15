@@ -3,6 +3,21 @@
 変更点
 2018/09/15
 Update
+LSS/src/lss/Calculator.java
+LSS/src/lss/Common.java
+LSS/src/lss/UI.java
+成長の果実の実装(2018/08/15日Update対応)
+参考：2017/05/11 hasu0703/L1SSでy_ikedaさんのコミット
+
+成長の果実
+個数		EXP	AC	オプション
+1個		20％	-1	なし
+2個		30％	-2	DR+1
+3個		40％	-3	DR+2
+4個		40％	-4	DR+2
+4個		40％	-5	DR+2
+
+Update
 LSS/src/lss/Common.java
 LSS/src/lss/Morph.java
 LSS/src/lss/UI.java
