@@ -186,9 +186,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     //y_ikedaさんによる修正を参考に
     //JCheckBox[] cb_buff = new JCheckBox[83];
     //JComboBox[] cb_buff_group = new JComboBox[83];
-    //L_HST = 83;(成長の果実）を追加した為、変更(0から83の計84個分)
-    JCheckBox[] cb_buff = new JCheckBox[84];
-    JComboBox[] cb_buff_group = new JComboBox[84];   
+    //L_HST = 83;(成長の果実)(イーグルアイ)(サイクロン)(インフェルノ)を追加した為、変更(0から86の計87個分)
+    JCheckBox[] cb_buff = new JCheckBox[87];
+    JComboBox[] cb_buff_group = new JComboBox[87];   
 
     //パネル４
     JComboBox cb_npc_level;
@@ -1113,9 +1113,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[E_FW] = new JCheckBox("ファイアーウエポン");
-        cb_buff[E_FW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_FW].setToolTipText("火属性追加打撃+4");
+        //cb_buff[E_FW] = new JCheckBox("ファイアーウエポン");
+        //cb_buff[E_FW].setBounds(200 * row, 20 * col++, 150, 20);
+        //cb_buff[E_FW].setToolTipText("火属性追加打撃+4");
         cb_buff[E_BW] = new JCheckBox("バーニングウエポン");
         cb_buff[E_BW].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_BW].setToolTipText("火属性追加打撃+6 近接命中+6");
@@ -1128,8 +1128,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_AF] = new JCheckBox("アディショナルファイアー");
         cb_buff[E_AF].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_AF].setToolTipText("重量50%以上でのHP/MP回復");
+        cb_buff[E_IO] = new JCheckBox("インフェルノ");
+        cb_buff[E_IO].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[E_IO].setToolTipText("一定確率で近距離ダメージを50%軽減しカウンター攻撃");
 
-        col++;
+        //col++;
 
         lab_tmp = new JLabel("精霊魔法(水)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1141,27 +1144,36 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_AP] = new JCheckBox("アクアプロテクター");
         cb_buff[E_AP].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_AP].setToolTipText("ER+5");
+        cb_buff[E_AS] = new JCheckBox("アクアショット");
+        cb_buff[E_AS].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[E_AS].setToolTipText("遠距離命中+4");
 
-        col++;
+        //col++;
 
         lab_tmp = new JLabel("精霊魔法(風)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[E_WS] = new JCheckBox("ウインドショット");
-        cb_buff[E_WS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_WS].setToolTipText("遠距離命中+6");
+        //cb_buff[E_WS] = new JCheckBox("ウインドショット");
+        //cb_buff[E_WS].setBounds(200 * row, 20 * col++, 150, 20);
+        //cb_buff[E_WS].setToolTipText("遠距離命中+6");
         cb_buff[E_SE] = new JCheckBox("ストームアイ");
         cb_buff[E_SE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_SE].setToolTipText("風属性追加打撃+3 遠距離命中+2");
         cb_buff[E_SS] = new JCheckBox("ストームショット");
         cb_buff[E_SS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_SS].setToolTipText("風属性追加打撃+6 遠距離命中+3");
-        cb_buff[E_WW] = new JCheckBox("ウインドウォーク");
-        cb_buff[E_WW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_WW].setToolTipText("移動速度上昇");
-
-        col++;
+        //cb_buff[E_WW] = new JCheckBox("ウインドウォーク");
+        //cb_buff[E_WW].setBounds(200 * row, 20 * col++, 150, 20);
+        //cb_buff[E_WW].setToolTipText("移動速度上昇");
+        cb_buff[E_EE] = new JCheckBox("イーグルアイ");
+        cb_buff[E_EE].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[E_EE].setToolTipText("遠距離クリティカル+2%");
+        cb_buff[E_CE] = new JCheckBox("サイクロン");
+        cb_buff[E_CE].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[E_CE].setToolTipText("一定の確率で遠距離ダメージ1.5倍");
+        
+        //col++;
 
         lab_tmp = new JLabel("精霊魔法(地)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1173,6 +1185,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_EV] = new JCheckBox("エキゾチックバイタライズ");
         cb_buff[E_EV].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EV].setToolTipText("重量50%以上でのHP/MP回復");
+        cb_buff[E_QE] = new JCheckBox("クエイク");
+        cb_buff[E_QE].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[E_QE].setToolTipText("一定の確率で近距離ダメージ1.5倍");
+        cb_buff[E_EW] = new JCheckBox("アースウェポン");
+        cb_buff[E_EW].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[E_EW].setToolTipText("近距離ダメージ+2　近距離命中+4");
 
         col = 0;
         row = 2;

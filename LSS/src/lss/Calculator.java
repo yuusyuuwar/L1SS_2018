@@ -1278,16 +1278,16 @@ public class Calculator implements Common {
                 ui.cb_buff[E_BW].setSelected(false);
             }
         }
-        if (ui.cb_buff[E_FW].isSelected()) {
-            if (ui.cb_buff[E_BW].isSelected()) {
-                ui.cb_buff[E_FW].setSelected(false);
-            } else {
-                if (ui.cb_buff[E_FW].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
-                }
-                buff.ELEM_DMG_SHORT[FIRE] += 4;
-            }
-        }
+        //if (ui.cb_buff[E_FW].isSelected()) {
+        //    if (ui.cb_buff[E_BW].isSelected()) {
+        //        ui.cb_buff[E_FW].setSelected(false);
+        //    } else {
+        //        if (ui.cb_buff[E_FW].getForeground().equals(Color.BLUE)) {
+        //            cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+        //        }
+        //        buff.ELEM_DMG_SHORT[FIRE] += 4;
+        //    }
+        //}
         // ネイチャーズタッチ
         if (ui.cb_buff[E_NT].isSelected()) {
             if (level > 9) {
@@ -1350,17 +1350,17 @@ public class Calculator implements Common {
                 }
             }
         }
-        if (ui.cb_buff[E_WS].isSelected()) {
-            if (ui.cb_buff[E_SS].isSelected()
-                    || ui.cb_buff[E_SE].isSelected()) {
-                ui.cb_buff[E_WS].setSelected(false);
-            } else {
-                buff.HIT_LONG += 6;
-                if (ui.cb_buff[E_WS].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
-                }
-            }
-        }
+        //if (ui.cb_buff[E_WS].isSelected()) {
+        //    if (ui.cb_buff[E_SS].isSelected()
+        //            || ui.cb_buff[E_SE].isSelected()) {
+        //        ui.cb_buff[E_WS].setSelected(false);
+        //    } else {
+        //        buff.HIT_LONG += 6;
+        //        if (ui.cb_buff[E_WS].getForeground().equals(Color.BLUE)) {
+        //            cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+        //        }
+        //    }
+        //}
         if (ui.cb_buff[E_EG].isSelected()) {
             buff.DR += 2;
             if (ui.cb_buff[E_EG].getForeground().equals(Color.BLUE)) {
@@ -3755,11 +3755,12 @@ public class Calculator implements Common {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
-        if (ui.cb_buff[E_WW].isSelected()) {
-            if (ui.cb_buff[E_WW].getForeground().equals(Color.BLUE)) {
-                cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
-            }
-        }
+        //2018/09/05 Updateでウインドウォークは削除
+        //if (ui.cb_buff[E_WW].isSelected()) {
+        //    if (ui.cb_buff[E_WW].getForeground().equals(Color.BLUE)) {
+        //        cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+        //    }
+        //}
 
         ui.lab_cons_mp.setText(Double.toString((int) (cons_mp * 100) / 100.0));
 //        ui.lab_cons_mp.setText(Double.toString((int) (cons_mp * (1.0 - red_mp * 0.01) * 100) / 100.0));

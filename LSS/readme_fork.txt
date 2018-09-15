@@ -3,6 +3,25 @@
 変更点
 2018/09/16
 Update
+LSS/src/lss/Calculator.java
+LSS/src/lss/Common.java
+LSS/src/lss/UI.java
+2018/09/05Updateでエルフ魔法のリニューアルに合わせてパネル3の再構築
+エルフ魔法削除
+E_FW=18	ファイアーウェポン 火属性追加打撃+4
+E_WS=10	ウィンドショット   遠距離命中+6
+E_WW=81	ウィンドウォーク   移動速度上昇
+
+エルフ魔法追加
+E_EW=18	アースウェポン     近距離ダメージ+2　近距離命中+4
+E_AS=10	アクアショット     遠距離命中+4
+E_QE=81	クエイク           一定の確率で近距離ダメージ1.5倍
+E_EE=84	イーグルアイ       遠距離クリティカル+2%	
+E_CE=85	サイクロン         一定の確率で遠距離ダメージ1.5倍	
+E_IO=86	インフェルノ       一定確率で近距離ダメージを50%軽減しカウンター攻撃
+IDは0から86の合計87個分
+
+Update
 LSS/src/lss/Common.java
 パネル1のアミュレットとイアリングの入力位置の入替
 LSS/data/E.zip
@@ -51,7 +70,7 @@ Update
 LSS/src/lss/Calculator.java
 LSS/src/lss/Common.java
 LSS/src/lss/UI.java
-成長の果実の実装(2018/08/15日Update対応)
+成長の果実の実装(2018/08/15 Update対応)
 参考：2017/05/11 hasu0703/L1SSでy_ikedaさんのコミット
 
 成長の果実
