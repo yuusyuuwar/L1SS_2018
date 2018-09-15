@@ -860,6 +860,39 @@ public class Bougu implements Common {
             op2.HP = 5 * enchant;
         }
 
+        //腕力のゲートルは+9[近距離ダメージ+1]
+        if (name.equals("ユニコーンの腕力のゲートル")) {
+            if (enchant >= 9) {
+                op2.DMG_SHORT = 1;
+	    }
+        } 
+
+        //機敏のゲートルは+9[遠距離ダメージ+1]
+        if (name.equals("ユニコーンの機敏のゲートル")) {
+            if (enchant >= 9) {
+                op2.DMG_LONG = 1;
+	    }
+        } 
+
+        //知力のゲートル+9[SP+1] 
+        if (name.equals("ユニコーンの知力のゲートル")) {
+            if (enchant >= 9) {
+                op2.SP = 1;
+	    }
+        }
+
+        //守護のゲートルは+5から[最大HP]+10増加
+        if (name.equals("ユニコーンの守護のゲートル")) {
+            if (enchant >= 5) {
+                op2.HP = 10;
+	    }
+        }        
+
+        //抵抗のゲートルは+1強化毎に[MR]1%増加(装備のパラメーター[MR強化=]で実装済)
+        //if (name.equals("ユニコーンの抵抗のゲートル")) {
+        //    op2.MR = 1 * enchant;
+        //}
+                      
         if (name.equals("血戦のグローブ")) {
             if (enchant >= 5) {
                 op2.HP = 30;
