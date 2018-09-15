@@ -213,21 +213,37 @@ public class Morph implements Common {
         data[L82][PHI][MAIN] = 85;
         data[L82][PHI][SUB] = 75;
 
-        data[L85][PHI][W_D] = 138;
-        data[L85][PHI][W_LS] = 128;
-        data[L85][PHI][W_TS] = 110;
-        data[L85][PHI][W_A] = 110;
-        data[L85][PHI][W_L] = 118;
-        data[L85][PHI][W_CS] = 118;
-        data[L85][PHI][W_S] = 128;
-        data[L85][PHI][W_DB] = 128;
-        data[L85][PHI][W_C] = 128;
-        data[L85][PHI][W_K] = 128;
-        data[L85][PHI][W_DA] = 128;
-        data[L85][PHI][W_B] = 96;
-        data[L85][PHI][W_G] = 96;
-        data[L85][PHI][MAIN] = 85;
-        data[L85][PHI][SUB] = 75;
+        data[L84][PHI][W_D] = 138;
+        data[L84][PHI][W_LS] = 128;
+        data[L84][PHI][W_TS] = 110;
+        data[L84][PHI][W_A] = 110;
+        data[L84][PHI][W_L] = 118;
+        data[L84][PHI][W_CS] = 118;
+        data[L84][PHI][W_S] = 128;
+        data[L84][PHI][W_DB] = 128;
+        data[L84][PHI][W_C] = 128;
+        data[L84][PHI][W_K] = 128;
+        data[L84][PHI][W_DA] = 128;
+        data[L84][PHI][W_B] = 96;
+        data[L84][PHI][W_G] = 96;
+        data[L84][PHI][MAIN] = 85;
+        data[L84][PHI][SUB] = 75;
+        
+        //data[L85][PHI][W_D] = 138;
+        //data[L85][PHI][W_LS] = 128;
+        //data[L85][PHI][W_TS] = 110;
+        //data[L85][PHI][W_A] = 110;
+        //data[L85][PHI][W_L] = 118;
+        //data[L85][PHI][W_CS] = 118;
+        //data[L85][PHI][W_S] = 128;
+        //data[L85][PHI][W_DB] = 128;
+        //data[L85][PHI][W_C] = 128;
+        //data[L85][PHI][W_K] = 128;
+        //data[L85][PHI][W_DA] = 128;
+        //data[L85][PHI][W_B] = 96;
+        //data[L85][PHI][W_G] = 96;
+        //data[L85][PHI][MAIN] = 85;
+        //data[L85][PHI][SUB] = 75;
 
         data[L1][MAG][W_D] = 70;
         data[L1][MAG][W_LS] = 67;
@@ -437,21 +453,37 @@ public class Morph implements Common {
         data[L82][MAG][MAIN] = 90;
         data[L82][MAG][SUB] = 79;
 
-        data[L85][MAG][W_D] = 122;
-        data[L85][MAG][W_LS] = 112;
-        data[L85][MAG][W_TS] = 97;
-        data[L85][MAG][W_A] = 97;
-        data[L85][MAG][W_L] = 104;
-        data[L85][MAG][W_CS] = 104;
-        data[L85][MAG][W_S] = 112;
-        data[L85][MAG][W_DB] = 112;
-        data[L85][MAG][W_C] = 112;
-        data[L85][MAG][W_K] = 112;
-        data[L85][MAG][W_DA] = 112;
-        data[L85][MAG][W_B] = 0;
-        data[L85][MAG][W_G] = 0;
-        data[L85][MAG][MAIN] = 90;
-        data[L85][MAG][SUB] = 79;
+        data[L84][MAG][W_D] = 122;
+        data[L84][MAG][W_LS] = 112;
+        data[L84][MAG][W_TS] = 97;
+        data[L84][MAG][W_A] = 97;
+        data[L84][MAG][W_L] = 104;
+        data[L84][MAG][W_CS] = 104;
+        data[L84][MAG][W_S] = 112;
+        data[L84][MAG][W_DB] = 112;
+        data[L84][MAG][W_C] = 112;
+        data[L84][MAG][W_K] = 112;
+        data[L84][MAG][W_DA] = 112;
+        data[L84][MAG][W_B] = 0;
+        data[L84][MAG][W_G] = 0;
+        data[L84][MAG][MAIN] = 90;
+        data[L84][MAG][SUB] = 79;
+
+        //data[L85][MAG][W_D] = 122;
+        //data[L85][MAG][W_LS] = 112;
+        //data[L85][MAG][W_TS] = 97;
+        //data[L85][MAG][W_A] = 97;
+        //data[L85][MAG][W_L] = 104;
+        //data[L85][MAG][W_CS] = 104;
+        //data[L85][MAG][W_S] = 112;
+        //data[L85][MAG][W_DB] = 112;
+        //data[L85][MAG][W_C] = 112;
+        //data[L85][MAG][W_K] = 112;
+        //data[L85][MAG][W_DA] = 112;
+        //data[L85][MAG][W_B] = 0;
+        //data[L85][MAG][W_G] = 0;
+        //data[L85][MAG][MAIN] = 90;
+        //data[L85][MAG][SUB] = 79;
 
     }
 
@@ -483,7 +515,8 @@ public class Morph implements Common {
         } else if (level < 85) {
             return data[L82][mode][type];
         } else {
-            return data[L85][mode][type];
+            //return data[L85][mode][type];
+            return data[L84][mode][type];
         }
     }
 }

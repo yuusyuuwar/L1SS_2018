@@ -3,6 +3,12 @@
 変更点
 2018/09/15
 Update
+LSS/src/lss/Common.java
+LSS/src/lss/Morph.java
+LSS/src/lss/UI.java
+UIのパネル1の変身レベル(LV85をLV84)の修正
+
+Update
 LSS/src/lss/Bougu.java
 血戦ブーツ3種の強化10のオプション修正
 防具ツールチップの表示名、順序の修正

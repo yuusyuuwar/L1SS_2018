@@ -72,7 +72,8 @@ public interface Common {
     final int L75 = 10;
     final int L80 = 11;
     final int L82 = 12;
-    final int L85 = 13;
+    //final int L85 = 13;
+    final int L84 = 13;
 
     final String[] EQ_LIST = {"武器", "武器", "シールド", "ヘルム", "グローブ", "シャツ",
         "アーマー", "クローク", "ブーツ", "ゲートル", "ベルト", "イアリング", "イアリング", "アミュレット", "リング", "リング",
