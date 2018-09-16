@@ -978,20 +978,22 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp = new JLabel("基本");
         lab_tmp.setBounds(200 * row, 20 * col++, 100, 20);
         panels[2].add(lab_tmp);
-
+        //1段加速 
         cb_buff[ACC1] = new JCheckBox("1段加速");
-        cb_buff[ACC1].setToolTipText("行動速度上昇");
+        cb_buff[ACC1].setToolTipText("x1.3333:GP GGP ワイン ウイスキー");
         cb_buff[ACC1].setBounds(0, 20 * col++, 100, 20);
 
-        String list_acc2[] = {"×1.3333", "×1.1547"};
+        String list_acc2[] = {"x1.3333", "x1.1547"};
         cb_buff_group[ACC2] = new WideComboBox(list_acc2);
         cb_buff_group[ACC2].setBounds(100, 20 * col, 80, 20);
         cb_buff[ACC2] = new JCheckBox("2段加速");
-        cb_buff[ACC2].setToolTipText("行動速度上昇");
+        cb_buff[ACC2].setToolTipText("<html>"+ "x1.3333:BP イビルブラッド ブラッドラスト 名誉のコイン"
+                + "<br>"+ "ダンシングブレイズ フォーカスウェーブ ハリケーン サンドストーム"
+                + "<br>"+ "x1.1547:EW 濃縮集中ポーション"+"</html>");
         cb_buff[ACC2].setBounds(0, 20 * col++, 100, 20);
 
         cb_buff[ACC3] = new JCheckBox("3段加速");
-        cb_buff[ACC3].setToolTipText("行動速度上昇");
+        cb_buff[ACC3].setToolTipText("x1.1250:ドラゴンブラッド 蔵出し秘蔵酒");
         cb_buff[ACC3].setBounds(0, 20 * col++, 100, 20);
 
         String list_str[] = {"+3", "+5", "+6", "+7"};
@@ -1008,10 +1010,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[B_DEX] = new JCheckBox("DEX");
         cb_buff[B_DEX].setBounds(0, 20 * col++, 100, 20);
 
-        String list_ac[] = {"-2", "-5", "-6", "-7", "-10"};
+        //String list_ac[] = {"-2", "-5", "-6", "-7", "-10"};
+        String list_ac[] = {"-2", "-4", "-5", "-10"};
         cb_buff_group[B_AC] = new WideComboBox(list_ac);
         cb_buff_group[B_AC].setBounds(100, 20 * col, 80, 20);
         cb_buff[B_AC] = new JCheckBox("AC");
+        cb_buff[B_AC].setToolTipText("<html>"+ "シールド            AC-2"
+                + "<br>"+ "ファイヤーシールド  AC-4"
+                + "<br>"+ "四季のポーション    AC-5"
+                + "<br>"+ "アイアンスキン      AC-10"+"</html>");
         cb_buff[B_AC].setBounds(0, 20 * col++, 100, 20);
 
         String list_buki[] = {"+1", "+2", "+2 HIT+2", "+5"};

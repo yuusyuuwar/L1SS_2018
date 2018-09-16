@@ -359,13 +359,13 @@ public class Calculator implements Common {
     private final UI ui;
     Morph polymorph = new Morph();
     private double acc = 1.0;
-    // 一段加速(ヘイスト、GP
+    // 一段加速(GP GGP ワイン ウイスキー)
     double acc_1 = 1.3333;
-    // 二段加速(BP、ブラッドラスト、イビル
+    // 二段加速(BP イビルブラッド ブラッドラスト 名誉のコイン)
     double acc_2 = 1.3333;
-    // 二段加速(ワッフル
+    // 二段加速(EW 濃縮集中ポーション)
     double acc_ew = 1.1547;
-    // 三段加速(ドラゴンブラッド、酒
+    // 三段加速(ドラゴンブラッド 蔵出し秘蔵酒)
     double acc_3 = 1.125;
     double key_delay = 0.1815;
 
@@ -2064,25 +2064,22 @@ public class Calculator implements Common {
 
         if (ui.cb_buff[B_AC].isSelected()) {
             switch (ui.cb_buff_group[B_AC].getSelectedIndex()) {
-                case 0://シールド
+                case 0://シールド		AC-2	消費MP8  魔法レベル1 継続時間1800秒
                     buff.AC += -2;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (8.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
                     }
                     break;
-                case 1://四季P
-                    buff.AC += -5;
-                    break;
-                case 2://アーススキン
-                    buff.AC += -6;
+                case 1://ファイヤーシールド 	AC-4	消費MP15 魔法レベル3 継続時間960秒
+                    buff.AC += -4;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
                     }
                     break;
-                case 3://アースブレス
-                    buff.AC += -7;
+                case 2://四季のポーション 	AC-5      
+                    buff.AC += -5;
                     break;
-                case 4://アイアンスキン
+                case 3://アイアンスキン          AC-10	消費MP30 魔法レベル5 継続時間960秒
                     buff.AC += -10;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
