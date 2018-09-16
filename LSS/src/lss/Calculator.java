@@ -370,7 +370,9 @@ public class Calculator implements Common {
     double key_delay = 0.1815;
 
     double db_rate = 0.3333;
-    double ef_rate = 0.4000;
+    double ef_rate = 0.4000;    //エレメンタルファイアーの確率40%
+    double qe_rate = 0.4000;    //クエイクの確率40%
+    double ce_rate = 0.4000;    //サイクロンの確率40%
     double bs_rate = 0.3333;
 
     public Calculator(UI ui) {
@@ -1288,6 +1290,29 @@ public class Calculator implements Common {
         //        buff.ELEM_DMG_SHORT[FIRE] += 4;
         //    }
         //}
+        // アースウェポン
+        if (ui.cb_buff[E_EW].isSelected()) {
+            if (cls == E) {
+                buff.ELEM_DMG_SHORT[EARTH] += 2;
+                buff.HIT_SHORT += 4;
+                if (ui.cb_buff[E_EW].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                }
+            } else {
+                ui.cb_buff[E_EW].setSelected(false);
+            }
+        }
+        // アクアショット
+        if (ui.cb_buff[E_AS].isSelected()) {
+            if (cls == E) {
+                buff.HIT_LONG += 4;
+                if (ui.cb_buff[E_AS].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                }
+            } else {
+                ui.cb_buff[E_AS].setSelected(false);
+            }
+        }  
         // ネイチャーズタッチ
         if (ui.cb_buff[E_NT].isSelected()) {
             if (level > 9) {
@@ -2414,6 +2439,10 @@ public class Calculator implements Common {
 
         //属性ダメージ
         dmg_short += (int) ((buff.ELEM_DMG_SHORT[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_short += (int) ((buff.ELEM_DMG_SHORT[WATER]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_short += (int) ((buff.ELEM_DMG_SHORT[WIND]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_short += (int) ((buff.ELEM_DMG_SHORT[EARTH]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        
         dmg_long += (int) ((buff.ELEM_DMG_LONG[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
         dmg_long += (int) ((buff.ELEM_DMG_LONG[WATER]) * (32.0 - ui.s_target_res[WATER].getValue() * 32 / 100) / 32.0);
         dmg_long += (int) ((buff.ELEM_DMG_LONG[WIND]) * (32.0 - ui.s_target_res[WIND].getValue() * 32 / 100) / 32.0);
@@ -2606,6 +2635,16 @@ public class Calculator implements Common {
                 dmg_small_ave -= 0.5;
                 break;
             case "ボウ":
+                //イーグルアイ
+                cri_long += cr * 100;
+                if (ui.cb_buff[E_EE].isSelected()) {
+                    cri_long = 100;
+                    if (ui.cb_buff[E_EE].isSelected()) {
+                        if (ui.cb_buff[E_EE].getForeground().equals(Color.BLUE)) {
+                            cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
+                        }
+                    }
+                }
                 dmg_big_ave = (cri_long * 0.01) * dmg_big_max
                         + (1.0 - cri_long * 0.01) * dmg_big_ave;
                 dmg_small_ave = (cri_long * 0.01) * dmg_small_max
@@ -2960,7 +2999,7 @@ public class Calculator implements Common {
                 }
             }
         }
-
+        //エレメンタルファイアー
         if (ui.cb_buff[E_EF].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * ef_rate
@@ -2987,7 +3026,62 @@ public class Calculator implements Common {
                 }
             }
         }
+        //クエイク
+        if (ui.cb_buff[E_QE].isSelected()) {
+            if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
+                dmg_big_ave *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
+                dmg_small_ave *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
 
+                dmg_big_ave -= 0.25 * qe_rate;
+                dmg_small_ave -= 0.25 * qe_rate;
+
+                dmg_undead *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
+                dmg_cursed *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
+
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * qe_rate;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * qe_rate;
+                }
+                if (ui.cb_buff[E_QE].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                }
+            }
+        }
+        //サイクロン
+        if (ui.cb_buff[E_CE].isSelected()) {
+            if (!(buki.type.equals("両手剣") || buki.type.equals("キーリンク") || buki.type.equals("デュアルブレード")
+                    || buki.type.equals("槍") || buki.type.equals("ダガー") || buki.type.equals("片手剣")|| buki.type.equals("鈍器")
+                    || buki.type.equals("スタッフ") || buki.type.equals("クロウ") || buki.type.equals("チェーンソード"))) {
+                dmg_big_ave *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+                dmg_small_ave *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+
+                dmg_big_ave -= 0.25 * ce_rate;
+                dmg_small_ave -= 0.25 * ce_rate;
+
+                dmg_undead *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+                dmg_cursed *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * ce_rate;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * ce_rate;
+                }
+                if (ui.cb_buff[E_CE].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                }
+            }
+        } 
         if (ui.cb_buff[P_B].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * 0.3333

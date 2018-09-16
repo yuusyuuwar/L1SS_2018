@@ -1159,10 +1159,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //cb_buff[E_WS].setToolTipText("遠距離命中+6");
         cb_buff[E_SE] = new JCheckBox("ストームアイ");
         cb_buff[E_SE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SE].setToolTipText("風属性追加打撃+3 遠距離命中+2");
+        cb_buff[E_SE].setToolTipText("風属性遠距離ダメージ+3　遠距離命中+2");
         cb_buff[E_SS] = new JCheckBox("ストームショット");
         cb_buff[E_SS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SS].setToolTipText("風属性追加打撃+6 遠距離命中+3");
+        cb_buff[E_SS].setToolTipText("風属性遠距離ダメージ+6　遠距離命中+3");
         //cb_buff[E_WW] = new JCheckBox("ウインドウォーク");
         //cb_buff[E_WW].setBounds(200 * row, 20 * col++, 150, 20);
         //cb_buff[E_WW].setToolTipText("移動速度上昇");
@@ -1190,7 +1190,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_QE].setToolTipText("一定の確率で近距離ダメージ1.5倍");
         cb_buff[E_EW] = new JCheckBox("アースウェポン");
         cb_buff[E_EW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EW].setToolTipText("近距離ダメージ+2　近距離命中+4");
+        cb_buff[E_EW].setToolTipText("地属性近距離ダメージ+2　近距離命中+4");
 
         col = 0;
         row = 2;
