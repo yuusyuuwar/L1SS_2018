@@ -142,22 +142,30 @@ public class Bougu implements Common {
             text += " CHA" + op.ST[CHA];
         }
         if (op.DMG_SHORT + op2.DMG_SHORT > 0) {
-            text += " 追加打撃+" + (op.DMG_SHORT + op2.DMG_SHORT);
+            //text += " 追加打撃+" + (op.DMG_SHORT + op2.DMG_SHORT);
+            text += " 近距離ダメージ+" + (op.DMG_SHORT + op2.DMG_SHORT);
         }
         if (op.HIT_SHORT + op2.HIT_SHORT > 0) {
-            text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
+            //text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
+            text += " 近距離命中+" + (op.HIT_SHORT + op2.HIT_SHORT);
         }
-        if (op.HIT_LONG + op2.HIT_LONG > 0) {
-            text += " 弓命中率+" + (op.HIT_LONG + op2.HIT_LONG);
-        }
+        //if (op.HIT_LONG + op2.HIT_LONG > 0) {
+        //    text += " 弓命中率+" + (op.HIT_LONG + op2.HIT_LONG);
+        //}
         if (op.DMG_LONG + op2.DMG_LONG > 0) {
             text += " 遠距離ダメージ+" + (op.DMG_LONG + op2.DMG_LONG);
         }
+        //弓命中率から遠距離命中に名称変更し表示位置を遠距離ダメージの後にする
+        if (op.HIT_LONG + op2.HIT_LONG > 0) {
+            text += " 遠距離命中+" + (op.HIT_LONG + op2.HIT_LONG);
+        }
         if (op.SP + op2.SP > 0) {
-            text += " 魔力+" + (op.SP + op2.SP);
+            //text += " 魔力+" + (op.SP + op2.SP);
+			text += " SP+" + (op.SP + op2.SP);
         }
         if (op.SP < 0) {
-            text += " 魔力" + op.SP;
+            //text += " 魔力" + op.SP;
+			text += " SP" + op.SP;
         }
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
             text += " 魔法命中+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
@@ -211,7 +219,12 @@ public class Bougu implements Common {
             text += " 暗闇耐性+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
         }
         if (op.PVP + op2.PVP > 0) {
-            text += " PVPダメージ+" + (op.PVP + op2.PVP);
+            //text += " PVPダメージ+" + (op.PVP + op2.PVP);
+            text += " PVP追加ダメージ+" + (op.PVP + op2.PVP);
+        }
+        //所持重量の追加
+        if (op.c_weight + op2.c_weight > 0) {
+            text += " 所持重量+" + (op.c_weight + op2.c_weight);
         }
 
         if (!op.effect.equals("")) {
@@ -780,6 +793,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[STR] = 1;
             }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
+            }
         }
         if (name.equals("血戦のケープ")) {
             if (enchant >= 5) {
@@ -797,6 +814,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[DEX] = 1;
             }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
+            }                
         }
         if (name.equals("血戦のクローク")) {
             if (enchant >= 5) {
@@ -813,6 +834,10 @@ public class Bougu implements Common {
             }
             if (enchant >= 9) {
                 op2.ST[INT] = 1;
+            }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
             }
         }
 
@@ -848,6 +873,39 @@ public class Bougu implements Common {
             op2.HP = 5 * enchant;
         }
 
+        //腕力のゲートルは+9[近距離ダメージ+1]
+        if (name.equals("ユニコーンの腕力のゲートル")) {
+            if (enchant >= 9) {
+                op2.DMG_SHORT = 1;
+	    }
+        } 
+
+        //機敏のゲートルは+9[遠距離ダメージ+1]
+        if (name.equals("ユニコーンの機敏のゲートル")) {
+            if (enchant >= 9) {
+                op2.DMG_LONG = 1;
+	    }
+        } 
+
+        //知力のゲートル+9[SP+1] 
+        if (name.equals("ユニコーンの知力のゲートル")) {
+            if (enchant >= 9) {
+                op2.SP = 1;
+	    }
+        }
+
+        //守護のゲートルは+5から[最大HP]+10増加
+        if (name.equals("ユニコーンの守護のゲートル")) {
+            if (enchant >= 5) {
+                op2.HP = 10;
+	    }
+        }        
+
+        //抵抗のゲートルは+1強化毎に[MR]1%増加(装備のパラメーター[MR強化=]で実装済)
+        //if (name.equals("ユニコーンの抵抗のゲートル")) {
+        //    op2.MR = 1 * enchant;
+        //}
+                      
         if (name.equals("血戦のグローブ")) {
             if (enchant >= 5) {
                 op2.HP = 30;
@@ -863,6 +921,10 @@ public class Bougu implements Common {
             }
             if (enchant >= 9) {
                 op2.DMG_SHORT = 1;
+            }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
             }
         }
         if (name.equals("血戦のブレイサー")) {
@@ -881,6 +943,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.DMG_LONG = 1;
             }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
         }
         if (name.equals("血戦のミトン")) {
             if (enchant >= 5) {
@@ -897,6 +963,10 @@ public class Bougu implements Common {
             }
             if (enchant >= 9) {
                 op2.SP = 1;
+            }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
             }
         }
 
@@ -916,6 +986,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[STR] = 1;
             }
+            //+10強化オプション[最大HP+80]
+            if (enchant >= 10) {
+                op2.HP = 80;
+            }
         }
         if (name.equals("血戦のブーツ")) {
             if (enchant >= 5) {
@@ -933,6 +1007,10 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[DEX] = 1;
             }
+            //+10強化オプション[最大HP+80]
+            if (enchant >= 10) {
+                op2.HP = 80;
+            }
         }
         if (name.equals("血戦のバスキン")) {
             if (enchant >= 5) {
@@ -949,6 +1027,10 @@ public class Bougu implements Common {
             }
             if (enchant >= 9) {
                 op2.ST[INT] = 1;
+            }
+            //+10強化オプション[最大HP+80]
+            if (enchant >= 10) {
+                op2.HP = 80;
             }
         }
 
@@ -1334,21 +1416,25 @@ public class Bougu implements Common {
                         op2.HP = 80;
                         op2.DR = 3;
                         op2.effect = "ダメージ軽減+20 3%,";
+                        op2.AC = -7;
                         break;
                     case 7:
                         op2.HP = 90;
                         op2.DR = 4;
                         op2.effect = "ダメージ軽減+20 4%,";
+                        op2.AC = -8;
                         break;
                     case 8:
                         op2.HP = 100;
                         op2.DR = 5;
                         op2.effect = "ダメージ軽減+20 5%,";
+                        op2.AC = -9;
                         break;
                     case 9:
                         op2.HP = 150;
                         op2.DR = 6;
                         op2.effect = "ダメージ軽減+20 6%,";
+                        op2.AC = -10;
                         break;
                 }
             }

@@ -359,18 +359,20 @@ public class Calculator implements Common {
     private final UI ui;
     Morph polymorph = new Morph();
     private double acc = 1.0;
-    // 一段加速(ヘイスト、GP
+    // 一段加速(GP GGP ワイン ウイスキー)
     double acc_1 = 1.3333;
-    // 二段加速(BP、ブラッドラスト、イビル
+    // 二段加速(BP イビルブラッド ブラッドラスト 名誉のコイン)
     double acc_2 = 1.3333;
-    // 二段加速(ワッフル
+    // 二段加速(EW 濃縮集中ポーション)
     double acc_ew = 1.1547;
-    // 三段加速(ドラゴンブラッド、酒
+    // 三段加速(ドラゴンブラッド 蔵出し秘蔵酒)
     double acc_3 = 1.125;
     double key_delay = 0.1815;
 
     double db_rate = 0.3333;
-    double ef_rate = 0.4000;
+    double ef_rate = 0.4000;    //エレメンタルファイアーの確率40%
+    double qe_rate = 0.4000;    //クエイクの確率40%
+    double ce_rate = 0.4000;    //サイクロンの確率40%
     double bs_rate = 0.3333;
 
     public Calculator(UI ui) {
@@ -644,8 +646,9 @@ public class Calculator implements Common {
             buff.AC -= 10;
             buff.ST[STR] += 2;
             buff.DMG_SHORT += 2;
-            ui.cb_morph_level.setSelectedItem("80");
-            ui.cb_morph_type.setSelectedItem("近/遠特化");
+            //  下記メソッド実行のたびに追加ボーナスが累積される模様（本来＋2個で追加ボーナスが3倍になる）
+            //ui.cb_morph_level.setSelectedItem("80");
+            //ui.cb_morph_type.setSelectedItem("近/遠特化");
         }
 
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
@@ -1277,16 +1280,39 @@ public class Calculator implements Common {
                 ui.cb_buff[E_BW].setSelected(false);
             }
         }
-        if (ui.cb_buff[E_FW].isSelected()) {
-            if (ui.cb_buff[E_BW].isSelected()) {
-                ui.cb_buff[E_FW].setSelected(false);
-            } else {
-                if (ui.cb_buff[E_FW].getForeground().equals(Color.BLUE)) {
+        //if (ui.cb_buff[E_FW].isSelected()) {
+        //    if (ui.cb_buff[E_BW].isSelected()) {
+        //        ui.cb_buff[E_FW].setSelected(false);
+        //    } else {
+        //        if (ui.cb_buff[E_FW].getForeground().equals(Color.BLUE)) {
+        //            cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+        //        }
+        //        buff.ELEM_DMG_SHORT[FIRE] += 4;
+        //    }
+        //}
+        // アースウェポン
+        if (ui.cb_buff[E_EW].isSelected()) {
+            if (cls == E) {
+                buff.ELEM_DMG_SHORT[EARTH] += 2;
+                buff.HIT_SHORT += 4;
+                if (ui.cb_buff[E_EW].getForeground().equals(Color.BLUE)) {
                     cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
                 }
-                buff.ELEM_DMG_SHORT[FIRE] += 4;
+            } else {
+                ui.cb_buff[E_EW].setSelected(false);
             }
         }
+        // アクアショット
+        if (ui.cb_buff[E_AS].isSelected()) {
+            if (cls == E) {
+                buff.HIT_LONG += 4;
+                if (ui.cb_buff[E_AS].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                }
+            } else {
+                ui.cb_buff[E_AS].setSelected(false);
+            }
+        }  
         // ネイチャーズタッチ
         if (ui.cb_buff[E_NT].isSelected()) {
             if (level > 9) {
@@ -1349,17 +1375,17 @@ public class Calculator implements Common {
                 }
             }
         }
-        if (ui.cb_buff[E_WS].isSelected()) {
-            if (ui.cb_buff[E_SS].isSelected()
-                    || ui.cb_buff[E_SE].isSelected()) {
-                ui.cb_buff[E_WS].setSelected(false);
-            } else {
-                buff.HIT_LONG += 6;
-                if (ui.cb_buff[E_WS].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
-                }
-            }
-        }
+        //if (ui.cb_buff[E_WS].isSelected()) {
+        //    if (ui.cb_buff[E_SS].isSelected()
+        //            || ui.cb_buff[E_SE].isSelected()) {
+        //        ui.cb_buff[E_WS].setSelected(false);
+        //    } else {
+        //        buff.HIT_LONG += 6;
+        //        if (ui.cb_buff[E_WS].getForeground().equals(Color.BLUE)) {
+        //            cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+        //        }
+        //    }
+        //}
         if (ui.cb_buff[E_EG].isSelected()) {
             buff.DR += 2;
             if (ui.cb_buff[E_EG].getForeground().equals(Color.BLUE)) {
@@ -1799,6 +1825,16 @@ public class Calculator implements Common {
                         buff.HIT_SHORT += 1;
                         buff.DMG_SHORT += 1;
                         break;
+                    //オルターストーン6段階
+                    case 6:
+                        buff.HP += 60;
+                        buff.MP += 40;
+                        buff.ST[STR] += 1;
+                        buff.HIT_SHORT += 1;
+                        buff.DMG_SHORT += 1;
+                        buff.MR += 5;
+                        buff.DR += 1;
+                        break;                       
                 }
                 break;
             case 7:
@@ -1830,6 +1866,16 @@ public class Calculator implements Common {
                         buff.HIT_LONG += 1;
                         buff.DMG_LONG += 1;
                         break;
+                    //オルターストーン6段階   
+                    case 6:   
+                        buff.HP += 50;
+                        buff.MP += 50;
+                        buff.ST[DEX] += 1;
+                        buff.HIT_LONG += 1;
+                        buff.DMG_LONG += 1;
+                        buff.MR += 5;
+                        buff.DR += 1;
+                        break;
                 }
                 break;
             case 8:
@@ -1859,6 +1905,16 @@ public class Calculator implements Common {
                         buff.ST[INT] += 1;
                         buff.MPR += 1;
                         buff.SP += 1;
+                        break;
+                    //オルターストーン6段階
+                    case 6:
+                        buff.HP += 40;
+                        buff.MP += 60;
+                        buff.ST[INT] += 1;
+                        buff.MPR += 1;
+                        buff.SP += 1;
+                        buff.MR += 5;
+                        buff.DR += 1;
                         break;
                 }
                 break;
@@ -2008,25 +2064,22 @@ public class Calculator implements Common {
 
         if (ui.cb_buff[B_AC].isSelected()) {
             switch (ui.cb_buff_group[B_AC].getSelectedIndex()) {
-                case 0://シールド
+                case 0://シールド		AC-2	消費MP8  魔法レベル1 継続時間1800秒
                     buff.AC += -2;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (8.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
                     }
                     break;
-                case 1://四季P
-                    buff.AC += -5;
-                    break;
-                case 2://アーススキン
-                    buff.AC += -6;
+                case 1://ファイヤーシールド 	AC-4	消費MP15 魔法レベル3 継続時間960秒
+                    buff.AC += -4;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
                     }
                     break;
-                case 3://アースブレス
-                    buff.AC += -7;
+                case 2://四季のポーション 	AC-5      
+                    buff.AC += -5;
                     break;
-                case 4://アイアンスキン
+                case 3://アイアンスキン          AC-10	消費MP30 魔法レベル5 継続時間960秒
                     buff.AC += -10;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
@@ -2109,6 +2162,36 @@ public class Calculator implements Common {
             buff.AC -= 2;
             buff.DR += 3;
             buff.ailment[DARKNESS] += 10;
+        }
+
+        //y_ikedaさんによる修正を参考に
+        if (ui.cb_buff[L_HST].isSelected()) {
+            switch ((String) ui.cb_buff_group[L_HST].getSelectedItem()) {
+                case "1個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP20% AC-1");
+                    buff.AC -= 1;
+                    break;
+                case "2個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP30% AC-2 DR+1");
+                    buff.AC -= 2;
+                    buff.DR += 1;
+                    break;
+                case "3個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP40% AC-3 DR+2");
+                    buff.AC -= 3;
+                    buff.DR += 2;
+                    break;
+                case "4個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP40% AC-4 DR+2");
+                    buff.AC -= 4;
+                    buff.DR += 2;
+                    break;
+                case "5個":
+                    ui.cb_buff[L_HST].setToolTipText("EXP40% AC-5 DR+2");
+                    buff.AC -= 5;
+                    buff.DR += 2;
+                    break;
+            }
         }
 
         //重量ペナルティ
@@ -2353,6 +2436,10 @@ public class Calculator implements Common {
 
         //属性ダメージ
         dmg_short += (int) ((buff.ELEM_DMG_SHORT[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_short += (int) ((buff.ELEM_DMG_SHORT[WATER]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_short += (int) ((buff.ELEM_DMG_SHORT[WIND]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        dmg_short += (int) ((buff.ELEM_DMG_SHORT[EARTH]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
+        
         dmg_long += (int) ((buff.ELEM_DMG_LONG[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
         dmg_long += (int) ((buff.ELEM_DMG_LONG[WATER]) * (32.0 - ui.s_target_res[WATER].getValue() * 32 / 100) / 32.0);
         dmg_long += (int) ((buff.ELEM_DMG_LONG[WIND]) * (32.0 - ui.s_target_res[WIND].getValue() * 32 / 100) / 32.0);
@@ -2545,6 +2632,16 @@ public class Calculator implements Common {
                 dmg_small_ave -= 0.5;
                 break;
             case "ボウ":
+                //イーグルアイ
+                cri_long += cr * 100;
+                if (ui.cb_buff[E_EE].isSelected()) {
+                    cri_long = 100;
+                    if (ui.cb_buff[E_EE].isSelected()) {
+                        if (ui.cb_buff[E_EE].getForeground().equals(Color.BLUE)) {
+                            cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
+                        }
+                    }
+                }
                 dmg_big_ave = (cri_long * 0.01) * dmg_big_max
                         + (1.0 - cri_long * 0.01) * dmg_big_ave;
                 dmg_small_ave = (cri_long * 0.01) * dmg_small_max
@@ -2899,7 +2996,7 @@ public class Calculator implements Common {
                 }
             }
         }
-
+        //エレメンタルファイアー
         if (ui.cb_buff[E_EF].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * ef_rate
@@ -2926,7 +3023,62 @@ public class Calculator implements Common {
                 }
             }
         }
+        //クエイク
+        if (ui.cb_buff[E_QE].isSelected()) {
+            if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
+                dmg_big_ave *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
+                dmg_small_ave *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
 
+                dmg_big_ave -= 0.25 * qe_rate;
+                dmg_small_ave -= 0.25 * qe_rate;
+
+                dmg_undead *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
+                dmg_cursed *= 1.5 * qe_rate
+                        + 1.0 * (1.0 - qe_rate);
+
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * qe_rate;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * qe_rate;
+                }
+                if (ui.cb_buff[E_QE].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                }
+            }
+        }
+        //サイクロン
+        if (ui.cb_buff[E_CE].isSelected()) {
+            if (!(buki.type.equals("両手剣") || buki.type.equals("キーリンク") || buki.type.equals("デュアルブレード")
+                    || buki.type.equals("槍") || buki.type.equals("ダガー") || buki.type.equals("片手剣")|| buki.type.equals("鈍器")
+                    || buki.type.equals("スタッフ") || buki.type.equals("クロウ") || buki.type.equals("チェーンソード"))) {
+                dmg_big_ave *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+                dmg_small_ave *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+
+                dmg_big_ave -= 0.25 * ce_rate;
+                dmg_small_ave -= 0.25 * ce_rate;
+
+                dmg_undead *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+                dmg_cursed *= 1.5 * ce_rate
+                        + 1.0 * (1.0 - ce_rate);
+
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * ce_rate;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * ce_rate;
+                }
+                if (ui.cb_buff[E_CE].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                }
+            }
+        } 
         if (ui.cb_buff[P_B].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * 0.3333
@@ -3306,9 +3458,10 @@ public class Calculator implements Common {
                 cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
-        if (weight > 5400) {
-            weight = 5400;
-        }
+        //所持可能な重量の上限を5400から無制限に変更
+        //if (weight > 5400) {
+        //    weight = 5400;
+        //}
 
         ui.tf_weight2.setText(Integer.toString(weight));
         //重量表示
@@ -3693,11 +3846,12 @@ public class Calculator implements Common {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
-        if (ui.cb_buff[E_WW].isSelected()) {
-            if (ui.cb_buff[E_WW].getForeground().equals(Color.BLUE)) {
-                cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
-            }
-        }
+        //2018/09/05 Updateでウインドウォークは削除
+        //if (ui.cb_buff[E_WW].isSelected()) {
+        //    if (ui.cb_buff[E_WW].getForeground().equals(Color.BLUE)) {
+        //        cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+        //    }
+        //}
 
         ui.lab_cons_mp.setText(Double.toString((int) (cons_mp * 100) / 100.0));
 //        ui.lab_cons_mp.setText(Double.toString((int) (cons_mp * (1.0 - red_mp * 0.01) * 100) / 100.0));
@@ -3804,35 +3958,49 @@ public class Calculator implements Common {
     void createToolTip() {
 
         String buki_text = "";
-        buki_text += "打撃値" + buki.small + "/" + buki.big;
+            //buki_text += "打撃値" + buki.small + "/" + buki.big;
+            buki_text += "ダメージ" + buki.small + "/" + buki.big;
         if (buki.two_hands) {
             buki_text += " 両手武器";
         }
-        if (buki.op.HIT_SHORT > 0) {
-            buki_text += " 攻撃成功+" + buki.op.HIT_SHORT;
-        }
         if (buki.op.DMG_SHORT > 0) {
-            buki_text += " 追加打撃+" + buki.op.DMG_SHORT;
-        }
-        if (buki.op.HIT_SHORT < 0) {
-            buki_text += " 攻撃成功" + buki.op.HIT_SHORT;
+            //buki_text += " 追加打撃+" + buki.op.DMG_SHORT;
+            buki_text += " 近距離ダメージ+" + buki.op.DMG_SHORT;
         }
         if (buki.op.DMG_LONG < 0) {
-            buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            //buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            buki_text += " 近距離ダメージ" + buki.op.DMG_LONG;
         }
-        if (buki.op.HIT_LONG > 0) {
-            buki_text += " 攻撃成功+" + buki.op.HIT_LONG;
+        if (buki.op.HIT_SHORT > 0) {
+            //buki_text += " 攻撃成功+" + buki.op.HIT_SHORT;
+            buki_text += " 近距離命中+" + buki.op.HIT_SHORT;
+        }
+            if (buki.op.HIT_SHORT < 0) {
+            //buki_text += " 攻撃成功" + buki.op.HIT_SHORT;
+            buki_text += " 近距離命中" + buki.op.HIT_SHORT;
         }
         if (buki.op.DMG_LONG > 0) {
-            buki_text += " 追加打撃+" + buki.op.DMG_LONG;
-        }
-        if (buki.op.HIT_LONG < 0) {
-            buki_text += " 攻撃成功" + buki.op.HIT_LONG;
+            //buki_text += " 追加打撃+" + buki.op.DMG_LONG;
+            buki_text += " 遠距離ダメージ+" + buki.op.DMG_LONG;
         }
         if (buki.op.DMG_LONG < 0) {
-            buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            //buki_text += " 追加打撃" + buki.op.DMG_LONG;
+            buki_text += " 遠距離ダメージ" + buki.op.DMG_LONG;
         }
-
+        if (buki.op.HIT_LONG > 0) {
+            //buki_text += " 攻撃成功+" + buki.op.HIT_LONG;
+            buki_text += " 遠距離命中+" + buki.op.HIT_LONG;
+        }
+        if (buki.op.HIT_LONG < 0) {
+            //buki_text += " 攻撃成功" + buki.op.HIT_LONG;
+            buki_text += " 遠距離命中" + buki.op.HIT_LONG;
+        }
+        if (buki.op.HIT_MAGIC > 0) {
+            buki_text += " 魔法命中+" + buki.op.HIT_MAGIC;
+        }
+        if (buki.op.HIT_MAGIC < 0) {
+            buki_text += " 魔法命中" + buki.op.HIT_MAGIC;
+        }
         if (buki.op.CRI_SHORT + buki.op2.CRI_SHORT > 0) {
             buki_text += " 近距離クリティカル+" + (buki.op.CRI_SHORT + buki.op2.CRI_SHORT);
         }
@@ -3842,11 +4010,10 @@ public class Calculator implements Common {
         if (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC > 0) {
             buki_text += " 魔法クリティカル+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
-
         if (buki.hit_stun > 0) {
-            buki_text += " スタン成功" + buki.hit_stun;
+            //buki_text += " スタン成功" + buki.hit_stun;
+            buki_text += " スタン命中" + buki.hit_stun;
         }
-
         if (buki.op.HP > 0) {
             buki_text += " HP+" + buki.op.HP;
         }
@@ -3858,9 +4025,6 @@ public class Calculator implements Common {
         }
         if (buki.op.MPR > 0) {
             buki_text += " MP自然回復+" + buki.op.MPR;
-        }
-        if (buki.op.SP > 0) {
-            buki_text += " 魔力+" + buki.op.SP;
         }
         if (buki.op.ST[STR] > 0) {
             buki_text += " STR+" + buki.op.ST[STR];
@@ -3879,6 +4043,10 @@ public class Calculator implements Common {
         }
         if (buki.op.ST[CHA] > 0) {
             buki_text += " CHA+" + buki.op.ST[CHA];
+        }
+        if (buki.op.SP > 0) {
+            //buki_text += " 魔力+" + buki.op.SP;
+            buki_text += " SP+" + buki.op.SP;
         }
         if (!buki.op.effect.equals("")) {
             buki_text += " " + buki.op.effect;
