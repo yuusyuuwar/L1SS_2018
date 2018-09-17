@@ -2,18 +2,18 @@
 
 LineageStatusSimulator is a character simulation of PC game "Lineage".
 
-# Screen shot1
-<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_1_1.bmp" alt="LSS" width="640" height="480">
-# Screen shot2
-<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_2_1.bmp" alt="LSS" width="640" height="480">
-# Screen shot3
-<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_3_1.bmp" alt="LSS" width="640" height="480">
-# Screen shot4
-<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_4_1.bmp" alt="LSS" width="640" height="480">
+# Screen shot
+<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_1_1.bmp" width="640" height="480">
+
+<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_2_1.bmp" width="640" height="480">
+
+<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_3_1.bmp" width="640" height="480">
+
+<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_4_1.bmp" width="640" height="480">
+
 # How to use
 
 # Related Site
-
 Original LineageStatusSimulator
 http://line-zatta.seesaa.net/
 
