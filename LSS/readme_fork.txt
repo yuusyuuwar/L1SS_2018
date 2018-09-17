@@ -1,6 +1,14 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/17
+Update
+LSS/src/lss/E
+L1SS-masterの初期E.zipを展開
+
+Update
+README.mdを初期実装
+
 2018/09/16
 Update
 LSS/src/lss/Calculator.java
