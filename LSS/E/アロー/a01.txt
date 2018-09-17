@@ -1,5 +1,0 @@
-name=アロー
-type=アロー
-small=6
-big=5
-材質=メタル
