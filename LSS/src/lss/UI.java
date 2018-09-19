@@ -127,8 +127,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JButton bt_paste;
     JButton bt_reset;
 
-    WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];
-    JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];
+    WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];    //装備名
+    JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];       //装備強化数値
+    
     JComboBox cb_elem_1;
     JComboBox cb_elem_2;
     JComboBox cb_ts_elem;
@@ -137,11 +138,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JToggleButton tb_blessed2;
     JComboBox cb_arrow;
 
-    WideComboBox cb_pattern_l;
-    WideComboBox cb_pattern_r;
-    WideComboBox cb_pattern_c;
-    WideComboBox cb_pattern_l2;
-    WideComboBox cb_pattern_r2;
+    WideComboBox cb_pattern_l;  //左手
+    WideComboBox cb_pattern_r;  //右手
+    WideComboBox cb_pattern_c;  //背中
+    WideComboBox cb_pattern_l2; //左腕
+    WideComboBox cb_pattern_r2; //右腕
 
     JComboBox cb_alterstone_en;
     JComboBox[] cb_alterstone_op = new JComboBox[3];
@@ -595,7 +596,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
-            if (i >= 19) {
+            //リスト19個から21個へ拡張(ドロン、エンブレム分)2個追加
+            if (i >= 21) {              
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
             }

@@ -3,6 +3,19 @@
 変更点
 2018/09/19
 Update
+LSS/src/lss/Calculator.java
+	コメント修正
+	二段加速(BP イビルブラッド ブラッドラスト 名誉のコイン 
+	ダンシングブレイズ フォーカスウェーブ ハリケーン サンドストーム)を追加
+
+LSS/src/lss/Common.java
+	パネル1のルーン、ドロン、エンブレムの順を変更
+
+LSS/src/lss/UI.java
+	ソースコードの不明なとこにコメント追加
+	パネルリスト19個から21個へ有効化 (ドロン、エンブレム)2個追加
+
+Update
 LSS/src/lss/Bougu.java
 	闘士の紋章
 	名弓の紋章
@@ -14,6 +27,7 @@ LSS/src/lss/Bougu.java
 Update
 LSS/src/lss/Bougu.java
 	守護の紋章の実装
+
 LSS/data/E.zip
 	/E/ドロン/
 	00_dummy.txt
