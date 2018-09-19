@@ -1652,7 +1652,7 @@ public class Bougu implements Common {
                 }
             }
 
-            if (grade.equals("特級")) {
+            if (grade.equals("特級")) {     //各種[10周年記念リング]>>>強化5まで
                 switch (enchant) {
                     case 1:
                         op2.HP = 15;
