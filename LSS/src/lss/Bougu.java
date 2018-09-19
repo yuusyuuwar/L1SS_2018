@@ -1208,6 +1208,38 @@ public class Bougu implements Common {
                             break;
                     }
                     break;
+                    case "çŒì‚Ì–äÍ":
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "Šl“¾EXP +1%,";
+                            break;
+                        case 2:
+                            op2.effect = "Šl“¾EXP +2%,";
+                            break;
+                        case 3:
+                            op2.effect = "Šl“¾EXP +3%,";
+                            break;
+                        case 4:
+                            op2.effect = "Šl“¾EXP +4%,";
+                            op2.MR = 1;
+                            break;
+                        case 5:
+                            op2.effect = "Šl“¾EXP +5%,";
+                            op2.MR = 2;
+                            break;
+                        case 6:
+                            op2.effect = "Šl“¾EXP +6%,";
+                            op2.MR = 3;
+                            break;
+                        case 7:
+                            op2.effect = "Šl“¾EXP +7%,";
+                            op2.MR = 4;
+                            break;
+                        case 8:
+                            op2.effect = "Šl“¾EXP +8%,";
+                            op2.MR = 5;
+                            break;
+                    }
             }
 
             //ƒV[ƒNƒŒƒbƒgƒIƒvƒVƒ‡ƒ“

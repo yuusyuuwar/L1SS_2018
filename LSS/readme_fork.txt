@@ -1,6 +1,26 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/19
+Update
+LSS/src/lss/Bougu.java
+	守護の紋章の実装
+LSS/data/E.zip
+	/E/ドロン/
+	00_dummy.txt
+	type=ドロンをname=ドロンへ
+	2018/09/05の修正ミスを修正(LSSでルーンのドロップリストが動作不良を起こし無反応状態だった）
+
+	/E/ルーン/
+	強化限界=10を強化限界=8へ、各種オプション修正
+	e_守護の紋章.txt
+	e_闘士の紋章.txt
+	e_名弓の紋章.txt
+	e_賢者の紋章.txt
+	e_守護闘士の紋章.txt
+	e_守護名弓の紋章.txt
+	e_守護闘士の紋章.txt
+
 2018/09/18
 Bug fix
 	日本語フォントのフォルダーをGitHub DesktopでCommitしたら日本語フォントのフォルダーすべて文字化け
