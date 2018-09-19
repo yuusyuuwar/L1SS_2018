@@ -4,6 +4,15 @@
 2018/09/19
 Update
 LSS/src/lss/Bougu.java
+	闘士の紋章
+	名弓の紋章
+	賢者の紋章
+	守護闘士の紋章
+	守護名弓の紋章
+	守護賢者の紋章の実装
+
+Update
+LSS/src/lss/Bougu.java
 	守護の紋章の実装
 LSS/data/E.zip
 	/E/ドロン/
