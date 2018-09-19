@@ -161,17 +161,18 @@ public class Bougu implements Common {
         }
         if (op.SP + op2.SP > 0) {
             //text += " 魔力+" + (op.SP + op2.SP);
-			text += " SP+" + (op.SP + op2.SP);
+            text += " SP+" + (op.SP + op2.SP);
         }
         if (op.SP < 0) {
             //text += " 魔力" + op.SP;
-			text += " SP" + op.SP;
+            text += " SP" + op.SP;
         }
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
             text += " 魔法命中+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
         }
         if (op.DR + op2.DR > 0) {
-            text += " ダメージ低下" + (op.DR + op2.DR);
+            //text += " ダメージ低下" + (op.DR + op2.DR);
+            text += " DR" + (op.DR + op2.DR);
         }
         if (op.CRI_SHORT + op2.CRI_SHORT > 0) {
             text += " 近距離クリティカル+" + (op.CRI_SHORT + op2.CRI_SHORT);
@@ -1034,8 +1035,8 @@ public class Bougu implements Common {
             }
         }
 
-        if (type.equals("リング") || type.equals("アミュレット")
-                || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン")) {
+        //+1強化するごとにAC-1されない防具・アイテム
+        if (type.equals("リング") || type.equals("アミュレット") || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン") || type.equals("エンブレム")) {
 
             if (name.equals("回復の紋章")) {
                 op2.effect = "ポーション回復量 +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
@@ -1535,13 +1536,23 @@ public class Bougu implements Common {
                         op2.DMG_SHORT = 3;
                         op2.SP = 1;
                         op2.MR = 3;
+                        op2.PVP = 1;        //PVP追加ダメージ+1
                         break;
                     case 8:
                         op2.HP = 50;
                         op2.DMG_LONG = 4;
                         op2.DMG_SHORT = 4;
+                        op2.PVP = 2;        //PVP追加ダメージ+2
                         op2.SP = 2;
                         op2.MR = 5;
+                        break;
+                    case 9:
+                        op2.HP = 60;
+                        op2.DMG_LONG = 5;
+                        op2.DMG_SHORT = 5;
+                        op2.PVP = 3;        //PVP追加ダメージ+3
+                        op2.SP = 3;
+                        op2.MR = 7;
                         break;
                 }
             }
@@ -1564,26 +1575,34 @@ public class Bougu implements Common {
                         op2.HP = 40;
                         op2.effect = "ポーション回復量 +2% +0,";
                         op2.effect += "回復悪化防御 +2% (恐怖),";
+                        op2.AC -= 1;
                         break;
                     case 6:
-                        op2.AC--;
                         op2.HP = 40;
                         op2.effect = "ポーション回復量 +4% +2,";
                         op2.effect += "回復悪化防御 +4% (恐怖),";
+                        op2.AC -= 2;                      
                         break;
                     case 7:
-                        op2.AC -= 2;
                         op2.HP = 50;
                         op2.effect = "ポーション回復量 +6% +4,";
                         op2.effect += "回復悪化防御 +6% (恐怖),";
+                        op2.AC -= 3;
                         op2.ailment[STUN] += 2;
                         break;
                     case 8:
-                        op2.AC -= 3;
                         op2.HP = 50;
                         op2.effect = "ポーション回復量 +8% +6,";
                         op2.effect += "回復悪化防御 +8% (恐怖),";
+                        op2.AC -= 4;
                         op2.ailment[STUN] += 3;
+                        break;
+                    case 9:
+                        op2.HP = 60;
+                        op2.effect = "ポーション回復量 +9% +7,";
+                        op2.effect += "回復悪化防御 +9% (恐怖),";
+                        op2.AC -= 4;
+                        op2.ailment[STUN] += 4;
                         break;
                 }
 
@@ -1616,11 +1635,19 @@ public class Bougu implements Common {
                         op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
+                                            //PVPダメージ軽減+2
                         break;
                     case 8:
                         op2.HP = 40;
                         op2.MP = 50;
                         op2.DR = 4;
+                                            //PVPダメージ軽減+3                        
+                        break;
+                    case 9:
+                        op2.HP = 50;
+                        op2.MP = 60;
+                        op2.DR = 5;
+                                            //PVPダメージ軽減+4
                         break;
                 }
             }
