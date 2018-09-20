@@ -226,9 +226,9 @@ public class Bougu implements Common {
             //text += " PVPダメージ+" + (op.PVP + op2.PVP);
             text += " PVP追加ダメージ+" + (op.PVP + op2.PVP);
         }
-        //if (op.PVP + op2.PVP > 0) {
-        //    text += " PVPダメージ減少+" + (op.PVP + op2.PVP);
-        //}
+        if (op.PVPDR + op2.PVPDR > 0) {
+            text += " PVPダメージ減少+" + (op.PVPDR + op2.PVPDR);
+        }
         //所持重量の追加
         if (op.c_weight + op2.c_weight > 0) {
             text += " 所持重量増加+" + (op.c_weight + op2.c_weight);
@@ -1641,19 +1641,19 @@ public class Bougu implements Common {
                         op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
-                                            //PVPダメージ軽減+2
+                        op2.PVPDR=3;        //PVPダメージ軽減+2
                         break;
                     case 8:
                         op2.HP = 40;
                         op2.MP = 50;
                         op2.DR = 4;
-                                            //PVPダメージ軽減+3                        
+                        op2.PVPDR=3;        //PVPダメージ軽減+3                        
                         break;
                     case 9:
                         op2.HP = 50;
                         op2.MP = 60;
                         op2.DR = 5;
-                                            //PVPダメージ軽減+4
+                        op2.PVPDR=3;        //PVPダメージ軽減+4
                         break;
                 }
             }
@@ -1739,19 +1739,25 @@ public class Bougu implements Common {
                         op2.HP = 90;
                         op2.DR = 4;
                         op2.effect = "ダメージ軽減+20 4%,";
-                        op2.AC = -8;
+                        op2.HIT_SHORT = 1;      //近距離命中+1
+                        op2.HIT_LONG = 1;       //遠距離命中+1
+                        op2.AC = -8;            //AC-8
                         break;
                     case 8:
                         op2.HP = 100;
                         op2.DR = 5;
                         op2.effect = "ダメージ軽減+20 5%,";
-                        op2.AC = -9;
+                        op2.HIT_SHORT = 3;      //近距離命中+3
+                        op2.HIT_LONG = 3;       //遠距離命中+3
+                        op2.AC = -9;            //AC-9
                         break;
                     case 9:
                         op2.HP = 150;
                         op2.DR = 6;
                         op2.effect = "ダメージ軽減+20 6%,";
-                        op2.AC = -10;
+                        op2.HIT_SHORT = 5;      //近距離命中+5
+                        op2.HIT_LONG = 5;       //遠距離命中+5
+                        op2.AC = -10;            //AC-10
                         break;
                 }
             }
@@ -1792,21 +1798,28 @@ public class Bougu implements Common {
                         op2.MP = 60;
                         op2.MR = 10;
                         op2.SP = 2;
+                        op2.AC = -1;            //AC-1
                         break;
                     case 7:
                         op2.MP = 75;
                         op2.MR = 12;
                         op2.SP = 3;
+                        op2.AC = -2;            //AC-2
+                        op2.HIT_MAGIC = 1;      //魔法命中+1
                         break;
                     case 8:
                         op2.MP = 100;
                         op2.MR = 15;
                         op2.SP = 3;
+                        op2.AC = -3;            //AC-3
+                        op2.HIT_MAGIC = 3;      //魔法命中+3
                         break;
                     case 9:
                         op2.MP = 130;
                         op2.MR = 20;
                         op2.SP = 4;
+                        op2.AC = -4;            //AC-5
+                        op2.HIT_MAGIC = 5;      //魔法命中+5
                         break;
                 }
             }
@@ -1818,38 +1831,48 @@ public class Bougu implements Common {
                 switch (e) {
                     case 0:
                         op2.effect = "ポーション回復量 +2% +2,";
+                        op2.effect += "回復悪化防御 +2% (恐怖),";    //回復悪化防御 +2% (恐怖)
                         break;
                     case 1:
                         op2.effect = "ポーション回復量 +6% +6,";
+                        op2.effect += "回復悪化防御 +6% (恐怖),";    //回復悪化防御 +6% (恐怖)
                         break;
                     case 2:
                         op2.effect = "ポーション回復量 +8% +8,";
+                        op2.effect += "回復悪化防御 +8% (恐怖),";    //回復悪化防御 +8% (恐怖)
                         break;
                     case 3:
                         op2.effect = "ポーション回復量 +10% +10,";
+                        op2.effect += "回復悪化防御 +10% (恐怖),";   //回復悪化防御 +10% (恐怖)
                         break;
                     case 4:
                         op2.effect = "ポーション回復量 +12% +12,";
+                        op2.effect += "回復悪化防御 +12% (恐怖),";   //回復悪化防御 +12% (恐怖)
                         break;
                     case 5:
                         op2.AC = -1;
                         op2.effect = "ポーション回復量 +14% +14,";
+                        op2.effect += "回復悪化防御 +14% (恐怖),";   //回復悪化防御 +14% (恐怖)
                         break;
                     case 6:
                         op2.AC = -2;
                         op2.effect = "ポーション回復量 +16% +16,";
+                        op2.effect += "回復悪化防御 +16% (恐怖),";   //回復悪化防御 +16% (恐怖)
                         break;
                     case 7:
                         op2.AC = -2;
                         op2.effect = "ポーション回復量 +18% +18,";
+                        op2.effect += "回復悪化防御 +18% (恐怖),";   //回復悪化防御 +18% (恐怖)
                         break;
                     case 8:
                         op2.AC = -3;
                         op2.effect = "ポーション回復量 +20% +20,";
+                        op2.effect += "回復悪化防御 +20% (恐怖),";   //回復悪化防御 +20% (恐怖)
                         break;
                     case 9:
                         op2.AC = -4;
                         op2.effect = "ポーション回復量 +22% +22,";
+                        op2.effect += "回復悪化防御 +22% (恐怖),";   //回復悪化防御 +22% (恐怖)
                         break;
                 }
             }
