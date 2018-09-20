@@ -184,19 +184,19 @@ public class Bougu implements Common {
             text += " 魔法クリティカル+" + (op.CRI_MAGIC + op2.CRI_MAGIC);
         }
         if (op.element_resist[FIRE] > 0) {
-            text += " 火の属性" + op.element_resist[FIRE];
+            text += " 火属性MR" + op.element_resist[FIRE];
         }
         if (op.element_resist[WATER] > 0) {
-            text += " 水の属性" + op.element_resist[WATER];
+            text += " 水属性MR" + op.element_resist[WATER];
         }
         if (op.element_resist[WIND] > 0) {
-            text += " 風の属性" + op.element_resist[WIND];
+            text += " 風属性MR" + op.element_resist[WIND];
         }
         if (op.element_resist[EARTH] > 0) {
-            text += " 地の属性" + op.element_resist[EARTH];
+            text += " 地属性MR" + op.element_resist[EARTH];
         }
         if (op.MR + op2.MR > 0) {
-            text += " 魔法防御+" + (op.MR + op2.MR);
+            text += " MR+" + (op.MR + op2.MR);
         }
         if (mr_enchant > 0) {
             text += " (強化毎にMR+" + mr_enchant + ")";
@@ -219,13 +219,19 @@ public class Bougu implements Common {
         if (op.ailment[DARKNESS] + op2.ailment[DARKNESS] > 0) {
             text += " 暗闇耐性+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
         }
+        if (op.ailment[TERROR] + op2.ailment[TERROR] > 0) {
+            text += " 恐怖耐性+" + (op.ailment[TERROR] + op2.ailment[TERROR]);
+        }
         if (op.PVP + op2.PVP > 0) {
             //text += " PVPダメージ+" + (op.PVP + op2.PVP);
             text += " PVP追加ダメージ+" + (op.PVP + op2.PVP);
         }
+        //if (op.PVP + op2.PVP > 0) {
+        //    text += " PVPダメージ減少+" + (op.PVP + op2.PVP);
+        //}
         //所持重量の追加
         if (op.c_weight + op2.c_weight > 0) {
-            text += " 所持重量+" + (op.c_weight + op2.c_weight);
+            text += " 所持重量増加+" + (op.c_weight + op2.c_weight);
         }
 
         if (!op.effect.equals("")) {

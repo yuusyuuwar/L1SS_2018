@@ -3,6 +3,19 @@
 変更点
 2018/09/20
 Update
+LSS/src/lss/Common.java
+LSS/src/lss/Morph.java
+LSS/src/lss/UI.java
+	Hero変身用にLV99で変身リスト(速度設定1.1倍[切り捨て])を追加しLV99のドロップリストを追加
+	(ドロップリストをHeroとするとエラーを起こすので暫定でLV99にしています。)
+
+LSS/src/lss/Bougu.java
+	防具のツールチップの表示の変更
+	[火の属性][水の属性][風の属性][地の属性][魔法防御][所持重量]を
+	[火属性MR][水属性MR][風属性MR][地属性MR][MR][所持重量増加]に変更
+	[恐怖耐性][PVPダメージ減少]追加
+
+Update
 LSS/data/E.zip
 	/E/ブーツ/
 新規追加
