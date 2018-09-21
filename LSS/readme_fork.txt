@@ -3,9 +3,30 @@
 変更点
 2018/09/21
 Update
+LSS/src/lss/Bougu.java
+	成長の紋章の効果が未実装の為、修正
+	2017/10/11 Update
+	http://event2.ncsoft.jp/1.0/lineage/1801fivecrests/
+
+LSS/data/E.zip
+	/E/ルーン/
+LSS/src/lss/Bougu.java
+ファイルの修正と名称の修正、Bougu.javaの判定名称も修正
+	e_守護賢者の紋章.txt	
+		e_賢者の守護紋章.txt
+	e_守護闘士の紋章.txt
+		e_闘士の守護紋章.txt
+	e_守護名弓の紋章.txt
+		e_射手の守護紋章.txt
+	e_名弓の紋章.txt
+		e_射手の紋章.txt
+	2018/06/13 Update
+	http://event2.ncsoft.jp/1.0/lineage/1806newCrestsSeries/
+
+Update
 LSS/data/E.zip
 	/E/ルーン/	
-修正	安全=0を安全4にして選択した時に+5が表示される様に変更
+修正	安全=0を安全=4にして選択した時に+5が表示される様に変更
 	守護闘士の紋章
 	守護名弓の紋章
 	守護賢者の紋章

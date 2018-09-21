@@ -1468,6 +1468,63 @@ public class Bougu implements Common {
                             op2.SP = 5;
                             break;
                     }
+                    break; 
+                case "成長の紋章":          //+0成長の紋章でEXP+1%
+                    switch (enchant) {
+                        case 0:
+                            op2.effect = "EXP +1%,";
+                            break;
+                        case 1:
+                            op2.effect = "EXP +2%,";
+                            op2.effect += "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "EXP +3%,";
+                            op2.effect += "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "EXP +4%,";
+                            op2.effect += "ポーション回復量 +6% +6,";
+                            op2.effect += "回復悪化防御 +6%,";
+                            break;
+                        case 4:
+                            op2.effect = "EXP +5%,";
+                            op2.effect += "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 5:
+                            op2.effect = "EXP +6%,";
+                            op2.effect += "ポーション回復量 +9% +9,";
+                            op2.effect += "回復悪化防御 +9%,";
+                            break;
+                        case 6:
+                            op2.effect = "EXP +7%,";
+                            op2.effect += "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            break;
+                        case 7:
+                            op2.effect = "EXP +9%,";
+                            op2.effect += "ポーション回復量 +11% +11,";
+                            op2.effect += "回復悪化防御 +11%,";
+                            break;
+                        case 8:
+                            op2.effect = "EXP +11%,";
+                            op2.effect += "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            break;
+                        case 9:
+                            op2.effect = "EXP +13%,";
+                            op2.effect += "ポーション回復量 +13% +13,";
+                            op2.effect += "回復悪化防御 +13%,";
+                            break;
+                        case 10:
+                            op2.effect = "EXP +15%,";
+                            op2.effect += "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            break;
+                    }
                     break;         
                 case "守護の紋章":          //+0守護の紋章でAC=-1
                     switch (enchant) {
@@ -1546,7 +1603,7 @@ public class Bougu implements Common {
                             break;
                     }
                     break;
-                case "名弓の紋章":          //+0名弓の紋章でDEX=1
+                case "射手の紋章":          //+0射手の紋章でDEX=1
                     switch (enchant) {
                         case 1:
                             op2.effect = "ポーション回復量 +2% +2,";
@@ -1634,7 +1691,7 @@ public class Bougu implements Common {
                             break;
                     }
                     break;
-                case "守護闘士の紋章":          //+5守護闘士の紋章から
+                case "闘士の守護紋章":                      //+5闘士の守護紋章から
                     switch (enchant) {
                         case 5:
                             op2.ST[STR] = 1;
@@ -1674,7 +1731,7 @@ public class Bougu implements Common {
                             break;
                     }
                     break;
-                case "守護名弓の紋章":          //+5守護闘士の紋章から
+                case "射手の守護紋章":                      //+5射手の守護紋章から
                     switch (enchant) {
                             case 5:
                             op2.ST[DEX] = 1;
@@ -1714,7 +1771,7 @@ public class Bougu implements Common {
                             break;
                     }
                     break;
-                case "守護賢者の紋章":          //+5守護闘士の紋章から
+                case "賢者の守護紋章":                      //+5賢者の守護紋章から
                     switch (enchant) {
                         case 5:
                             op2.ST[INT] = 1;
