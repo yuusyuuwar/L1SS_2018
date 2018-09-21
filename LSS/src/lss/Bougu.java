@@ -1108,12 +1108,6 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("憤怒のグローブ(KR)")) {
-            if (enchant >= 5) {
-                op2.HIT_SHORT = enchant - 4;
-            }
-        }
-
         if (name.equals("激昂のグローブ")) {
             if (enchant >= 5) {
                 op2.HIT_SHORT = enchant - 4;
@@ -2282,7 +2276,7 @@ public class Bougu implements Common {
             op2.MR += enchant * mr_enchant;
             }
 //インシグニア
-            if (name.equals("カーツの闘士のインシグニア")) {
+            if (name.equals("闘士のインシグニア")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -2322,7 +2316,7 @@ public class Bougu implements Common {
                         break;
                 }
             }        
-            if (name.equals("カーツの射手のインシグニア")) {
+            if (name.equals("射手のインシグニア")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -2362,7 +2356,7 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.equals("カーツの賢者のインシグニア")) {
+            if (name.equals("賢者のインシグニア")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -2402,7 +2396,7 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.equals("カーツの守護のインシグニア")) {
+            if (name.equals("守護のインシグニア")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;

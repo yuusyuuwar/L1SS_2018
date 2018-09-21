@@ -1,6 +1,40 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/22
+Update
+LSS/src/lss/UI.java
+	祈りの紋様III、祈りの紋様IV、祈りの紋様Vを追加
+
+LSS/src/lss/Bougu.java
+LSS/data/E.zip
+	/E/エンブレム/
+ファイルの修正と名称の修正、Bougu.javaの判定名称も修正
+	01_カーツの闘士のインシグニア.txt
+		01_闘士のインシグニア.txt
+	02_カーツの射手のインシグニア.txt	
+		02_射手のインシグニア.txt
+	03_カーツの賢者のインシグニア.txt
+		03_賢者のインシグニア.txt
+	04_カーツの守護のインシグニア.txt
+		04_守護のインシグニア.txt
+LSS/data/E.zip
+	/E/イアリング/
+	e_星の知識イアリング.txt
+		e_星の知力イアリング.txt
+
+LSS/data/E.zip
+	/E/ベルト/
+	02_オーガキングベルト.txt
+	AC=0をAC=-2
+
+	02_エンシェントジャイアントリング(KR).txtを削除
+	02_タイタンベルト(KR).txtを削除
+
+LSS/data/E.zip
+	/E/グローブ/
+	02_憤怒のグローブ(KR).txtを削除
+
 2018/09/21
 Update
 LSS/data/E.zip
