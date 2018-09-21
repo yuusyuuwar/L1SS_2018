@@ -2280,6 +2280,168 @@ public class Bougu implements Common {
         } else {
             op2.AC += -enchant;
             op2.MR += enchant * mr_enchant;
-        }
+            }
+//インシグニア
+            if (name.equals("カーツの闘士のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -1;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -2;
+                        op2.DMG_SHORT = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -3;
+                        op2.DMG_SHORT = 2;
+                        op2.CRI_SHORT = 1;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -3;
+                        op2.DMG_SHORT = 3;
+                        op2.CRI_SHORT = 3;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -3;
+                        op2.DMG_SHORT = 4;
+                        op2.CRI_SHORT = 5;
+                        break;
+                }
+            }        
+            if (name.equals("カーツの射手のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -1;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -2;
+                        op2.DMG_LONG = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -3;
+                        op2.DMG_LONG = 2;
+                        op2.CRI_LONG = 1;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -3;
+                        op2.DMG_LONG = 3;
+                        op2.CRI_LONG = 3;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -3;
+                        op2.DMG_LONG = 4;
+                        op2.CRI_LONG = 5;
+                        break;
+                }
+            }
+            if (name.equals("カーツの賢者のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -1;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -2;
+                        op2.HIT_SHORT = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -3;
+                        op2.HIT_SHORT = 2;
+                        op2.CRI_MAGIC = 1;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -3;
+                        op2.HIT_SHORT = 3;
+                        op2.CRI_MAGIC = 2;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -3;
+                        op2.HIT_SHORT = 4;
+                        op2.CRI_MAGIC = 4;
+                        break;
+                }
+            }
+            if (name.equals("カーツの守護のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        op2.AC = -1;                      
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -2;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -3;
+                        op2.DR = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -5;
+                        op2.DR = 2;
+                        op2.MR = 3;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -6;
+                        op2.DR = 3;
+                        op2.MR = 5;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -7;
+                        op2.DR = 4;
+                        op2.MR = 7;
+                        break;
+                }
+            }
     }
 }
