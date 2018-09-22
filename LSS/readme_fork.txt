@@ -3,6 +3,10 @@
 変更点
 2018/09/22
 Update
+LSS/README.md
+	README.mdの削除(配置箇所の指定ミス)
+
+Update
 LSS/src/lss/Common.java
 	パネル1のルーン、ドロン、エンブレムの順をエンブレム、ドロン、ルーンに変更
 
