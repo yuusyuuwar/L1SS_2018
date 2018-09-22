@@ -3,6 +3,10 @@
 変更点
 2018/09/22
 Update
+LSS/src/lss/Common.java
+	パネル1のルーン、ドロン、エンブレムの順をエンブレム、ドロン、ルーンに変更
+
+Update
 LSS/src/lss/UI.java
 	祈りの紋様III、祈りの紋様IV、祈りの紋様Vを追加
 
