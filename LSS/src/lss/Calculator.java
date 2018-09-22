@@ -990,6 +990,36 @@ public class Calculator implements Common {
                     buff.effect += "攻撃時一定確率で魔法発動,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("最大HP+80 遠距離ダメージ+4 遠距離命中+8 ダメージ軽減+2 魔法発動");
                     break;
+                case "アンタラス":
+                    buff.AC -= 7;
+                    buff.HP += 120;
+                    buff.DR += 7;
+                    buff.effect += "MP回復 +15,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-7 最大HP+120 ダメージ軽減+7 64秒毎にMPが15回復 祝福消耗効率+7%");
+                    break;
+                case "パプリオン":
+                    buff.AC -= 1;
+                    buff.DR += 1;
+                    buff.SP += 7;
+                    buff.HIT_MAGIC += 7;                    
+                    buff.effect += "MP回復 +10,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 ダメージ軽減+1 SP＋7 魔法命中+7 64秒毎にMPが10回復 祝福消耗効率+7%");
+                    break;
+                case "リンドビオル":
+                    buff.AC -= 2;
+                    buff.DR += 2;
+                    buff.DMG_LONG += 7;
+                    buff.HIT_LONG += 7;
+                    buff.effect += "MP回復 +5,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 ダメージ軽減+2 遠距離ダメージ+7 遠距離命中+7 64秒毎にMPが5回復 祝福消耗効率+7%");
+                    break;
+                case "ヴァラカス":
+                    buff.AC -= 3;
+                    buff.DR += 3;
+                    buff.DMG_SHORT += 7;
+                    buff.HIT_SHORT += 7;
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-3 ダメージ軽減+3 近距離ダメージ+7 近距離命中+7 祝福消耗効率+7%");
+                    break;
             }
         }
 
@@ -4044,8 +4074,10 @@ public class Calculator implements Common {
         if (buki.op.ST[CHA] > 0) {
             buki_text += " CHA+" + buki.op.ST[CHA];
         }
+        if (buki.op.MR > 0) {
+            buki_text += " MR+" + buki.op.MR;
+        }
         if (buki.op.SP > 0) {
-            //buki_text += " 魔力+" + buki.op.SP;
             buki_text += " SP+" + buki.op.SP;
         }
         if (!buki.op.effect.equals("")) {

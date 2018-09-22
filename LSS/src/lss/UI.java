@@ -1379,7 +1379,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "ジャイアント", "ブラックエルダー", "サキュバスクイーン", "ドレイク", "キングバグベアー", "ダイアゴーレム",
             "サイクロプス", "ナイトバルド", "シアー",
             "デスナイト", "デーモン", "覚醒パオ", "マミーロード",
-            "アイリス", "バンパイア", "バランカ", "アイスクイーン"
+            "アイリス", "バンパイア", "バランカ", "アイスクイーン",
+            "アンタラス", "パプリオン", "リンドビオル", "ヴァラカス"
         };
 
         cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);

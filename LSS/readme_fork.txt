@@ -3,6 +3,19 @@
 変更点
 2018/09/22
 Update
+LSS/src/lss/Calculator.java
+武器ツールチップの表示名MR追加
+
+LSS/src/lss/UI.java
+新規マジックドールの追加
+	2017/12/20 Update
+	http://event2.ncsoft.jp/1.0/lineage/1712dragondoll/
+	アンタラス	追加防御力＋7 最大HP＋120 MP絶対回復＋15（64秒） ダメージ低下＋7
+	パプリオン	追加防御力＋1 MP絶対回復＋10(64秒）ダメージ低下＋1 SP＋7 魔法命中＋7
+	リンドビオル	追加防御力＋2 MP絶対回復＋5（64秒）ダメージ低下＋2 遠距離ダメージ＋7 遠距離命中＋7
+	ヴァラカス	追加防御力＋3 ダメージ低下＋3 近接ダメージ＋7 近距離命中＋7
+
+Update
 LSS/README.md
 	README.mdの削除(配置箇所の指定ミス)
 
