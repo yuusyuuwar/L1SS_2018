@@ -1109,8 +1109,27 @@ public class Bougu implements Common {
         }
 
         if (name.equals("激昂のグローブ")) {
+            if (enchant >= 7) {
+                op2.HIT_SHORT = enchant - 3;
+            }
+            if (enchant >= 9) {
+                op2.HIT_SHORT =6;
+            }
+        }
+        if (name.equals("守護騎士のパワーグローブ")) {
             if (enchant >= 5) {
                 op2.HIT_SHORT = enchant - 4;
+            }
+            if (enchant >= 9) {
+                op2.HIT_SHORT =5;
+            }
+        }
+        if (name.equals("守護騎士のブレイサー")) {
+            if (enchant >= 5) {
+                op2.HIT_LONG = enchant - 4;
+            }
+            if (enchant >= 9) {
+                op2.HIT_LONG =5;
             }
         }
 
