@@ -2,8 +2,9 @@ package lss;
 
 public class Morph implements Common {
 
-    int data[][][] = new int[14][2][BUKI_TYPE_LIST.length + 2];
-
+    //[L99]ï™ë´ÇµÇΩÇÃÇ≈14Ç©ÇÁ15å¬Ç÷ëùâ¡
+    //int data[][][] = new int[14][2][BUKI_TYPE_LIST.length + 2];
+int data[][][] = new int[15][2][BUKI_TYPE_LIST.length + 2];
     {
         data[L1][PHI][W_D] = 75;
         data[L1][PHI][W_LS] = 72;
@@ -244,6 +245,22 @@ public class Morph implements Common {
         //data[L85][PHI][W_G] = 96;
         //data[L85][PHI][MAIN] = 85;
         //data[L85][PHI][SUB] = 75;
+       
+        data[L99][PHI][W_D] = 151;
+        data[L99][PHI][W_LS] = 140;
+        data[L99][PHI][W_TS] = 121;
+        data[L99][PHI][W_A] = 121;
+        data[L99][PHI][W_L] = 129;
+        data[L99][PHI][W_CS] = 129;
+        data[L99][PHI][W_S] = 140;
+        data[L99][PHI][W_DB] = 140;
+        data[L99][PHI][W_C] = 140;
+        data[L99][PHI][W_K] = 140;
+        data[L99][PHI][W_DA] = 140;
+        data[L99][PHI][W_B] = 105;
+        data[L99][PHI][W_G] = 105;
+        data[L99][PHI][MAIN] = 93;
+        data[L99][PHI][SUB] = 82;
 
         data[L1][MAG][W_D] = 70;
         data[L1][MAG][W_LS] = 67;
@@ -469,21 +486,21 @@ public class Morph implements Common {
         data[L84][MAG][MAIN] = 90;
         data[L84][MAG][SUB] = 79;
 
-        //data[L85][MAG][W_D] = 122;
-        //data[L85][MAG][W_LS] = 112;
-        //data[L85][MAG][W_TS] = 97;
-        //data[L85][MAG][W_A] = 97;
-        //data[L85][MAG][W_L] = 104;
-        //data[L85][MAG][W_CS] = 104;
-        //data[L85][MAG][W_S] = 112;
-        //data[L85][MAG][W_DB] = 112;
-        //data[L85][MAG][W_C] = 112;
-        //data[L85][MAG][W_K] = 112;
-        //data[L85][MAG][W_DA] = 112;
-        //data[L85][MAG][W_B] = 0;
-        //data[L85][MAG][W_G] = 0;
-        //data[L85][MAG][MAIN] = 90;
-        //data[L85][MAG][SUB] = 79;
+        data[L99][MAG][W_D] = 134;
+        data[L99][MAG][W_LS] = 123;
+        data[L99][MAG][W_TS] = 106;
+        data[L99][MAG][W_A] = 106;
+        data[L99][MAG][W_L] = 114;
+        data[L99][MAG][W_CS] = 114;
+        data[L99][MAG][W_S] = 123;
+        data[L99][MAG][W_DB] = 123;
+        data[L99][MAG][W_C] = 123;
+        data[L99][MAG][W_K] = 123;
+        data[L99][MAG][W_DA] = 123;
+        data[L99][MAG][W_B] = 0;
+        data[L99][MAG][W_G] = 0;
+        data[L99][MAG][MAIN] = 99;
+        data[L99][MAG][SUB] = 86;
 
     }
 
@@ -515,9 +532,10 @@ public class Morph implements Common {
         //} else if (level < 85) {
         } else if (level < 84) {
             return data[L82][mode][type];
-        } else {
-            //return data[L85][mode][type];
+        } else if (level < 99) {
             return data[L84][mode][type];
+        } else {
+            return data[L99][mode][type];
         }
     }
 }

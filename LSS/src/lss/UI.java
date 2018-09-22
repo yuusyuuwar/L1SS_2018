@@ -127,8 +127,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JButton bt_paste;
     JButton bt_reset;
 
-    WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];
-    JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];
+    WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];    //装備名
+    JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];       //装備強化数値
+    
     JComboBox cb_elem_1;
     JComboBox cb_elem_2;
     JComboBox cb_ts_elem;
@@ -137,11 +138,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JToggleButton tb_blessed2;
     JComboBox cb_arrow;
 
-    WideComboBox cb_pattern_l;
-    WideComboBox cb_pattern_r;
-    WideComboBox cb_pattern_c;
-    WideComboBox cb_pattern_l2;
-    WideComboBox cb_pattern_r2;
+    WideComboBox cb_pattern_l;  //左手
+    WideComboBox cb_pattern_r;  //右手
+    WideComboBox cb_pattern_c;  //背中
+    WideComboBox cb_pattern_l2; //左腕
+    WideComboBox cb_pattern_r2; //右腕
 
     JComboBox cb_alterstone_en;
     JComboBox[] cb_alterstone_op = new JComboBox[3];
@@ -595,7 +596,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
-            if (i >= 19) {
+            //リスト19個から21個へ拡張(ドロン、エンブレム分)2個追加
+            if (i >= 21) {              
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
             }
@@ -665,7 +667,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "剣士の紋様II", "術士の紋様II", "弓士の紋様II"};
         String right_list[] = {"右腕", "生命の紋様", "魔法の紋様", "防御の紋様", "防御の紋様II", "耐火の紋様",
             "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様", "偉大なる者の遺物"};
-        String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II"};
+        String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II", "祈りの紋様III", "祈りの紋様IV", "祈りの紋様V"};
         String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
         String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術士たちの護符", "勇猛のオルターストーン", "魔弾のオルターストーン", "叡智のオルターストーン"};
         cb_pattern_l = new WideComboBox(left_list);
@@ -763,6 +765,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_morph_level.addItem("82");
         //cb_morph_level.addItem("85");
         cb_morph_level.addItem("84");
+        cb_morph_level.addItem("99");
 
         cb_morph_level.setBounds(420 + 280, 200, 80, 20);
         cb_morph_level.addActionListener(this);

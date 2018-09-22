@@ -32,6 +32,7 @@ public class Buff implements Common {
     String effect = "";
 
     int PVP;
+    int PVPDR;
 
     int[] ailment = new int[AILMENT_LIST.length];
 

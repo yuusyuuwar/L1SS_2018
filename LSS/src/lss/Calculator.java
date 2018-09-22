@@ -361,7 +361,7 @@ public class Calculator implements Common {
     private double acc = 1.0;
     // 一段加速(GP GGP ワイン ウイスキー)
     double acc_1 = 1.3333;
-    // 二段加速(BP イビルブラッド ブラッドラスト 名誉のコイン)
+    // 二段加速(BP イビルブラッド ブラッドラスト 名誉のコイン ダンシングブレイズ フォーカスウェーブ ハリケーン サンドストーム)
     double acc_2 = 1.3333;
     // 二段加速(EW 濃縮集中ポーション)
     double acc_ew = 1.1547;

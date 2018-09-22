@@ -161,17 +161,18 @@ public class Bougu implements Common {
         }
         if (op.SP + op2.SP > 0) {
             //text += " 魔力+" + (op.SP + op2.SP);
-			text += " SP+" + (op.SP + op2.SP);
+            text += " SP+" + (op.SP + op2.SP);
         }
         if (op.SP < 0) {
             //text += " 魔力" + op.SP;
-			text += " SP" + op.SP;
+            text += " SP" + op.SP;
         }
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
             text += " 魔法命中+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
         }
         if (op.DR + op2.DR > 0) {
-            text += " ダメージ低下" + (op.DR + op2.DR);
+            //text += " ダメージ低下" + (op.DR + op2.DR);
+            text += " DR" + (op.DR + op2.DR);
         }
         if (op.CRI_SHORT + op2.CRI_SHORT > 0) {
             text += " 近距離クリティカル+" + (op.CRI_SHORT + op2.CRI_SHORT);
@@ -183,19 +184,19 @@ public class Bougu implements Common {
             text += " 魔法クリティカル+" + (op.CRI_MAGIC + op2.CRI_MAGIC);
         }
         if (op.element_resist[FIRE] > 0) {
-            text += " 火の属性" + op.element_resist[FIRE];
+            text += " 火属性MR" + op.element_resist[FIRE];
         }
         if (op.element_resist[WATER] > 0) {
-            text += " 水の属性" + op.element_resist[WATER];
+            text += " 水属性MR" + op.element_resist[WATER];
         }
         if (op.element_resist[WIND] > 0) {
-            text += " 風の属性" + op.element_resist[WIND];
+            text += " 風属性MR" + op.element_resist[WIND];
         }
         if (op.element_resist[EARTH] > 0) {
-            text += " 地の属性" + op.element_resist[EARTH];
+            text += " 地属性MR" + op.element_resist[EARTH];
         }
         if (op.MR + op2.MR > 0) {
-            text += " 魔法防御+" + (op.MR + op2.MR);
+            text += " MR+" + (op.MR + op2.MR);
         }
         if (mr_enchant > 0) {
             text += " (強化毎にMR+" + mr_enchant + ")";
@@ -218,13 +219,19 @@ public class Bougu implements Common {
         if (op.ailment[DARKNESS] + op2.ailment[DARKNESS] > 0) {
             text += " 暗闇耐性+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
         }
+        if (op.ailment[TERROR] + op2.ailment[TERROR] > 0) {
+            text += " 恐怖耐性+" + (op.ailment[TERROR] + op2.ailment[TERROR]);
+        }
         if (op.PVP + op2.PVP > 0) {
             //text += " PVPダメージ+" + (op.PVP + op2.PVP);
             text += " PVP追加ダメージ+" + (op.PVP + op2.PVP);
         }
+        if (op.PVPDR + op2.PVPDR > 0) {
+            text += " PVPダメージ減少+" + (op.PVPDR + op2.PVPDR);
+        }
         //所持重量の追加
         if (op.c_weight + op2.c_weight > 0) {
-            text += " 所持重量+" + (op.c_weight + op2.c_weight);
+            text += " 所持重量増加+" + (op.c_weight + op2.c_weight);
         }
 
         if (!op.effect.equals("")) {
@@ -483,295 +490,549 @@ public class Bougu implements Common {
                 if (name.contains("勇士")) {
                     switch (enchant) {
                         case 8:
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.HIT_SHORT++;
-                            op2.HIT_LONG++;
-                            op2.ailment[STUN] += 2;
+                                                                                //AC-7
+                            op2.DMG_LONG++;             //近距離ダメージ+1       //近距離ダメージ+5
+                            op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+5
+                            op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+5
+                            op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+5
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                                                                                //HP+30
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 7:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.HIT_SHORT++;
-                            op2.HIT_LONG++;
-                            op2.AC--;
-                            op2.ailment[STUN] += 2;
+                            op2.AC--;                   //AC-1                  //AC-7
+                            op2.DMG_LONG++;             //近距離ダメージ+1       //近距離ダメージ+4
+                            op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+4
+                            op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+4
+                            op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+4
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.HP += 5;                //HP+5                  //HP+30
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 6:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.HIT_SHORT++;
-                            op2.HIT_LONG++;
-                            op2.ailment[STUN] += 5;
+                                                                                //AC-6
+                            op2.DMG_LONG++;             //近距離ダメージ+1       //近距離ダメージ+3
+                            op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+13
+                            op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+3
+                            op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+3
+                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.HP += 5;                //HP+5                  //HP+25
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 5:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.HIT_SHORT++;
-                            op2.HIT_LONG++;
+                                                                                //AC-6
+                            op2.DMG_LONG++;             //近距離ダメージ+1       //近距離ダメージ+2
+                            op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+2
+                            op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+2
+                            op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+2
+                            op2.HP += 5;                //HP+5                  //HP+20
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 4:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.HIT_SHORT++;
-                            op2.HIT_LONG++;
-                            op2.AC--;
+                            op2.AC--;                   //AC-1                  //AC-6
+                            op2.DMG_LONG++;             //近距離ダメージ+1       //近距離ダメージ+1
+                            op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+1
+                            op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+1
+                            op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+1
+                            op2.HP += 5;                //HP+5                  //HP+15
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 3:
-                            op2.HP += 10;
-                            op2.AC -= 4;
+                            op2.AC -= 4;                //AC-4                  //AC-5
+                            op2.HP += 10;               //HP+10                 //HP+10
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     }
                 } else if (name.contains("知恵")) {
                     switch (enchant) {
                         case 8:
-                            op2.PVP++;
-                            op2.SP++;
-                            op2.HP += 10;
-                            op2.MP += 5;
-                            op2.ailment[STUN] += 2;
+                                                                                //AC-6
+                            op2.SP++;                   //SP+1                  //SP+5
+                            op2.HIT_MAGIC++;            //魔法命中+1             //魔法命中+3                        
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9                          
+                            op2.HP += 10;               //HP+10                 //HP+50
+                            op2.MP += 5;                //MP+5                  //MP+35
+                                                                                //MP自然回復+1
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2 
+                                                                                //所持重量増加+360
                         case 7:
-                            op2.PVP++;
-                            op2.SP++;
-                            op2.HP += 5;
-                            op2.MP += 5;
-                            op2.AC--;
-                            op2.ailment[STUN] += 2;
+                            op2.AC--;                   //AC-1                  //AC-5
+                            op2.SP++;                   //SP+1                  //SP+4
+                            op2.HIT_MAGIC++;            //魔法命中+1             //魔法命中+2
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.HP += 5;                //HP+5                  //HP+40
+                            op2.MP += 5;                //MP+5                  //MP+30
+                                                                                //MP自然回復+1
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //所持重量増加+360
                         case 6:
-                            op2.HP += 5;
-                            op2.MP += 10;
-                            op2.ailment[STUN] += 5;
+                                                                                //AC-5 
+                            op2.SP++;                   //SP+1                  //SP+3
+                            op2.HIT_MAGIC++;            //魔法命中+1             //魔法命中+1
+                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.HP += 5;                //HP+5                  //HP+35
+                            op2.MP += 10;               //MP+10                 //MP+25
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360
                         case 5:
-                            op2.HP += 5;
-                            op2.SP++;
+                                                                                //AC-5
+                            op2.SP++;                   //SP+1                  //SP+2                          
+                            op2.HP += 5;                //HP+5                  //HP+30
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                                                     
                         case 4:
-                            op2.HP += 5;
-                            op2.SP++;
-                            op2.AC--;
+                            op2.AC--;                   //AC-1                  //AC-5
+                            op2.SP++;                   //SP+1                  //SP+1
+                            op2.HP += 5;                //HP+5                  //HP+25
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360
                         case 3:
-                            op2.AC -= 3;
-                            op2.HP += 20;
-
+                            op2.AC -= 3;                //AC-4                  //AC-4
+                            op2.HP += 20;               //HP+20                 //HP+20
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360
                     }
                 } else if (name.contains("体力")) {
                     switch (enchant) {
                         case 8:
-                            op2.HP += 10;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.ailment[STUN] += 2;
+                                                                                //AC-7
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+5
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+5
+                            op2.DR++;                   //DR+1                  //DR+3
+                                                        //確率ダメージ低下20 +1% //確率ダメージ低下20 +3%
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.HP += 10;               //HP+10                 //HP+115
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                                                                                //所持重量増加+360
                         case 7:
-                            op2.HP += 10;
-                            op2.AC--;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.ailment[STUN] += 2;
+                            op2.AC--;                   //AC-1                  //AC-7
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+4
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+4
+                            op2.DR++;                   //DR+1                  //DR+2
+                                                        //確率ダメージ低下20 +1% //確率ダメージ低下20 +2%
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.HP += 10;               //HP+10                 //HP+105
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //所持重量増加+360
                         case 6:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.ailment[STUN] += 5;
+                                                                                //AC-6
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+3
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+3
+                            op2.DR++;                   //DR+1                  //DR+1
+                                                        //確率ダメージ低下20 +1% //確率ダメージ低下20 +1%
+                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.HP += 5;                //HP+5                  //HP+95
+                                                                                //所持重量増加+360
                         case 5:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
+                            op2.AC--;                   //AC-1                  //AC-6
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+2
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+2
+                            op2.HP += 5;                //HP+5                  //HP+90
+                                                                                //所持重量増加+360
                         case 4:
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.HP += 5;
-                            op2.AC--;
+                            op2.AC--;                   //AC-1                  //AC-5
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+1
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+1
+                            op2.HP += 5;                //HP+5                  //HP+85
+                                                                                //所持重量増加+360
                         case 3:
-                            op2.HP += 30;
-                            op2.AC -= 3;
+                             op2.AC -= 3;               //AC-3                  //AC-4
+                             op2.HP += 30;              //HP+30                 //HP+80
+                                                                                //所持重量増加+360
                     }
                 } else if (name.contains("魔法抵抗")) {
                     switch (enchant) {
                         case 8:
-                            op2.MR++;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.ailment[STUN] += 2;
+                                                                                //AC-7
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+5
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+5
+                            op2.MR++;                   //MR+1                  //MR+10
+                                                        //確率魔法回避+2         //確率魔法回避+5
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                                                                                //HP+50
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                                                                                //所持重量増加+360
                         case 7:
-                            op2.HP += 5;
-                            op2.MR++;
-                            op2.AC--;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.ailment[STUN] += 2;
+                            op2.AC--;                   //AC-3                  //AC-7
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+4
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+4
+                            op2.MR++;                   //MR+1                  //MR+9
+                                                        //確率魔法回避+2         //確率魔法回避+3
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.HP += 5;                //HP+5                  //HP+50
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //所持重量増加+360
                         case 6:
-                            op2.HP += 5;
-                            op2.MR++;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.ailment[STUN] += 5;
+                                                                                //AC-6
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+3
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+3
+                            op2.MR++;                   //MR+1                  //MR+8
+                                                        //確率魔法回避+1         //確率魔法回避+1
+                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.HP += 5;                //HP+5                  //HP+45
+                                                                                //所持重量増加+360
                         case 5:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
+                            op2.AC--;                   //AC-1                  //AC-6
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+2
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+2
+                                                                                //MR+7
+                            op2.HP += 5;                //HP+5                  //HP+40
+                                                                                //所持重量増加+360
                         case 4:
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.HP += 5;
-                            op2.AC--;
+                            op2.AC--;                   //AC-1                  //AC-5
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+1
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+1
+                                                                                //MR+7
+                            op2.HP += 5;                //HP+5                  //HP+35
+                                                                                //所持重量増加+360
                         case 3:
-                            op2.HP += 30;
-                            op2.AC -= 3;
+                            op2.AC -= 3;                //AC-3                  //AC-4
+                                                                                //MR+7
+                            op2.HP += 30;               //HP+30                 //HP+30
+                                                                                //所持重量増加+360
                     }
                 } else if (name.contains("集中") || name.contains("マナ") || name.contains("回復")) {
                     switch (enchant) {
                         case 8:
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.ailment[STUN] += 2;
+                                                                                //AC-5
+                                                                                //HP+50
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+5
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+5
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 7:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
-                            op2.ailment[STUN] += 2;
+                                                                                //AC-5
+                            op2.HP += 5;                //HP+5                  //HP+50
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+4
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+4
+                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 6:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.ailment[STUN] += 5;
+                                                                                //AC-5
+                            op2.HP += 5;                //HP+5                  //HP+45
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+3
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+3
+                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 5:
-                            op2.HP += 5;
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.PVP++;
+                                                                                //AC-5
+                            op2.HP += 5;                //HP+5                  //HP+40
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+2
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+2
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 4:
-                            op2.DMG_LONG++;
-                            op2.DMG_SHORT++;
-                            op2.HP += 5;
-                            op2.AC--;
+                            op2.AC--;                   //AC-1                  //AC-5
+                            op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+1
+                            op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+1
+                            op2.HP += 5;                //HP+5                  //HP+35
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
                         case 3:
-                            op2.HP += 30;
-                            op2.AC -= 3;
+                            op2.AC -= 3;                //AC-3                  //AC-4
+                            op2.HP += 30;               //HP+30                 //HP+30
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
                     }
                 }
             } else if (name.contains("勇士")) {
                 switch (enchant) {
                     case 8:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.PVP++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
-                        op2.ailment[STUN] += 2;
+                                                                                //AC-5
+                        op2.HP += 5;                    //HP+5                  //HP+30
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+4
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+4
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                        op2.HIT_SHORT++;                //近距離命中+1           //近距離命中+2
+                        op2.HIT_LONG++;                 //遠距離命中+1           //遠距離命中+2
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     case 7:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.PVP++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
-                        op2.ailment[STUN] += 2;
+                                                                                //AC-5
+                        op2.HP += 5;                    //HP+5                  //HP+25
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+3
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+3
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                        op2.HIT_SHORT++;                //近距離命中+1           //近距離命中+2
+                        op2.HIT_LONG++;                 //遠距離命中+1           //遠距離命中+2
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     case 6:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
-                        op2.ailment[STUN] += 5;
+                                                                                //AC-5
+                        op2.HP += 5;                    //HP+5                  //HP+20
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+2
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
+                        op2.HIT_SHORT++;                //近距離命中+1           //近距離命中+2
+                        op2.HIT_LONG++;                 //遠距離命中+1           //遠距離命中+2
+                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     case 5:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.PVP++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
+                                                                                //AC-5
+                        op2.HP += 5;                    //HP+5                  //HP+15
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+1
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+1
+                        op2.HIT_SHORT++;                //近距離命中+1           //近距離命中+1
+                        op2.HIT_LONG++;                 //遠距離命中+1           //遠距離命中+1
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     case 4:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-5
+                        op2.HP += 5;                    //HP+5                  //HP+10
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     case 3:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+5
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     case 2:
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-3
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                     case 1:
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-2
+                                                                                //HP自然回復+2
+                                                                                //所持重量増加+360
                 }
             } else if (name.contains("知恵")) {
                 switch (enchant) {
                     case 8:
-                        op2.HP += 5;
-                        op2.PVP++;
-                        op2.SP++;
-                        op2.ailment[STUN] += 2;
+                        op2.AC--;                       //AC-1                  //AC-6
+                        op2.HP += 5;                    //HP+5                  //HP+40
+                        op2.SP++;                       //SP+1                  //SP+4
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.HIT_MAGIC++;                //魔法命中+1             //魔法命中+2
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                        op2.MP += 15;                   //MP+15                 //MP+30
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360
                     case 7:
-                        op2.HP += 5;
-                        op2.PVP++;
-                        op2.ailment[STUN] += 2;
+                                                                                //AC-5
+                        op2.HP += 5;                    //HP+5                  //HP+35
+                        op2.SP++;                       //SP+1                  //SP+3
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.HIT_MAGIC++;                //魔法命中+1             //魔法命中+1
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1                       
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                       
                     case 6:
-                        op2.HP += 5;
-                        op2.SP++;
-                        op2.ailment[STUN] += 5;
+                        op2.AC--;                       //AC-1                  //AC-5
+                        op2.HP += 5;                    //HP+5                  //HP+30
+                        op2.SP++;                       //SP+1                  //SP+2
+                        op2.ailment[STUN] += 5;         //スタン耐性+2           //スタン耐性+5                      
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                      
                     case 5:
-                        op2.HP += 5;
-                        op2.SP++;
+                                                                                //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+25
+                        op2.SP++;                       //SP+1                  //SP+1
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                                              
                     case 4:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+20
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                                              
                     case 3:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-3
+                        op2.HP += 5;                    //HP+5                  //HP+15                       
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                        
                     case 2:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-2
+                        op2.HP += 5;                    //HP+5                  //HP+10                      
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                        
                     case 1:
-                        op2.HP += 5;
+                                                                                //AC-1
+                        op2.HP += 5;                    //HP+5                  //HP+5                       
+                                                                                //MP+15
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360                        
                 }
-            } else {
+            } else if (name.contains("体力")) {
                 switch (enchant) {
                     case 8:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.PVP++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
-                        op2.ailment[STUN] += 2;
+                                                                                //AC-5
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+4
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+4
+                        op2.DR++;                       //DR+1                  //DR+2
+                                                        //確率ダメージ低下20 +1% //確率ダメージ低下20 +2%
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.HP += 5;                    //HP+5                  //HP+100
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                                                                                //所持重量増加+360
                     case 7:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.PVP++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
-                        op2.ailment[STUN] += 2;
+                                                                                //AC-5
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+3
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+3
+                        op2.DR++;                       //DR+1                  //DR+1
+                                                        //確率ダメージ低下20 +1% //確率ダメージ低下20 +1%
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.HP += 5;                    //HP+5                  //HP+95
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //所持重量増加+360
                     case 6:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
-                        op2.ailment[STUN] += 5;
+                        op2.AC--;                       //AC-1                  //AC-5
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+2
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
+                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                        op2.HP += 5;                    //HP+5                  //HP+90
+                                                                                //所持重量増加+360
                     case 5:
-                        op2.HP += 5;
-                        op2.DMG_LONG++;
-                        op2.DMG_SHORT++;
-                        op2.PVP++;
-                        op2.HIT_SHORT++;
-                        op2.HIT_LONG++;
+                                                                                //AC-4
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+1
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+1
+                        op2.HP += 5;                    //HP+5                  //HP+85
+                                                                                //所持重量増加+360
                     case 4:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+80
+                                                                                //所持重量増加+360
                     case 3:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-3
+                        op2.HP += 5;                    //HP+5                  //HP+75
+                                                                                //所持重量増加+360                        
                     case 2:
-                        op2.HP += 5;
-                        op2.AC--;
+                        op2.AC--;                       //AC-1                  //AC-2
+                        op2.HP += 5;                    //HP+5                  //HP+70                      
+                                                                                //所持重量増加+360                        
                     case 1:
-                        op2.HP += 15;
+                                                                                //AC-1
+                        op2.HP += 15;                    //HP+5                 //HP+65
+                                                                                //所持重量増加+360                        
+                }
+            } else if (name.contains("魔法抵抗")) {
+                switch (enchant) {
+                    case 8:
+                                                                                //AC-5
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+4
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+4
+                                                                                //MR+7
+                                                        //確率魔法回避+2         //確率魔法回避+3
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.HP += 5;                    //HP+5                  //HP+50
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                                                                                //所持重量増加+360
+                    case 7:
+                                                                                //AC-5
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+3
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+3
+                                                                                //MR+7
+                                                        //確率魔法回避+2         //確率魔法回避+1
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.HP += 5;                    //HP+5                  //HP+45
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //所持重量増加+360
+                    case 6:
+                        op2.AC--;                       //AC-1                  //AC-5
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+2
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
+                                                                                //MR+7
+                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                        op2.HP += 5;                    //HP+5                  //HP+40
+                                                                                //所持重量増加+360
+                    case 5:
+                                                                                //AC-4
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+1
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+1
+                                                                                //MR+7
+                        op2.HP += 5;                    //HP+5                  //HP+35
+                                                                                //所持重量増加+360
+                    case 4:
+                        op2.AC--;                       //AC-1                  //AC-4
+                                                                                //MR+7
+                        op2.HP += 5;                    //HP+5                  //HP+30
+                                                                                //所持重量増加+360
+                    case 3:
+                        op2.AC--;                       //AC-3                  //AC-3
+                                                                                //MR+7
+                        op2.HP += 5;                    //HP+5                  //HP+25
+                                                                                //所持重量増加+360
+                    case 2:
+                        op2.AC--;                       //AC-1                  //AC-2
+                                                                                //MR+7
+                        op2.HP += 5;                    //HP+5                  //HP+20                      
+                                                                                //所持重量増加+360                        
+                    case 1:
+                                                                                //AC-1
+                                                                                //MR+7
+                        op2.HP += 15;                   //HP+5                  //HP+15
+                                                                                //所持重量増加+360                        
+                }
+            } else {
+                    switch (enchant) {
+                    case 8:
+                                                                                //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+50
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+4
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+4
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360 
+                    case 7:
+                                                                                //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+45
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+3
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+3
+                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360 
+                    case 6:
+                                                                                //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+40
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+2
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
+                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360 
+                    case 5:
+                                                                                //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+35
+                        op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+1
+                        op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+1
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360 
+                    case 4:
+                        op2.AC--;                       //AC-1                  //AC-4
+                        op2.HP += 5;                    //HP+5                  //HP+30
+                                                                                //MP自然回復+1
+                                                                                //所持重量増加+360 
+                    case 3:
+                        op2.AC--;                       //AC-1                  //AC-3
+                        op2.HP += 5;                    //HP+5                  //HP+25
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360 
+                    case 2:
+                        op2.AC--;                       //AC-1                  //AC-2
+                        op2.HP += 5;                    //HP+5                  //HP+20
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
+                    case 1:
+                        op2.HP += 15;                   //HP+5                  //HP+15
+                                                                                //MP自然回復+1          //MP+30            //HP自然回復+2
+                                                                                //所持重量増加+360
                 }
             }
         }
@@ -844,12 +1105,6 @@ public class Bougu implements Common {
         if (name.contains("リッチローブ")) {
             if (enchant >= 3) {
                 op2.SP = enchant - 2;
-            }
-        }
-
-        if (name.equals("憤怒のグローブ(KR)")) {
-            if (enchant >= 5) {
-                op2.HIT_SHORT = enchant - 4;
             }
         }
 
@@ -1034,8 +1289,8 @@ public class Bougu implements Common {
             }
         }
 
-        if (type.equals("リング") || type.equals("アミュレット")
-                || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン")) {
+        //+1強化するごとにAC-1されない防具・アイテム
+        if (type.equals("リング") || type.equals("アミュレット") || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン") || type.equals("エンブレム")) {
 
             if (name.equals("回復の紋章")) {
                 op2.effect = "ポーション回復量 +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
@@ -1043,7 +1298,7 @@ public class Bougu implements Common {
             }
 
             switch (name) {
-                case "腕力の紋章":
+                case "腕力の紋章":          //+0腕力の紋章でSTR=1
                     switch (enchant) {
                         case 1:
                             op2.effect = "ポーション回復量 +2% +2,";
@@ -1097,8 +1352,8 @@ public class Bougu implements Common {
                             op2.DMG_SHORT = 5;
                             break;
                     }
-                    break;
-                case "機敏の紋章":
+                    break;                   
+                case "機敏の紋章":          //+0機敏の紋章でDEX=1
                     switch (enchant) {
                         case 1:
                             op2.effect = "ポーション回復量 +2% +2,";
@@ -1152,8 +1407,8 @@ public class Bougu implements Common {
                             op2.DMG_LONG = 5;
                             break;
                     }
-                    break;
-                case "知力の紋章":
+                    break;                  
+                case "知力の紋章":          //+0知力の紋章でSTR=1
                     switch (enchant) {
                         case 1:
                             op2.effect = "ポーション回復量 +2% +2,";
@@ -1207,7 +1462,348 @@ public class Bougu implements Common {
                             op2.SP = 5;
                             break;
                     }
+                    break; 
+                case "成長の紋章":          //+0成長の紋章でEXP+1%
+                    switch (enchant) {
+                        case 0:
+                            op2.effect = "EXP +1%,";
+                            break;
+                        case 1:
+                            op2.effect = "EXP +2%,";
+                            op2.effect += "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "EXP +3%,";
+                            op2.effect += "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "EXP +4%,";
+                            op2.effect += "ポーション回復量 +6% +6,";
+                            op2.effect += "回復悪化防御 +6%,";
+                            break;
+                        case 4:
+                            op2.effect = "EXP +5%,";
+                            op2.effect += "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 5:
+                            op2.effect = "EXP +6%,";
+                            op2.effect += "ポーション回復量 +9% +9,";
+                            op2.effect += "回復悪化防御 +9%,";
+                            break;
+                        case 6:
+                            op2.effect = "EXP +7%,";
+                            op2.effect += "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            break;
+                        case 7:
+                            op2.effect = "EXP +9%,";
+                            op2.effect += "ポーション回復量 +11% +11,";
+                            op2.effect += "回復悪化防御 +11%,";
+                            break;
+                        case 8:
+                            op2.effect = "EXP +11%,";
+                            op2.effect += "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            break;
+                        case 9:
+                            op2.effect = "EXP +13%,";
+                            op2.effect += "ポーション回復量 +13% +13,";
+                            op2.effect += "回復悪化防御 +13%,";
+                            break;
+                        case 10:
+                            op2.effect = "EXP +15%,";
+                            op2.effect += "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            break;
+                    }
+                    break;         
+                case "守護の紋章":          //+0守護の紋章でAC=-1
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "獲得EXP +1%,";
+                            break;
+                        case 2:
+                            op2.effect = "獲得EXP +2%,";
+                            break;
+                        case 3:
+                            op2.effect = "獲得EXP +3%,";
+                            break;
+                        case 4:
+                            op2.effect = "獲得EXP +4%,";
+                            op2.MR = 1;
+                            break;
+                        case 5:
+                            op2.effect = "獲得EXP +5%,";
+                            op2.MR = 2;
+                            break;
+                        case 6:
+                            op2.effect = "獲得EXP +6%,";
+                            op2.MR = 3;
+                            break;
+                        case 7:
+                            op2.effect = "獲得EXP +7%,";
+                            op2.MR = 4;
+                            break;
+                        case 8:
+                            op2.effect = "獲得EXP +8%,";
+                            op2.MR = 5;
+                            break;
+                    } 
                     break;
+                case "闘士の紋章":          //+0闘士の紋章でSTR=1
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 4:
+                            op2.effect = "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            break;
+                        case 5:
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.DMG_SHORT = 1;
+                            op2.HIT_SHORT = 1;
+                            break;
+                        case 6:
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.DMG_SHORT = 2;
+                            op2.HIT_SHORT = 2;
+                            break;
+                        case 7:
+                            op2.effect = "ポーション回復量 +16% +16,";
+                            op2.effect += "回復悪化防御 +16%,";
+                            op2.DMG_SHORT = 3;
+                            op2.HIT_SHORT = 3;
+                            break;
+                        case 8:
+                            op2.effect = "ポーション回復量 +18% +18,";
+                            op2.effect += "回復悪化防御 +18%,";
+                            op2.DMG_SHORT = 4;
+                            op2.HIT_SHORT = 4;
+                            break;
+                    }
+                    break;
+                case "射手の紋章":          //+0射手の紋章でDEX=1
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 4:
+                            op2.effect = "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            break;
+                        case 5:
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.DMG_LONG= 1;
+                            op2.HIT_LONG = 1;
+                            break;
+                        case 6:
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.DMG_LONG = 2;
+                            op2.HIT_LONG = 2;
+                            break;
+                        case 7:
+                            op2.effect = "ポーション回復量 +16% +16,";
+                            op2.effect += "回復悪化防御 +16%,";
+                            op2.DMG_LONG = 3;
+                            op2.HIT_LONG = 3;
+                            break;
+                        case 8:
+                            op2.effect = "ポーション回復量 +18% +18,";
+                            op2.effect += "回復悪化防御 +18%,";
+                            op2.DMG_LONG = 4;
+                            op2.HIT_LONG = 4;
+                            break;
+                    }
+                    break;
+                case "賢者の紋章":          //+0賢者の紋章でINT=1
+                    switch (enchant) {
+                        case 1:
+                            op2.effect = "ポーション回復量 +2% +2,";
+                            op2.effect += "回復悪化防御 +2%,";
+                            break;
+                        case 2:
+                            op2.effect = "ポーション回復量 +4% +4,";
+                            op2.effect += "回復悪化防御 +4%,";
+                            break;
+                        case 3:
+                            op2.effect = "ポーション回復量 +8% +8,";
+                            op2.effect += "回復悪化防御 +8%,";
+                            break;
+                        case 4:
+                            op2.effect = "ポーション回復量 +10% +10,";
+                            op2.effect += "回復悪化防御 +10%,";
+                            break;
+                        case 5:
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.HIT_MAGIC = 1;
+                            op2.SP = 1;
+                            break;
+                        case 6:
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.HIT_MAGIC = 2;
+                            op2.SP = 2;
+                            break;
+                        case 7:
+                            op2.effect = "ポーション回復量 +16% +16,";
+                            op2.effect += "回復悪化防御 +16%,";
+                            op2.HIT_MAGIC = 3;
+                            op2.SP = 3;
+                            break;
+                        case 8:
+                            op2.effect = "ポーション回復量 +18% +18,";
+                            op2.effect += "回復悪化防御 +18%,";
+                            op2.HIT_MAGIC = 4;
+                            op2.SP = 4;
+                            break;
+                    }
+                    break;
+                case "闘士の守護紋章":                      //+5闘士の守護紋章から
+                    switch (enchant) {
+                        case 5:
+                            op2.ST[STR] = 1;
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.effect += "祝福消耗効率 +3%,";                            
+                            op2.DMG_SHORT = 1;
+                            op2.HIT_SHORT = 2;
+                            op2.MR = 4;
+                            break;
+                        case 6:
+                            op2.ST[STR] = 1;
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.effect += "祝福消耗効率 +5%,";
+                            op2.DMG_SHORT = 2;
+                            op2.HIT_SHORT = 3;
+                            op2.MR = 6;
+                            break;
+                        case 7:
+                            op2.ST[STR] = 1;
+                            op2.effect = "ポーション回復量 +16% +16,";
+                            op2.effect += "回復悪化防御 +16%,";
+                            op2.effect += "祝福消耗効率 +7%,";
+                            op2.DMG_SHORT = 3;
+                            op2.HIT_SHORT = 4;
+                            op2.MR = 8;
+                            break;
+                        case 8:
+                            op2.ST[STR] = 1;
+                            op2.effect = "ポーション回復量 +18% +18,";
+                            op2.effect += "回復悪化防御 +18%,";
+                            op2.effect += "祝福消耗効率 +10%,";
+                            op2.DMG_SHORT = 4;
+                            op2.HIT_SHORT = 5;
+                            op2.MR = 10;
+                            break;
+                    }
+                    break;
+                case "射手の守護紋章":                      //+5射手の守護紋章から
+                    switch (enchant) {
+                            case 5:
+                            op2.ST[DEX] = 1;
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.effect += "祝福消耗効率 +3%,";                            
+                            op2.DMG_LONG = 1;
+                            op2.HIT_LONG = 2;
+                            op2.MR = 4;
+                            break;
+                        case 6:
+                            op2.ST[DEX] = 1;
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.effect += "祝福消耗効率 +5%,";
+                            op2.DMG_LONG = 2;
+                            op2.HIT_LONG = 3;
+                            op2.MR = 6;
+                            break;
+                        case 7:
+                            op2.ST[DEX] = 1;
+                            op2.effect = "ポーション回復量 +16% +16,";
+                            op2.effect += "回復悪化防御 +16%,";
+                            op2.effect += "祝福消耗効率 +7%,";
+                            op2.DMG_LONG = 3;
+                            op2.HIT_LONG = 4;
+                            op2.MR = 8;
+                            break;
+                        case 8:
+                            op2.ST[DEX] = 1;
+                            op2.effect = "ポーション回復量 +18% +18,";
+                            op2.effect += "回復悪化防御 +18%,";
+                            op2.effect += "祝福消耗効率 +10%,";
+                            op2.DMG_LONG = 4;
+                            op2.HIT_LONG = 5;
+                            op2.MR = 10;
+                            break;
+                    }
+                    break;
+                case "賢者の守護紋章":                      //+5賢者の守護紋章から
+                    switch (enchant) {
+                        case 5:
+                            op2.ST[INT] = 1;
+                            op2.effect = "ポーション回復量 +12% +12,";
+                            op2.effect += "回復悪化防御 +12%,";
+                            op2.effect += "祝福消耗効率 +3%,";
+                            op2.SP = 1;
+                            op2.HIT_MAGIC = 2;
+                            op2.MR = 6;
+                            break;
+                        case 6:
+                            op2.ST[INT] = 1;
+                            op2.effect = "ポーション回復量 +14% +14,";
+                            op2.effect += "回復悪化防御 +14%,";
+                            op2.effect += "祝福消耗効率 +5%,";
+                            op2.SP = 2;
+                            op2.HIT_MAGIC = 3;
+                            op2.MR = 6;
+                            break;
+                        case 7:
+                            op2.ST[INT] = 1;
+                            op2.effect = "ポーション回復量 +16% +16,";
+                            op2.effect += "回復悪化防御 +16%,";
+                            op2.effect += "祝福消耗効率 +7%,";
+                            op2.SP = 3;
+                            op2.HIT_MAGIC = 4;
+                            op2.MR = 8;
+                            break;
+                        case 8:
+                            op2.ST[INT] = 1;
+                            op2.effect = "ポーション回復量 +18% +18,";
+                            op2.effect += "回復悪化防御 +18%,";
+                            op2.effect += "祝福消耗効率 +10%,";
+                            op2.SP = 4;
+                            op2.HIT_MAGIC = 5;
+                            op2.MR = 10;
+                            break;
+                    }
             }
 
             //シークレットオプション
@@ -1251,13 +1847,23 @@ public class Bougu implements Common {
                         op2.DMG_SHORT = 3;
                         op2.SP = 1;
                         op2.MR = 3;
+                        op2.PVP = 1;        //PVP追加ダメージ+1
                         break;
                     case 8:
                         op2.HP = 50;
                         op2.DMG_LONG = 4;
                         op2.DMG_SHORT = 4;
+                        op2.PVP = 2;        //PVP追加ダメージ+2
                         op2.SP = 2;
                         op2.MR = 5;
+                        break;
+                    case 9:
+                        op2.HP = 60;
+                        op2.DMG_LONG = 5;
+                        op2.DMG_SHORT = 5;
+                        op2.PVP = 3;        //PVP追加ダメージ+3
+                        op2.SP = 3;
+                        op2.MR = 7;
                         break;
                 }
             }
@@ -1280,26 +1886,34 @@ public class Bougu implements Common {
                         op2.HP = 40;
                         op2.effect = "ポーション回復量 +2% +0,";
                         op2.effect += "回復悪化防御 +2% (恐怖),";
+                        op2.AC -= 1;
                         break;
                     case 6:
-                        op2.AC--;
                         op2.HP = 40;
                         op2.effect = "ポーション回復量 +4% +2,";
                         op2.effect += "回復悪化防御 +4% (恐怖),";
+                        op2.AC -= 2;                      
                         break;
                     case 7:
-                        op2.AC -= 2;
                         op2.HP = 50;
                         op2.effect = "ポーション回復量 +6% +4,";
                         op2.effect += "回復悪化防御 +6% (恐怖),";
+                        op2.AC -= 3;
                         op2.ailment[STUN] += 2;
                         break;
                     case 8:
-                        op2.AC -= 3;
                         op2.HP = 50;
                         op2.effect = "ポーション回復量 +8% +6,";
                         op2.effect += "回復悪化防御 +8% (恐怖),";
+                        op2.AC -= 4;
                         op2.ailment[STUN] += 3;
+                        break;
+                    case 9:
+                        op2.HP = 60;
+                        op2.effect = "ポーション回復量 +9% +7,";
+                        op2.effect += "回復悪化防御 +9% (恐怖),";
+                        op2.AC -= 4;
+                        op2.ailment[STUN] += 4;
                         break;
                 }
 
@@ -1332,16 +1946,24 @@ public class Bougu implements Common {
                         op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
+                        op2.PVPDR=3;        //PVPダメージ軽減+2
                         break;
                     case 8:
                         op2.HP = 40;
                         op2.MP = 50;
                         op2.DR = 4;
+                        op2.PVPDR=3;        //PVPダメージ軽減+3                        
+                        break;
+                    case 9:
+                        op2.HP = 50;
+                        op2.MP = 60;
+                        op2.DR = 5;
+                        op2.PVPDR=3;        //PVPダメージ軽減+4
                         break;
                 }
             }
 
-            if (grade.equals("特級")) {
+            if (grade.equals("特級")) {     //各種[10周年記念リング]>>>強化5まで
                 switch (enchant) {
                     case 1:
                         op2.HP = 15;
@@ -1422,28 +2044,73 @@ public class Bougu implements Common {
                         op2.HP = 90;
                         op2.DR = 4;
                         op2.effect = "ダメージ軽減+20 4%,";
-                        op2.AC = -8;
+                        op2.HIT_SHORT = 1;      //近距離命中+1
+                        op2.HIT_LONG = 1;       //遠距離命中+1
+                        op2.AC = -8;            //AC-8
                         break;
                     case 8:
                         op2.HP = 100;
                         op2.DR = 5;
                         op2.effect = "ダメージ軽減+20 5%,";
-                        op2.AC = -9;
+                        op2.HIT_SHORT = 3;      //近距離命中+3
+                        op2.HIT_LONG = 3;       //遠距離命中+3
+                        op2.AC = -9;            //AC-9
                         break;
                     case 9:
                         op2.HP = 150;
                         op2.DR = 6;
                         op2.effect = "ダメージ軽減+20 6%,";
-                        op2.AC = -10;
+                        op2.HIT_SHORT = 5;      //近距離命中+5
+                        op2.HIT_LONG = 5;       //遠距離命中+5
+                        op2.AC = -10;           //AC-10
                         break;
                 }
             }
             if (name.contains("ルームティス パープル イアリング")) {
                 int e = enchant;
                 if (name.contains("祝福された")) {
-                    e++;
-                }
                 switch (e) {
+                    case 3:
+                        op2.MP = 40;
+                        op2.MR = 8;
+                        op2.SP = 1;
+                        break;
+                    case 4:
+                        op2.MP = 55;
+                        op2.MR = 9;
+                        op2.SP = 2;
+                        break;
+                    case 5:
+                        op2.MP = 60;
+                        op2.MR = 10;
+                        op2.SP = 2;
+                        op2.AC = -1;            //AC-1
+                        break;
+                    case 6:
+                        op2.MP = 75;
+                        op2.MR = 12;
+                        op2.SP = 3;
+                        op2.AC = -2;            //AC-2
+                        op2.HIT_MAGIC = 1;      //魔法命中+1
+                        break;
+                    case 7:
+                        op2.MP = 100;
+                        op2.MR = 15;
+                        op2.SP = 3;
+                        op2.AC = -3;            //AC-3
+                        op2.HIT_MAGIC = 3;      //魔法命中+3
+                        break;
+                    case 8:
+                        op2.MP = 130;
+                        op2.MR = 20;
+                        op2.SP = 4;
+                        op2.AC = -4;            //AC-5
+                        op2.HIT_MAGIC = 5;      //魔法命中+5
+                        break;
+                }
+            }
+            else {
+		switch (e) {
                     case 0:
                         op2.MP = 5;
                         op2.MR = 2;
@@ -1475,23 +2142,24 @@ public class Bougu implements Common {
                         op2.MP = 60;
                         op2.MR = 10;
                         op2.SP = 2;
+                        op2.AC = -1;            //AC-1
                         break;
                     case 7:
                         op2.MP = 75;
                         op2.MR = 12;
                         op2.SP = 3;
+                        op2.AC = -2;            //AC-2
+                        op2.HIT_MAGIC = 1;      //魔法命中+1
                         break;
                     case 8:
                         op2.MP = 100;
                         op2.MR = 15;
                         op2.SP = 3;
-                        break;
-                    case 9:
-                        op2.MP = 130;
-                        op2.MR = 20;
-                        op2.SP = 4;
+                        op2.AC = -3;            //AC-3
+                        op2.HIT_MAGIC = 2;      //魔法命中+2
                         break;
                 }
+            }
             }
             if (name.contains("ルームティス ブルー イアリング")) {
                 int e = enchant;
@@ -1501,38 +2169,48 @@ public class Bougu implements Common {
                 switch (e) {
                     case 0:
                         op2.effect = "ポーション回復量 +2% +2,";
+                        op2.effect += "回復悪化防御 +2% (恐怖),";    //回復悪化防御 +2% (恐怖)
                         break;
                     case 1:
                         op2.effect = "ポーション回復量 +6% +6,";
+                        op2.effect += "回復悪化防御 +6% (恐怖),";    //回復悪化防御 +6% (恐怖)
                         break;
                     case 2:
                         op2.effect = "ポーション回復量 +8% +8,";
+                        op2.effect += "回復悪化防御 +8% (恐怖),";    //回復悪化防御 +8% (恐怖)
                         break;
                     case 3:
                         op2.effect = "ポーション回復量 +10% +10,";
+                        op2.effect += "回復悪化防御 +10% (恐怖),";   //回復悪化防御 +10% (恐怖)
                         break;
                     case 4:
                         op2.effect = "ポーション回復量 +12% +12,";
+                        op2.effect += "回復悪化防御 +12% (恐怖),";   //回復悪化防御 +12% (恐怖)
                         break;
                     case 5:
                         op2.AC = -1;
                         op2.effect = "ポーション回復量 +14% +14,";
+                        op2.effect += "回復悪化防御 +14% (恐怖),";   //回復悪化防御 +14% (恐怖)
                         break;
                     case 6:
                         op2.AC = -2;
                         op2.effect = "ポーション回復量 +16% +16,";
+                        op2.effect += "回復悪化防御 +16% (恐怖),";   //回復悪化防御 +16% (恐怖)
                         break;
                     case 7:
                         op2.AC = -2;
                         op2.effect = "ポーション回復量 +18% +18,";
+                        op2.effect += "回復悪化防御 +18% (恐怖),";   //回復悪化防御 +18% (恐怖)
                         break;
                     case 8:
                         op2.AC = -3;
                         op2.effect = "ポーション回復量 +20% +20,";
+                        op2.effect += "回復悪化防御 +20% (恐怖),";   //回復悪化防御 +20% (恐怖)
                         break;
                     case 9:
                         op2.AC = -4;
                         op2.effect = "ポーション回復量 +22% +22,";
+                        op2.effect += "回復悪化防御 +22% (恐怖),";   //回復悪化防御 +22% (恐怖)
                         break;
                 }
             }
@@ -1596,6 +2274,168 @@ public class Bougu implements Common {
         } else {
             op2.AC += -enchant;
             op2.MR += enchant * mr_enchant;
-        }
+            }
+//インシグニア
+            if (name.equals("闘士のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -1;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -2;
+                        op2.DMG_SHORT = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -3;
+                        op2.DMG_SHORT = 2;
+                        op2.CRI_SHORT = 1;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -3;
+                        op2.DMG_SHORT = 3;
+                        op2.CRI_SHORT = 3;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -3;
+                        op2.DMG_SHORT = 4;
+                        op2.CRI_SHORT = 5;
+                        break;
+                }
+            }        
+            if (name.equals("射手のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -1;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -2;
+                        op2.DMG_LONG = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -3;
+                        op2.DMG_LONG = 2;
+                        op2.CRI_LONG = 1;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -3;
+                        op2.DMG_LONG = 3;
+                        op2.CRI_LONG = 3;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -3;
+                        op2.DMG_LONG = 4;
+                        op2.CRI_LONG = 5;
+                        break;
+                }
+            }
+            if (name.equals("賢者のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -1;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -2;
+                        op2.HIT_SHORT = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -3;
+                        op2.HIT_SHORT = 2;
+                        op2.CRI_MAGIC = 1;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -3;
+                        op2.HIT_SHORT = 3;
+                        op2.CRI_MAGIC = 2;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -3;
+                        op2.HIT_SHORT = 4;
+                        op2.CRI_MAGIC = 4;
+                        break;
+                }
+            }
+            if (name.equals("守護のインシグニア")) {
+                switch (enchant) {
+                    case 1:
+                        op2.HP = 5;
+                        break;
+                    case 2:
+                        op2.HP = 10;
+                        break;
+                    case 3:
+                        op2.HP = 15;
+                        op2.AC = -1;                      
+                        break;               
+                    case 4:
+                        op2.HP = 20;
+                        op2.AC = -2;
+                        break;             
+                    case 5:
+                        op2.HP = 25;
+                        op2.AC = -3;
+                        op2.DR = 1;
+                        break;              
+                    case 6:
+                        op2.HP = 30;
+                        op2.AC = -5;
+                        op2.DR = 2;
+                        op2.MR = 3;
+                        break;              
+                    case 7:
+                        op2.HP = 35;
+                        op2.AC = -6;
+                        op2.DR = 3;
+                        op2.MR = 5;
+                        break;              
+                    case 8:
+                        op2.HP = 45;
+                        op2.AC = -7;
+                        op2.DR = 4;
+                        op2.MR = 7;
+                        break;
+                }
+            }
     }
 }
