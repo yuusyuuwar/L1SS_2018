@@ -2069,14 +2069,23 @@ public class Calculator implements Common {
                     break;
             }
         }
-
+//君主魔法（プリンス・プリンセス)
+        //グローイングウエポン
+        if (ui.cb_buff[P_G].isSelected()) {
+            buff.HIT_SHORT += 5;
+            buff.DMG_SHORT += 5;
+            if (ui.cb_buff[P_G].getForeground().equals(Color.BLUE)) {
+                cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
+            }
+        }
+        //シャイニングオーラ
         if (ui.cb_buff[P_S].isSelected()) {
             buff.AC -= 8;
             if (ui.cb_buff[P_S].getForeground().equals(Color.BLUE)) {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-
+        //ブレイブアバター
         if (ui.cb_buff[P_BA].isSelected()) {
             buff.MR += 10;
             buff.ailment[STUN] += 2;
@@ -2085,14 +2094,44 @@ public class Calculator implements Common {
             buff.ST[DEX] += 1;
             buff.ST[INT] += 1;
         }
-        if (ui.cb_buff[P_G].isSelected()) {
-            buff.HIT_SHORT += 5;
-            buff.DMG_SHORT += 5;
-            if (ui.cb_buff[P_G].getForeground().equals(Color.BLUE)) {
-                cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
+        //グレースアバター
+        if (ui.cb_buff[P_GA].isSelected()) {
+            if (level >= 80) {
+            buff.ailment[STONE] += 0;
+            buff.ailment[SLEEP] += 0;
+            buff.ailment[FREEZE] += 0;
+            buff.ailment[DARKNESS] += 0;
+            buff.ailment[STUN] += 10;
+            buff.ailment[HOLD] += 10;
+            buff.ailment[TERROR] += 10;
+            }
+            if (level >= 81) {
+            buff.ailment[STUN] += 1;
+            buff.ailment[HOLD] += 1;
+            buff.ailment[TERROR] += 1;
+            }
+            if (level >= 82) {
+            buff.ailment[STUN] += 1;
+            buff.ailment[HOLD] += 1;
+            buff.ailment[TERROR] += 1;
+            }
+            if (level >= 83) {
+            buff.ailment[STUN] += 1;
+            buff.ailment[HOLD] += 1;
+            buff.ailment[TERROR] += 1;
+            }
+            if (level >= 84) {
+            buff.ailment[STUN] += 1;
+            buff.ailment[HOLD] += 1;
+            buff.ailment[TERROR] += 1;
+            }
+            if (level >= 85) {
+            buff.ailment[STUN] += 1;
+            buff.ailment[HOLD] += 1;
+            buff.ailment[TERROR] += 1;
             }
         }
-
+        //ACスキル
         if (ui.cb_buff[B_AC].isSelected()) {
             switch (ui.cb_buff_group[B_AC].getSelectedIndex()) {
                 case 0://シールド		AC-2	消費MP8  魔法レベル1 継続時間1800秒
@@ -2154,6 +2193,7 @@ public class Calculator implements Common {
 //                }
 //            }
 //        }
+        //VIP
         ui.cb_buff[VIP].setToolTipText("");
         if (ui.cb_buff[VIP].isSelected()) {
             switch ((String) ui.cb_buff_group[VIP].getSelectedItem()) {
@@ -3119,6 +3159,7 @@ public class Calculator implements Common {
                 }
             }
         } 
+        //ブレイブメンタル
         if (ui.cb_buff[P_B].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * 0.3333

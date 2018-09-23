@@ -4,6 +4,32 @@
 2018/09/23
 Update
 LSS/src/lss/Calculator.java
+	グレースアバター実装
+	スタン耐性+10 ホールド耐性+10 恐怖耐性+10 LV80からLV1毎に耐性+1増加[最大+15]
+
+LSS/src/lss/Common.java
+LSS/src/lss/UI.java
+	新規スキルの追加で表示範囲を広げる。サイズ(800, 600)を(800, 640)へ
+
+	パネル3のエンチャントに新規スキルを追加、実装は未定
+    	P_GA = 87;        //グレースアバター(未実装)消費MP15 技術耐性+5 精霊耐性+5 竜語耐性+5 恐怖耐性+5
+    	K_PD = 88;        //プライド(未実装)
+    	K_BK = 89;        //ブローアタック(未実装)
+    	R_LINDVIOL = 90;  //覚醒[リンドビオル](未実装)
+    	I_FS = 91;        //フォーカススピッツ(未実装)
+    	I_IT = 92;        //インパクト(未実装)
+    	H_HP = 93;        //生命のボーナス
+    	H_AC = 94;        //鉄甲のボーナス
+    	H_PVPDR = 95;     //生存のボーナス
+    	H_PVP = 96;       //暗殺のボーナス
+    	H_RK = 97;        //ランカーボーナス
+
+	JCheckBox[] cb_buff = new JCheckBox[98];
+	JComboBox[] cb_buff_group = new JComboBox[98]; 	
+	*87個から98個へ変更
+
+Update
+LSS/src/lss/Calculator.java
 LSS/src/lss/UI.java
 	Hero変身の選択メニューを[LV99]から[Hero]へ
 

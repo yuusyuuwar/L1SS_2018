@@ -57,8 +57,7 @@ public interface Common {
     
     final int PHI = 0;
     final int MAG = 1;
-    
-    
+   
     final int L1 = 0;
     final int L15 = 1;
     final int L30 = 2;
@@ -72,9 +71,8 @@ public interface Common {
     final int L75 = 10;
     final int L80 = 11;
     final int L82 = 12;
-    //final int L85 = 13;
     final int L84 = 13;
-    final int L99 = 14;   
+    final int L99 = 14;         //Hero用
 
     //final String[] EQ_LIST = {"武器", "武器", "シールド", "ヘルム", "グローブ", "シャツ",
     //    "アーマー", "クローク", "ブーツ", "ゲートル", "ベルト", "イアリング", "イアリング", "アミュレット", "リング", "リング",
@@ -187,6 +185,17 @@ public interface Common {
     final int E_EE = 84;        //イーグルアイ
     final int E_CE = 85;        //サイクロン(未実装)
     final int E_IO = 86;        //インフェルノ(未実装)
+    final int P_GA = 87;        //グレースアバター(未実装)
+    final int K_PD = 88;        //プライド(未実装)
+    final int K_BK = 89;        //ブローアタック(未実装)
+    final int R_LINDVIOL = 90;  //覚醒[リンドビオル](未実装)
+    final int I_FS = 91;        //フォーカススピッツ(未実装)
+    final int I_IT = 92;        //インパクト(未実装)
+    final int H_HP = 93;        //生命のボーナス(未実装)
+    final int H_AC = 94;        //鉄甲のボーナス(未実装)
+    final int H_PVPDR = 95;     //生存のボーナス(未実装)
+    final int H_PVP = 96;       //暗殺のボーナス(未実装) 
+    final int H_RK = 97;        //ランカーボーナス(未実装)     
 
     final String[] AILMENT_LIST = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
     final int STONE = 0;
