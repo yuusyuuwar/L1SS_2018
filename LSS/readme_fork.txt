@@ -3,6 +3,14 @@
 変更点
 2018/09/23
 Update
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+	Hero変身の選択メニューを[LV99]から[Hero]へ
+
+LSS/src/lss/Calculator.java
+	エルフ魔法イーグルアイの遠距離クリティカルを100%から2%追加へ変更
+
+Update
 LSS/src/lss/UI.java
 	パネル3での未実装スキル(インフェルノ/サイクロン)に未実装と表記
 

@@ -786,23 +786,25 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         polymorph_level_label.setBounds(420 + 200, 200, 100, 20);
         panels[0].add(polymorph_level_label);
         cb_morph_level = new JComboBox();
-        cb_morph_level.addItem("Ž©“®");
-        cb_morph_level.addItem("1");
-        cb_morph_level.addItem("15");
-        cb_morph_level.addItem("30");
-        cb_morph_level.addItem("45");
-        cb_morph_level.addItem("50");
-        cb_morph_level.addItem("52");
-        cb_morph_level.addItem("55");
-        cb_morph_level.addItem("60");
-        cb_morph_level.addItem("65");
-        cb_morph_level.addItem("70");
-        cb_morph_level.addItem("75");
-        cb_morph_level.addItem("80");
-        cb_morph_level.addItem("82");
-        //cb_morph_level.addItem("85");
-        cb_morph_level.addItem("84");
-        cb_morph_level.addItem("99");
+        cb_morph_level.addItem("Ž©“®");     //0
+        cb_morph_level.addItem("1");        //1
+        cb_morph_level.addItem("15");       //2
+        cb_morph_level.addItem("30");       //3
+        cb_morph_level.addItem("45");       //4
+        cb_morph_level.addItem("50");       //5
+        cb_morph_level.addItem("52");       //6
+        cb_morph_level.addItem("55");       //7
+        cb_morph_level.addItem("60");       //8
+        cb_morph_level.addItem("65");       //9
+        cb_morph_level.addItem("70");       //10
+        cb_morph_level.addItem("75");       //11
+        cb_morph_level.addItem("80");       //12
+        cb_morph_level.addItem("82");       //13
+        cb_morph_level.addItem("84");       //14
+                //cb_morph_level.addItem("86");
+                //cb_morph_level.addItem("88");
+                //cb_morph_level.addItem("90");
+        cb_morph_level.addItem("Hero");     //Œ»Žž“_‚Å‚Í15
 
         cb_morph_level.setBounds(420 + 280, 200, 80, 20);
         cb_morph_level.addActionListener(this);

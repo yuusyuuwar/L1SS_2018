@@ -2497,6 +2497,8 @@ public class Calculator implements Common {
             if (ui.cb_eq[1].getSelectedIndex() > 0) {
                 if (ui.cb_morph_level.getSelectedIndex() == 0) {
                     speed = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), W_DA);
+                } else if (ui.cb_morph_level.getSelectedIndex() == 15) {
+                    speed = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), W_DA);
                 } else {
                     int l = Integer.parseInt((String) ui.cb_morph_level.getSelectedItem());
                     speed = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), W_DA);
@@ -2510,6 +2512,10 @@ public class Calculator implements Common {
                             speed = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), i);
                             magic_main = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), MAIN);
                             magic_sub = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), SUB);
+                        } else if (ui.cb_morph_level.getSelectedIndex() == 15) {
+                            speed = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), i);
+                            magic_main = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), MAIN);
+                            magic_sub = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), SUB);
                         } else {
                             int l = Integer.parseInt((String) ui.cb_morph_level.getSelectedItem());
                             speed = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), i);
@@ -2665,10 +2671,10 @@ public class Calculator implements Common {
                 dmg_small_ave -= 0.5;
                 break;
             case "ボウ":
-                //イーグルアイ
+                //エルフ イーグルアイ　2%
                 cri_long += cr * 100;
                 if (ui.cb_buff[E_EE].isSelected()) {
-                    cri_long = 100;
+                    cri_long += 2;
                     if (ui.cb_buff[E_EE].isSelected()) {
                         if (ui.cb_buff[E_EE].getForeground().equals(Color.BLUE)) {
                             cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
@@ -2681,6 +2687,7 @@ public class Calculator implements Common {
                         + (1.0 - cri_long * 0.01) * dmg_small_ave;
                 break;
             default:
+                //エルフ ソウルオブフレイム 100%
                 cri_short += cr * 100;
                 if (ui.cb_buff[E_SF].isSelected()) {
                     cri_short = 100;
