@@ -103,22 +103,22 @@ public interface Common {
     final int P_G = 7;
     final int P_B = 8;
     final int P_S = 9;
-    //final int E_WS = 10;    //ウィンドショット
-    final int E_AS = 10;    //アクアショット
+    //final int E_WS = 10;      //ウィンドショット
+    final int E_AS = 10;        //アクアショット
     final int E_EF = 11;
     final int E_CM = 12;
-    final int E_SE = 13;    //ストームアイ
-    final int E_SS = 14;    //ストームショット
-    final int E_SF = 15;    //ソウルオブフレイム
-    final int E_NT = 16;    //ネイチャーズタッチ
-    final int E_BW = 17;    //バーニングウェポン
-    //final int E_FW = 18;    //ファイアーウェポン
-    final int E_EW = 18;   //アースウェポン
+    final int E_SE = 13;        //ストームアイ
+    final int E_SS = 14;        //ストームショット
+    final int E_SF = 15;        //ソウルオブフレイム
+    final int E_NT = 16;        //ネイチャーズタッチ
+    final int E_BW = 17;        //バーニングウェポン
+    //final int E_FW = 18;      //ファイアーウェポン
+    final int E_EW = 18;        //アースウェポン
     final int E_RE = 19;
     final int E_RM = 20;
-    final int E_AP = 21;    //アクアプロテクター
-    final int E_EV = 22;    //エキゾチックバイタライズ
-    final int E_AF = 23;    //アディショナルファイヤー
+    final int E_AP = 21;        //アクアプロテクター
+    final int E_EV = 22;        //エキゾチックバイタライズ
+    final int E_AF = 23;        //アディショナルファイヤー
     final int W_ADS = 24;
     final int W_BSK = 25;
     final int W_DW = 26;
@@ -156,7 +156,7 @@ public interface Common {
     final int KOMA = 58;
     final int P_BA = 59;
     final int E_DB = 60;
-    final int E_EG = 61;    //アースガーディアン
+    final int E_EG = 61;        //アースガーディアン
     final int I_RW = 62;
     final int WAR = 63;
     final int ITEM_MD_OP = 64;
@@ -178,15 +178,15 @@ public interface Common {
     final int D_MA = 79;
     final int D_VR = 80;
     
-    //final int E_WW = 81;    //ウィンドウォーク
-    final int E_QE = 81;    //クエイク
+    //final int E_WW = 81;      //ウィンドウォーク
+    final int E_QE = 81;        //クエイク
     
     final int BS_COIN = 82;
     //y_ikedaさんによる修正を参考に
     final int L_HST = 83;       //成長の果実
-    final int E_EE = 84;  //イーグルアイ
-    final int E_CE = 85;  //サイクロン
-    final int E_IO = 86;  //インフェルノ
+    final int E_EE = 84;        //イーグルアイ
+    final int E_CE = 85;        //サイクロン(未実装)
+    final int E_IO = 86;        //インフェルノ(未実装)
 
     final String[] AILMENT_LIST = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
     final int STONE = 0;

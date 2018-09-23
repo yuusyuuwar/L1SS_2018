@@ -1,6 +1,39 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/23
+Update
+LSS/src/lss/UI.java
+	パネル3での未実装スキル(インフェルノ/サイクロン)に未実装と表記
+
+LSS/src/lss/Calculator.java
+LSS/src/lss/Common.java
+LSS/src/lss/UI.java
+	コメントの整理
+	パネル1でのSP(スペルパワー) MB(マジックボーナス) ML(マジックレベル) β(装備分SP)の表示
+　	*SP=MB+ML+β
+	SP>>>>spr
+	MB>>>>mb
+	ML>>>>ml
+	β>>>>sp
+
+LSS/src/lss/LEV.java
+	LV94対応の拡張案のコメントを表記
+
+LSS/data/E.zip
+	/E/ドロン/
+	00_dummy.txt
+	type=ドロン
+	name=ドロン
+		name=ドロン	
+		type=ドロン
+	順を入れ替えた
+
+LSS/src/lss/Calculator.java
+	ルームティスのブラックイアリングを選択するとコンソールに数値が表示される
+	Bougu.javaの追加ダメージ +20 X%に反応している。
+	出力している行をコメントアウト
+
 2018/09/22
 Update
 LSS/src/lss/Bougu.java

@@ -94,6 +94,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel lab_ac;
     JLabel lab_dg;
     JLabel lab_er;
+    JLabel lab_sp;
+    JLabel lab_ml;
+    JLabel lab_mb;
+    JLabel lab_spr;
+
     JLabel lab_dr;
     JLabel lab_mr;
 
@@ -129,7 +134,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];    //装備名
     JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];       //装備強化数値
-    
+
     JComboBox cb_elem_1;
     JComboBox cb_elem_2;
     JComboBox cb_ts_elem;
@@ -183,7 +188,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     LEV lev = new LEV();
 
     //パネル３
-    
+
     //y_ikedaさんによる修正を参考に
     //JCheckBox[] cb_buff = new JCheckBox[83];
     //JComboBox[] cb_buff_group = new JComboBox[83];
@@ -452,14 +457,46 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(260 + 25, 40 + 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
+        lab_tmp = new JLabel("β");
+        lab_tmp.setBounds(320 + 25, 40 + 40, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("ML");
+        lab_tmp.setBounds(320 + 25, 40 + 60, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("MB");
+        lab_tmp.setBounds(320 + 25, 40 + 80, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("SP");
+        lab_tmp.setBounds(320 + 25, 40 + 100, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
         lab_dg = new JLabel();
         lab_er = new JLabel();
+        lab_sp = new JLabel();
+        lab_ml = new JLabel();
+        lab_mb = new JLabel();
+        lab_spr = new JLabel();
         lab_dg.setBounds(200 + 30 + 25, 40 + 40, 200, 20);
         lab_er.setBounds(200 + 90 + 25, 40 + 40, 200, 20);
+        lab_sp.setBounds(200 + 150 + 25, 40 + 40, 200, 20);
+        lab_ml.setBounds(200 + 150 + 25, 40 + 60, 200, 20);
+        lab_mb.setBounds(200 + 150 + 25, 40 + 80, 200, 20);
+        lab_spr.setBounds(200 + 150 + 25, 40 + 100, 200, 20);
         panels[0].add(lab_dg);
         commons.add(lab_dg);
         panels[0].add(lab_er);
         commons.add(lab_er);
+        panels[0].add(lab_sp);
+        commons.add(lab_sp);
+        panels[0].add(lab_ml);
+        commons.add(lab_ml);
+        panels[0].add(lab_mb);
+        commons.add(lab_mb);
+        panels[0].add(lab_spr);
+        commons.add(lab_spr);
 
         lab_tmp = new JLabel("HPR");
         lab_tmp.setBounds(200 + 25, 40 + 60, 200, 20);
@@ -1138,7 +1175,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_AF] = new JCheckBox("アディショナルファイアー");
         cb_buff[E_AF].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_AF].setToolTipText("重量50%以上でのHP/MP回復");
-        cb_buff[E_IO] = new JCheckBox("インフェルノ");
+        cb_buff[E_IO] = new JCheckBox("インフェルノ(未実装)");
         cb_buff[E_IO].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_IO].setToolTipText("一定確率で近距離ダメージを50%軽減しカウンター攻撃");
 
@@ -1179,10 +1216,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_EE] = new JCheckBox("イーグルアイ");
         cb_buff[E_EE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EE].setToolTipText("遠距離クリティカル+2%");
-        cb_buff[E_CE] = new JCheckBox("サイクロン");
+        cb_buff[E_CE] = new JCheckBox("サイクロン(未実装)");
         cb_buff[E_CE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_CE].setToolTipText("一定の確率で遠距離ダメージ1.5倍");
-        
+
         //col++;
 
         lab_tmp = new JLabel("精霊魔法(地)");

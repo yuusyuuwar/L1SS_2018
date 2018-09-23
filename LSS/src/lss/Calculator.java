@@ -71,6 +71,7 @@ public class Calculator implements Common {
     private int mb;
     private int sp;
     private int ml;
+    private int spr;
     private int int_beta;
 
     int dmg_element1;
@@ -2346,7 +2347,9 @@ public class Calculator implements Common {
 
         //スペルパワー更新
         int_beta = sp + st_int;
-
+        
+        spr = sp + ml + mb;
+        
         //マジックレベル更新
         switch (cls) {
             case P:
@@ -3156,8 +3159,8 @@ public class Calculator implements Common {
                         dmg_rate += Integer.parseInt(a[2].split("%")[0]);
                     }
                 }
-                System.out.println(dmg + " " + dmg_rate);
-                System.out.println((dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0));
+//                System.out.println(dmg + " " + dmg_rate);
+//                System.out.println((dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0));
                 dmg_big_ave += (dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0);
             }
         }
@@ -3448,6 +3451,10 @@ public class Calculator implements Common {
         ui.lab_dg.setText(Integer.toString(dg));
         ui.lab_er.setText(Integer.toString(er));
         ui.lab_dr.setText(Integer.toString(dr));
+        ui.lab_sp.setText(Integer.toString(sp));
+        ui.lab_ml.setText(Integer.toString(ml)); 
+        ui.lab_mb.setText(Integer.toString(mb));
+        ui.lab_spr.setText(Integer.toString(spr));
 
         int con = _ST[BASE][CON] + _ST[REM][CON] + _ST[LEVEL][CON]
                 + _ST[ELIXIR][CON] + _ST[ENCHANT][CON];
