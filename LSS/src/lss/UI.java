@@ -639,7 +639,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
-            //リスト19個から21個へ拡張(ドロン、エンブレム分)2個追加
+                    //リスト19個から21個へ拡張(スポールダー、インシグニア分)2個追加
             if (i >= 21) {              
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
@@ -718,11 +718,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_pattern_c = new WideComboBox(center_list);
         cb_pattern_l2 = new WideComboBox(left2_list);
         cb_pattern_r2 = new WideComboBox(right2_list);
-        cb_pattern_l.setBounds(250, 400 + 80, 100, 20);
-        cb_pattern_r.setBounds(50, 400 + 80, 100, 20);
-        cb_pattern_c.setBounds(150, 400 + 90, 100, 20);
-        cb_pattern_l2.setBounds(250, 400 + 100, 100, 20);
-        cb_pattern_r2.setBounds(50, 400 + 100, 100, 20);
+        cb_pattern_l.setBounds(250, 400 + 100, 100, 20);
+        cb_pattern_r.setBounds(50, 400 + 100, 100, 20);
+        cb_pattern_c.setBounds(150, 400 + 110, 100, 20);
+        cb_pattern_l2.setBounds(250, 400 + 120, 100, 20);
+        cb_pattern_r2.setBounds(50, 400 + 120, 100, 20);
         cb_pattern_l.addActionListener(this);
         cb_pattern_r.addActionListener(this);
         cb_pattern_c.addActionListener(this);
@@ -738,7 +738,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //String[] en_list = {"", "+1", "+2", "+3", "+4", "+5"};
         String[] en_list = {"", "+1", "+2", "+3", "+4", "+5", "+6"};
         cb_alterstone_en = new JComboBox(en_list);
-        cb_alterstone_en.setBounds(0, 400 + 120, 50, 20);
+        cb_alterstone_en.setBounds(0, 400 + 140, 50, 20);
         cb_alterstone_en.addActionListener(this);
         panels[0].add(cb_alterstone_en);
 
@@ -748,7 +748,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         for (int i = 0; i < cb_alterstone_op.length; i++) {
             cb_alterstone_op[i] = new WideComboBox(alterstone_op_list);
-            cb_alterstone_op[i].setBounds(100 + 100 * i, 400 + 120, 100, 20);
+            cb_alterstone_op[i].setBounds(100 + 100 * i, 400 + 140, 100, 20);
             cb_alterstone_op[i].addActionListener(this);
             panels[0].add(cb_alterstone_op[i]);
         }

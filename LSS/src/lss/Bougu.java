@@ -1309,7 +1309,7 @@ public class Bougu implements Common {
         }
 
         //+1強化するごとにAC-1されない防具・アイテム
-        if (type.equals("リング") || type.equals("アミュレット") || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン") || type.equals("エンブレム")) {
+        if (type.equals("リング") || type.equals("アミュレット") || type.equals("イアリング") || type.equals("ベルト") || type.equals("紋章") || type.equals("インシグニア")) {
 
             if (name.equals("回復の紋章")) {
                 op2.effect = "ポーション回復量 +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
