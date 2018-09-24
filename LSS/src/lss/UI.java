@@ -742,10 +742,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_alterstone_en.addActionListener(this);
         panels[0].add(cb_alterstone_en);
 
-        String[] alterstone_op_list = {"", "近距離命中 +2", "遠距離命中 +2", "魔法致命打",
-            "遠距離ダメージ +1", "SP +1", "魔法消耗減少",
-            "一撃必殺(1％確率で追加ダメージ50)", "近距離ダメージ +1"};
-
+        //String[] alterstone_op_list = {"", "近距離命中 +2", "遠距離命中 +2", "魔法致命打",
+        //    "遠距離ダメージ +1", "SP +1", "魔法消耗減少",
+        //    "一撃必殺(1％確率で追加ダメージ50)", "近距離ダメージ +1"};
+        String[] alterstone_op_list = {"", "近距離ダメージ +1", "遠距離ダメージ +1","近距離命中 +2",
+            "遠距離命中 +2", "SP +1", "魔法クリティカル +1", "魔法消耗減少＋2", "一撃必殺(1％確率で追加ダメージ50)"};
         for (int i = 0; i < cb_alterstone_op.length; i++) {
             cb_alterstone_op[i] = new WideComboBox(alterstone_op_list);
             cb_alterstone_op[i].setBounds(100 + 100 * i, 400 + 140, 100, 20);

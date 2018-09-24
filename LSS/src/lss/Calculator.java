@@ -1772,26 +1772,28 @@ public class Calculator implements Common {
                 ui.cb_alterstone_op[0].setEnabled(true);
                 switch (ui.cb_alterstone_op[0].getSelectedIndex()) {
                     case 1:
-                        buff.HIT_SHORT += 2;
+                        buff.DMG_SHORT += 1;        //近距離ダメージ +1
                         break;
                     case 2:
-                        buff.HIT_LONG += 2;
+                        buff.DMG_LONG += 1;         //遠距離ダメージ +1
                         break;
                     case 3:
-                        buff.CRI_MAGIC += 1;
+                        buff.HIT_SHORT += 2;        //近距離命中 +2
                         break;
                     case 4:
-                        buff.DMG_LONG += 1;
+                        buff.HIT_LONG += 2;         //遠距離命中 +2
                         break;
                     case 5:
-                        buff.SP += 1;
+                        buff.SP += 1;               //SP +1
                         break;
                     case 6:
+                        buff.CRI_MAGIC += 1;        //魔法クリティカル +1
                         break;
                     case 7:
+                                                    //魔法消耗減少＋2
                         break;
                     case 8:
-                        buff.DMG_SHORT += 1;
+                                                    //一撃必殺(1％確率で追加ダメージ50) 3216行で追加処理
                         break;
                 }
             } else {
@@ -1801,26 +1803,28 @@ public class Calculator implements Common {
                 ui.cb_alterstone_op[1].setEnabled(true);
                 switch (ui.cb_alterstone_op[1].getSelectedIndex()) {
                     case 1:
-                        buff.HIT_SHORT += 2;
+                        buff.DMG_SHORT += 1;        //近距離ダメージ +1
                         break;
                     case 2:
-                        buff.HIT_LONG += 2;
+                        buff.DMG_LONG += 1;         //遠距離ダメージ +1
                         break;
                     case 3:
-                        buff.CRI_MAGIC += 1;
+                        buff.HIT_SHORT += 2;        //近距離命中 +2
                         break;
                     case 4:
-                        buff.DMG_LONG += 1;
+                        buff.HIT_LONG += 2;         //遠距離命中 +2
                         break;
                     case 5:
-                        buff.SP += 1;
+                        buff.SP += 1;               //SP +1
                         break;
                     case 6:
+                        buff.CRI_MAGIC += 1;        //魔法クリティカル +1
                         break;
                     case 7:
+                                                    //魔法消耗減少＋2
                         break;
                     case 8:
-                        buff.DMG_SHORT += 1;
+                                                    //一撃必殺(1％確率で追加ダメージ50) 3216行で追加処理
                         break;
                 }
             } else {
@@ -1830,26 +1834,28 @@ public class Calculator implements Common {
                 ui.cb_alterstone_op[2].setEnabled(true);
                 switch (ui.cb_alterstone_op[2].getSelectedIndex()) {
                     case 1:
-                        buff.HIT_SHORT += 2;
+                        buff.DMG_SHORT += 1;        //近距離ダメージ +1
                         break;
                     case 2:
-                        buff.HIT_LONG += 2;
+                        buff.DMG_LONG += 1;         //遠距離ダメージ +1
                         break;
                     case 3:
-                        buff.CRI_MAGIC += 1;
+                        buff.HIT_SHORT += 2;        //近距離命中 +2
                         break;
                     case 4:
-                        buff.DMG_LONG += 1;
+                        buff.HIT_LONG += 2;         //遠距離命中 +2
                         break;
                     case 5:
-                        buff.SP += 1;
+                        buff.SP += 1;               //SP +1
                         break;
                     case 6:
+                        buff.CRI_MAGIC += 1;        //魔法クリティカル +1
                         break;
                     case 7:
+                                                    //魔法消耗減少＋2
                         break;
                     case 8:
-                        buff.DMG_SHORT += 1;
+                                                    //一撃必殺(1％確率で追加ダメージ50) 3216行で追加処理
                         break;
                 }
             } else {
@@ -2639,9 +2645,9 @@ public class Calculator implements Common {
 
         // 武器オプション,武器強化数,エンチャント
         hit_short += buki.op.HIT_SHORT + buki.enchant / 2 + buff.HIT_SHORT;
-        hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG
-                + buff.HIT_SHORT;
-
+        //hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG + buff.HIT_SHORT;
+        hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG;
+        
         //属性矢
         if (buki.type.equals("ボウ")) {
             if (buki.arrow_name.contains("霊")) {
@@ -2695,32 +2701,40 @@ public class Calculator implements Common {
         if (ui.cb_speed_auto.isSelected()) {
 
             if (ui.cb_eq[1].getSelectedIndex() > 0) {
-                if (ui.cb_morph_level.getSelectedIndex() == 0) {
-                    speed = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), W_DA);
-                } else if (ui.cb_morph_level.getSelectedIndex() == 15) {
-                    speed = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), W_DA);
-                } else {
-                    int l = Integer.parseInt((String) ui.cb_morph_level.getSelectedItem());
-                    speed = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), W_DA);
+                switch (ui.cb_morph_level.getSelectedIndex()) {
+                    case 0:
+                        speed = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), W_DA);
+                        break;
+                    case 15:
+                        speed = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), W_DA);
+                        break;
+                    default:
+                        int l = Integer.parseInt((String) ui.cb_morph_level.getSelectedItem());
+                        speed = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), W_DA);
+                        break;
                 }
                 buki_id = W_DA;
                 d_axe = true;
             } else {
                 for (int i = 0; i < BUKI_TYPE_LIST.length; i++) {
                     if (buki.type.equals(BUKI_TYPE_LIST[i])) {
-                        if (ui.cb_morph_level.getSelectedIndex() == 0) {
-                            speed = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), i);
-                            magic_main = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), MAIN);
-                            magic_sub = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), SUB);
-                        } else if (ui.cb_morph_level.getSelectedIndex() == 15) {
-                            speed = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), i);
-                            magic_main = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), MAIN);
-                            magic_sub = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), SUB);
-                        } else {
-                            int l = Integer.parseInt((String) ui.cb_morph_level.getSelectedItem());
-                            speed = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), i);
-                            magic_main = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), MAIN);
-                            magic_sub = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), SUB);
+                        switch (ui.cb_morph_level.getSelectedIndex()) {
+                            case 0:
+                                speed = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), i);
+                                magic_main = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), MAIN);
+                                magic_sub = polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), SUB);
+                                break;
+                            case 15:
+                                speed = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), i);
+                                magic_main = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), MAIN);
+                                magic_sub = polymorph.getSpeed(99, ui.cb_morph_type.getSelectedIndex(), SUB);
+                                break;
+                            default:
+                                int l = Integer.parseInt((String) ui.cb_morph_level.getSelectedItem());
+                                speed = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), i);
+                                magic_main = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), MAIN);
+                                magic_sub = polymorph.getSpeed(l, ui.cb_morph_type.getSelectedIndex(), SUB);
+                                break;
                         }
                         buki_id = i;
                         break;
@@ -3199,11 +3213,11 @@ public class Calculator implements Common {
             }
         }
 
-        //オルターストーン
+        //オルターストーン 一撃必殺(1％確率で追加ダメージ50)追加分
         if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
-            if (ui.cb_alterstone_op[0].getSelectedIndex() == 7
-                    || ui.cb_alterstone_op[1].getSelectedIndex() == 7
-                    || ui.cb_alterstone_op[2].getSelectedIndex() == 7) {
+            if (ui.cb_alterstone_op[0].getSelectedIndex() == 8
+                    || ui.cb_alterstone_op[1].getSelectedIndex() == 8
+                    || ui.cb_alterstone_op[2].getSelectedIndex() == 8) {
                 dmg_big_ave += 0.01 * 50;
                 dmg_small_ave += 0.01 * 50;
             }
