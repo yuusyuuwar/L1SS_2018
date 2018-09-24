@@ -1965,7 +1965,7 @@ public class Bougu implements Common {
                         op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
-                        op2.PVPDR=3;        //PVPダメージ軽減+2
+                        op2.PVPDR=2;        //PVPダメージ軽減+2
                         break;
                     case 8:
                         op2.HP = 40;
@@ -1977,7 +1977,7 @@ public class Bougu implements Common {
                         op2.HP = 50;
                         op2.MP = 60;
                         op2.DR = 5;
-                        op2.PVPDR=3;        //PVPダメージ軽減+4
+                        op2.PVPDR=4;        //PVPダメージ軽減+4
                         break;
                 }
             }

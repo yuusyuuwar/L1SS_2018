@@ -1119,9 +1119,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[P_BA] = new JCheckBox("ブレイブアバター");
         cb_buff[P_BA].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
-        
+          
+        String list_P_GA[] = {"君主LV80", "君主LV81", "君主LV82", "君主LV83", "君主LV84", "君主LV85"};
+        cb_buff_group[P_GA] = new WideComboBox(list_P_GA);
+        cb_buff_group[P_GA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_GA] = new JCheckBox("グレースアバター");
-        cb_buff[P_GA].setBounds(0, 20 * col++, 150, 20);
+        cb_buff[P_GA].setBounds(0, 20 * col++, 100, 20);
         cb_buff[P_GA].setToolTipText("スタン耐性+10 ホールド耐性+10 恐怖耐性+10 LV80からLV1毎に耐性+1増加[最大+15]");
 
         col++;
@@ -1148,7 +1151,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         
         cb_buff[K_PD] = new JCheckBox("プライド(未実装)");
         cb_buff[K_PD].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_PD].setToolTipText("最大HPを増加 増加量は[LV/4]%");
+        cb_buff[K_PD].setToolTipText("最大HP Lv/4% 増加");
 
         cb_buff[K_BK] = new JCheckBox("ブローアタック(未実装)");
         cb_buff[K_BK].setBounds(0, 20 * col++, 150, 20);
@@ -1497,17 +1500,17 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[H_PVPDR] = new JCheckBox("生存のボーナス");
         cb_buff[H_PVPDR].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_H_PVP[] = {"PVPダメ+1", "PVPダメ+2"};
+        String list_H_PVP[] = {"PVP ダメ+1", "PVP ダメ+2"};
         cb_buff_group[H_PVP] = new WideComboBox(list_H_PVP);
         cb_buff_group[H_PVP].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[H_PVP] = new JCheckBox("暗殺のボーナス");
         cb_buff[H_PVP].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_H_RK[] = {"STR+1", "DEX+1", "INT+1"};
-        cb_buff_group[H_RK] = new WideComboBox(list_H_RK);
-        cb_buff_group[H_RK].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[H_RK] = new JCheckBox("ランカーボーナス");
         cb_buff[H_RK].setBounds(200 * row, 20 * col++, 100, 20);
+        cb_buff[H_RK].setToolTipText("<html>"+ "STR+1[君主][ナイト][ダークエルフ][ドラゴンナイト][ウォリアー]"
+                                     + "<br>"+ "DEX+1[エルフ]"
+                                     + "<br>"+ "INT+1[ウィザード][イリュージョニスト]"+"</html>");       
 
         MP mp = new MP();
 

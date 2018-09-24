@@ -370,11 +370,12 @@ public class Calculator implements Common {
     double acc_3 = 1.125;
     double key_delay = 0.1815;
 
-    double db_rate = 0.3333;
+    double db_rate = 0.3333;    //ダブルブレイクの確率33%
     double ef_rate = 0.4000;    //エレメンタルファイアーの確率40%
     double qe_rate = 0.4000;    //クエイクの確率40%
     double ce_rate = 0.4000;    //サイクロンの確率40%
-    double bs_rate = 0.3333;
+    double bk_rate = 0.4000;    //ブローアタックの確率40%
+    double bs_rate = 0.3333;    //バーニングスピッツの確率33%
 
     public Calculator(UI ui) {
         this.ui = ui;
@@ -483,6 +484,7 @@ public class Calculator implements Common {
             buff.effect += b.op.effect;
             buff.effect += b.op2.effect;
             buff.PVP += b.op.PVP + b.op2.PVP;
+            buff.PVPDR += b.op.PVPDR + b.op2.PVPDR;
         }
 
         if (bougu[0].name.equals("エルヴンシールド")) {
@@ -1220,7 +1222,7 @@ public class Calculator implements Common {
         }
 
         cons_mp = 0;
-
+        //リダクションアーマー 消費MP7/3mins 
         if (ui.cb_buff[K_RA].isSelected()) {
             if (level >= 50 && cls == K) {
                 buff.DR += (level - 50) / 5 + 1;
@@ -1232,7 +1234,7 @@ public class Calculator implements Common {
                 ui.cb_buff[K_RA].setSelected(false);
             }
         }
-
+        //ソリッドキャリッジ 消費MP10/3mins
         if (ui.cb_buff[K_SC].isSelected()) {
             if (level >= 50 && cls == K) {
                 buff.ER += 15;
@@ -1243,6 +1245,7 @@ public class Calculator implements Common {
                 ui.cb_buff[K_SC].setSelected(false);
             }
         }
+        //カウンターバリア 消費MP10/1mins
         if (ui.cb_buff[K_CB].isSelected()) {
             if (level >= 50 && cls == K
                     && buki.type.equals("両手剣")) {
@@ -1254,6 +1257,7 @@ public class Calculator implements Common {
                 ui.cb_buff[K_CB].setSelected(false);
             }
         }
+        //バウンスアタック 消費MP10/1mins
         if (ui.cb_buff[K_BA].isSelected()) {
             if (level >= 60 && cls == K) {
                 buff.HIT_SHORT += 6;
@@ -1264,7 +1268,7 @@ public class Calculator implements Common {
                 ui.cb_buff[K_BA].setSelected(false);
             }
         }
-        // レジストマジック
+        //レジストマジック 消費MP5/20mins
         if (ui.cb_buff[E_RM].isSelected()) {
             if (cls == E) {
                 buff.MR += 10;
@@ -1275,7 +1279,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_RM].setSelected(false);
             }
         }
-        // レジストエレメント
+        //レジストエレメント 消費MP10/20mins
         if (ui.cb_buff[E_RE].isSelected()) {
             if (cls == E) {
                 buff.element_resist[FIRE] += 10;
@@ -1289,7 +1293,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_RE].setSelected(false);
             }
         }
-        // クリアーマインド
+        //クリアーマインド 消費MP10/20mins
         if (ui.cb_buff[E_CM].isSelected()) {
             if (cls == E) {
                 buff.ST[WIS] += 3;
@@ -1300,6 +1304,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_CM].setSelected(false);
             }
         }
+        //バーニングウエポン 消費MP30/16mins
         if (ui.cb_buff[E_BW].isSelected()) {
             if (cls == E) {
                 buff.ELEM_DMG_SHORT[FIRE] += 6;
@@ -1311,17 +1316,19 @@ public class Calculator implements Common {
                 ui.cb_buff[E_BW].setSelected(false);
             }
         }
-        //if (ui.cb_buff[E_FW].isSelected()) {
-        //    if (ui.cb_buff[E_BW].isSelected()) {
-        //        ui.cb_buff[E_FW].setSelected(false);
-        //    } else {
-        //        if (ui.cb_buff[E_FW].getForeground().equals(Color.BLUE)) {
-        //            cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
-        //        }
-        //        buff.ELEM_DMG_SHORT[FIRE] += 4;
-        //    }
-        //}
-        // アースウェポン
+        //インフェルノ 消費MP40/1mins
+        if (ui.cb_buff[E_IO].isSelected()) {
+            if (level >= 80 && cls == E
+                    && buki.type.equals("片手剣")) {
+                if (ui.cb_buff[E_IO].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 1;
+                }
+                // インフェルノ効果未実装
+            } else {
+                ui.cb_buff[E_IO].setSelected(false);
+            }
+        }
+        //アースウェポン 消費MP15/16mins
         if (ui.cb_buff[E_EW].isSelected()) {
             if (cls == E) {
                 buff.ELEM_DMG_SHORT[EARTH] += 2;
@@ -1333,7 +1340,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_EW].setSelected(false);
             }
         }
-        // アクアショット
+        //アクアショット 消費MP15/16mins
         if (ui.cb_buff[E_AS].isSelected()) {
             if (cls == E) {
                 buff.HIT_LONG += 4;
@@ -1344,7 +1351,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_AS].setSelected(false);
             }
         }  
-        // ネイチャーズタッチ
+        //ネイチャーズタッチ 消費MP20/5mins
         if (ui.cb_buff[E_NT].isSelected()) {
             if (level > 9) {
                 if (level < 24) {
@@ -1357,6 +1364,7 @@ public class Calculator implements Common {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
             }
         }
+        //ドレスイベイジョン 消費MP15/3mins
         if (ui.cb_buff[D_DE].isSelected()) {
             if (cls == D) {
                 buff.ER += 18;
@@ -1368,6 +1376,7 @@ public class Calculator implements Common {
                 ui.cb_buff[D_DE].setSelected(false);
             }
         }
+        //シャドウアーマー 消費MP12/16mins
         if (ui.cb_buff[D_SA].isSelected()) {
             if (cls == D) {
                 buff.MR += 5;
@@ -1378,6 +1387,7 @@ public class Calculator implements Common {
                 ui.cb_buff[D_SA].setSelected(false);
             }
         }
+        //アクアプロテクト 消費MP30/16mins
         if (ui.cb_buff[E_AP].isSelected()) {
             if (ui.cb_buff[D_DE].isSelected()) {
                 ui.cb_buff[E_AP].setSelected(false);
@@ -1388,6 +1398,7 @@ public class Calculator implements Common {
                 }
             }
         }
+        //ストームショット 消費MP30/16mins
         if (ui.cb_buff[E_SS].isSelected()) {
             buff.ELEM_DMG_LONG[WIND] += 6;
             buff.HIT_LONG += 3;
@@ -1395,6 +1406,7 @@ public class Calculator implements Common {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
+        //ストームアイ 消費MP40/16mins
         if (ui.cb_buff[E_SE].isSelected()) {
             if (ui.cb_buff[E_SS].isSelected()) {
                 ui.cb_buff[E_SE].setSelected(false);
@@ -1417,12 +1429,14 @@ public class Calculator implements Common {
         //        }
         //    }
         //}
+        //アースガーディアン 消費MP30/10mins
         if (ui.cb_buff[E_EG].isSelected()) {
             buff.DR += 2;
             if (ui.cb_buff[E_EG].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
+        //バーサーカー 消費MP40/5mins
         if (ui.cb_buff[W_BSK].isSelected()) {
             buff.DMG_SHORT += 2;
             buff.HIT_SHORT += 8;
@@ -1432,33 +1446,39 @@ public class Calculator implements Common {
                 cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
             }
         }
+        //ブレスドアーマー 消費MP20/30mins
         if (ui.cb_buff[W_BA].isSelected()) {
             buff.AC -= 3;
             if (ui.cb_buff[W_BA].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
+        //ドラゴンスキン 消費MP0/30mins
         if (ui.cb_buff[R_DS].isSelected()) {
             buff.DR += 5;
             if (level >= 80) {
                 buff.DR += (int) ((level - 80) / 2) + 1;
             }
         }
+        //覚醒[アンタラス] 消費MP20/10mins
         if (ui.cb_buff[R_ANTHARAS].isSelected()) {
             if (ui.cb_buff[R_FAFURION].isSelected()
-                    || ui.cb_buff[R_VALAKAS].isSelected()) {
+                    || ui.cb_buff[R_VALAKAS].isSelected()
+                    || ui.cb_buff[R_LINDVIOL].isSelected()) {
                 ui.cb_buff[R_ANTHARAS].setSelected(false);
             } else {
                 buff.AC -= 3;
                 buff.ailment[HOLD] += 10;
                 if (ui.cb_buff[R_ANTHARAS].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
+                    cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
                 }
             }
         }
+        //覚醒[パプリオン] 消費MP30/10mins
         if (ui.cb_buff[R_FAFURION].isSelected()) {
             if (ui.cb_buff[R_ANTHARAS].isSelected()
-                    || ui.cb_buff[R_VALAKAS].isSelected()) {
+                    || ui.cb_buff[R_VALAKAS].isSelected()
+                    || ui.cb_buff[R_LINDVIOL].isSelected()) {
                 ui.cb_buff[R_FAFURION].setSelected(false);
             } else {
                 buff.ailment[FREEZE] += 10;
@@ -1467,9 +1487,11 @@ public class Calculator implements Common {
                 }
             }
         }
+        //覚醒[ヴァラカス]　消費MP50/10mins
         if (ui.cb_buff[R_VALAKAS].isSelected()) {
             if (ui.cb_buff[R_ANTHARAS].isSelected()
-                    || ui.cb_buff[R_FAFURION].isSelected()) {
+                    || ui.cb_buff[R_FAFURION].isSelected()
+                    || ui.cb_buff[R_LINDVIOL].isSelected()) {
                 ui.cb_buff[R_VALAKAS].setSelected(false);
             } else {
                 buff.HIT_SHORT += 5;
@@ -1479,18 +1501,21 @@ public class Calculator implements Common {
                 }
             }
         }
+        //コンセントレーション 消費MP30/10mins
         if (ui.cb_buff[I_CON].isSelected()) {
             buff.MPR += 2;
             if (ui.cb_buff[I_CON].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
+        //ペイシェンス 消費MP25/10mins
         if (ui.cb_buff[I_PAT].isSelected()) {
             buff.DR += 2;
             if (ui.cb_buff[I_PAT].getForeground().equals(Color.BLUE)) {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
+        //インサイト 消費MP60/10mins
         if (ui.cb_buff[I_INS].isSelected()) {
             buff.ST[STR]++;
             buff.ST[DEX]++;
@@ -1501,6 +1526,7 @@ public class Calculator implements Common {
                 cons_mp += (60.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
+        //幻術[オーガ] 消費MP20/2mins
         if (ui.cb_buff[I_IO].isSelected()) {
             buff.DMG_SHORT += 4;
             buff.DMG_LONG += 4;
@@ -1509,19 +1535,48 @@ public class Calculator implements Common {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
             }
         }
+        //幻術[リッチ] 消費MP20/2mins
         if (ui.cb_buff[I_IR].isSelected()) {
             buff.SP += 2;
             if (ui.cb_buff[I_IR].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
             }
         }
+        //幻術[ダイアゴーレム] 消費MP40/2mins
         if (ui.cb_buff[I_ID].isSelected()) {
             buff.AC -= 8;
             if (ui.cb_buff[I_ID].getForeground().equals(Color.BLUE)) {
                 cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
             }
         }
-
+        //フォーカススピリッツ 消費MP30/5mins
+        if (ui.cb_buff[I_FS].isSelected()) {
+            buff.CRI_MAGIC += 5;
+            if (ui.cb_buff[I_FS].getForeground().equals(Color.BLUE)) {
+                cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
+            }
+        }
+        //インパクト 消費MP25/0.25mins
+        if (ui.cb_buff[I_IT].isSelected()) {
+            if (level >= 80 && cls == I) {
+                if (ui.cb_buff[I_IT].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 0.25;
+                }
+        //        インパクト効果未実装
+        //    	if (level >= 89) {
+        //	    buff.XXXX += 10;    //スタン命中+10
+        //	    buff.XXXX += 10;    //破壊命中+10
+        //	    buff.XXXX += 10;    //恐怖命中+10      
+        //	} else if (level >= 80) {
+        //	    buff.XXXX += (level - 79);    //スタン命中+(level - 79)
+        //	    buff.XXXX += (level - 79);    //破壊命中+(level - 79)
+        //	    buff.XXXX += (level - 79);    //恐怖命中+(level - 79)
+        //	}
+            } else {
+                ui.cb_buff[I_IT].setSelected(false);
+            }
+        }
+        //クレイ
         if (ui.cb_buff[CLAY].isSelected()) {
             buff.HP += 100;
             buff.MP += 50;
@@ -2096,39 +2151,47 @@ public class Calculator implements Common {
         }
         //グレースアバター
         if (ui.cb_buff[P_GA].isSelected()) {
-            if (level >= 80) {
-            buff.ailment[STONE] += 0;
-            buff.ailment[SLEEP] += 0;
-            buff.ailment[FREEZE] += 0;
-            buff.ailment[DARKNESS] += 0;
-            buff.ailment[STUN] += 10;
-            buff.ailment[HOLD] += 10;
-            buff.ailment[TERROR] += 10;
-            }
-            if (level >= 81) {
-            buff.ailment[STUN] += 1;
-            buff.ailment[HOLD] += 1;
-            buff.ailment[TERROR] += 1;
-            }
-            if (level >= 82) {
-            buff.ailment[STUN] += 1;
-            buff.ailment[HOLD] += 1;
-            buff.ailment[TERROR] += 1;
-            }
-            if (level >= 83) {
-            buff.ailment[STUN] += 1;
-            buff.ailment[HOLD] += 1;
-            buff.ailment[TERROR] += 1;
-            }
-            if (level >= 84) {
-            buff.ailment[STUN] += 1;
-            buff.ailment[HOLD] += 1;
-            buff.ailment[TERROR] += 1;
-            }
-            if (level >= 85) {
-            buff.ailment[STUN] += 1;
-            buff.ailment[HOLD] += 1;
-            buff.ailment[TERROR] += 1;
+            switch ((String) ui.cb_buff_group[P_GA].getSelectedItem()) {
+                case "君主LV80":
+                    ui.cb_buff[P_GA].setToolTipText("スタン耐性+10 ホールド耐性+10 恐怖耐性+10");
+                    buff.ailment[STONE] += 0;
+                    buff.ailment[SLEEP] += 0;
+                    buff.ailment[FREEZE] += 0;
+                    buff.ailment[DARKNESS] += 0;
+                    buff.ailment[STUN] += 10;
+                    buff.ailment[HOLD] += 10;
+                    buff.ailment[TERROR] += 10;
+                    break;
+                case "君主LV81":
+                    ui.cb_buff[P_GA].setToolTipText("スタン耐性+11 ホールド耐性+11 恐怖耐性+11");
+                    buff.ailment[STUN] += 11;
+                    buff.ailment[HOLD] += 11;
+                    buff.ailment[TERROR] += 11;
+                    break;
+                case "君主LV82":
+                    ui.cb_buff[P_GA].setToolTipText("スタン耐性+12 ホールド耐性+12 恐怖耐性+12");
+                    buff.ailment[STUN] += 12;
+                    buff.ailment[HOLD] += 12;
+                    buff.ailment[TERROR] += 12;
+                    break;
+                case "君主LV83":
+                    ui.cb_buff[P_GA].setToolTipText("スタン耐性+13 ホールド耐性+13 恐怖耐性+13");
+                    buff.ailment[STUN] += 13;
+                    buff.ailment[HOLD] += 13;
+                    buff.ailment[TERROR] += 13;
+                    break;
+                case "君主LV84":
+                    ui.cb_buff[P_GA].setToolTipText("スタン耐性+14 ホールド耐性+14 恐怖耐性+14");
+                    buff.ailment[STUN] += 14;
+                    buff.ailment[HOLD] += 14;
+                    buff.ailment[TERROR] += 14;
+                    break;
+                case "君主LV85":
+                    ui.cb_buff[P_GA].setToolTipText("スタン耐性+15 ホールド耐性+15 恐怖耐性+15");
+                    buff.ailment[STUN] += 15;
+                    buff.ailment[HOLD] += 15;
+                    buff.ailment[TERROR] += 15;
+                    break;
             }
         }
         //ACスキル
@@ -2156,7 +2219,6 @@ public class Calculator implements Common {
                     }
                     break;
             }
-
         }
 
 //        if (ui.cb_buff[WAR].isSelected()) {
@@ -2220,13 +2282,13 @@ public class Calculator implements Common {
                     break;
             }
         }
-
+        //セキュリティ
         if (ui.cb_buff[SEC].isSelected()) {
             buff.AC -= 1;
             buff.MR += 2;
             buff.DR += 1;
         }
-
+        //黒蛇の気
         if (ui.cb_buff[BS_COIN].isSelected()) {
             buff.HP += 20;
             buff.MP += 13;
@@ -2234,8 +2296,7 @@ public class Calculator implements Common {
             buff.DR += 3;
             buff.ailment[DARKNESS] += 10;
         }
-
-        //y_ikedaさんによる修正を参考に
+        //成長の果実 y_ikedaさんによる修正を参考に
         if (ui.cb_buff[L_HST].isSelected()) {
             switch ((String) ui.cb_buff_group[L_HST].getSelectedItem()) {
                 case "1個":
@@ -2264,7 +2325,106 @@ public class Calculator implements Common {
                     break;
             }
         }
-
+        //生命のボーナス
+        if (ui.cb_buff[H_HP].isSelected()) {
+            switch ((String) ui.cb_buff_group[H_HP].getSelectedItem()) {
+                case "HP+50":
+                    ui.cb_buff[H_HP].setToolTipText("HP+50");
+                    buff.HP += 50;
+                    break;
+                case "HP+100":
+                    ui.cb_buff[H_HP].setToolTipText("HP+100");
+                    buff.HP += 100;
+                    break;
+                case "HP+200":
+                    ui.cb_buff[H_HP].setToolTipText("HP+200");
+                    buff.HP += 200;
+                    break;
+            }
+        }
+        //鉄甲のボーナス
+        if (ui.cb_buff[H_AC].isSelected()) {
+            switch ((String) ui.cb_buff_group[H_AC].getSelectedItem()) {
+                case "AC-1":
+                    ui.cb_buff[H_AC].setToolTipText("AC-1");
+                    buff.AC -= 1;
+                    break;
+                case "AC-2":
+                    ui.cb_buff[H_AC].setToolTipText("AC-2");
+                    buff.AC -= 2;
+                    break;
+                case "AC-3":
+                    ui.cb_buff[H_AC].setToolTipText("AC-3");
+                    buff.AC -= 3;
+                    break;
+            }
+        }
+        //生存のボーナス
+        if (ui.cb_buff[H_PVPDR].isSelected()) {
+            switch ((String) ui.cb_buff_group[H_PVPDR].getSelectedItem()) {
+                case "PVP DR+1":
+                    ui.cb_buff[H_PVPDR].setToolTipText("PVPダメージリダクション+1");
+                    buff.PVPDR += 1;
+                    break;
+                case "PVP DR+2":
+                    ui.cb_buff[H_PVPDR].setToolTipText("PVPダメージリダクション+2");
+                    buff.PVPDR += 2;
+                    break;
+            }
+        }
+        //暗殺のボーナス
+        if (ui.cb_buff[H_PVP].isSelected()) {
+            switch ((String) ui.cb_buff_group[H_PVP].getSelectedItem()) {
+                case "PVP ダメ+1":
+                    ui.cb_buff[H_PVP].setToolTipText("PVPダメージ+1");
+                    buff.PVP += 1;
+                    break;
+                case "PVP ダメ+2":
+                    ui.cb_buff[H_PVP].setToolTipText("PVPダメージ+2");
+                    buff.PVP += 2;
+                    break;
+            }
+        }
+        //ランカーボーナス
+        //STR+1[君主][ナイト][ダークエルフ][ドラゴンナイト][ウォリアー]
+        //DEX+1[エルフ]
+        //INT+1[ウィザード][イリュージョニスト]
+        if (ui.cb_buff[H_RK].isSelected()) {
+            switch (cls) {
+                case P:
+                    //ui.cb_buff[H_RK].setToolTipText("STR+1");
+                    buff.ST[STR] += 1;
+                    break;
+                case K:
+                    //ui.cb_buff[H_RK].setToolTipText("STR+1");
+                    buff.ST[STR] += 1;
+                    break;
+                case E:
+                    //ui.cb_buff[H_RK].setToolTipText("DEX+1");
+                    buff.ST[DEX] += 1;
+                    break;
+                case W:
+                    //ui.cb_buff[H_RK].setToolTipText("INT+1");
+                    buff.ST[INT] += 1;
+                    break;                   
+                case D:
+                    //ui.cb_buff[H_RK].setToolTipText("STR+1");
+                    buff.ST[STR] += 1;
+                    break;                    
+                case R:
+                    //ui.cb_buff[H_RK].setToolTipText("STR+1");
+                    buff.ST[STR] += 1;
+                    break;
+                case I:
+                    //ui.cb_buff[H_RK].setToolTipText("INT+1");
+                    buff.ST[INT] += 1;
+                    break;
+                case F:
+                    //ui.cb_buff[H_RK].setToolTipText("STR+1");
+                    buff.ST[STR] += 1;
+                    break;       
+            }
+        }
         //重量ペナルティ
         switch (ui.cb_weight.getSelectedIndex()) {
             case 0:
@@ -2531,7 +2691,7 @@ public class Calculator implements Common {
         int buki_id = 0;
         double magic_main = 0;
         double magic_sub = 0;
-
+        //レベルによる自動攻撃速度とHero変身速度の変更
         if (ui.cb_speed_auto.isSelected()) {
 
             if (ui.cb_eq[1].getSelectedIndex() > 0) {
@@ -2711,7 +2871,7 @@ public class Calculator implements Common {
                 dmg_small_ave -= 0.5;
                 break;
             case "ボウ":
-                //エルフ イーグルアイ　2%
+                //エルフ イーグルアイ　2%  消費MP20/2mins
                 cri_long += cr * 100;
                 if (ui.cb_buff[E_EE].isSelected()) {
                     cri_long += 2;
@@ -2727,7 +2887,7 @@ public class Calculator implements Common {
                         + (1.0 - cri_long * 0.01) * dmg_small_ave;
                 break;
             default:
-                //エルフ ソウルオブフレイム 100%
+                //エルフ ソウルオブフレイム 100% 消費MP30/2mins
                 cri_short += cr * 100;
                 if (ui.cb_buff[E_SF].isSelected()) {
                     cri_short = 100;
@@ -2942,6 +3102,7 @@ public class Calculator implements Common {
 //            dmg_small_ave *= (1.0 - rate);
 //            dmg_big_ave *= (1.0 - rate);
 //        }
+        //ヴァンパイアリックタッチ
         if (buff.effect.contains("ヴァンパイアリックタッチ")) {
             double vt_rate = 0.04;
             double vt_motion = 60.0 / (polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), buki_id));
@@ -2950,7 +3111,6 @@ public class Calculator implements Common {
             //VTモーションによる攻撃速度の低下
             speed *= (atk_motion) / (atk_motion + vt_motion * vt_rate);
         }
-
         //ダブルブレイク
         if (ui.cb_buff[D_DB].isSelected()) {
             if (buki_id == W_DB || buki_id == W_C) {
@@ -2967,7 +3127,6 @@ public class Calculator implements Common {
                         + (1.0 - (db_rate + lv_bonus));
             }
         }
-
         //武器属性
         if (buki_id == W_DA) {
             dmg_big_ave += (dmg_element1 + dmg_element2) / 2;
@@ -3049,7 +3208,7 @@ public class Calculator implements Common {
                 dmg_small_ave += 0.01 * 50;
             }
         }
-
+        //バーニングスピリッツ 消費MP20/5mins
         if (ui.cb_buff[D_BS].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * bs_rate
@@ -3076,7 +3235,7 @@ public class Calculator implements Common {
                 }
             }
         }
-        //エレメンタルファイアー
+        //エレメンタルファイアー 消費MP20/5mins
         if (ui.cb_buff[E_EF].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * ef_rate
@@ -3103,7 +3262,7 @@ public class Calculator implements Common {
                 }
             }
         }
-        //クエイク
+        //クエイク 消費MP20/5mins
         if (ui.cb_buff[E_QE].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * qe_rate
@@ -3126,11 +3285,11 @@ public class Calculator implements Common {
                     dmg_cursed -= 0.25 * qe_rate;
                 }
                 if (ui.cb_buff[E_QE].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
+                    cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
                 }
             }
         }
-        //サイクロン
+        //サイクロン 消費MP30/16mins
         if (ui.cb_buff[E_CE].isSelected()) {
             if (!(buki.type.equals("両手剣") || buki.type.equals("キーリンク") || buki.type.equals("デュアルブレード")
                     || buki.type.equals("槍") || buki.type.equals("ダガー") || buki.type.equals("片手剣")|| buki.type.equals("鈍器")
@@ -3159,7 +3318,7 @@ public class Calculator implements Common {
                 }
             }
         } 
-        //ブレイブメンタル
+        //ブレイブメンタル 消費MP25/10mins
         if (ui.cb_buff[P_B].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
                 dmg_big_ave *= 1.5 * 0.3333
@@ -3189,7 +3348,36 @@ public class Calculator implements Common {
                 ui.cb_buff[P_B].setSelected(false);
             }
         }
+        //ブローアタック 消費MP10/5mins
+        if (ui.cb_buff[K_BK].isSelected()) {
+            if (level >= 75) {
+                bk_rate += (level - 74) * 0.01;
+            }
+            if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
+                dmg_big_ave *= 1.5 * bk_rate
+                        + 1.0 * (1.0 - bk_rate);
+                dmg_small_ave *= 1.5 * bk_rate
+                        + 1.0 * (1.0 - bk_rate);
 
+                dmg_big_ave -= 0.25 * bk_rate;
+                dmg_small_ave -= 0.25 * bk_rate;
+
+                dmg_undead *= 1.5 * bk_rate
+                        + 1.0 * (1.0 - bk_rate);
+                dmg_cursed *= 1.5 * bk_rate
+                        + 1.0 * (1.0 - bk_rate);
+
+                if (dmg_undead != 0) {
+                    dmg_undead -= 0.25 * bk_rate;
+                }
+                if (dmg_cursed != 0) {
+                    dmg_cursed -= 0.25 * bk_rate;
+                }
+                if (ui.cb_buff[K_BK].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
+                }
+            }
+        }
         if (buff.effect.contains("特殊攻撃(パック/パオ)")) {
             dmg_big_ave += (75 - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * 0.05;
             dmg_small_ave += (75 - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * 0.05;
@@ -3483,16 +3671,32 @@ public class Calculator implements Common {
             dr += bougu1.op2.DR;
         }
         dg = 0;
+        
+        //アンキャニードッジ 消費MP20/3mins
         if (ui.cb_buff[D_UD].isSelected()) {
             dg = 60;
             if (ui.cb_buff[D_UD].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 3;
             }
         }
+        //ミラーイメージ 消費MP20/20mins
         if (ui.cb_buff[I_MI].isSelected()) {
             dg = 60;
             if (ui.cb_buff[I_MI].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 20;
+            }
+        }
+        //覚醒[リンドビオル]　消費MP40/10mins
+        if (ui.cb_buff[R_LINDVIOL].isSelected()) {
+            if (ui.cb_buff[R_ANTHARAS].isSelected()
+                    || ui.cb_buff[R_FAFURION].isSelected()
+                    || ui.cb_buff[R_VALAKAS].isSelected()){
+                ui.cb_buff[R_LINDVIOL].setSelected(false);
+            } else {
+                dg = 10;
+                if (ui.cb_buff[R_LINDVIOL].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
+                }
             }
         }
         ui.lab_ac.setText(Integer.toString(ac));
@@ -3891,41 +4095,68 @@ public class Calculator implements Common {
 //                mpp += 0.5 * mp;
 //            }
 //        }
-        if (ui.cb_buff[F_G].isSelected()) {
-            hpp += 0.005 * level * hp;
-            mpp += 0.005 * level * mp;
-            if (ui.cb_buff[UI.W_ADS].isSelected()) {
-                ui.cb_buff[UI.W_ADS].setSelected(false);
-            }
-        } else if (ui.cb_buff[W_ADS].isSelected()) {
-            hpp += 0.2 * hp;
-            mpp += 0.2 * mp;
-            if (ui.cb_buff[W_ADS].getForeground().equals(Color.BLUE)) {
-                cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 20;
+        //アドバンスドスピリッツ 消費MP20/20mins
+        if (ui.cb_buff[W_ADS].isSelected()) {
+            if (ui.cb_buff[F_G].isSelected()
+                    || ui.cb_buff[K_PD].isSelected()) {
+                ui.cb_buff[W_ADS].setSelected(false);
+            } else {
+            	hpp += 0.2 * hp;
+            	mpp += 0.2 * mp;
+                if (ui.cb_buff[W_ADS].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 20;
+                }
             }
         }
-
+        //プライド 消費MP10/5mins
+        if (ui.cb_buff[K_PD].isSelected()) {
+            if (ui.cb_buff[F_G].isSelected()
+                    || ui.cb_buff[W_ADS].isSelected()) {
+                ui.cb_buff[K_PD].setSelected(false);
+            } else {
+           	hpp += (level/4)*0.01 * hp;
+                if (ui.cb_buff[K_PD].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
+                }
+            }
+        }
+        //ギガンテック 消費MP10/5mins
+        if (ui.cb_buff[F_G].isSelected()) {
+            if (ui.cb_buff[W_ADS].isSelected()
+                    || ui.cb_buff[K_PD].isSelected()) {
+                ui.cb_buff[F_G].setSelected(false);
+            } else {
+            	hpp += (level/2)*0.01 * hp;
+                if (ui.cb_buff[F_G].getForeground().equals(Color.BLUE)) {
+                    cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
+                }
+            }
+        }
+        
         hp = (int) (hp + eq_hp + hpp);
         mp = (int) (mp + eq_mp + mpp);
 
         ui.lab_hp.setText(Integer.toString((int) hp));
         ui.lab_mp.setText(Integer.toString((int) mp));
-
+        //ムービングアクセレーション 消費MP10/16mins
         if (ui.cb_buff[D_MA].isSelected()) {
             if (ui.cb_buff[D_MA].getForeground().equals(Color.BLUE)) {
                 cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
+        //ベノムレジスト 消費MP20/5mins
         if (ui.cb_buff[D_VR].isSelected()) {
             if (ui.cb_buff[D_MA].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
             }
         }
+        //エキゾチックバイタライズ 消費MP30/16mins
         if (ui.cb_buff[E_EV].isSelected()) {
             if (ui.cb_buff[E_EV].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
+        //アディショナルファイアー 消費MP30/16mins
         if (ui.cb_buff[E_AF].isSelected()) {
             if (ui.cb_buff[E_AF].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
