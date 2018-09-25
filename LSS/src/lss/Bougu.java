@@ -149,22 +149,16 @@ public class Bougu implements Common {
             //text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
             text += " 近距離命中+" + (op.HIT_SHORT + op2.HIT_SHORT);
         }
-        //if (op.HIT_LONG + op2.HIT_LONG > 0) {
-        //    text += " 弓命中率+" + (op.HIT_LONG + op2.HIT_LONG);
-        //}
         if (op.DMG_LONG + op2.DMG_LONG > 0) {
             text += " 遠距離ダメージ+" + (op.DMG_LONG + op2.DMG_LONG);
         }
-        //弓命中率から遠距離命中に名称変更し表示位置を遠距離ダメージの後にする
         if (op.HIT_LONG + op2.HIT_LONG > 0) {
             text += " 遠距離命中+" + (op.HIT_LONG + op2.HIT_LONG);
         }
         if (op.SP + op2.SP > 0) {
-            //text += " 魔力+" + (op.SP + op2.SP);
             text += " SP+" + (op.SP + op2.SP);
         }
         if (op.SP < 0) {
-            //text += " 魔力" + op.SP;
             text += " SP" + op.SP;
         }
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {

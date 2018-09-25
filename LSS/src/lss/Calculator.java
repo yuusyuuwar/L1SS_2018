@@ -4294,35 +4294,31 @@ public class Calculator implements Common {
             buki_text += " 両手武器";
         }
         if (buki.op.DMG_SHORT > 0) {
-            //buki_text += " 追加打撃+" + buki.op.DMG_SHORT;
+//            buki_text += " 近距離追加ダメージ+" + buki.op.DMG_SHORT;
             buki_text += " 近距離ダメージ+" + buki.op.DMG_SHORT;
         }
         if (buki.op.DMG_LONG < 0) {
-            //buki_text += " 追加打撃" + buki.op.DMG_LONG;
+//            buki_text += " 近距離追加ダメージ" + buki.op.DMG_LONG;
             buki_text += " 近距離ダメージ" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_SHORT > 0) {
-            //buki_text += " 攻撃成功+" + buki.op.HIT_SHORT;
             buki_text += " 近距離命中+" + buki.op.HIT_SHORT;
         }
             if (buki.op.HIT_SHORT < 0) {
-            //buki_text += " 攻撃成功" + buki.op.HIT_SHORT;
             buki_text += " 近距離命中" + buki.op.HIT_SHORT;
         }
         if (buki.op.DMG_LONG > 0) {
-            //buki_text += " 追加打撃+" + buki.op.DMG_LONG;
+//            buki_text += " 遠距離追加ダメージ+" + buki.op.DMG_LONG;
             buki_text += " 遠距離ダメージ+" + buki.op.DMG_LONG;
         }
         if (buki.op.DMG_LONG < 0) {
-            //buki_text += " 追加打撃" + buki.op.DMG_LONG;
+//            buki_text += " 遠距離追加ダメージ" + buki.op.DMG_LONG;
             buki_text += " 遠距離ダメージ" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_LONG > 0) {
-            //buki_text += " 攻撃成功+" + buki.op.HIT_LONG;
             buki_text += " 遠距離命中+" + buki.op.HIT_LONG;
         }
         if (buki.op.HIT_LONG < 0) {
-            //buki_text += " 攻撃成功" + buki.op.HIT_LONG;
             buki_text += " 遠距離命中" + buki.op.HIT_LONG;
         }
         if (buki.op.HIT_MAGIC > 0) {
@@ -4379,6 +4375,9 @@ public class Calculator implements Common {
         }
         if (buki.op.SP > 0) {
             buki_text += " SP+" + buki.op.SP;
+        }
+        if (!buki.material.equals("")) {
+            buki_text += " 材質:" + buki.material;
         }
         if (!buki.op.effect.equals("")) {
             buki_text += " " + buki.op.effect;
