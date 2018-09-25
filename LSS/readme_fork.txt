@@ -3,6 +3,15 @@
 変更点
 2018/09/25
 Update
+LSS/data/E.zip
+	/E/ベルト/
+	削除
+	02_タイタンベルト(KR).txt
+
+LSS/src/lss/Bougu.java
+	血戦のグリーヴの名称変更時にBougu.javaの変更を忘れていた為、修正
+
+Update
 LSS/src/lss/Bougu.java
 	コメントの修正と削除
 

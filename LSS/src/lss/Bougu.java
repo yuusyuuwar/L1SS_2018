@@ -1238,7 +1238,7 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("血戦のグリーブ")) {
+        if (name.equals("血戦のグリーヴ")) {
             if (enchant >= 5) {
                 op2.HP = 25;
             }
