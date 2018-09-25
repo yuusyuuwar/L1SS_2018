@@ -1,6 +1,18 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/25
+Update
+装備名称変更
+	e_血戦のグリーブ.txt
+		e_血戦のグリーヴ.txt
+	name=血戦のグリーブ
+		name=血戦のグリーヴ
+
+LSS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+	全角文字を半角文字へ訂正
+
 2018/09/24
 Update
 LSS/src/lss/UI.java
@@ -18,8 +30,11 @@ LSS/src/lss/UI.java
 LSS/src/lss/Calculator.java
 	オルターストーンの表示順の修正による処理の修正
 	
-	一撃必殺(1％確率で追加ダメージ50)の別処理に注意
+	一撃必殺(1%確率で追加ダメージ50)の別処理に注意
 	行2649で近距離命中が+2されると遠距離命中も加算されるのでそれを修正
+	
+	補足資料:https://recordgame.blogspot.com/2015/07/blog-post_13.html
+	(遠距離命中にSTR値は無関係に変更)
 
 	自動処理置換
 	Switchによるifの連鎖の置換1

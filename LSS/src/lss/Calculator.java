@@ -1793,7 +1793,7 @@ public class Calculator implements Common {
                                                     //魔法消耗減少＋2
                         break;
                     case 8:
-                                                    //一撃必殺(1％確率で追加ダメージ50) 3216行で追加処理
+                                                    //一撃必殺(1%確率で追加ダメージ50) 3216行で追加処理
                         break;
                 }
             } else {
@@ -1824,7 +1824,7 @@ public class Calculator implements Common {
                                                     //魔法消耗減少＋2
                         break;
                     case 8:
-                                                    //一撃必殺(1％確率で追加ダメージ50) 3216行で追加処理
+                                                    //一撃必殺(1%確率で追加ダメージ50) 3216行で追加処理
                         break;
                 }
             } else {
@@ -1855,7 +1855,7 @@ public class Calculator implements Common {
                                                     //魔法消耗減少＋2
                         break;
                     case 8:
-                                                    //一撃必殺(1％確率で追加ダメージ50) 3216行で追加処理
+                                                    //一撃必殺(1%確率で追加ダメージ50) 3216行で追加処理
                         break;
                 }
             } else {
@@ -3213,7 +3213,7 @@ public class Calculator implements Common {
             }
         }
 
-        //オルターストーン 一撃必殺(1％確率で追加ダメージ50)追加分
+        //オルターストーン 一撃必殺(1%確率で追加ダメージ50)追加分
         if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
             if (ui.cb_alterstone_op[0].getSelectedIndex() == 8
                     || ui.cb_alterstone_op[1].getSelectedIndex() == 8
