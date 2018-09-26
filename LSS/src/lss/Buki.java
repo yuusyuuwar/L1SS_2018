@@ -154,7 +154,7 @@ public class Buki implements Common {
                     week_point_exposure = Double
                             .parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("スタン成功=")) {
+                if (line.startsWith("スタン命中=")) {
                     hit_stun = Integer.parseInt(line.split("=")[1]);
                 }
             }
@@ -168,14 +168,14 @@ public class Buki implements Common {
         try {
             String line;
             while ((line = reader.readLine()) != null) {
+                if (line.startsWith("name")) {
+                    arrow_name = line.split("=")[1];
+                }
                 if (line.startsWith("small")) {
                     arrow_small = Integer.parseInt(line.split("=")[1]);
                 }
                 if (line.startsWith("big")) {
                     arrow_big = Integer.parseInt(line.split("=")[1]);
-                }
-                if (line.startsWith("name")) {
-                    arrow_name = line.split("=")[1];
                 }
                 if (line.startsWith("材質")) {
                     arrow_material = line.split("=")[1];

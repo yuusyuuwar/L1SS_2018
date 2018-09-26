@@ -94,6 +94,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel lab_ac;
     JLabel lab_dg;
     JLabel lab_er;
+    JLabel lab_sp;
+    JLabel lab_ml;
+    JLabel lab_mb;
+    JLabel lab_spr;
+
     JLabel lab_dr;
     JLabel lab_mr;
 
@@ -129,7 +134,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];    //装備名
     JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];       //装備強化数値
-    
+
     JComboBox cb_elem_1;
     JComboBox cb_elem_2;
     JComboBox cb_ts_elem;
@@ -183,13 +188,18 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     LEV lev = new LEV();
 
     //パネル３
-    
+
     //y_ikedaさんによる修正を参考に
     //JCheckBox[] cb_buff = new JCheckBox[83];
     //JComboBox[] cb_buff_group = new JComboBox[83];
-    //L_HST = 83;(成長の果実)(イーグルアイ)(サイクロン)(インフェルノ)を追加した為、変更(0から86の計87個分)
-    JCheckBox[] cb_buff = new JCheckBox[87];
-    JComboBox[] cb_buff_group = new JComboBox[87];   
+    //L_HST = 83;(成長の果実)E_EE = 84;(イーグルアイ)E_CE = 85;(サイクロン)E_IO = 86;(インフェルノ)を追加した為、変更(0から86の計87個分)
+    //JCheckBox[] cb_buff = new JCheckBox[87];
+    //JComboBox[] cb_buff_group = new JComboBox[87];
+    //P_GA = 87;(グレースアバター)K_PD = 88;(プライド)K_BK = 89;(ブローアタック)R_LINDVIOL = 90;覚醒[リンドビオル])
+    //I_FS = 91;(フォーカススピッツ)I_IT = 92;(インパクト)H_HP = 93;(生命のボーナス)H_AC = 94;(鉄甲のボーナス)
+    //H_PVPDR = 95;(生存のボーナス)H_PVP = 96;(暗殺のボーナス)H_RK = 97;(ランカーボーナス)で計98個分(0から97)
+    JCheckBox[] cb_buff = new JCheckBox[98];
+    JComboBox[] cb_buff_group = new JComboBox[98]; 
 
     //パネル４
     JComboBox cb_npc_level;
@@ -253,7 +263,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         setTitle("Lineage Status Simulator ver " + version);
 //        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
+        //setSize(800, 600);
+        setSize(800, 640);       
         setResizable(false);
 
         tabpane = new JTabbedPane();
@@ -452,14 +463,46 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(260 + 25, 40 + 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
+        lab_tmp = new JLabel("β");
+        lab_tmp.setBounds(320 + 25, 40 + 40, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("ML");
+        lab_tmp.setBounds(320 + 25, 40 + 60, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("MB");
+        lab_tmp.setBounds(320 + 25, 40 + 80, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
+        lab_tmp = new JLabel("SP");
+        lab_tmp.setBounds(320 + 25, 40 + 100, 200, 20);
+        panels[0].add(lab_tmp);
+        commons.add(lab_tmp);
         lab_dg = new JLabel();
         lab_er = new JLabel();
+        lab_sp = new JLabel();
+        lab_ml = new JLabel();
+        lab_mb = new JLabel();
+        lab_spr = new JLabel();
         lab_dg.setBounds(200 + 30 + 25, 40 + 40, 200, 20);
         lab_er.setBounds(200 + 90 + 25, 40 + 40, 200, 20);
+        lab_sp.setBounds(200 + 150 + 25, 40 + 40, 200, 20);
+        lab_ml.setBounds(200 + 150 + 25, 40 + 60, 200, 20);
+        lab_mb.setBounds(200 + 150 + 25, 40 + 80, 200, 20);
+        lab_spr.setBounds(200 + 150 + 25, 40 + 100, 200, 20);
         panels[0].add(lab_dg);
         commons.add(lab_dg);
         panels[0].add(lab_er);
         commons.add(lab_er);
+        panels[0].add(lab_sp);
+        commons.add(lab_sp);
+        panels[0].add(lab_ml);
+        commons.add(lab_ml);
+        panels[0].add(lab_mb);
+        commons.add(lab_mb);
+        panels[0].add(lab_spr);
+        commons.add(lab_spr);
 
         lab_tmp = new JLabel("HPR");
         lab_tmp.setBounds(200 + 25, 40 + 60, 200, 20);
@@ -596,7 +639,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
-            //リスト19個から21個へ拡張(ドロン、エンブレム分)2個追加
+                    //リスト19個から21個へ拡張(スポールダー、インシグニア分)2個追加
             if (i >= 21) {              
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
@@ -675,11 +718,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_pattern_c = new WideComboBox(center_list);
         cb_pattern_l2 = new WideComboBox(left2_list);
         cb_pattern_r2 = new WideComboBox(right2_list);
-        cb_pattern_l.setBounds(250, 400 + 80, 100, 20);
-        cb_pattern_r.setBounds(50, 400 + 80, 100, 20);
-        cb_pattern_c.setBounds(150, 400 + 90, 100, 20);
-        cb_pattern_l2.setBounds(250, 400 + 100, 100, 20);
-        cb_pattern_r2.setBounds(50, 400 + 100, 100, 20);
+        cb_pattern_l.setBounds(250, 400 + 100, 100, 20);
+        cb_pattern_r.setBounds(50, 400 + 100, 100, 20);
+        cb_pattern_c.setBounds(150, 400 + 110, 100, 20);
+        cb_pattern_l2.setBounds(250, 400 + 120, 100, 20);
+        cb_pattern_r2.setBounds(50, 400 + 120, 100, 20);
         cb_pattern_l.addActionListener(this);
         cb_pattern_r.addActionListener(this);
         cb_pattern_c.addActionListener(this);
@@ -695,17 +738,18 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //String[] en_list = {"", "+1", "+2", "+3", "+4", "+5"};
         String[] en_list = {"", "+1", "+2", "+3", "+4", "+5", "+6"};
         cb_alterstone_en = new JComboBox(en_list);
-        cb_alterstone_en.setBounds(0, 400 + 120, 50, 20);
+        cb_alterstone_en.setBounds(0, 400 + 140, 50, 20);
         cb_alterstone_en.addActionListener(this);
         panels[0].add(cb_alterstone_en);
 
-        String[] alterstone_op_list = {"", "近距離命中 +2", "遠距離命中 +2", "魔法致命打",
-            "遠距離ダメージ +1", "SP +1", "魔法消耗減少",
-            "一撃必殺(1％確率で追加ダメージ50)", "近距離ダメージ +1"};
-
+        //String[] alterstone_op_list = {"", "近距離命中 +2", "遠距離命中 +2", "魔法致命打",
+        //    "遠距離ダメージ +1", "SP +1", "魔法消耗減少",
+        //    "一撃必殺(1%確率で追加ダメージ50)", "近距離ダメージ +1"};
+        String[] alterstone_op_list = {"", "近距離ダメージ +1", "遠距離ダメージ +1","近距離命中 +2",
+            "遠距離命中 +2", "SP +1", "魔法クリティカル +1", "魔法消耗減少＋2", "一撃必殺(1%確率で追加ダメージ50)"};
         for (int i = 0; i < cb_alterstone_op.length; i++) {
             cb_alterstone_op[i] = new WideComboBox(alterstone_op_list);
-            cb_alterstone_op[i].setBounds(100 + 100 * i, 400 + 120, 100, 20);
+            cb_alterstone_op[i].setBounds(100 + 100 * i, 400 + 140, 100, 20);
             cb_alterstone_op[i].addActionListener(this);
             panels[0].add(cb_alterstone_op[i]);
         }
@@ -749,23 +793,25 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         polymorph_level_label.setBounds(420 + 200, 200, 100, 20);
         panels[0].add(polymorph_level_label);
         cb_morph_level = new JComboBox();
-        cb_morph_level.addItem("自動");
-        cb_morph_level.addItem("1");
-        cb_morph_level.addItem("15");
-        cb_morph_level.addItem("30");
-        cb_morph_level.addItem("45");
-        cb_morph_level.addItem("50");
-        cb_morph_level.addItem("52");
-        cb_morph_level.addItem("55");
-        cb_morph_level.addItem("60");
-        cb_morph_level.addItem("65");
-        cb_morph_level.addItem("70");
-        cb_morph_level.addItem("75");
-        cb_morph_level.addItem("80");
-        cb_morph_level.addItem("82");
-        //cb_morph_level.addItem("85");
-        cb_morph_level.addItem("84");
-        cb_morph_level.addItem("99");
+        cb_morph_level.addItem("自動");     //0
+        cb_morph_level.addItem("1");        //1
+        cb_morph_level.addItem("15");       //2
+        cb_morph_level.addItem("30");       //3
+        cb_morph_level.addItem("45");       //4
+        cb_morph_level.addItem("50");       //5
+        cb_morph_level.addItem("52");       //6
+        cb_morph_level.addItem("55");       //7
+        cb_morph_level.addItem("60");       //8
+        cb_morph_level.addItem("65");       //9
+        cb_morph_level.addItem("70");       //10
+        cb_morph_level.addItem("75");       //11
+        cb_morph_level.addItem("80");       //12
+        cb_morph_level.addItem("82");       //13
+        cb_morph_level.addItem("84");       //14
+                //cb_morph_level.addItem("86");
+                //cb_morph_level.addItem("88");
+                //cb_morph_level.addItem("90");
+        cb_morph_level.addItem("Hero");     //現時点では15
 
         cb_morph_level.setBounds(420 + 280, 200, 80, 20);
         cb_morph_level.addActionListener(this);
@@ -1067,16 +1113,20 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[P_B].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_B].setToolTipText("一定確率で近接ダメージ1.5倍");
 
-        cb_buff[P_S] = new JCheckBox("シャイニングオーラ");
+        cb_buff[P_S] = new JCheckBox("シャイニングシールド");
         cb_buff[P_S].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_S].setToolTipText("AC-8");
 
-        //String list_ba[] = {"2-4人", "5-6人", "7-8人"};
-        //cb_buff_group[P_BA] = new WideComboBox(list_ba);
-        //cb_buff_group[P_BA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_BA] = new JCheckBox("ブレイブアバター");
-        cb_buff[P_BA].setBounds(0, 20 * col++, 100, 20);
+        cb_buff[P_BA].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
+          
+        String list_P_GA[] = {"君主LV80", "君主LV81", "君主LV82", "君主LV83", "君主LV84", "君主LV85"};
+        cb_buff_group[P_GA] = new WideComboBox(list_P_GA);
+        cb_buff_group[P_GA].setBounds(100, 20 * col, 80, 20);
+        cb_buff[P_GA] = new JCheckBox("グレースアバター");
+        cb_buff[P_GA].setBounds(0, 20 * col++, 100, 20);
+        cb_buff[P_GA].setToolTipText("スタン耐性+10 ホールド耐性+10 恐怖耐性+10 LV80からLV1毎に耐性+1増加[最大+15]");
 
         col++;
 
@@ -1092,14 +1142,22 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[K_SC].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_SC].setToolTipText("盾装備時 ER+15");
 
-        cb_buff[K_CB] = new JCheckBox("カウンターバリア");
-        cb_buff[K_CB].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_CB].setToolTipText("両手剣装備時 一定確率で近接攻撃回避+反撃");
-
         cb_buff[K_BA] = new JCheckBox("バウンスアタック");
         cb_buff[K_BA].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_BA].setToolTipText("近接命中+6");
 
+        cb_buff[K_CB] = new JCheckBox("カウンターバリア");
+        cb_buff[K_CB].setBounds(0, 20 * col++, 150, 20);
+        cb_buff[K_CB].setToolTipText("両手剣装備時 一定確率で近接攻撃回避+反撃");
+        
+        cb_buff[K_PD] = new JCheckBox("プライド(未実装)");
+        cb_buff[K_PD].setBounds(0, 20 * col++, 150, 20);
+        cb_buff[K_PD].setToolTipText("最大HP Lv/4% 増加");
+
+        cb_buff[K_BK] = new JCheckBox("ブローアタック(未実装)");
+        cb_buff[K_BK].setBounds(0, 20 * col++, 150, 20);
+        cb_buff[K_BK].setToolTipText("一定確率で近接ダメージを1.5倍 LV75からLV1毎に発動率1%増加");
+        
         col = 0;
         row = 1;
 
@@ -1131,18 +1189,18 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_BW].setToolTipText("火属性追加打撃+6 近接命中+6");
         cb_buff[E_EF] = new JCheckBox("エレメンタルファイアー");
         cb_buff[E_EF].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EF].setToolTipText("一定確率で近接ダメージ1.5倍]");
+        cb_buff[E_EF].setToolTipText("一定確率で近接ダメージ1.5倍");
         cb_buff[E_SF] = new JCheckBox("ソウルオブフレイム");
         cb_buff[E_SF].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_SF].setToolTipText("武器ダメージが常に最大値 損傷しない");
         cb_buff[E_AF] = new JCheckBox("アディショナルファイアー");
         cb_buff[E_AF].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_AF].setToolTipText("重量50%以上でのHP/MP回復");
-        cb_buff[E_IO] = new JCheckBox("インフェルノ");
+        cb_buff[E_IO] = new JCheckBox("インフェルノ(未実装)");
         cb_buff[E_IO].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_IO].setToolTipText("一定確率で近距離ダメージを50%軽減しカウンター攻撃");
 
-        //col++;
+        col++;
 
         lab_tmp = new JLabel("精霊魔法(水)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1158,7 +1216,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_AS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_AS].setToolTipText("遠距離命中+4");
 
-        //col++;
+        col++;
 
         lab_tmp = new JLabel("精霊魔法(風)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1179,11 +1237,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_EE] = new JCheckBox("イーグルアイ");
         cb_buff[E_EE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EE].setToolTipText("遠距離クリティカル+2%");
-        cb_buff[E_CE] = new JCheckBox("サイクロン");
+        cb_buff[E_CE] = new JCheckBox("サイクロン(未実装)");
         cb_buff[E_CE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_CE].setToolTipText("一定の確率で遠距離ダメージ1.5倍");
-        
-        //col++;
+
+        col++;
 
         lab_tmp = new JLabel("精霊魔法(地)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1224,7 +1282,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[D_SA] = new JCheckBox("シャドウアーマー");
         cb_buff[D_SA].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_SA].setToolTipText("MR+5");
-
         cb_buff[D_MA] = new JCheckBox("ムービングアクセレーション");
         cb_buff[D_MA].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_MA].setToolTipText("移動速度上昇");
@@ -1253,6 +1310,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[R_VALAKAS] = new JCheckBox("覚醒[ヴァラカス]");
         cb_buff[R_VALAKAS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[R_VALAKAS].setToolTipText("近接命中+5 スタン耐性+10");
+        cb_buff[R_LINDVIOL] = new JCheckBox("覚醒[リンドビオル](未実装)");
+        cb_buff[R_LINDVIOL].setBounds(200 * row, 20 * col++, 180, 20);
+        cb_buff[R_LINDVIOL].setToolTipText("DG+7");
 
         col++;
 
@@ -1287,6 +1347,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[I_IA] = new JCheckBox("幻術[アバター]");
         cb_buff[I_IA].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_IA].setToolTipText("与ダメージ+10 被ダメージ+5%");
+        cb_buff[I_FS] = new JCheckBox("フォーカススピリッツ(未実装)");
+        cb_buff[I_FS].setBounds(200 * row, 20 * col++, 180, 20);
+        cb_buff[I_FS].setToolTipText("魔法クリティカル+5%");
+        cb_buff[I_IT] = new JCheckBox("インパクト(未実装)");
+        cb_buff[I_IT].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[I_IT].setToolTipText("技術命中+5 精霊命中+5 竜語命中+5 恐怖命中+5");        
 
         row = 3;
         col = 0;
@@ -1317,7 +1383,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[F_G].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[F_G].setToolTipText("最大HP Lv/2% 増加");
 
-        col++;
+        //col++;
         lab_tmp = new JLabel("その他");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
@@ -1379,7 +1445,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "ジャイアント", "ブラックエルダー", "サキュバスクイーン", "ドレイク", "キングバグベアー", "ダイアゴーレム",
             "サイクロプス", "ナイトバルド", "シアー",
             "デスナイト", "デーモン", "覚醒パオ", "マミーロード",
-            "アイリス", "バンパイア", "バランカ", "アイスクイーン"
+            "アイリス", "バンパイア", "バランカ", "アイスクイーン",
+            "アンタラス", "パプリオン", "リンドビオル", "ヴァラカス"
         };
 
         cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);
@@ -1414,7 +1481,37 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff_group[L_HST] = new WideComboBox(list_hst);
         cb_buff_group[L_HST].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[L_HST] = new JCheckBox("成長の果実");
-        cb_buff[L_HST].setBounds(200 * row, 20 * col++, 100, 20);        
+        cb_buff[L_HST].setBounds(200 * row, 20 * col++, 100, 20);
+
+        String list_H_HP[] = {"HP+50", "HP+100", "HP+200"};
+        cb_buff_group[H_HP] = new WideComboBox(list_H_HP);
+        cb_buff_group[H_HP].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[H_HP] = new JCheckBox("生命のボーナス");
+        cb_buff[H_HP].setBounds(200 * row, 20 * col++, 100, 20);
+
+        String list_H_AC[] = {"AC-1", "AC-2", "AC-3"};
+        cb_buff_group[H_AC] = new WideComboBox(list_H_AC);
+        cb_buff_group[H_AC].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[H_AC] = new JCheckBox("鉄甲のボーナス");
+        cb_buff[H_AC].setBounds(200 * row, 20 * col++, 100, 20);
+
+        String list_H_PVPDR[] = {"PVP DR+1", "PVP DR+2"};
+        cb_buff_group[H_PVPDR] = new WideComboBox(list_H_PVPDR);
+        cb_buff_group[H_PVPDR].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[H_PVPDR] = new JCheckBox("生存のボーナス");
+        cb_buff[H_PVPDR].setBounds(200 * row, 20 * col++, 100, 20);
+
+        String list_H_PVP[] = {"PVP ダメ+1", "PVP ダメ+2"};
+        cb_buff_group[H_PVP] = new WideComboBox(list_H_PVP);
+        cb_buff_group[H_PVP].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[H_PVP] = new JCheckBox("暗殺のボーナス");
+        cb_buff[H_PVP].setBounds(200 * row, 20 * col++, 100, 20);
+
+        cb_buff[H_RK] = new JCheckBox("ランカーボーナス");
+        cb_buff[H_RK].setBounds(200 * row, 20 * col++, 100, 20);
+        cb_buff[H_RK].setToolTipText("<html>"+ "STR+1[君主][ナイト][ダークエルフ][ドラゴンナイト][ウォリアー]"
+                                     + "<br>"+ "DEX+1[エルフ]"
+                                     + "<br>"+ "INT+1[ウィザード][イリュージョニスト]"+"</html>");       
 
         MP mp = new MP();
 

@@ -85,16 +85,16 @@ public class Buff implements Common {
             if (line.startsWith("MPR=")) {
                 MPR = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("追加打撃=")) {
+            if (line.startsWith("近距離追加ダメージ=")) {
                 DMG_SHORT = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("弓打撃値=")) {
+            if (line.startsWith("遠距離追加ダメージ=")) {
                 DMG_LONG = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("攻撃成功=")) {
+            if (line.startsWith("近距離命中=")) {
                 HIT_SHORT = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("弓命中率=")) {
+            if (line.startsWith("遠距離命中=")) {
                 HIT_LONG = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("魔法命中=")) {

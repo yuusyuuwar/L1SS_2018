@@ -149,22 +149,16 @@ public class Bougu implements Common {
             //text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
             text += " 近距離命中+" + (op.HIT_SHORT + op2.HIT_SHORT);
         }
-        //if (op.HIT_LONG + op2.HIT_LONG > 0) {
-        //    text += " 弓命中率+" + (op.HIT_LONG + op2.HIT_LONG);
-        //}
         if (op.DMG_LONG + op2.DMG_LONG > 0) {
             text += " 遠距離ダメージ+" + (op.DMG_LONG + op2.DMG_LONG);
         }
-        //弓命中率から遠距離命中に名称変更し表示位置を遠距離ダメージの後にする
         if (op.HIT_LONG + op2.HIT_LONG > 0) {
             text += " 遠距離命中+" + (op.HIT_LONG + op2.HIT_LONG);
         }
         if (op.SP + op2.SP > 0) {
-            //text += " 魔力+" + (op.SP + op2.SP);
             text += " SP+" + (op.SP + op2.SP);
         }
         if (op.SP < 0) {
-            //text += " 魔力" + op.SP;
             text += " SP" + op.SP;
         }
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
@@ -1109,8 +1103,27 @@ public class Bougu implements Common {
         }
 
         if (name.equals("激昂のグローブ")) {
+            if (enchant >= 7) {
+                op2.HIT_SHORT = enchant - 3;
+            }
+            if (enchant >= 9) {
+                op2.HIT_SHORT =6;
+            }
+        }
+        if (name.equals("守護騎士のパワーグローブ")) {
             if (enchant >= 5) {
                 op2.HIT_SHORT = enchant - 4;
+            }
+            if (enchant >= 9) {
+                op2.HIT_SHORT =5;
+            }
+        }
+        if (name.equals("守護騎士のブレイサー")) {
+            if (enchant >= 5) {
+                op2.HIT_LONG = enchant - 4;
+            }
+            if (enchant >= 9) {
+                op2.HIT_LONG =5;
             }
         }
 
@@ -1225,7 +1238,7 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("血戦のグリーブ")) {
+        if (name.equals("血戦のグリーヴ")) {
             if (enchant >= 5) {
                 op2.HP = 25;
             }
@@ -1290,7 +1303,7 @@ public class Bougu implements Common {
         }
 
         //+1強化するごとにAC-1されない防具・アイテム
-        if (type.equals("リング") || type.equals("アミュレット") || type.equals("イアリング") || type.equals("ベルト") || type.equals("ルーン") || type.equals("エンブレム")) {
+        if (type.equals("リング") || type.equals("アミュレット") || type.equals("イアリング") || type.equals("ベルト") || type.equals("紋章") || type.equals("インシグニア")) {
 
             if (name.equals("回復の紋章")) {
                 op2.effect = "ポーション回復量 +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
@@ -1946,7 +1959,7 @@ public class Bougu implements Common {
                         op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
-                        op2.PVPDR=3;        //PVPダメージ軽減+2
+                        op2.PVPDR=2;        //PVPダメージ軽減+2
                         break;
                     case 8:
                         op2.HP = 40;
@@ -1958,7 +1971,7 @@ public class Bougu implements Common {
                         op2.HP = 50;
                         op2.MP = 60;
                         op2.DR = 5;
-                        op2.PVPDR=3;        //PVPダメージ軽減+4
+                        op2.PVPDR=4;        //PVPダメージ軽減+4
                         break;
                 }
             }
