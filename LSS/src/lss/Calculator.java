@@ -2131,7 +2131,7 @@ public class Calculator implements Common {
             }
         }
 //君主魔法（プリンス・プリンセス)
-        //グローイングウエポン
+        //グローイングウエポン 消費MP25/10mins
         if (ui.cb_buff[P_G].isSelected()) {
             buff.HIT_SHORT += 5;
             buff.DMG_SHORT += 5;
@@ -2139,14 +2139,14 @@ public class Calculator implements Common {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //シャイニングオーラ
+        //シャイニングシールド 消費MP25/2mins
         if (ui.cb_buff[P_S].isSelected()) {
             buff.AC -= 8;
             if (ui.cb_buff[P_S].getForeground().equals(Color.BLUE)) {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ブレイブアバター
+        //ブレイブアバター 消費MP0/常時
         if (ui.cb_buff[P_BA].isSelected()) {
             buff.MR += 10;
             buff.ailment[STUN] += 2;
@@ -2155,7 +2155,7 @@ public class Calculator implements Common {
             buff.ST[DEX] += 1;
             buff.ST[INT] += 1;
         }
-        //グレースアバター
+        //グレースアバター 消費MP15/15秒
         if (ui.cb_buff[P_GA].isSelected()) {
             switch ((String) ui.cb_buff_group[P_GA].getSelectedItem()) {
                 case "君主LV80":
@@ -4337,7 +4337,6 @@ public class Calculator implements Common {
             buki_text += " 魔法クリティカル+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
         if (buki.hit_stun > 0) {
-            //buki_text += " スタン成功" + buki.hit_stun;
             buki_text += " スタン命中" + buki.hit_stun;
         }
         if (buki.op.HP > 0) {

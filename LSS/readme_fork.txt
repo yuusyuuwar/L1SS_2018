@@ -1,6 +1,24 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/26
+Update
+LSS/src/lss/Buki.java
+	E.zipの変更に伴い、データを読み込むキーワードの変更
+	[スタン成功]を[スタン命中]
+
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+	シャイニングオーラをシャイニングシールドへ	
+	コメントの修正と削除
+
+LSS/data/E.zip
+	/E/武器/
+	[スタン成功]を[スタン命中]
+	0310004_ナイトバルドのツーハンドソード.txt
+	0310005_真冥王の執行剣.txt
+	1010007_ヒュペリオンの絶望.txt
+
 2018/09/25
 Update
 LSS/data/E.zip

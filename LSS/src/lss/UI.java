@@ -1113,7 +1113,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[P_B].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_B].setToolTipText("一定確率で近接ダメージ1.5倍");
 
-        cb_buff[P_S] = new JCheckBox("シャイニングオーラ");
+        cb_buff[P_S] = new JCheckBox("シャイニングシールド");
         cb_buff[P_S].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_S].setToolTipText("AC-8");
 
