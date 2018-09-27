@@ -1,6 +1,95 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/09/27
+Update
+LSS/data/E.zip
+	/E/アロー/
+既存矢をすべて削除し新規矢追加(ただしダミーファイルのa01.txtは残す)
+	a12.txt ハンター アロー
+	a13.txt ハンター シルバー アロー
+	a14.txt 火属性のエレメンタル バトル アロー
+	a15.txt 水属性のエレメンタル バトル アロー
+	a16.txt 風属性のエレメンタル バトル アロー
+	a17.txt 地属性のエレメンタル バトル アロー
+	a18.txt 無形の矢
+	s04.txt ヘビー スティング
+	s05.txt シルバー スティング
+
+矢のステータス修正
+	name          arrow_name =
+	small         arrow_small =     //削除（コメントアウト）
+	big           arrow_big =       //削除（コメントアウト）
+	追加ダメージ  arrow_dmg =
+	属性ダメージ  arrow_elementdmg =
+	遠距離命中    arrow_hit =
+	材質          arrow_material =
+	*name=に[火属性][水属性][風属性][地属性]が付くとその該当属性が属性ダメージに付属
+	
+LSS/data/E.zip
+	/E/武器/
+既存弓の修正(1110006_マリスエレメントボウ.txtは詳細不明の為、除外)
+	1110001_エンシェントボーガン.txt
+	1110002_エンジェルスレイヤー.txt
+	1110003_ダークネスクロスボウ.txt
+	1110004_テーベオシリスボウ.txt
+	1110005_ホステリティーボウ.txt
+	1110006_マリスエレメントボウ.txt
+	1110007_ロングボウ.txt
+	1110008_サイハの弓.txt
+	1110009_ルナロングボウ.txt
+	1110010_破壊のロングボウ.txt
+	1110011_サクリファイスボウ.txt
+	1110012_悪魔王の弓.txt
+	1110013_悪夢のロングボウ(悪夢発動).txt
+	1110013_悪夢のロングボウ.txt
+	1110014_クロスボウ.txt
+	1110015_ハンターボウ.txt
+	1110016_暗禍津蛇.txt
+	1110017_ガイアの激怒.txt
+	1120001_月光のロングボウ.txt
+	1120002_英雄のボウ(嵐発動).txt
+	1120002_英雄のボウ.txt
+	1120101_ハロウィンパンプキンロングボウ2011.txt
+	1120102_ハロウィンパンプキンロングボウ2012.txt
+	1210001_ククルカンガントレット.txt
+	1210002_真のガントレット.txt
+
+LSS/src/lss/Buki.java
+LSS/src/lss/Calculator.java
+弓の命中計算式の変更
+	1.矢に遠距離命中(buki.arrow_hit)が追加され計算される
+	2.魔法スキルの近距離命中(buff.HIT_SHORT)が遠距離命中に計算されない
+	
+	旧仕様:hit_long +=                  buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG + buff.HIT_SHORT;
+	新仕様:hit_long += buki.arrow_hit + buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG;
+
+弓のダメージ計算式の変更	
+	矢のダメージ半減処理がなくなった。(処理はコメントアウト)
+	矢の属性ブラックミスリルアローがなくなった。(処理はコメントアウト)
+	矢の基本値small(buki.arrow_small)/big(buki.arrow_big)が消え計算から除外される
+	矢に追加ダメージ(buki.arrow_dmg)が追加され計算される
+	矢に属性ダメージ(buki.arrow_elementdmg)が追加され計算される
+	*武器の属性で決定されるが無属性の場合の処理が不明の為、属性ごとに矢を追加
+
+	弓の基本値small(buki.small)/big(buki.big)がダメージ計算に含まれる様になった
+	近距離武器と違うのは武器に対して使う追加ダメージ魔法(buki.magic_enchant)がないので計算されない
+	(ホーリーウェポン/エンチャントウェポン/ブレスウェポン)
+	武器の祝福効果が計算されているのか？は不明、現時点では計算してません。
+	*デバッグ用に弓/矢関連の数値がコンソールに表示される様に変更
+
+	旧仕様:dmg_big_ave = (1.0 + buki.arrow_big) / 2            + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+	新仕様:dmg_big_ave = (1.0 + buki.big) / 2 + buki.arrow_dmg + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+
+	旧仕様:dmg_small_ave = (1.0 + buki.arrow_small) / 2            + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+	新仕様:dmg_small_ave = (1.0 + buki.small) / 2 + buki.arrow_dmg + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+
+	旧仕様:dmg_big_max = buki.arrow_big            + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+	新仕様:dmg_big_max = buki.arrow_dmg + buki.big + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+
+	旧仕様:dmg_small_max = buki.arrow_small            + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+	新仕様:dmg_small_max = buki.arrow_dmg + buki.small + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;  
+
 2018/09/26
 Update
 LSS/src/lss/Buki.java

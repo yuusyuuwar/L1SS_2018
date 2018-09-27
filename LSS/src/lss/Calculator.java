@@ -2646,27 +2646,63 @@ public class Calculator implements Common {
         // 武器オプション,武器強化数,エンチャント
         hit_short += buki.op.HIT_SHORT + buki.enchant / 2 + buff.HIT_SHORT;
         //hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG + buff.HIT_SHORT;
-        hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG;
+        hit_long += buki.arrow_hit + buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG;
         
+System.out.print(" 遠距離命中 合計:");
+System.out.print(hit_long);
+System.out.print(" 遠距離命中(矢分):");
+System.out.print(buki.arrow_hit);
+System.out.print(" 遠距離命中(武器分):");
+System.out.print(buki.op.HIT_LONG);
+System.out.print(" 遠距離命中(武器強化分)/2:");
+System.out.print(buki.enchant / 2);
+System.out.print(" 遠距離命中(魔法スキル分):");
+System.out.println(buff.HIT_LONG);
+
+buki.arrow_hit=0;
+
         //属性矢
+//        if (buki.type.equals("ボウ")) {
+//            if (buki.arrow_name.contains("霊")) {
+//                switch (buki.arrow_name) {
+//                    case "火霊のブラックミスリルアロー":
+//                        buff.ELEM_DMG_LONG[FIRE] += 3;
+//                       break;
+//                   case "水霊のブラックミスリルアロー":
+//                       buff.ELEM_DMG_LONG[WATER] += 3;
+//                       break;
+//                   case "風霊のブラックミスリルアロー":
+//                       buff.ELEM_DMG_LONG[WIND] += 3;
+//                       break;
+//                   case "地霊のブラックミスリルアロー":
+//                       buff.ELEM_DMG_LONG[EARTH] += 3;
+//                       break;
+//               }
+//            }
+//       }
+        //エレメンタル バトル アロー
         if (buki.type.equals("ボウ")) {
-            if (buki.arrow_name.contains("霊")) {
-                switch (buki.arrow_name) {
-                    case "火霊のブラックミスリルアロー":
-                        buff.ELEM_DMG_LONG[FIRE] += 3;
-                        break;
-                    case "水霊のブラックミスリルアロー":
-                        buff.ELEM_DMG_LONG[WATER] += 3;
-                        break;
-                    case "風霊のブラックミスリルアロー":
-                        buff.ELEM_DMG_LONG[WIND] += 3;
-                        break;
-                    case "地霊のブラックミスリルアロー":
-                        buff.ELEM_DMG_LONG[EARTH] += 3;
-                        break;
-                }
+            if (buki.arrow_name.contains("火属性の")) {
+                buff.ELEM_DMG_LONG[FIRE] += buki.arrow_elementdmg;
+            }else if(buki.arrow_name.contains("水属性の")) {
+                buff.ELEM_DMG_LONG[WATER] += buki.arrow_elementdmg;
+            }else if(buki.arrow_name.contains("風属性の")) {
+                buff.ELEM_DMG_LONG[WIND] += buki.arrow_elementdmg;
+            }else if(buki.arrow_name.contains("地属性の")) {
+                buff.ELEM_DMG_LONG[EARTH] += buki.arrow_elementdmg;
             }
         }
+        
+System.out.print(" 火属性ダメージ:");
+System.out.print(buff.ELEM_DMG_LONG[FIRE]);
+System.out.print(" 水属性ダメージ:");
+System.out.print(buff.ELEM_DMG_LONG[WATER]);
+System.out.print(" 風属性ダメージ:");
+System.out.print(buff.ELEM_DMG_LONG[WIND]);
+System.out.print(" 地属性ダメージ:");
+System.out.println(buff.ELEM_DMG_LONG[EARTH]);
+
+buki.arrow_elementdmg=0;
 
         for (Bougu bougu1 : bougu) {
             hit_short += bougu1.op.HIT_SHORT + bougu1.op2.HIT_SHORT;
@@ -2782,6 +2818,32 @@ public class Calculator implements Common {
             dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
             dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
 
+System.out.print(" dmg_  big_ave:");
+System.out.print(dmg_big_ave);
+System.out.print(" buki1.  big_ave:");
+System.out.print((1.0 + buki.big) / 2 );
+System.out.print(" buki1.op.DMG_SHORT:");
+System.out.print(buki.op.DMG_SHORT);
+System.out.print(" buki1.op2.DMG_SHORT:");
+System.out.print(buki.op2.DMG_SHORT);
+System.out.print(" buki1.enchant:");
+System.out.print(buki.enchant);
+System.out.print(" buki1.magic_enchant:");
+System.out.println(buki.magic_enchant);
+
+System.out.print(" dmg_small_ave:");
+System.out.print(dmg_small_ave);
+System.out.print(" buki1.small_ave:");
+System.out.print((1.0 + buki.small) / 2 );
+System.out.print(" buki1.op.DMG_SHORT:");
+System.out.print(buki.op.DMG_SHORT);
+System.out.print(" buki1.op2.DMG_SHORT:");
+System.out.print(buki.op2.DMG_SHORT);
+System.out.print(" buki1.enchant:");
+System.out.print(buki.enchant);
+System.out.print(" buki1.magic_enchant:");
+System.out.println(buki.magic_enchant);
+
             if (buki.material.equals("シルバー")
                     || buki.material.equals("ミスリル")
                     || buki.material.equals("オリハルコン")) {
@@ -2796,6 +2858,32 @@ public class Calculator implements Common {
 
             dmg_big_max2 = buki2.big + buki2.op.DMG_SHORT + buki2.op2.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
             dmg_small_max2 = buki2.small + buki2.op.DMG_SHORT + buki2.op2.DMG_SHORT + buki2.enchant + buki2.magic_enchant;
+
+System.out.print(" dmg_  big_ave:");
+System.out.print(dmg_big_ave2);
+System.out.print(" buki2.  big_ave:");
+System.out.print((1.0 + buki2.big) / 2 );
+System.out.print(" buki2.op.DMG_SHORT:");
+System.out.print(buki2.op.DMG_SHORT);
+System.out.print(" buki2.op2.DMG_SHORT:");
+System.out.print(buki2.op2.DMG_SHORT);
+System.out.print(" buki2.enchant:");
+System.out.print(buki2.enchant);
+System.out.print(" buki2.magic_enchant:");
+System.out.println(buki2.magic_enchant);
+
+System.out.print(" dmg_small_ave:");
+System.out.print(dmg_small_ave2);
+System.out.print(" buki2.small_ave:");
+System.out.print((1.0 + buki2.small) / 2 );
+System.out.print(" buki2.op.DMG_SHORT:");
+System.out.print(buki2.op.DMG_SHORT);
+System.out.print(" buki2.op2.DMG_SHORT:");
+System.out.print(buki2.op2.DMG_SHORT);
+System.out.print(" buki2.enchant:");
+System.out.print(buki2.enchant);
+System.out.print(" buki2.magic_enchant:");
+System.out.println(buki2.magic_enchant);
 
             if (buki2.material.equals("シルバー")
                     || buki2.material.equals("ミスリル")
@@ -2817,20 +2905,55 @@ public class Calculator implements Common {
                 case "ボウ":
                 case "ガントレット":
 
-                    if (ui.cb_sonsyou.isSelected() && !(buki.arrow_name.equals("幸運のアロー") || buki.op.effect.contains("貫通効果"))) {
-                        dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
-                        dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+//                    if (ui.cb_sonsyou.isSelected() && !(buki.arrow_name.equals("幸運のアロー") || buki.op.effect.contains("貫通効果"))) {
+//                        dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+//                        dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+//
+//                        dmg_big_max = buki.arrow_big / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+//                        dmg_small_max = buki.arrow_small / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+//
+//                    } else {
+                        //dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        //dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_big_ave = (1.0 + buki.big) / 2 + buki.arrow_dmg + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_small_ave = (1.0 + buki.small) / 2 + buki.arrow_dmg + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
 
-                        dmg_big_max = buki.arrow_big / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
-                        dmg_small_max = buki.arrow_small / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+System.out.print(" dmg_  big_ave:");
+System.out.print(dmg_big_ave);
+System.out.print(" buki.  big平均:");
+System.out.print((1.0 + buki.big) / 2 );
+System.out.print(" buki.arrow_dmg:");
+System.out.print(buki.arrow_dmg);
+System.out.print(" buki.op.DMG_LONG:");
+System.out.print(buki.op.DMG_LONG);
+System.out.print(" buki.op2.DMG_LONG:");
+System.out.print(buki.op2.DMG_LONG);
+System.out.print(" buki.enchant:");
+System.out.print(buki.enchant);
+System.out.print(" buki.magic_enchant:");
+System.out.println(buki.magic_enchant);
 
-                    } else {
-                        dmg_big_ave = (1.0 + buki.arrow_big) / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
-                        dmg_small_ave = (1.0 + buki.arrow_small) / 2 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+System.out.print(" dmg_small_ave:");
+System.out.print(dmg_small_ave);
+System.out.print(" buki.small平均:");
+System.out.print((1.0 + buki.small) / 2 );
+System.out.print(" buki.arrow_dmg:");
+System.out.print(buki.arrow_dmg);
+System.out.print(" buki.op.DMG_LONG:");
+System.out.print(buki.op.DMG_LONG);
+System.out.print(" buki.op2.DMG_LONG:");
+System.out.print(buki.op2.DMG_LONG);
+System.out.print(" buki.enchant:");
+System.out.print(buki.enchant);
+System.out.print(" buki.magic_enchant:");
+System.out.println(buki.magic_enchant);
 
-                        dmg_big_max = buki.arrow_big + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
-                        dmg_small_max = buki.arrow_small + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
-                    }
+                        //dmg_big_max = buki.arrow_big + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        //dmg_small_max = buki.arrow_small + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_big_max = buki.arrow_dmg + buki.big + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
+                        dmg_small_max = buki.arrow_dmg + buki.small + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;                        
+                        
+//                    }
                     if (buki.arrow_material.equals("シルバー")
                             || buki.arrow_material.equals("ミスリル")
                             || buki.arrow_material.equals("オリハルコン")) {
@@ -2847,6 +2970,32 @@ public class Calculator implements Common {
 
                     dmg_big_max = buki.big + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
                     dmg_small_max = buki.small + buki.op.DMG_SHORT + buki.op2.DMG_SHORT + buki.enchant + buki.magic_enchant;
+
+System.out.print(" dmg_  big_ave:");
+System.out.print(dmg_big_ave);
+System.out.print(" buki1.  big_ave:");
+System.out.print((1.0 + buki.big) / 2 );
+System.out.print(" buki1.op.DMG_SHORT:");
+System.out.print(buki.op.DMG_SHORT);
+System.out.print(" buki1.op2.DMG_SHORT:");
+System.out.print(buki.op2.DMG_SHORT);
+System.out.print(" buki1.enchant:");
+System.out.print(buki.enchant);
+System.out.print(" buki1.magic_enchant:");
+System.out.println(buki.magic_enchant);
+
+System.out.print(" dmg_small_ave:");
+System.out.print(dmg_small_ave);
+System.out.print(" buki1.small_ave:");
+System.out.print((1.0 + buki.small) / 2 );
+System.out.print(" buki1.op.DMG_SHORT:");
+System.out.print(buki.op.DMG_SHORT);
+System.out.print(" buki1.op2.DMG_SHORT:");
+System.out.print(buki.op2.DMG_SHORT);
+System.out.print(" buki1.enchant:");
+System.out.print(buki.enchant);
+System.out.print(" buki1.magic_enchant:");
+System.out.println(buki.magic_enchant);
 
                     if (buki.material.equals("シルバー")
                             || buki.material.equals("ミスリル")

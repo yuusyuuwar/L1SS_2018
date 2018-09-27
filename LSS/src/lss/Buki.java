@@ -25,6 +25,10 @@ public class Buki implements Common {
     String arrow_type = "";
     int arrow_small = 0;
     int arrow_big = 0;
+    int arrow_dmg = 0;
+    int arrow_elementdmg = 0; 
+    int arrow_hit = 0;
+    
     int safety = 0;
     boolean element_enchant = false;
     // キーリンク用
@@ -59,6 +63,9 @@ public class Buki implements Common {
         arrow_type = "";
         arrow_small = 0;
         arrow_big = 0;
+        arrow_dmg = 0;
+        arrow_elementdmg = 0;
+        arrow_hit = 0;
 
         safety = 0;
         element_enchant = false;
@@ -171,11 +178,20 @@ public class Buki implements Common {
                 if (line.startsWith("name")) {
                     arrow_name = line.split("=")[1];
                 }
-                if (line.startsWith("small")) {
-                    arrow_small = Integer.parseInt(line.split("=")[1]);
+//                if (line.startsWith("small")) {
+//                    arrow_small = Integer.parseInt(line.split("=")[1]);
+//                }
+//                if (line.startsWith("big")) {
+//                    arrow_big = Integer.parseInt(line.split("=")[1]);
+//                }
+                if (line.startsWith("追加ダメージ")) {
+                    arrow_dmg = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("big")) {
-                    arrow_big = Integer.parseInt(line.split("=")[1]);
+                if (line.startsWith("属性ダメージ")) {
+                    arrow_elementdmg = Integer.parseInt(line.split("=")[1]);
+                }
+                if (line.startsWith("遠距離命中")) {
+                    arrow_hit = Integer.parseInt(line.split("=")[1]);
                 }
                 if (line.startsWith("材質")) {
                     arrow_material = line.split("=")[1];
