@@ -428,17 +428,28 @@ public class Calculator implements Common {
         for (int i = 0; i < ui.lev.size; i++) {
             int st = ui.lev.field[i];
             if (st >= 0) {
-                if (_ST[BASE][st] + _ST[REM][st] + _ST[LEVEL][st]
-                        + _ST[ELIXIR][st] < 45) {
-                    if (i + 51 <= level) {
-                        _ST[LEVEL][st]++;
-                    }
-                    ui.lev.isOverflow[i] = false;
-                } else if (i + 51 <= level) {
+                if (level >= 90) {
+                    if(_ST[BASE][st] + _ST[REM][st] + _ST[LEVEL][st] + _ST[ELIXIR][st] < 50) {
+                        if (i + 51 <= level) {
+                            _ST[LEVEL][st]++;
+                        }
+                        ui.lev.isOverflow[i] = false;
+                    } else if (i + 51 <= level) {
                     ui.lev.isOverflow[i] = true;
+                    }              
+                }                        
+                else{
+                    if (_ST[BASE][st] + _ST[REM][st] + _ST[LEVEL][st] + _ST[ELIXIR][st] < 45) {
+                        if (i + 51 <= level) {
+                            _ST[LEVEL][st]++;
+                        }
+                        ui.lev.isOverflow[i] = false;
+                    } else if (i + 51 <= level) {
+                    ui.lev.isOverflow[i] = true;
+                    }
                 }
-
             }
+
 //            for (int j = 0; j < 5; j++) {
 //                int e_st = ui.cb_elixir[j].getSelectedIndex() - 1;
 //                if (e_st < 0) {

@@ -3,6 +3,10 @@
 変更点
 2018/09/27
 Update
+LSS/src/lss/Calculator.java
+	レベル90以上のステータスの割振り上限を50個に対応(レベル89までは45個)
+
+Update
 LSS/data/E.zip
 	/E/アロー/
 既存矢をすべて削除し新規矢追加(ただしダミーファイルのa01.txtは残す)
