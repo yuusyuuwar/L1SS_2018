@@ -212,6 +212,67 @@ public class Buki implements Common {
         if (name.equals("瞑想のスタッフ")) {
             op2.MPR += enchant;
         }
+        //真冥王の執行剣    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][スタン命中]+1増加
+        if (name.equals("真冥王の執行剣")) {
+           if (enchant >= 0) {
+           op2.DMG_SHORT += enchant;    //追加ダメージ
+           op2.CRI_SHORT += enchant;    //近距離クリティカル
+        //   hit_stun += enchant;         //スタン命中
+           }
+        }
+        //ウィンドブレードソード    エンチャントによる追加打撃が+2
+        if (name.equals("ウィンドブレードソード")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+            }
+        } 
+        //レッドシャドウデュアルブレード    エンチャントによる追加打撃が+2 +1強化毎に[破壊命中]+1増加
+        if (name.equals("レッドシャドウデュアルブレード")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+        //    op2.hit[HOLD] += enchant;    //破壊命中
+            }
+        }
+        //ホーリーヘドロンスタッフ    エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法命中]+1増加
+        if (name.equals("ホーリーヘドロンスタッフ")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+            op2.SP += enchant;           //SP 
+            op2.HIT_MAGIC += enchant;    //魔法命中   
+            }
+        }
+        //クロノスの恐怖    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル]+1%増加 
+        if (name.equals("クロノスの恐怖")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+            op2.CRI_SHORT += enchant;    //近距離クリティカル
+            }
+        }
+        //ヒュペリオンの絶望    エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][スタン命中]+1増加
+        if (name.equals("ヒュペリオンの絶望")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+            op2.SP += enchant;           //SP 
+            op2.CRI_MAGIC += enchant;    //魔法クリティカル
+        //    hit_stun += enchant;         //スタン命中
+            }
+        }
+        //タイタンの憤怒    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][恐怖命中]+1増加 
+        if (name.equals("タイタンの憤怒")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+            op2.CRI_SHORT += enchant;    //近距離クリティカル
+        //    op2.hit_TERROR += enchant;  //恐怖命中
+            }
+        }
+        //ガイアの激怒    エンチャントによる追加打撃が+2 +1強化毎に[遠距離クリティカル][ダメージ軽減無視]+1増加 
+        if (name.equals("ガイアの激怒")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+            op2.CRI_LONG += enchant;     //遠距離クリティカル
+        //    op2.dr_XXXX += enchant;     //ダメージ軽減無視
+            }
+        }
         if (enchant >= 10) {
             op2.DMG_SHORT = enchant - 9;
             op2.DMG_LONG = enchant - 9;

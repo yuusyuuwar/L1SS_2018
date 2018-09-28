@@ -2541,8 +2541,9 @@ public class Calculator implements Common {
         dmg_short = base_dmg_short + buff.DMG_SHORT;
         dmg_long = base_dmg_long + buff.DMG_LONG;
         dmg_magic = base_dmg_magic + buff.DMG_MAGIC;
-        sp = buff.SP + buki.op.SP + buki2.op.SP;
-
+        //sp = buff.SP + buki.op.SP + buki2.op.SP;
+        sp = buff.SP + buki.op.SP + buki.op2.SP;
+        
         hit_magic = base_hit_magic;
 
         for (Bougu bougu1 : bougu) {
@@ -4467,10 +4468,10 @@ System.out.println(buki.magic_enchant);
             buki_text += " 近距離ダメージ" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_SHORT > 0) {
-            buki_text += " 近距離命中+" + buki.op.HIT_SHORT;
+            buki_text += " 近距離命中+" + (buki.op.HIT_SHORT + buki.op2.HIT_SHORT);
         }
             if (buki.op.HIT_SHORT < 0) {
-            buki_text += " 近距離命中" + buki.op.HIT_SHORT;
+            buki_text += " 近距離命中" + (buki.op.HIT_SHORT + buki.op2.HIT_SHORT);
         }
         if (buki.op.DMG_LONG > 0) {
 //            buki_text += " 遠距離追加ダメージ+" + buki.op.DMG_LONG;
@@ -4481,16 +4482,16 @@ System.out.println(buki.magic_enchant);
             buki_text += " 遠距離ダメージ" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_LONG > 0) {
-            buki_text += " 遠距離命中+" + buki.op.HIT_LONG;
+            buki_text += " 遠距離命中+" + (buki.op.HIT_LONG + buki.op2.HIT_LONG);
         }
         if (buki.op.HIT_LONG < 0) {
-            buki_text += " 遠距離命中" + buki.op.HIT_LONG;
+            buki_text += " 遠距離命中" + (buki.op.HIT_LONG + buki.op2.HIT_LONG);
         }
         if (buki.op.HIT_MAGIC > 0) {
-            buki_text += " 魔法命中+" + buki.op.HIT_MAGIC;
+            buki_text += " 魔法命中+" + (buki.op.HIT_MAGIC + buki.op2.HIT_MAGIC);
         }
         if (buki.op.HIT_MAGIC < 0) {
-            buki_text += " 魔法命中" + buki.op.HIT_MAGIC;
+            buki_text += " 魔法命中" + (buki.op.HIT_MAGIC + buki.op2.HIT_MAGIC);
         }
         if (buki.op.CRI_SHORT + buki.op2.CRI_SHORT > 0) {
             buki_text += " 近距離クリティカル+" + (buki.op.CRI_SHORT + buki.op2.CRI_SHORT);
@@ -4538,7 +4539,7 @@ System.out.println(buki.magic_enchant);
             buki_text += " MR+" + buki.op.MR;
         }
         if (buki.op.SP > 0) {
-            buki_text += " SP+" + buki.op.SP;
+            buki_text += " SP+" + (buki.op.SP + buki.op2.SP);
         }
         if (!buki.material.equals("")) {
             buki_text += " 材質:" + buki.material;
