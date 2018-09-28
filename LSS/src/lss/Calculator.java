@@ -4448,8 +4448,13 @@ System.out.println(buki.magic_enchant);
     void createToolTip() {
 
         String buki_text = "";
-            //buki_text += "打撃値" + buki.small + "/" + buki.big;
+        if ((buki.enchant + buki.op2.DMG_SHORT) == 0) {
             buki_text += "ダメージ" + buki.small + "/" + buki.big;
+        }
+        if ((buki.enchant + buki.op2.DMG_SHORT) > 0) {
+            //buki_text += "ダメージ" + buki.small + "/" + buki.big;
+            buki_text += "ダメージ" + buki.small + "+" + (buki.enchant + buki.op2.DMG_SHORT) + "/" + buki.big + "+" + (buki.enchant + buki.op2.DMG_SHORT);
+        }
         if (buki.two_hands) {
             buki_text += " 両手武器";
         }
@@ -4537,6 +4542,9 @@ System.out.println(buki.magic_enchant);
         }
         if (!buki.material.equals("")) {
             buki_text += " 材質:" + buki.material;
+        }
+        if (buki.weight > 0) {
+            buki_text += " 重さ " + buki.weight;
         }
         if (!buki.op.effect.equals("")) {
             buki_text += " " + buki.op.effect;

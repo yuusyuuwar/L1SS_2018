@@ -43,6 +43,7 @@ public class Buki implements Common {
     double magic_delay = 0;
 
     int hit_stun = 0;
+    int weight = 0;
 
     private void reset() {
         small = 0;
@@ -79,6 +80,7 @@ public class Buki implements Common {
         magic_rate_plus = 0;
 
         hit_stun = 0;
+        weight = 0;
     }
 
     void load(BufferedReader reader) {
@@ -163,6 +165,9 @@ public class Buki implements Common {
                 }
                 if (line.startsWith("ÉXÉ^ÉìñΩíÜ=")) {
                     hit_stun = Integer.parseInt(line.split("=")[1]);
+                }
+                if (line.startsWith("èdÇ≥=")) {
+                    weight = Integer.parseInt(line.split("=")[1]);
                 }
             }
         } catch (IOException | NullPointerException e) {
