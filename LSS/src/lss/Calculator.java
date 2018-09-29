@@ -664,7 +664,7 @@ public class Calculator implements Common {
             //ui.cb_morph_level.setSelectedItem("80");
             //ui.cb_morph_type.setSelectedItem("近/遠特化");
         }
-
+        //ウィズダムポーション
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
             if (cls == W || cls == I) {
                 buff.SP += 2;
@@ -1156,6 +1156,7 @@ public class Calculator implements Common {
 
             }
         }
+        // デザート
         if (ui.cb_buff[ITEM_DESSERT].isSelected()) {
             switch (ui.cb_buff_group[ITEM_DESSERT].getSelectedIndex()) {
                 case 0:
@@ -1213,7 +1214,8 @@ public class Calculator implements Common {
 //
 //            }
 //        }
-        if (ui.cb_buff[KOMA].isSelected()) {
+            //コマエンチャ
+            if (ui.cb_buff[KOMA].isSelected()) {
             switch (ui.cb_buff_group[KOMA].getSelectedIndex()) {
                 case 0:
                     buff.ST[STR] += 5;
@@ -1573,16 +1575,15 @@ public class Calculator implements Common {
                 if (ui.cb_buff[I_IT].getForeground().equals(Color.BLUE)) {
                     cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 0.25;
                 }
-        //        インパクト効果未実装
-        //    	if (level >= 89) {
-        //	    buff.XXXX += 10;    //スタン命中+10
-        //	    buff.XXXX += 10;    //破壊命中+10
-        //	    buff.XXXX += 10;    //恐怖命中+10      
-        //	} else if (level >= 80) {
-        //	    buff.XXXX += (level - 79);    //スタン命中+(level - 79)
-        //	    buff.XXXX += (level - 79);    //破壊命中+(level - 79)
-        //	    buff.XXXX += (level - 79);    //恐怖命中+(level - 79)
-        //	}
+            	if (level >= 85) {
+        	    buff.ailment[HIT_STUN] += 10;                       //スタン命中+10
+        	    buff.ailment[HIT_DESTRUCTION] += 10;                //破壊命中+10
+        	    buff.ailment[HIT_TERROR] += 10;                     //恐怖命中+10      
+        	} else if (level >= 80) {
+        	    buff.ailment[HIT_STUN] += 5 + (level - 80);         //スタン命中+(level - 75)
+        	    buff.ailment[HIT_DESTRUCTION] += 5 + (level - 80);  //破壊命中+(level - 75)
+        	    buff.ailment[HIT_TERROR] += 5 + (level - 80);       //恐怖命中+(level - 75)
+        	}
             } else {
                 ui.cb_buff[I_IT].setSelected(false);
             }
@@ -3977,7 +3978,7 @@ System.out.println(buki.magic_enchant);
             ui.lab_elem[i].setText(ELEM_LIST[i] + " " + res_ele[i]);
         }
         for (int i = 0; i < AILMENT_LIST.length; i++) {
-            ui.lab_ailment[i].setText(AILMENT_LIST[i] + " " + res_ail[i]);
+            ui.lab_ailment[i].setText(AILMENT_LIST[i] + " " + (res_ail[i] + buki.op.ailment[i] + buki.op2.ailment[i]));
         }
 
         int hpr = 0;
@@ -4502,8 +4503,29 @@ System.out.println(buki.magic_enchant);
         if (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC > 0) {
             buki_text += " 魔法クリティカル+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
-        if (buki.hit_stun > 0) {
-            buki_text += " スタン命中" + buki.hit_stun;
+        if (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE] > 0) {
+            buki_text += " 石化命中" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
+        }
+        if (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP] > 0) {
+            buki_text += " 睡眠命中" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
+        }
+        if (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE] > 0) {
+            buki_text += " 凍結命中" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
+        }
+        if (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS] > 0) {
+            buki_text += " 暗闇命中" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
+        }
+        if (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN] > 0) {
+            buki_text += " スタン命中" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
+        }
+        if (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD] > 0) {
+            buki_text += " ホールド命中" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
+        }
+        if (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR] > 0) {
+            buki_text += " 恐怖命中" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
+        }
+        if (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION] > 0) {
+            buki_text += " 破壊命中" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
         }
         if (buki.op.HP > 0) {
             buki_text += " HP+" + buki.op.HP;

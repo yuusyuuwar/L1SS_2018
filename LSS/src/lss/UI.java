@@ -938,6 +938,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp = new JLabel("‘Ï«");
         lab_tmp.setBounds(420, 440, 80, 25);
         panels[0].add(lab_tmp);
+        
+        lab_tmp = new JLabel("–½’†");
+        lab_tmp.setBounds(420, 500, 80, 25);
+        panels[0].add(lab_tmp);
 
         for (int i = 0; i < ELEM_LIST.length; i++) {
             lab_elem[i] = new JLabel();

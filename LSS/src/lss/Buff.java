@@ -118,26 +118,53 @@ public class Buff implements Common {
             if (line.startsWith("特殊=")) {
                 effect = line.split("=")[1];
             }
-            if (line.startsWith("スタン=")) {
+            if (line.startsWith("スタン耐性=")) {
                 ailment[STUN] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("暗闇=")) {
+            if (line.startsWith("暗闇耐性=")) {
                 ailment[DARKNESS] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ホールド=")) {
+            if (line.startsWith("ホールド耐性=")) {
                 ailment[HOLD] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("凍結=")) {
+            if (line.startsWith("凍結耐性=")) {
                 ailment[FREEZE] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("石化=")) {
+            if (line.startsWith("石化耐性=")) {
                 ailment[STONE] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("睡眠=")) {
+            if (line.startsWith("睡眠耐性=")) {
                 ailment[SLEEP] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("恐怖=")) {
+            if (line.startsWith("恐怖耐性=")) {
                 ailment[TERROR] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("破壊耐性=")) {
+                ailment[DESTRUCTION] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("スタン命中=")) {
+                ailment[HIT_STUN] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("暗闇命中=")) {
+                ailment[HIT_DARKNESS] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("ホールド命中=")) {
+                ailment[HIT_HOLD] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("凍結命中=")) {
+                ailment[HIT_FREEZE] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("石化命中=")) {
+                ailment[HIT_STONE] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("睡眠命中=")) {
+                ailment[HIT_SLEEP] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("恐怖命中=")) {
+                ailment[HIT_TERROR] = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("破壊命中=")) {
+                ailment[HIT_DESTRUCTION] = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("近距離クリティカル=")) {
                CRI_SHORT = Integer.parseInt(line.split("=")[1]);
