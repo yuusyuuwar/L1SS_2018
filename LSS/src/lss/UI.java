@@ -1476,7 +1476,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
 
-        cb_buff[BS_COIN] = new JCheckBox("黒蛇の気");
+        cb_buff[BS_COIN] = new JCheckBox("黒蛇の加護");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ減少+3 闇耐性+10");
 

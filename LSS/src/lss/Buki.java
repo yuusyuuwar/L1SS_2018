@@ -42,7 +42,6 @@ public class Buki implements Common {
     double magic_power = 0;
     double magic_delay = 0;
 
-    int hit_stun = 0;
     int weight = 0;
 
     private void reset() {
@@ -79,7 +78,6 @@ public class Buki implements Common {
         magic_delay = 0;
         magic_rate_plus = 0;
 
-//        hit_stun = 0;
         weight = 0;
     }
 
@@ -163,9 +161,6 @@ public class Buki implements Common {
                     week_point_exposure = Double
                             .parseDouble(line.split("=")[1]);
                 }
-//                if (line.startsWith("スタン命中=")) {
-//                    hit_stun = Integer.parseInt(line.split("=")[1]);
-//                }
                 if (line.startsWith("重さ=")) {
                     weight = Integer.parseInt(line.split("=")[1]);
                 }
@@ -270,7 +265,7 @@ public class Buki implements Common {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;    //追加ダメージ
             op2.CRI_LONG += enchant;     //遠距離クリティカル
-        //    op2.dr_XXXX += enchant;     //ダメージ軽減無視
+            op2.dr_ignored += enchant;   //ダメージリダクション無視
             }
         }
         if (enchant >= 10) {

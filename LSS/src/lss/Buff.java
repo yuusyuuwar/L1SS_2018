@@ -33,6 +33,7 @@ public class Buff implements Common {
 
     int PVP;
     int PVPDR;
+    int dr_ignored;
 
     int[] ailment = new int[AILMENT_LIST.length];
 
@@ -105,6 +106,9 @@ public class Buff implements Common {
             }
             if (line.startsWith("DR=")) {
                 DR = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("ダメージリダクション無視=")) {
+                dr_ignored = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("MR=")) {
                 MR = Integer.parseInt(line.split("=")[1]);

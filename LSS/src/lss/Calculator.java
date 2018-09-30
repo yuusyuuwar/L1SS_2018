@@ -4566,6 +4566,9 @@ System.out.println(buki.magic_enchant);
         if (!buki.material.equals("")) {
             buki_text += " 材質:" + buki.material;
         }
+        if (buki.op.dr_ignored > 0) {
+            buki_text += " ダメージリダクション無視 " + (buki.op.dr_ignored + buki.op2.dr_ignored);
+        }
         if (buki.weight > 0) {
             buki_text += " 重さ " + buki.weight;
         }
