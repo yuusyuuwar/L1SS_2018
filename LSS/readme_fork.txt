@@ -3,6 +3,14 @@
 変更点
 2018/09/30
 Update
+SS/src/lss/UI.java
+	ToolTipManagerを使用して実装
+	ツールチップの表示時間を4秒(4000)から6秒(6000)へ
+
+LSS/src/lss/Buff.java
+	防具のツールチップにPVP追加ダメージとPVPダメージ減少を実装
+
+Update
 LSS/data/E.zip
 	/E/
 	[DR=]を[ダメージリダクション=]へ変更(対象:すべてのファイル)

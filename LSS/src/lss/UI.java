@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -45,6 +46,7 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.ToolTipManager;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -266,6 +268,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //setSize(800, 600);
         setSize(800, 640);       
         setResizable(false);
+
+        ToolTipManager.sharedInstance().setInitialDelay(100);   //初期値:750
+        ToolTipManager.sharedInstance().setDismissDelay(6000);  //初期値:4000
+//        System.out.println(ToolTipManager.sharedInstance().getDismissDelay());    //初期値確認用
 
         tabpane = new JTabbedPane();
 
