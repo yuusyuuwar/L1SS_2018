@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -144,6 +143,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JToggleButton tb_blessed1;
     JToggleButton tb_blessed2;
     JComboBox cb_arrow;
+    
+    //JComboBox elixir_rune_en;   //エリクサールーンレベル
+    WideComboBox elixir_rune;   //エリクサールーン
 
     WideComboBox cb_pattern_l;  //左手
     WideComboBox cb_pattern_r;  //右手
@@ -650,7 +652,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
             }
-
+            if (i == 19) {
+                cnt++;
+            }
             if (i == 4) {
                 cnt++;
             }
@@ -710,14 +714,27 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_elem_2.setEnabled(false);
         cb_eq[1].setEnabled(false);
         cb_eq_en[1].setEnabled(false);
-
+        
+        //エリクサールーン
+//        String[] elixir_rune_en_list = {"LV", "55", "70", "85", "90"};
+//        elixir_rune_en = new JComboBox(elixir_rune_en_list);
+//        elixir_rune_en.setBounds(0, 460, 50, 20);
+//        elixir_rune_en.addActionListener(this);
+//        panels[0].add(elixir_rune_en);
+        
+        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
+        elixir_rune = new WideComboBox(elixir_rune_list);
+        elixir_rune.setBounds(50, 460, 150, 20);
+        elixir_rune.addActionListener(this);
+        panels[0].add(elixir_rune);        
+     
         String left_list[] = {"左腕", "腕力の紋様", "機敏の紋様", "体力の紋様", "知力の紋様", "精神の紋様",
             "魅力の紋様", "腕力の紋様II", "機敏の紋様II", "知力の紋様II", "剣士の紋様", "術士の紋様",
             "剣士の紋様II", "術士の紋様II", "弓士の紋様II"};
         String right_list[] = {"右腕", "生命の紋様", "魔法の紋様", "防御の紋様", "防御の紋様II", "耐火の紋様",
             "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様", "偉大なる者の遺物"};
         String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II", "祈りの紋様III", "祈りの紋様IV", "祈りの紋様V"};
-        String left2_list[] = {"左手", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
+        String left2_list[] = {"左手", "四つ星(近距離)", "四つ星(遠距離)", "六つ星(近/遠距離)", "象牙の塔のタリスマン"};
         String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術士たちの護符", "勇猛のオルターストーン", "魔弾のオルターストーン", "叡智のオルターストーン"};
         cb_pattern_l = new WideComboBox(left_list);
         cb_pattern_r = new WideComboBox(right_list);
@@ -764,7 +781,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_eq_ch = new JComboBox(ch_list);
         cb_eq_ch.addActionListener(mem);
         cb_eq_ch.setActionCommand("ch");
-        cb_eq_ch.setBounds(50, 200, 100, 20);
+        cb_eq_ch.setBounds(50, 200, 110, 20);
         panels[0].add(cb_eq_ch);
 
         bt_copy = new JButton("Copy");

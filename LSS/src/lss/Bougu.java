@@ -2355,7 +2355,7 @@ public class Bougu implements Common {
                         op2.CRI_SHORT = 5;
                         break;
                 }
-            }        
+            }
             if (name.equals("射手のインシグニア")) {
                 switch (enchant) {
                     case 1:

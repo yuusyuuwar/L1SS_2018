@@ -1,6 +1,15 @@
 ﻿LineageStatusSimulator_fork2018
 
 変更点
+2018/10/01
+Update
+SS/src/lss/UI.java
+	現在のエリクサルーンの位置にタリスマンを実装
+	スポールダーと紋章の間にエリクサルーンの位置を移動
+
+SS/src/lss/Calculator.java
+	タリスマンの効果を実装
+
 2018/09/30
 Update
 SS/src/lss/UI.java

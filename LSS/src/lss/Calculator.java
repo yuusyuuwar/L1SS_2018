@@ -1714,7 +1714,7 @@ public class Calculator implements Common {
         }
 
         //エリクサールーン
-        int e = ui.cb_pattern_l2.getSelectedIndex();
+        int e = ui.elixir_rune.getSelectedIndex();
         boolean q = false;
         if (e > 0) {
             if (e > 5) {
@@ -1775,7 +1775,33 @@ public class Calculator implements Common {
                     break;
             }
         }
-
+        //タリスマン
+            switch (ui.cb_pattern_l2.getSelectedIndex()) {
+                case 0:
+                    break;
+                case 1:
+                    buff.DMG_SHORT += 1;    //近距離ダメージ+1
+                    buff.HIT_SHORT += 1;    //近距離命中+1
+                    buff.SP += 1;           //SP+1
+                    buff.MR += 5;           //MR+5
+                    break;
+                case 2:
+                    buff.DMG_LONG += 1;     //遠距離ダメージ+1
+                    buff.HIT_LONG += 1;     //遠距離命中+1
+                    buff.SP += 1;           //SP+1
+                    buff.MR += 5;           //MR+5
+                    break;
+                case 3:
+                    buff.DMG_SHORT += 1;    //近距離ダメージ+1
+                    buff.HIT_SHORT += 1;    //近距離命中+1
+                    buff.DMG_LONG += 1;     //遠距離ダメージ+1
+                    buff.HIT_LONG += 1;     //遠距離命中+1
+                    buff.SP += 1;           //SP+1
+                    buff.MR += 5;           //MR+5
+                    break;
+                case 4:
+                    break;
+            }
         //オルターストーン
         if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
 
