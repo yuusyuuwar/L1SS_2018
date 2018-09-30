@@ -3847,6 +3847,7 @@ System.out.println(buki.magic_enchant);
             dr += bougu1.op2.DR;
         }
         dg = 0;
+        dr += buki.op.DR + buki.op2.DR;
         
         //アンキャニードッジ 消費MP20/3mins
         if (ui.cb_buff[D_UD].isSelected()) {
@@ -4565,6 +4566,9 @@ System.out.println(buki.magic_enchant);
         }
         if (!buki.material.equals("")) {
             buki_text += " 材質:" + buki.material;
+        }
+        if (buki.op.DR > 0) {
+            buki_text += " ダメージリダクション " + (buki.op.DR + buki.op2.DR);
         }
         if (buki.op.dr_ignored > 0) {
             buki_text += " ダメージリダクション無視 " + (buki.op.dr_ignored + buki.op2.dr_ignored);

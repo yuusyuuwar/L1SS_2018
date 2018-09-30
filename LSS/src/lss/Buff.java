@@ -104,7 +104,7 @@ public class Buff implements Common {
             if (line.startsWith("SP=")) {
                 SP = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("DR=")) {
+            if (line.startsWith("ダメージリダクション=")) {
                 DR = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("ダメージリダクション無視=")) {

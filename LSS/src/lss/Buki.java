@@ -61,8 +61,8 @@ public class Buki implements Common {
         arrow_name = "";
         arrow_material = "";
         arrow_type = "";
-        arrow_small = 0;
-        arrow_big = 0;
+//        arrow_small = 0;
+//        arrow_big = 0;
         arrow_dmg = 0;
         arrow_elementdmg = 0;
         arrow_hit = 0;
@@ -268,6 +268,7 @@ public class Buki implements Common {
             op2.dr_ignored += enchant;   //ダメージリダクション無視
             }
         }
+        //強化+10以上はエンチャントによる追加打撃が+2(既存処理に追加で+1)
         if (enchant >= 10) {
             op2.DMG_SHORT = enchant - 9;
             op2.DMG_LONG = enchant - 9;

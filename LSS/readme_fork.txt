@@ -4,6 +4,21 @@
 2018/09/30
 Update
 LSS/data/E.zip
+	/E/
+	[DR=]を[ダメージリダクション=]へ変更(対象:すべてのファイル)
+
+LSS/src/lss/Buki.java
+	コメントの削除と修正
+
+LSS/src/lss/Buff.java
+	武器のダメージリダクションを実装
+	DRの表示に武器分のダメージリダクションも反映するように修正
+
+SS/src/lss/Calculator.java
+	武器のチップセットにダメージリダクションを追加
+
+Update
+LSS/data/E.zip
 	/E/武器/
 	修正
 	1110006_マリスエレメントボウ.txt	
