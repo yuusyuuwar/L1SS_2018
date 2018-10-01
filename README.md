@@ -29,7 +29,7 @@ LineageStatusSimulator is a character simulation of PC game "Lineage".
 
 - Choice "No:いいえ".
 
-- enjoy LineageStatusSimulator!!
+- Enjoy LineageStatusSimulator!!
 
 # Related Site
 Original LineageStatusSimulator
