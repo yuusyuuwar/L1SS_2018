@@ -30,7 +30,8 @@ public interface Common {
     final int I = 6;
     final int F = 7;
 
-    final String[] ELEM_LIST = {"火", "水", "風", "地"};
+    //final String[] ELEM_LIST = {"火", "水", "風", "地"};
+    final String[] ELEM_LIST = {"火属性", "水属性", "風属性", "地属性"};
     final int FIRE = 0;
     final int WATER = 1;
     final int WIND = 2;
@@ -197,7 +198,8 @@ public interface Common {
     final int H_PVP = 96;       //暗殺のボーナス(未実装) 
     final int H_RK = 97;        //ランカーボーナス(未実装)     
 
-    final String[] AILMENT_LIST = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
+//    final String[] AILMENT_LIST = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
+    final String[] AILMENT_LIST = {"石化耐性", "睡眠耐性", "凍結耐性", "暗闇耐性", "気絶耐性", "拘束耐性", "恐怖耐性","破壊耐性","石化命中", "睡眠命中", "凍結命中", "暗闇命中", "気絶命中", "拘束命中", "恐怖命中","破壊命中"};
     final int STONE = 0;
     final int SLEEP = 1;
     final int FREEZE = 2;
@@ -205,6 +207,15 @@ public interface Common {
     final int STUN = 4;
     final int HOLD = 5;
     final int TERROR = 6;
+    final int DESTRUCTION = 7;
+    final int HIT_STONE = 8;
+    final int HIT_SLEEP = 9;
+    final int HIT_FREEZE = 10;
+    final int HIT_DARKNESS = 11;
+    final int HIT_STUN = 12;
+    final int HIT_HOLD = 13;
+    final int HIT_TERROR = 14;
+    final int HIT_DESTRUCTION = 15;
 
     final String[] ENEMY_TYPE_LIST = {"通常", "悪魔", "不死"};
     final int NORMAL = 0;

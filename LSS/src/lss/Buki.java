@@ -25,6 +25,10 @@ public class Buki implements Common {
     String arrow_type = "";
     int arrow_small = 0;
     int arrow_big = 0;
+    int arrow_dmg = 0;
+    int arrow_elementdmg = 0; 
+    int arrow_hit = 0;
+    
     int safety = 0;
     boolean element_enchant = false;
     // キーリンク用
@@ -38,7 +42,7 @@ public class Buki implements Common {
     double magic_power = 0;
     double magic_delay = 0;
 
-    int hit_stun = 0;
+    int weight = 0;
 
     private void reset() {
         small = 0;
@@ -57,8 +61,11 @@ public class Buki implements Common {
         arrow_name = "";
         arrow_material = "";
         arrow_type = "";
-        arrow_small = 0;
-        arrow_big = 0;
+//        arrow_small = 0;
+//        arrow_big = 0;
+        arrow_dmg = 0;
+        arrow_elementdmg = 0;
+        arrow_hit = 0;
 
         safety = 0;
         element_enchant = false;
@@ -71,7 +78,7 @@ public class Buki implements Common {
         magic_delay = 0;
         magic_rate_plus = 0;
 
-        hit_stun = 0;
+        weight = 0;
     }
 
     void load(BufferedReader reader) {
@@ -154,8 +161,8 @@ public class Buki implements Common {
                     week_point_exposure = Double
                             .parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("スタン命中=")) {
-                    hit_stun = Integer.parseInt(line.split("=")[1]);
+                if (line.startsWith("重さ=")) {
+                    weight = Integer.parseInt(line.split("=")[1]);
                 }
             }
         } catch (IOException | NullPointerException e) {
@@ -171,11 +178,20 @@ public class Buki implements Common {
                 if (line.startsWith("name")) {
                     arrow_name = line.split("=")[1];
                 }
-                if (line.startsWith("small")) {
-                    arrow_small = Integer.parseInt(line.split("=")[1]);
+//                if (line.startsWith("small")) {
+//                    arrow_small = Integer.parseInt(line.split("=")[1]);
+//                }
+//                if (line.startsWith("big")) {
+//                    arrow_big = Integer.parseInt(line.split("=")[1]);
+//                }
+                if (line.startsWith("追加ダメージ")) {
+                    arrow_dmg = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("big")) {
-                    arrow_big = Integer.parseInt(line.split("=")[1]);
+                if (line.startsWith("属性ダメージ")) {
+                    arrow_elementdmg = Integer.parseInt(line.split("=")[1]);
+                }
+                if (line.startsWith("遠距離命中")) {
+                    arrow_hit = Integer.parseInt(line.split("=")[1]);
                 }
                 if (line.startsWith("材質")) {
                     arrow_material = line.split("=")[1];
@@ -191,6 +207,68 @@ public class Buki implements Common {
         if (name.equals("瞑想のスタッフ")) {
             op2.MPR += enchant;
         }
+        //真冥王の執行剣    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][スタン命中]+1増加
+        if (name.equals("真冥王の執行剣")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.CRI_SHORT += enchant;                   //近距離クリティカル
+            op2.ailment[HIT_STUN] += enchant;           //スタン命中
+            }
+        }
+        //ウィンドブレードソード    エンチャントによる追加打撃が+2
+        if (name.equals("ウィンドブレードソード")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            }
+        } 
+        //レッドシャドウデュアルブレード    エンチャントによる追加打撃が+2 +1強化毎に[破壊命中]+1増加
+        if (name.equals("レッドシャドウデュアルブレード")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.ailment[HIT_DESTRUCTION] += enchant;    //破壊命中
+            }
+        }
+        //ホーリーヘドロンスタッフ    エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法命中]+1増加
+        if (name.equals("ホーリーヘドロンスタッフ")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.SP += enchant;                          //SP 
+            op2.HIT_MAGIC += enchant;                   //魔法命中   
+            }
+        }
+        //クロノスの恐怖    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル]+1%増加 
+        if (name.equals("クロノスの恐怖")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.CRI_SHORT += enchant;                   //近距離クリティカル
+            }
+        }
+        //ヒュペリオンの絶望    エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][スタン命中]+1増加
+        if (name.equals("ヒュペリオンの絶望")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.SP += enchant;                          //SP 
+            op2.CRI_MAGIC += enchant;                   //魔法クリティカル
+            op2.ailment[HIT_STUN] += enchant;           //スタン命中
+            }
+        }
+        //タイタンの憤怒    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][恐怖命中]+1増加 
+        if (name.equals("タイタンの憤怒")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.CRI_SHORT += enchant;                   //近距離クリティカル
+            op2.ailment[HIT_TERROR] += enchant;         //恐怖命中
+            }
+        }
+        //ガイアの激怒    エンチャントによる追加打撃が+2 +1強化毎に[遠距離クリティカル][ダメージ軽減無視]+1増加 
+        if (name.equals("ガイアの激怒")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;    //追加ダメージ
+            op2.CRI_LONG += enchant;     //遠距離クリティカル
+            op2.dr_ignored += enchant;   //ダメージリダクション無視
+            }
+        }
+        //強化+10以上はエンチャントによる追加打撃が+2(既存処理に追加で+1)
         if (enchant >= 10) {
             op2.DMG_SHORT = enchant - 9;
             op2.DMG_LONG = enchant - 9;

@@ -216,6 +216,33 @@ public class Bougu implements Common {
         if (op.ailment[TERROR] + op2.ailment[TERROR] > 0) {
             text += " 恐怖耐性+" + (op.ailment[TERROR] + op2.ailment[TERROR]);
         }
+        if (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION] > 0) {
+            text += " 破壊耐性+" + (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION]);
+        }
+        if (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN] > 0) {
+            text += " スタン命中+" + (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN]);
+        }
+        if (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD] > 0) {
+            text += " ホールド命中+" + (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD]);
+        }
+        if (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP] > 0) {
+            text += " 睡眠命中+" + (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP]);
+        }
+        if (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE] > 0) {
+            text += " 凍結命中+" + (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE]);
+        }
+        if (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE] > 0) {
+            text += " 石化命中+" + (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE]);
+        }
+        if (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS] > 0) {
+            text += " 暗闇命中+" + (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS]);
+        }
+        if (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR] > 0) {
+            text += " 恐怖命中+" + (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR]);
+        }
+        if (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION] > 0) {
+            text += " 破壊命中+" + (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION]);
+        }
         if (op.PVP + op2.PVP > 0) {
             //text += " PVPダメージ+" + (op.PVP + op2.PVP);
             text += " PVP追加ダメージ+" + (op.PVP + op2.PVP);

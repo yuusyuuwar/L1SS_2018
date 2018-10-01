@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -45,6 +46,7 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.ToolTipManager;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -266,6 +268,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //setSize(800, 600);
         setSize(800, 640);       
         setResizable(false);
+
+        ToolTipManager.sharedInstance().setInitialDelay(100);   //初期値:750
+        ToolTipManager.sharedInstance().setDismissDelay(6000);  //初期値:4000
+//        System.out.println(ToolTipManager.sharedInstance().getDismissDelay());    //初期値確認用
 
         tabpane = new JTabbedPane();
 
@@ -938,6 +944,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp = new JLabel("耐性");
         lab_tmp.setBounds(420, 440, 80, 25);
         panels[0].add(lab_tmp);
+        
+        lab_tmp = new JLabel("命中");
+        lab_tmp.setBounds(420, 500, 80, 25);
+        panels[0].add(lab_tmp);
 
         for (int i = 0; i < ELEM_LIST.length; i++) {
             lab_elem[i] = new JLabel();
@@ -1472,7 +1482,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
 
-        cb_buff[BS_COIN] = new JCheckBox("黒蛇の気");
+        cb_buff[BS_COIN] = new JCheckBox("黒蛇の加護");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ減少+3 闇耐性+10");
 
