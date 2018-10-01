@@ -238,7 +238,7 @@ public class Calculator implements Common {
         st_data[F][REM][CHA] = 4;
         rem_data[F] = 4;
 
-        //ƒXƒe[ƒ^ƒXƒ{[ƒiƒX
+        //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒœãƒ¼ãƒŠã‚¹
         _C[D_SHORT][STR][P] = 30;
         _C[D_SHORT][STR][K] = 10;
         _C[D_SHORT][STR][E] = 30;
@@ -360,22 +360,22 @@ public class Calculator implements Common {
     private final UI ui;
     Morph polymorph = new Morph();
     private double acc = 1.0;
-    // ˆê’i‰Á‘¬(GP GGP ƒƒCƒ“ ƒEƒCƒXƒL[)
+    // ä¸€æ®µåŠ é€Ÿ(GP GGP ãƒ¯ã‚¤ãƒ³ ã‚¦ã‚¤ã‚¹ã‚­ãƒ¼)
     double acc_1 = 1.3333;
-    // “ñ’i‰Á‘¬(BP ƒCƒrƒ‹ƒuƒ‰ƒbƒh ƒuƒ‰ƒbƒhƒ‰ƒXƒg –¼—_‚ÌƒRƒCƒ“ ƒ_ƒ“ƒVƒ“ƒOƒuƒŒƒCƒY ƒtƒH[ƒJƒXƒEƒF[ƒu ƒnƒŠƒP[ƒ“ ƒTƒ“ƒhƒXƒg[ƒ€)
+    // äºŒæ®µåŠ é€Ÿ(BP ã‚¤ãƒ“ãƒ«ãƒ–ãƒ©ãƒƒãƒ‰ ãƒ–ãƒ©ãƒƒãƒ‰ãƒ©ã‚¹ãƒˆ åèª‰ã®ã‚³ã‚¤ãƒ³ ãƒ€ãƒ³ã‚·ãƒ³ã‚°ãƒ–ãƒ¬ã‚¤ã‚º ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚¦ã‚§ãƒ¼ãƒ– ãƒãƒªã‚±ãƒ¼ãƒ³ ã‚µãƒ³ãƒ‰ã‚¹ãƒˆãƒ¼ãƒ )
     double acc_2 = 1.3333;
-    // “ñ’i‰Á‘¬(EW ”ZkW’†ƒ|[ƒVƒ‡ƒ“)
+    // äºŒæ®µåŠ é€Ÿ(EW æ¿ƒç¸®é›†ä¸­ãƒãƒ¼ã‚·ãƒ§ãƒ³)
     double acc_ew = 1.1547;
-    // O’i‰Á‘¬(ƒhƒ‰ƒSƒ“ƒuƒ‰ƒbƒh ‘ o‚µ”é‘ ğ)
+    // ä¸‰æ®µåŠ é€Ÿ(ãƒ‰ãƒ©ã‚´ãƒ³ãƒ–ãƒ©ãƒƒãƒ‰ è”µå‡ºã—ç§˜è”µé…’)
     double acc_3 = 1.125;
     double key_delay = 0.1815;
 
-    double db_rate = 0.3333;    //ƒ_ƒuƒ‹ƒuƒŒƒCƒN‚ÌŠm—¦33%
-    double ef_rate = 0.4000;    //ƒGƒŒƒƒ“ƒ^ƒ‹ƒtƒ@ƒCƒA[‚ÌŠm—¦40%
-    double qe_rate = 0.4000;    //ƒNƒGƒCƒN‚ÌŠm—¦40%
-    double ce_rate = 0.4000;    //ƒTƒCƒNƒƒ“‚ÌŠm—¦40%
-    double bk_rate = 0.4000;    //ƒuƒ[ƒAƒ^ƒbƒN‚ÌŠm—¦40%
-    double bs_rate = 0.3333;    //ƒo[ƒjƒ“ƒOƒXƒsƒbƒc‚ÌŠm—¦33%
+    double db_rate = 0.3333;    //ãƒ€ãƒ–ãƒ«ãƒ–ãƒ¬ã‚¤ã‚¯ã®ç¢ºç‡33%
+    double ef_rate = 0.4000;    //ã‚¨ãƒ¬ãƒ¡ãƒ³ã‚¿ãƒ«ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼ã®ç¢ºç‡40%
+    double qe_rate = 0.4000;    //ã‚¯ã‚¨ã‚¤ã‚¯ã®ç¢ºç‡40%
+    double ce_rate = 0.4000;    //ã‚µã‚¤ã‚¯ãƒ­ãƒ³ã®ç¢ºç‡40%
+    double bk_rate = 0.4000;    //ãƒ–ãƒ­ãƒ¼ã‚¢ã‚¿ãƒƒã‚¯ã®ç¢ºç‡40%
+    double bs_rate = 0.3333;    //ãƒãƒ¼ãƒ‹ãƒ³ã‚°ã‚¹ãƒ”ãƒƒãƒ„ã®ç¢ºç‡33%
 
     public Calculator(UI ui) {
         this.ui = ui;
@@ -393,20 +393,20 @@ public class Calculator implements Common {
             ui.cb_magic.setSelectedIndex(0);
 
             if (cls == E) {
-                ui.cb_magic.addItem("ƒgƒŠƒvƒ‹ƒAƒ[");
-                ui.cb_magic.addItem("ƒTƒ“ƒo[ƒXƒg");
-                ui.cb_magic.addItem("ƒR[ƒ“ƒIƒuƒR[ƒ‹ƒh");
-                ui.cb_magic.addItem("ƒCƒ‰ƒvƒVƒ‡ƒ“");
-                ui.cb_magic.addItem("ƒR[ƒ‹ƒ‰ƒCƒgƒjƒ“ƒO");
+                ui.cb_magic.addItem("ãƒˆãƒªãƒ—ãƒ«ã‚¢ãƒ­ãƒ¼");
+                ui.cb_magic.addItem("ã‚µãƒ³ãƒãƒ¼ã‚¹ãƒˆ");
+                ui.cb_magic.addItem("ã‚³ãƒ¼ãƒ³ã‚ªãƒ–ã‚³ãƒ¼ãƒ«ãƒ‰");
+                ui.cb_magic.addItem("ã‚¤ãƒ©ãƒ—ã‚·ãƒ§ãƒ³");
+                ui.cb_magic.addItem("ã‚³ãƒ¼ãƒ«ãƒ©ã‚¤ãƒˆãƒ‹ãƒ³ã‚°");
             }
             if (cls == R) {
-                ui.cb_magic.addItem("ƒtƒH[ƒXƒŒƒCƒ„[");
+                ui.cb_magic.addItem("ãƒ•ã‚©ãƒ¼ã‚¹ãƒ¬ã‚¤ãƒ¤ãƒ¼");
             }
             if (cls == W) {
-                ui.cb_magic.addItem("ƒTƒ“ƒo[ƒXƒg");
-                ui.cb_magic.addItem("ƒR[ƒ“ƒIƒuƒR[ƒ‹ƒh");
-                ui.cb_magic.addItem("ƒCƒ‰ƒvƒVƒ‡ƒ“");
-                ui.cb_magic.addItem("ƒR[ƒ‹ƒ‰ƒCƒgƒjƒ“ƒO");
+                ui.cb_magic.addItem("ã‚µãƒ³ãƒãƒ¼ã‚¹ãƒˆ");
+                ui.cb_magic.addItem("ã‚³ãƒ¼ãƒ³ã‚ªãƒ–ã‚³ãƒ¼ãƒ«ãƒ‰");
+                ui.cb_magic.addItem("ã‚¤ãƒ©ãƒ—ã‚·ãƒ§ãƒ³");
+                ui.cb_magic.addItem("ã‚³ãƒ¼ãƒ«ãƒ©ã‚¤ãƒˆãƒ‹ãƒ³ã‚°");
             }
         }
 
@@ -498,86 +498,86 @@ public class Calculator implements Common {
             buff.PVPDR += b.op.PVPDR + b.op2.PVPDR;
         }
 
-        if (bougu[0].name.equals("ƒGƒ‹ƒ”ƒ“ƒV[ƒ‹ƒh")) {
+        if (bougu[0].name.equals("ã‚¨ãƒ«ãƒ´ãƒ³ã‚·ãƒ¼ãƒ«ãƒ‰")) {
             if (cls == E) {
                 buff.MR += 5;
             }
         }
 
-        // ƒZƒbƒgŒø‰Ê
-        int set1 = 0, set2 = 0, set3 = 0;// ‰¤‰ÆƒZƒbƒg
-        int set4 = 0, set5 = 0, set6 = 0;// ò‰»ƒZƒbƒg
-        int set7 = 0, set8 = 0;// ‹ÉŠ¦AƒAƒCƒXƒNƒC[ƒ“ƒZƒbƒg
-        int set9 = 0;// C—ûÒƒZƒbƒg
-        int set10 = 0, set11 = 0, set12 = 0;//’Ş‚èƒZƒbƒg
-        int set13 = 0;//ŒR‰¤ƒZƒbƒg
-        int set14 = 0;//DKƒZƒbƒg
+        // ã‚»ãƒƒãƒˆåŠ¹æœ
+        int set1 = 0, set2 = 0, set3 = 0;// ç‹å®¶ã‚»ãƒƒãƒˆ
+        int set4 = 0, set5 = 0, set6 = 0;// æµ„åŒ–ã‚»ãƒƒãƒˆ
+        int set7 = 0, set8 = 0;// æ¥µå¯’ã€ã‚¢ã‚¤ã‚¹ã‚¯ã‚¤ãƒ¼ãƒ³ã‚»ãƒƒãƒˆ
+        int set9 = 0;// ä¿®ç·´è€…ã‚»ãƒƒãƒˆ
+        int set10 = 0, set11 = 0, set12 = 0;//é‡£ã‚Šã‚»ãƒƒãƒˆ
+        int set13 = 0;//è»ç‹ã‚»ãƒƒãƒˆ
+        int set14 = 0;//DKã‚»ãƒƒãƒˆ
 
         for (Bougu bougu1 : bougu) {
-            if (bougu1.name.equals("ƒfƒXƒiƒCƒgƒwƒ‹ƒ€")
-                    || bougu1.name.equals("ƒfƒXƒiƒCƒgƒOƒ[ƒu")
-                    || bougu1.name.equals("ƒfƒXƒiƒCƒgƒA[ƒ}[")
-                    || bougu1.name.equals("ƒfƒXƒiƒCƒgƒu[ƒc")) {
+            if (bougu1.name.equals("ãƒ‡ã‚¹ãƒŠã‚¤ãƒˆãƒ˜ãƒ«ãƒ ")
+                    || bougu1.name.equals("ãƒ‡ã‚¹ãƒŠã‚¤ãƒˆã‚°ãƒ­ãƒ¼ãƒ–")
+                    || bougu1.name.equals("ãƒ‡ã‚¹ãƒŠã‚¤ãƒˆã‚¢ãƒ¼ãƒãƒ¼")
+                    || bougu1.name.equals("ãƒ‡ã‚¹ãƒŠã‚¤ãƒˆãƒ–ãƒ¼ãƒ„")) {
                 set14++;
             }
 
-            if (bougu1.name.equals("–‚—ìŒR‰¤‚Ìƒ[ƒu")
-                    || bougu1.name.equals("–»–@ŒR‰¤‚Ìƒ}ƒ“ƒg")
-                    || bougu1.name.equals("ˆÃEŒR‰¤‚ÌƒOƒ[ƒu")
-                    || bougu1.name.equals("–‚bŒR‰¤‚Ìƒu[ƒc")) {
+            if (bougu1.name.equals("é­”éœŠè»ç‹ã®ãƒ­ãƒ¼ãƒ–")
+                    || bougu1.name.equals("å†¥æ³•è»ç‹ã®ãƒãƒ³ãƒˆ")
+                    || bougu1.name.equals("æš—æ®ºè»ç‹ã®ã‚°ãƒ­ãƒ¼ãƒ–")
+                    || bougu1.name.equals("é­”ç£è»ç‹ã®ãƒ–ãƒ¼ãƒ„")) {
                 set13++;
             }
 
-            if (bougu1.name.equals("ƒVƒƒƒCƒjƒ“ƒOƒCƒAƒŠƒ“ƒO")) {
+            if (bougu1.name.equals("ã‚·ãƒ£ã‚¤ãƒ‹ãƒ³ã‚°ã‚¤ã‚¢ãƒªãƒ³ã‚°")) {
                 set10++;
                 set11++;
                 set12++;
             }
-            if (bougu1.name.equals("ƒŒƒbƒhƒ€[ƒ“ƒlƒbƒNƒŒƒX")) {
+            if (bougu1.name.equals("ãƒ¬ãƒƒãƒ‰ãƒ ãƒ¼ãƒ³ãƒãƒƒã‚¯ãƒ¬ã‚¹")) {
                 set10 += 2;
             }
-            if (bougu1.name.equals("ƒzƒƒCƒgƒ€[ƒ“ƒlƒbƒNƒŒƒX")) {
+            if (bougu1.name.equals("ãƒ›ãƒ¯ã‚¤ãƒˆãƒ ãƒ¼ãƒ³ãƒãƒƒã‚¯ãƒ¬ã‚¹")) {
                 set11 += 2;
             }
-            if (bougu1.name.equals("ƒuƒ‰ƒbƒNƒ€[ƒ“ƒlƒbƒNƒŒƒX")) {
+            if (bougu1.name.equals("ãƒ–ãƒ©ãƒƒã‚¯ãƒ ãƒ¼ãƒ³ãƒãƒƒã‚¯ãƒ¬ã‚¹")) {
                 set12 += 2;
             }
 
-            if (bougu1.name.equals("‰¤‰Æ‚ÌƒCƒAƒŠƒ“ƒO")) {
+            if (bougu1.name.equals("ç‹å®¶ã®ã‚¤ã‚¢ãƒªãƒ³ã‚°")) {
                 set1++;
                 set2++;
                 set3++;
             }
-            if (bougu1.name.equals("ò‰»‚ÌƒCƒAƒŠƒ“ƒO")) {
+            if (bougu1.name.equals("æµ„åŒ–ã®ã‚¤ã‚¢ãƒªãƒ³ã‚°")) {
                 set4++;
                 set5++;
                 set6++;
             }
-            if (bougu1.name.equals("‰¤‰Æ‚Ì–Ò‚«ƒAƒ~ƒ…ƒŒƒbƒg")) {
+            if (bougu1.name.equals("ç‹å®¶ã®çŒ›ãã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ")) {
                 set1 += 2;
             }
-            if (bougu1.name.equals("‰¤‰Æ‚ÌŒ«‚«ƒAƒ~ƒ…ƒŒƒbƒg")) {
+            if (bougu1.name.equals("ç‹å®¶ã®è³¢ãã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ")) {
                 set2 += 2;
             }
-            if (bougu1.name.equals("‰¤‰Æ‚Ì‹­‚«ƒAƒ~ƒ…ƒŒƒbƒg")) {
+            if (bougu1.name.equals("ç‹å®¶ã®å¼·ãã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ")) {
                 set3 += 2;
             }
-            if (bougu1.name.equals("Âô‚ÌƒAƒ~ƒ…ƒŒƒbƒg")) {
+            if (bougu1.name.equals("é’å‘ªã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ")) {
                 set4 += 2;
             }
-            if (bougu1.name.equals("Ôô‚ÌƒAƒ~ƒ…ƒŒƒbƒg")) {
+            if (bougu1.name.equals("èµ¤å‘ªã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ")) {
                 set5 += 2;
             }
-            if (bougu1.name.equals("—Îô‚ÌƒAƒ~ƒ…ƒŒƒbƒg")) {
+            if (bougu1.name.equals("ç·‘å‘ªã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ")) {
                 set6 += 2;
             }
-            if (bougu1.name.contains("‹ÉŠ¦")) {
+            if (bougu1.name.contains("æ¥µå¯’")) {
                 set7++;
             }
-            if (bougu1.name.contains("ƒAƒCƒXƒNƒC[ƒ“")) {
+            if (bougu1.name.contains("ã‚¢ã‚¤ã‚¹ã‚¯ã‚¤ãƒ¼ãƒ³")) {
                 set8++;
             }
-            if (bougu1.name.contains("C—ûÒ")) {
+            if (bougu1.name.contains("ä¿®ç·´è€…")) {
                 set9++;
             }
         }
@@ -660,11 +660,11 @@ public class Calculator implements Common {
             buff.AC -= 10;
             buff.ST[STR] += 2;
             buff.DMG_SHORT += 2;
-            //  ‰º‹Lƒƒ\ƒbƒhÀs‚Ì‚½‚Ñ‚É’Ç‰Áƒ{[ƒiƒX‚ª—İÏ‚³‚ê‚é–Í—li–{—ˆ{2ŒÂ‚Å’Ç‰Áƒ{[ƒiƒX‚ª3”{‚É‚È‚éj
+            //  ä¸‹è¨˜ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œã®ãŸã³ã«è¿½åŠ ãƒœãƒ¼ãƒŠã‚¹ãŒç´¯ç©ã•ã‚Œã‚‹æ¨¡æ§˜ï¼ˆæœ¬æ¥ï¼‹2å€‹ã§è¿½åŠ ãƒœãƒ¼ãƒŠã‚¹ãŒ3å€ã«ãªã‚‹ï¼‰
             //ui.cb_morph_level.setSelectedItem("80");
-            //ui.cb_morph_type.setSelectedItem("‹ß/‰““Á‰»");
+            //ui.cb_morph_type.setSelectedItem("è¿‘/é ç‰¹åŒ–");
         }
-        //ƒEƒBƒYƒ_ƒ€ƒ|[ƒVƒ‡ƒ“
+        //ã‚¦ã‚£ã‚ºãƒ€ãƒ ãƒãƒ¼ã‚·ãƒ§ãƒ³
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
             if (cls == W || cls == I) {
                 buff.SP += 2;
@@ -674,26 +674,26 @@ public class Calculator implements Common {
             }
         }
 
-        // ƒ}ƒWƒbƒNƒh[ƒ‹
+        // ãƒã‚¸ãƒƒã‚¯ãƒ‰ãƒ¼ãƒ«
         if (ui.cb_buff[ITEM_MD].isSelected()) {
             switch (ui.cb_buff_group[ITEM_MD].getSelectedIndex()) {
                 case 0:
-                    buff.effect += "“ÁêUŒ‚(ƒNƒ‰ƒXƒ^ƒVƒAƒ“/ƒEƒFƒAƒEƒ‹ƒt),";
+                    buff.effect += "ç‰¹æ®Šæ”»æ’ƒ(ã‚¯ãƒ©ã‚¹ã‚¿ã‚·ã‚¢ãƒ³/ã‚¦ã‚§ã‚¢ã‚¦ãƒ«ãƒ•),";
                     break;
                 case 1:
                     buff.r_weight += 0.2;
                     break;
                 case 2:
-                    buff.effect += "MP‰ñ•œ +15,";
+                    buff.effect += "MPå›å¾© +15,";
                     break;
                 case 3:
-                    buff.effect += "MP‰ñ•œ +15,";
+                    buff.effect += "MPå›å¾© +15,";
                     break;
                 case 4:
                     buff.DR += 1;
                     break;
                 case 5:
-                    buff.effect += "“ÁêUŒ‚(ƒNƒ‰ƒXƒ^ƒVƒAƒ“/ƒEƒFƒAƒEƒ‹ƒt),";
+                    buff.effect += "ç‰¹æ®Šæ”»æ’ƒ(ã‚¯ãƒ©ã‚¹ã‚¿ã‚·ã‚¢ãƒ³/ã‚¦ã‚§ã‚¢ã‚¦ãƒ«ãƒ•),";
                 case 6:
                     buff.AC -= 3;
                     buff.ailment[FREEZE] += 7;
@@ -703,10 +703,10 @@ public class Calculator implements Common {
                     buff.HIT_LONG++;
                     break;
                 case 8:
-                    buff.effect += "HP‰ñ•œ +40,";
+                    buff.effect += "HPå›å¾© +40,";
                     break;
                 case 9:
-                    buff.effect += "‰ñ”ğ,";
+                    buff.effect += "å›é¿,";
                     break;
                 case 10:
                     buff.DMG_SHORT += 2;
@@ -716,7 +716,7 @@ public class Calculator implements Common {
                 case 11:
                     buff.MPR += 4;
                     break;
-                case 17:// ƒuƒ‹[ƒg
+                case 17:// ãƒ–ãƒ«ãƒ¼ãƒˆ
                     buff.r_weight += 0.02;
                 case 16:
                     buff.r_weight += 0.02;
@@ -732,37 +732,37 @@ public class Calculator implements Common {
                     buff.r_weight += 0.10;
                     ui.cb_buff[ACC1].setSelected(true);
                     break;
-                case 23:// ƒWƒƒƒCƒAƒ“ƒg
+                case 23:// ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ
                     buff.r_weight += 0.10;
                     buff.AC--;
                     buff.MR += 5;
-                    buff.effect += "ƒ_ƒ[ƒWŒyŒ¸ +20,ƒ”ƒ@ƒ“ƒpƒCƒAƒŠƒbƒNƒ^ƒbƒ`,";
+                    buff.effect += "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸› +20,ãƒ´ã‚¡ãƒ³ãƒ‘ã‚¤ã‚¢ãƒªãƒƒã‚¯ã‚¿ãƒƒãƒ,";
                     break;
                 case 22:
                     buff.r_weight += 0.10;
                     buff.AC--;
                     buff.MR += 5;
-                    buff.effect += "ƒ_ƒ[ƒWŒyŒ¸ +17,";
+                    buff.effect += "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸› +17,";
                     break;
                 case 21:
                     buff.r_weight += 0.10;
                     buff.AC--;
                     buff.MR += 5;
-                    buff.effect += "ƒ_ƒ[ƒWŒyŒ¸ +14,";
+                    buff.effect += "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸› +14,";
                     break;
                 case 20:
                     buff.r_weight += 0.10;
                     buff.AC--;
-                    buff.effect += "ƒ_ƒ[ƒWŒyŒ¸ +11,";
+                    buff.effect += "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸› +11,";
                     break;
                 case 19:
                     buff.r_weight += 0.10;
                     buff.AC--;
-                    buff.effect += "ƒ_ƒ[ƒWŒyŒ¸ +8,";
+                    buff.effect += "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸› +8,";
                     break;
                 case 18:
                     buff.r_weight += 0.10;
-                    buff.effect += "ƒ_ƒ[ƒWŒyŒ¸ +5,";
+                    buff.effect += "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸› +5,";
                     break;
                 case 24:
                     buff.DMG_SHORT += 1;
@@ -780,7 +780,7 @@ public class Calculator implements Common {
                     buff.DMG_SHORT += 2;
                     buff.DMG_LONG += 2;
                     buff.SP += 1;
-                    buff.effect += "“ÁêUŒ‚(ƒpƒbƒN/ƒpƒI),";
+                    buff.effect += "ç‰¹æ®Šæ”»æ’ƒ(ãƒ‘ãƒƒã‚¯/ãƒ‘ã‚ª),";
                     break;
 
                 case 28:
@@ -788,7 +788,7 @@ public class Calculator implements Common {
                     buff.DR += 2;
                     buff.SP += 2;
                     buff.HP += 40;
-                    buff.effect += "MP‰ñ•œ +16,";
+                    buff.effect += "MPå›å¾© +16,";
                     break;
             }
         }
@@ -827,13 +827,13 @@ public class Calculator implements Common {
                     buff.MPR += 7;
                     break;
                 case 9:
-                    buff.effect += "MP‰ñ•œ +1,";
+                    buff.effect += "MPå›å¾© +1,";
                     break;
                 case 10:
-                    buff.effect += "MP‰ñ•œ +3,";
+                    buff.effect += "MPå›å¾© +3,";
                     break;
                 case 11:
-                    buff.effect += "MP‰ñ•œ +7,";
+                    buff.effect += "MPå›å¾© +7,";
                     break;
                 case 12:
                     buff.HP += 10;
@@ -865,179 +865,179 @@ public class Calculator implements Common {
         ui.cb_buff[ITEM_MD2].setToolTipText("   ");
         if (ui.cb_buff[ITEM_MD2].isSelected()) {
             switch ((String) ui.cb_buff_group[ITEM_MD2].getSelectedItem()) {
-                case "ƒJƒJƒV":
+                case "ã‚«ã‚«ã‚·":
                     buff.HP += 50;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("Å‘åHP+50");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("æœ€å¤§HP+50");
                     break;
-                case "ƒXƒm[ƒ}ƒ“":
+                case "ã‚¹ãƒãƒ¼ãƒãƒ³":
                     buff.DMG_SHORT += 1;
                     buff.HIT_SHORT += 1;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("‹ß‹——£ƒ_ƒ[ƒW+1 ‹ß‹——£–½’†+1");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1 è¿‘è·é›¢å‘½ä¸­+1");
                     break;
-                case "ƒ}[ƒƒCƒh":
-                    ui.cb_buff[ITEM_MD2].setToolTipText("ŒoŒ±’l‘‰Á+3%");
+                case "ãƒãƒ¼ãƒ¡ã‚¤ãƒ‰":
+                    ui.cb_buff[ITEM_MD2].setToolTipText("çµŒé¨“å€¤å¢—åŠ +3%");
                     break;
-                case "ƒ‰ƒ”ƒ@ƒS[ƒŒƒ€":
+                case "ãƒ©ãƒ´ã‚¡ã‚´ãƒ¼ãƒ¬ãƒ ":
                     buff.DMG_SHORT += 1;
                     buff.DR += 1;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("‹ß‹——£ƒ_ƒ[ƒW+1 ƒ_ƒ[ƒWŒyŒ¸+1");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+1");
                     break;
-                case "ƒWƒƒƒCƒAƒ“ƒg":
+                case "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ":
                     buff.DR += 1;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("ŒoŒ±’l‘‰Á+10% ƒ_ƒ[ƒWŒyŒ¸+1");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("çµŒé¨“å€¤å¢—åŠ +10% ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+1");
                     break;
-                case "ƒuƒ‰ƒbƒNƒGƒ‹ƒ_[":
-                    buff.effect += "MP‰ñ•œ +15,";
-                    buff.effect += "ƒR[ƒ‹ƒ‰ƒCƒgƒjƒ“ƒO,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("64•b–ˆ‚ÉMP‚ª15‰ñ•œ –‚–@”­“®(ƒR[ƒ‹ƒ‰ƒCƒgƒjƒ“ƒO)");
+                case "ãƒ–ãƒ©ãƒƒã‚¯ã‚¨ãƒ«ãƒ€ãƒ¼":
+                    buff.effect += "MPå›å¾© +15,";
+                    buff.effect += "ã‚³ãƒ¼ãƒ«ãƒ©ã‚¤ãƒˆãƒ‹ãƒ³ã‚°,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("64ç§’æ¯ã«MPãŒ15å›å¾© é­”æ³•ç™ºå‹•(ã‚³ãƒ¼ãƒ«ãƒ©ã‚¤ãƒˆãƒ‹ãƒ³ã‚°)");
                     break;
-                case "ƒTƒLƒ…ƒoƒXƒNƒC[ƒ“":
-                    buff.effect += "MP‰ñ•œ +15,";
+                case "ã‚µã‚­ãƒ¥ãƒã‚¹ã‚¯ã‚¤ãƒ¼ãƒ³":
+                    buff.effect += "MPå›å¾© +15,";
                     buff.SP += 1;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("SP+1 64•b–ˆ‚ÉMP‚ª15‰ñ•œ");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("SP+1 64ç§’æ¯ã«MPãŒ15å›å¾©");
                     break;
-                case "ƒhƒŒƒCƒN":
+                case "ãƒ‰ãƒ¬ã‚¤ã‚¯":
                     buff.DMG_LONG += 2;
-                    buff.effect += "MP‰ñ•œ +6,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("‰“‹——£ƒ_ƒ[ƒW+2 64•b–ˆ‚ÉMP‚ª6‰ñ•œ");
+                    buff.effect += "MPå›å¾© +6,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2 64ç§’æ¯ã«MPãŒ6å›å¾©");
                     break;
-                case "ƒLƒ“ƒOƒoƒOƒxƒA[":
+                case "ã‚­ãƒ³ã‚°ãƒã‚°ãƒ™ã‚¢ãƒ¼":
                     buff.ailment[STUN] += 8;
-                    buff.effect += "MP‰ñ•œ +10,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("ƒXƒ^ƒ“‘Ï«+8 64•b–ˆ‚ÉMP‚ª10‰ñ•œ");
+                    buff.effect += "MPå›å¾© +10,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+8 64ç§’æ¯ã«MPãŒ10å›å¾©");
                     break;
-                case "ƒ_ƒCƒAƒS[ƒŒƒ€":
+                case "ãƒ€ã‚¤ã‚¢ã‚´ãƒ¼ãƒ¬ãƒ ":
                     buff.DR += 2;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("ƒ_ƒ[ƒWŒyŒ¸+2");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2");
                     break;
-                case "ƒTƒCƒNƒƒvƒX":
+                case "ã‚µã‚¤ã‚¯ãƒ­ãƒ—ã‚¹":
                     buff.AC -= 1;
                     buff.DMG_SHORT += 6;
                     buff.DMG_LONG += 6;
                     buff.SP += 4;
-                    buff.effect += "ƒA[ƒXƒWƒFƒCƒ‹,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 ‹ß‹——£ƒ_ƒ[ƒW+6 ‰“‹——£ƒ_ƒ[ƒW+6 SP+4 –‚–@”­“®(ƒA[ƒXƒWƒFƒCƒ‹)");
+                    buff.effect += "ã‚¢ãƒ¼ã‚¹ã‚¸ã‚§ã‚¤ãƒ«,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+6 é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+6 SP+4 é­”æ³•ç™ºå‹•(ã‚¢ãƒ¼ã‚¹ã‚¸ã‚§ã‚¤ãƒ«)");
                     break;
-                case "ƒiƒCƒgƒoƒ‹ƒh":
+                case "ãƒŠã‚¤ãƒˆãƒãƒ«ãƒ‰":
                     buff.AC -= 2;
                     buff.DMG_SHORT += 4;
                     buff.HIT_SHORT += 2;
                     buff.DR += 2;
                     buff.HP += 120;
-                    buff.effect += "MP‰ñ•œ +8,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 Å‘åHP+120 ‹ß‹——£ƒ_ƒ[ƒW+4 ‹ß‹——£–½’†+2 ƒ_ƒ[ƒWŒyŒ¸+2 64•b–ˆ‚ÉMP‚ª8‰ñ•œ");
+                    buff.effect += "MPå›å¾© +8,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 æœ€å¤§HP+120 è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4 è¿‘è·é›¢å‘½ä¸­+2 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2 64ç§’æ¯ã«MPãŒ8å›å¾©");
                     break;
-                case "ƒVƒA[":
+                case "ã‚·ã‚¢ãƒ¼":
                     buff.AC -= 2;
                     buff.DMG_LONG += 4;
                     buff.HIT_LONG += 2;
                     buff.DR += 2;
                     buff.HP += 80;
-                    buff.effect += "MP‰ñ•œ +12,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 Å‘åHP+80 ‰“‹——£ƒ_ƒ[ƒW+4 ‰“‹——£–½’†+2 ƒ_ƒ[ƒWŒyŒ¸+2 64•b–ˆ‚ÉMP‚ª12‰ñ•œ");
+                    buff.effect += "MPå›å¾© +12,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 æœ€å¤§HP+80 é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4 é è·é›¢å‘½ä¸­+2 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2 64ç§’æ¯ã«MPãŒ12å›å¾©");
                     break;
-                case "ƒfƒXƒiƒCƒg":
+                case "ãƒ‡ã‚¹ãƒŠã‚¤ãƒˆ":
                     buff.AC -= 2;
                     buff.DMG_SHORT += 8;
                     buff.DMG_LONG += 8;
                     buff.SP += 5;
-                    buff.effect += "ƒwƒ‹ƒtƒ@ƒCƒA[,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 ‹ß‹——£ƒ_ƒ[ƒW+8 ‰“‹——£ƒ_ƒ[ƒW+8 SP+5 –‚–@”­“®(ƒwƒ‹ƒtƒ@ƒCƒA)");
+                    buff.effect += "ãƒ˜ãƒ«ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+8 é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+8 SP+5 é­”æ³•ç™ºå‹•(ãƒ˜ãƒ«ãƒ•ã‚¡ã‚¤ã‚¢)");
                     break;
-                case "ƒf[ƒ‚ƒ“":
+                case "ãƒ‡ãƒ¼ãƒ¢ãƒ³":
                     buff.AC -= 4;
                     buff.DMG_SHORT += 6;
                     buff.HIT_SHORT += 4;
                     buff.DR += 4;
                     buff.HP += 120;
-                    buff.effect += "MP‰ñ•œ +8,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 Å‘åHP+120 ‹ß‹——£ƒ_ƒ[ƒW+6 ‹ß‹——£–½’†+4 ƒ_ƒ[ƒWŒyŒ¸+4 64•b–ˆ‚ÉMP‚ª8‰ñ•œ");
+                    buff.effect += "MPå›å¾© +8,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 æœ€å¤§HP+120 è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+6 è¿‘è·é›¢å‘½ä¸­+4 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+4 64ç§’æ¯ã«MPãŒ8å›å¾©");
                     break;
-                case "ŠoÁƒpƒI":
+                case "è¦šé†’ãƒ‘ã‚ª":
                     buff.AC -= 4;
                     buff.SP += 3;
                     buff.DR += 4;
                     buff.HP += 40;
-                    buff.effect += "MP‰ñ•œ +16,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 Å‘åHP+40 SP+3ƒ_ƒ[ƒWŒyŒ¸+4 64•b–ˆ‚ÉMP‚ª16‰ñ•œ");
+                    buff.effect += "MPå›å¾© +16,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 æœ€å¤§HP+40 SP+3ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+4 64ç§’æ¯ã«MPãŒ16å›å¾©");
                     break;
-                case "ƒ}ƒ~[ƒ[ƒh":
+                case "ãƒãƒŸãƒ¼ãƒ­ãƒ¼ãƒ‰":
                     buff.AC -= 4;
                     buff.DMG_LONG += 6;
                     buff.HIT_LONG += 4;
                     buff.DR += 4;
                     buff.HP += 80;
-                    buff.effect += "MP‰ñ•œ +12,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 Å‘åHP+80 ‰“‹——£ƒ_ƒ[ƒW+6 ‰“‹——£–½’†+4 ƒ_ƒ[ƒWŒyŒ¸+4 64•b–ˆ‚ÉMP‚ª12‰ñ•œ");
+                    buff.effect += "MPå›å¾© +12,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 æœ€å¤§HP+80 é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+6 é è·é›¢å‘½ä¸­+4 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+4 64ç§’æ¯ã«MPãŒ12å›å¾©");
                     break;
-                case "ƒAƒCƒŠƒX":
+                case "ã‚¢ã‚¤ãƒªã‚¹":
                     buff.DMG_SHORT += 2;
                     buff.HIT_SHORT += 2;
                     buff.DR += 3;
-                    buff.effect += "ƒtƒH[ƒXƒŒƒCƒ„[ƒ_ƒ[ƒW+10,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("‹ß‹——£ƒ_ƒ[ƒW+2 ‹ß‹——£–½’†+2 ƒ_ƒ[ƒWŒyŒ¸+3 ƒtƒH[ƒXƒŒƒCƒ„[’Ç‰Áƒ_ƒ[ƒW+10");
+                    buff.effect += "ãƒ•ã‚©ãƒ¼ã‚¹ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ€ãƒ¡ãƒ¼ã‚¸+10,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2 è¿‘è·é›¢å‘½ä¸­+2 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+3 ãƒ•ã‚©ãƒ¼ã‚¹ãƒ¬ã‚¤ãƒ¤ãƒ¼è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+10");
                     break;
-                case "ƒoƒ“ƒpƒCƒA":
+                case "ãƒãƒ³ãƒ‘ã‚¤ã‚¢":
                     buff.HP += 80;
                     buff.AC -= 2;
                     buff.DMG_SHORT += 2;
                     buff.HIT_SHORT += 2;
                     buff.DR += 2;
-                    buff.effect += "ƒ^ƒCƒ^ƒ“Œn—ñ”­“®‹æŠÔ+5%,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 Å‘åHP+80 ‹ß‹——£ƒ_ƒ[ƒW+2 ‹ß‹——£–½’†+2 ƒ_ƒ[ƒWŒyŒ¸+2 ƒ^ƒCƒ^ƒ“Œn‹Zp‚Ì”­“®HP‹æŠÔ‚ª5%‘‰Á");
+                    buff.effect += "ã‚¿ã‚¤ã‚¿ãƒ³ç³»åˆ—ç™ºå‹•åŒºé–“+5%,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 æœ€å¤§HP+80 è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2 è¿‘è·é›¢å‘½ä¸­+2 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2 ã‚¿ã‚¤ã‚¿ãƒ³ç³»æŠ€è¡“ã®ç™ºå‹•HPåŒºé–“ãŒ5%å¢—åŠ ");
                     break;
-                case "ƒoƒ‰ƒ“ƒJ":
+                case "ãƒãƒ©ãƒ³ã‚«":
                     buff.HP += 120;
                     buff.DMG_SHORT += 6;
                     buff.HIT_SHORT += 6;
                     buff.DR += 2;
-                    buff.effect += "MP‰ñ•œ +12,";
-                    buff.effect += "”j‰ó“I’†+10,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("Å‘åHP+120 ‹ß‹——£ƒ_ƒ[ƒW+6 ‹ß‹——£–½’†+6 ƒ_ƒ[ƒWŒyŒ¸+2 ”j‰ó“I’†+10 64•b–ˆ‚ÉMP‚ª12‰ñ•œ");
+                    buff.effect += "MPå›å¾© +12,";
+                    buff.effect += "ç ´å£Šçš„ä¸­+10,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("æœ€å¤§HP+120 è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+6 è¿‘è·é›¢å‘½ä¸­+6 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2 ç ´å£Šçš„ä¸­+10 64ç§’æ¯ã«MPãŒ12å›å¾©");
                     break;
-                case "ƒAƒCƒXƒNƒC[ƒ“":
+                case "ã‚¢ã‚¤ã‚¹ã‚¯ã‚¤ãƒ¼ãƒ³":
                     buff.HP += 80;
                     buff.SP += 1;
                     buff.DMG_LONG += 4;
                     buff.HIT_LONG += 8;
                     buff.DR += 2;
-                    buff.effect += "UŒ‚ˆê’èŠm—¦‚Å–‚–@”­“®,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("Å‘åHP+80 ‰“‹——£ƒ_ƒ[ƒW+4 ‰“‹——£–½’†+8 ƒ_ƒ[ƒWŒyŒ¸+2 –‚–@”­“®");
+                    buff.effect += "æ”»æ’ƒæ™‚ä¸€å®šç¢ºç‡ã§é­”æ³•ç™ºå‹•,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("æœ€å¤§HP+80 é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4 é è·é›¢å‘½ä¸­+8 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2 é­”æ³•ç™ºå‹•");
                     break;
-                case "ƒAƒ“ƒ^ƒ‰ƒX":
+                case "ã‚¢ãƒ³ã‚¿ãƒ©ã‚¹":
                     buff.AC -= 7;
                     buff.HP += 120;
                     buff.DR += 7;
-                    buff.effect += "MP‰ñ•œ +15,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-7 Å‘åHP+120 ƒ_ƒ[ƒWŒyŒ¸+7 64•b–ˆ‚ÉMP‚ª15‰ñ•œ j•ŸÁ–ÕŒø—¦+7%");
+                    buff.effect += "MPå›å¾© +15,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-7 æœ€å¤§HP+120 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+7 64ç§’æ¯ã«MPãŒ15å›å¾© ç¥ç¦æ¶ˆè€—åŠ¹ç‡+7%");
                     break;
-                case "ƒpƒvƒŠƒIƒ“":
+                case "ãƒ‘ãƒ—ãƒªã‚ªãƒ³":
                     buff.AC -= 1;
                     buff.DR += 1;
                     buff.SP += 7;
                     buff.HIT_MAGIC += 7;                    
-                    buff.effect += "MP‰ñ•œ +10,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 ƒ_ƒ[ƒWŒyŒ¸+1 SP{7 –‚–@–½’†+7 64•b–ˆ‚ÉMP‚ª10‰ñ•œ j•ŸÁ–ÕŒø—¦+7%");
+                    buff.effect += "MPå›å¾© +10,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+1 SPï¼‹7 é­”æ³•å‘½ä¸­+7 64ç§’æ¯ã«MPãŒ10å›å¾© ç¥ç¦æ¶ˆè€—åŠ¹ç‡+7%");
                     break;
-                case "ƒŠƒ“ƒhƒrƒIƒ‹":
+                case "ãƒªãƒ³ãƒ‰ãƒ“ã‚ªãƒ«":
                     buff.AC -= 2;
                     buff.DR += 2;
                     buff.DMG_LONG += 7;
                     buff.HIT_LONG += 7;
-                    buff.effect += "MP‰ñ•œ +5,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 ƒ_ƒ[ƒWŒyŒ¸+2 ‰“‹——£ƒ_ƒ[ƒW+7 ‰“‹——£–½’†+7 64•b–ˆ‚ÉMP‚ª5‰ñ•œ j•ŸÁ–ÕŒø—¦+7%");
+                    buff.effect += "MPå›å¾© +5,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2 é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+7 é è·é›¢å‘½ä¸­+7 64ç§’æ¯ã«MPãŒ5å›å¾© ç¥ç¦æ¶ˆè€—åŠ¹ç‡+7%");
                     break;
-                case "ƒ”ƒ@ƒ‰ƒJƒX":
+                case "ãƒ´ã‚¡ãƒ©ã‚«ã‚¹":
                     buff.AC -= 3;
                     buff.DR += 3;
                     buff.DMG_SHORT += 7;
                     buff.HIT_SHORT += 7;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-3 ƒ_ƒ[ƒWŒyŒ¸+3 ‹ß‹——£ƒ_ƒ[ƒW+7 ‹ß‹——£–½’†+7 j•ŸÁ–ÕŒø—¦+7%");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-3 ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+3 è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+7 è¿‘è·é›¢å‘½ä¸­+7 ç¥ç¦æ¶ˆè€—åŠ¹ç‡+7%");
                     break;
             }
         }
 
-        // ‰Û‹àPOT
+        // èª²é‡‘POT
         if (ui.cb_buff[ITEM_SEA].isSelected()) {
             switch (ui.cb_buff_group[ITEM_SEA].getSelectedIndex()) {
                 case 0:
@@ -1100,7 +1100,7 @@ public class Calculator implements Common {
             }
         }
 
-        // —¿—
+        // æ–™ç†
         if (ui.cb_buff[ITEM_COOKING].isSelected()) {
             switch (ui.cb_buff_group[ITEM_COOKING].getSelectedIndex()) {
                 case 3:
@@ -1156,7 +1156,7 @@ public class Calculator implements Common {
 
             }
         }
-        // ƒfƒU[ƒg
+        // ãƒ‡ã‚¶ãƒ¼ãƒˆ
         if (ui.cb_buff[ITEM_DESSERT].isSelected()) {
             switch (ui.cb_buff_group[ITEM_DESSERT].getSelectedIndex()) {
                 case 0:
@@ -1214,7 +1214,7 @@ public class Calculator implements Common {
 //
 //            }
 //        }
-            //ƒRƒ}ƒGƒ“ƒ`ƒƒ
+            //ã‚³ãƒã‚¨ãƒ³ãƒãƒ£
             if (ui.cb_buff[KOMA].isSelected()) {
             switch (ui.cb_buff_group[KOMA].getSelectedIndex()) {
                 case 0:
@@ -1235,7 +1235,7 @@ public class Calculator implements Common {
         }
 
         cons_mp = 0;
-        //ƒŠƒ_ƒNƒVƒ‡ƒ“ƒA[ƒ}[ Á”ïMP7/3mins 
+        //ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³ã‚¢ãƒ¼ãƒãƒ¼ æ¶ˆè²»MP7/3mins 
         if (ui.cb_buff[K_RA].isSelected()) {
             if (level >= 50 && cls == K) {
                 buff.DR += (level - 50) / 5 + 1;
@@ -1247,7 +1247,7 @@ public class Calculator implements Common {
                 ui.cb_buff[K_RA].setSelected(false);
             }
         }
-        //ƒ\ƒŠƒbƒhƒLƒƒƒŠƒbƒW Á”ïMP10/3mins
+        //ã‚½ãƒªãƒƒãƒ‰ã‚­ãƒ£ãƒªãƒƒã‚¸ æ¶ˆè²»MP10/3mins
         if (ui.cb_buff[K_SC].isSelected()) {
             if (level >= 50 && cls == K) {
                 buff.ER += 15;
@@ -1258,19 +1258,19 @@ public class Calculator implements Common {
                 ui.cb_buff[K_SC].setSelected(false);
             }
         }
-        //ƒJƒEƒ“ƒ^[ƒoƒŠƒA Á”ïMP10/1mins
+        //ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ãƒãƒªã‚¢ æ¶ˆè²»MP10/1mins
         if (ui.cb_buff[K_CB].isSelected()) {
             if (level >= 50 && cls == K
-                    && buki.type.equals("—¼èŒ•")) {
+                    && buki.type.equals("ä¸¡æ‰‹å‰£")) {
                 if (ui.cb_buff[K_CB].getForeground().equals(Color.BLUE)) {
                     cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 1;
                 }
-                // CBŒø‰Ê–¢À‘•
+                // CBåŠ¹æœæœªå®Ÿè£…
             } else {
                 ui.cb_buff[K_CB].setSelected(false);
             }
         }
-        //ƒoƒEƒ“ƒXƒAƒ^ƒbƒN Á”ïMP10/1mins
+        //ãƒã‚¦ãƒ³ã‚¹ã‚¢ã‚¿ãƒƒã‚¯ æ¶ˆè²»MP10/1mins
         if (ui.cb_buff[K_BA].isSelected()) {
             if (level >= 60 && cls == K) {
                 buff.HIT_SHORT += 6;
@@ -1281,7 +1281,7 @@ public class Calculator implements Common {
                 ui.cb_buff[K_BA].setSelected(false);
             }
         }
-        //ƒŒƒWƒXƒgƒ}ƒWƒbƒN Á”ïMP5/20mins
+        //ãƒ¬ã‚¸ã‚¹ãƒˆãƒã‚¸ãƒƒã‚¯ æ¶ˆè²»MP5/20mins
         if (ui.cb_buff[E_RM].isSelected()) {
             if (cls == E) {
                 buff.MR += 10;
@@ -1292,7 +1292,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_RM].setSelected(false);
             }
         }
-        //ƒŒƒWƒXƒgƒGƒŒƒƒ“ƒg Á”ïMP10/20mins
+        //ãƒ¬ã‚¸ã‚¹ãƒˆã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆ æ¶ˆè²»MP10/20mins
         if (ui.cb_buff[E_RE].isSelected()) {
             if (cls == E) {
                 buff.element_resist[FIRE] += 10;
@@ -1306,7 +1306,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_RE].setSelected(false);
             }
         }
-        //ƒNƒŠƒA[ƒ}ƒCƒ“ƒh Á”ïMP10/20mins
+        //ã‚¯ãƒªã‚¢ãƒ¼ãƒã‚¤ãƒ³ãƒ‰ æ¶ˆè²»MP10/20mins
         if (ui.cb_buff[E_CM].isSelected()) {
             if (cls == E) {
                 buff.ST[WIS] += 3;
@@ -1317,7 +1317,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_CM].setSelected(false);
             }
         }
-        //ƒo[ƒjƒ“ƒOƒEƒGƒ|ƒ“ Á”ïMP30/16mins
+        //ãƒãƒ¼ãƒ‹ãƒ³ã‚°ã‚¦ã‚¨ãƒãƒ³ æ¶ˆè²»MP30/16mins
         if (ui.cb_buff[E_BW].isSelected()) {
             if (cls == E) {
                 buff.ELEM_DMG_SHORT[FIRE] += 6;
@@ -1329,19 +1329,19 @@ public class Calculator implements Common {
                 ui.cb_buff[E_BW].setSelected(false);
             }
         }
-        //ƒCƒ“ƒtƒFƒ‹ƒm Á”ïMP40/1mins
+        //ã‚¤ãƒ³ãƒ•ã‚§ãƒ«ãƒ æ¶ˆè²»MP40/1mins
         if (ui.cb_buff[E_IO].isSelected()) {
             if (level >= 80 && cls == E
-                    && buki.type.equals("•ĞèŒ•")) {
+                    && buki.type.equals("ç‰‡æ‰‹å‰£")) {
                 if (ui.cb_buff[E_IO].getForeground().equals(Color.BLUE)) {
                     cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 1;
                 }
-                // ƒCƒ“ƒtƒFƒ‹ƒmŒø‰Ê–¢À‘•
+                // ã‚¤ãƒ³ãƒ•ã‚§ãƒ«ãƒåŠ¹æœæœªå®Ÿè£…
             } else {
                 ui.cb_buff[E_IO].setSelected(false);
             }
         }
-        //ƒA[ƒXƒEƒFƒ|ƒ“ Á”ïMP15/16mins
+        //ã‚¢ãƒ¼ã‚¹ã‚¦ã‚§ãƒãƒ³ æ¶ˆè²»MP15/16mins
         if (ui.cb_buff[E_EW].isSelected()) {
             if (cls == E) {
                 buff.ELEM_DMG_SHORT[EARTH] += 2;
@@ -1353,7 +1353,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_EW].setSelected(false);
             }
         }
-        //ƒAƒNƒAƒVƒ‡ƒbƒg Á”ïMP15/16mins
+        //ã‚¢ã‚¯ã‚¢ã‚·ãƒ§ãƒƒãƒˆ æ¶ˆè²»MP15/16mins
         if (ui.cb_buff[E_AS].isSelected()) {
             if (cls == E) {
                 buff.HIT_LONG += 4;
@@ -1364,7 +1364,7 @@ public class Calculator implements Common {
                 ui.cb_buff[E_AS].setSelected(false);
             }
         }  
-        //ƒlƒCƒ`ƒƒ[ƒYƒ^ƒbƒ` Á”ïMP20/5mins
+        //ãƒã‚¤ãƒãƒ£ãƒ¼ã‚ºã‚¿ãƒƒãƒ æ¶ˆè²»MP20/5mins
         if (ui.cb_buff[E_NT].isSelected()) {
             if (level > 9) {
                 if (level < 24) {
@@ -1377,7 +1377,7 @@ public class Calculator implements Common {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
             }
         }
-        //ƒhƒŒƒXƒCƒxƒCƒWƒ‡ƒ“ Á”ïMP15/3mins
+        //ãƒ‰ãƒ¬ã‚¹ã‚¤ãƒ™ã‚¤ã‚¸ãƒ§ãƒ³ æ¶ˆè²»MP15/3mins
         if (ui.cb_buff[D_DE].isSelected()) {
             if (cls == D) {
                 buff.ER += 18;
@@ -1389,7 +1389,7 @@ public class Calculator implements Common {
                 ui.cb_buff[D_DE].setSelected(false);
             }
         }
-        //ƒVƒƒƒhƒEƒA[ƒ}[ Á”ïMP12/16mins
+        //ã‚·ãƒ£ãƒ‰ã‚¦ã‚¢ãƒ¼ãƒãƒ¼ æ¶ˆè²»MP12/16mins
         if (ui.cb_buff[D_SA].isSelected()) {
             if (cls == D) {
                 buff.MR += 5;
@@ -1400,7 +1400,7 @@ public class Calculator implements Common {
                 ui.cb_buff[D_SA].setSelected(false);
             }
         }
-        //ƒAƒNƒAƒvƒƒeƒNƒg Á”ïMP30/16mins
+        //ã‚¢ã‚¯ã‚¢ãƒ—ãƒ­ãƒ†ã‚¯ãƒˆ æ¶ˆè²»MP30/16mins
         if (ui.cb_buff[E_AP].isSelected()) {
             if (ui.cb_buff[D_DE].isSelected()) {
                 ui.cb_buff[E_AP].setSelected(false);
@@ -1411,7 +1411,7 @@ public class Calculator implements Common {
                 }
             }
         }
-        //ƒXƒg[ƒ€ƒVƒ‡ƒbƒg Á”ïMP30/16mins
+        //ã‚¹ãƒˆãƒ¼ãƒ ã‚·ãƒ§ãƒƒãƒˆ æ¶ˆè²»MP30/16mins
         if (ui.cb_buff[E_SS].isSelected()) {
             buff.ELEM_DMG_LONG[WIND] += 6;
             buff.HIT_LONG += 3;
@@ -1419,7 +1419,7 @@ public class Calculator implements Common {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
-        //ƒXƒg[ƒ€ƒAƒC Á”ïMP40/16mins
+        //ã‚¹ãƒˆãƒ¼ãƒ ã‚¢ã‚¤ æ¶ˆè²»MP40/16mins
         if (ui.cb_buff[E_SE].isSelected()) {
             if (ui.cb_buff[E_SS].isSelected()) {
                 ui.cb_buff[E_SE].setSelected(false);
@@ -1442,14 +1442,14 @@ public class Calculator implements Common {
         //        }
         //    }
         //}
-        //ƒA[ƒXƒK[ƒfƒBƒAƒ“ Á”ïMP30/10mins
+        //ã‚¢ãƒ¼ã‚¹ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³ æ¶ˆè²»MP30/10mins
         if (ui.cb_buff[E_EG].isSelected()) {
             buff.DR += 2;
             if (ui.cb_buff[E_EG].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ƒo[ƒT[ƒJ[ Á”ïMP40/5mins
+        //ãƒãƒ¼ã‚µãƒ¼ã‚«ãƒ¼ æ¶ˆè²»MP40/5mins
         if (ui.cb_buff[W_BSK].isSelected()) {
             buff.DMG_SHORT += 2;
             buff.HIT_SHORT += 8;
@@ -1459,21 +1459,21 @@ public class Calculator implements Common {
                 cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
             }
         }
-        //ƒuƒŒƒXƒhƒA[ƒ}[ Á”ïMP20/30mins
+        //ãƒ–ãƒ¬ã‚¹ãƒ‰ã‚¢ãƒ¼ãƒãƒ¼ æ¶ˆè²»MP20/30mins
         if (ui.cb_buff[W_BA].isSelected()) {
             buff.AC -= 3;
             if (ui.cb_buff[W_BA].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
-        //ƒhƒ‰ƒSƒ“ƒXƒLƒ“ Á”ïMP0/30mins
+        //ãƒ‰ãƒ©ã‚´ãƒ³ã‚¹ã‚­ãƒ³ æ¶ˆè²»MP0/30mins
         if (ui.cb_buff[R_DS].isSelected()) {
             buff.DR += 5;
             if (level >= 80) {
                 buff.DR += (int) ((level - 80) / 2) + 1;
             }
         }
-        //ŠoÁ[ƒAƒ“ƒ^ƒ‰ƒX] Á”ïMP20/10mins
+        //è¦šé†’[ã‚¢ãƒ³ã‚¿ãƒ©ã‚¹] æ¶ˆè²»MP20/10mins
         if (ui.cb_buff[R_ANTHARAS].isSelected()) {
             if (ui.cb_buff[R_FAFURION].isSelected()
                     || ui.cb_buff[R_VALAKAS].isSelected()
@@ -1487,7 +1487,7 @@ public class Calculator implements Common {
                 }
             }
         }
-        //ŠoÁ[ƒpƒvƒŠƒIƒ“] Á”ïMP30/10mins
+        //è¦šé†’[ãƒ‘ãƒ—ãƒªã‚ªãƒ³] æ¶ˆè²»MP30/10mins
         if (ui.cb_buff[R_FAFURION].isSelected()) {
             if (ui.cb_buff[R_ANTHARAS].isSelected()
                     || ui.cb_buff[R_VALAKAS].isSelected()
@@ -1500,7 +1500,7 @@ public class Calculator implements Common {
                 }
             }
         }
-        //ŠoÁ[ƒ”ƒ@ƒ‰ƒJƒX]@Á”ïMP50/10mins
+        //è¦šé†’[ãƒ´ã‚¡ãƒ©ã‚«ã‚¹]ã€€æ¶ˆè²»MP50/10mins
         if (ui.cb_buff[R_VALAKAS].isSelected()) {
             if (ui.cb_buff[R_ANTHARAS].isSelected()
                     || ui.cb_buff[R_FAFURION].isSelected()
@@ -1514,21 +1514,21 @@ public class Calculator implements Common {
                 }
             }
         }
-        //ƒRƒ“ƒZƒ“ƒgƒŒ[ƒVƒ‡ƒ“ Á”ïMP30/10mins
+        //ã‚³ãƒ³ã‚»ãƒ³ãƒˆãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ æ¶ˆè²»MP30/10mins
         if (ui.cb_buff[I_CON].isSelected()) {
             buff.MPR += 2;
             if (ui.cb_buff[I_CON].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ƒyƒCƒVƒFƒ“ƒX Á”ïMP25/10mins
+        //ãƒšã‚¤ã‚·ã‚§ãƒ³ã‚¹ æ¶ˆè²»MP25/10mins
         if (ui.cb_buff[I_PAT].isSelected()) {
             buff.DR += 2;
             if (ui.cb_buff[I_PAT].getForeground().equals(Color.BLUE)) {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ƒCƒ“ƒTƒCƒg Á”ïMP60/10mins
+        //ã‚¤ãƒ³ã‚µã‚¤ãƒˆ æ¶ˆè²»MP60/10mins
         if (ui.cb_buff[I_INS].isSelected()) {
             buff.ST[STR]++;
             buff.ST[DEX]++;
@@ -1539,7 +1539,7 @@ public class Calculator implements Common {
                 cons_mp += (60.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //Œ¶p[ƒI[ƒK] Á”ïMP20/2mins
+        //å¹»è¡“[ã‚ªãƒ¼ã‚¬] æ¶ˆè²»MP20/2mins
         if (ui.cb_buff[I_IO].isSelected()) {
             buff.DMG_SHORT += 4;
             buff.DMG_LONG += 4;
@@ -1548,47 +1548,47 @@ public class Calculator implements Common {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
             }
         }
-        //Œ¶p[ƒŠƒbƒ`] Á”ïMP20/2mins
+        //å¹»è¡“[ãƒªãƒƒãƒ] æ¶ˆè²»MP20/2mins
         if (ui.cb_buff[I_IR].isSelected()) {
             buff.SP += 2;
             if (ui.cb_buff[I_IR].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
             }
         }
-        //Œ¶p[ƒ_ƒCƒAƒS[ƒŒƒ€] Á”ïMP40/2mins
+        //å¹»è¡“[ãƒ€ã‚¤ã‚¢ã‚´ãƒ¼ãƒ¬ãƒ ] æ¶ˆè²»MP40/2mins
         if (ui.cb_buff[I_ID].isSelected()) {
             buff.AC -= 8;
             if (ui.cb_buff[I_ID].getForeground().equals(Color.BLUE)) {
                 cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
             }
         }
-        //ƒtƒH[ƒJƒXƒXƒsƒŠƒbƒc Á”ïMP30/5mins
+        //ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚¹ãƒ”ãƒªãƒƒãƒ„ æ¶ˆè²»MP30/5mins
         if (ui.cb_buff[I_FS].isSelected()) {
             buff.CRI_MAGIC += 5;
             if (ui.cb_buff[I_FS].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
             }
         }
-        //ƒCƒ“ƒpƒNƒg Á”ïMP25/0.25mins
+        //ã‚¤ãƒ³ãƒ‘ã‚¯ãƒˆ æ¶ˆè²»MP25/0.25mins
         if (ui.cb_buff[I_IT].isSelected()) {
             if (level >= 80 && cls == I) {
                 if (ui.cb_buff[I_IT].getForeground().equals(Color.BLUE)) {
                     cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 0.25;
                 }
             	if (level >= 85) {
-        	    buff.ailment[HIT_STUN] += 10;                       //ƒXƒ^ƒ“–½’†+10
-        	    buff.ailment[HIT_DESTRUCTION] += 10;                //”j‰ó–½’†+10
-        	    buff.ailment[HIT_TERROR] += 10;                     //‹°•|–½’†+10      
+        	    buff.ailment[HIT_STUN] += 10;                       //ã‚¹ã‚¿ãƒ³å‘½ä¸­+10
+        	    buff.ailment[HIT_DESTRUCTION] += 10;                //ç ´å£Šå‘½ä¸­+10
+        	    buff.ailment[HIT_TERROR] += 10;                     //ææ€–å‘½ä¸­+10      
         	} else if (level >= 80) {
-        	    buff.ailment[HIT_STUN] += 5 + (level - 80);         //ƒXƒ^ƒ“–½’†+(level - 75)
-        	    buff.ailment[HIT_DESTRUCTION] += 5 + (level - 80);  //”j‰ó–½’†+(level - 75)
-        	    buff.ailment[HIT_TERROR] += 5 + (level - 80);       //‹°•|–½’†+(level - 75)
+        	    buff.ailment[HIT_STUN] += 5 + (level - 80);         //ã‚¹ã‚¿ãƒ³å‘½ä¸­+(level - 75)
+        	    buff.ailment[HIT_DESTRUCTION] += 5 + (level - 80);  //ç ´å£Šå‘½ä¸­+(level - 75)
+        	    buff.ailment[HIT_TERROR] += 5 + (level - 80);       //ææ€–å‘½ä¸­+(level - 75)
         	}
             } else {
                 ui.cb_buff[I_IT].setSelected(false);
             }
         }
-        //ƒNƒŒƒC
+        //ã‚¯ãƒ¬ã‚¤
         if (ui.cb_buff[CLAY].isSelected()) {
             buff.HP += 100;
             buff.MP += 50;
@@ -1713,7 +1713,7 @@ public class Calculator implements Common {
                 break;
         }
 
-        //ƒGƒŠƒNƒT[ƒ‹[ƒ“
+        //ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³
         int e = ui.elixir_rune.getSelectedIndex();
         boolean q = false;
         if (e > 0) {
@@ -1775,34 +1775,34 @@ public class Calculator implements Common {
                     break;
             }
         }
-        //ƒ^ƒŠƒXƒ}ƒ“
+        //ã‚¿ãƒªã‚¹ãƒãƒ³
             switch (ui.cb_pattern_l2.getSelectedIndex()) {
                 case 0:
                     break;
                 case 1:
-                    buff.DMG_SHORT += 1;    //‹ß‹——£ƒ_ƒ[ƒW+1
-                    buff.HIT_SHORT += 1;    //‹ß‹——£–½’†+1
+                    buff.DMG_SHORT += 1;    //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                    buff.HIT_SHORT += 1;    //è¿‘è·é›¢å‘½ä¸­+1
                     buff.SP += 1;           //SP+1
                     buff.MR += 5;           //MR+5
                     break;
                 case 2:
-                    buff.DMG_LONG += 1;     //‰“‹——£ƒ_ƒ[ƒW+1
-                    buff.HIT_LONG += 1;     //‰“‹——£–½’†+1
+                    buff.DMG_LONG += 1;     //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                    buff.HIT_LONG += 1;     //é è·é›¢å‘½ä¸­+1
                     buff.SP += 1;           //SP+1
                     buff.MR += 5;           //MR+5
                     break;
                 case 3:
-                    buff.DMG_SHORT += 1;    //‹ß‹——£ƒ_ƒ[ƒW+1
-                    buff.HIT_SHORT += 1;    //‹ß‹——£–½’†+1
-                    buff.DMG_LONG += 1;     //‰“‹——£ƒ_ƒ[ƒW+1
-                    buff.HIT_LONG += 1;     //‰“‹——£–½’†+1
+                    buff.DMG_SHORT += 1;    //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                    buff.HIT_SHORT += 1;    //è¿‘è·é›¢å‘½ä¸­+1
+                    buff.DMG_LONG += 1;     //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                    buff.HIT_LONG += 1;     //é è·é›¢å‘½ä¸­+1
                     buff.SP += 1;           //SP+1
                     buff.MR += 5;           //MR+5
                     break;
                 case 4:
                     break;
             }
-        //ƒIƒ‹ƒ^[ƒXƒg[ƒ“
+        //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³
         if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
 
             ui.cb_alterstone_en.setEnabled(true);
@@ -1810,28 +1810,28 @@ public class Calculator implements Common {
                 ui.cb_alterstone_op[0].setEnabled(true);
                 switch (ui.cb_alterstone_op[0].getSelectedIndex()) {
                     case 1:
-                        buff.DMG_SHORT += 1;        //‹ß‹——£ƒ_ƒ[ƒW +1
+                        buff.DMG_SHORT += 1;        //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1
                         break;
                     case 2:
-                        buff.DMG_LONG += 1;         //‰“‹——£ƒ_ƒ[ƒW +1
+                        buff.DMG_LONG += 1;         //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1
                         break;
                     case 3:
-                        buff.HIT_SHORT += 2;        //‹ß‹——£–½’† +2
+                        buff.HIT_SHORT += 2;        //è¿‘è·é›¢å‘½ä¸­ +2
                         break;
                     case 4:
-                        buff.HIT_LONG += 2;         //‰“‹——£–½’† +2
+                        buff.HIT_LONG += 2;         //é è·é›¢å‘½ä¸­ +2
                         break;
                     case 5:
                         buff.SP += 1;               //SP +1
                         break;
                     case 6:
-                        buff.CRI_MAGIC += 1;        //–‚–@ƒNƒŠƒeƒBƒJƒ‹ +1
+                        buff.CRI_MAGIC += 1;        //é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ« +1
                         break;
                     case 7:
-                                                    //–‚–@Á–ÕŒ¸­{2
+                                                    //é­”æ³•æ¶ˆè€—æ¸›å°‘ï¼‹2
                         break;
                     case 8:
-                                                    //ˆêŒ‚•KE(1%Šm—¦‚Å’Ç‰Áƒ_ƒ[ƒW50) 3216s‚Å’Ç‰Áˆ—
+                                                    //ä¸€æ’ƒå¿…æ®º(1%ç¢ºç‡ã§è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸50) 3216è¡Œã§è¿½åŠ å‡¦ç†
                         break;
                 }
             } else {
@@ -1841,28 +1841,28 @@ public class Calculator implements Common {
                 ui.cb_alterstone_op[1].setEnabled(true);
                 switch (ui.cb_alterstone_op[1].getSelectedIndex()) {
                     case 1:
-                        buff.DMG_SHORT += 1;        //‹ß‹——£ƒ_ƒ[ƒW +1
+                        buff.DMG_SHORT += 1;        //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1
                         break;
                     case 2:
-                        buff.DMG_LONG += 1;         //‰“‹——£ƒ_ƒ[ƒW +1
+                        buff.DMG_LONG += 1;         //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1
                         break;
                     case 3:
-                        buff.HIT_SHORT += 2;        //‹ß‹——£–½’† +2
+                        buff.HIT_SHORT += 2;        //è¿‘è·é›¢å‘½ä¸­ +2
                         break;
                     case 4:
-                        buff.HIT_LONG += 2;         //‰“‹——£–½’† +2
+                        buff.HIT_LONG += 2;         //é è·é›¢å‘½ä¸­ +2
                         break;
                     case 5:
                         buff.SP += 1;               //SP +1
                         break;
                     case 6:
-                        buff.CRI_MAGIC += 1;        //–‚–@ƒNƒŠƒeƒBƒJƒ‹ +1
+                        buff.CRI_MAGIC += 1;        //é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ« +1
                         break;
                     case 7:
-                                                    //–‚–@Á–ÕŒ¸­{2
+                                                    //é­”æ³•æ¶ˆè€—æ¸›å°‘ï¼‹2
                         break;
                     case 8:
-                                                    //ˆêŒ‚•KE(1%Šm—¦‚Å’Ç‰Áƒ_ƒ[ƒW50) 3216s‚Å’Ç‰Áˆ—
+                                                    //ä¸€æ’ƒå¿…æ®º(1%ç¢ºç‡ã§è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸50) 3216è¡Œã§è¿½åŠ å‡¦ç†
                         break;
                 }
             } else {
@@ -1872,28 +1872,28 @@ public class Calculator implements Common {
                 ui.cb_alterstone_op[2].setEnabled(true);
                 switch (ui.cb_alterstone_op[2].getSelectedIndex()) {
                     case 1:
-                        buff.DMG_SHORT += 1;        //‹ß‹——£ƒ_ƒ[ƒW +1
+                        buff.DMG_SHORT += 1;        //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1
                         break;
                     case 2:
-                        buff.DMG_LONG += 1;         //‰“‹——£ƒ_ƒ[ƒW +1
+                        buff.DMG_LONG += 1;         //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1
                         break;
                     case 3:
-                        buff.HIT_SHORT += 2;        //‹ß‹——£–½’† +2
+                        buff.HIT_SHORT += 2;        //è¿‘è·é›¢å‘½ä¸­ +2
                         break;
                     case 4:
-                        buff.HIT_LONG += 2;         //‰“‹——£–½’† +2
+                        buff.HIT_LONG += 2;         //é è·é›¢å‘½ä¸­ +2
                         break;
                     case 5:
                         buff.SP += 1;               //SP +1
                         break;
                     case 6:
-                        buff.CRI_MAGIC += 1;        //–‚–@ƒNƒŠƒeƒBƒJƒ‹ +1
+                        buff.CRI_MAGIC += 1;        //é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ« +1
                         break;
                     case 7:
-                                                    //–‚–@Á–ÕŒ¸­{2
+                                                    //é­”æ³•æ¶ˆè€—æ¸›å°‘ï¼‹2
                         break;
                     case 8:
-                                                    //ˆêŒ‚•KE(1%Šm—¦‚Å’Ç‰Áƒ_ƒ[ƒW50) 3216s‚Å’Ç‰Áˆ—
+                                                    //ä¸€æ’ƒå¿…æ®º(1%ç¢ºç‡ã§è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸50) 3216è¡Œã§è¿½åŠ å‡¦ç†
                         break;
                 }
             } else {
@@ -1928,7 +1928,7 @@ public class Calculator implements Common {
                 buff.MR += 5;
                 break;
             case 6:
-                //ƒIƒ‹ƒ^[ƒXƒg[ƒ“@—E–Ò
+                //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³ã€€å‹‡çŒ›
                 switch (ui.cb_alterstone_en.getSelectedIndex()) {
                     case 1:
                         buff.HP += 20;
@@ -1955,7 +1955,7 @@ public class Calculator implements Common {
                         buff.HIT_SHORT += 1;
                         buff.DMG_SHORT += 1;
                         break;
-                    //ƒIƒ‹ƒ^[ƒXƒg[ƒ“6’iŠK
+                    //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³6æ®µéš
                     case 6:
                         buff.HP += 60;
                         buff.MP += 40;
@@ -1968,7 +1968,7 @@ public class Calculator implements Common {
                 }
                 break;
             case 7:
-                //ƒIƒ‹ƒ^[ƒXƒg[ƒ“@–‚’e
+                //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³ã€€é­”å¼¾
                 switch (ui.cb_alterstone_en.getSelectedIndex()) {
                     case 1:
                         buff.HP += 10;
@@ -1996,7 +1996,7 @@ public class Calculator implements Common {
                         buff.HIT_LONG += 1;
                         buff.DMG_LONG += 1;
                         break;
-                    //ƒIƒ‹ƒ^[ƒXƒg[ƒ“6’iŠK   
+                    //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³6æ®µéš   
                     case 6:   
                         buff.HP += 50;
                         buff.MP += 50;
@@ -2009,7 +2009,7 @@ public class Calculator implements Common {
                 }
                 break;
             case 8:
-                //ƒIƒ‹ƒ^[ƒXƒg[ƒ“@‰b’q
+                //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³ã€€å¡æ™º
                 switch (ui.cb_alterstone_en.getSelectedIndex()) {
                     case 1:
                         buff.MP += 20;
@@ -2036,7 +2036,7 @@ public class Calculator implements Common {
                         buff.MPR += 1;
                         buff.SP += 1;
                         break;
-                    //ƒIƒ‹ƒ^[ƒXƒg[ƒ“6’iŠK
+                    //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³6æ®µéš
                     case 6:
                         buff.HP += 40;
                         buff.MP += 60;
@@ -2097,12 +2097,12 @@ public class Calculator implements Common {
 
         acc = 1.0;
 
-        //‘•”õ‚É‚æ‚é‹­§ƒwƒCƒXƒgŒø‰Ê
-        if (buki.op.effect.contains("ƒwƒCƒXƒg")) {
+        //è£…å‚™ã«ã‚ˆã‚‹å¼·åˆ¶ãƒ˜ã‚¤ã‚¹ãƒˆåŠ¹æœ
+        if (buki.op.effect.contains("ãƒ˜ã‚¤ã‚¹ãƒˆ")) {
             ui.cb_buff[ACC1].setSelected(true);
         }
         for (Bougu bougu1 : bougu) {
-            if (bougu1.op.effect.contains("ƒwƒCƒXƒg")) {
+            if (bougu1.op.effect.contains("ãƒ˜ã‚¤ã‚¹ãƒˆ")) {
                 ui.cb_buff[ACC1].setSelected(true);
                 break;
             }
@@ -2168,8 +2168,8 @@ public class Calculator implements Common {
                     break;
             }
         }
-//ŒNå–‚–@iƒvƒŠƒ“ƒXEƒvƒŠƒ“ƒZƒX)
-        //ƒOƒ[ƒCƒ“ƒOƒEƒGƒ|ƒ“ Á”ïMP25/10mins
+//å›ä¸»é­”æ³•ï¼ˆãƒ—ãƒªãƒ³ã‚¹ãƒ»ãƒ—ãƒªãƒ³ã‚»ã‚¹)
+        //ã‚°ãƒ­ãƒ¼ã‚¤ãƒ³ã‚°ã‚¦ã‚¨ãƒãƒ³ æ¶ˆè²»MP25/10mins
         if (ui.cb_buff[P_G].isSelected()) {
             buff.HIT_SHORT += 5;
             buff.DMG_SHORT += 5;
@@ -2177,14 +2177,14 @@ public class Calculator implements Common {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ƒVƒƒƒCƒjƒ“ƒOƒV[ƒ‹ƒh Á”ïMP25/2mins
+        //ã‚·ãƒ£ã‚¤ãƒ‹ãƒ³ã‚°ã‚·ãƒ¼ãƒ«ãƒ‰ æ¶ˆè²»MP25/2mins
         if (ui.cb_buff[P_S].isSelected()) {
             buff.AC -= 8;
             if (ui.cb_buff[P_S].getForeground().equals(Color.BLUE)) {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ƒuƒŒƒCƒuƒAƒoƒ^[ Á”ïMP0/í
+        //ãƒ–ãƒ¬ã‚¤ãƒ–ã‚¢ãƒã‚¿ãƒ¼ æ¶ˆè²»MP0/å¸¸æ™‚
         if (ui.cb_buff[P_BA].isSelected()) {
             buff.MR += 10;
             buff.ailment[STUN] += 2;
@@ -2193,11 +2193,11 @@ public class Calculator implements Common {
             buff.ST[DEX] += 1;
             buff.ST[INT] += 1;
         }
-        //ƒOƒŒ[ƒXƒAƒoƒ^[ Á”ïMP15/15•b
+        //ã‚°ãƒ¬ãƒ¼ã‚¹ã‚¢ãƒã‚¿ãƒ¼ æ¶ˆè²»MP15/15ç§’
         if (ui.cb_buff[P_GA].isSelected()) {
             switch ((String) ui.cb_buff_group[P_GA].getSelectedItem()) {
-                case "ŒNåLV80":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+10 ƒz[ƒ‹ƒh‘Ï«+10 ‹°•|‘Ï«+10");
+                case "å›ä¸»LV80":
+                    ui.cb_buff[P_GA].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+10 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+10 ææ€–è€æ€§+10");
                     buff.ailment[STONE] += 0;
                     buff.ailment[SLEEP] += 0;
                     buff.ailment[FREEZE] += 0;
@@ -2206,57 +2206,57 @@ public class Calculator implements Common {
                     buff.ailment[HOLD] += 10;
                     buff.ailment[TERROR] += 10;
                     break;
-                case "ŒNåLV81":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+11 ƒz[ƒ‹ƒh‘Ï«+11 ‹°•|‘Ï«+11");
+                case "å›ä¸»LV81":
+                    ui.cb_buff[P_GA].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+11 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+11 ææ€–è€æ€§+11");
                     buff.ailment[STUN] += 11;
                     buff.ailment[HOLD] += 11;
                     buff.ailment[TERROR] += 11;
                     break;
-                case "ŒNåLV82":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+12 ƒz[ƒ‹ƒh‘Ï«+12 ‹°•|‘Ï«+12");
+                case "å›ä¸»LV82":
+                    ui.cb_buff[P_GA].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+12 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+12 ææ€–è€æ€§+12");
                     buff.ailment[STUN] += 12;
                     buff.ailment[HOLD] += 12;
                     buff.ailment[TERROR] += 12;
                     break;
-                case "ŒNåLV83":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+13 ƒz[ƒ‹ƒh‘Ï«+13 ‹°•|‘Ï«+13");
+                case "å›ä¸»LV83":
+                    ui.cb_buff[P_GA].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+13 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+13 ææ€–è€æ€§+13");
                     buff.ailment[STUN] += 13;
                     buff.ailment[HOLD] += 13;
                     buff.ailment[TERROR] += 13;
                     break;
-                case "ŒNåLV84":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+14 ƒz[ƒ‹ƒh‘Ï«+14 ‹°•|‘Ï«+14");
+                case "å›ä¸»LV84":
+                    ui.cb_buff[P_GA].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+14 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+14 ææ€–è€æ€§+14");
                     buff.ailment[STUN] += 14;
                     buff.ailment[HOLD] += 14;
                     buff.ailment[TERROR] += 14;
                     break;
-                case "ŒNåLV85":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+15 ƒz[ƒ‹ƒh‘Ï«+15 ‹°•|‘Ï«+15");
+                case "å›ä¸»LV85":
+                    ui.cb_buff[P_GA].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+15 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+15 ææ€–è€æ€§+15");
                     buff.ailment[STUN] += 15;
                     buff.ailment[HOLD] += 15;
                     buff.ailment[TERROR] += 15;
                     break;
             }
         }
-        //ACƒXƒLƒ‹
+        //ACã‚¹ã‚­ãƒ«
         if (ui.cb_buff[B_AC].isSelected()) {
             switch (ui.cb_buff_group[B_AC].getSelectedIndex()) {
-                case 0://ƒV[ƒ‹ƒh		AC-2	Á”ïMP8  –‚–@ƒŒƒxƒ‹1 Œp‘±ŠÔ1800•b
+                case 0://ã‚·ãƒ¼ãƒ«ãƒ‰		AC-2	æ¶ˆè²»MP8  é­”æ³•ãƒ¬ãƒ™ãƒ«1 ç¶™ç¶šæ™‚é–“1800ç§’
                     buff.AC += -2;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (8.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
                     }
                     break;
-                case 1://ƒtƒ@ƒCƒ„[ƒV[ƒ‹ƒh 	AC-4	Á”ïMP15 –‚–@ƒŒƒxƒ‹3 Œp‘±ŠÔ960•b
+                case 1://ãƒ•ã‚¡ã‚¤ãƒ¤ãƒ¼ã‚·ãƒ¼ãƒ«ãƒ‰ 	AC-4	æ¶ˆè²»MP15 é­”æ³•ãƒ¬ãƒ™ãƒ«3 ç¶™ç¶šæ™‚é–“960ç§’
                     buff.AC += -4;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
                     }
                     break;
-                case 2://l‹G‚Ìƒ|[ƒVƒ‡ƒ“ 	AC-5      
+                case 2://å››å­£ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³ 	AC-5      
                     buff.AC += -5;
                     break;
-                case 3://ƒAƒCƒAƒ“ƒXƒLƒ“          AC-10	Á”ïMP30 –‚–@ƒŒƒxƒ‹5 Œp‘±ŠÔ960•b
+                case 3://ã‚¢ã‚¤ã‚¢ãƒ³ã‚¹ã‚­ãƒ³          AC-10	æ¶ˆè²»MP30 é­”æ³•ãƒ¬ãƒ™ãƒ«5 ç¶™ç¶šæ™‚é–“960ç§’
                     buff.AC += -10;
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
@@ -2326,13 +2326,13 @@ public class Calculator implements Common {
                     break;
             }
         }
-        //ƒZƒLƒ…ƒŠƒeƒB
+        //ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£
         if (ui.cb_buff[SEC].isSelected()) {
             buff.AC -= 1;
             buff.MR += 2;
             buff.DR += 1;
         }
-        //•Ö‚Ì‹C
+        //é»’è›‡ã®æ°—
         if (ui.cb_buff[BS_COIN].isSelected()) {
             buff.HP += 20;
             buff.MP += 13;
@@ -2340,36 +2340,36 @@ public class Calculator implements Common {
             buff.DR += 3;
             buff.ailment[DARKNESS] += 10;
         }
-        //¬’·‚Ì‰ÊÀ y_ikeda‚³‚ñ‚É‚æ‚éC³‚ğQl‚É
+        //æˆé•·ã®æœå®Ÿ y_ikedaã•ã‚“ã«ã‚ˆã‚‹ä¿®æ­£ã‚’å‚è€ƒã«
         if (ui.cb_buff[L_HST].isSelected()) {
             switch ((String) ui.cb_buff_group[L_HST].getSelectedItem()) {
-                case "1ŒÂ":
+                case "1å€‹":
                     ui.cb_buff[L_HST].setToolTipText("EXP20% AC-1");
                     buff.AC -= 1;
                     break;
-                case "2ŒÂ":
+                case "2å€‹":
                     ui.cb_buff[L_HST].setToolTipText("EXP30% AC-2 DR+1");
                     buff.AC -= 2;
                     buff.DR += 1;
                     break;
-                case "3ŒÂ":
+                case "3å€‹":
                     ui.cb_buff[L_HST].setToolTipText("EXP40% AC-3 DR+2");
                     buff.AC -= 3;
                     buff.DR += 2;
                     break;
-                case "4ŒÂ":
+                case "4å€‹":
                     ui.cb_buff[L_HST].setToolTipText("EXP40% AC-4 DR+2");
                     buff.AC -= 4;
                     buff.DR += 2;
                     break;
-                case "5ŒÂ":
+                case "5å€‹":
                     ui.cb_buff[L_HST].setToolTipText("EXP40% AC-5 DR+2");
                     buff.AC -= 5;
                     buff.DR += 2;
                     break;
             }
         }
-        //¶–½‚Ìƒ{[ƒiƒX
+        //ç”Ÿå‘½ã®ãƒœãƒ¼ãƒŠã‚¹
         if (ui.cb_buff[H_HP].isSelected()) {
             switch ((String) ui.cb_buff_group[H_HP].getSelectedItem()) {
                 case "HP+50":
@@ -2386,7 +2386,7 @@ public class Calculator implements Common {
                     break;
             }
         }
-        //“Sb‚Ìƒ{[ƒiƒX
+        //é‰„ç”²ã®ãƒœãƒ¼ãƒŠã‚¹
         if (ui.cb_buff[H_AC].isSelected()) {
             switch ((String) ui.cb_buff_group[H_AC].getSelectedItem()) {
                 case "AC-1":
@@ -2403,36 +2403,36 @@ public class Calculator implements Common {
                     break;
             }
         }
-        //¶‘¶‚Ìƒ{[ƒiƒX
+        //ç”Ÿå­˜ã®ãƒœãƒ¼ãƒŠã‚¹
         if (ui.cb_buff[H_PVPDR].isSelected()) {
             switch ((String) ui.cb_buff_group[H_PVPDR].getSelectedItem()) {
                 case "PVP DR+1":
-                    ui.cb_buff[H_PVPDR].setToolTipText("PVPƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+1");
+                    ui.cb_buff[H_PVPDR].setToolTipText("PVPãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³+1");
                     buff.PVPDR += 1;
                     break;
                 case "PVP DR+2":
-                    ui.cb_buff[H_PVPDR].setToolTipText("PVPƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+2");
+                    ui.cb_buff[H_PVPDR].setToolTipText("PVPãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³+2");
                     buff.PVPDR += 2;
                     break;
             }
         }
-        //ˆÃE‚Ìƒ{[ƒiƒX
+        //æš—æ®ºã®ãƒœãƒ¼ãƒŠã‚¹
         if (ui.cb_buff[H_PVP].isSelected()) {
             switch ((String) ui.cb_buff_group[H_PVP].getSelectedItem()) {
-                case "PVP ƒ_ƒ+1":
-                    ui.cb_buff[H_PVP].setToolTipText("PVPƒ_ƒ[ƒW+1");
+                case "PVP ãƒ€ãƒ¡+1":
+                    ui.cb_buff[H_PVP].setToolTipText("PVPãƒ€ãƒ¡ãƒ¼ã‚¸+1");
                     buff.PVP += 1;
                     break;
-                case "PVP ƒ_ƒ+2":
-                    ui.cb_buff[H_PVP].setToolTipText("PVPƒ_ƒ[ƒW+2");
+                case "PVP ãƒ€ãƒ¡+2":
+                    ui.cb_buff[H_PVP].setToolTipText("PVPãƒ€ãƒ¡ãƒ¼ã‚¸+2");
                     buff.PVP += 2;
                     break;
             }
         }
-        //ƒ‰ƒ“ƒJ[ƒ{[ƒiƒX
-        //STR+1[ŒNå][ƒiƒCƒg][ƒ_[ƒNƒGƒ‹ƒt][ƒhƒ‰ƒSƒ“ƒiƒCƒg][ƒEƒHƒŠƒA[]
-        //DEX+1[ƒGƒ‹ƒt]
-        //INT+1[ƒEƒBƒU[ƒh][ƒCƒŠƒ…[ƒWƒ‡ƒjƒXƒg]
+        //ãƒ©ãƒ³ã‚«ãƒ¼ãƒœãƒ¼ãƒŠã‚¹
+        //STR+1[å›ä¸»][ãƒŠã‚¤ãƒˆ][ãƒ€ãƒ¼ã‚¯ã‚¨ãƒ«ãƒ•][ãƒ‰ãƒ©ã‚´ãƒ³ãƒŠã‚¤ãƒˆ][ã‚¦ã‚©ãƒªã‚¢ãƒ¼]
+        //DEX+1[ã‚¨ãƒ«ãƒ•]
+        //INT+1[ã‚¦ã‚£ã‚¶ãƒ¼ãƒ‰][ã‚¤ãƒªãƒ¥ãƒ¼ã‚¸ãƒ§ãƒ‹ã‚¹ãƒˆ]
         if (ui.cb_buff[H_RK].isSelected()) {
             switch (cls) {
                 case P:
@@ -2469,7 +2469,7 @@ public class Calculator implements Common {
                     break;       
             }
         }
-        //d—Êƒyƒiƒ‹ƒeƒB
+        //é‡é‡ãƒšãƒŠãƒ«ãƒ†ã‚£
         switch (ui.cb_weight.getSelectedIndex()) {
             case 0:
                 break;
@@ -2509,7 +2509,7 @@ public class Calculator implements Common {
         int pure_int = _ST[BASE][INT] + _ST[REM][INT]
                 + _ST[LEVEL][INT] + _ST[ELIXIR][INT];
 
-        //’Ç‰Áƒ_ƒ[ƒW
+        //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
         base_dmg_short = (int) (str / 2 - 2) + (int) (level / _C[D_SHORT][STR][cls]);
         base_dmg_long = (int) (dex / 3) + (int) (level / _C[D_LONG][DEX][cls]);
         base_dmg_magic = (int) (_int / 5 - 2) + (int) (level / _C[D_MAGIC][INT][cls]);
@@ -2590,12 +2590,12 @@ public class Calculator implements Common {
         int st_int = _ST[BASE][INT] + _ST[REM][INT] + _ST[LEVEL][INT]
                 + _ST[ENCHANT][INT] + _ST[ELIXIR][INT];
 
-        //ƒXƒyƒ‹ƒpƒ[XV
+        //ã‚¹ãƒšãƒ«ãƒ‘ãƒ¯ãƒ¼æ›´æ–°
         int_beta = sp + st_int;
         
         spr = sp + ml + mb;
         
-        //ƒ}ƒWƒbƒNƒŒƒxƒ‹XV
+        //ãƒã‚¸ãƒƒã‚¯ãƒ¬ãƒ™ãƒ«æ›´æ–°
         switch (cls) {
             case P:
                 ml = level / 10;
@@ -2649,15 +2649,15 @@ public class Calculator implements Common {
 
         mb = (int) (st_int / 4) + _C[MB][INT][cls];
 
-        if (buki.type.equals("ƒL[ƒŠƒ“ƒN")) {
+        if (buki.type.equals("ã‚­ãƒ¼ãƒªãƒ³ã‚¯")) {
             dmg_short = 0;
             for (int i = 0; i < 4; i++) {
                 buff.ELEM_DMG_SHORT[i] = 0;
             }
         }
 
-        //–½’†ŒvZ
-        // STR,DEX,ƒNƒ‰ƒX,ƒx[ƒXƒXƒe[ƒ^ƒX,ƒŒƒxƒ‹
+        //å‘½ä¸­è¨ˆç®—
+        // STR,DEX,ã‚¯ãƒ©ã‚¹,ãƒ™ãƒ¼ã‚¹ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹,ãƒ¬ãƒ™ãƒ«
         hit_short = base_hit_short;
         hit_long = base_hit_long;
 
@@ -2670,75 +2670,75 @@ public class Calculator implements Common {
         } else {
             ui.tf_buki_sp_rate.setEnabled(true);
             switch (buki.type) {
-                case "ƒNƒƒE":
+                case "ã‚¯ãƒ­ã‚¦":
                     cr = Double.parseDouble(ui.tf_buki_sp_rate.getText());
                     break;
-                case "ƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh":
+                case "ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰":
                     wh = Double.parseDouble(ui.tf_buki_sp_rate.getText());
                     break;
-                case "ƒ`ƒF[ƒ“ƒ\[ƒh":
+                case "ãƒã‚§ãƒ¼ãƒ³ã‚½ãƒ¼ãƒ‰":
                     we = Double.parseDouble(ui.tf_buki_sp_rate.getText());
                     break;
             }
         }
 
-        // •ŠíƒIƒvƒVƒ‡ƒ“,•Ší‹­‰»”,ƒGƒ“ƒ`ƒƒƒ“ƒg
+        // æ­¦å™¨ã‚ªãƒ—ã‚·ãƒ§ãƒ³,æ­¦å™¨å¼·åŒ–æ•°,ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆ
         hit_short += buki.op.HIT_SHORT + buki.enchant / 2 + buff.HIT_SHORT;
         //hit_long += buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG + buff.HIT_SHORT;
         hit_long += buki.arrow_hit + buki.op.HIT_LONG + buki.enchant / 2 + buff.HIT_LONG;
         
-System.out.print(" ‰“‹——£–½’† ‡Œv:");
+System.out.print(" é è·é›¢å‘½ä¸­ åˆè¨ˆ:");
 System.out.print(hit_long);
-System.out.print(" ‰“‹——£–½’†(–î•ª):");
+System.out.print(" é è·é›¢å‘½ä¸­(çŸ¢åˆ†):");
 System.out.print(buki.arrow_hit);
-System.out.print(" ‰“‹——£–½’†(•Ší•ª):");
+System.out.print(" é è·é›¢å‘½ä¸­(æ­¦å™¨åˆ†):");
 System.out.print(buki.op.HIT_LONG);
-System.out.print(" ‰“‹——£–½’†(•Ší‹­‰»•ª)/2:");
+System.out.print(" é è·é›¢å‘½ä¸­(æ­¦å™¨å¼·åŒ–åˆ†)/2:");
 System.out.print(buki.enchant / 2);
-System.out.print(" ‰“‹——£–½’†(–‚–@ƒXƒLƒ‹•ª):");
+System.out.print(" é è·é›¢å‘½ä¸­(é­”æ³•ã‚¹ã‚­ãƒ«åˆ†):");
 System.out.println(buff.HIT_LONG);
 
 buki.arrow_hit=0;
 
-        //‘®«–î
-//        if (buki.type.equals("ƒ{ƒE")) {
-//            if (buki.arrow_name.contains("—ì")) {
+        //å±æ€§çŸ¢
+//        if (buki.type.equals("ãƒœã‚¦")) {
+//            if (buki.arrow_name.contains("éœŠ")) {
 //                switch (buki.arrow_name) {
-//                    case "‰Î—ì‚Ìƒuƒ‰ƒbƒNƒ~ƒXƒŠƒ‹ƒAƒ[":
+//                    case "ç«éœŠã®ãƒ–ãƒ©ãƒƒã‚¯ãƒŸã‚¹ãƒªãƒ«ã‚¢ãƒ­ãƒ¼":
 //                        buff.ELEM_DMG_LONG[FIRE] += 3;
 //                       break;
-//                   case "…—ì‚Ìƒuƒ‰ƒbƒNƒ~ƒXƒŠƒ‹ƒAƒ[":
+//                   case "æ°´éœŠã®ãƒ–ãƒ©ãƒƒã‚¯ãƒŸã‚¹ãƒªãƒ«ã‚¢ãƒ­ãƒ¼":
 //                       buff.ELEM_DMG_LONG[WATER] += 3;
 //                       break;
-//                   case "•——ì‚Ìƒuƒ‰ƒbƒNƒ~ƒXƒŠƒ‹ƒAƒ[":
+//                   case "é¢¨éœŠã®ãƒ–ãƒ©ãƒƒã‚¯ãƒŸã‚¹ãƒªãƒ«ã‚¢ãƒ­ãƒ¼":
 //                       buff.ELEM_DMG_LONG[WIND] += 3;
 //                       break;
-//                   case "’n—ì‚Ìƒuƒ‰ƒbƒNƒ~ƒXƒŠƒ‹ƒAƒ[":
+//                   case "åœ°éœŠã®ãƒ–ãƒ©ãƒƒã‚¯ãƒŸã‚¹ãƒªãƒ«ã‚¢ãƒ­ãƒ¼":
 //                       buff.ELEM_DMG_LONG[EARTH] += 3;
 //                       break;
 //               }
 //            }
 //       }
-        //ƒGƒŒƒƒ“ƒ^ƒ‹ ƒoƒgƒ‹ ƒAƒ[
-        if (buki.type.equals("ƒ{ƒE")) {
-            if (buki.arrow_name.contains("‰Î‘®«‚Ì")) {
+        //ã‚¨ãƒ¬ãƒ¡ãƒ³ã‚¿ãƒ« ãƒãƒˆãƒ« ã‚¢ãƒ­ãƒ¼
+        if (buki.type.equals("ãƒœã‚¦")) {
+            if (buki.arrow_name.contains("ç«å±æ€§ã®")) {
                 buff.ELEM_DMG_LONG[FIRE] += buki.arrow_elementdmg;
-            }else if(buki.arrow_name.contains("…‘®«‚Ì")) {
+            }else if(buki.arrow_name.contains("æ°´å±æ€§ã®")) {
                 buff.ELEM_DMG_LONG[WATER] += buki.arrow_elementdmg;
-            }else if(buki.arrow_name.contains("•—‘®«‚Ì")) {
+            }else if(buki.arrow_name.contains("é¢¨å±æ€§ã®")) {
                 buff.ELEM_DMG_LONG[WIND] += buki.arrow_elementdmg;
-            }else if(buki.arrow_name.contains("’n‘®«‚Ì")) {
+            }else if(buki.arrow_name.contains("åœ°å±æ€§ã®")) {
                 buff.ELEM_DMG_LONG[EARTH] += buki.arrow_elementdmg;
             }
         }
         
-System.out.print(" ‰Î‘®«ƒ_ƒ[ƒW:");
+System.out.print(" ç«å±æ€§ãƒ€ãƒ¡ãƒ¼ã‚¸:");
 System.out.print(buff.ELEM_DMG_LONG[FIRE]);
-System.out.print(" …‘®«ƒ_ƒ[ƒW:");
+System.out.print(" æ°´å±æ€§ãƒ€ãƒ¡ãƒ¼ã‚¸:");
 System.out.print(buff.ELEM_DMG_LONG[WATER]);
-System.out.print(" •—‘®«ƒ_ƒ[ƒW:");
+System.out.print(" é¢¨å±æ€§ãƒ€ãƒ¡ãƒ¼ã‚¸:");
 System.out.print(buff.ELEM_DMG_LONG[WIND]);
-System.out.print(" ’n‘®«ƒ_ƒ[ƒW:");
+System.out.print(" åœ°å±æ€§ãƒ€ãƒ¡ãƒ¼ã‚¸:");
 System.out.println(buff.ELEM_DMG_LONG[EARTH]);
 
 buki.arrow_elementdmg=0;
@@ -2748,7 +2748,7 @@ buki.arrow_elementdmg=0;
             hit_long += bougu1.op.HIT_LONG + bougu1.op.HIT_SHORT + bougu1.op2.HIT_LONG + bougu1.op2.HIT_SHORT;
         }
 
-        //‘®«ƒ_ƒ[ƒW
+        //å±æ€§ãƒ€ãƒ¡ãƒ¼ã‚¸
         dmg_short += (int) ((buff.ELEM_DMG_SHORT[FIRE]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
         dmg_short += (int) ((buff.ELEM_DMG_SHORT[WATER]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
         dmg_short += (int) ((buff.ELEM_DMG_SHORT[WIND]) * (32.0 - ui.s_target_res[FIRE].getValue() * 32 / 100) / 32.0);
@@ -2772,7 +2772,7 @@ buki.arrow_elementdmg=0;
         int buki_id = 0;
         double magic_main = 0;
         double magic_sub = 0;
-        //ƒŒƒxƒ‹‚É‚æ‚é©“®UŒ‚‘¬“x‚ÆHero•Ïg‘¬“x‚Ì•ÏX
+        //ãƒ¬ãƒ™ãƒ«ã«ã‚ˆã‚‹è‡ªå‹•æ”»æ’ƒé€Ÿåº¦ã¨Heroå¤‰èº«é€Ÿåº¦ã®å¤‰æ›´
         if (ui.cb_speed_auto.isSelected()) {
 
             if (ui.cb_eq[1].getSelectedIndex() > 0) {
@@ -2883,9 +2883,9 @@ System.out.print(buki.enchant);
 System.out.print(" buki1.magic_enchant:");
 System.out.println(buki.magic_enchant);
 
-            if (buki.material.equals("ƒVƒ‹ƒo[")
-                    || buki.material.equals("ƒ~ƒXƒŠƒ‹")
-                    || buki.material.equals("ƒIƒŠƒnƒ‹ƒRƒ“")) {
+            if (buki.material.equals("ã‚·ãƒ«ãƒãƒ¼")
+                    || buki.material.equals("ãƒŸã‚¹ãƒªãƒ«")
+                    || buki.material.equals("ã‚ªãƒªãƒãƒ«ã‚³ãƒ³")) {
                 dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
             }
             if (ui.tb_blessed1.isSelected()) {
@@ -2924,9 +2924,9 @@ System.out.print(buki2.enchant);
 System.out.print(" buki2.magic_enchant:");
 System.out.println(buki2.magic_enchant);
 
-            if (buki2.material.equals("ƒVƒ‹ƒo[")
-                    || buki2.material.equals("ƒ~ƒXƒŠƒ‹")
-                    || buki2.material.equals("ƒIƒŠƒnƒ‹ƒRƒ“")) {
+            if (buki2.material.equals("ã‚·ãƒ«ãƒãƒ¼")
+                    || buki2.material.equals("ãƒŸã‚¹ãƒªãƒ«")
+                    || buki2.material.equals("ã‚ªãƒªãƒãƒ«ã‚³ãƒ³")) {
                 dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
             }
             if (ui.tb_blessed2.isSelected()) {
@@ -2941,10 +2941,10 @@ System.out.println(buki2.magic_enchant);
 
         } else {
             switch (buki.type) {
-                case "ƒ{ƒE":
-                case "ƒKƒ“ƒgƒŒƒbƒg":
+                case "ãƒœã‚¦":
+                case "ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ":
 
-//                    if (ui.cb_sonsyou.isSelected() && !(buki.arrow_name.equals("K‰^‚ÌƒAƒ[") || buki.op.effect.contains("ŠÑ’ÊŒø‰Ê"))) {
+//                    if (ui.cb_sonsyou.isSelected() && !(buki.arrow_name.equals("å¹¸é‹ã®ã‚¢ãƒ­ãƒ¼") || buki.op.effect.contains("è²«é€šåŠ¹æœ"))) {
 //                        dmg_big_ave = (1.0 + buki.arrow_big) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
 //                        dmg_small_ave = (1.0 + buki.arrow_small) / 4 + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;
 //
@@ -2959,7 +2959,7 @@ System.out.println(buki2.magic_enchant);
 
 System.out.print(" dmg_  big_ave:");
 System.out.print(dmg_big_ave);
-System.out.print(" buki.  big•½‹Ï:");
+System.out.print(" buki.  bigå¹³å‡:");
 System.out.print((1.0 + buki.big) / 2 );
 System.out.print(" buki.arrow_dmg:");
 System.out.print(buki.arrow_dmg);
@@ -2974,7 +2974,7 @@ System.out.println(buki.magic_enchant);
 
 System.out.print(" dmg_small_ave:");
 System.out.print(dmg_small_ave);
-System.out.print(" buki.small•½‹Ï:");
+System.out.print(" buki.smallå¹³å‡:");
 System.out.print((1.0 + buki.small) / 2 );
 System.out.print(" buki.arrow_dmg:");
 System.out.print(buki.arrow_dmg);
@@ -2993,13 +2993,13 @@ System.out.println(buki.magic_enchant);
                         dmg_small_max = buki.arrow_dmg + buki.small + buki.op.DMG_LONG + buki.op2.DMG_LONG + buki.enchant;                        
                         
 //                    }
-                    if (buki.arrow_material.equals("ƒVƒ‹ƒo[")
-                            || buki.arrow_material.equals("ƒ~ƒXƒŠƒ‹")
-                            || buki.arrow_material.equals("ƒIƒŠƒnƒ‹ƒRƒ“")) {
+                    if (buki.arrow_material.equals("ã‚·ãƒ«ãƒãƒ¼")
+                            || buki.arrow_material.equals("ãƒŸã‚¹ãƒªãƒ«")
+                            || buki.arrow_material.equals("ã‚ªãƒªãƒãƒ«ã‚³ãƒ³")) {
                         dmg_undead = (1.0 + 20) / 2;
                     }
                     break;
-                case "ƒL[ƒŠƒ“ƒN":
+                case "ã‚­ãƒ¼ãƒªãƒ³ã‚¯":
                     dmg_big_ave = buki.x * (1.0 + buki.y) / 2 + buki.z;
                     dmg_small_ave = buki.x * (1.0 + buki.y) / 2 + buki.z;
                     break;
@@ -3036,9 +3036,9 @@ System.out.print(buki.enchant);
 System.out.print(" buki1.magic_enchant:");
 System.out.println(buki.magic_enchant);
 
-                    if (buki.material.equals("ƒVƒ‹ƒo[")
-                            || buki.material.equals("ƒ~ƒXƒŠƒ‹")
-                            || buki.material.equals("ƒIƒŠƒnƒ‹ƒRƒ“")) {
+                    if (buki.material.equals("ã‚·ãƒ«ãƒãƒ¼")
+                            || buki.material.equals("ãƒŸã‚¹ãƒªãƒ«")
+                            || buki.material.equals("ã‚ªãƒªãƒãƒ«ã‚³ãƒ³")) {
                         dmg_undead = (1.0 + 20) / 2;
                     } else {
                         dmg_undead = 0;
@@ -3052,9 +3052,9 @@ System.out.println(buki.magic_enchant);
             }
         }
 
-        //ƒNƒŠƒeƒBƒJƒ‹ˆ—
+        //ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«å‡¦ç†
         switch (buki.type) {
-            case "ƒL[ƒŠƒ“ƒN":
+            case "ã‚­ãƒ¼ãƒªãƒ³ã‚¯":
                 double a = 1 + 3.0 / 32.0 * (int_beta - 12);
                 double b;
                 if (ui.s_target_mr.getValue() - hit_magic <= 100) {
@@ -3072,8 +3072,8 @@ System.out.println(buki.magic_enchant);
                 dmg_big_ave -= 0.5;
                 dmg_small_ave -= 0.5;
                 break;
-            case "ƒ{ƒE":
-                //ƒGƒ‹ƒt ƒC[ƒOƒ‹ƒAƒC@2%  Á”ïMP20/2mins
+            case "ãƒœã‚¦":
+                //ã‚¨ãƒ«ãƒ• ã‚¤ãƒ¼ã‚°ãƒ«ã‚¢ã‚¤ã€€2%  æ¶ˆè²»MP20/2mins
                 cri_long += cr * 100;
                 if (ui.cb_buff[E_EE].isSelected()) {
                     cri_long += 2;
@@ -3089,7 +3089,7 @@ System.out.println(buki.magic_enchant);
                         + (1.0 - cri_long * 0.01) * dmg_small_ave;
                 break;
             default:
-                //ƒGƒ‹ƒt ƒ\ƒEƒ‹ƒIƒuƒtƒŒƒCƒ€ 100% Á”ïMP30/2mins
+                //ã‚¨ãƒ«ãƒ• ã‚½ã‚¦ãƒ«ã‚ªãƒ–ãƒ•ãƒ¬ã‚¤ãƒ  100% æ¶ˆè²»MP30/2mins
                 cri_short += cr * 100;
                 if (ui.cb_buff[E_SF].isSelected()) {
                     cri_short = 100;
@@ -3106,15 +3106,15 @@ System.out.println(buki.magic_enchant);
                 break;
         }
 
-        if (buki.type.equals("ƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh")) {
-            if ((buki.name.contains("Œ‰¹") || buki.name.contains("™ôšK")) && ui.cb_mag_auto.isSelected()) {
+        if (buki.type.equals("ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰")) {
+            if ((buki.name.contains("è½ŸéŸ³") || buki.name.contains("å’†å“®")) && ui.cb_mag_auto.isSelected()) {
                 ui.tf_buki_sp_rate.setText(Double.toString(((int) ((wh + buki.enchant * 0.01) * 100)) / 100.0));
                 dmg_big_ave *= 2.0 * (wh + buki.enchant * 0.01)
                         + (1.0 - (wh + buki.enchant * 0.01));
                 dmg_small_ave *= 2.0 * (wh + buki.enchant * 0.01)
                         + (1.0 - (wh + buki.enchant * 0.01));
 
-                //ƒ_ƒuƒ‹ƒqƒbƒg‚É‹â“ÁŒø{ˆ«–‚“ÁŒø‚ğæ‚¹‚é
+                //ãƒ€ãƒ–ãƒ«ãƒ’ãƒƒãƒˆã«éŠ€ç‰¹åŠ¹ï¼‹æ‚ªé­”ç‰¹åŠ¹ã‚’ä¹—ã›ã‚‹
                 dmg_undead *= 2.0 * (wh + buki.enchant * 0.01)
                         + (1.0 - (wh + buki.enchant * 0.01));
                 dmg_cursed *= 2.0 * (wh + buki.enchant * 0.01)
@@ -3126,7 +3126,7 @@ System.out.println(buki.magic_enchant);
                 dmg_small_ave *= 2.0 * wh
                         + (1.0 - buki.double_hit_rate);
 
-                //ƒ_ƒuƒ‹ƒqƒbƒg‚É‹â“ÁŒø{ˆ«–‚“ÁŒø‚ğæ‚¹‚é
+                //ãƒ€ãƒ–ãƒ«ãƒ’ãƒƒãƒˆã«éŠ€ç‰¹åŠ¹ï¼‹æ‚ªé­”ç‰¹åŠ¹ã‚’ä¹—ã›ã‚‹
                 dmg_undead *= 2.0 * wh
                         + (1.0 - wh);
                 dmg_cursed *= 2.0 * wh
@@ -3172,11 +3172,11 @@ System.out.println(buki.magic_enchant);
         magic = getMagicDamage(buki.magic_name, buki.magic_element, power);
 
         switch (buki.type) {
-            case "ƒ{ƒE":
-            case "ƒKƒ“ƒgƒŒƒbƒg":
+            case "ãƒœã‚¦":
+            case "ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ":
                 hit = HitRateCalculator.calc(ui.cb_mode_pc.getSelectedIndex() == 0, hit_long, 10 - ui.cb_target_ac.getSelectedIndex(), ui.cb_target_dg.getSelectedIndex() == 0, ui.cb_target_dg.getSelectedIndex() == 2);
                 break;
-            case "ƒL[ƒŠƒ“ƒN":
+            case "ã‚­ãƒ¼ãƒªãƒ³ã‚¯":
                 hit = 1.0;
                 break;
             default:
@@ -3199,12 +3199,12 @@ System.out.println(buki.magic_enchant);
             double ta_rate;
 
             switch ((String) ui.cb_magic.getSelectedItem()) {
-                case "ƒTƒ“ƒo[ƒXƒg":
+                case "ã‚µãƒ³ãƒãƒ¼ã‚¹ãƒˆ":
                     double base_delay = 0.5;
                     motion_delay = 60.0 / (magic_sub * acc);
                     mag_delay = key_delay * (int) ((base_delay + motion_delay) / key_delay + 1);
                     hit *= (mag_delay - motion_delay) / mag_delay;
-                    mag_dmg = getMagicDamage("ƒTƒ“ƒo[ƒXƒg", "‰Î", 88.0);
+                    mag_dmg = getMagicDamage("ã‚µãƒ³ãƒãƒ¼ã‚¹ãƒˆ", "ç«", 88.0);
                     mag_dmg_min = mag_dmg * 60.0 / mag_delay;
                     if (st_int >= 17) {
 //                        ui.mp_syouhi.setText((int) (60.0 / mag_delay) * 15 + " /min");
@@ -3215,12 +3215,12 @@ System.out.println(buki.magic_enchant);
 //                    ui.bc.mag = true;
 //                    ui.bc2.mag = true;
                     break;
-                case "ƒR[ƒ“ƒIƒuƒR[ƒ‹ƒh":
+                case "ã‚³ãƒ¼ãƒ³ã‚ªãƒ–ã‚³ãƒ¼ãƒ«ãƒ‰":
                     base_delay = 0.1;
                     motion_delay = 60.0 / (magic_main * acc);
                     mag_delay = key_delay * (int) ((base_delay + motion_delay) / key_delay + 1);
                     hit *= (mag_delay - motion_delay) / mag_delay;
-                    mag_dmg = getMagicDamage("ƒR[ƒ“ƒIƒuƒR[ƒ‹ƒh", "…", 62.0);
+                    mag_dmg = getMagicDamage("ã‚³ãƒ¼ãƒ³ã‚ªãƒ–ã‚³ãƒ¼ãƒ«ãƒ‰", "æ°´", 62.0);
                     mag_dmg_min = mag_dmg * 60.0 / mag_delay;
                     if (st_int >= 16) {
 //                        ui.mp_syouhi.setText((int) (60.0 / mag_delay) * 14 + " /min");
@@ -3231,12 +3231,12 @@ System.out.println(buki.magic_enchant);
 //                    ui.bc.mag = true;
 //                    ui.bc2.mag = true;
                     break;
-                case "ƒCƒ‰ƒvƒVƒ‡ƒ“":
+                case "ã‚¤ãƒ©ãƒ—ã‚·ãƒ§ãƒ³":
                     base_delay = 0.1;
                     motion_delay = 60.0 / (magic_main * acc);
                     mag_delay = key_delay * (int) ((base_delay + motion_delay) / key_delay + 1);
                     hit *= (mag_delay - motion_delay) / mag_delay;
-                    mag_dmg = getMagicDamage("ƒCƒ‰ƒvƒVƒ‡ƒ“", "’n", 79.0);
+                    mag_dmg = getMagicDamage("ã‚¤ãƒ©ãƒ—ã‚·ãƒ§ãƒ³", "åœ°", 79.0);
                     mag_dmg_min = mag_dmg * 60.0 / mag_delay;
                     if (st_int >= 17) {
 //                        ui.mp_syouhi.setText((int) (60.0 / mag_delay) * 15 + " /min");
@@ -3245,12 +3245,12 @@ System.out.println(buki.magic_enchant);
 //                        ui.mp_syouhi.setText((int) (60.0 / mag_delay) * (int) (20 * (1.0 - red_mp / 100.0)) + " /min");
                     }
                     break;
-                case "ƒR[ƒ‹ƒ‰ƒCƒgƒjƒ“ƒO":
+                case "ã‚³ãƒ¼ãƒ«ãƒ©ã‚¤ãƒˆãƒ‹ãƒ³ã‚°":
                     base_delay = 0.0;
                     motion_delay = 60.0 / (magic_sub * acc);
                     mag_delay = key_delay * (int) ((base_delay + motion_delay) / key_delay + 1);
                     hit *= (mag_delay - motion_delay) / mag_delay;
-                    mag_dmg = getMagicDamage("ƒR[ƒ‹ƒ‰ƒCƒgƒjƒ“ƒO", "•—", 62.5);
+                    mag_dmg = getMagicDamage("ã‚³ãƒ¼ãƒ«ãƒ©ã‚¤ãƒˆãƒ‹ãƒ³ã‚°", "é¢¨", 62.5);
                     mag_dmg_min = mag_dmg * 60.0 / mag_delay;
                     if (st_int >= 16) {
 //                        ui.mp_syouhi.setText((int) (60.0 / mag_delay) * 14 + " /min");
@@ -3259,8 +3259,8 @@ System.out.println(buki.magic_enchant);
 //                        ui.mp_syouhi.setText((int) (60.0 / mag_delay) * (int) (18 * (1.0 - red_mp / 100.0)) + " /min");
                     }
                     break;
-                case "ƒgƒŠƒvƒ‹ƒAƒ[":
-                    if (buki.type.equals("ƒ{ƒE")) {
+                case "ãƒˆãƒªãƒ—ãƒ«ã‚¢ãƒ­ãƒ¼":
+                    if (buki.type.equals("ãƒœã‚¦")) {
                         base_delay = 0.1;
                         motion_delay = 60.0 / (magic_main * acc);
                         mag_delay = key_delay * (int) ((base_delay + motion_delay) / key_delay + 1);
@@ -3284,11 +3284,11 @@ System.out.println(buki.magic_enchant);
             rate = rate / (1 + delay * hit * rate / T);
         }
 
-        if (buki.magic_name.equals("HP‹zû")) {
+        if (buki.magic_name.equals("HPå¸å")) {
             drain_small = ((dmg_small_ave + dmg_element1) / 8 + 1) - 0.5;
             drain_big = ((dmg_big_ave + dmg_element1) / 8 + 1) - 0.5;
             ui.lab_mag_info2
-                    .setText("–‚–@ƒ_ƒ[ƒW "
+                    .setText("é­”æ³•ãƒ€ãƒ¡ãƒ¼ã‚¸ "
                             + format_dmg.format(drain_small)
                             + "/"
                             + format_dmg.format(drain_big)
@@ -3304,16 +3304,16 @@ System.out.println(buki.magic_enchant);
 //            dmg_small_ave *= (1.0 - rate);
 //            dmg_big_ave *= (1.0 - rate);
 //        }
-        //ƒ”ƒ@ƒ“ƒpƒCƒAƒŠƒbƒNƒ^ƒbƒ`
-        if (buff.effect.contains("ƒ”ƒ@ƒ“ƒpƒCƒAƒŠƒbƒNƒ^ƒbƒ`")) {
+        //ãƒ´ã‚¡ãƒ³ãƒ‘ã‚¤ã‚¢ãƒªãƒƒã‚¯ã‚¿ãƒƒãƒ
+        if (buff.effect.contains("ãƒ´ã‚¡ãƒ³ãƒ‘ã‚¤ã‚¢ãƒªãƒƒã‚¯ã‚¿ãƒƒãƒ")) {
             double vt_rate = 0.04;
             double vt_motion = 60.0 / (polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), buki_id));
             double atk_motion = 60.0 / (speed);
 
-            //VTƒ‚[ƒVƒ‡ƒ“‚É‚æ‚éUŒ‚‘¬“x‚Ì’á‰º
+            //VTãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã«ã‚ˆã‚‹æ”»æ’ƒé€Ÿåº¦ã®ä½ä¸‹
             speed *= (atk_motion) / (atk_motion + vt_motion * vt_rate);
         }
-        //ƒ_ƒuƒ‹ƒuƒŒƒCƒN
+        //ãƒ€ãƒ–ãƒ«ãƒ–ãƒ¬ã‚¤ã‚¯
         if (ui.cb_buff[D_DB].isSelected()) {
             if (buki_id == W_DB || buki_id == W_C) {
                 double lv_bonus = ((level - 45) / 5) * 0.01;
@@ -3329,7 +3329,7 @@ System.out.println(buki.magic_enchant);
                         + (1.0 - (db_rate + lv_bonus));
             }
         }
-        //•Ší‘®«
+        //æ­¦å™¨å±æ€§
         if (buki_id == W_DA) {
             dmg_big_ave += (dmg_element1 + dmg_element2) / 2;
             dmg_small_ave += (dmg_element1 + dmg_element2) / 2;
@@ -3338,7 +3338,7 @@ System.out.println(buki.magic_enchant);
             dmg_big_ave += dmg_element1;
             dmg_small_ave += dmg_element1;
         }
-        //ƒAƒoƒ^[
+        //ã‚¢ãƒã‚¿ãƒ¼
         if (ui.cb_buff[I_IA].isSelected()) {
             dmg_big_ave += 10;
             dmg_small_ave += 10;
@@ -3352,14 +3352,14 @@ System.out.println(buki.magic_enchant);
             dmg_small_ave += buff.PVP;
         }
 
-        //ƒoƒtŒø‰Ê
+        //ãƒãƒ•åŠ¹æœ
         switch (buki.type) {
-            case "ƒKƒ“ƒgƒŒƒbƒg":
-            case "ƒ{ƒE":
+            case "ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ":
+            case "ãƒœã‚¦":
                 dmg_big_ave += dmg_long;
                 dmg_small_ave += dmg_long;
                 break;
-            case "ƒL[ƒŠƒ“ƒN":
+            case "ã‚­ãƒ¼ãƒªãƒ³ã‚¯":
                 break;
             default:
                 dmg_big_ave += dmg_short;
@@ -3367,16 +3367,16 @@ System.out.println(buki.magic_enchant);
 
         }
 
-        //ƒ_ƒƒŠƒ_
+        //ãƒ€ãƒ¡ãƒªãƒ€
         dmg_big_ave -= Integer.parseInt((String) ui.cb_target_dr.getSelectedItem());
         dmg_small_ave -= Integer.parseInt((String) ui.cb_target_dr.getSelectedItem());
 
-        //ƒNƒ‰ƒbƒVƒ…
+        //ã‚¯ãƒ©ãƒƒã‚·ãƒ¥
         double ex = 0.0;
         if (ui.cb_buff[F_CR].isSelected()) {
             ex = level / 2.0;
         }
-        //ƒtƒ…[ƒŠ[
+        //ãƒ•ãƒ¥ãƒ¼ãƒªãƒ¼
         if (ui.cb_buff[F_FU].isSelected()) {
             dmg_big_ave = 0.15 * 0.1 * 2.0 * (dmg_big_ave + ex)
                     + (0.15 - (0.15 * 0.1)) * (dmg_big_ave + ex)
@@ -3393,15 +3393,15 @@ System.out.println(buki.magic_enchant);
         dmg_big_ave += ex * 0.15;
         dmg_small_ave += ex * 0.15;
 
-        if (buff.effect.contains("“ÁêUŒ‚(ƒNƒ‰ƒXƒ^ƒVƒAƒ“/ƒEƒFƒAƒEƒ‹ƒt)")) {
-            if (!(buki.type.equals("ƒ{ƒE") || buki.type.equals("ƒKƒ“ƒgƒŒƒbƒg") || buki.type
-                    .equals(("ƒL[ƒŠƒ“ƒN")))) {
+        if (buff.effect.contains("ç‰¹æ®Šæ”»æ’ƒ(ã‚¯ãƒ©ã‚¹ã‚¿ã‚·ã‚¢ãƒ³/ã‚¦ã‚§ã‚¢ã‚¦ãƒ«ãƒ•)")) {
+            if (!(buki.type.equals("ãƒœã‚¦") || buki.type.equals("ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ") || buki.type
+                    .equals(("ã‚­ãƒ¼ãƒªãƒ³ã‚¯")))) {
                 dmg_big_ave += 0.03 * 15;
                 dmg_small_ave += 0.03 * 15;
             }
         }
 
-        //ƒIƒ‹ƒ^[ƒXƒg[ƒ“ ˆêŒ‚•KE(1%Šm—¦‚Å’Ç‰Áƒ_ƒ[ƒW50)’Ç‰Á•ª
+        //ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³ ä¸€æ’ƒå¿…æ®º(1%ç¢ºç‡ã§è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸50)è¿½åŠ åˆ†
         if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
             if (ui.cb_alterstone_op[0].getSelectedIndex() == 8
                     || ui.cb_alterstone_op[1].getSelectedIndex() == 8
@@ -3410,9 +3410,9 @@ System.out.println(buki.magic_enchant);
                 dmg_small_ave += 0.01 * 50;
             }
         }
-        //ƒo[ƒjƒ“ƒOƒXƒsƒŠƒbƒc Á”ïMP20/5mins
+        //ãƒãƒ¼ãƒ‹ãƒ³ã‚°ã‚¹ãƒ”ãƒªãƒƒãƒ„ æ¶ˆè²»MP20/5mins
         if (ui.cb_buff[D_BS].isSelected()) {
-            if (!(buki.type.equals("ƒ{ƒE") || buki.type.equals("ƒKƒ“ƒgƒŒƒbƒg"))) {
+            if (!(buki.type.equals("ãƒœã‚¦") || buki.type.equals("ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ"))) {
                 dmg_big_ave *= 1.5 * bs_rate
                         + 1.0 * (1.0 - bs_rate);
                 dmg_small_ave *= 1.5 * bs_rate
@@ -3437,9 +3437,9 @@ System.out.println(buki.magic_enchant);
                 }
             }
         }
-        //ƒGƒŒƒƒ“ƒ^ƒ‹ƒtƒ@ƒCƒA[ Á”ïMP20/5mins
+        //ã‚¨ãƒ¬ãƒ¡ãƒ³ã‚¿ãƒ«ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼ æ¶ˆè²»MP20/5mins
         if (ui.cb_buff[E_EF].isSelected()) {
-            if (!(buki.type.equals("ƒ{ƒE") || buki.type.equals("ƒKƒ“ƒgƒŒƒbƒg"))) {
+            if (!(buki.type.equals("ãƒœã‚¦") || buki.type.equals("ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ"))) {
                 dmg_big_ave *= 1.5 * ef_rate
                         + 1.0 * (1.0 - ef_rate);
                 dmg_small_ave *= 1.5 * ef_rate
@@ -3464,9 +3464,9 @@ System.out.println(buki.magic_enchant);
                 }
             }
         }
-        //ƒNƒGƒCƒN Á”ïMP20/5mins
+        //ã‚¯ã‚¨ã‚¤ã‚¯ æ¶ˆè²»MP20/5mins
         if (ui.cb_buff[E_QE].isSelected()) {
-            if (!(buki.type.equals("ƒ{ƒE") || buki.type.equals("ƒKƒ“ƒgƒŒƒbƒg"))) {
+            if (!(buki.type.equals("ãƒœã‚¦") || buki.type.equals("ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ"))) {
                 dmg_big_ave *= 1.5 * qe_rate
                         + 1.0 * (1.0 - qe_rate);
                 dmg_small_ave *= 1.5 * qe_rate
@@ -3491,11 +3491,11 @@ System.out.println(buki.magic_enchant);
                 }
             }
         }
-        //ƒTƒCƒNƒƒ“ Á”ïMP30/16mins
+        //ã‚µã‚¤ã‚¯ãƒ­ãƒ³ æ¶ˆè²»MP30/16mins
         if (ui.cb_buff[E_CE].isSelected()) {
-            if (!(buki.type.equals("—¼èŒ•") || buki.type.equals("ƒL[ƒŠƒ“ƒN") || buki.type.equals("ƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh")
-                    || buki.type.equals("‘„") || buki.type.equals("ƒ_ƒK[") || buki.type.equals("•ĞèŒ•")|| buki.type.equals("“İŠí")
-                    || buki.type.equals("ƒXƒ^ƒbƒt") || buki.type.equals("ƒNƒƒE") || buki.type.equals("ƒ`ƒF[ƒ“ƒ\[ƒh"))) {
+            if (!(buki.type.equals("ä¸¡æ‰‹å‰£") || buki.type.equals("ã‚­ãƒ¼ãƒªãƒ³ã‚¯") || buki.type.equals("ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰")
+                    || buki.type.equals("æ§") || buki.type.equals("ãƒ€ã‚¬ãƒ¼") || buki.type.equals("ç‰‡æ‰‹å‰£")|| buki.type.equals("éˆå™¨")
+                    || buki.type.equals("ã‚¹ã‚¿ãƒƒãƒ•") || buki.type.equals("ã‚¯ãƒ­ã‚¦") || buki.type.equals("ãƒã‚§ãƒ¼ãƒ³ã‚½ãƒ¼ãƒ‰"))) {
                 dmg_big_ave *= 1.5 * ce_rate
                         + 1.0 * (1.0 - ce_rate);
                 dmg_small_ave *= 1.5 * ce_rate
@@ -3520,9 +3520,9 @@ System.out.println(buki.magic_enchant);
                 }
             }
         } 
-        //ƒuƒŒƒCƒuƒƒ“ƒ^ƒ‹ Á”ïMP25/10mins
+        //ãƒ–ãƒ¬ã‚¤ãƒ–ãƒ¡ãƒ³ã‚¿ãƒ« æ¶ˆè²»MP25/10mins
         if (ui.cb_buff[P_B].isSelected()) {
-            if (!(buki.type.equals("ƒ{ƒE") || buki.type.equals("ƒKƒ“ƒgƒŒƒbƒg"))) {
+            if (!(buki.type.equals("ãƒœã‚¦") || buki.type.equals("ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ"))) {
                 dmg_big_ave *= 1.5 * 0.3333
                         + 1.0 * (1.0 - 0.3333);
                 dmg_small_ave *= 1.5 * 0.3333
@@ -3550,12 +3550,12 @@ System.out.println(buki.magic_enchant);
                 ui.cb_buff[P_B].setSelected(false);
             }
         }
-        //ƒuƒ[ƒAƒ^ƒbƒN Á”ïMP10/5mins
+        //ãƒ–ãƒ­ãƒ¼ã‚¢ã‚¿ãƒƒã‚¯ æ¶ˆè²»MP10/5mins
         if (ui.cb_buff[K_BK].isSelected()) {
             if (level >= 75) {
                 bk_rate += (level - 74) * 0.01;
             }
-            if (!(buki.type.equals("ƒ{ƒE") || buki.type.equals("ƒKƒ“ƒgƒŒƒbƒg"))) {
+            if (!(buki.type.equals("ãƒœã‚¦") || buki.type.equals("ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ"))) {
                 dmg_big_ave *= 1.5 * bk_rate
                         + 1.0 * (1.0 - bk_rate);
                 dmg_small_ave *= 1.5 * bk_rate
@@ -3580,14 +3580,14 @@ System.out.println(buki.magic_enchant);
                 }
             }
         }
-        if (buff.effect.contains("“ÁêUŒ‚(ƒpƒbƒN/ƒpƒI)")) {
+        if (buff.effect.contains("ç‰¹æ®Šæ”»æ’ƒ(ãƒ‘ãƒƒã‚¯/ãƒ‘ã‚ª)")) {
             dmg_big_ave += (75 - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * 0.05;
             dmg_small_ave += (75 - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * 0.05;
         }
         int dmg_rate = 0;
         int dmg = 0;
         for (String split : buff.effect.split(",")) {
-            if (split.contains("’Ç‰Áƒ_ƒ[ƒW")) {
+            if (split.contains("è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸")) {
                 String[] a = split.split(" ");
                 if (a[1].contains("+")) {
                     dmg += Integer.parseInt(a[1]);
@@ -3622,13 +3622,13 @@ System.out.println(buki.magic_enchant);
         } else {
             acc = Double.parseDouble(ui.tf_acc.getText());
         }
-        // ã“_˜Io
+        // å¼±ç‚¹éœ²å‡º
         double week = 0;
         double fsdmg = 0;
         if (cls == R
                 && ui.cb_magic.getSelectedItem()
                 != null) {
-            if (ui.cb_magic.getSelectedItem().equals("ƒtƒH[ƒXƒŒƒCƒ„[")) {
+            if (ui.cb_magic.getSelectedItem().equals("ãƒ•ã‚©ãƒ¼ã‚¹ãƒ¬ã‚¤ãƒ¤ãƒ¼")) {
                 double week_rate = we;
                 double t = 60.0 / (polymorph.getSpeed(level, ui.cb_morph_type.getSelectedIndex(), MAIN) * acc) + 2.0;
                 t = key_delay * ((int) (t / key_delay) + 1.0);
@@ -3638,7 +3638,7 @@ System.out.println(buki.magic_enchant);
 
                 double n = speed * t / 60;
 
-                if (buff.effect.contains("ƒtƒH[ƒXƒŒƒCƒ„[ƒ_ƒ[ƒW+10")) {
+                if (buff.effect.contains("ãƒ•ã‚©ãƒ¼ã‚¹ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ€ãƒ¡ãƒ¼ã‚¸+10")) {
                     fsdmg = n * 10;
                 }
 
@@ -3677,16 +3677,16 @@ System.out.println(buki.magic_enchant);
                         (int) ((dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week + fsdmg)));
 
         switch ((String) ui.cb_e_size.getSelectedItem()) {
-            case "¬":
+            case "å°":
                 double ATK = 0;
                 switch ((String) ui.cb_e_type.getSelectedItem()) {
-                    case "’Êí":
+                    case "é€šå¸¸":
                         ATK = dmg_small_ave * hit * speed + mag_dmg_min + week;
                         break;
-                    case "ˆ«–‚":
+                    case "æ‚ªé­”":
                         ATK = (dmg_small_ave + dmg_cursed) * hit * speed + mag_dmg_min + week;
                         break;
-                    case "•s€":
+                    case "ä¸æ­»":
                         ATK = (dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
                 }
 
@@ -3706,19 +3706,19 @@ System.out.println(buki.magic_enchant);
                     int MIN = (int) (TIME / 60);
                     int S = (int) (TIME % 60);
 
-                    ui.lab_time.setText(Integer.toString((MIN)) + "•ª " + Integer.toString((S)) + "•b");
+                    ui.lab_time.setText(Integer.toString((MIN)) + "åˆ† " + Integer.toString((S)) + "ç§’");
                 }
                 break;
-            case "‘å":
+            case "å¤§":
                 ATK = 0;
                 switch ((String) ui.cb_e_type.getSelectedItem()) {
-                    case "’Êí":
+                    case "é€šå¸¸":
                         ATK = dmg_big_ave * hit * speed + mag_dmg_min + week;
                         break;
-                    case "ˆ«–‚":
+                    case "æ‚ªé­”":
                         ATK = (dmg_big_ave + dmg_cursed) * hit * speed + mag_dmg_min + week;
                         break;
-                    case "•s€":
+                    case "ä¸æ­»":
                         ATK = (dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
                 }
 
@@ -3738,14 +3738,14 @@ System.out.println(buki.magic_enchant);
                     int MIN = (int) (TIME / 60);
                     int S = (int) (TIME % 60);
 
-                    ui.lab_time.setText(Integer.toString((MIN)) + "•ª " + Integer.toString((S)) + "•b");
+                    ui.lab_time.setText(Integer.toString((MIN)) + "åˆ† " + Integer.toString((S)) + "ç§’");
                 }
                 break;
         }
 
         switch (buki.magic_name) {
             case "":
-                ui.lab_mag_info1.setText("–‚–@F‚È‚µ");
+                ui.lab_mag_info1.setText("é­”æ³•ï¼šãªã—");
                 ui.lab_mag_info2.setText("");
                 ui.tf_mag_rate.setEnabled(false);
                 ui.tf_mag_delay.setEnabled(false);
@@ -3755,22 +3755,22 @@ System.out.println(buki.magic_enchant);
                 ui.tf_mag_delay.setText("0.0");
                 ui.tf_mag_power.setText("0.0");
                 break;
-            case "HP‹zû":
+            case "HPå¸å":
                 ui.lab_mag_rate.setEnabled(true);
-                ui.lab_mag_info1.setText("–‚–@F" + buki.magic_name);
+                ui.lab_mag_info1.setText("é­”æ³•ï¼š" + buki.magic_name);
                 break;
             default:
-                ui.lab_mag_info1.setText("–‚–@F"
+                ui.lab_mag_info1.setText("é­”æ³•ï¼š"
                         + buki.magic_name);
                 if (rate != 0) {
                     ui.lab_mag_info2.setText(
-                            "–‚–@ƒ_ƒ[ƒW " + format_dmg.format(magic / rate) + "  " + format_rate.format(rate));
+                            "é­”æ³•ãƒ€ãƒ¡ãƒ¼ã‚¸ " + format_dmg.format(magic / rate) + "  " + format_rate.format(rate));
                 } else {
                     ui.lab_mag_info2.setText("");
                 }
                 break;
         }
-        ui.lab_hit_rate.setText("–½’†—¦F" + format_rate.format(hit_rate));
+        ui.lab_hit_rate.setText("å‘½ä¸­ç‡ï¼š" + format_rate.format(hit_rate));
 
         for (int i = 0;
                 i < ST_LIST.length;
@@ -3785,26 +3785,26 @@ System.out.println(buki.magic_enchant);
         }
 
         ui.lab_dmg_short.setText(
-                "Šî–{ƒ_ƒ[ƒW(‹ß) : " + base_dmg_short);
+                "åŸºæœ¬ãƒ€ãƒ¡ãƒ¼ã‚¸(è¿‘) : " + base_dmg_short);
         ui.lab_dmg_long.setText(
-                "Šî–{ƒ_ƒ[ƒW(‰“) : " + base_dmg_long);
+                "åŸºæœ¬ãƒ€ãƒ¡ãƒ¼ã‚¸(é ) : " + base_dmg_long);
         ui.lab_dmg_mag.setText(
-                "Šî–{ƒ_ƒ[ƒW(–‚) : " + base_dmg_magic);
+                "åŸºæœ¬ãƒ€ãƒ¡ãƒ¼ã‚¸(é­”) : " + base_dmg_magic);
 
-        //‰¼
-        ui.lab_hit_short.setText("–½’†(‹ß) : " + hit_short);
-        ui.lab_hit_long.setText("–½’†(‰“) : " + hit_long);
+        //ä»®
+        ui.lab_hit_short.setText("å‘½ä¸­(è¿‘) : " + hit_short);
+        ui.lab_hit_long.setText("å‘½ä¸­(é ) : " + hit_long);
 
-//        ui.lab_hit_short.setText("–½’†(‹ß) : " + hit_short);
-//        ui.lab_ac_short.setText("(Å‘å–½’†AC : " + Integer.toString(19 - hit_short) + ")");
-//        ui.lab_hit_long.setText("–½’†(‰“) : " + hit_long);
-//        ui.lab_ac_long.setText("(Å‘å–½’†AC : " + Integer.toString(19 - hit_long) + ")");
-        ui.lab_hit_mag.setText("–½’†(–‚) : " + hit_magic);
+//        ui.lab_hit_short.setText("å‘½ä¸­(è¿‘) : " + hit_short);
+//        ui.lab_ac_short.setText("(æœ€å¤§å‘½ä¸­AC : " + Integer.toString(19 - hit_short) + ")");
+//        ui.lab_hit_long.setText("å‘½ä¸­(é ) : " + hit_long);
+//        ui.lab_ac_long.setText("(æœ€å¤§å‘½ä¸­AC : " + Integer.toString(19 - hit_long) + ")");
+        ui.lab_hit_mag.setText("å‘½ä¸­(é­”) : " + hit_magic);
 
 //        ui.lab_sp.setText("SP " + sp);
 //        ui.lab_ml.setText("ML " + ml);
 //        ui.lab_mb.setText("MB " + mb);
-//        ui.lab_mag_dmg.setText("–‚–@ƒ_ƒ[ƒW " + base_dmg_magic);
+//        ui.lab_mag_dmg.setText("é­”æ³•ãƒ€ãƒ¡ãƒ¼ã‚¸ " + base_dmg_magic);
         ui.pure_status_bonus[1][0].setText(Integer.toString(base_dmg_short));
         ui.pure_status_bonus[1][5].setText(Integer.toString(base_dmg_long));
         ui.pure_status_bonus[1][15].setText(Integer.toString(base_dmg_magic));
@@ -3875,21 +3875,21 @@ System.out.println(buki.magic_enchant);
         dg = 0;
         dr += buki.op.DR + buki.op2.DR;
         
-        //ƒAƒ“ƒLƒƒƒj[ƒhƒbƒW Á”ïMP20/3mins
+        //ã‚¢ãƒ³ã‚­ãƒ£ãƒ‹ãƒ¼ãƒ‰ãƒƒã‚¸ æ¶ˆè²»MP20/3mins
         if (ui.cb_buff[D_UD].isSelected()) {
             dg = 60;
             if (ui.cb_buff[D_UD].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 3;
             }
         }
-        //ƒ~ƒ‰[ƒCƒ[ƒW Á”ïMP20/20mins
+        //ãƒŸãƒ©ãƒ¼ã‚¤ãƒ¡ãƒ¼ã‚¸ æ¶ˆè²»MP20/20mins
         if (ui.cb_buff[I_MI].isSelected()) {
             dg = 60;
             if (ui.cb_buff[I_MI].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 20;
             }
         }
-        //ŠoÁ[ƒŠƒ“ƒhƒrƒIƒ‹]@Á”ïMP40/10mins
+        //è¦šé†’[ãƒªãƒ³ãƒ‰ãƒ“ã‚ªãƒ«]ã€€æ¶ˆè²»MP40/10mins
         if (ui.cb_buff[R_LINDVIOL].isSelected()) {
             if (ui.cb_buff[R_ANTHARAS].isSelected()
                     || ui.cb_buff[R_FAFURION].isSelected()
@@ -3950,13 +3950,13 @@ System.out.println(buki.magic_enchant);
                 cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
-        //Š‰Â”\‚Èd—Ê‚ÌãŒÀ‚ğ5400‚©‚ç–³§ŒÀ‚É•ÏX
+        //æ‰€æŒå¯èƒ½ãªé‡é‡ã®ä¸Šé™ã‚’5400ã‹ã‚‰ç„¡åˆ¶é™ã«å¤‰æ›´
         //if (weight > 5400) {
         //    weight = 5400;
         //}
 
         ui.tf_weight2.setText(Integer.toString(weight));
-        //d—Ê•\¦
+        //é‡é‡è¡¨ç¤º
         switch (ui.cb_weight.getSelectedIndex()) {
             case 0:
                 ui.tf_weight.setText(Integer.toString(weight * 2 / 6));
@@ -4090,21 +4090,21 @@ System.out.println(buki.magic_enchant);
         int mpr2 = 0;
 
         for (String split : buff.effect.split(",")) {
-            if (split.contains("HP‰ñ•œ")) {
+            if (split.contains("HPå›å¾©")) {
                 hpr2 += Integer.parseInt(split.split(" ")[1]);
             }
-            if (split.contains("MP‰ñ•œ")) {
+            if (split.contains("MPå›å¾©")) {
                 mpr2 += Integer.parseInt(split.split(" ")[1]);
             }
         }
 
         if (hpr2 > 0) {
-            ui.lab_hpr.setText(hpr + "  (64•b–ˆ " + hpr2 + ")");
+            ui.lab_hpr.setText(hpr + "  (64ç§’æ¯ " + hpr2 + ")");
         } else {
             ui.lab_hpr.setText(Integer.toString(hpr));
         }
         if (mpr2 > 0) {
-            ui.lab_mpr.setText(mpr + "  (64•b–ˆ " + mpr2 + ")");
+            ui.lab_mpr.setText(mpr + "  (64ç§’æ¯ " + mpr2 + ")");
         } else {
             ui.lab_mpr.setText(Integer.toString(mpr));
         }
@@ -4112,7 +4112,7 @@ System.out.println(buki.magic_enchant);
         int pot_rate = hp_pot;
         int pot = 0;
         for (String split : buff.effect.split(",")) {
-            if (split.contains("ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê")) {
+            if (split.contains("ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡")) {
                 String[] a = split.split(" ");
                 if (a[1].contains("%")) {
                     pot_rate += Integer.parseInt(a[1].split("%")[0]);
@@ -4298,7 +4298,7 @@ System.out.println(buki.magic_enchant);
 //                mpp += 0.5 * mp;
 //            }
 //        }
-        //ƒAƒhƒoƒ“ƒXƒhƒXƒsƒŠƒbƒc Á”ïMP20/20mins
+        //ã‚¢ãƒ‰ãƒãƒ³ã‚¹ãƒ‰ã‚¹ãƒ”ãƒªãƒƒãƒ„ æ¶ˆè²»MP20/20mins
         if (ui.cb_buff[W_ADS].isSelected()) {
             if (ui.cb_buff[F_G].isSelected()
                     || ui.cb_buff[K_PD].isSelected()) {
@@ -4311,7 +4311,7 @@ System.out.println(buki.magic_enchant);
                 }
             }
         }
-        //ƒvƒ‰ƒCƒh Á”ïMP10/5mins
+        //ãƒ—ãƒ©ã‚¤ãƒ‰ æ¶ˆè²»MP10/5mins
         if (ui.cb_buff[K_PD].isSelected()) {
             if (ui.cb_buff[F_G].isSelected()
                     || ui.cb_buff[W_ADS].isSelected()) {
@@ -4323,7 +4323,7 @@ System.out.println(buki.magic_enchant);
                 }
             }
         }
-        //ƒMƒKƒ“ƒeƒbƒN Á”ïMP10/5mins
+        //ã‚®ã‚¬ãƒ³ãƒ†ãƒƒã‚¯ æ¶ˆè²»MP10/5mins
         if (ui.cb_buff[F_G].isSelected()) {
             if (ui.cb_buff[W_ADS].isSelected()
                     || ui.cb_buff[K_PD].isSelected()) {
@@ -4341,31 +4341,31 @@ System.out.println(buki.magic_enchant);
 
         ui.lab_hp.setText(Integer.toString((int) hp));
         ui.lab_mp.setText(Integer.toString((int) mp));
-        //ƒ€[ƒrƒ“ƒOƒAƒNƒZƒŒ[ƒVƒ‡ƒ“ Á”ïMP10/16mins
+        //ãƒ ãƒ¼ãƒ“ãƒ³ã‚°ã‚¢ã‚¯ã‚»ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ æ¶ˆè²»MP10/16mins
         if (ui.cb_buff[D_MA].isSelected()) {
             if (ui.cb_buff[D_MA].getForeground().equals(Color.BLUE)) {
                 cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
-        //ƒxƒmƒ€ƒŒƒWƒXƒg Á”ïMP20/5mins
+        //ãƒ™ãƒãƒ ãƒ¬ã‚¸ã‚¹ãƒˆ æ¶ˆè²»MP20/5mins
         if (ui.cb_buff[D_VR].isSelected()) {
             if (ui.cb_buff[D_MA].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
             }
         }
-        //ƒGƒLƒ]ƒ`ƒbƒNƒoƒCƒ^ƒ‰ƒCƒY Á”ïMP30/16mins
+        //ã‚¨ã‚­ã‚¾ãƒãƒƒã‚¯ãƒã‚¤ã‚¿ãƒ©ã‚¤ã‚º æ¶ˆè²»MP30/16mins
         if (ui.cb_buff[E_EV].isSelected()) {
             if (ui.cb_buff[E_EV].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
-        //ƒAƒfƒBƒVƒ‡ƒiƒ‹ƒtƒ@ƒCƒA[ Á”ïMP30/16mins
+        //ã‚¢ãƒ‡ã‚£ã‚·ãƒ§ãƒŠãƒ«ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼ æ¶ˆè²»MP30/16mins
         if (ui.cb_buff[E_AF].isSelected()) {
             if (ui.cb_buff[E_AF].getForeground().equals(Color.BLUE)) {
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
             }
         }
-        //2018/09/05 Update‚ÅƒEƒCƒ“ƒhƒEƒH[ƒN‚Ííœ
+        //2018/09/05 Updateã§ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚©ãƒ¼ã‚¯ã¯å‰Šé™¤
         //if (ui.cb_buff[E_WW].isSelected()) {
         //    if (ui.cb_buff[E_WW].getForeground().equals(Color.BLUE)) {
         //        cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
@@ -4415,46 +4415,46 @@ System.out.println(buki.magic_enchant);
 
     double getMagicDamage(String magic_name, String magic_element, double dmg_magic) {
         double cri;
-        if (magic_name.equals("ƒ}ƒCƒ“ƒhƒuƒŒƒCƒN")) {
+        if (magic_name.equals("ãƒã‚¤ãƒ³ãƒ‰ãƒ–ãƒ¬ã‚¤ã‚¯")) {
             return (sp + ml + mb) * 3.8;
         }
-        if (magic_name.equals("HP‹zû")) {
-            // •Ê“rŒvZ
+        if (magic_name.equals("HPå¸å")) {
+            // åˆ¥é€”è¨ˆç®—
             return 0;
         }
-        if (magic_name.equals("ƒ€[ƒ“ƒ‰ƒCƒgƒCƒ‰ƒvƒVƒ‡ƒ“")) {
+        if (magic_name.equals("ãƒ ãƒ¼ãƒ³ãƒ©ã‚¤ãƒˆã‚¤ãƒ©ãƒ—ã‚·ãƒ§ãƒ³")) {
             return 7;
         }
-        if (magic_name.equals("ƒTƒ“ƒo[ƒXƒg") || magic_name.equals("ƒR[ƒ‹ƒ‰ƒCƒgƒjƒ“ƒO")
-                || magic_name.equals("ƒCƒ‰ƒvƒVƒ‡ƒ“")
-                || magic_name.equals("ƒR[ƒ“ƒIƒuƒR[ƒ‹ƒh")
-                || magic_name.equals("ƒ`ƒ‹ƒ^ƒbƒ`")
-                || magic_name.equals("ƒ”ƒ@ƒ“ƒpƒCƒAƒŠƒbƒNƒ^ƒbƒ`")
-                || magic_name.equals("ƒtƒ@ƒCƒA[ƒAƒ[") || magic_name.equals("ƒAƒCƒXƒ_ƒK[")
-                || magic_name.equals("ƒEƒCƒ“ƒhƒJƒbƒ^[") || magic_name.equals("ƒXƒ‰ƒ^ƒbƒN")
-                || magic_name.equals("ƒGƒlƒ‹ƒM[ƒ{ƒ‹ƒg")) {
+        if (magic_name.equals("ã‚µãƒ³ãƒãƒ¼ã‚¹ãƒˆ") || magic_name.equals("ã‚³ãƒ¼ãƒ«ãƒ©ã‚¤ãƒˆãƒ‹ãƒ³ã‚°")
+                || magic_name.equals("ã‚¤ãƒ©ãƒ—ã‚·ãƒ§ãƒ³")
+                || magic_name.equals("ã‚³ãƒ¼ãƒ³ã‚ªãƒ–ã‚³ãƒ¼ãƒ«ãƒ‰")
+                || magic_name.equals("ãƒãƒ«ã‚¿ãƒƒãƒ")
+                || magic_name.equals("ãƒ´ã‚¡ãƒ³ãƒ‘ã‚¤ã‚¢ãƒªãƒƒã‚¯ã‚¿ãƒƒãƒ")
+                || magic_name.equals("ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼ã‚¢ãƒ­ãƒ¼") || magic_name.equals("ã‚¢ã‚¤ã‚¹ãƒ€ã‚¬ãƒ¼")
+                || magic_name.equals("ã‚¦ã‚¤ãƒ³ãƒ‰ã‚«ãƒƒã‚¿ãƒ¼") || magic_name.equals("ã‚¹ãƒ©ã‚¿ãƒƒã‚¯")
+                || magic_name.equals("ã‚¨ãƒãƒ«ã‚®ãƒ¼ãƒœãƒ«ãƒˆ")) {
             cri = (double) cri_magic / 100;
         } else {
             cri = 0;
         }
 
         double r_element = 0;
-        if (magic_element.equals("‰Î")) {
+        if (magic_element.equals("ç«")) {
             r_element = ui.s_target_res[FIRE].getValue();
         }
-        if (magic_element.equals("…")) {
+        if (magic_element.equals("æ°´")) {
             r_element = ui.s_target_res[WATER].getValue();
         }
-        if (magic_element.equals("•—")) {
+        if (magic_element.equals("é¢¨")) {
             r_element = ui.s_target_res[WIND].getValue();
         }
-        if (magic_element.equals("’n")) {
+        if (magic_element.equals("åœ°")) {
             r_element = ui.s_target_res[EARTH].getValue();
         }
 
         double a = 1 + 3.0 / 32.0 * (int_beta - 12) - r_element / 100.0;
         double b;
-        if (magic_name.equals("ƒGƒ‹ƒuƒ“ƒAƒ[")) {
+        if (magic_name.equals("ã‚¨ãƒ«ãƒ–ãƒ³ã‚¢ãƒ­ãƒ¼")) {
             b = 1.0;
         } else if (ui.s_target_mr.getValue() - hit_magic <= 100) {
             b = 1.0 - 0.01 * ((ui.s_target_mr.getValue() - hit_magic) / 2);
@@ -4478,93 +4478,93 @@ System.out.println(buki.magic_enchant);
 
         String buki_text = "";
         if ((buki.enchant + buki.op2.DMG_SHORT) == 0) {
-            buki_text += "ƒ_ƒ[ƒW" + buki.small + "/" + buki.big;
+            buki_text += "ãƒ€ãƒ¡ãƒ¼ã‚¸" + buki.small + "/" + buki.big;
         }
         if ((buki.enchant + buki.op2.DMG_SHORT) > 0) {
-            //buki_text += "ƒ_ƒ[ƒW" + buki.small + "/" + buki.big;
-            buki_text += "ƒ_ƒ[ƒW" + buki.small + "+" + (buki.enchant + buki.op2.DMG_SHORT) + "/" + buki.big + "+" + (buki.enchant + buki.op2.DMG_SHORT);
+            //buki_text += "ãƒ€ãƒ¡ãƒ¼ã‚¸" + buki.small + "/" + buki.big;
+            buki_text += "ãƒ€ãƒ¡ãƒ¼ã‚¸" + buki.small + "+" + (buki.enchant + buki.op2.DMG_SHORT) + "/" + buki.big + "+" + (buki.enchant + buki.op2.DMG_SHORT);
         }
         if (buki.two_hands) {
-            buki_text += " —¼è•Ší";
+            buki_text += " ä¸¡æ‰‹æ­¦å™¨";
         }
         if (buki.op.DMG_SHORT > 0) {
-//            buki_text += " ‹ß‹——£’Ç‰Áƒ_ƒ[ƒW+" + buki.op.DMG_SHORT;
-            buki_text += " ‹ß‹——£ƒ_ƒ[ƒW+" + buki.op.DMG_SHORT;
+//            buki_text += " è¿‘è·é›¢è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+" + buki.op.DMG_SHORT;
+            buki_text += " è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+" + buki.op.DMG_SHORT;
         }
         if (buki.op.DMG_LONG < 0) {
-//            buki_text += " ‹ß‹——£’Ç‰Áƒ_ƒ[ƒW" + buki.op.DMG_LONG;
-            buki_text += " ‹ß‹——£ƒ_ƒ[ƒW" + buki.op.DMG_LONG;
+//            buki_text += " è¿‘è·é›¢è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸" + buki.op.DMG_LONG;
+            buki_text += " è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_SHORT > 0) {
-            buki_text += " ‹ß‹——£–½’†+" + (buki.op.HIT_SHORT + buki.op2.HIT_SHORT);
+            buki_text += " è¿‘è·é›¢å‘½ä¸­+" + (buki.op.HIT_SHORT + buki.op2.HIT_SHORT);
         }
             if (buki.op.HIT_SHORT < 0) {
-            buki_text += " ‹ß‹——£–½’†" + (buki.op.HIT_SHORT + buki.op2.HIT_SHORT);
+            buki_text += " è¿‘è·é›¢å‘½ä¸­" + (buki.op.HIT_SHORT + buki.op2.HIT_SHORT);
         }
         if (buki.op.DMG_LONG > 0) {
-//            buki_text += " ‰“‹——£’Ç‰Áƒ_ƒ[ƒW+" + buki.op.DMG_LONG;
-            buki_text += " ‰“‹——£ƒ_ƒ[ƒW+" + buki.op.DMG_LONG;
+//            buki_text += " é è·é›¢è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+" + buki.op.DMG_LONG;
+            buki_text += " é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+" + buki.op.DMG_LONG;
         }
         if (buki.op.DMG_LONG < 0) {
-//            buki_text += " ‰“‹——£’Ç‰Áƒ_ƒ[ƒW" + buki.op.DMG_LONG;
-            buki_text += " ‰“‹——£ƒ_ƒ[ƒW" + buki.op.DMG_LONG;
+//            buki_text += " é è·é›¢è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸" + buki.op.DMG_LONG;
+            buki_text += " é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸" + buki.op.DMG_LONG;
         }
         if (buki.op.HIT_LONG > 0) {
-            buki_text += " ‰“‹——£–½’†+" + (buki.op.HIT_LONG + buki.op2.HIT_LONG);
+            buki_text += " é è·é›¢å‘½ä¸­+" + (buki.op.HIT_LONG + buki.op2.HIT_LONG);
         }
         if (buki.op.HIT_LONG < 0) {
-            buki_text += " ‰“‹——£–½’†" + (buki.op.HIT_LONG + buki.op2.HIT_LONG);
+            buki_text += " é è·é›¢å‘½ä¸­" + (buki.op.HIT_LONG + buki.op2.HIT_LONG);
         }
         if (buki.op.HIT_MAGIC > 0) {
-            buki_text += " –‚–@–½’†+" + (buki.op.HIT_MAGIC + buki.op2.HIT_MAGIC);
+            buki_text += " é­”æ³•å‘½ä¸­+" + (buki.op.HIT_MAGIC + buki.op2.HIT_MAGIC);
         }
         if (buki.op.HIT_MAGIC < 0) {
-            buki_text += " –‚–@–½’†" + (buki.op.HIT_MAGIC + buki.op2.HIT_MAGIC);
+            buki_text += " é­”æ³•å‘½ä¸­" + (buki.op.HIT_MAGIC + buki.op2.HIT_MAGIC);
         }
         if (buki.op.CRI_SHORT + buki.op2.CRI_SHORT > 0) {
-            buki_text += " ‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹+" + (buki.op.CRI_SHORT + buki.op2.CRI_SHORT);
+            buki_text += " è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+" + (buki.op.CRI_SHORT + buki.op2.CRI_SHORT);
         }
         if (buki.op.CRI_LONG + buki.op2.CRI_LONG > 0) {
-            buki_text += " ‰“‹——£ƒNƒŠƒeƒBƒJƒ‹+" + (buki.op.CRI_LONG + buki.op2.CRI_LONG);
+            buki_text += " é è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+" + (buki.op.CRI_LONG + buki.op2.CRI_LONG);
         }
         if (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC > 0) {
-            buki_text += " –‚–@ƒNƒŠƒeƒBƒJƒ‹+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
+            buki_text += " é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
         if (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE] > 0) {
-            buki_text += " Î‰»–½’†" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
+            buki_text += " çŸ³åŒ–å‘½ä¸­" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
         }
         if (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP] > 0) {
-            buki_text += " ‡–°–½’†" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
+            buki_text += " ç¡çœ å‘½ä¸­" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
         }
         if (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE] > 0) {
-            buki_text += " “€Œ‹–½’†" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
+            buki_text += " å‡çµå‘½ä¸­" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
         }
         if (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS] > 0) {
-            buki_text += " ˆÃˆÅ–½’†" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
+            buki_text += " æš—é—‡å‘½ä¸­" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
         }
         if (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN] > 0) {
-            buki_text += " ƒXƒ^ƒ“–½’†" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
+            buki_text += " ã‚¹ã‚¿ãƒ³å‘½ä¸­" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
         }
         if (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD] > 0) {
-            buki_text += " ƒz[ƒ‹ƒh–½’†" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
+            buki_text += " ãƒ›ãƒ¼ãƒ«ãƒ‰å‘½ä¸­" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
         }
         if (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR] > 0) {
-            buki_text += " ‹°•|–½’†" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
+            buki_text += " ææ€–å‘½ä¸­" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
         }
         if (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION] > 0) {
-            buki_text += " ”j‰ó–½’†" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
+            buki_text += " ç ´å£Šå‘½ä¸­" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
         }
         if (buki.op.HP > 0) {
             buki_text += " HP+" + buki.op.HP;
         }
         if (buki.op.HPR > 0) {
-            buki_text += " HP©‘R‰ñ•œ+" + buki.op.HPR;
+            buki_text += " HPè‡ªç„¶å›å¾©+" + buki.op.HPR;
         }
         if (buki.op.MP > 0) {
             buki_text += " MP+" + buki.op.MP;
         }
         if (buki.op.MPR > 0) {
-            buki_text += " MP©‘R‰ñ•œ+" + buki.op.MPR;
+            buki_text += " MPè‡ªç„¶å›å¾©+" + buki.op.MPR;
         }
         if (buki.op.ST[STR] > 0) {
             buki_text += " STR+" + buki.op.ST[STR];
@@ -4591,16 +4591,16 @@ System.out.println(buki.magic_enchant);
             buki_text += " SP+" + (buki.op.SP + buki.op2.SP);
         }
         if (!buki.material.equals("")) {
-            buki_text += " Ş¿:" + buki.material;
+            buki_text += " æè³ª:" + buki.material;
         }
         if (buki.op.DR > 0) {
-            buki_text += " ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“ " + (buki.op.DR + buki.op2.DR);
+            buki_text += " ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³ " + (buki.op.DR + buki.op2.DR);
         }
         if (buki.op.dr_ignored > 0) {
-            buki_text += " ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“–³‹ " + (buki.op.dr_ignored + buki.op2.dr_ignored);
+            buki_text += " ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³ç„¡è¦– " + (buki.op.dr_ignored + buki.op2.dr_ignored);
         }
         if (buki.weight > 0) {
-            buki_text += " d‚³ " + buki.weight;
+            buki_text += " é‡ã• " + buki.weight;
         }
         if (!buki.op.effect.equals("")) {
             buki_text += " " + buki.op.effect;

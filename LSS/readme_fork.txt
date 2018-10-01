@@ -1,7 +1,32 @@
-﻿LineageStatusSimulator_fork2018
+LineageStatusSimulator_fork2018
 
 変更点
 2018/10/01
+Update
+SS/src/lss/Bougu.java
+SS/src/lss/Buff.java
+SS/src/lss/Buki.java
+SS/src/lss/Calculator.java
+SS/src/lss/Common.java
+SS/src/lss/FSCalclator.java
+SS/src/lss/HitRateCalculator.java
+SS/src/lss/LEV.java
+SS/src/lss/LSS.java
+SS/src/lss/Morph.java
+SS/src/lss/MyToggleButton.java
+SS/src/lss/UI.java
+SS/src/lss/WideComboBox.java
+	ソースコードが文字コードANSI(Shift-JIS)の為、GitHub Desktopで文字化けを起こす
+	ので文字化けを起こさないUTF-8にする。またBOM無しにして今後メモ帳を使わずに
+	TeraPadかNetBeans IDEで修正する。
+	合わせて改行コードもCR+LFからLFに変更
+
+LSS/data/E.zip
+	E.zipのすべてのファイルもUTF-8NのLFへ変更
+
+LSS/nbproject/project.properties
+	NetBeansIDE 8.2のプロジェクト用の初期設定をShift-JISからUTF-8へ変更
+
 Update
 SS/src/lss/UI.java
 	現在のエリクサルーンの位置にタリスマンを実装
