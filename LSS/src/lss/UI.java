@@ -73,8 +73,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     File f_save_path = new File("./save");
 
-    //UIƒp[ƒc
-    //‹¤’Ê
+    //UIãƒ‘ãƒ¼ãƒ„
+    //å…±é€š
     JLabel[] lab_st = new JLabel[ST_LIST.length];
     JLabel[] lab_st_sum = new JLabel[ST_LIST.length];
     JLabel[] lab_st_base = new JLabel[ST_LIST.length];
@@ -124,17 +124,17 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel lab_cons_mp;
     JLabel lab_pot;
 
-    //‹¤’Êƒp[ƒc“ü‚ê
+    //å…±é€šãƒ‘ãƒ¼ãƒ„å…¥ã‚Œ
     ArrayList<JComponent> commons = new ArrayList<>();
 
-    //ƒpƒlƒ‹‚P
+    //ãƒ‘ãƒãƒ«ï¼‘
     JComboBox cb_eq_ch;
     JButton bt_copy;
     JButton bt_paste;
     JButton bt_reset;
 
-    WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];    //‘•”õ–¼
-    JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];       //‘•”õ‹­‰»”’l
+    WideComboBox[] cb_eq = new WideComboBox[EQ_LIST.length];    //è£…å‚™å
+    JComboBox[] cb_eq_en = new JComboBox[EQ_LIST.length];       //è£…å‚™å¼·åŒ–æ•°å€¤
 
     JComboBox cb_elem_1;
     JComboBox cb_elem_2;
@@ -144,14 +144,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JToggleButton tb_blessed2;
     JComboBox cb_arrow;
     
-    //JComboBox elixir_rune_en;   //ƒGƒŠƒNƒT[ƒ‹[ƒ“ƒŒƒxƒ‹
-    WideComboBox elixir_rune;   //ƒGƒŠƒNƒT[ƒ‹[ƒ“
+    //JComboBox elixir_rune_en;   //ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³ãƒ¬ãƒ™ãƒ«
+    WideComboBox elixir_rune;   //ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³
 
-    WideComboBox cb_pattern_l;  //¶è
-    WideComboBox cb_pattern_r;  //‰Eè
-    WideComboBox cb_pattern_c;  //”w’†
-    WideComboBox cb_pattern_l2; //¶˜r
-    WideComboBox cb_pattern_r2; //‰E˜r
+    WideComboBox cb_pattern_l;  //å·¦æ‰‹
+    WideComboBox cb_pattern_r;  //å³æ‰‹
+    WideComboBox cb_pattern_c;  //èƒŒä¸­
+    WideComboBox cb_pattern_l2; //å·¦è…•
+    WideComboBox cb_pattern_r2; //å³è…•
 
     JComboBox cb_alterstone_en;
     JComboBox[] cb_alterstone_op = new JComboBox[3];
@@ -184,28 +184,28 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel[] lab_elem = new JLabel[ELEM_LIST.length];
     JLabel[] lab_ailment = new JLabel[AILMENT_LIST.length];
 
-    //ƒpƒlƒ‹‚Q
+    //ãƒ‘ãƒãƒ«ï¼’
     JLabel[][] pure_status_bonus = new JLabel[2][25];
 
     JComboBox[] cb_elixir = new JComboBox[5];
     JComboBox[] cb_elixir_level = new JComboBox[5];
     LEV lev = new LEV();
 
-    //ƒpƒlƒ‹‚R
+    //ãƒ‘ãƒãƒ«ï¼“
 
-    //y_ikeda‚³‚ñ‚É‚æ‚éC³‚ğQl‚É
+    //y_ikedaã•ã‚“ã«ã‚ˆã‚‹ä¿®æ­£ã‚’å‚è€ƒã«
     //JCheckBox[] cb_buff = new JCheckBox[83];
     //JComboBox[] cb_buff_group = new JComboBox[83];
-    //L_HST = 83;(¬’·‚Ì‰ÊÀ)E_EE = 84;(ƒC[ƒOƒ‹ƒAƒC)E_CE = 85;(ƒTƒCƒNƒƒ“)E_IO = 86;(ƒCƒ“ƒtƒFƒ‹ƒm)‚ğ’Ç‰Á‚µ‚½ˆ×A•ÏX(0‚©‚ç86‚ÌŒv87ŒÂ•ª)
+    //L_HST = 83;(æˆé•·ã®æœå®Ÿ)E_EE = 84;(ã‚¤ãƒ¼ã‚°ãƒ«ã‚¢ã‚¤)E_CE = 85;(ã‚µã‚¤ã‚¯ãƒ­ãƒ³)E_IO = 86;(ã‚¤ãƒ³ãƒ•ã‚§ãƒ«ãƒ)ã‚’è¿½åŠ ã—ãŸç‚ºã€å¤‰æ›´(0ã‹ã‚‰86ã®è¨ˆ87å€‹åˆ†)
     //JCheckBox[] cb_buff = new JCheckBox[87];
     //JComboBox[] cb_buff_group = new JComboBox[87];
-    //P_GA = 87;(ƒOƒŒ[ƒXƒAƒoƒ^[)K_PD = 88;(ƒvƒ‰ƒCƒh)K_BK = 89;(ƒuƒ[ƒAƒ^ƒbƒN)R_LINDVIOL = 90;ŠoÁ[ƒŠƒ“ƒhƒrƒIƒ‹])
-    //I_FS = 91;(ƒtƒH[ƒJƒXƒXƒsƒbƒc)I_IT = 92;(ƒCƒ“ƒpƒNƒg)H_HP = 93;(¶–½‚Ìƒ{[ƒiƒX)H_AC = 94;(“Sb‚Ìƒ{[ƒiƒX)
-    //H_PVPDR = 95;(¶‘¶‚Ìƒ{[ƒiƒX)H_PVP = 96;(ˆÃE‚Ìƒ{[ƒiƒX)H_RK = 97;(ƒ‰ƒ“ƒJ[ƒ{[ƒiƒX)‚ÅŒv98ŒÂ•ª(0‚©‚ç97)
+    //P_GA = 87;(ã‚°ãƒ¬ãƒ¼ã‚¹ã‚¢ãƒã‚¿ãƒ¼)K_PD = 88;(ãƒ—ãƒ©ã‚¤ãƒ‰)K_BK = 89;(ãƒ–ãƒ­ãƒ¼ã‚¢ã‚¿ãƒƒã‚¯)R_LINDVIOL = 90;è¦šé†’[ãƒªãƒ³ãƒ‰ãƒ“ã‚ªãƒ«])
+    //I_FS = 91;(ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚¹ãƒ”ãƒƒãƒ„)I_IT = 92;(ã‚¤ãƒ³ãƒ‘ã‚¯ãƒˆ)H_HP = 93;(ç”Ÿå‘½ã®ãƒœãƒ¼ãƒŠã‚¹)H_AC = 94;(é‰„ç”²ã®ãƒœãƒ¼ãƒŠã‚¹)
+    //H_PVPDR = 95;(ç”Ÿå­˜ã®ãƒœãƒ¼ãƒŠã‚¹)H_PVP = 96;(æš—æ®ºã®ãƒœãƒ¼ãƒŠã‚¹)H_RK = 97;(ãƒ©ãƒ³ã‚«ãƒ¼ãƒœãƒ¼ãƒŠã‚¹)ã§è¨ˆ98å€‹åˆ†(0ã‹ã‚‰97)
     JCheckBox[] cb_buff = new JCheckBox[98];
     JComboBox[] cb_buff_group = new JComboBox[98]; 
 
-    //ƒpƒlƒ‹‚S
+    //ãƒ‘ãƒãƒ«ï¼”
     JComboBox cb_npc_level;
     JSlider[] s_target_res = new JSlider[ELEM_LIST.length];
     JLabel[] lab_target_resist = new JLabel[ELEM_LIST.length];
@@ -245,7 +245,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
     }
 
-    //•\‹L‚ÌC³(y_ikeda‚³‚ñ‚ÌC³‚æ‚è)
+    //è¡¨è¨˜ã®ä¿®æ­£(y_ikedaã•ã‚“ã®ä¿®æ­£ã‚ˆã‚Š)
     //ArrayList<ZipEntry> arrow_entrys = new ArrayList();
     //ArrayList<ZipEntry> sting_entrys = new ArrayList();
     ArrayList<ZipEntry> arrow_entrys = new ArrayList<>();
@@ -271,9 +271,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         setSize(800, 640);       
         setResizable(false);
 
-        ToolTipManager.sharedInstance().setInitialDelay(100);   //‰Šú’l:750
-        ToolTipManager.sharedInstance().setDismissDelay(6000);  //‰Šú’l:4000
-//        System.out.println(ToolTipManager.sharedInstance().getDismissDelay());    //‰Šú’lŠm”F—p
+        ToolTipManager.sharedInstance().setInitialDelay(100);   //åˆæœŸå€¤:750
+        ToolTipManager.sharedInstance().setDismissDelay(6000);  //åˆæœŸå€¤:4000
+//        System.out.println(ToolTipManager.sharedInstance().getDismissDelay());    //åˆæœŸå€¤ç¢ºèªç”¨
 
         tabpane = new JTabbedPane();
 
@@ -287,19 +287,19 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[2].setLayout(null);
         panels[3].setLayout(null);
 
-        tabpane.add("‘•”õ/ƒXƒe[ƒ^ƒX", panels[0]);
-        tabpane.add("ƒŒƒxƒ‹/ƒGƒŠƒNƒT[", panels[1]);
-        tabpane.add("ƒGƒ“ƒ`ƒƒƒ“ƒg", panels[2]);
-        tabpane.add("‘Ï«İ’è", panels[3]);
+        tabpane.add("è£…å‚™/ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹", panels[0]);
+        tabpane.add("ãƒ¬ãƒ™ãƒ«/ã‚¨ãƒªã‚¯ã‚µãƒ¼", panels[1]);
+        tabpane.add("ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆ", panels[2]);
+        tabpane.add("è€æ€§è¨­å®š", panels[3]);
 
         add(tabpane);
 
         //----------
-        //‹¤’Ê
+        //å…±é€š
         //----------
         JLabel lab_tmp;
 
-        bt_ow = new JButton("ã‘‚«");
+        bt_ow = new JButton("ä¸Šæ›¸ã");
         bt_ow.setBounds(450, 0, 100, 20);
         panels[0].add(bt_ow);
         commons.add(bt_ow);
@@ -307,14 +307,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         bt_ow.setActionCommand("ow");
         bt_ow.setEnabled(false);
 
-        bt_save = new JButton("•Û‘¶");
+        bt_save = new JButton("ä¿å­˜");
         bt_save.setBounds(550, 0, 100, 20);
         panels[0].add(bt_save);
         commons.add(bt_save);
         bt_save.addActionListener(this);
         bt_save.setActionCommand("save");
 
-        bt_load = new JButton("“Ç");
+        bt_load = new JButton("èª­è¾¼");
         bt_load.setBounds(650, 0, 100, 20);
         panels[0].add(bt_load);
         commons.add(bt_load);
@@ -328,7 +328,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(cb_cls);
         commons.add(cb_cls);
 
-        lab_tmp = new JLabel("ƒŒƒxƒ‹");
+        lab_tmp = new JLabel("ãƒ¬ãƒ™ãƒ«");
         lab_tmp.setBounds(120, 0, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
@@ -408,7 +408,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_rem.setBounds(30, 60 + 120, 20, 20);
         panels[0].add(lab_rem);
 
-        lab_tmp = new JLabel("‰Šú", JLabel.CENTER);
+        lab_tmp = new JLabel("åˆæœŸ", JLabel.CENTER);
         lab_tmp.setBounds(100, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
@@ -416,11 +416,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(130, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
-        lab_tmp = new JLabel("’Ç‰Á", JLabel.CENTER);
+        lab_tmp = new JLabel("è¿½åŠ ", JLabel.CENTER);
         lab_tmp.setBounds(160, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
-        lab_tmp = new JLabel("‡Œv", JLabel.CENTER);
+        lab_tmp = new JLabel("åˆè¨ˆ", JLabel.CENTER);
         lab_tmp.setBounds(20, 40, 30, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
@@ -471,7 +471,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(260 + 25, 40 + 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
-        lab_tmp = new JLabel("ƒÀ");
+        lab_tmp = new JLabel("Î²");
         lab_tmp.setBounds(320 + 25, 40 + 40, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
@@ -534,7 +534,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         commons.add(lab_hpr);
         commons.add(lab_mpr);
 
-        lab_tmp = new JLabel("MPÁ”ï");
+        lab_tmp = new JLabel("MPæ¶ˆè²»");
         lab_tmp.setBounds(200 + 25, 40 + 100, 200, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
@@ -543,7 +543,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(lab_cons_mp);
         commons.add(lab_cons_mp);
 
-        lab_pot = new JLabel("ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê");
+        lab_pot = new JLabel("ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡");
         lab_pot.setBounds(200 + 25, 40 + 120, 200, 20);
         panels[0].add(lab_pot);
         commons.add(lab_pot);
@@ -591,21 +591,21 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         commons.add(lab_ac_long);
         commons.add(lab_ac_short);
 
-        // •ªŠÔƒ_ƒ[ƒW
-        lab_tmp = new JLabel("‘Î’Êí");
+        // åˆ†é–“ãƒ€ãƒ¡ãƒ¼ã‚¸
+        lab_tmp = new JLabel("å¯¾é€šå¸¸");
         lab_tmp.setBounds(420, 50 + 60 + 10, 50, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
-        lab_tmp = new JLabel("‘Îˆ«–‚");
+        lab_tmp = new JLabel("å¯¾æ‚ªé­”");
         lab_tmp.setBounds(420, 50 + 60 + 20 + 10, 50, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
-        lab_tmp = new JLabel("‘Î•s€");
+        lab_tmp = new JLabel("å¯¾ä¸æ­»");
         lab_tmp.setBounds(420, 50 + 60 + 40 + 10, 50, 20);
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
-        //–‚–@E–½’†—¦
+        //é­”æ³•ãƒ»å‘½ä¸­ç‡
         lab_hit_rate = new JLabel();
         lab_mag_info1 = new JLabel();
         lab_mag_info2 = new JLabel();
@@ -633,7 +633,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         commons.add(lab_dmg_undead);
 
         //----------
-        //ƒpƒlƒ‹‚P
+        //ãƒ‘ãƒãƒ«ï¼‘
         //----------
         for (int i = 0, cnt = 1; i < EQ_LIST.length; i++, cnt++) {
 
@@ -647,7 +647,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
-                    //ƒŠƒXƒg19ŒÂ‚©‚ç21ŒÂ‚ÖŠg’£(ƒXƒ|[ƒ‹ƒ_[AƒCƒ“ƒVƒOƒjƒA•ª)2ŒÂ’Ç‰Á
+                    //ãƒªã‚¹ãƒˆ19å€‹ã‹ã‚‰21å€‹ã¸æ‹¡å¼µ(ã‚¹ãƒãƒ¼ãƒ«ãƒ€ãƒ¼ã€ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢åˆ†)2å€‹è¿½åŠ 
             if (i >= 21) {              
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
@@ -666,10 +666,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
 
         }
-        String buki_elem_list[] = {"–³‘®«", "‰Î—ì:1’i", "‰Î—ì:2’i", "‰Î—ì:3’i", "‰Î—ì:4’i",
-            "‰Î—ì:5’i", "…—ì:1’i", "…—ì:2’i", "…—ì:3’i", "…—ì:4’i", "…—ì:5’i", "•——ì:1’i",
-            "•——ì:2’i", "•——ì:3’i", "•——ì:4’i", "•——ì:5’i", "’n—ì:1’i", "’n—ì:2’i", "’n—ì:3’i",
-            "’n—ì:4’i", "’n—ì:5’i"};
+        String buki_elem_list[] = {"ç„¡å±æ€§", "ç«éœŠ:1æ®µ", "ç«éœŠ:2æ®µ", "ç«éœŠ:3æ®µ", "ç«éœŠ:4æ®µ",
+            "ç«éœŠ:5æ®µ", "æ°´éœŠ:1æ®µ", "æ°´éœŠ:2æ®µ", "æ°´éœŠ:3æ®µ", "æ°´éœŠ:4æ®µ", "æ°´éœŠ:5æ®µ", "é¢¨éœŠ:1æ®µ",
+            "é¢¨éœŠ:2æ®µ", "é¢¨éœŠ:3æ®µ", "é¢¨éœŠ:4æ®µ", "é¢¨éœŠ:5æ®µ", "åœ°éœŠ:1æ®µ", "åœ°éœŠ:2æ®µ", "åœ°éœŠ:3æ®µ",
+            "åœ°éœŠ:4æ®µ", "åœ°éœŠ:5æ®µ"};
 
         cb_elem_1 = new JComboBox(buki_elem_list);
         cb_elem_1.setBounds(50, 220, 75, 20);
@@ -681,32 +681,32 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_elem_2.addActionListener(this);
         panels[0].add(cb_elem_2);
 
-        String ts_ele_list[] = {"0’iŠK", "1’iŠK", "2’iŠK", "3’iŠK", "4’iŠK", "5’iŠK"};
+        String ts_ele_list[] = {"0æ®µéš", "1æ®µéš", "2æ®µéš", "3æ®µéš", "4æ®µéš", "5æ®µéš"};
 
         cb_ts_elem = new JComboBox(ts_ele_list);
         cb_ts_elem.setBounds(50, 220 + 80, 75, 20);
         cb_ts_elem.addActionListener(this);
         panels[0].add(cb_ts_elem);
 
-        tb_ts_sp = new JToggleButton("“Á»");
+        tb_ts_sp = new JToggleButton("ç‰¹è£½");
         tb_ts_sp.setBounds(50 + 75, 220 + 80, 75, 20);
         panels[0].add(tb_ts_sp);
         tb_ts_sp.setEnabled(false);
         tb_ts_sp.addActionListener(this);
 
-        tb_blessed1 = new JToggleButton("j•Ÿ");
+        tb_blessed1 = new JToggleButton("ç¥ç¦");
         tb_blessed1.setBounds(125, 220, 75, 20);
         tb_blessed1.addActionListener(this);
         panels[0].add(tb_blessed1);
 
-        tb_blessed2 = new JToggleButton("j•Ÿ");
+        tb_blessed2 = new JToggleButton("ç¥ç¦");
         tb_blessed2.setBounds(125, 220 + 20, 75, 20);
         tb_blessed2.addActionListener(this);
         panels[0].add(tb_blessed2);
 
         cb_arrow = new JComboBox();
         cb_arrow.addActionListener(this);
-        cb_arrow.setActionCommand("ƒAƒ[");
+        cb_arrow.setActionCommand("ã‚¢ãƒ­ãƒ¼");
         cb_arrow.setBounds(250, 220 + 40, 150, 20);
         panels[0].add(cb_arrow);
 
@@ -715,27 +715,27 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_eq[1].setEnabled(false);
         cb_eq_en[1].setEnabled(false);
         
-        //ƒGƒŠƒNƒT[ƒ‹[ƒ“
+        //ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³
 //        String[] elixir_rune_en_list = {"LV", "55", "70", "85", "90"};
 //        elixir_rune_en = new JComboBox(elixir_rune_en_list);
 //        elixir_rune_en.setBounds(0, 460, 50, 20);
 //        elixir_rune_en.addActionListener(this);
 //        panels[0].add(elixir_rune_en);
         
-        String elixir_rune_list[] = {"ƒGƒŠƒNƒT[ƒ‹[ƒ“", "—Í‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“", "‹@•q‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“", "‘Ì—Í‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“", "’m—Í‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“", "’mŒb‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“", "—Í‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“(Lv70)", "‹@•q‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“(Lv70)", "‘Ì—Í‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“(Lv70)", "’m—Í‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“(Lv70)", "’mŒb‚ÌƒGƒŠƒNƒT[ƒ‹[ƒ“(Lv70)"};
+        String elixir_rune_list[] = {"ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³", "åŠ›ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³", "æ©Ÿæ•ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³", "ä½“åŠ›ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³", "çŸ¥åŠ›ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³", "çŸ¥æµã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³", "åŠ›ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³(Lv70)", "æ©Ÿæ•ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³(Lv70)", "ä½“åŠ›ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³(Lv70)", "çŸ¥åŠ›ã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³(Lv70)", "çŸ¥æµã®ã‚¨ãƒªã‚¯ã‚µãƒ¼ãƒ«ãƒ¼ãƒ³(Lv70)"};
         elixir_rune = new WideComboBox(elixir_rune_list);
         elixir_rune.setBounds(50, 460, 150, 20);
         elixir_rune.addActionListener(this);
         panels[0].add(elixir_rune);        
      
-        String left_list[] = {"¶˜r", "˜r—Í‚Ì–ä—l", "‹@•q‚Ì–ä—l", "‘Ì—Í‚Ì–ä—l", "’m—Í‚Ì–ä—l", "¸_‚Ì–ä—l",
-            "–£—Í‚Ì–ä—l", "˜r—Í‚Ì–ä—lII", "‹@•q‚Ì–ä—lII", "’m—Í‚Ì–ä—lII", "Œ•m‚Ì–ä—l", "pm‚Ì–ä—l",
-            "Œ•m‚Ì–ä—lII", "pm‚Ì–ä—lII", "‹|m‚Ì–ä—lII"};
-        String right_list[] = {"‰E˜r", "¶–½‚Ì–ä—l", "–‚–@‚Ì–ä—l", "–hŒä‚Ì–ä—l", "–hŒä‚Ì–ä—lII", "‘Ï‰Î‚Ì–ä—l",
-            "‘Ï…‚Ì–ä—l", "‘Ï•—‚Ì–ä—l", "‘Ï’n‚Ì–ä—l", "‘®«’ïR‚Ì–ä—l", "¶–½‚Ì–hŒä–ä—l", "–‚—Í‚Ì–hŒä–ä—l", "ã‹‰–hŒä‚Ì–ä—l", "ˆÌ‘å‚È‚éÒ‚Ìˆâ•¨"};
-        String center_list[] = {"”w’†", "‹F‚è‚Ì–ä—l", "‹F‚è‚Ì–ä—lII", "‹F‚è‚Ì–ä—lIII", "‹F‚è‚Ì–ä—lIV", "‹F‚è‚Ì–ä—lV"};
-        String left2_list[] = {"¶è", "l‚Â¯(‹ß‹——£)", "l‚Â¯(‰“‹——£)", "˜Z‚Â¯(‹ß/‰“‹——£)", "Û‰å‚Ì“ƒ‚Ìƒ^ƒŠƒXƒ}ƒ“"};
-        String right2_list[] = {"‰Eè", "’Áç‚ÌŒì•„(‘Ì—Í)", "’Áç‚ÌŒì•„(–‚—Í)", "ím‚½‚¿‚ÌŒì•„", "Ëè‚½‚¿‚ÌŒì•„", "pm‚½‚¿‚ÌŒì•„", "—E–Ò‚ÌƒIƒ‹ƒ^[ƒXƒg[ƒ“", "–‚’e‚ÌƒIƒ‹ƒ^[ƒXƒg[ƒ“", "‰b’q‚ÌƒIƒ‹ƒ^[ƒXƒg[ƒ“"};
+        String left_list[] = {"å·¦è…•", "è…•åŠ›ã®ç´‹æ§˜", "æ©Ÿæ•ã®ç´‹æ§˜", "ä½“åŠ›ã®ç´‹æ§˜", "çŸ¥åŠ›ã®ç´‹æ§˜", "ç²¾ç¥ã®ç´‹æ§˜",
+            "é­…åŠ›ã®ç´‹æ§˜", "è…•åŠ›ã®ç´‹æ§˜II", "æ©Ÿæ•ã®ç´‹æ§˜II", "çŸ¥åŠ›ã®ç´‹æ§˜II", "å‰£å£«ã®ç´‹æ§˜", "è¡“å£«ã®ç´‹æ§˜",
+            "å‰£å£«ã®ç´‹æ§˜II", "è¡“å£«ã®ç´‹æ§˜II", "å¼“å£«ã®ç´‹æ§˜II"};
+        String right_list[] = {"å³è…•", "ç”Ÿå‘½ã®ç´‹æ§˜", "é­”æ³•ã®ç´‹æ§˜", "é˜²å¾¡ã®ç´‹æ§˜", "é˜²å¾¡ã®ç´‹æ§˜II", "è€ç«ã®ç´‹æ§˜",
+            "è€æ°´ã®ç´‹æ§˜", "è€é¢¨ã®ç´‹æ§˜", "è€åœ°ã®ç´‹æ§˜", "å±æ€§æŠµæŠ—ã®ç´‹æ§˜", "ç”Ÿå‘½ã®é˜²å¾¡ç´‹æ§˜", "é­”åŠ›ã®é˜²å¾¡ç´‹æ§˜", "ä¸Šç´šé˜²å¾¡ã®ç´‹æ§˜", "å‰å¤§ãªã‚‹è€…ã®éºç‰©"};
+        String center_list[] = {"èƒŒä¸­", "ç¥ˆã‚Šã®ç´‹æ§˜", "ç¥ˆã‚Šã®ç´‹æ§˜II", "ç¥ˆã‚Šã®ç´‹æ§˜III", "ç¥ˆã‚Šã®ç´‹æ§˜IV", "ç¥ˆã‚Šã®ç´‹æ§˜V"};
+        String left2_list[] = {"å·¦æ‰‹", "å››ã¤æ˜Ÿ(è¿‘è·é›¢)", "å››ã¤æ˜Ÿ(é è·é›¢)", "å…­ã¤æ˜Ÿ(è¿‘/é è·é›¢)", "è±¡ç‰™ã®å¡”ã®ã‚¿ãƒªã‚¹ãƒãƒ³"};
+        String right2_list[] = {"å³æ‰‹", "é®å®ˆã®è­·ç¬¦(ä½“åŠ›)", "é®å®ˆã®è­·ç¬¦(é­”åŠ›)", "æˆ¦å£«ãŸã¡ã®è­·ç¬¦", "å°„æ‰‹ãŸã¡ã®è­·ç¬¦", "è¡“å£«ãŸã¡ã®è­·ç¬¦", "å‹‡çŒ›ã®ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³", "é­”å¼¾ã®ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³", "å¡æ™ºã®ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³"};
         cb_pattern_l = new WideComboBox(left_list);
         cb_pattern_r = new WideComboBox(right_list);
         cb_pattern_c = new WideComboBox(center_list);
@@ -757,7 +757,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(cb_pattern_l2);
         panels[0].add(cb_pattern_r2);
 
-        //ƒIƒ‹ƒ^ƒXƒg[ƒ“
+        //ã‚ªãƒ«ã‚¿ã‚¹ãƒˆãƒ¼ãƒ³
         //String[] en_list = {"", "+1", "+2", "+3", "+4", "+5"};
         String[] en_list = {"", "+1", "+2", "+3", "+4", "+5", "+6"};
         cb_alterstone_en = new JComboBox(en_list);
@@ -765,11 +765,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_alterstone_en.addActionListener(this);
         panels[0].add(cb_alterstone_en);
 
-        //String[] alterstone_op_list = {"", "‹ß‹——£–½’† +2", "‰“‹——£–½’† +2", "–‚–@’v–½‘Å",
-        //    "‰“‹——£ƒ_ƒ[ƒW +1", "SP +1", "–‚–@Á–ÕŒ¸­",
-        //    "ˆêŒ‚•KE(1%Šm—¦‚Å’Ç‰Áƒ_ƒ[ƒW50)", "‹ß‹——£ƒ_ƒ[ƒW +1"};
-        String[] alterstone_op_list = {"", "‹ß‹——£ƒ_ƒ[ƒW +1", "‰“‹——£ƒ_ƒ[ƒW +1","‹ß‹——£–½’† +2",
-            "‰“‹——£–½’† +2", "SP +1", "–‚–@ƒNƒŠƒeƒBƒJƒ‹ +1", "–‚–@Á–ÕŒ¸­{2", "ˆêŒ‚•KE(1%Šm—¦‚Å’Ç‰Áƒ_ƒ[ƒW50)"};
+        //String[] alterstone_op_list = {"", "è¿‘è·é›¢å‘½ä¸­ +2", "é è·é›¢å‘½ä¸­ +2", "é­”æ³•è‡´å‘½æ‰“",
+        //    "é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1", "SP +1", "é­”æ³•æ¶ˆè€—æ¸›å°‘",
+        //    "ä¸€æ’ƒå¿…æ®º(1%ç¢ºç‡ã§è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸50)", "è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1"};
+        String[] alterstone_op_list = {"", "è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1", "é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ +1","è¿‘è·é›¢å‘½ä¸­ +2",
+            "é è·é›¢å‘½ä¸­ +2", "SP +1", "é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ« +1", "é­”æ³•æ¶ˆè€—æ¸›å°‘ï¼‹2", "ä¸€æ’ƒå¿…æ®º(1%ç¢ºç‡ã§è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸50)"};
         for (int i = 0; i < cb_alterstone_op.length; i++) {
             cb_alterstone_op[i] = new WideComboBox(alterstone_op_list);
             cb_alterstone_op[i].setBounds(100 + 100 * i, 400 + 140, 100, 20);
@@ -777,7 +777,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_alterstone_op[i]);
         }
 
-        String ch_list[] = {"ƒpƒ^[ƒ“1", "ƒpƒ^[ƒ“2", "ƒpƒ^[ƒ“3"};
+        String ch_list[] = {"ãƒ‘ã‚¿ãƒ¼ãƒ³1", "ãƒ‘ã‚¿ãƒ¼ãƒ³2", "ãƒ‘ã‚¿ãƒ¼ãƒ³3"};
         cb_eq_ch = new JComboBox(ch_list);
         cb_eq_ch.addActionListener(mem);
         cb_eq_ch.setActionCommand("ch");
@@ -802,21 +802,21 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         bt_reset.setBounds(320, 200, 80, 20);
         panels[0].add(bt_reset);
 
-        JLabel polymorph_label = new JLabel("•Ïg");
+        JLabel polymorph_label = new JLabel("å¤‰èº«");
         polymorph_label.setBounds(420, 200, 100, 20);
         panels[0].add(polymorph_label);
         cb_morph_type = new JComboBox();
-        cb_morph_type.addItem("‹ß/‰““Á‰»");
-        cb_morph_type.addItem("–‚–@“Á‰»");
+        cb_morph_type.addItem("è¿‘/é ç‰¹åŒ–");
+        cb_morph_type.addItem("é­”æ³•ç‰¹åŒ–");
         cb_morph_type.setBounds(420 + 80, 200, 80, 20);
         cb_morph_type.addActionListener(this);
         panels[0].add(cb_morph_type);
 
-        JLabel polymorph_level_label = new JLabel("•ÏgƒŒƒxƒ‹");
+        JLabel polymorph_level_label = new JLabel("å¤‰èº«ãƒ¬ãƒ™ãƒ«");
         polymorph_level_label.setBounds(420 + 200, 200, 100, 20);
         panels[0].add(polymorph_level_label);
         cb_morph_level = new JComboBox();
-        cb_morph_level.addItem("©“®");     //0
+        cb_morph_level.addItem("è‡ªå‹•");     //0
         cb_morph_level.addItem("1");        //1
         cb_morph_level.addItem("15");       //2
         cb_morph_level.addItem("30");       //3
@@ -834,13 +834,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 //cb_morph_level.addItem("86");
                 //cb_morph_level.addItem("88");
                 //cb_morph_level.addItem("90");
-        cb_morph_level.addItem("Hero");     //Œ»“_‚Å‚Í15
+        cb_morph_level.addItem("Hero");     //ç¾æ™‚ç‚¹ã§ã¯15
 
         cb_morph_level.setBounds(420 + 280, 200, 80, 20);
         cb_morph_level.addActionListener(this);
         panels[0].add(cb_morph_level);
 
-        lab_tmp = new JLabel("UŒ‚‘¬“x");
+        lab_tmp = new JLabel("æ”»æ’ƒé€Ÿåº¦");
         lab_tmp.setBounds(420, 200 + 20, 200, 20);
         panels[0].add(lab_tmp);
         tf_speed = new JTextField();
@@ -848,7 +848,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         tf_speed.addActionListener(this);
         panels[0].add(tf_speed);
 
-        lab_tmp = new JLabel("”{—¦");
+        lab_tmp = new JLabel("å€ç‡");
         lab_tmp.setBounds(420, 200 + 40, 200, 20);
         panels[0].add(lab_tmp);
         tf_acc = new JTextField();
@@ -856,7 +856,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         tf_acc.addActionListener(this);
         panels[0].add(tf_acc);
 
-        lab_tmp = new JLabel("U–‚");
+        lab_tmp = new JLabel("æ”»é­”");
         lab_tmp.setBounds(620, 200 + 20, 200, 20);
         panels[0].add(lab_tmp);
         tf_magic_speed_main = new JTextField();
@@ -864,7 +864,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         tf_magic_speed_main.addActionListener(this);
         panels[0].add(tf_magic_speed_main);
 
-        lab_tmp = new JLabel("•â–‚");
+        lab_tmp = new JLabel("è£œé­”");
         lab_tmp.setBounds(620, 200 + 40, 200, 20);
         panels[0].add(lab_tmp);
         tf_magic_speed_sub = new JTextField();
@@ -872,17 +872,17 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         tf_magic_speed_sub.addActionListener(this);
         panels[0].add(tf_magic_speed_sub);
 
-        cb_speed_auto = new JCheckBox("©“®“ü—Í");
+        cb_speed_auto = new JCheckBox("è‡ªå‹•å…¥åŠ›");
         cb_speed_auto.setSelected(true);
         cb_speed_auto.setBounds(420 + 280, 200 + 60, 80, 20);
         panels[0].add(cb_speed_auto);
         cb_speed_auto.addActionListener(this);
 
-        lab_sp_rate = new JLabel("•Ší“Á«");
+        lab_sp_rate = new JLabel("æ­¦å™¨ç‰¹æ€§");
         lab_sp_sub = new JLabel("");
-        lab_mag_rate = new JLabel("–‚–@”­“®—¦");
-        lab_mag_delay = new JLabel("–‚–@ƒfƒBƒŒƒC");
-        lab_mag_power = new JLabel("–‚–@ˆĞ—Í");
+        lab_mag_rate = new JLabel("é­”æ³•ç™ºå‹•ç‡");
+        lab_mag_delay = new JLabel("é­”æ³•ãƒ‡ã‚£ãƒ¬ã‚¤");
+        lab_mag_power = new JLabel("é­”æ³•å¨åŠ›");
         tf_buki_sp_rate = new JTextField("0");
         tf_mag_rate = new JTextField("0.0");
         tf_mag_delay = new JTextField("0.0");
@@ -914,13 +914,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         tf_mag_delay.addActionListener(this);
         tf_mag_power.addActionListener(this);
 
-        cb_mag_auto = new JCheckBox("©“®“ü—Í");
+        cb_mag_auto = new JCheckBox("è‡ªå‹•å…¥åŠ›");
         cb_mag_auto.setSelected(true);
         cb_mag_auto.setBounds(420 + 280, 300 + 40, 80, 20);
         panels[0].add(cb_mag_auto);
         cb_mag_auto.addActionListener(this);
 
-        lab_tmp = new JLabel("–‚–@g—p");
+        lab_tmp = new JLabel("é­”æ³•ä½¿ç”¨");
         lab_tmp.setBounds(420, 380, 80, 20);
         cb_magic = new WideComboBox();
         cb_magic.addItem("");
@@ -930,10 +930,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(lab_tmp);
         panels[0].add(cb_magic);
 
-        lab_tmp = new JLabel("d—Ê");
+        lab_tmp = new JLabel("é‡é‡");
         lab_tmp.setBounds(420, 380 + 20, 150, 20);
         panels[0].add(lab_tmp);
-        lab_tmp = new JLabel("Š‰Â”\—Ê");
+        lab_tmp = new JLabel("æ‰€æŒå¯èƒ½é‡");
         lab_tmp.setBounds(620, 380 + 10, 80, 20);
         panels[0].add(lab_tmp);
         tf_weight = new JTextField();
@@ -953,18 +953,18 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_weight.addActionListener(this);
         panels[0].add(cb_weight);
 
-//        cb_weight_auto = new JCheckBox("©“®“ü—Í");
+//        cb_weight_auto = new JCheckBox("è‡ªå‹•å…¥åŠ›");
 //        cb_weight_auto.setSelected(true);
 //        cb_weight_auto.setBounds(420 + 280, 380 + 25 + 20, 80, 25);
 //        panels[0].add(cb_weight_auto);
 //        cb_weight_auto.addActionListener(this);
-        lab_tmp = new JLabel("‘Ï«");
+        lab_tmp = new JLabel("è€æ€§");
         lab_tmp.setBounds(420, 440, 80, 25);
         panels[0].add(lab_tmp);
         
-        lab_tmp = new JLabel("–½’†");
-        lab_tmp.setBounds(420, 500, 80, 25);
-        panels[0].add(lab_tmp);
+//        lab_tmp = new JLabel("å‘½ä¸­");
+//        lab_tmp.setBounds(420, 500, 80, 25);
+//        panels[0].add(lab_tmp);
 
         for (int i = 0; i < ELEM_LIST.length; i++) {
             lab_elem[i] = new JLabel();
@@ -973,12 +973,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
         for (int i = 0; i < AILMENT_LIST.length; i++) {
             lab_ailment[i] = new JLabel();
-            lab_ailment[i].setBounds(420 + 60 + 80 * (i % 4), 440 + 20 + 20 * (i / 4), 100, 20);
+            lab_ailment[i].setBounds(420 + 60 + 80 * (i % 4), 460 + 20 + 20 * (i / 4), 100, 20);
             panels[0].add(lab_ailment[i]);
         }
-
+            
         //----------
-        //ƒpƒlƒ‹‚Q
+        //ãƒ‘ãƒãƒ«ï¼’
         //----------
         for (int i = 0; i < ST_LIST.length; i++) {
             JLabel lab4 = new JLabel(ST_LIST[i], SwingConstants.CENTER);
@@ -986,29 +986,29 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[1].add(lab4);
         }
 
-        pure_status_bonus[0][0] = new JLabel("‹ß‹——£ƒ_ƒ[ƒW");
-        pure_status_bonus[0][1] = new JLabel("‹ß‹——£–½’†");
-        pure_status_bonus[0][2] = new JLabel("‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹");
-        pure_status_bonus[0][3] = new JLabel("Å‘åŠd—Ê");
+        pure_status_bonus[0][0] = new JLabel("è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸");
+        pure_status_bonus[0][1] = new JLabel("è¿‘è·é›¢å‘½ä¸­");
+        pure_status_bonus[0][2] = new JLabel("è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«");
+        pure_status_bonus[0][3] = new JLabel("æœ€å¤§æ‰€æŒé‡é‡");
         pure_status_bonus[0][4] = new JLabel("");
-        pure_status_bonus[0][5] = new JLabel("‰“‹——£ƒ_ƒ[ƒW");
-        pure_status_bonus[0][6] = new JLabel("‰“‹——£–½’†");
-        pure_status_bonus[0][7] = new JLabel("‰“‹——£ƒNƒŠƒeƒBƒJƒ‹");
+        pure_status_bonus[0][5] = new JLabel("é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸");
+        pure_status_bonus[0][6] = new JLabel("é è·é›¢å‘½ä¸­");
+        pure_status_bonus[0][7] = new JLabel("é è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«");
         pure_status_bonus[0][8] = new JLabel("AC");
         pure_status_bonus[0][9] = new JLabel("ER");
-        pure_status_bonus[0][10] = new JLabel("HP‘‰Á");
+        pure_status_bonus[0][10] = new JLabel("HPå¢—åŠ ");
         pure_status_bonus[0][11] = new JLabel("HPR");
-        pure_status_bonus[0][12] = new JLabel("HPƒ|[ƒVƒ‡ƒ“");
-        pure_status_bonus[0][13] = new JLabel("Å‘åd—Ê");
+        pure_status_bonus[0][12] = new JLabel("HPãƒãƒ¼ã‚·ãƒ§ãƒ³");
+        pure_status_bonus[0][13] = new JLabel("æœ€å¤§é‡é‡");
         pure_status_bonus[0][14] = new JLabel("");
-        pure_status_bonus[0][15] = new JLabel("–‚–@ƒ_ƒ[ƒW");
-        pure_status_bonus[0][16] = new JLabel("–‚–@–½’†");
-        pure_status_bonus[0][17] = new JLabel("–‚–@ƒNƒŠƒeƒBƒJƒ‹");
+        pure_status_bonus[0][15] = new JLabel("é­”æ³•ãƒ€ãƒ¡ãƒ¼ã‚¸");
+        pure_status_bonus[0][16] = new JLabel("é­”æ³•å‘½ä¸­");
+        pure_status_bonus[0][17] = new JLabel("é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«");
         pure_status_bonus[0][18] = new JLabel("MB");
-        pure_status_bonus[0][19] = new JLabel("MPÁ”ïŒ¸­");
-        pure_status_bonus[0][20] = new JLabel("MP‘‰Á");
+        pure_status_bonus[0][19] = new JLabel("MPæ¶ˆè²»æ¸›å°‘");
+        pure_status_bonus[0][20] = new JLabel("MPå¢—åŠ ");
         pure_status_bonus[0][21] = new JLabel("MPR");
-        pure_status_bonus[0][22] = new JLabel("MPƒ|[ƒVƒ‡ƒ“");
+        pure_status_bonus[0][22] = new JLabel("MPãƒãƒ¼ã‚·ãƒ§ãƒ³");
         pure_status_bonus[0][23] = new JLabel("MR");
         pure_status_bonus[0][24] = new JLabel("");
 
@@ -1028,7 +1028,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lev.addActionListener(this);
         lev.setSelfCheck();
 
-        lab_tmp = new JLabel("ƒGƒŠƒNƒT[");
+        lab_tmp = new JLabel("ã‚¨ãƒªã‚¯ã‚µãƒ¼");
         lab_tmp.setBounds(30, 480, 100, 20);
         panels[1].add(lab_tmp);
 
@@ -1046,30 +1046,30 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[1].add(cb_elixir_level[i]);
         }
         //----------
-        //ƒpƒlƒ‹‚R
+        //ãƒ‘ãƒãƒ«ï¼“
         //----------
         int row = 0;
         int col = 0;
 
-        lab_tmp = new JLabel("Šî–{");
+        lab_tmp = new JLabel("åŸºæœ¬");
         lab_tmp.setBounds(200 * row, 20 * col++, 100, 20);
         panels[2].add(lab_tmp);
-        //1’i‰Á‘¬ 
-        cb_buff[ACC1] = new JCheckBox("1’i‰Á‘¬");
-        cb_buff[ACC1].setToolTipText("x1.3333:GP GGP ƒƒCƒ“ ƒEƒCƒXƒL[");
+        //1æ®µåŠ é€Ÿ 
+        cb_buff[ACC1] = new JCheckBox("1æ®µåŠ é€Ÿ");
+        cb_buff[ACC1].setToolTipText("x1.3333:GP GGP ãƒ¯ã‚¤ãƒ³ ã‚¦ã‚¤ã‚¹ã‚­ãƒ¼");
         cb_buff[ACC1].setBounds(0, 20 * col++, 100, 20);
 
         String list_acc2[] = {"x1.3333", "x1.1547"};
         cb_buff_group[ACC2] = new WideComboBox(list_acc2);
         cb_buff_group[ACC2].setBounds(100, 20 * col, 80, 20);
-        cb_buff[ACC2] = new JCheckBox("2’i‰Á‘¬");
-        cb_buff[ACC2].setToolTipText("<html>"+ "x1.3333:BP ƒCƒrƒ‹ƒuƒ‰ƒbƒh ƒuƒ‰ƒbƒhƒ‰ƒXƒg –¼—_‚ÌƒRƒCƒ“"
-                + "<br>"+ "ƒ_ƒ“ƒVƒ“ƒOƒuƒŒƒCƒY ƒtƒH[ƒJƒXƒEƒF[ƒu ƒnƒŠƒP[ƒ“ ƒTƒ“ƒhƒXƒg[ƒ€"
-                + "<br>"+ "x1.1547:EW ”ZkW’†ƒ|[ƒVƒ‡ƒ“"+"</html>");
+        cb_buff[ACC2] = new JCheckBox("2æ®µåŠ é€Ÿ");
+        cb_buff[ACC2].setToolTipText("<html>"+ "x1.3333:BP ã‚¤ãƒ“ãƒ«ãƒ–ãƒ©ãƒƒãƒ‰ ãƒ–ãƒ©ãƒƒãƒ‰ãƒ©ã‚¹ãƒˆ åèª‰ã®ã‚³ã‚¤ãƒ³"
+                + "<br>"+ "ãƒ€ãƒ³ã‚·ãƒ³ã‚°ãƒ–ãƒ¬ã‚¤ã‚º ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚¦ã‚§ãƒ¼ãƒ– ãƒãƒªã‚±ãƒ¼ãƒ³ ã‚µãƒ³ãƒ‰ã‚¹ãƒˆãƒ¼ãƒ "
+                + "<br>"+ "x1.1547:EW æ¿ƒç¸®é›†ä¸­ãƒãƒ¼ã‚·ãƒ§ãƒ³"+"</html>");
         cb_buff[ACC2].setBounds(0, 20 * col++, 100, 20);
 
-        cb_buff[ACC3] = new JCheckBox("3’i‰Á‘¬");
-        cb_buff[ACC3].setToolTipText("x1.1250:ƒhƒ‰ƒSƒ“ƒuƒ‰ƒbƒh ‘ o‚µ”é‘ ğ");
+        cb_buff[ACC3] = new JCheckBox("3æ®µåŠ é€Ÿ");
+        cb_buff[ACC3].setToolTipText("x1.1250:ãƒ‰ãƒ©ã‚´ãƒ³ãƒ–ãƒ©ãƒƒãƒ‰ è”µå‡ºã—ç§˜è”µé…’");
         cb_buff[ACC3].setBounds(0, 20 * col++, 100, 20);
 
         String list_str[] = {"+3", "+5", "+6", "+7"};
@@ -1091,403 +1091,403 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff_group[B_AC] = new WideComboBox(list_ac);
         cb_buff_group[B_AC].setBounds(100, 20 * col, 80, 20);
         cb_buff[B_AC] = new JCheckBox("AC");
-        cb_buff[B_AC].setToolTipText("<html>"+ "ƒV[ƒ‹ƒh            AC-2"
-                + "<br>"+ "ƒtƒ@ƒCƒ„[ƒV[ƒ‹ƒh  AC-4"
-                + "<br>"+ "l‹G‚Ìƒ|[ƒVƒ‡ƒ“    AC-5"
-                + "<br>"+ "ƒAƒCƒAƒ“ƒXƒLƒ“      AC-10"+"</html>");
+        cb_buff[B_AC].setToolTipText("<html>"+ "ã‚·ãƒ¼ãƒ«ãƒ‰            AC-2"
+                + "<br>"+ "ãƒ•ã‚¡ã‚¤ãƒ¤ãƒ¼ã‚·ãƒ¼ãƒ«ãƒ‰  AC-4"
+                + "<br>"+ "å››å­£ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³    AC-5"
+                + "<br>"+ "ã‚¢ã‚¤ã‚¢ãƒ³ã‚¹ã‚­ãƒ³      AC-10"+"</html>");
         cb_buff[B_AC].setBounds(0, 20 * col++, 100, 20);
 
         String list_buki[] = {"+1", "+2", "+2 HIT+2", "+5"};
         cb_buff_group[BUKI] = new WideComboBox(list_buki);
         cb_buff_group[BUKI].setBounds(100, 20 * col, 80, 20);
         cb_buff_group[BUKI].setSelectedIndex(2);
-        cb_buff[BUKI] = new JCheckBox("•Ší");
+        cb_buff[BUKI] = new JCheckBox("æ­¦å™¨");
         cb_buff[BUKI].setBounds(0, 20 * col++, 100, 20);
 
         col++;
 
-        lab_tmp = new JLabel("ˆê”Ê–‚–@");
+        lab_tmp = new JLabel("ä¸€èˆ¬é­”æ³•");
         lab_tmp.setBounds(100 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[W_BA] = new JCheckBox("ƒuƒŒƒXƒhƒA[ƒ}[");
+        cb_buff[W_BA] = new JCheckBox("ãƒ–ãƒ¬ã‚¹ãƒ‰ã‚¢ãƒ¼ãƒãƒ¼");
         cb_buff[W_BA].setBounds(0, 20 * col++, 150, 20);
         cb_buff[W_BA].setToolTipText("AC-3");
 
-        cb_buff[W_BSK] = new JCheckBox("ƒo[ƒT[ƒJ[");
+        cb_buff[W_BSK] = new JCheckBox("ãƒãƒ¼ã‚µãƒ¼ã‚«ãƒ¼");
         cb_buff[W_BSK].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[W_BSK].setToolTipText("AC+10 ‹ßÚ‘ÅŒ‚+2 ‹ßÚ–½’†+8 HP©‘R‰ñ•œ•s‰Â");
+        cb_buff[W_BSK].setToolTipText("AC+10 è¿‘æ¥æ‰“æ’ƒ+2 è¿‘æ¥å‘½ä¸­+8 HPè‡ªç„¶å›å¾©ä¸å¯");
 
-        cb_buff[W_DW] = new JCheckBox("ƒfƒBƒNƒŠ[ƒXƒEƒFƒCƒg");
+        cb_buff[W_DW] = new JCheckBox("ãƒ‡ã‚£ã‚¯ãƒªãƒ¼ã‚¹ã‚¦ã‚§ã‚¤ãƒˆ");
         cb_buff[W_DW].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[W_DW].setToolTipText("d—Ê-150");
+        cb_buff[W_DW].setToolTipText("é‡é‡-150");
 
-        cb_buff[W_ADS] = new JCheckBox("ƒAƒhƒoƒ“ƒXƒhƒXƒsƒŠƒbƒc");
+        cb_buff[W_ADS] = new JCheckBox("ã‚¢ãƒ‰ãƒãƒ³ã‚¹ãƒ‰ã‚¹ãƒ”ãƒªãƒƒãƒ„");
         cb_buff[W_ADS].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[W_ADS].setToolTipText("Å‘åHP/MP+20%");
+        cb_buff[W_ADS].setToolTipText("æœ€å¤§HP/MP+20%");
 
         col++;
 
-        lab_tmp = new JLabel("ŒNå–‚–@");
+        lab_tmp = new JLabel("å›ä¸»é­”æ³•");
         lab_tmp.setBounds(100 * row, 20 * col++, 150, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[P_G] = new JCheckBox("ƒOƒ[ƒCƒ“ƒOƒEƒGƒ|ƒ“");
+        cb_buff[P_G] = new JCheckBox("ã‚°ãƒ­ãƒ¼ã‚¤ãƒ³ã‚°ã‚¦ã‚¨ãƒãƒ³");
         cb_buff[P_G].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[P_G].setToolTipText("‹ßÚ–½’†+5 ’Ç‰Á‘ÅŒ‚+5");
+        cb_buff[P_G].setToolTipText("è¿‘æ¥å‘½ä¸­+5 è¿½åŠ æ‰“æ’ƒ+5");
 
-        cb_buff[P_B] = new JCheckBox("ƒuƒŒƒCƒuƒƒ“ƒ^ƒ‹");
+        cb_buff[P_B] = new JCheckBox("ãƒ–ãƒ¬ã‚¤ãƒ–ãƒ¡ãƒ³ã‚¿ãƒ«");
         cb_buff[P_B].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[P_B].setToolTipText("ˆê’èŠm—¦‚Å‹ßÚƒ_ƒ[ƒW1.5”{");
+        cb_buff[P_B].setToolTipText("ä¸€å®šç¢ºç‡ã§è¿‘æ¥ãƒ€ãƒ¡ãƒ¼ã‚¸1.5å€");
 
-        cb_buff[P_S] = new JCheckBox("ƒVƒƒƒCƒjƒ“ƒOƒV[ƒ‹ƒh");
+        cb_buff[P_S] = new JCheckBox("ã‚·ãƒ£ã‚¤ãƒ‹ãƒ³ã‚°ã‚·ãƒ¼ãƒ«ãƒ‰");
         cb_buff[P_S].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_S].setToolTipText("AC-8");
 
-        cb_buff[P_BA] = new JCheckBox("ƒuƒŒƒCƒuƒAƒoƒ^[");
+        cb_buff[P_BA] = new JCheckBox("ãƒ–ãƒ¬ã‚¤ãƒ–ã‚¢ãƒã‚¿ãƒ¼");
         cb_buff[P_BA].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 ƒXƒ^ƒ“‘Ï«+2 ƒz[ƒ‹ƒh‘Ï«+2");
+        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 ã‚¹ã‚¿ãƒ³è€æ€§+2 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+2");
           
-        String list_P_GA[] = {"ŒNåLV80", "ŒNåLV81", "ŒNåLV82", "ŒNåLV83", "ŒNåLV84", "ŒNåLV85"};
+        String list_P_GA[] = {"å›ä¸»LV80", "å›ä¸»LV81", "å›ä¸»LV82", "å›ä¸»LV83", "å›ä¸»LV84", "å›ä¸»LV85"};
         cb_buff_group[P_GA] = new WideComboBox(list_P_GA);
         cb_buff_group[P_GA].setBounds(100, 20 * col, 80, 20);
-        cb_buff[P_GA] = new JCheckBox("ƒOƒŒ[ƒXƒAƒoƒ^[");
+        cb_buff[P_GA] = new JCheckBox("ã‚°ãƒ¬ãƒ¼ã‚¹ã‚¢ãƒã‚¿ãƒ¼");
         cb_buff[P_GA].setBounds(0, 20 * col++, 100, 20);
-        cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+10 ƒz[ƒ‹ƒh‘Ï«+10 ‹°•|‘Ï«+10 LV80‚©‚çLV1–ˆ‚É‘Ï«+1‘‰Á[Å‘å+15]");
+        cb_buff[P_GA].setToolTipText("ã‚¹ã‚¿ãƒ³è€æ€§+10 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+10 ææ€–è€æ€§+10 LV80ã‹ã‚‰LV1æ¯ã«è€æ€§+1å¢—åŠ [æœ€å¤§+15]");
 
         col++;
 
-        lab_tmp = new JLabel("‹Rm‹Zp");
+        lab_tmp = new JLabel("é¨å£«æŠ€è¡“");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[K_RA] = new JCheckBox("ƒŠƒ_ƒNƒVƒ‡ƒ“ƒA[ƒ}[");
+        cb_buff[K_RA] = new JCheckBox("ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³ã‚¢ãƒ¼ãƒãƒ¼");
         cb_buff[K_RA].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_RA].setToolTipText("ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+(Lv-40)/10 ¬”“_ˆÈ‰ºØ‚èÌ‚Ä");
+        cb_buff[K_RA].setToolTipText("ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³+(Lv-40)/10 å°æ•°ç‚¹ä»¥ä¸‹åˆ‡ã‚Šæ¨ã¦");
 
-        cb_buff[K_SC] = new JCheckBox("ƒ\ƒŠƒbƒhƒLƒƒƒŠƒbƒW");
+        cb_buff[K_SC] = new JCheckBox("ã‚½ãƒªãƒƒãƒ‰ã‚­ãƒ£ãƒªãƒƒã‚¸");
         cb_buff[K_SC].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_SC].setToolTipText("‚‘•”õ ER+15");
+        cb_buff[K_SC].setToolTipText("ç›¾è£…å‚™æ™‚ ER+15");
 
-        cb_buff[K_BA] = new JCheckBox("ƒoƒEƒ“ƒXƒAƒ^ƒbƒN");
+        cb_buff[K_BA] = new JCheckBox("ãƒã‚¦ãƒ³ã‚¹ã‚¢ã‚¿ãƒƒã‚¯");
         cb_buff[K_BA].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_BA].setToolTipText("‹ßÚ–½’†+6");
+        cb_buff[K_BA].setToolTipText("è¿‘æ¥å‘½ä¸­+6");
 
-        cb_buff[K_CB] = new JCheckBox("ƒJƒEƒ“ƒ^[ƒoƒŠƒA");
+        cb_buff[K_CB] = new JCheckBox("ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼ãƒãƒªã‚¢");
         cb_buff[K_CB].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_CB].setToolTipText("—¼èŒ•‘•”õ ˆê’èŠm—¦‚Å‹ßÚUŒ‚‰ñ”ğ+”½Œ‚");
+        cb_buff[K_CB].setToolTipText("ä¸¡æ‰‹å‰£è£…å‚™æ™‚ ä¸€å®šç¢ºç‡ã§è¿‘æ¥æ”»æ’ƒå›é¿+åæ’ƒ");
         
-        cb_buff[K_PD] = new JCheckBox("ƒvƒ‰ƒCƒh(–¢À‘•)");
+        cb_buff[K_PD] = new JCheckBox("ãƒ—ãƒ©ã‚¤ãƒ‰(æœªå®Ÿè£…)");
         cb_buff[K_PD].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_PD].setToolTipText("Å‘åHP Lv/4% ‘‰Á");
+        cb_buff[K_PD].setToolTipText("æœ€å¤§HP Lv/4% å¢—åŠ ");
 
-        cb_buff[K_BK] = new JCheckBox("ƒuƒ[ƒAƒ^ƒbƒN(–¢À‘•)");
+        cb_buff[K_BK] = new JCheckBox("ãƒ–ãƒ­ãƒ¼ã‚¢ã‚¿ãƒƒã‚¯(æœªå®Ÿè£…)");
         cb_buff[K_BK].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_BK].setToolTipText("ˆê’èŠm—¦‚Å‹ßÚƒ_ƒ[ƒW‚ğ1.5”{ LV75‚©‚çLV1–ˆ‚É”­“®—¦1%‘‰Á");
+        cb_buff[K_BK].setToolTipText("ä¸€å®šç¢ºç‡ã§è¿‘æ¥ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’1.5å€ LV75ã‹ã‚‰LV1æ¯ã«ç™ºå‹•ç‡1%å¢—åŠ ");
         
         col = 0;
         row = 1;
 
-        lab_tmp = new JLabel("¸—ì–‚–@(‹¤’Ê)");
+        lab_tmp = new JLabel("ç²¾éœŠé­”æ³•(å…±é€š)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[E_RE] = new JCheckBox("ƒŒƒWƒXƒgƒGƒŒƒƒ“ƒg");
+        cb_buff[E_RE] = new JCheckBox("ãƒ¬ã‚¸ã‚¹ãƒˆã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆ");
         cb_buff[E_RE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_RE].setToolTipText("‘S‘®«+10");
-        cb_buff[E_RM] = new JCheckBox("ƒŒƒWƒXƒgƒ}ƒWƒbƒN");
+        cb_buff[E_RE].setToolTipText("å…¨å±æ€§+10");
+        cb_buff[E_RM] = new JCheckBox("ãƒ¬ã‚¸ã‚¹ãƒˆãƒã‚¸ãƒƒã‚¯");
         cb_buff[E_RM].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_RM].setToolTipText("MR+10");
-        cb_buff[E_CM] = new JCheckBox("ƒNƒŠƒAƒ}ƒCƒ“ƒh");
+        cb_buff[E_CM] = new JCheckBox("ã‚¯ãƒªã‚¢ãƒã‚¤ãƒ³ãƒ‰");
         cb_buff[E_CM].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_CM].setToolTipText("WIS+3");
 
         col++;
 
-        lab_tmp = new JLabel("¸—ì–‚–@(‰Î)");
+        lab_tmp = new JLabel("ç²¾éœŠé­”æ³•(ç«)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        //cb_buff[E_FW] = new JCheckBox("ƒtƒ@ƒCƒA[ƒEƒGƒ|ƒ“");
+        //cb_buff[E_FW] = new JCheckBox("ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼ã‚¦ã‚¨ãƒãƒ³");
         //cb_buff[E_FW].setBounds(200 * row, 20 * col++, 150, 20);
-        //cb_buff[E_FW].setToolTipText("‰Î‘®«’Ç‰Á‘ÅŒ‚+4");
-        cb_buff[E_BW] = new JCheckBox("ƒo[ƒjƒ“ƒOƒEƒGƒ|ƒ“");
+        //cb_buff[E_FW].setToolTipText("ç«å±æ€§è¿½åŠ æ‰“æ’ƒ+4");
+        cb_buff[E_BW] = new JCheckBox("ãƒãƒ¼ãƒ‹ãƒ³ã‚°ã‚¦ã‚¨ãƒãƒ³");
         cb_buff[E_BW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_BW].setToolTipText("‰Î‘®«’Ç‰Á‘ÅŒ‚+6 ‹ßÚ–½’†+6");
-        cb_buff[E_EF] = new JCheckBox("ƒGƒŒƒƒ“ƒ^ƒ‹ƒtƒ@ƒCƒA[");
+        cb_buff[E_BW].setToolTipText("ç«å±æ€§è¿½åŠ æ‰“æ’ƒ+6 è¿‘æ¥å‘½ä¸­+6");
+        cb_buff[E_EF] = new JCheckBox("ã‚¨ãƒ¬ãƒ¡ãƒ³ã‚¿ãƒ«ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼");
         cb_buff[E_EF].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EF].setToolTipText("ˆê’èŠm—¦‚Å‹ßÚƒ_ƒ[ƒW1.5”{");
-        cb_buff[E_SF] = new JCheckBox("ƒ\ƒEƒ‹ƒIƒuƒtƒŒƒCƒ€");
+        cb_buff[E_EF].setToolTipText("ä¸€å®šç¢ºç‡ã§è¿‘æ¥ãƒ€ãƒ¡ãƒ¼ã‚¸1.5å€");
+        cb_buff[E_SF] = new JCheckBox("ã‚½ã‚¦ãƒ«ã‚ªãƒ–ãƒ•ãƒ¬ã‚¤ãƒ ");
         cb_buff[E_SF].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SF].setToolTipText("•Šíƒ_ƒ[ƒW‚ªí‚ÉÅ‘å’l ‘¹‚µ‚È‚¢");
-        cb_buff[E_AF] = new JCheckBox("ƒAƒfƒBƒVƒ‡ƒiƒ‹ƒtƒ@ƒCƒA[");
+        cb_buff[E_SF].setToolTipText("æ­¦å™¨ãƒ€ãƒ¡ãƒ¼ã‚¸ãŒå¸¸ã«æœ€å¤§å€¤ æå‚·ã—ãªã„");
+        cb_buff[E_AF] = new JCheckBox("ã‚¢ãƒ‡ã‚£ã‚·ãƒ§ãƒŠãƒ«ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼");
         cb_buff[E_AF].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_AF].setToolTipText("d—Ê50%ˆÈã‚Å‚ÌHP/MP‰ñ•œ");
-        cb_buff[E_IO] = new JCheckBox("ƒCƒ“ƒtƒFƒ‹ƒm(–¢À‘•)");
+        cb_buff[E_AF].setToolTipText("é‡é‡50%ä»¥ä¸Šã§ã®HP/MPå›å¾©");
+        cb_buff[E_IO] = new JCheckBox("ã‚¤ãƒ³ãƒ•ã‚§ãƒ«ãƒ(æœªå®Ÿè£…)");
         cb_buff[E_IO].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_IO].setToolTipText("ˆê’èŠm—¦‚Å‹ß‹——£ƒ_ƒ[ƒW‚ğ50%ŒyŒ¸‚µƒJƒEƒ“ƒ^[UŒ‚");
+        cb_buff[E_IO].setToolTipText("ä¸€å®šç¢ºç‡ã§è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’50%è»½æ¸›ã—ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼æ”»æ’ƒ");
 
         col++;
 
-        lab_tmp = new JLabel("¸—ì–‚–@(…)");
+        lab_tmp = new JLabel("ç²¾éœŠé­”æ³•(æ°´)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[E_NT] = new JCheckBox("ƒlƒCƒ`ƒƒ[ƒYƒ^ƒbƒ`");
+        cb_buff[E_NT] = new JCheckBox("ãƒã‚¤ãƒãƒ£ãƒ¼ã‚ºã‚¿ãƒƒãƒ");
         cb_buff[E_NT].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_NT].setToolTipText("HPR+15");
-        cb_buff[E_AP] = new JCheckBox("ƒAƒNƒAƒvƒƒeƒNƒ^[");
+        cb_buff[E_AP] = new JCheckBox("ã‚¢ã‚¯ã‚¢ãƒ—ãƒ­ãƒ†ã‚¯ã‚¿ãƒ¼");
         cb_buff[E_AP].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_AP].setToolTipText("ER+5");
-        cb_buff[E_AS] = new JCheckBox("ƒAƒNƒAƒVƒ‡ƒbƒg");
+        cb_buff[E_AS] = new JCheckBox("ã‚¢ã‚¯ã‚¢ã‚·ãƒ§ãƒƒãƒˆ");
         cb_buff[E_AS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_AS].setToolTipText("‰“‹——£–½’†+4");
+        cb_buff[E_AS].setToolTipText("é è·é›¢å‘½ä¸­+4");
 
         col++;
 
-        lab_tmp = new JLabel("¸—ì–‚–@(•—)");
+        lab_tmp = new JLabel("ç²¾éœŠé­”æ³•(é¢¨)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        //cb_buff[E_WS] = new JCheckBox("ƒEƒCƒ“ƒhƒVƒ‡ƒbƒg");
+        //cb_buff[E_WS] = new JCheckBox("ã‚¦ã‚¤ãƒ³ãƒ‰ã‚·ãƒ§ãƒƒãƒˆ");
         //cb_buff[E_WS].setBounds(200 * row, 20 * col++, 150, 20);
-        //cb_buff[E_WS].setToolTipText("‰“‹——£–½’†+6");
-        cb_buff[E_SE] = new JCheckBox("ƒXƒg[ƒ€ƒAƒC");
+        //cb_buff[E_WS].setToolTipText("é è·é›¢å‘½ä¸­+6");
+        cb_buff[E_SE] = new JCheckBox("ã‚¹ãƒˆãƒ¼ãƒ ã‚¢ã‚¤");
         cb_buff[E_SE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SE].setToolTipText("•—‘®«‰“‹——£ƒ_ƒ[ƒW+3@‰“‹——£–½’†+2");
-        cb_buff[E_SS] = new JCheckBox("ƒXƒg[ƒ€ƒVƒ‡ƒbƒg");
+        cb_buff[E_SE].setToolTipText("é¢¨å±æ€§é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3ã€€é è·é›¢å‘½ä¸­+2");
+        cb_buff[E_SS] = new JCheckBox("ã‚¹ãƒˆãƒ¼ãƒ ã‚·ãƒ§ãƒƒãƒˆ");
         cb_buff[E_SS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SS].setToolTipText("•—‘®«‰“‹——£ƒ_ƒ[ƒW+6@‰“‹——£–½’†+3");
-        //cb_buff[E_WW] = new JCheckBox("ƒEƒCƒ“ƒhƒEƒH[ƒN");
+        cb_buff[E_SS].setToolTipText("é¢¨å±æ€§é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+6ã€€é è·é›¢å‘½ä¸­+3");
+        //cb_buff[E_WW] = new JCheckBox("ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚©ãƒ¼ã‚¯");
         //cb_buff[E_WW].setBounds(200 * row, 20 * col++, 150, 20);
-        //cb_buff[E_WW].setToolTipText("ˆÚ“®‘¬“xã¸");
-        cb_buff[E_EE] = new JCheckBox("ƒC[ƒOƒ‹ƒAƒC");
+        //cb_buff[E_WW].setToolTipText("ç§»å‹•é€Ÿåº¦ä¸Šæ˜‡");
+        cb_buff[E_EE] = new JCheckBox("ã‚¤ãƒ¼ã‚°ãƒ«ã‚¢ã‚¤");
         cb_buff[E_EE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EE].setToolTipText("‰“‹——£ƒNƒŠƒeƒBƒJƒ‹+2%");
-        cb_buff[E_CE] = new JCheckBox("ƒTƒCƒNƒƒ“(–¢À‘•)");
+        cb_buff[E_EE].setToolTipText("é è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+2%");
+        cb_buff[E_CE] = new JCheckBox("ã‚µã‚¤ã‚¯ãƒ­ãƒ³(æœªå®Ÿè£…)");
         cb_buff[E_CE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_CE].setToolTipText("ˆê’è‚ÌŠm—¦‚Å‰“‹——£ƒ_ƒ[ƒW1.5”{");
+        cb_buff[E_CE].setToolTipText("ä¸€å®šã®ç¢ºç‡ã§é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸1.5å€");
 
         col++;
 
-        lab_tmp = new JLabel("¸—ì–‚–@(’n)");
+        lab_tmp = new JLabel("ç²¾éœŠé­”æ³•(åœ°)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[E_EG] = new JCheckBox("ƒA[ƒXƒK[ƒfƒBƒAƒ“");
+        cb_buff[E_EG] = new JCheckBox("ã‚¢ãƒ¼ã‚¹ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³");
         cb_buff[E_EG].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EG].setToolTipText("DR+2");
-        cb_buff[E_EV] = new JCheckBox("ƒGƒLƒ]ƒ`ƒbƒNƒoƒCƒ^ƒ‰ƒCƒY");
+        cb_buff[E_EV] = new JCheckBox("ã‚¨ã‚­ã‚¾ãƒãƒƒã‚¯ãƒã‚¤ã‚¿ãƒ©ã‚¤ã‚º");
         cb_buff[E_EV].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EV].setToolTipText("d—Ê50%ˆÈã‚Å‚ÌHP/MP‰ñ•œ");
-        cb_buff[E_QE] = new JCheckBox("ƒNƒGƒCƒN");
+        cb_buff[E_EV].setToolTipText("é‡é‡50%ä»¥ä¸Šã§ã®HP/MPå›å¾©");
+        cb_buff[E_QE] = new JCheckBox("ã‚¯ã‚¨ã‚¤ã‚¯");
         cb_buff[E_QE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_QE].setToolTipText("ˆê’è‚ÌŠm—¦‚Å‹ß‹——£ƒ_ƒ[ƒW1.5”{");
-        cb_buff[E_EW] = new JCheckBox("ƒA[ƒXƒEƒFƒ|ƒ“");
+        cb_buff[E_QE].setToolTipText("ä¸€å®šã®ç¢ºç‡ã§è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸1.5å€");
+        cb_buff[E_EW] = new JCheckBox("ã‚¢ãƒ¼ã‚¹ã‚¦ã‚§ãƒãƒ³");
         cb_buff[E_EW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EW].setToolTipText("’n‘®«‹ß‹——£ƒ_ƒ[ƒW+2@‹ß‹——£–½’†+4");
+        cb_buff[E_EW].setToolTipText("åœ°å±æ€§è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2ã€€è¿‘è·é›¢å‘½ä¸­+4");
 
         col = 0;
         row = 2;
 
-        lab_tmp = new JLabel("ˆÅ‚Ì¸—ì–‚–@");
+        lab_tmp = new JLabel("é—‡ã®ç²¾éœŠé­”æ³•");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[D_BS] = new JCheckBox("ƒo[ƒjƒ“ƒOƒXƒsƒŠƒbƒc");
+        cb_buff[D_BS] = new JCheckBox("ãƒãƒ¼ãƒ‹ãƒ³ã‚°ã‚¹ãƒ”ãƒªãƒƒãƒ„");
         cb_buff[D_BS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_BS].setToolTipText("ˆê’èŠm—¦‚Å‹ßÚƒ_ƒ[ƒW1.5”{");
-        cb_buff[D_DB] = new JCheckBox("ƒ_ƒuƒ‹ƒuƒŒƒCƒN");
+        cb_buff[D_BS].setToolTipText("ä¸€å®šç¢ºç‡ã§è¿‘æ¥ãƒ€ãƒ¡ãƒ¼ã‚¸1.5å€");
+        cb_buff[D_DB] = new JCheckBox("ãƒ€ãƒ–ãƒ«ãƒ–ãƒ¬ã‚¤ã‚¯");
         cb_buff[D_DB].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_DB].setToolTipText("ˆê’èŠm—¦‚Å•Šíƒ_ƒ[ƒW2”{");
-        cb_buff[D_UD] = new JCheckBox("ƒAƒ“ƒLƒƒƒj[ƒhƒbƒW");
+        cb_buff[D_DB].setToolTipText("ä¸€å®šç¢ºç‡ã§æ­¦å™¨ãƒ€ãƒ¡ãƒ¼ã‚¸2å€");
+        cb_buff[D_UD] = new JCheckBox("ã‚¢ãƒ³ã‚­ãƒ£ãƒ‹ãƒ¼ãƒ‰ãƒƒã‚¸");
         cb_buff[D_UD].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_UD].setToolTipText("DG+50");
-        cb_buff[D_DE] = new JCheckBox("ƒhƒŒƒXƒCƒxƒCƒWƒ‡ƒ“");
+        cb_buff[D_DE] = new JCheckBox("ãƒ‰ãƒ¬ã‚¹ã‚¤ãƒ™ã‚¤ã‚¸ãƒ§ãƒ³");
         cb_buff[D_DE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_DE].setToolTipText("ER+18");
-        cb_buff[D_SA] = new JCheckBox("ƒVƒƒƒhƒEƒA[ƒ}[");
+        cb_buff[D_SA] = new JCheckBox("ã‚·ãƒ£ãƒ‰ã‚¦ã‚¢ãƒ¼ãƒãƒ¼");
         cb_buff[D_SA].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_SA].setToolTipText("MR+5");
-        cb_buff[D_MA] = new JCheckBox("ƒ€[ƒrƒ“ƒOƒAƒNƒZƒŒ[ƒVƒ‡ƒ“");
+        cb_buff[D_MA] = new JCheckBox("ãƒ ãƒ¼ãƒ“ãƒ³ã‚°ã‚¢ã‚¯ã‚»ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³");
         cb_buff[D_MA].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_MA].setToolTipText("ˆÚ“®‘¬“xã¸");
-        cb_buff[D_VR] = new JCheckBox("ƒxƒmƒ€ƒŒƒWƒXƒg");
+        cb_buff[D_MA].setToolTipText("ç§»å‹•é€Ÿåº¦ä¸Šæ˜‡");
+        cb_buff[D_VR] = new JCheckBox("ãƒ™ãƒãƒ ãƒ¬ã‚¸ã‚¹ãƒˆ");
         cb_buff[D_VR].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_VR].setToolTipText("“Å–³Œø");
+        cb_buff[D_VR].setToolTipText("æ¯’ç„¡åŠ¹");
 
         col++;
 
-        lab_tmp = new JLabel("—³‹Rm”é‹Z");
+        lab_tmp = new JLabel("ç«œé¨å£«ç§˜æŠ€");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[R_DS] = new JCheckBox("ƒhƒ‰ƒSƒ“ƒXƒLƒ“");
+        cb_buff[R_DS] = new JCheckBox("ãƒ‰ãƒ©ã‚´ãƒ³ã‚¹ã‚­ãƒ³");
         cb_buff[R_DS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_DS].setToolTipText("DR+5 Lv80‚ÅDR6 ˆÈ~Lv2‚²‚Æ‚ÉDR+1");
-        cb_buff[R_MB] = new JCheckBox("ƒ‚[ƒ^ƒ‹ƒ{ƒfƒB[");
+        cb_buff[R_DS].setToolTipText("DR+5 Lv80ã§DR6 ä»¥é™Lv2ã”ã¨ã«DR+1");
+        cb_buff[R_MB] = new JCheckBox("ãƒ¢ãƒ¼ã‚¿ãƒ«ãƒœãƒ‡ã‚£ãƒ¼");
         cb_buff[R_MB].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_MB].setToolTipText("ˆê’èŠm—¦‚ÅAC/2iÅ’á40jƒ_ƒ[ƒW‚Ì”½Œ‚");
-        cb_buff[R_ANTHARAS] = new JCheckBox("ŠoÁ[ƒAƒ“ƒ^ƒ‰ƒX]");
+        cb_buff[R_MB].setToolTipText("ä¸€å®šç¢ºç‡ã§AC/2ï¼ˆæœ€ä½40ï¼‰ãƒ€ãƒ¡ãƒ¼ã‚¸ã®åæ’ƒ");
+        cb_buff[R_ANTHARAS] = new JCheckBox("è¦šé†’[ã‚¢ãƒ³ã‚¿ãƒ©ã‚¹]");
         cb_buff[R_ANTHARAS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_ANTHARAS].setToolTipText("AC-3 ƒz[ƒ‹ƒh‘Ï«+10");
-        cb_buff[R_FAFURION] = new JCheckBox("ŠoÁ[ƒpƒvƒŠƒIƒ“]");
+        cb_buff[R_ANTHARAS].setToolTipText("AC-3 ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+10");
+        cb_buff[R_FAFURION] = new JCheckBox("è¦šé†’[ãƒ‘ãƒ—ãƒªã‚ªãƒ³]");
         cb_buff[R_FAFURION].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_FAFURION].setToolTipText("d—ÊƒI[ƒo‚Å‚à©‘R‰ñ•œ “€Œ‹‘Ï«+10");
-        cb_buff[R_VALAKAS] = new JCheckBox("ŠoÁ[ƒ”ƒ@ƒ‰ƒJƒX]");
+        cb_buff[R_FAFURION].setToolTipText("é‡é‡ã‚ªãƒ¼ãƒæ™‚ã§ã‚‚è‡ªç„¶å›å¾© å‡çµè€æ€§+10");
+        cb_buff[R_VALAKAS] = new JCheckBox("è¦šé†’[ãƒ´ã‚¡ãƒ©ã‚«ã‚¹]");
         cb_buff[R_VALAKAS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_VALAKAS].setToolTipText("‹ßÚ–½’†+5 ƒXƒ^ƒ“‘Ï«+10");
-        cb_buff[R_LINDVIOL] = new JCheckBox("ŠoÁ[ƒŠƒ“ƒhƒrƒIƒ‹](–¢À‘•)");
+        cb_buff[R_VALAKAS].setToolTipText("è¿‘æ¥å‘½ä¸­+5 ã‚¹ã‚¿ãƒ³è€æ€§+10");
+        cb_buff[R_LINDVIOL] = new JCheckBox("è¦šé†’[ãƒªãƒ³ãƒ‰ãƒ“ã‚ªãƒ«](æœªå®Ÿè£…)");
         cb_buff[R_LINDVIOL].setBounds(200 * row, 20 * col++, 180, 20);
         cb_buff[R_LINDVIOL].setToolTipText("DG+7");
 
         col++;
 
-        lab_tmp = new JLabel("Œ¶p–‚–@");
+        lab_tmp = new JLabel("å¹»è¡“é­”æ³•");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[I_MI] = new JCheckBox("ƒ~ƒ‰[ƒCƒ[ƒW");
+        cb_buff[I_MI] = new JCheckBox("ãƒŸãƒ©ãƒ¼ã‚¤ãƒ¡ãƒ¼ã‚¸");
         cb_buff[I_MI].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_MI].setToolTipText("DG+50");
-        cb_buff[I_CON] = new JCheckBox("ƒRƒ“ƒZƒ“ƒgƒŒ[ƒVƒ‡ƒ“");
+        cb_buff[I_CON] = new JCheckBox("ã‚³ãƒ³ã‚»ãƒ³ãƒˆãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³");
         cb_buff[I_CON].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_CON].setToolTipText("MPR+4");
-        cb_buff[I_PAT] = new JCheckBox("ƒyƒCƒVƒFƒ“ƒX");
+        cb_buff[I_PAT] = new JCheckBox("ãƒšã‚¤ã‚·ã‚§ãƒ³ã‚¹");
         cb_buff[I_PAT].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_PAT].setToolTipText("DR+2");
-        cb_buff[I_INS] = new JCheckBox("ƒCƒ“ƒTƒCƒg");
+        cb_buff[I_INS] = new JCheckBox("ã‚¤ãƒ³ã‚µã‚¤ãƒˆ");
         cb_buff[I_INS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_INS].setToolTipText("CHA‚ğœ‚­‘SƒXƒe[ƒ^ƒX+1");
-        cb_buff[I_RW] = new JCheckBox("ƒŠƒfƒ…[ƒXƒEƒFƒCƒg");
+        cb_buff[I_INS].setToolTipText("CHAã‚’é™¤ãå…¨ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹+1");
+        cb_buff[I_RW] = new JCheckBox("ãƒªãƒ‡ãƒ¥ãƒ¼ã‚¹ã‚¦ã‚§ã‚¤ãƒˆ");
         cb_buff[I_RW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_RW].setToolTipText("d—Ê-180");
-        cb_buff[I_IO] = new JCheckBox("Œ¶p[ƒI[ƒK]");
+        cb_buff[I_RW].setToolTipText("é‡é‡-180");
+        cb_buff[I_IO] = new JCheckBox("å¹»è¡“[ã‚ªãƒ¼ã‚¬]");
         cb_buff[I_IO].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_IO].setToolTipText("ƒ_ƒ[ƒW+4 –½’†+4");
-        cb_buff[I_IR] = new JCheckBox("Œ¶p[ƒŠƒbƒ`]");
+        cb_buff[I_IO].setToolTipText("ãƒ€ãƒ¡ãƒ¼ã‚¸+4 å‘½ä¸­+4");
+        cb_buff[I_IR] = new JCheckBox("å¹»è¡“[ãƒªãƒƒãƒ]");
         cb_buff[I_IR].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_IR].setToolTipText("SP+2");
-        cb_buff[I_ID] = new JCheckBox("Œ¶p[ƒ_ƒCƒAƒS[ƒŒƒ€]");
+        cb_buff[I_ID] = new JCheckBox("å¹»è¡“[ãƒ€ã‚¤ã‚¢ã‚´ãƒ¼ãƒ¬ãƒ ]");
         cb_buff[I_ID].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_ID].setToolTipText("AC-8");
-        cb_buff[I_IA] = new JCheckBox("Œ¶p[ƒAƒoƒ^[]");
+        cb_buff[I_IA] = new JCheckBox("å¹»è¡“[ã‚¢ãƒã‚¿ãƒ¼]");
         cb_buff[I_IA].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_IA].setToolTipText("—^ƒ_ƒ[ƒW+10 ”íƒ_ƒ[ƒW+5%");
-        cb_buff[I_FS] = new JCheckBox("ƒtƒH[ƒJƒXƒXƒsƒŠƒbƒc(–¢À‘•)");
+        cb_buff[I_IA].setToolTipText("ä¸ãƒ€ãƒ¡ãƒ¼ã‚¸+10 è¢«ãƒ€ãƒ¡ãƒ¼ã‚¸+5%");
+        cb_buff[I_FS] = new JCheckBox("ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚¹ãƒ”ãƒªãƒƒãƒ„(æœªå®Ÿè£…)");
         cb_buff[I_FS].setBounds(200 * row, 20 * col++, 180, 20);
-        cb_buff[I_FS].setToolTipText("–‚–@ƒNƒŠƒeƒBƒJƒ‹+5%");
-        cb_buff[I_IT] = new JCheckBox("ƒCƒ“ƒpƒNƒg(–¢À‘•)");
+        cb_buff[I_FS].setToolTipText("é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+5%");
+        cb_buff[I_IT] = new JCheckBox("ã‚¤ãƒ³ãƒ‘ã‚¯ãƒˆ(æœªå®Ÿè£…)");
         cb_buff[I_IT].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_IT].setToolTipText("‹Zp–½’†+5 ¸—ì–½’†+5 —³Œê–½’†+5 ‹°•|–½’†+5");        
+        cb_buff[I_IT].setToolTipText("æŠ€è¡“å‘½ä¸­+5 ç²¾éœŠå‘½ä¸­+5 ç«œèªå‘½ä¸­+5 ææ€–å‘½ä¸­+5");        
 
         row = 3;
         col = 0;
 
-        lab_tmp = new JLabel("ím‹Zp");
+        lab_tmp = new JLabel("æˆ¦å£«æŠ€è¡“");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[F_AG] = new JCheckBox("ƒA[ƒ}[ƒK[ƒh");
+        cb_buff[F_AG] = new JCheckBox("ã‚¢ãƒ¼ãƒãƒ¼ã‚¬ãƒ¼ãƒ‰");
         cb_buff[F_AG].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_AG].setToolTipText("DR‘‰Á -AC/5");
-        cb_buff[F_CR] = new JCheckBox("ƒNƒ‰ƒbƒVƒ…");
+        cb_buff[F_AG].setToolTipText("DRå¢—åŠ  -AC/5");
+        cb_buff[F_CR] = new JCheckBox("ã‚¯ãƒ©ãƒƒã‚·ãƒ¥");
         cb_buff[F_CR].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_CR].setToolTipText("ˆê’èŠm—¦‚Åƒ_ƒ[ƒW‘‰Á Lv/2");
-        cb_buff[F_FU] = new JCheckBox("ƒtƒ…[ƒŠ[");
+        cb_buff[F_CR].setToolTipText("ä¸€å®šç¢ºç‡ã§ãƒ€ãƒ¡ãƒ¼ã‚¸å¢—åŠ  Lv/2");
+        cb_buff[F_FU] = new JCheckBox("ãƒ•ãƒ¥ãƒ¼ãƒªãƒ¼");
         cb_buff[F_FU].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_FU].setToolTipText("ƒNƒ‰ƒbƒVƒ…”­“®Aˆê’èŠm—¦‚Åƒ_ƒ[ƒW2”{");
-        cb_buff[F_TL] = new JCheckBox("ƒ^ƒCƒ^ƒ“ƒƒbƒN");
+        cb_buff[F_FU].setToolTipText("ã‚¯ãƒ©ãƒƒã‚·ãƒ¥ç™ºå‹•æ™‚ã€ä¸€å®šç¢ºç‡ã§ãƒ€ãƒ¡ãƒ¼ã‚¸2å€");
+        cb_buff[F_TL] = new JCheckBox("ã‚¿ã‚¤ã‚¿ãƒ³ãƒ­ãƒƒã‚¯");
         cb_buff[F_TL].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_TL].setToolTipText("HP40%ˆÈ‰ºˆê’èŠm—¦‚Å‹ßÚUŒ‚‰ñ”ğ+”½Œ‚");
-        cb_buff[F_TM] = new JCheckBox("ƒ^ƒCƒ^ƒ“ƒ}ƒWƒbƒN");
+        cb_buff[F_TL].setToolTipText("HP40%ä»¥ä¸‹æ™‚ä¸€å®šç¢ºç‡ã§è¿‘æ¥æ”»æ’ƒå›é¿+åæ’ƒ");
+        cb_buff[F_TM] = new JCheckBox("ã‚¿ã‚¤ã‚¿ãƒ³ãƒã‚¸ãƒƒã‚¯");
         cb_buff[F_TM].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_TM].setToolTipText("HP40%ˆÈ‰ºˆê’èŠm—¦‚Å–‚–@UŒ‚‰ñ”ğ+”½Œ‚");
-        cb_buff[F_TB] = new JCheckBox("ƒ^ƒCƒ^ƒ“ƒuƒŠƒbƒc");
+        cb_buff[F_TM].setToolTipText("HP40%ä»¥ä¸‹æ™‚ä¸€å®šç¢ºç‡ã§é­”æ³•æ”»æ’ƒå›é¿+åæ’ƒ");
+        cb_buff[F_TB] = new JCheckBox("ã‚¿ã‚¤ã‚¿ãƒ³ãƒ–ãƒªãƒƒãƒ„");
         cb_buff[F_TB].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_TB].setToolTipText("HP40%ˆÈ‰ºˆê’èŠm—¦‚Å‰“‹——£UŒ‚‰ñ”ğ+”½Œ‚");
-        cb_buff[F_G] = new JCheckBox("ƒMƒKƒ“ƒeƒBƒbƒN");
+        cb_buff[F_TB].setToolTipText("HP40%ä»¥ä¸‹æ™‚ä¸€å®šç¢ºç‡ã§é è·é›¢æ”»æ’ƒå›é¿+åæ’ƒ");
+        cb_buff[F_G] = new JCheckBox("ã‚®ã‚¬ãƒ³ãƒ†ã‚£ãƒƒã‚¯");
         cb_buff[F_G].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_G].setToolTipText("Å‘åHP Lv/2% ‘‰Á");
+        cb_buff[F_G].setToolTipText("æœ€å¤§HP Lv/2% å¢—åŠ ");
 
         //col++;
-        lab_tmp = new JLabel("‚»‚Ì‘¼");
+        lab_tmp = new JLabel("ãã®ä»–");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[ITEM_BLUE] = new JCheckBox("ƒuƒ‹[ƒ|[ƒVƒ‡ƒ“");
+        cb_buff[ITEM_BLUE] = new JCheckBox("ãƒ–ãƒ«ãƒ¼ãƒãƒ¼ã‚·ãƒ§ãƒ³");
         cb_buff[ITEM_BLUE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[ITEM_WIZP] = new JCheckBox("ƒEƒBƒYƒ_ƒ€ƒ|[ƒVƒ‡ƒ“");
+        cb_buff[ITEM_WIZP] = new JCheckBox("ã‚¦ã‚£ã‚ºãƒ€ãƒ ãƒãƒ¼ã‚·ãƒ§ãƒ³");
         cb_buff[ITEM_WIZP].setBounds(200 * row, 20 * col++, 150, 20);
 
-        String list_cooking[] = {"—Í‹­‚¢˜a‹ƒXƒe[ƒL", "‘f‘‚¢ø‚ÌÏ•t", "Œ«‚¢µ–Ê’¹Ä‚«", "¬ˆ‚È–Ë—¿—"};
+        String list_cooking[] = {"åŠ›å¼·ã„å’Œç‰›ã‚¹ãƒ†ãƒ¼ã‚­", "ç´ æ—©ã„é®­ã®ç…®ä»˜", "è³¢ã„ä¸ƒé¢é³¥ç„¼ã", "å°ç²‹ãªéººæ–™ç†"};
         cb_buff_group[ITEM_COOKING] = new WideComboBox(list_cooking);
         cb_buff_group[ITEM_COOKING].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_COOKING] = new JCheckBox("—¿—");
+        cb_buff[ITEM_COOKING] = new JCheckBox("æ–™ç†");
         cb_buff[ITEM_COOKING].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_dessert[] = {"C—û‚ÌŒ{ƒX[ƒv", "Œ¶‘z‚ÌƒoƒVƒŠƒXƒN‚Ì—‘ƒX[ƒv", "Œ¶‘z‚ÌƒVƒ‡[ƒgƒP[ƒL", "¬ˆ‚ÈŒg‘Ñˆù—¿"};
+        String list_dessert[] = {"ä¿®ç·´ã®é¶ã‚¹ãƒ¼ãƒ—", "å¹»æƒ³ã®ãƒã‚·ãƒªã‚¹ã‚¯ã®åµã‚¹ãƒ¼ãƒ—", "å¹»æƒ³ã®ã‚·ãƒ§ãƒ¼ãƒˆã‚±ãƒ¼ã‚­", "å°ç²‹ãªæºå¸¯é£²æ–™"};
         cb_buff_group[ITEM_DESSERT] = new WideComboBox(list_dessert);
         cb_buff_group[ITEM_DESSERT].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_DESSERT] = new JCheckBox("ƒfƒU[ƒg");
+        cb_buff[ITEM_DESSERT] = new JCheckBox("ãƒ‡ã‚¶ãƒ¼ãƒˆ");
         cb_buff[ITEM_DESSERT].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_breeze[] = {"¡–ü‚Ìƒ|[ƒVƒ‡ƒ“", "áÒ‘z‚Ìƒ|[ƒVƒ‡ƒ“", "¶–½‚Ìƒ|[ƒVƒ‡ƒ“", "–‚–@‚Ìƒ|[ƒVƒ‡ƒ“",
-            "–‚–@’ïR‚Ìƒ|[ƒVƒ‡ƒ“", "pm‚Ìƒ|[ƒVƒ‡ƒ“", "Œ•m‚Ìƒ|[ƒVƒ‡ƒ“"};
+        String list_breeze[] = {"æ²»ç™’ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "ç‘æƒ³ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "ç”Ÿå‘½ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "é­”æ³•ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³",
+            "é­”æ³•æŠµæŠ—ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "è¡“å£«ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "å‰£å£«ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³"};
         cb_buff_group[ITEM_BREEZE] = new WideComboBox(list_breeze);
         cb_buff_group[ITEM_BREEZE].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_BREEZE] = new JCheckBox("’ª•—");
+        cb_buff[ITEM_BREEZE] = new JCheckBox("æ½®é¢¨");
         cb_buff[ITEM_BREEZE].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_sea[] = {"ƒhƒ‰ƒSƒ“‚ÌÎ", "•®“{‚Ìƒ|[ƒVƒ‡ƒ“", "W’†‚Ìƒ|[ƒVƒ‡ƒ“", "˜r—Í‚Ìƒ|[ƒVƒ‡ƒ“",
-            "‹@•q‚Ìƒ|[ƒVƒ‡ƒ“", "‘Ì—Í‚Ìƒ|[ƒVƒ‡ƒ“", "’m—Í‚Ìƒ|[ƒVƒ‡ƒ“", "¸_‚Ìƒ|[ƒVƒ‡ƒ“"};
+        String list_sea[] = {"ãƒ‰ãƒ©ã‚´ãƒ³ã®çŸ³", "æ†¤æ€’ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "é›†ä¸­ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "è…•åŠ›ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³",
+            "æ©Ÿæ•ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "ä½“åŠ›ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "çŸ¥åŠ›ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³", "ç²¾ç¥ã®ãƒãƒ¼ã‚·ãƒ§ãƒ³"};
         cb_buff_group[ITEM_SEA] = new WideComboBox(list_sea);
         cb_buff_group[ITEM_SEA].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_SEA] = new JCheckBox("[ŠC");
+        cb_buff[ITEM_SEA] = new JCheckBox("æ·±æµ·");
         cb_buff[ITEM_SEA].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_md[] = {"ƒEƒFƒAƒEƒ‹ƒt", "ƒoƒOƒxƒA[", "ƒTƒLƒ…ƒoƒX", "ƒGƒ‹ƒ_[", "ƒXƒg[ƒ“ƒS[ƒŒƒ€",
-            "ƒNƒ‰ƒXƒ^ƒVƒAƒ“", "ƒCƒGƒeƒB", "ƒRƒJƒgƒŠƒX", "ƒV[ƒ_ƒ“ƒT[", "ƒXƒpƒ‹ƒgƒC", "ƒXƒm[ƒ}ƒ“", "ƒ‰ƒ~ƒA",
-            "ƒuƒ‹[ƒg", "ƒuƒ‹[ƒg(“w—Í‚·‚é)", "ƒuƒ‹[ƒg(Œ«‚¢)", "ƒuƒ‹[ƒg(‘–¾‚È)", "ƒuƒ‹[ƒg(Œõ‚é)",
-            "ƒuƒ‹[ƒg(á¿‚µ‚¢)", "ƒWƒƒƒCƒAƒ“ƒg", "ƒWƒƒƒCƒAƒ“ƒg(“w—Í‚·‚é)", "ƒWƒƒƒCƒAƒ“ƒg(Œ«‚¢)",
-            "ƒWƒƒƒCƒAƒ“ƒg(‘–¾‚È)", "ƒWƒƒƒCƒAƒ“ƒg(Œõ‚é)", "ƒWƒƒƒCƒAƒ“ƒg(á¿‚µ‚¢)",
-            "ƒpƒbƒN/ƒpƒI(0’iŠK)", "ƒpƒbƒN/ƒpƒI(1’iŠK)", "ƒpƒbƒN/ƒpƒI(2’iŠK)", "ƒpƒbƒN/ƒpƒI(3’iŠK)", "ƒŠƒbƒ`"};
+        String list_md[] = {"ã‚¦ã‚§ã‚¢ã‚¦ãƒ«ãƒ•", "ãƒã‚°ãƒ™ã‚¢ãƒ¼", "ã‚µã‚­ãƒ¥ãƒã‚¹", "ã‚¨ãƒ«ãƒ€ãƒ¼", "ã‚¹ãƒˆãƒ¼ãƒ³ã‚´ãƒ¼ãƒ¬ãƒ ",
+            "ã‚¯ãƒ©ã‚¹ã‚¿ã‚·ã‚¢ãƒ³", "ã‚¤ã‚¨ãƒ†ã‚£", "ã‚³ã‚«ãƒˆãƒªã‚¹", "ã‚·ãƒ¼ãƒ€ãƒ³ã‚µãƒ¼", "ã‚¹ãƒ‘ãƒ«ãƒˆã‚¤", "ã‚¹ãƒãƒ¼ãƒãƒ³", "ãƒ©ãƒŸã‚¢",
+            "ãƒ–ãƒ«ãƒ¼ãƒˆ", "ãƒ–ãƒ«ãƒ¼ãƒˆ(åŠªåŠ›ã™ã‚‹)", "ãƒ–ãƒ«ãƒ¼ãƒˆ(è³¢ã„)", "ãƒ–ãƒ«ãƒ¼ãƒˆ(è¡æ˜ãª)", "ãƒ–ãƒ«ãƒ¼ãƒˆ(å…‰ã‚‹)",
+            "ãƒ–ãƒ«ãƒ¼ãƒˆ(çœ©ã—ã„)", "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ", "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ(åŠªåŠ›ã™ã‚‹)", "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ(è³¢ã„)",
+            "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ(è¡æ˜ãª)", "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ(å…‰ã‚‹)", "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ(çœ©ã—ã„)",
+            "ãƒ‘ãƒƒã‚¯/ãƒ‘ã‚ª(0æ®µéš)", "ãƒ‘ãƒƒã‚¯/ãƒ‘ã‚ª(1æ®µéš)", "ãƒ‘ãƒƒã‚¯/ãƒ‘ã‚ª(2æ®µéš)", "ãƒ‘ãƒƒã‚¯/ãƒ‘ã‚ª(3æ®µéš)", "ãƒªãƒƒãƒ"};
         cb_buff_group[ITEM_MD] = new WideComboBox(list_md);
         cb_buff_group[ITEM_MD].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_MD] = new JCheckBox("‹Œƒ}ƒWƒbƒNƒh[ƒ‹");
+        cb_buff[ITEM_MD] = new JCheckBox("æ—§ãƒã‚¸ãƒƒã‚¯ãƒ‰ãƒ¼ãƒ«");
         cb_buff[ITEM_MD].setBounds(200 * row, 20 * col++, 100, 20);
 
         String list_md_op[] = {"AC-2", "AC-4", "AC-5/DR+2",
             "AC-1/MR+1", "AC-3/MR+5", "AC-5/MR+10",
-            "MPR+1(“¯Šú)", "MPR+3(“¯Šú)", "MPR+7(“¯Šú)",
-            "MPR+1(”ñ“¯Šú)", "MPR+3(”ñ“¯Šú)", "MPR+7(”ñ“¯Šú)",
+            "MPR+1(åŒæœŸ)", "MPR+3(åŒæœŸ)", "MPR+7(åŒæœŸ)",
+            "MPR+1(éåŒæœŸ)", "MPR+3(éåŒæœŸ)", "MPR+7(éåŒæœŸ)",
             "HP+10/MP+10", "HP+35/MP+35", "HP+60/MP+60",
-            "‹ß‹——£–½’†+1/‰“‹——£–½’†+1", "‹ß‹——£–½’†+2/‰“‹——£–½’†+2", "‹ß‹——£–½’†+4/‰“‹——£–½’†+4"};
+            "è¿‘è·é›¢å‘½ä¸­+1/é è·é›¢å‘½ä¸­+1", "è¿‘è·é›¢å‘½ä¸­+2/é è·é›¢å‘½ä¸­+2", "è¿‘è·é›¢å‘½ä¸­+4/é è·é›¢å‘½ä¸­+4"};
         cb_buff_group[ITEM_MD_OP] = new WideComboBox(list_md_op);
         cb_buff_group[ITEM_MD_OP].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_MD_OP] = new JCheckBox("ƒpƒbƒN/ƒpƒI OP");
+        cb_buff[ITEM_MD_OP] = new JCheckBox("ãƒ‘ãƒƒã‚¯/ãƒ‘ã‚ª OP");
         cb_buff[ITEM_MD_OP].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_md2[] = {"ƒJƒJƒV", "ƒXƒm[ƒ}ƒ“", "ƒ}[ƒƒCƒh", "ƒ‰ƒ”ƒ@ƒS[ƒŒƒ€",
-            "ƒWƒƒƒCƒAƒ“ƒg", "ƒuƒ‰ƒbƒNƒGƒ‹ƒ_[", "ƒTƒLƒ…ƒoƒXƒNƒC[ƒ“", "ƒhƒŒƒCƒN", "ƒLƒ“ƒOƒoƒOƒxƒA[", "ƒ_ƒCƒAƒS[ƒŒƒ€",
-            "ƒTƒCƒNƒƒvƒX", "ƒiƒCƒgƒoƒ‹ƒh", "ƒVƒA[",
-            "ƒfƒXƒiƒCƒg", "ƒf[ƒ‚ƒ“", "ŠoÁƒpƒI", "ƒ}ƒ~[ƒ[ƒh",
-            "ƒAƒCƒŠƒX", "ƒoƒ“ƒpƒCƒA", "ƒoƒ‰ƒ“ƒJ", "ƒAƒCƒXƒNƒC[ƒ“",
-            "ƒAƒ“ƒ^ƒ‰ƒX", "ƒpƒvƒŠƒIƒ“", "ƒŠƒ“ƒhƒrƒIƒ‹", "ƒ”ƒ@ƒ‰ƒJƒX"
+        String list_md2[] = {"ã‚«ã‚«ã‚·", "ã‚¹ãƒãƒ¼ãƒãƒ³", "ãƒãƒ¼ãƒ¡ã‚¤ãƒ‰", "ãƒ©ãƒ´ã‚¡ã‚´ãƒ¼ãƒ¬ãƒ ",
+            "ã‚¸ãƒ£ã‚¤ã‚¢ãƒ³ãƒˆ", "ãƒ–ãƒ©ãƒƒã‚¯ã‚¨ãƒ«ãƒ€ãƒ¼", "ã‚µã‚­ãƒ¥ãƒã‚¹ã‚¯ã‚¤ãƒ¼ãƒ³", "ãƒ‰ãƒ¬ã‚¤ã‚¯", "ã‚­ãƒ³ã‚°ãƒã‚°ãƒ™ã‚¢ãƒ¼", "ãƒ€ã‚¤ã‚¢ã‚´ãƒ¼ãƒ¬ãƒ ",
+            "ã‚µã‚¤ã‚¯ãƒ­ãƒ—ã‚¹", "ãƒŠã‚¤ãƒˆãƒãƒ«ãƒ‰", "ã‚·ã‚¢ãƒ¼",
+            "ãƒ‡ã‚¹ãƒŠã‚¤ãƒˆ", "ãƒ‡ãƒ¼ãƒ¢ãƒ³", "è¦šé†’ãƒ‘ã‚ª", "ãƒãƒŸãƒ¼ãƒ­ãƒ¼ãƒ‰",
+            "ã‚¢ã‚¤ãƒªã‚¹", "ãƒãƒ³ãƒ‘ã‚¤ã‚¢", "ãƒãƒ©ãƒ³ã‚«", "ã‚¢ã‚¤ã‚¹ã‚¯ã‚¤ãƒ¼ãƒ³",
+            "ã‚¢ãƒ³ã‚¿ãƒ©ã‚¹", "ãƒ‘ãƒ—ãƒªã‚ªãƒ³", "ãƒªãƒ³ãƒ‰ãƒ“ã‚ªãƒ«", "ãƒ´ã‚¡ãƒ©ã‚«ã‚¹"
         };
 
         cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);
         cb_buff_group[ITEM_MD2].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_MD2] = new JCheckBox("Vƒ}ƒWƒbƒNƒh[ƒ‹");
+        cb_buff[ITEM_MD2] = new JCheckBox("æ–°ãƒã‚¸ãƒƒã‚¯ãƒ‰ãƒ¼ãƒ«");
         cb_buff[ITEM_MD2].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_koma[] = {"3í—Ş", "5í—Ş"};
+        String list_koma[] = {"3ç¨®é¡", "5ç¨®é¡"};
         cb_buff_group[KOMA] = new WideComboBox(list_koma);
         cb_buff_group[KOMA].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[KOMA] = new JCheckBox("ƒRƒ}");
+        cb_buff[KOMA] = new JCheckBox("ã‚³ãƒ");
         cb_buff[KOMA].setBounds(200 * row, 20 * col++, 100, 20);
 
-        cb_buff[SEC] = new JCheckBox("ƒZƒLƒ…ƒŠƒeƒB");
+        cb_buff[SEC] = new JCheckBox("ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£");
         cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
 
         String list_vip[] = {"Red", "Gold", "Platinum"};
@@ -1496,49 +1496,49 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[VIP] = new JCheckBox("VIP");
         cb_buff[VIP].setBounds(200 * row, 20 * col++, 100, 20);
 
-        cb_buff[CLAY] = new JCheckBox("ƒNƒŒƒC");
+        cb_buff[CLAY] = new JCheckBox("ã‚¯ãƒ¬ã‚¤");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
 
-        cb_buff[BS_COIN] = new JCheckBox("•Ö‚Ì‰ÁŒì");
+        cb_buff[BS_COIN] = new JCheckBox("é»’è›‡ã®åŠ è­·");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ƒ_ƒ[ƒWŒ¸­+3 ˆÅ‘Ï«+10");
+        cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ãƒ€ãƒ¡ãƒ¼ã‚¸æ¸›å°‘+3 é—‡è€æ€§+10");
 
-        //y_ikeda‚³‚ñ‚É‚æ‚éC³‚ğQl‚É
-        String list_hst[] = {"1ŒÂ", "2ŒÂ", "3ŒÂ", "4ŒÂ", "5ŒÂ"};
+        //y_ikedaã•ã‚“ã«ã‚ˆã‚‹ä¿®æ­£ã‚’å‚è€ƒã«
+        String list_hst[] = {"1å€‹", "2å€‹", "3å€‹", "4å€‹", "5å€‹"};
         cb_buff_group[L_HST] = new WideComboBox(list_hst);
         cb_buff_group[L_HST].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[L_HST] = new JCheckBox("¬’·‚Ì‰ÊÀ");
+        cb_buff[L_HST] = new JCheckBox("æˆé•·ã®æœå®Ÿ");
         cb_buff[L_HST].setBounds(200 * row, 20 * col++, 100, 20);
 
         String list_H_HP[] = {"HP+50", "HP+100", "HP+200"};
         cb_buff_group[H_HP] = new WideComboBox(list_H_HP);
         cb_buff_group[H_HP].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[H_HP] = new JCheckBox("¶–½‚Ìƒ{[ƒiƒX");
+        cb_buff[H_HP] = new JCheckBox("ç”Ÿå‘½ã®ãƒœãƒ¼ãƒŠã‚¹");
         cb_buff[H_HP].setBounds(200 * row, 20 * col++, 100, 20);
 
         String list_H_AC[] = {"AC-1", "AC-2", "AC-3"};
         cb_buff_group[H_AC] = new WideComboBox(list_H_AC);
         cb_buff_group[H_AC].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[H_AC] = new JCheckBox("“Sb‚Ìƒ{[ƒiƒX");
+        cb_buff[H_AC] = new JCheckBox("é‰„ç”²ã®ãƒœãƒ¼ãƒŠã‚¹");
         cb_buff[H_AC].setBounds(200 * row, 20 * col++, 100, 20);
 
         String list_H_PVPDR[] = {"PVP DR+1", "PVP DR+2"};
         cb_buff_group[H_PVPDR] = new WideComboBox(list_H_PVPDR);
         cb_buff_group[H_PVPDR].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[H_PVPDR] = new JCheckBox("¶‘¶‚Ìƒ{[ƒiƒX");
+        cb_buff[H_PVPDR] = new JCheckBox("ç”Ÿå­˜ã®ãƒœãƒ¼ãƒŠã‚¹");
         cb_buff[H_PVPDR].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_H_PVP[] = {"PVP ƒ_ƒ+1", "PVP ƒ_ƒ+2"};
+        String list_H_PVP[] = {"PVP ãƒ€ãƒ¡+1", "PVP ãƒ€ãƒ¡+2"};
         cb_buff_group[H_PVP] = new WideComboBox(list_H_PVP);
         cb_buff_group[H_PVP].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[H_PVP] = new JCheckBox("ˆÃE‚Ìƒ{[ƒiƒX");
+        cb_buff[H_PVP] = new JCheckBox("æš—æ®ºã®ãƒœãƒ¼ãƒŠã‚¹");
         cb_buff[H_PVP].setBounds(200 * row, 20 * col++, 100, 20);
 
-        cb_buff[H_RK] = new JCheckBox("ƒ‰ƒ“ƒJ[ƒ{[ƒiƒX");
+        cb_buff[H_RK] = new JCheckBox("ãƒ©ãƒ³ã‚«ãƒ¼ãƒœãƒ¼ãƒŠã‚¹");
         cb_buff[H_RK].setBounds(200 * row, 20 * col++, 100, 20);
-        cb_buff[H_RK].setToolTipText("<html>"+ "STR+1[ŒNå][ƒiƒCƒg][ƒ_[ƒNƒGƒ‹ƒt][ƒhƒ‰ƒSƒ“ƒiƒCƒg][ƒEƒHƒŠƒA[]"
-                                     + "<br>"+ "DEX+1[ƒGƒ‹ƒt]"
-                                     + "<br>"+ "INT+1[ƒEƒBƒU[ƒh][ƒCƒŠƒ…[ƒWƒ‡ƒjƒXƒg]"+"</html>");       
+        cb_buff[H_RK].setToolTipText("<html>"+ "STR+1[å›ä¸»][ãƒŠã‚¤ãƒˆ][ãƒ€ãƒ¼ã‚¯ã‚¨ãƒ«ãƒ•][ãƒ‰ãƒ©ã‚´ãƒ³ãƒŠã‚¤ãƒˆ][ã‚¦ã‚©ãƒªã‚¢ãƒ¼]"
+                                     + "<br>"+ "DEX+1[ã‚¨ãƒ«ãƒ•]"
+                                     + "<br>"+ "INT+1[ã‚¦ã‚£ã‚¶ãƒ¼ãƒ‰][ã‚¤ãƒªãƒ¥ãƒ¼ã‚¸ãƒ§ãƒ‹ã‚¹ãƒˆ]"+"</html>");       
 
         MP mp = new MP();
 
@@ -1558,9 +1558,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         //----------
-        //ƒpƒlƒ‹‚S
+        //ãƒ‘ãƒãƒ«ï¼”
         //----------
-        lab_tmp = new JLabel("‘Ï«", SwingConstants.CENTER);
+        lab_tmp = new JLabel("è€æ€§", SwingConstants.CENTER);
         lab_tmp.setBounds(0, 0, 200, 25);
         panels[3].add(lab_tmp);
         for (int i = 0; i < ELEM_LIST.length; i++) {
@@ -1587,7 +1587,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_target_mr.setBounds(200, 125, 100, 25);
         panels[3].add(lab_target_mr);
 
-        lab_tmp = new JLabel("‘ÎÛ", SwingConstants.CENTER);
+        lab_tmp = new JLabel("å¯¾è±¡", SwingConstants.CENTER);
         lab_tmp.setBounds(0, 175, 100, 25);
         panels[3].add(lab_tmp);
         String mode_list[] = {"NPC", "PC"};
@@ -1605,7 +1605,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_target_ac = new JComboBox(target_ac_list);
         cb_target_ac.setBounds(100, 200, 100, 25);
         panels[3].add(cb_target_ac);
-        cb_hittyuu = new JCheckBox("•K’†");
+        cb_hittyuu = new JCheckBox("å¿…ä¸­");
         cb_hittyuu.addActionListener(this);
         cb_hittyuu.setBounds(220, 200, 100, 25);
         panels[3].add(cb_hittyuu);
@@ -1635,49 +1635,49 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_target_dg.setBounds(100, 250, 100, 25);
         panels[3].add(cb_target_dg);
 
-        cb_sonsyou = new JCheckBox("‘¹");
+        cb_sonsyou = new JCheckBox("æå‚·");
         cb_sonsyou.addActionListener(this);
         cb_sonsyou.setBounds(220, 175, 100, 25);
         panels[3].add(cb_sonsyou);
 
-        lab_tmp = new JLabel("V‹Kİ’è", SwingConstants.CENTER);
+        lab_tmp = new JLabel("æ–°è¦è¨­å®š", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 25, 100, 25);
         panels[3].add(lab_tmp);
         tf_res_name = new JTextField("");
         tf_res_name.setBounds(520, 25, 100, 25);
         panels[3].add(tf_res_name);
-        bt_save_res = new JButton("ì¬");
+        bt_save_res = new JButton("ä½œæˆ");
         bt_save_res.setActionCommand("save_res");
         bt_save_res.addActionListener(this);
         bt_save_res.setBounds(620, 25, 100, 25);
         panels[3].add(bt_save_res);
 
-        lab_tmp = new JLabel("İ’èƒŠƒXƒg", SwingConstants.CENTER);
+        lab_tmp = new JLabel("è¨­å®šãƒªã‚¹ãƒˆ", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 50, 100, 25);
         panels[3].add(lab_tmp);
         cb_res = new JComboBox();
         cb_res.setBounds(520, 50, 100, 25);
         panels[3].add(cb_res);
-        bt_load_res = new JButton("“Ç‚İ‚İ");
+        bt_load_res = new JButton("èª­ã¿è¾¼ã¿");
         bt_load_res.setActionCommand("load_res");
         bt_load_res.addActionListener(this);
         bt_load_res.setBounds(620, 50, 100, 25);
         panels[3].add(bt_load_res);
-        bt_ow_res = new JButton("ã‘‚«");
+        bt_ow_res = new JButton("ä¸Šæ›¸ã");
         bt_ow_res.setActionCommand("ow_res");
         bt_ow_res.addActionListener(this);
         bt_ow_res.setBounds(620, 75, 100, 25);
         panels[3].add(bt_ow_res);
-        bt_del_res = new JButton("íœ");
+        bt_del_res = new JButton("å‰Šé™¤");
         bt_del_res.setActionCommand("del_res");
         bt_del_res.addActionListener(this);
         bt_del_res.setBounds(620, 100, 100, 25);
         panels[3].add(bt_del_res);
 
-        lab_tmp = new JLabel("‹N“®", SwingConstants.CENTER);
+        lab_tmp = new JLabel("èµ·å‹•æ™‚", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 125, 100, 25);
         panels[3].add(lab_tmp);
-        JButton bt_default = new JButton("•ÏX");
+        JButton bt_default = new JButton("å¤‰æ›´");
         bt_default.setBounds(620, 125, 100, 25);
         bt_default.addActionListener(this);
         bt_default.setActionCommand("change_default");
@@ -1689,7 +1689,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         refresh();
 
-        lab_tmp = new JLabel("ŠÈˆÕŒvZ‹@", SwingConstants.CENTER);
+        lab_tmp = new JLabel("ç°¡æ˜“è¨ˆç®—æ©Ÿ", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 250, 200, 25);
         panels[3].add(lab_tmp);
 
@@ -1709,25 +1709,25 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         tf_e_hpr.addActionListener(this);
         panels[3].add(tf_e_hpr);
 
-        lab_tmp = new JLabel("ƒ^ƒCƒv", SwingConstants.CENTER);
+        lab_tmp = new JLabel("ã‚¿ã‚¤ãƒ—", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 350, 100, 25);
         panels[3].add(lab_tmp);
-        String[] type_list = {"’Êí", "ˆ«–‚", "•s€"};
+        String[] type_list = {"é€šå¸¸", "æ‚ªé­”", "ä¸æ­»"};
         cb_e_type = new JComboBox(type_list);
         cb_e_type.setBounds(520, 350, 100, 25);
         cb_e_type.addActionListener(this);
         panels[3].add(cb_e_type);
 
-        lab_tmp = new JLabel("ƒTƒCƒY", SwingConstants.CENTER);
+        lab_tmp = new JLabel("ã‚µã‚¤ã‚º", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 375, 100, 25);
         panels[3].add(lab_tmp);
-        String[] size_list = {"¬", "‘å"};
+        String[] size_list = {"å°", "å¤§"};
         cb_e_size = new JComboBox(size_list);
         cb_e_size.setBounds(520, 375, 100, 25);
         cb_e_size.addActionListener(this);
         panels[3].add(cb_e_size);
 
-        lab_tmp = new JLabel("í“¬ŠÔ(„’è)", SwingConstants.CENTER);
+        lab_tmp = new JLabel("æˆ¦é—˜æ™‚é–“(æ¨å®š)", SwingConstants.CENTER);
         lab_tmp.setBounds(420, 425, 100, 25);
         panels[3].add(lab_tmp);
         lab_time = new JLabel();
@@ -1743,9 +1743,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         } catch (IOException ex) {
         }
 
-//        String[] kago_list = {"‚È‚µ", "…—³", "ƒnƒƒEƒBƒ“"};
+//        String[] kago_list = {"ãªã—", "æ°´ç«œ", "ãƒãƒ­ã‚¦ã‚£ãƒ³"};
 //        cb_kago = new JComboBox(kago_list);
-//        JLabel kagolab = new JLabel("‰ÁŒì", SwingConstants.CENTER);
+//        JLabel kagolab = new JLabel("åŠ è­·", SwingConstants.CENTER);
 //        kagolab.setBounds(0, 350, 100, 25);
 //        kago.setBounds(100, 350, 100, 25);
 //        panel4.add(kago);
@@ -1762,7 +1762,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 //        panel4.add(ab);
 //        ab.addActionListener(data);
 //
-//        JLabel speedlab = new JLabel("UŒ‚‘¬“x", SwingConstants.CENTER);
+//        JLabel speedlab = new JLabel("æ”»æ’ƒé€Ÿåº¦", SwingConstants.CENTER);
 //        speedlab.setBounds(0, 425, 100, 25);
 //        panel4.add(speedlab);
 //        enemy_speed = new JFormattedTextField(60.0);
@@ -1775,7 +1775,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 //        cb.addActionListener(data);
 //        panel4.add(cb);
 //
-//        hangyaku = new JToggleButton("”½‹tÒ‚Ì‚");
+//        hangyaku = new JToggleButton("åé€†è€…ã®ç›¾");
 //        String[] en = {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9"};
 //        hangyaku_enchant = new JComboBox(en);
 //        hangyaku.setBounds(100, 475, 100, 25);
@@ -1830,7 +1830,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
             File f = file;
             if (f != null) {
-                int ret = JOptionPane.showConfirmDialog(this, f.getName() + "‚ğã‘‚«‚µ‚Ü‚·", "Šm”F", JOptionPane.YES_NO_OPTION);
+                int ret = JOptionPane.showConfirmDialog(this, f.getName() + "ã‚’ä¸Šæ›¸ãã—ã¾ã™", "ç¢ºèª", JOptionPane.YES_NO_OPTION);
                 if (ret == JOptionPane.NO_OPTION) {
                     return;
                 }
@@ -1873,7 +1873,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
             if (f != null) {
                 if (f.exists()) {
-                    int c = JOptionPane.showConfirmDialog(this, f.getName() + "‚ğã‘‚«‚µ‚Ü‚·", "Šm”F", JOptionPane.YES_NO_OPTION);
+                    int c = JOptionPane.showConfirmDialog(this, f.getName() + "ã‚’ä¸Šæ›¸ãã—ã¾ã™", "ç¢ºèª", JOptionPane.YES_NO_OPTION);
                     if (c == JOptionPane.NO_OPTION) {
                         return;
                     }
@@ -1944,9 +1944,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             return;
         }
 
-        if (e.getActionCommand().equals("ƒAƒ[")) {
+        if (e.getActionCommand().equals("ã‚¢ãƒ­ãƒ¼")) {
             switch (calc.buki.type) {
-                case "ƒ{ƒE":
+                case "ãƒœã‚¦":
                     try {
                         if (cb_arrow.getSelectedIndex() == -1) {
                             InputStream is = eq_files.getInputStream(arrow_entrys.get(0));
@@ -1965,7 +1965,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                         System.out.println(ex);
                     }
                     break;
-                case "ƒKƒ“ƒgƒŒƒbƒg":
+                case "ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ":
                     try {
                         if (cb_arrow.getSelectedIndex() == -1) {
                             InputStream is = eq_files.getInputStream(sting_entrys.get(0));
@@ -1986,7 +1986,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
         }
 
-        //‘•”õ‚Ì“Ç‚İ‚İ
+        //è£…å‚™ã®èª­ã¿è¾¼ã¿
         for (int i = 0; i < EQ_LIST.length; i++) {
             if (e.getSource().equals(cb_eq[i])) {
                 try {
@@ -2000,22 +2000,22 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                 br.close();
 
                                 switch (calc.buki.type) {
-                                    case "ƒNƒƒE":
+                                    case "ã‚¯ãƒ­ã‚¦":
                                         tf_buki_sp_rate.setEnabled(true);
                                         tf_buki_sp_rate.setText(Double.toString(calc.buki.critical_rate));
                                         break;
-                                    case "ƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh":
+                                    case "ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰":
                                         tf_buki_sp_rate.setEnabled(true);
                                         tf_buki_sp_rate.setText(Double
                                                 .toString(calc.buki.double_hit_rate));
                                         break;
-                                    case "ƒ`ƒF[ƒ“ƒ\[ƒh":
+                                    case "ãƒã‚§ãƒ¼ãƒ³ã‚½ãƒ¼ãƒ‰":
                                         tf_buki_sp_rate.setEnabled(true);
                                         tf_buki_sp_rate.setText(Double
                                                 .toString(calc.buki.week_point_exposure));
                                         break;
                                     default:
-                                        if (cb_cls.getSelectedIndex() == F && !calc.buki.two_hands && calc.buki.type.equals("“İŠí")) {
+                                        if (cb_cls.getSelectedIndex() == F && !calc.buki.two_hands && calc.buki.type.equals("éˆå™¨")) {
                                             tb_blessed2.setEnabled(true);
                                             cb_eq[1].setEnabled(true);
                                             cb_eq_en[1].setEnabled(true);
@@ -2031,7 +2031,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                         break;
                                 }
 
-                                //–‚–@ƒfƒBƒŒƒC
+                                //é­”æ³•ãƒ‡ã‚£ãƒ¬ã‚¤
                                 if (calc.buki.magic_name.equals("")) {
                                     tf_mag_delay.setEnabled(false);
                                     tf_mag_delay.setText("0.0");
@@ -2048,7 +2048,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                 for (int n = 0; n <= calc.buki.max_enchant; n++) {
                                     cb_eq_en[i].addItem(n);
                                 }
-                                // ƒ[ƒh‚ÉˆÀ‘SŒ—‚Ü‚Å‹­‰»
+                                // ãƒ­ãƒ¼ãƒ‰æ™‚ã«å®‰å…¨åœã¾ã§å¼·åŒ–
                                 if (calc.buki.safety != 0) {
                                     cb_eq_en[i].setSelectedIndex(calc.buki.safety + 1);
                                 }
@@ -2061,16 +2061,16 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                     cb_elem_1.setEnabled(false);
                                 }
 
-                                //—¼è•Ší‚Í‚‘•”õ‚ğ‰ğœ
+                                //ä¸¡æ‰‹æ­¦å™¨ã¯ç›¾è£…å‚™ã‚’è§£é™¤
                                 if (calc.buki.two_hands) {
-                                    if (calc.bougu[0].type.equals("ƒV[ƒ‹ƒh")) {
+                                    if (calc.bougu[0].type.equals("ã‚·ãƒ¼ãƒ«ãƒ‰")) {
                                         cb_eq[1].setSelectedIndex(0);
                                     }
                                 }
                                 try {
                                     cb_arrow.removeAllItems();
                                     switch (calc.buki.type) {
-                                        case "ƒ{ƒE":
+                                        case "ãƒœã‚¦":
                                             for (ZipEntry arrow : arrow_entrys) {
                                                 InputStream is2 = eq_files.getInputStream(arrow);
                                                 InputStreamReader isr2 = new InputStreamReader(is2);
@@ -2086,7 +2086,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                                 cb_arrow.addItem(name);
                                             }
                                             break;
-                                        case "ƒKƒ“ƒgƒŒƒbƒg":
+                                        case "ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ":
                                             for (ZipEntry sting : sting_entrys) {
                                                 InputStream is2 = eq_files.getInputStream(sting);
                                                 InputStreamReader isr2 = new InputStreamReader(is2);
@@ -2115,7 +2115,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                 for (int n = 0; n <= calc.buki2.max_enchant; n++) {
                                     cb_eq_en[i].addItem(n);
                                 }
-                                // ƒ[ƒh‚ÉˆÀ‘SŒ—‚Ü‚Å‹­‰»
+                                // ãƒ­ãƒ¼ãƒ‰æ™‚ã«å®‰å…¨åœã¾ã§å¼·åŒ–
                                 if (calc.buki2.safety != 0) {
                                     cb_eq_en[i].setSelectedIndex(calc.buki2.safety + 1);
                                 }
@@ -2135,22 +2135,22 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                 for (int n = 0; n <= calc.bougu[i - 2].max_enchant; n++) {
                                     cb_eq_en[i].addItem(n);
                                 }
-                                // ˆÀ‘SŒ—0ˆÈŠO‚Ì‘•”õ‚ğƒ[ƒh‚ÉˆÀ‘SŒ—+1‚Ü‚Å‹­‰»
+                                // å®‰å…¨åœ0ä»¥å¤–ã®è£…å‚™ã‚’ãƒ­ãƒ¼ãƒ‰æ™‚ã«å®‰å…¨åœ+1ã¾ã§å¼·åŒ–
                                 if (calc.bougu[i - 2].safety != 0) {
                                     cb_eq_en[i]
                                             .setSelectedIndex(calc.bougu[i - 2].safety + 1);
                                 }
                                 calc.bougu[i - 2].checkEnchant();
-                                if (EQ_LIST[i].equals("ƒVƒƒƒc")) {
+                                if (EQ_LIST[i].equals("ã‚·ãƒ£ãƒ„")) {
                                     cb_ts_elem.setSelectedIndex(0);
 
                                     if (calc.bougu[i - 2].element_enchant) {
                                         cb_ts_elem.setEnabled(true);
                                         tb_ts_sp.setEnabled(false);
                                         tb_ts_sp.setSelected(false);
-                                    } else if (calc.bougu[i - 2].name.contains("‚Ì–‚–@’ïR")
-                                            || calc.bougu[i - 2].name.contains("‚ÌƒXƒ^ƒ“‘Ï«")
-                                            || calc.bougu[i - 2].name.contains("‚Ìƒz[ƒ‹ƒh‘Ï«")) {
+                                    } else if (calc.bougu[i - 2].name.contains("ã®é­”æ³•æŠµæŠ—")
+                                            || calc.bougu[i - 2].name.contains("ã®ã‚¹ã‚¿ãƒ³è€æ€§")
+                                            || calc.bougu[i - 2].name.contains("ã®ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§")) {
                                         tb_ts_sp.setEnabled(true);
                                         cb_ts_elem.setSelectedIndex(0);
                                         cb_ts_elem.setEnabled(false);
@@ -2162,7 +2162,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                     }
                                 }
                                 if (calc.buki.two_hands) {
-                                    if (calc.bougu[0].type.equals("ƒV[ƒ‹ƒh")) {
+                                    if (calc.bougu[0].type.equals("ã‚·ãƒ¼ãƒ«ãƒ‰")) {
                                         cb_eq[2].setSelectedIndex(0);
                                         cb_eq_en[2].setSelectedIndex(0);
                                     }
@@ -2408,10 +2408,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 while (enumeration.hasMoreElements()) {
                     ZipEntry entry = (ZipEntry) enumeration.nextElement();
 
-                    if (entry.getName().startsWith("E/ƒAƒ[/a") && i == 0) {
+                    if (entry.getName().startsWith("E/ã‚¢ãƒ­ãƒ¼/a") && i == 0) {
                         arrow_entrys.add(entry);
                     }
-                    if (entry.getName().startsWith("E/ƒAƒ[/s") && i == 0) {
+                    if (entry.getName().startsWith("E/ã‚¢ãƒ­ãƒ¼/s") && i == 0) {
                         sting_entrys.add(entry);
                     }
 
@@ -2420,7 +2420,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
                             String line;
                             while ((line = br.readLine()) != null) {
-                                if (line.startsWith("‘•”õ=")) {
+                                if (line.startsWith("è£…å‚™=")) {
                                     eq = line;
                                 }
                             }
@@ -2462,19 +2462,19 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     class Memory implements ActionListener {
 
-        String[][] EQ;//‘•”õ–¼
-        int[][] EN;//‘•”õƒGƒ“ƒ`ƒƒ
-        boolean[] BL1;//j•Ÿ1
-        boolean[] BL2;//j•Ÿ2
-        int[] ELEM1;//•Ší‘®«1
-        int[] ELEM2;//•Ší‘®«2
-        int[] TS_ELEM;//TSˆóÛ
-        String[] ARROW;//–î
-        double[] SP_R;//“Á«”­“®—¦
-        double[] MAG_R;//–‚–@”­“®—¦
-        double[] MAG_D;//–‚–@ƒfƒBƒŒƒC
-        double[] MAG_P;//–‚–@ˆĞ—Í
-        boolean[] TS_SP;//“Á«TS
+        String[][] EQ;//è£…å‚™å
+        int[][] EN;//è£…å‚™ã‚¨ãƒ³ãƒãƒ£
+        boolean[] BL1;//ç¥ç¦1
+        boolean[] BL2;//ç¥ç¦2
+        int[] ELEM1;//æ­¦å™¨å±æ€§1
+        int[] ELEM2;//æ­¦å™¨å±æ€§2
+        int[] TS_ELEM;//TSå°è±¡
+        String[] ARROW;//çŸ¢
+        double[] SP_R;//ç‰¹æ€§ç™ºå‹•ç‡
+        double[] MAG_R;//é­”æ³•ç™ºå‹•ç‡
+        double[] MAG_D;//é­”æ³•ãƒ‡ã‚£ãƒ¬ã‚¤
+        double[] MAG_P;//é­”æ³•å¨åŠ›
+        boolean[] TS_SP;//ç‰¹æ€§TS
 
         final int CH = 3;
 
@@ -2652,15 +2652,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         Element root = document.createElement("root");
         document.appendChild(root);
 
-        Element e_class = document.createElement("ƒNƒ‰ƒX");
+        Element e_class = document.createElement("ã‚¯ãƒ©ã‚¹");
         root.appendChild(e_class);
         e_class.setTextContent(cb_cls.getSelectedItem().toString());
 
-        Element e_lev = document.createElement("ƒŒƒxƒ‹");
+        Element e_lev = document.createElement("ãƒ¬ãƒ™ãƒ«");
         root.appendChild(e_lev);
         e_lev.setTextContent(cb_lev.getSelectedItem().toString());
 
-        Element e_status = document.createElement("ƒXƒe[ƒ^ƒX");
+        Element e_status = document.createElement("ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹");
         root.appendChild(e_status);
 
         String st[] = {"---", "STR", "DEX", "CON", "INT", "WIS", "CHA"};
@@ -2692,30 +2692,30 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             e_elixir.appendChild(e_elixir_data);
         }
 
-        Element e_polymorph = document.createElement("•Ïg");
+        Element e_polymorph = document.createElement("å¤‰èº«");
         root.appendChild(e_polymorph);
         e_polymorph.setTextContent(cb_morph_type.getSelectedItem().toString());
 
-        Element e_polymorph_level = document.createElement("•ÏgƒŒƒxƒ‹");
+        Element e_polymorph_level = document.createElement("å¤‰èº«ãƒ¬ãƒ™ãƒ«");
         root.appendChild(e_polymorph_level);
         e_polymorph_level.setTextContent(cb_morph_level.getSelectedItem().toString());
 
-        Element e_morph_manually = document.createElement("•Ïgİ’è");
+        Element e_morph_manually = document.createElement("å¤‰èº«è¨­å®š");
         e_morph_manually.setTextContent(Boolean.toString(cb_speed_auto.isSelected()));
         root.appendChild(e_morph_manually);
 
-        Element e_buki_manually = document.createElement("•Šíİ’è");
+        Element e_buki_manually = document.createElement("æ­¦å™¨è¨­å®š");
         e_buki_manually.setTextContent(Boolean.toString(cb_mag_auto.isSelected()));
         root.appendChild(e_buki_manually);
 
         if (!cb_speed_auto.isSelected()) {
-            e_morph_manually.setAttribute("‘¬“x", tf_speed.getText());
-            e_morph_manually.setAttribute("‰Á‘¬", tf_acc.getText());
-            e_morph_manually.setAttribute("U–‚", tf_magic_speed_main.getText());
-            e_morph_manually.setAttribute("•â–‚", tf_magic_speed_sub.getText());
+            e_morph_manually.setAttribute("é€Ÿåº¦", tf_speed.getText());
+            e_morph_manually.setAttribute("åŠ é€Ÿ", tf_acc.getText());
+            e_morph_manually.setAttribute("æ”»é­”", tf_magic_speed_main.getText());
+            e_morph_manually.setAttribute("è£œé­”", tf_magic_speed_sub.getText());
         }
 
-        Element e_enchant = document.createElement("ƒGƒ“ƒ`ƒƒƒ“ƒg");
+        Element e_enchant = document.createElement("ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆ");
         root.appendChild(e_enchant);
         for (int i = 0; i < cb_buff.length; i++) {
             if (cb_buff[i] != null) {
@@ -2730,25 +2730,25 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
         }
 
-        Element pattern = document.createElement("•¶—l");
+        Element pattern = document.createElement("æ–‡æ§˜");
         root.appendChild(pattern);
-        Element e_pattern_l = document.createElement("¶è");
+        Element e_pattern_l = document.createElement("å·¦æ‰‹");
         pattern.appendChild(e_pattern_l);
         e_pattern_l.setTextContent(cb_pattern_l.getSelectedItem().toString());
-        Element e_pattern_r = document.createElement("‰Eè");
+        Element e_pattern_r = document.createElement("å³æ‰‹");
         pattern.appendChild(e_pattern_r);
         e_pattern_r.setTextContent(cb_pattern_r.getSelectedItem().toString());
-        Element e_pattern_c = document.createElement("”w’†");
+        Element e_pattern_c = document.createElement("èƒŒä¸­");
         pattern.appendChild(e_pattern_c);
         e_pattern_c.setTextContent(cb_pattern_c.getSelectedItem().toString());
-        Element e_pattern_l2 = document.createElement("¶˜r");
+        Element e_pattern_l2 = document.createElement("å·¦è…•");
         pattern.appendChild(e_pattern_l2);
         e_pattern_l2.setTextContent(cb_pattern_l2.getSelectedItem().toString());
-        Element e_pattern_r2 = document.createElement("‰E˜r");
+        Element e_pattern_r2 = document.createElement("å³è…•");
         pattern.appendChild(e_pattern_r2);
         e_pattern_r2.setTextContent(cb_pattern_r2.getSelectedItem().toString());
 
-        Element e_alterstone = document.createElement("ƒIƒ‹ƒ^[ƒXƒg[ƒ“");
+        Element e_alterstone = document.createElement("ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³");
         e_alterstone.setAttribute("enchant", (String) cb_alterstone_en.getSelectedItem());
         e_alterstone.setAttribute("op1", (String) cb_alterstone_op[0].getSelectedItem());
         e_alterstone.setAttribute("op2", (String) cb_alterstone_op[1].getSelectedItem());
@@ -2756,14 +2756,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         root.appendChild(e_alterstone);
 
         for (int i = 0; i < cb_eq_ch.getItemCount(); i++) {
-            Element e_equip = document.createElement("‘•”õ");
+            Element e_equip = document.createElement("è£…å‚™");
             e_equip.setAttribute("id", Integer.toString(i));
             root.appendChild(e_equip);
             for (int j = 0; j < EQ_LIST.length; j++) {
                 Element e_equip_data = document.createElement(EQ_LIST[j]);
                 e_equip_data.setAttribute("id", Integer.toString(j));
                 e_equip_data.setAttribute("enchant", Integer.toString(mem.EN[j][i]));
-                if (EQ_LIST[j].equals("•Ší")) {
+                if (EQ_LIST[j].equals("æ­¦å™¨")) {
                     if (j == 0) {
                         e_equip_data.setAttribute("element", Integer.toString(mem.ELEM1[i]));
                         e_equip_data.setAttribute("blessed", Boolean.toString(mem.BL1[i]));
@@ -2778,23 +2778,23 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     }
 
                 }
-                if (EQ_LIST[j].equals("ƒVƒƒƒc")) {
+                if (EQ_LIST[j].equals("ã‚·ãƒ£ãƒ„")) {
                     e_equip_data.setAttribute("element", Integer.toString(mem.TS_ELEM[i]));
                     e_equip_data.setAttribute("tokusei", Boolean.toString(mem.TS_SP[i]));
                 }
                 e_equip_data.setTextContent(mem.EQ[j][i] != null ? mem.EQ[j][i] : "");
                 e_equip.appendChild(e_equip_data);
             }
-            Element e_arrow = document.createElement("ƒAƒ[");
+            Element e_arrow = document.createElement("ã‚¢ãƒ­ãƒ¼");
             e_arrow.setTextContent(mem.ARROW[i]);
             e_equip.appendChild(e_arrow);
         }
 
-        Element e_magic = document.createElement("–‚–@g—p");
+        Element e_magic = document.createElement("é­”æ³•ä½¿ç”¨");
         e_magic.setTextContent(cb_magic.getSelectedItem().toString());
         root.appendChild(e_magic);
 
-        Element e_weight = document.createElement("d—Ê");
+        Element e_weight = document.createElement("é‡é‡");
         e_weight.setTextContent(cb_weight.getSelectedItem().toString());
         root.appendChild(e_weight);
 
@@ -2803,8 +2803,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
     private void loadDocument(Document document) {
         calc.rem_reset();
-        cb_cls.setSelectedItem(document.getDocumentElement().getElementsByTagName("ƒNƒ‰ƒX").item(0).getTextContent());
-        cb_lev.setSelectedItem(document.getDocumentElement().getElementsByTagName("ƒŒƒxƒ‹").item(0).getTextContent());
+        cb_cls.setSelectedItem(document.getDocumentElement().getElementsByTagName("ã‚¯ãƒ©ã‚¹").item(0).getTextContent());
+        cb_lev.setSelectedItem(document.getDocumentElement().getElementsByTagName("ãƒ¬ãƒ™ãƒ«").item(0).getTextContent());
 
         Node n_base = document.getDocumentElement().getElementsByTagName("base").item(0);
         for (int i = 0; i < n_base.getChildNodes().getLength(); i++) {
@@ -2860,23 +2860,23 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
         }
 
-        cb_morph_type.setSelectedItem(document.getDocumentElement().getElementsByTagName("•Ïg").item(0).getTextContent());
-        cb_morph_level.setSelectedItem(document.getDocumentElement().getElementsByTagName("•ÏgƒŒƒxƒ‹").item(0).getTextContent());
+        cb_morph_type.setSelectedItem(document.getDocumentElement().getElementsByTagName("å¤‰èº«").item(0).getTextContent());
+        cb_morph_level.setSelectedItem(document.getDocumentElement().getElementsByTagName("å¤‰èº«ãƒ¬ãƒ™ãƒ«").item(0).getTextContent());
 
-        Node n_morph_manually = document.getDocumentElement().getElementsByTagName("•Ïgİ’è").item(0);
+        Node n_morph_manually = document.getDocumentElement().getElementsByTagName("å¤‰èº«è¨­å®š").item(0);
         cb_speed_auto.setSelected(Boolean.parseBoolean(n_morph_manually.getTextContent()));
 
-        Node n_buki_manually = document.getDocumentElement().getElementsByTagName("•Šíİ’è").item(0);
+        Node n_buki_manually = document.getDocumentElement().getElementsByTagName("æ­¦å™¨è¨­å®š").item(0);
         cb_mag_auto.setSelected(Boolean.parseBoolean(n_buki_manually.getTextContent()));
 
         if (!cb_speed_auto.isSelected()) {
-            tf_speed.setText(n_morph_manually.getAttributes().getNamedItem("‘¬“x").getNodeValue());
-            tf_acc.setText(n_morph_manually.getAttributes().getNamedItem("‰Á‘¬").getNodeValue());
-            tf_magic_speed_main.setText(n_morph_manually.getAttributes().getNamedItem("U–‚").getNodeValue());
-            tf_magic_speed_sub.setText(n_morph_manually.getAttributes().getNamedItem("•â–‚").getNodeValue());
+            tf_speed.setText(n_morph_manually.getAttributes().getNamedItem("é€Ÿåº¦").getNodeValue());
+            tf_acc.setText(n_morph_manually.getAttributes().getNamedItem("åŠ é€Ÿ").getNodeValue());
+            tf_magic_speed_main.setText(n_morph_manually.getAttributes().getNamedItem("æ”»é­”").getNodeValue());
+            tf_magic_speed_sub.setText(n_morph_manually.getAttributes().getNamedItem("è£œé­”").getNodeValue());
         }
 
-        Node n_enchant = document.getDocumentElement().getElementsByTagName("ƒGƒ“ƒ`ƒƒƒ“ƒg").item(0);
+        Node n_enchant = document.getDocumentElement().getElementsByTagName("ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆ").item(0);
         for (int i = 0; i < n_enchant.getChildNodes().getLength(); i++) {
             Node item = n_enchant.getChildNodes().item(i);
             if (item.hasAttributes()) {
@@ -2894,30 +2894,30 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             }
         }
 
-        Node pattern = document.getDocumentElement().getElementsByTagName("•¶—l").item(0);
+        Node pattern = document.getDocumentElement().getElementsByTagName("æ–‡æ§˜").item(0);
 
         for (int i = 0; i < pattern.getChildNodes().getLength(); i++) {
             switch (pattern.getChildNodes().item(i).getNodeName()) {
-                case "¶è":
+                case "å·¦æ‰‹":
                     cb_pattern_l.setSelectedItem(pattern.getChildNodes().item(i).getTextContent());
                     break;
-                case "‰Eè":
+                case "å³æ‰‹":
                     cb_pattern_r.setSelectedItem(pattern.getChildNodes().item(i).getTextContent());
                     break;
-                case "”w’†":
+                case "èƒŒä¸­":
                     cb_pattern_c.setSelectedItem(pattern.getChildNodes().item(i).getTextContent());
                     break;
-                case "¶˜r":
+                case "å·¦è…•":
                     cb_pattern_l2.setSelectedItem(pattern.getChildNodes().item(i).getTextContent());
                     break;
-                case "‰E˜r":
+                case "å³è…•":
                     cb_pattern_r2.setSelectedItem(pattern.getChildNodes().item(i).getTextContent());
                     break;
             }
         }
 
-        if (document.getDocumentElement().getElementsByTagName("ƒIƒ‹ƒ^[ƒXƒg[ƒ“").getLength() == 1) {
-            Node alterstone = document.getDocumentElement().getElementsByTagName("ƒIƒ‹ƒ^[ƒXƒg[ƒ“").item(0);
+        if (document.getDocumentElement().getElementsByTagName("ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³").getLength() == 1) {
+            Node alterstone = document.getDocumentElement().getElementsByTagName("ã‚ªãƒ«ã‚¿ãƒ¼ã‚¹ãƒˆãƒ¼ãƒ³").item(0);
             cb_alterstone_en.setSelectedItem(alterstone.getAttributes().getNamedItem("enchant").getNodeValue());
             cb_alterstone_op[0].setSelectedItem(alterstone.getAttributes().getNamedItem("op1").getNodeValue());
             cb_alterstone_op[1].setSelectedItem(alterstone.getAttributes().getNamedItem("op2").getNodeValue());
@@ -2925,7 +2925,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         for (int i = 0; i < cb_eq_ch.getItemCount(); i++) {
-            Node n_equip = document.getDocumentElement().getElementsByTagName("‘•”õ").item(i);
+            Node n_equip = document.getDocumentElement().getElementsByTagName("è£…å‚™").item(i);
             int cn = Integer.parseInt(n_equip.getAttributes().getNamedItem("id").getNodeValue());
 
             for (int j = 0; j < n_equip.getChildNodes().getLength(); j++) {
@@ -2934,7 +2934,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     int id = Integer.parseInt(item.getAttributes().getNamedItem("id").getNodeValue());
                     mem.EQ[id][cn] = item.getTextContent();
                     mem.EN[id][cn] = Integer.parseInt(item.getAttributes().getNamedItem("enchant").getNodeValue());
-                    if (EQ_LIST[id].equals("•Ší")) {
+                    if (EQ_LIST[id].equals("æ­¦å™¨")) {
                         if (id == 0) {
                             mem.ELEM1[cn] = Integer.parseInt(item.getAttributes().getNamedItem("element").getNodeValue());
                             mem.BL1[cn] = Boolean.parseBoolean(item.getAttributes().getNamedItem("blessed").getNodeValue());
@@ -2948,26 +2948,26 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                             mem.BL2[cn] = Boolean.parseBoolean(item.getAttributes().getNamedItem("blessed").getNodeValue());
                         }
                     }
-                    if (EQ_LIST[id].equals("ƒVƒƒƒc")) {
+                    if (EQ_LIST[id].equals("ã‚·ãƒ£ãƒ„")) {
                         mem.TS_ELEM[cn] = Integer.parseInt(item.getAttributes().getNamedItem("element").getNodeValue());
                         if (item.getAttributes().getNamedItem("tokusei") != null) {
                             mem.TS_SP[cn] = Boolean.parseBoolean(item.getAttributes().getNamedItem("tokusei").getNodeValue());
                         }
                     }
                 }
-                if (item.getNodeName().equals("ƒAƒ[")) {
+                if (item.getNodeName().equals("ã‚¢ãƒ­ãƒ¼")) {
                     mem.ARROW[cn] = item.getTextContent();
                 }
             }
         }
 
-        if (document.getDocumentElement().getElementsByTagName("–‚–@g—p").getLength() == 1) {
-            Node magic = document.getDocumentElement().getElementsByTagName("–‚–@g—p").item(0);
+        if (document.getDocumentElement().getElementsByTagName("é­”æ³•ä½¿ç”¨").getLength() == 1) {
+            Node magic = document.getDocumentElement().getElementsByTagName("é­”æ³•ä½¿ç”¨").item(0);
             cb_magic.setSelectedItem(magic.getTextContent());
         }
 
-        if (document.getDocumentElement().getElementsByTagName("d—Ê").getLength() == 1) {
-            cb_weight.setSelectedItem(document.getDocumentElement().getElementsByTagName("d—Ê").item(0).getTextContent());
+        if (document.getDocumentElement().getElementsByTagName("é‡é‡").getLength() == 1) {
+            cb_weight.setSelectedItem(document.getDocumentElement().getElementsByTagName("é‡é‡").item(0).getTextContent());
         }
 
         mem.load_from_mem(cb_eq_ch.getSelectedIndex());
