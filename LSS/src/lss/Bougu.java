@@ -499,13 +499,47 @@ public class Bougu implements Common {
                 op2.DR += enchant - 6;
             }
         }
-
+        if (name.equals("ヴァラカスフレイムプレートメイル")) {
+            if (enchant >= 9) {
+                op2.CRI_SHORT = 3;
+            } else if (enchant >= 8) {
+                op2.CRI_SHORT = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_SHORT = 1;
+            }
+        }
+        if (name.equals("ヴァラカスフレイムスケイルメイル")) {
+            if (enchant >= 9) {
+                op2.CRI_SHORT = 3;
+            } else if (enchant >= 8) {
+                op2.CRI_SHORT = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_SHORT = 1;
+            }
+        }
+        if (name.equals("ヴァラカスフレイムレザーアーマー")) {
+            if (enchant >= 9) {
+                op2.CRI_LONG = 3;
+            } else if (enchant >= 8) {
+                op2.CRI_LONG = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_LONG = 1;
+            }
+        }
+        if (name.equals("ヴァラカスフレイムローブ")) {
+            if (enchant >= 9) {
+                op2.CRI_MAGIC = 3;
+            } else if (enchant >= 8) {
+                op2.CRI_MAGIC = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_MAGIC = 1;
+            }
+        }
         if (name.equals("輝く魔力のグローブ")) {
             if (enchant > 4) {
                 op2.c_weight += 60 * (enchant - 4);
             }
         }
-
         if (name.contains("スナッパー")) {
             if (name.contains("祝福された")) {
                 if (name.contains("勇士")) {
