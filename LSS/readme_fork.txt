@@ -4,6 +4,16 @@ LineageStatusSimulator_fork2018
 2018/10/3
 Update
 SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	新規マジックドールの追加(カーツ/バフォメット/堕落)
+	2017/09/27 Update
+	http://event2.ncsoft.jp/1.0/lineage/1709magicdoll/
+	カーツ        最大HP+120 追加防御力+3 ダメージ低下+3 近距離ダメージ+4 近距離命中+4 フォースレイヤーダメージ+10
+	バフォメット  最大HP+120 追加防御力+4 ダメージ低下+4 近距離ダメージ+3 近距離命中+3 恐怖的中+5
+	堕落          SP+5 魔法命中+5 MP絶対回復+16(64秒)
+
+Update
+SS/src/lss/Calculator.java
 	[pvp_dg]と[pvp_dgr]を追加しPVP追加ダメージとPVPダメージリダクションを計算
 
 SS/src/lss/UI.java
@@ -837,16 +847,16 @@ LSS/data/E.zip
 
 Update
 LSS/src/lss/Calculator.java
-武器ツールチップの表示名MR追加
+	武器ツールチップの表示名MR追加
 
 LSS/src/lss/UI.java
-新規マジックドールの追加
+	新規マジックドールの追加
 	2017/12/20 Update
 	http://event2.ncsoft.jp/1.0/lineage/1712dragondoll/
-	アンタラス	追加防御力＋7 最大HP＋120 MP絶対回復＋15（64秒） ダメージ低下＋7
-	パプリオン	追加防御力＋1 MP絶対回復＋10(64秒）ダメージ低下＋1 SP＋7 魔法命中＋7
-	リンドビオル	追加防御力＋2 MP絶対回復＋5（64秒）ダメージ低下＋2 遠距離ダメージ＋7 遠距離命中＋7
-	ヴァラカス	追加防御力＋3 ダメージ低下＋3 近接ダメージ＋7 近距離命中＋7
+	アンタラス	追加防御力+7 最大HP+120 MP絶対回復+15(64秒) ダメージ低下+7
+	パプリオン	追加防御力+1 MP絶対回復+10(64秒) ダメージ低下+1 SP+7 魔法命中+7
+	リンドビオル	追加防御力+2 MP絶対回復+5 (64秒) ダメージ低下+2 遠距離ダメージ+7 遠距離命中+7
+	ヴァラカス	追加防御力+3 ダメージ低下+3 近接ダメージ+7 近距離命中+7
 
 Update
 LSS/README.md

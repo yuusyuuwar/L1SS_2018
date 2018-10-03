@@ -1039,6 +1039,30 @@ public class Calculator implements Common {
                     buff.HIT_SHORT += 7;
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-3 ダメージ軽減+3 近距離ダメージ+7 近距離命中+7 祝福消耗効率+7%");
                     break;
+                case "カーツ":
+                    buff.DMG_SHORT += 4;
+                    buff.HIT_SHORT += 4;
+                    buff.HP += 120;
+                    buff.AC -= 3;
+                    buff.DR += 3;
+                    buff.effect += "フォースレイヤーダメージ+10,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+4 近距離命中+4 最大HP+120 AC-3 ダメージ軽減+3 フォースレイヤー追加ダメージ+10");
+                    break;
+                case "堕落":
+                    buff.SP += 5;
+                    buff.HIT_MAGIC += 5;                    
+                    buff.effect += "MP回復 +16,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("SP＋5 魔法命中+5 64秒毎にMPが16回復");
+                    break;
+                case "バフォメット":
+                    buff.HP += 120;
+                    buff.AC -= 4;
+                    buff.DMG_SHORT += 2;
+                    buff.HIT_SHORT += 2;
+                    buff.DR += 4;
+                    buff.ailment[HIT_TERROR] += 5;
+                    ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+3 近距離命中+3  最大HP+120 AC-4 ダメージ軽減+4 恐怖命中+5");
+                    break;
             }
         }
 
