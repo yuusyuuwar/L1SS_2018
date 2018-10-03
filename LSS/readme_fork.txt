@@ -3,6 +3,14 @@ LineageStatusSimulator_fork2018
 変更点
 2018/10/3
 Update
+LSS/dist/LSS.jar	
+	NetBeans IDE 8.2上では動くのにビルドしてLSS_launcher.exe経由だと立ち上がらない
+	原因はSHIFT-JISからUTF-8に文字コードを変えた以外考えられない為、2つのことを行いビルドする
+	1.システム環境変数に[JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8]を追加
+	2.C:\Program Files\NetBeans 8.2\etc\netbeans.confの
+		[netbeans_default_optionsに -J-Dfile.encoding=UTF-8]を追加
+
+Update
 SS/src/lss/Calculator.java
 SS/src/lss/UI.java
 	オルタストーンの+7強化を実装
