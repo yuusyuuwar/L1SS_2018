@@ -2524,5 +2524,104 @@ public class Bougu implements Common {
                         break;
                 }
             }
+            if (name.equals("カーツの闘士の守護インシグニア")) {
+                switch (enchant) {                          
+                    case 6:
+                        op2.AC = -5;
+                        op2.HP = 35;
+                        op2.DR = 2;
+                        op2.DMG_SHORT = 2;
+                        op2.MR = 3;
+                        op2.CRI_SHORT = 1;
+                        op2.HIT_SHORT = 1;
+                        break;              
+                    case 7:
+                        op2.AC = -6;
+                        op2.HP = 40;
+                        op2.DR = 3;
+                        op2.DMG_SHORT = 3;
+                        op2.MR = 5;
+                        op2.CRI_SHORT = 3;
+                        op2.HIT_SHORT = 3;
+                        op2.PVP_DR = 1;
+                        break;              
+                    case 8:
+                        op2.AC = -7;
+                        op2.HP = 50;
+                        op2.DR = 4;
+                        op2.DMG_SHORT = 4;
+                        op2.MR = 7;
+                        op2.CRI_SHORT = 5;
+                        op2.HIT_SHORT = 5;
+                        op2.PVP_DR = 2;
+                        break;
+                }
+            }
+            if (name.equals("カーツの射手の守護インシグニア")) {
+                switch (enchant) {                          
+                    case 6:
+                        op2.AC = -5;
+                        op2.HP = 35;
+                        op2.DR = 2;
+                        op2.DMG_LONG = 2;
+                        op2.MR = 3;
+                        op2.CRI_LONG = 1;
+                        op2.HIT_LONG = 1;
+                        break;              
+                    case 7:
+                        op2.AC = -6;
+                        op2.HP = 40;
+                        op2.DR = 3;
+                        op2.DMG_LONG = 3;
+                        op2.MR = 5;
+                        op2.CRI_LONG = 3;
+                        op2.HIT_LONG = 3;
+                        op2.PVP_DR = 1;
+                        break;              
+                    case 8:
+                        op2.AC = -7;
+                        op2.HP = 50;
+                        op2.DR = 4;
+                        op2.DMG_LONG = 4;
+                        op2.MR = 7;
+                        op2.CRI_LONG = 5;
+                        op2.HIT_LONG = 5;
+                        op2.PVP_DR = 2;
+                        break;
+                }
+            }
+            if (name.equals("カーツの賢者の守護インシグニア")) {
+                switch (enchant) {                          
+                    case 6:
+                        op2.AC = -5;
+                        op2.HP = 35;
+                        op2.DR = 2;
+                        op2.MR = 3;
+                        op2.HIT_SHORT = 2;
+                        op2.CRI_MAGIC = 1;
+                        op2.HIT_MAGIC = 1;
+                        break;              
+                    case 7:
+                        op2.AC = -6;
+                        op2.HP = 40;
+                        op2.DR = 3;
+                        op2.MR = 5;
+                        op2.HIT_SHORT = 3;
+                        op2.CRI_MAGIC = 2;
+                        op2.HIT_MAGIC = 3;
+                        op2.PVP_DR = 1;
+                        break;              
+                    case 8:
+                        op2.AC = -7;
+                        op2.HP = 50;
+                        op2.DR = 4;
+                        op2.MR = 7;
+                        op2.HIT_SHORT = 4;
+                        op2.CRI_MAGIC = 4;
+                        op2.HIT_MAGIC = 5;
+                        op2.PVP_DR = 2;
+                        break;
+                }
+            }
     }
 }

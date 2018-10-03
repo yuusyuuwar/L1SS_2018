@@ -3,6 +3,26 @@ LineageStatusSimulator_fork2018
 変更点
 2018/10/3
 Update
+LSS/data/E.zip
+        /E/クローク
+	フィアバンパイアマント修正(AC-4)
+
+LSS/data/E.zip
+        /E/インシグニア
+	新規インシグニアの追加
+	05_カーツの闘士の守護インシグニア.txt
+	06_カーツの射手の守護インシグニア.txt
+	07_カーツの賢者の守護インシグニア.txt
+
+SS/src/lss/Bougu.java
+	新規インシグニアの追加
+	2018/08/15 Update
+	https://event2.ncsoft.jp/1.0/lineage/1808insigniaofKurtz/
+	カーツの闘士の守護インシグニア
+	カーツの射手の守護インシグニア
+	カーツの賢者の守護インシグニア
+
+Update
 SS/src/lss/Calculator.java
 SS/src/lss/UI.java
 	新規マジックドールの追加(カーツ/バフォメット/堕落)
