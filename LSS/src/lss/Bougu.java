@@ -164,10 +164,6 @@ public class Bougu implements Common {
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
             text += " 魔法命中+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
         }
-        if (op.DR + op2.DR > 0) {
-            //text += " ダメージ低下" + (op.DR + op2.DR);
-            text += " DR" + (op.DR + op2.DR);
-        }
         if (op.CRI_SHORT + op2.CRI_SHORT > 0) {
             text += " 近距離クリティカル+" + (op.CRI_SHORT + op2.CRI_SHORT);
         }
@@ -243,12 +239,17 @@ public class Bougu implements Common {
         if (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION] > 0) {
             text += " 破壊命中+" + (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION]);
         }
+        if (op.DR + op2.DR > 0) {
+            text += " ダメージリダクション+" + (op.DR + op2.DR);
+        }
+        if (op.DR_IGNORED + op2.DR_IGNORED > 0) {
+            text += " ダメージリダクション無視+" + (op.DR_IGNORED + op2.DR_IGNORED);
+        }
         if (op.PVP + op2.PVP > 0) {
-            //text += " PVPダメージ+" + (op.PVP + op2.PVP);
             text += " PVP追加ダメージ+" + (op.PVP + op2.PVP);
         }
-        if (op.PVPDR + op2.PVPDR > 0) {
-            text += " PVPダメージ減少+" + (op.PVPDR + op2.PVPDR);
+        if (op.PVP_DR + op2.PVP_DR > 0) {
+            text += " PVPダメージ減少+" + (op.PVP_DR + op2.PVP_DR);
         }
         //所持重量の追加
         if (op.c_weight + op2.c_weight > 0) {
@@ -502,37 +503,49 @@ public class Bougu implements Common {
         if (name.equals("ヴァラカスフレイムプレートメイル")) {
             if (enchant >= 9) {
                 op2.CRI_SHORT = 3;
+                op2.DR_IGNORED = 3;
             } else if (enchant >= 8) {
                 op2.CRI_SHORT = 2;
+                op2.DR_IGNORED = 2;
             } else if (enchant >= 7) {
                 op2.CRI_SHORT = 1;
+                op2.DR_IGNORED = 1;
             }
         }
         if (name.equals("ヴァラカスフレイムスケイルメイル")) {
             if (enchant >= 9) {
                 op2.CRI_SHORT = 3;
+                op2.DR_IGNORED = 2;
             } else if (enchant >= 8) {
                 op2.CRI_SHORT = 2;
+                op2.DR_IGNORED = 2;
             } else if (enchant >= 7) {
                 op2.CRI_SHORT = 1;
+                op2.DR_IGNORED = 1;
             }
         }
         if (name.equals("ヴァラカスフレイムレザーアーマー")) {
             if (enchant >= 9) {
                 op2.CRI_LONG = 3;
+                op2.DR_IGNORED = 2;
             } else if (enchant >= 8) {
                 op2.CRI_LONG = 2;
+                op2.DR_IGNORED = 2;
             } else if (enchant >= 7) {
                 op2.CRI_LONG = 1;
+                op2.DR_IGNORED = 1;
             }
         }
         if (name.equals("ヴァラカスフレイムローブ")) {
             if (enchant >= 9) {
                 op2.CRI_MAGIC = 3;
+                op2.DR_IGNORED = 2;
             } else if (enchant >= 8) {
                 op2.CRI_MAGIC = 2;
+                op2.DR_IGNORED = 2;
             } else if (enchant >= 7) {
                 op2.CRI_MAGIC = 1;
+                op2.DR_IGNORED = 1;
             }
         }
         if (name.equals("輝く魔力のグローブ")) {
@@ -2020,19 +2033,19 @@ public class Bougu implements Common {
                         op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
-                        op2.PVPDR=2;        //PVPダメージ軽減+2
+                        op2.PVP_DR=2;        //PVPダメージ軽減+2
                         break;
                     case 8:
                         op2.HP = 40;
                         op2.MP = 50;
                         op2.DR = 4;
-                        op2.PVPDR=3;        //PVPダメージ軽減+3                        
+                        op2.PVP_DR=3;        //PVPダメージ軽減+3                        
                         break;
                     case 9:
                         op2.HP = 50;
                         op2.MP = 60;
                         op2.DR = 5;
-                        op2.PVPDR=4;        //PVPダメージ軽減+4
+                        op2.PVP_DR=4;        //PVPダメージ軽減+4
                         break;
                 }
             }

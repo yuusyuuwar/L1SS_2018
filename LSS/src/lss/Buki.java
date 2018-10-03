@@ -265,7 +265,7 @@ public class Buki implements Common {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;    //追加ダメージ
             op2.CRI_LONG += enchant;     //遠距離クリティカル
-            op2.dr_ignored += enchant;   //ダメージリダクション無視
+            op2.DR_IGNORED += enchant;   //ダメージリダクション無視
             }
         }
         //強化+10以上はエンチャントによる追加打撃が+2(既存処理に追加で+1)

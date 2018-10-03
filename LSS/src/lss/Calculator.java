@@ -113,6 +113,7 @@ public class Calculator implements Common {
     int res_ail[] = new int[AILMENT_LIST.length];
 
     double cons_mp;
+    int dri;
 
     DecimalFormat format_dmg = new DecimalFormat("#0.0");
     DecimalFormat format_rate = new DecimalFormat("#0.0%");
@@ -495,7 +496,7 @@ public class Calculator implements Common {
             buff.effect += b.op.effect;
             buff.effect += b.op2.effect;
             buff.PVP += b.op.PVP + b.op2.PVP;
-            buff.PVPDR += b.op.PVPDR + b.op2.PVPDR;
+            buff.PVP_DR += b.op.PVP_DR + b.op2.PVP_DR;
         }
 
         if (bougu[0].name.equals("エルヴンシールド")) {
@@ -2408,11 +2409,11 @@ public class Calculator implements Common {
             switch ((String) ui.cb_buff_group[H_PVPDR].getSelectedItem()) {
                 case "PVP DR+1":
                     ui.cb_buff[H_PVPDR].setToolTipText("PVPダメージリダクション+1");
-                    buff.PVPDR += 1;
+                    buff.PVP_DR += 1;
                     break;
                 case "PVP DR+2":
                     ui.cb_buff[H_PVPDR].setToolTipText("PVPダメージリダクション+2");
-                    buff.PVPDR += 2;
+                    buff.PVP_DR += 2;
                     break;
             }
         }
@@ -3801,6 +3802,9 @@ System.out.println(buki.magic_enchant);
 //        ui.lab_ac_long.setText("(最大命中AC : " + Integer.toString(19 - hit_long) + ")");
         ui.lab_hit_mag.setText("命中(魔) : " + hit_magic);
 
+        ui.lab_cri_short.setText("クリティカル(近) : " + cri_short);
+        ui.lab_cri_long.setText("クリティカル(遠) : " + cri_long);
+        ui.lab_cri_mag.setText("クリティカル(魔) : " + cri_magic);
 //        ui.lab_sp.setText("SP " + sp);
 //        ui.lab_ml.setText("ML " + ml);
 //        ui.lab_mb.setText("MB " + mb);
@@ -3863,6 +3867,7 @@ System.out.println(buki.magic_enchant);
         ac = base_ac + buff.AC + equip_ac;
         int er = base_er + buff.ER;
         int dr = buff.DR;
+        int dri= buff.DR_IGNORED;
 
         if (ui.cb_buff[F_AG].isSelected()) {
             dr += -ac / 10;
@@ -3871,9 +3876,12 @@ System.out.println(buki.magic_enchant);
         for (Bougu bougu1 : bougu) {
             dr += bougu1.op.DR;
             dr += bougu1.op2.DR;
+            dri += bougu1.op.DR_IGNORED;
+            dri += bougu1.op2.DR_IGNORED;            
         }
         dg = 0;
         dr += buki.op.DR + buki.op2.DR;
+        dri += buki.op.DR_IGNORED + buki.op2.DR_IGNORED; 
         
         //アンキャニードッジ 消費MP20/3mins
         if (ui.cb_buff[D_UD].isSelected()) {
@@ -3906,6 +3914,7 @@ System.out.println(buki.magic_enchant);
         ui.lab_dg.setText(Integer.toString(dg));
         ui.lab_er.setText(Integer.toString(er));
         ui.lab_dr.setText(Integer.toString(dr));
+        ui.lab_dri.setText(Integer.toString(dri));        
         ui.lab_sp.setText(Integer.toString(sp));
         ui.lab_ml.setText(Integer.toString(ml)); 
         ui.lab_mb.setText(Integer.toString(mb));
@@ -4596,8 +4605,8 @@ System.out.println(buki.magic_enchant);
         if (buki.op.DR > 0) {
             buki_text += " ダメージリダクション " + (buki.op.DR + buki.op2.DR);
         }
-        if (buki.op.dr_ignored > 0) {
-            buki_text += " ダメージリダクション無視 " + (buki.op.dr_ignored + buki.op2.dr_ignored);
+        if (buki.op.DR_IGNORED > 0) {
+            buki_text += " ダメージリダクション無視 " + (buki.op.DR_IGNORED + buki.op2.DR_IGNORED);
         }
         if (buki.weight > 0) {
             buki_text += " 重さ " + buki.weight;

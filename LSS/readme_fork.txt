@@ -3,6 +3,29 @@ LineageStatusSimulator_fork2018
 変更点
 2018/10/3
 Update
+LSS/data/E.zip
+	ダメージリダクション無視=3を設定
+	ヴァラカスフレイムプレートメイル
+	ヴァラカスフレイムスケイルメイル
+	ヴァラカスフレイムレザーアーマー
+	ヴァラカスフレイムローブ
+
+SS/src/lss/Buff.java
+SS/src/lss/Buki.java
+SS/src/lss/Calculator.java
+	変数の統一
+	[dr_ignored]を[DR_IGNORED]へ
+	[PVPDR]を[PVP_DR]へ
+
+SS/src/lss/Bougu.java
+	防具のダメージリダクション無視を実装
+
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	パネル1に武器と防具のダメージリダクション無視を合計したものを表示
+	近距離/遠距離/魔法クリティカルもすぐに確認できるようにパネル1でも表示
+
+Update
 SS/src/lss/Bougu.java
 	強化値で[近距離クリティカル][遠距離クリティカル][魔法クリティカル]が反映されるように修正
 	[ダメージリダクション無視]は未実装

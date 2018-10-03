@@ -32,8 +32,8 @@ public class Buff implements Common {
     String effect = "";
 
     int PVP;
-    int PVPDR;
-    int dr_ignored;
+    int PVP_DR;
+    int DR_IGNORED;
 
     int[] ailment = new int[AILMENT_LIST.length];
 
@@ -108,13 +108,13 @@ public class Buff implements Common {
                 DR = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("ダメージリダクション無視=")) {
-                dr_ignored = Integer.parseInt(line.split("=")[1]);
+                DR_IGNORED = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("PVP追加ダメージ=")) {
                 PVP = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("PVPダメージ減少=")) {
-                PVPDR = Integer.parseInt(line.split("=")[1]);
+                PVP_DR = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("MR=")) {
                 MR = Integer.parseInt(line.split("=")[1]);
