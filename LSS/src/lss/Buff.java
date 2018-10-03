@@ -32,8 +32,8 @@ public class Buff implements Common {
     String effect = "";
 
     int PVP;
-    int PVPDR;
-    int dr_ignored;
+    int PVP_DR;
+    int DR_IGNORED;
 
     int[] ailment = new int[AILMENT_LIST.length];
 
@@ -86,103 +86,103 @@ public class Buff implements Common {
             if (line.startsWith("MPR=")) {
                 MPR = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‹ß‹——£’Ç‰Áƒ_ƒ[ƒW=")) {
+            if (line.startsWith("è¿‘è·é›¢è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸=")) {
                 DMG_SHORT = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‰“‹——£’Ç‰Áƒ_ƒ[ƒW=")) {
+            if (line.startsWith("é è·é›¢è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸=")) {
                 DMG_LONG = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‹ß‹——£–½’†=")) {
+            if (line.startsWith("è¿‘è·é›¢å‘½ä¸­=")) {
                 HIT_SHORT = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‰“‹——£–½’†=")) {
+            if (line.startsWith("é è·é›¢å‘½ä¸­=")) {
                 HIT_LONG = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("–‚–@–½’†=")) {
+            if (line.startsWith("é­”æ³•å‘½ä¸­=")) {
                 HIT_MAGIC = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("SP=")) {
                 SP = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“=")) {
+            if (line.startsWith("ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³=")) {
                 DR = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“–³‹=")) {
-                dr_ignored = Integer.parseInt(line.split("=")[1]);
+            if (line.startsWith("ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³ç„¡è¦–=")) {
+                DR_IGNORED = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("PVP’Ç‰Áƒ_ƒ[ƒW=")) {
+            if (line.startsWith("PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸=")) {
                 PVP = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("PVPƒ_ƒ[ƒWŒ¸­=")) {
-                PVPDR = Integer.parseInt(line.split("=")[1]);
+            if (line.startsWith("PVPãƒ€ãƒ¡ãƒ¼ã‚¸æ¸›å°‘=")) {
+                PVP_DR = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("MR=")) {
                 MR = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("d—ÊŒyŒ¸=")) {
+            if (line.startsWith("é‡é‡è»½æ¸›=")) {
                 r_weight = Double.parseDouble(line.split("=")[1]);
             }
-            if (line.startsWith("Šd—Ê=")) {
+            if (line.startsWith("æ‰€æŒé‡é‡=")) {
                 c_weight = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("“Áê=")) {
+            if (line.startsWith("ç‰¹æ®Š=")) {
                 effect = line.split("=")[1];
             }
-            if (line.startsWith("ƒXƒ^ƒ“‘Ï«=")) {
+            if (line.startsWith("ã‚¹ã‚¿ãƒ³è€æ€§=")) {
                 ailment[STUN] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ˆÃˆÅ‘Ï«=")) {
+            if (line.startsWith("æš—é—‡è€æ€§=")) {
                 ailment[DARKNESS] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ƒz[ƒ‹ƒh‘Ï«=")) {
+            if (line.startsWith("ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§=")) {
                 ailment[HOLD] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("“€Œ‹‘Ï«=")) {
+            if (line.startsWith("å‡çµè€æ€§=")) {
                 ailment[FREEZE] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("Î‰»‘Ï«=")) {
+            if (line.startsWith("çŸ³åŒ–è€æ€§=")) {
                 ailment[STONE] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‡–°‘Ï«=")) {
+            if (line.startsWith("ç¡çœ è€æ€§=")) {
                 ailment[SLEEP] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‹°•|‘Ï«=")) {
+            if (line.startsWith("ææ€–è€æ€§=")) {
                 ailment[TERROR] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("”j‰ó‘Ï«=")) {
+            if (line.startsWith("ç ´å£Šè€æ€§=")) {
                 ailment[DESTRUCTION] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ƒXƒ^ƒ“–½’†=")) {
+            if (line.startsWith("ã‚¹ã‚¿ãƒ³å‘½ä¸­=")) {
                 ailment[HIT_STUN] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ˆÃˆÅ–½’†=")) {
+            if (line.startsWith("æš—é—‡å‘½ä¸­=")) {
                 ailment[HIT_DARKNESS] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("ƒz[ƒ‹ƒh–½’†=")) {
+            if (line.startsWith("ãƒ›ãƒ¼ãƒ«ãƒ‰å‘½ä¸­=")) {
                 ailment[HIT_HOLD] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("“€Œ‹–½’†=")) {
+            if (line.startsWith("å‡çµå‘½ä¸­=")) {
                 ailment[HIT_FREEZE] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("Î‰»–½’†=")) {
+            if (line.startsWith("çŸ³åŒ–å‘½ä¸­=")) {
                 ailment[HIT_STONE] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‡–°–½’†=")) {
+            if (line.startsWith("ç¡çœ å‘½ä¸­=")) {
                 ailment[HIT_SLEEP] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‹°•|–½’†=")) {
+            if (line.startsWith("ææ€–å‘½ä¸­=")) {
                 ailment[HIT_TERROR] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("”j‰ó–½’†=")) {
+            if (line.startsWith("ç ´å£Šå‘½ä¸­=")) {
                 ailment[HIT_DESTRUCTION] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹=")) {
+            if (line.startsWith("è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«=")) {
                CRI_SHORT = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("‰“‹——£ƒNƒŠƒeƒBƒJƒ‹=")) {
+            if (line.startsWith("é è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«=")) {
                CRI_LONG = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("–‚–@ƒNƒŠƒeƒBƒJƒ‹=")) {
+            if (line.startsWith("é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«=")) {
                CRI_MAGIC = Integer.parseInt(line.split("=")[1]);
             }
 

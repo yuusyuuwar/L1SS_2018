@@ -1,6 +1,125 @@
-﻿LineageStatusSimulator_fork2018
+LineageStatusSimulator_fork2018
 
 変更点
+2018/10/3
+Update
+LSS/dist/LSS.jar	
+	NetBeans IDE 8.2上では動くのにビルドしてLSS_launcher.exe経由だと立ち上がらない
+	原因はSHIFT-JISからUTF-8に文字コードを変えた以外考えられない為、2つのことを行いビルドする
+	1.システム環境変数に[JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8]を追加
+	2.C:\Program Files\NetBeans 8.2\etc\netbeans.confの
+		[netbeans_default_optionsに -J-Dfile.encoding=UTF-8]を追加
+
+Update
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	オルタストーンの+7強化を実装
+	2017/11/22 Update
+	http://event2.ncsoft.jp/1.0/lineage/1711alterstone/
+
+Update
+LSS/data/E.zip
+        /E/クローク
+	フィアバンパイアマント修正(AC-4)
+
+LSS/data/E.zip
+        /E/インシグニア
+	新規インシグニアの追加
+	05_カーツの闘士の守護インシグニア.txt
+	06_カーツの射手の守護インシグニア.txt
+	07_カーツの賢者の守護インシグニア.txt
+
+SS/src/lss/Bougu.java
+	新規インシグニアの追加
+	2018/08/15 Update
+	https://event2.ncsoft.jp/1.0/lineage/1808insigniaofKurtz/
+	カーツの闘士の守護インシグニア
+	カーツの射手の守護インシグニア
+	カーツの賢者の守護インシグニア
+
+Update
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	新規マジックドールの追加(カーツ/バフォメット/堕落)
+	2017/09/27 Update
+	http://event2.ncsoft.jp/1.0/lineage/1709magicdoll/
+	カーツ        最大HP+120 追加防御力+3 ダメージ低下+3 近距離ダメージ+4 近距離命中+4 フォースレイヤーダメージ+10
+	バフォメット  最大HP+120 追加防御力+4 ダメージ低下+4 近距離ダメージ+3 近距離命中+3 恐怖的中+5
+	堕落          SP+5 魔法命中+5 MP絶対回復+16(64秒)
+
+Update
+SS/src/lss/Calculator.java
+	[pvp_dg]と[pvp_dgr]を追加しPVP追加ダメージとPVPダメージリダクションを計算
+
+SS/src/lss/UI.java
+	表示用に[lab_pvp_dg]と[lab_pvp_dgr]を追加しPVP追加ダメージとPVPダメージリダクションを表示
+
+Update
+LSS/data/E.zip
+	ダメージリダクション無視=3を設定
+	ヴァラカスフレイムプレートメイル
+	ヴァラカスフレイムスケイルメイル
+	ヴァラカスフレイムレザーアーマー
+	ヴァラカスフレイムローブ
+
+SS/src/lss/Buff.java
+SS/src/lss/Buki.java
+SS/src/lss/Calculator.java
+	変数の統一
+	[dr_ignored]を[DR_IGNORED]へ
+	[PVPDR]を[PVP_DR]へ
+
+SS/src/lss/Bougu.java
+	防具のダメージリダクション無視を実装
+
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	パネル1に武器と防具のダメージリダクション無視を合計したものを表示
+	近距離/遠距離/魔法クリティカルもすぐに確認できるようにパネル1でも表示
+
+Update
+SS/src/lss/Bougu.java
+	強化値で[近距離クリティカル][遠距離クリティカル][魔法クリティカル]が反映されるように修正
+	[ダメージリダクション無視]は未実装
+	ヴァラカスフレイムプレートメイル
+	ヴァラカスフレイムスケイルメイル
+	ヴァラカスフレイムレザーアーマー
+	ヴァラカスフレイムローブ
+
+2018/10/01
+Update
+SS/src/lss/Bougu.java
+SS/src/lss/Buff.java
+SS/src/lss/Buki.java
+SS/src/lss/Calculator.java
+SS/src/lss/Common.java
+SS/src/lss/FSCalclator.java
+SS/src/lss/HitRateCalculator.java
+SS/src/lss/LEV.java
+SS/src/lss/LSS.java
+SS/src/lss/Morph.java
+SS/src/lss/MyToggleButton.java
+SS/src/lss/UI.java
+SS/src/lss/WideComboBox.java
+	ソースコードが文字コードANSI(Shift-JIS)の為、GitHub Desktopで文字化けを起こす
+	ので文字化けを起こさないUTF-8にする。またBOM無しにして今後メモ帳を使わずに
+	TeraPadかNetBeans IDEで修正する。
+	合わせて改行コードもCR+LFからLFに変更
+
+LSS/data/E.zip
+	E.zipのすべてのファイルもUTF-8NのLFへ変更
+
+LSS/nbproject/project.properties
+	NetBeansIDE 8.2のプロジェクト用の初期設定をShift-JISからUTF-8へ変更
+
+Update
+SS/src/lss/UI.java
+	現在のエリクサルーンの位置にタリスマンを実装
+	スポールダーと紋章の間にエリクサルーンの位置を移動
+
+SS/src/lss/Calculator.java
+	タリスマンの効果を実装
+
 2018/09/30
 Update
 SS/src/lss/UI.java
@@ -763,16 +882,16 @@ LSS/data/E.zip
 
 Update
 LSS/src/lss/Calculator.java
-武器ツールチップの表示名MR追加
+	武器ツールチップの表示名MR追加
 
 LSS/src/lss/UI.java
-新規マジックドールの追加
+	新規マジックドールの追加
 	2017/12/20 Update
 	http://event2.ncsoft.jp/1.0/lineage/1712dragondoll/
-	アンタラス	追加防御力＋7 最大HP＋120 MP絶対回復＋15（64秒） ダメージ低下＋7
-	パプリオン	追加防御力＋1 MP絶対回復＋10(64秒）ダメージ低下＋1 SP＋7 魔法命中＋7
-	リンドビオル	追加防御力＋2 MP絶対回復＋5（64秒）ダメージ低下＋2 遠距離ダメージ＋7 遠距離命中＋7
-	ヴァラカス	追加防御力＋3 ダメージ低下＋3 近接ダメージ＋7 近距離命中＋7
+	アンタラス	追加防御力+7 最大HP+120 MP絶対回復+15(64秒) ダメージ低下+7
+	パプリオン	追加防御力+1 MP絶対回復+10(64秒) ダメージ低下+1 SP+7 魔法命中+7
+	リンドビオル	追加防御力+2 MP絶対回復+5 (64秒) ダメージ低下+2 遠距離ダメージ+7 遠距離命中+7
+	ヴァラカス	追加防御力+3 ダメージ低下+3 近接ダメージ+7 近距離命中+7
 
 Update
 LSS/README.md

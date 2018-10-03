@@ -54,28 +54,28 @@ public class Bougu implements Common {
                 if (line.startsWith("name=")) {
                     name = line.split("=")[1];
                 }
-                if (line.startsWith("ˆÀ‘S=")) {
+                if (line.startsWith("å®‰å…¨=")) {
                     safety = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("‹­‰»ŒÀŠE=")) {
+                if (line.startsWith("å¼·åŒ–é™ç•Œ=")) {
                     max_enchant = Integer.parseInt(line.split("=")[1]);
                 }
                 if (line.startsWith("type=")) {
                     type = line.split("=")[1];
                 }
-                if (line.startsWith("Ş¿=")) {
+                if (line.startsWith("æè³ª=")) {
                     material = line.split("=")[1];
                 }
-                if (line.startsWith("ƒOƒŒ[ƒh=")) {
+                if (line.startsWith("ã‚°ãƒ¬ãƒ¼ãƒ‰=")) {
                     grade = line.split("=")[1];
                 }
-                if (line.startsWith("MR‹­‰»=")) {
+                if (line.startsWith("MRå¼·åŒ–=")) {
                     mr_enchant = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("ˆóÍ‹­‰»=")) {
+                if (line.startsWith("å°ç« å¼·åŒ–=")) {
                     element_enchant = Boolean.parseBoolean(line.split("=")[1]);
                 }
-                if (line.startsWith("“Á«=")) {
+                if (line.startsWith("ç‰¹æ€§=")) {
                     tokusei = line.split("=")[1];
                 }
             }
@@ -94,16 +94,16 @@ public class Bougu implements Common {
             text += " MP+" + (op.MP + op2.MP);
         }
         if (op.HPR + op2.HPR > 0) {
-            text += " HP©‘R‰ñ•œ+" + (op.HPR + op2.HPR);
+            text += " HPè‡ªç„¶å›å¾©+" + (op.HPR + op2.HPR);
         }
         if (op.HPR + op2.HPR < 0) {
-            text += " HP©‘R‰ñ•œ" + (op.HPR + op2.HPR);
+            text += " HPè‡ªç„¶å›å¾©" + (op.HPR + op2.HPR);
         }
         if (op.MPR + op2.MPR > 0) {
-            text += " MP©‘R‰ñ•œ+" + (op.MPR + op2.MPR);
+            text += " MPè‡ªç„¶å›å¾©+" + (op.MPR + op2.MPR);
         }
         if (op.MPR + op2.MPR < 0) {
-            text += " MP©‘R‰ñ•œ" + (op.MPR + op2.MPR);
+            text += " MPè‡ªç„¶å›å¾©" + (op.MPR + op2.MPR);
         }
         if (op.ST[STR] + op2.ST[STR] > 0) {
             text += " STR+" + (op.ST[STR] + op2.ST[STR]);
@@ -142,18 +142,18 @@ public class Bougu implements Common {
             text += " CHA" + op.ST[CHA];
         }
         if (op.DMG_SHORT + op2.DMG_SHORT > 0) {
-            //text += " ’Ç‰Á‘ÅŒ‚+" + (op.DMG_SHORT + op2.DMG_SHORT);
-            text += " ‹ß‹——£ƒ_ƒ[ƒW+" + (op.DMG_SHORT + op2.DMG_SHORT);
+            //text += " è¿½åŠ æ‰“æ’ƒ+" + (op.DMG_SHORT + op2.DMG_SHORT);
+            text += " è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+" + (op.DMG_SHORT + op2.DMG_SHORT);
         }
         if (op.HIT_SHORT + op2.HIT_SHORT > 0) {
-            //text += " UŒ‚¬Œ÷+" + (op.HIT_SHORT + op2.HIT_SHORT);
-            text += " ‹ß‹——£–½’†+" + (op.HIT_SHORT + op2.HIT_SHORT);
+            //text += " æ”»æ’ƒæˆåŠŸ+" + (op.HIT_SHORT + op2.HIT_SHORT);
+            text += " è¿‘è·é›¢å‘½ä¸­+" + (op.HIT_SHORT + op2.HIT_SHORT);
         }
         if (op.DMG_LONG + op2.DMG_LONG > 0) {
-            text += " ‰“‹——£ƒ_ƒ[ƒW+" + (op.DMG_LONG + op2.DMG_LONG);
+            text += " é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+" + (op.DMG_LONG + op2.DMG_LONG);
         }
         if (op.HIT_LONG + op2.HIT_LONG > 0) {
-            text += " ‰“‹——£–½’†+" + (op.HIT_LONG + op2.HIT_LONG);
+            text += " é è·é›¢å‘½ä¸­+" + (op.HIT_LONG + op2.HIT_LONG);
         }
         if (op.SP + op2.SP > 0) {
             text += " SP+" + (op.SP + op2.SP);
@@ -162,97 +162,98 @@ public class Bougu implements Common {
             text += " SP" + op.SP;
         }
         if (op.HIT_MAGIC + op2.HIT_MAGIC > 0) {
-            text += " –‚–@–½’†+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
-        }
-        if (op.DR + op2.DR > 0) {
-            //text += " ƒ_ƒ[ƒW’á‰º" + (op.DR + op2.DR);
-            text += " DR" + (op.DR + op2.DR);
+            text += " é­”æ³•å‘½ä¸­+" + (op.HIT_MAGIC + op2.HIT_MAGIC);
         }
         if (op.CRI_SHORT + op2.CRI_SHORT > 0) {
-            text += " ‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹+" + (op.CRI_SHORT + op2.CRI_SHORT);
+            text += " è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+" + (op.CRI_SHORT + op2.CRI_SHORT);
         }
         if (op.CRI_LONG + op2.CRI_LONG > 0) {
-            text += " ‰“‹——£ƒNƒŠƒeƒBƒJƒ‹+" + (op.CRI_LONG + op2.CRI_LONG);
+            text += " é è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+" + (op.CRI_LONG + op2.CRI_LONG);
         }
         if (op.CRI_MAGIC + op2.CRI_MAGIC > 0) {
-            text += " –‚–@ƒNƒŠƒeƒBƒJƒ‹+" + (op.CRI_MAGIC + op2.CRI_MAGIC);
+            text += " é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«+" + (op.CRI_MAGIC + op2.CRI_MAGIC);
         }
         if (op.element_resist[FIRE] > 0) {
-            text += " ‰Î‘®«MR" + op.element_resist[FIRE];
+            text += " ç«å±æ€§MR" + op.element_resist[FIRE];
         }
         if (op.element_resist[WATER] > 0) {
-            text += " …‘®«MR" + op.element_resist[WATER];
+            text += " æ°´å±æ€§MR" + op.element_resist[WATER];
         }
         if (op.element_resist[WIND] > 0) {
-            text += " •—‘®«MR" + op.element_resist[WIND];
+            text += " é¢¨å±æ€§MR" + op.element_resist[WIND];
         }
         if (op.element_resist[EARTH] > 0) {
-            text += " ’n‘®«MR" + op.element_resist[EARTH];
+            text += " åœ°å±æ€§MR" + op.element_resist[EARTH];
         }
         if (op.MR + op2.MR > 0) {
             text += " MR+" + (op.MR + op2.MR);
         }
         if (mr_enchant > 0) {
-            text += " (‹­‰»–ˆ‚ÉMR+" + mr_enchant + ")";
+            text += " (å¼·åŒ–æ¯ã«MR+" + mr_enchant + ")";
         }
         if (op.ailment[STUN] + op2.ailment[STUN] > 0) {
-            text += " ƒXƒ^ƒ“‘Ï«+" + (op.ailment[STUN] + op2.ailment[STUN]);
+            text += " ã‚¹ã‚¿ãƒ³è€æ€§+" + (op.ailment[STUN] + op2.ailment[STUN]);
         }
         if (op.ailment[HOLD] + op2.ailment[HOLD] > 0) {
-            text += " ƒz[ƒ‹ƒh‘Ï«+" + (op.ailment[HOLD] + op2.ailment[HOLD]);
+            text += " ãƒ›ãƒ¼ãƒ«ãƒ‰è€æ€§+" + (op.ailment[HOLD] + op2.ailment[HOLD]);
         }
         if (op.ailment[SLEEP] + op2.ailment[SLEEP] > 0) {
-            text += " ‡–°‘Ï«+" + (op.ailment[SLEEP] + op2.ailment[SLEEP]);
+            text += " ç¡çœ è€æ€§+" + (op.ailment[SLEEP] + op2.ailment[SLEEP]);
         }
         if (op.ailment[FREEZE] + op2.ailment[FREEZE] > 0) {
-            text += " “€Œ‹‘Ï«+" + (op.ailment[FREEZE] + op2.ailment[FREEZE]);
+            text += " å‡çµè€æ€§+" + (op.ailment[FREEZE] + op2.ailment[FREEZE]);
         }
         if (op.ailment[STONE] + op2.ailment[STONE] > 0) {
-            text += " Î‰»‘Ï«+" + (op.ailment[STONE] + op2.ailment[STONE]);
+            text += " çŸ³åŒ–è€æ€§+" + (op.ailment[STONE] + op2.ailment[STONE]);
         }
         if (op.ailment[DARKNESS] + op2.ailment[DARKNESS] > 0) {
-            text += " ˆÃˆÅ‘Ï«+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
+            text += " æš—é—‡è€æ€§+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
         }
         if (op.ailment[TERROR] + op2.ailment[TERROR] > 0) {
-            text += " ‹°•|‘Ï«+" + (op.ailment[TERROR] + op2.ailment[TERROR]);
+            text += " ææ€–è€æ€§+" + (op.ailment[TERROR] + op2.ailment[TERROR]);
         }
         if (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION] > 0) {
-            text += " ”j‰ó‘Ï«+" + (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION]);
+            text += " ç ´å£Šè€æ€§+" + (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION]);
         }
         if (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN] > 0) {
-            text += " ƒXƒ^ƒ“–½’†+" + (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN]);
+            text += " ã‚¹ã‚¿ãƒ³å‘½ä¸­+" + (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN]);
         }
         if (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD] > 0) {
-            text += " ƒz[ƒ‹ƒh–½’†+" + (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD]);
+            text += " ãƒ›ãƒ¼ãƒ«ãƒ‰å‘½ä¸­+" + (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD]);
         }
         if (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP] > 0) {
-            text += " ‡–°–½’†+" + (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP]);
+            text += " ç¡çœ å‘½ä¸­+" + (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP]);
         }
         if (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE] > 0) {
-            text += " “€Œ‹–½’†+" + (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE]);
+            text += " å‡çµå‘½ä¸­+" + (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE]);
         }
         if (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE] > 0) {
-            text += " Î‰»–½’†+" + (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE]);
+            text += " çŸ³åŒ–å‘½ä¸­+" + (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE]);
         }
         if (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS] > 0) {
-            text += " ˆÃˆÅ–½’†+" + (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS]);
+            text += " æš—é—‡å‘½ä¸­+" + (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS]);
         }
         if (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR] > 0) {
-            text += " ‹°•|–½’†+" + (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR]);
+            text += " ææ€–å‘½ä¸­+" + (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR]);
         }
         if (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION] > 0) {
-            text += " ”j‰ó–½’†+" + (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION]);
+            text += " ç ´å£Šå‘½ä¸­+" + (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION]);
+        }
+        if (op.DR + op2.DR > 0) {
+            text += " ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³+" + (op.DR + op2.DR);
+        }
+        if (op.DR_IGNORED + op2.DR_IGNORED > 0) {
+            text += " ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³ç„¡è¦–+" + (op.DR_IGNORED + op2.DR_IGNORED);
         }
         if (op.PVP + op2.PVP > 0) {
-            //text += " PVPƒ_ƒ[ƒW+" + (op.PVP + op2.PVP);
-            text += " PVP’Ç‰Áƒ_ƒ[ƒW+" + (op.PVP + op2.PVP);
+            text += " PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+" + (op.PVP + op2.PVP);
         }
-        if (op.PVPDR + op2.PVPDR > 0) {
-            text += " PVPƒ_ƒ[ƒWŒ¸­+" + (op.PVPDR + op2.PVPDR);
+        if (op.PVP_DR + op2.PVP_DR > 0) {
+            text += " PVPãƒ€ãƒ¡ãƒ¼ã‚¸æ¸›å°‘+" + (op.PVP_DR + op2.PVP_DR);
         }
-        //Šd—Ê‚Ì’Ç‰Á
+        //æ‰€æŒé‡é‡ã®è¿½åŠ 
         if (op.c_weight + op2.c_weight > 0) {
-            text += " Šd—Ê‘‰Á+" + (op.c_weight + op2.c_weight);
+            text += " æ‰€æŒé‡é‡å¢—åŠ +" + (op.c_weight + op2.c_weight);
         }
 
         if (!op.effect.equals("")) {
@@ -268,8 +269,8 @@ public class Bougu implements Common {
 
         op2 = new Buff();
 
-        if (name.contains("ƒeƒCƒp[ƒK[ƒ_[")) {
-            if (name.contains("˜r—Í")) {
+        if (name.contains("ãƒ†ã‚¤ãƒ‘ãƒ¼ã‚¬ãƒ¼ãƒ€ãƒ¼")) {
+            if (name.contains("è…•åŠ›")) {
                 switch (enchant) {
                     case 5:
                         op2.HIT_SHORT = 1;
@@ -297,7 +298,7 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.contains("‹@•q")) {
+            if (name.contains("æ©Ÿæ•")) {
                 switch (enchant) {
                     case 5:
                         op2.HIT_LONG = 1;
@@ -325,7 +326,7 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.contains("’m—Í")) {
+            if (name.contains("çŸ¥åŠ›")) {
                 switch (enchant) {
                     case 5:
                         op2.MPR = 2;
@@ -355,7 +356,7 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("’n—³‚ÌTƒVƒƒƒc")) {
+        if (name.equals("åœ°ç«œã®Tã‚·ãƒ£ãƒ„")) {
             switch (enchant) {
                 case 5:
                     op2.MR = 4;
@@ -378,7 +379,7 @@ public class Bougu implements Common {
                     op2.DR = 3;
             }
         }
-        if (name.equals("‰Î—³‚ÌTƒVƒƒƒc")) {
+        if (name.equals("ç«ç«œã®Tã‚·ãƒ£ãƒ„")) {
             switch (enchant) {
                 case 5:
                     op2.HP = 20;
@@ -401,7 +402,7 @@ public class Bougu implements Common {
                     op2.DMG_SHORT = 2;
             }
         }
-        if (name.equals("•——³‚ÌTƒVƒƒƒc")) {
+        if (name.equals("é¢¨ç«œã®Tã‚·ãƒ£ãƒ„")) {
             switch (enchant) {
                 case 5:
                     op2.HP = 20;
@@ -424,7 +425,7 @@ public class Bougu implements Common {
                     op2.DMG_LONG = 2;
             }
         }
-        if (name.equals("…—³‚ÌTƒVƒƒƒc")) {
+        if (name.equals("æ°´ç«œã®Tã‚·ãƒ£ãƒ„")) {
             switch (enchant) {
                 case 5:
                     op2.HP = 20;
@@ -448,7 +449,7 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("ŒÃ‘ã‹|Ëè‚ÌƒK[ƒ_[")) {
+        if (name.equals("å¤ä»£å¼“å°„æ‰‹ã®ã‚¬ãƒ¼ãƒ€ãƒ¼")) {
             if (enchant >= 9) {
                 op2.DMG_LONG = 3;
             } else if (enchant >= 7) {
@@ -457,7 +458,7 @@ public class Bougu implements Common {
                 op2.DMG_LONG = 1;
             }
         }
-        if (name.equals("ŒÃ‘ã“¬m‚ÌƒK[ƒ_[")) {
+        if (name.equals("å¤ä»£é—˜å£«ã®ã‚¬ãƒ¼ãƒ€ãƒ¼")) {
             if (enchant >= 9) {
                 op2.DMG_SHORT = 3;
             } else if (enchant >= 7) {
@@ -466,7 +467,7 @@ public class Bougu implements Common {
                 op2.DMG_SHORT = 1;
             }
         }
-        if (name.equals("‘Ì—Í‚ÌƒK[ƒ_[")) {
+        if (name.equals("ä½“åŠ›ã®ã‚¬ãƒ¼ãƒ€ãƒ¼")) {
             if (enchant >= 9) {
                 op2.HP = 75;
             } else if (enchant >= 7) {
@@ -475,7 +476,7 @@ public class Bougu implements Common {
                 op2.HP = 25;
             }
         }
-        if (name.equals("çŒì‚ÌƒK[ƒ_[")) {
+        if (name.equals("å®ˆè­·ã®ã‚¬ãƒ¼ãƒ€ãƒ¼")) {
             if (enchant >= 9) {
                 op2.DR = 3;
             } else if (enchant >= 7) {
@@ -484,7 +485,7 @@ public class Bougu implements Common {
                 op2.DR = 1;
             }
         }
-        if (name.equals("ƒEƒBƒU[ƒh‚ÌƒK[ƒ_[")) {
+        if (name.equals("ã‚¦ã‚£ã‚¶ãƒ¼ãƒ‰ã®ã‚¬ãƒ¼ãƒ€ãƒ¼")) {
             if (enchant >= 9) {
                 op2.SP = 3;
             } else if (enchant >= 7) {
@@ -494,571 +495,617 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.contains("ƒAƒ“ƒ^ƒ‰ƒXƒOƒ‰ƒ“ƒh")) {
+        if (name.contains("ã‚¢ãƒ³ã‚¿ãƒ©ã‚¹ã‚°ãƒ©ãƒ³ãƒ‰")) {
             if (enchant > 6) {
                 op2.DR += enchant - 6;
             }
         }
-
-        if (name.equals("‹P‚­–‚—Í‚ÌƒOƒ[ƒu")) {
+        if (name.equals("ãƒ´ã‚¡ãƒ©ã‚«ã‚¹ãƒ•ãƒ¬ã‚¤ãƒ ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ¡ã‚¤ãƒ«")) {
+            if (enchant >= 9) {
+                op2.CRI_SHORT = 3;
+                op2.DR_IGNORED = 3;
+            } else if (enchant >= 8) {
+                op2.CRI_SHORT = 2;
+                op2.DR_IGNORED = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_SHORT = 1;
+                op2.DR_IGNORED = 1;
+            }
+        }
+        if (name.equals("ãƒ´ã‚¡ãƒ©ã‚«ã‚¹ãƒ•ãƒ¬ã‚¤ãƒ ã‚¹ã‚±ã‚¤ãƒ«ãƒ¡ã‚¤ãƒ«")) {
+            if (enchant >= 9) {
+                op2.CRI_SHORT = 3;
+                op2.DR_IGNORED = 2;
+            } else if (enchant >= 8) {
+                op2.CRI_SHORT = 2;
+                op2.DR_IGNORED = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_SHORT = 1;
+                op2.DR_IGNORED = 1;
+            }
+        }
+        if (name.equals("ãƒ´ã‚¡ãƒ©ã‚«ã‚¹ãƒ•ãƒ¬ã‚¤ãƒ ãƒ¬ã‚¶ãƒ¼ã‚¢ãƒ¼ãƒãƒ¼")) {
+            if (enchant >= 9) {
+                op2.CRI_LONG = 3;
+                op2.DR_IGNORED = 2;
+            } else if (enchant >= 8) {
+                op2.CRI_LONG = 2;
+                op2.DR_IGNORED = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_LONG = 1;
+                op2.DR_IGNORED = 1;
+            }
+        }
+        if (name.equals("ãƒ´ã‚¡ãƒ©ã‚«ã‚¹ãƒ•ãƒ¬ã‚¤ãƒ ãƒ­ãƒ¼ãƒ–")) {
+            if (enchant >= 9) {
+                op2.CRI_MAGIC = 3;
+                op2.DR_IGNORED = 2;
+            } else if (enchant >= 8) {
+                op2.CRI_MAGIC = 2;
+                op2.DR_IGNORED = 2;
+            } else if (enchant >= 7) {
+                op2.CRI_MAGIC = 1;
+                op2.DR_IGNORED = 1;
+            }
+        }
+        if (name.equals("è¼ãé­”åŠ›ã®ã‚°ãƒ­ãƒ¼ãƒ–")) {
             if (enchant > 4) {
                 op2.c_weight += 60 * (enchant - 4);
             }
         }
-
-        if (name.contains("ƒXƒiƒbƒp[")) {
-            if (name.contains("j•Ÿ‚³‚ê‚½")) {
-                if (name.contains("—Em")) {
+        if (name.contains("ã‚¹ãƒŠãƒƒãƒ‘ãƒ¼")) {
+            if (name.contains("ç¥ç¦ã•ã‚ŒãŸ")) {
+                if (name.contains("å‹‡å£«")) {
                     switch (enchant) {
                         case 8:
                                                                                 //AC-7
-                            op2.DMG_LONG++;             //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+5
-                            op2.DMG_SHORT++;            //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+5
-                            op2.HIT_SHORT++;            //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+5
-                            op2.HIT_LONG++;             //‰“‹——£–½’†+1           //‰“‹——£–½’†+5
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
+                            op2.DMG_LONG++;             //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
+                            op2.DMG_SHORT++;            //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
+                            op2.HIT_SHORT++;            //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+5
+                            op2.HIT_LONG++;             //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+5
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
                                                                                 //HP+30
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 7:
                             op2.AC--;                   //AC-1                  //AC-7
-                            op2.DMG_LONG++;             //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
-                            op2.DMG_SHORT++;            //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                            op2.HIT_SHORT++;            //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+4
-                            op2.HIT_LONG++;             //‰“‹——£–½’†+1           //‰“‹——£–½’†+4
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
+                            op2.DMG_LONG++;             //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                            op2.DMG_SHORT++;            //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                            op2.HIT_SHORT++;            //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+4
+                            op2.HIT_LONG++;             //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+4
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
                             op2.HP += 5;                //HP+5                  //HP+30
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 6:
                                                                                 //AC-6
-                            op2.DMG_LONG++;             //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
-                            op2.DMG_SHORT++;            //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+13
-                            op2.HIT_SHORT++;            //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+3
-                            op2.HIT_LONG++;             //‰“‹——£–½’†+1           //‰“‹——£–½’†+3
-                            op2.ailment[STUN] += 5;     //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
+                            op2.DMG_LONG++;             //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                            op2.DMG_SHORT++;            //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+13
+                            op2.HIT_SHORT++;            //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+3
+                            op2.HIT_LONG++;             //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+3
+                            op2.ailment[STUN] += 5;     //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
                             op2.HP += 5;                //HP+5                  //HP+25
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 5:
                                                                                 //AC-6
-                            op2.DMG_LONG++;             //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
-                            op2.DMG_SHORT++;            //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                            op2.HIT_SHORT++;            //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+2
-                            op2.HIT_LONG++;             //‰“‹——£–½’†+1           //‰“‹——£–½’†+2
+                            op2.DMG_LONG++;             //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                            op2.DMG_SHORT++;            //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                            op2.HIT_SHORT++;            //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+2
+                            op2.HIT_LONG++;             //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+2
                             op2.HP += 5;                //HP+5                  //HP+20
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 4:
                             op2.AC--;                   //AC-1                  //AC-6
-                            op2.DMG_LONG++;             //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
-                            op2.DMG_SHORT++;            //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                            op2.HIT_SHORT++;            //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+1
-                            op2.HIT_LONG++;             //‰“‹——£–½’†+1           //‰“‹——£–½’†+1
+                            op2.DMG_LONG++;             //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                            op2.DMG_SHORT++;            //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                            op2.HIT_SHORT++;            //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+1
+                            op2.HIT_LONG++;             //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+1
                             op2.HP += 5;                //HP+5                  //HP+15
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 3:
                             op2.AC -= 4;                //AC-4                  //AC-5
                             op2.HP += 10;               //HP+10                 //HP+10
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     }
-                } else if (name.contains("’mŒb")) {
+                } else if (name.contains("çŸ¥æµ")) {
                     switch (enchant) {
                         case 8:
                                                                                 //AC-6
                             op2.SP++;                   //SP+1                  //SP+5
-                            op2.HIT_MAGIC++;            //–‚–@–½’†+1             //–‚–@–½’†+3                        
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9                          
+                            op2.HIT_MAGIC++;            //é­”æ³•å‘½ä¸­+1             //é­”æ³•å‘½ä¸­+3                        
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9                          
                             op2.HP += 10;               //HP+10                 //HP+50
                             op2.MP += 5;                //MP+5                  //MP+35
-                                                                                //MP©‘R‰ñ•œ+1
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2 
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2 
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 7:
                             op2.AC--;                   //AC-1                  //AC-5
                             op2.SP++;                   //SP+1                  //SP+4
-                            op2.HIT_MAGIC++;            //–‚–@–½’†+1             //–‚–@–½’†+2
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
+                            op2.HIT_MAGIC++;            //é­”æ³•å‘½ä¸­+1             //é­”æ³•å‘½ä¸­+2
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
                             op2.HP += 5;                //HP+5                  //HP+40
                             op2.MP += 5;                //MP+5                  //MP+30
-                                                                                //MP©‘R‰ñ•œ+1
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 6:
                                                                                 //AC-5 
                             op2.SP++;                   //SP+1                  //SP+3
-                            op2.HIT_MAGIC++;            //–‚–@–½’†+1             //–‚–@–½’†+1
-                            op2.ailment[STUN] += 5;     //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
+                            op2.HIT_MAGIC++;            //é­”æ³•å‘½ä¸­+1             //é­”æ³•å‘½ä¸­+1
+                            op2.ailment[STUN] += 5;     //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
                             op2.HP += 5;                //HP+5                  //HP+35
                             op2.MP += 10;               //MP+10                 //MP+25
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 5:
                                                                                 //AC-5
                             op2.SP++;                   //SP+1                  //SP+2                          
                             op2.HP += 5;                //HP+5                  //HP+30
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                                                     
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                                                     
                         case 4:
                             op2.AC--;                   //AC-1                  //AC-5
                             op2.SP++;                   //SP+1                  //SP+1
                             op2.HP += 5;                //HP+5                  //HP+25
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 3:
                             op2.AC -= 3;                //AC-4                  //AC-4
                             op2.HP += 20;               //HP+20                 //HP+20
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     }
-                } else if (name.contains("‘Ì—Í")) {
+                } else if (name.contains("ä½“åŠ›")) {
                     switch (enchant) {
                         case 8:
                                                                                 //AC-7
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+5
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+5
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
                             op2.DR++;                   //DR+1                  //DR+3
-                                                        //Šm—¦ƒ_ƒ[ƒW’á‰º20 +1% //Šm—¦ƒ_ƒ[ƒW’á‰º20 +3%
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
+                                                        //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +1% //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +3%
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
                             op2.HP += 10;               //HP+10                 //HP+115
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 7:
                             op2.AC--;                   //AC-1                  //AC-7
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
                             op2.DR++;                   //DR+1                  //DR+2
-                                                        //Šm—¦ƒ_ƒ[ƒW’á‰º20 +1% //Šm—¦ƒ_ƒ[ƒW’á‰º20 +2%
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
+                                                        //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +1% //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +2%
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
                             op2.HP += 10;               //HP+10                 //HP+105
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 6:
                                                                                 //AC-6
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+3
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
                             op2.DR++;                   //DR+1                  //DR+1
-                                                        //Šm—¦ƒ_ƒ[ƒW’á‰º20 +1% //Šm—¦ƒ_ƒ[ƒW’á‰º20 +1%
-                            op2.ailment[STUN] += 5;     //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
+                                                        //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +1% //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +1%
+                            op2.ailment[STUN] += 5;     //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
                             op2.HP += 5;                //HP+5                  //HP+95
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 5:
                             op2.AC--;                   //AC-1                  //AC-6
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
                             op2.HP += 5;                //HP+5                  //HP+90
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 4:
                             op2.AC--;                   //AC-1                  //AC-5
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
                             op2.HP += 5;                //HP+5                  //HP+85
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 3:
                              op2.AC -= 3;               //AC-3                  //AC-4
                              op2.HP += 30;              //HP+30                 //HP+80
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     }
-                } else if (name.contains("–‚–@’ïR")) {
+                } else if (name.contains("é­”æ³•æŠµæŠ—")) {
                     switch (enchant) {
                         case 8:
                                                                                 //AC-7
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+5
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+5
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
                             op2.MR++;                   //MR+1                  //MR+10
-                                                        //Šm—¦–‚–@‰ñ”ğ+2         //Šm—¦–‚–@‰ñ”ğ+5
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
+                                                        //ç¢ºç‡é­”æ³•å›é¿+2         //ç¢ºç‡é­”æ³•å›é¿+5
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
                                                                                 //HP+50
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 7:
                             op2.AC--;                   //AC-3                  //AC-7
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
                             op2.MR++;                   //MR+1                  //MR+9
-                                                        //Šm—¦–‚–@‰ñ”ğ+2         //Šm—¦–‚–@‰ñ”ğ+3
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
+                                                        //ç¢ºç‡é­”æ³•å›é¿+2         //ç¢ºç‡é­”æ³•å›é¿+3
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
                             op2.HP += 5;                //HP+5                  //HP+50
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 6:
                                                                                 //AC-6
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+3
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
                             op2.MR++;                   //MR+1                  //MR+8
-                                                        //Šm—¦–‚–@‰ñ”ğ+1         //Šm—¦–‚–@‰ñ”ğ+1
-                            op2.ailment[STUN] += 5;     //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
+                                                        //ç¢ºç‡é­”æ³•å›é¿+1         //ç¢ºç‡é­”æ³•å›é¿+1
+                            op2.ailment[STUN] += 5;     //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
                             op2.HP += 5;                //HP+5                  //HP+45
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 5:
                             op2.AC--;                   //AC-1                  //AC-6
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
                                                                                 //MR+7
                             op2.HP += 5;                //HP+5                  //HP+40
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 4:
                             op2.AC--;                   //AC-1                  //AC-5
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
                                                                                 //MR+7
                             op2.HP += 5;                //HP+5                  //HP+35
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 3:
                             op2.AC -= 3;                //AC-3                  //AC-4
                                                                                 //MR+7
                             op2.HP += 30;               //HP+30                 //HP+30
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     }
-                } else if (name.contains("W’†") || name.contains("ƒ}ƒi") || name.contains("‰ñ•œ")) {
+                } else if (name.contains("é›†ä¸­") || name.contains("ãƒãƒŠ") || name.contains("å›å¾©")) {
                     switch (enchant) {
                         case 8:
                                                                                 //AC-5
                                                                                 //HP+50
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+5
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+5
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+5
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 7:
                                                                                 //AC-5
                             op2.HP += 5;                //HP+5                  //HP+50
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
-                            op2.ailment[STUN] += 2;     //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
-                            op2.PVP++;                  //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                            op2.ailment[STUN] += 2;     //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
+                            op2.PVP++;                  //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 6:
                                                                                 //AC-5
                             op2.HP += 5;                //HP+5                  //HP+45
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+3
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
-                            op2.ailment[STUN] += 5;     //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                            op2.ailment[STUN] += 5;     //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 5:
                                                                                 //AC-5
                             op2.HP += 5;                //HP+5                  //HP+40
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 4:
                             op2.AC--;                   //AC-1                  //AC-5
-                            op2.DMG_LONG++;             //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                            op2.DMG_SHORT++;            //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
+                            op2.DMG_LONG++;             //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                            op2.DMG_SHORT++;            //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
                             op2.HP += 5;                //HP+5                  //HP+35
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                         case 3:
                             op2.AC -= 3;                //AC-3                  //AC-4
                             op2.HP += 30;               //HP+30                 //HP+30
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     }
                 }
-            } else if (name.contains("—Em")) {
+            } else if (name.contains("å‹‡å£«")) {
                 switch (enchant) {
                     case 8:
                                                                                 //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+30
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                        op2.HIT_SHORT++;                //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+2
-                        op2.HIT_LONG++;                 //‰“‹——£–½’†+1           //‰“‹——£–½’†+2
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.HIT_SHORT++;                //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+2
+                        op2.HIT_LONG++;                 //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+2
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 7:
                                                                                 //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+25
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+3
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                        op2.HIT_SHORT++;                //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+2
-                        op2.HIT_LONG++;                 //‰“‹——£–½’†+1           //‰“‹——£–½’†+2
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                        op2.HIT_SHORT++;                //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+2
+                        op2.HIT_LONG++;                 //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+2
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 6:
                                                                                 //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+20
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
-                        op2.HIT_SHORT++;                //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+2
-                        op2.HIT_LONG++;                 //‰“‹——£–½’†+1           //‰“‹——£–½’†+2
-                        op2.ailment[STUN] += 5;         //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.HIT_SHORT++;                //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+2
+                        op2.HIT_LONG++;                 //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+2
+                        op2.ailment[STUN] += 5;         //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 5:
                                                                                 //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+15
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
-                        op2.HIT_SHORT++;                //‹ß‹——£–½’†+1           //‹ß‹——£–½’†+1
-                        op2.HIT_LONG++;                 //‰“‹——£–½’†+1           //‰“‹——£–½’†+1
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                        op2.HIT_SHORT++;                //è¿‘è·é›¢å‘½ä¸­+1           //è¿‘è·é›¢å‘½ä¸­+1
+                        op2.HIT_LONG++;                 //é è·é›¢å‘½ä¸­+1           //é è·é›¢å‘½ä¸­+1
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 4:
                         op2.AC--;                       //AC-1                  //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+10
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 3:
                         op2.AC--;                       //AC-1                  //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+5
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 2:
                         op2.AC--;                       //AC-1                  //AC-3
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 1:
                         op2.AC--;                       //AC-1                  //AC-2
-                                                                                //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                 }
-            } else if (name.contains("’mŒb")) {
+            } else if (name.contains("çŸ¥æµ")) {
                 switch (enchant) {
                     case 8:
                         op2.AC--;                       //AC-1                  //AC-6
                         op2.HP += 5;                    //HP+5                  //HP+40
                         op2.SP++;                       //SP+1                  //SP+4
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
-                        op2.HIT_MAGIC++;                //–‚–@–½’†+1             //–‚–@–½’†+2
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
+                        op2.HIT_MAGIC++;                //é­”æ³•å‘½ä¸­+1             //é­”æ³•å‘½ä¸­+2
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
                         op2.MP += 15;                   //MP+15                 //MP+30
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 7:
                                                                                 //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+35
                         op2.SP++;                       //SP+1                  //SP+3
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
-                        op2.HIT_MAGIC++;                //–‚–@–½’†+1             //–‚–@–½’†+1
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1                       
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
+                        op2.HIT_MAGIC++;                //é­”æ³•å‘½ä¸­+1             //é­”æ³•å‘½ä¸­+1
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1                       
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                       
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                       
                     case 6:
                         op2.AC--;                       //AC-1                  //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+30
                         op2.SP++;                       //SP+1                  //SP+2
-                        op2.ailment[STUN] += 5;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+5                      
+                        op2.ailment[STUN] += 5;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+5                      
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                      
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                      
                     case 5:
                                                                                 //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+25
                         op2.SP++;                       //SP+1                  //SP+1
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                                              
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                                              
                     case 4:
                         op2.AC--;                       //AC-1                  //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+20
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                                              
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                                              
                     case 3:
                         op2.AC--;                       //AC-1                  //AC-3
                         op2.HP += 5;                    //HP+5                  //HP+15                       
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                     case 2:
                         op2.AC--;                       //AC-1                  //AC-2
                         op2.HP += 5;                    //HP+5                  //HP+10                      
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                     case 1:
                                                                                 //AC-1
                         op2.HP += 5;                    //HP+5                  //HP+5                       
                                                                                 //MP+15
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                 }
-            } else if (name.contains("‘Ì—Í")) {
+            } else if (name.contains("ä½“åŠ›")) {
                 switch (enchant) {
                     case 8:
                                                                                 //AC-5
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
                         op2.DR++;                       //DR+1                  //DR+2
-                                                        //Šm—¦ƒ_ƒ[ƒW’á‰º20 +1% //Šm—¦ƒ_ƒ[ƒW’á‰º20 +2%
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
+                                                        //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +1% //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +2%
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
                         op2.HP += 5;                    //HP+5                  //HP+100
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 7:
                                                                                 //AC-5
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+3
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
                         op2.DR++;                       //DR+1                  //DR+1
-                                                        //Šm—¦ƒ_ƒ[ƒW’á‰º20 +1% //Šm—¦ƒ_ƒ[ƒW’á‰º20 +1%
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
+                                                        //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +1% //ç¢ºç‡ãƒ€ãƒ¡ãƒ¼ã‚¸ä½ä¸‹20 +1%
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
                         op2.HP += 5;                    //HP+5                  //HP+95
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 6:
                         op2.AC--;                       //AC-1                  //AC-5
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
-                        op2.ailment[STUN] += 5;         //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.ailment[STUN] += 5;         //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
                         op2.HP += 5;                    //HP+5                  //HP+90
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 5:
                                                                                 //AC-4
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
                         op2.HP += 5;                    //HP+5                  //HP+85
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 4:
                         op2.AC--;                       //AC-1                  //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+80
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 3:
                         op2.AC--;                       //AC-1                  //AC-3
                         op2.HP += 5;                    //HP+5                  //HP+75
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                     case 2:
                         op2.AC--;                       //AC-1                  //AC-2
                         op2.HP += 5;                    //HP+5                  //HP+70                      
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                     case 1:
                                                                                 //AC-1
                         op2.HP += 15;                    //HP+5                 //HP+65
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                 }
-            } else if (name.contains("–‚–@’ïR")) {
+            } else if (name.contains("é­”æ³•æŠµæŠ—")) {
                 switch (enchant) {
                     case 8:
                                                                                 //AC-5
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
                                                                                 //MR+7
-                                                        //Šm—¦–‚–@‰ñ”ğ+2         //Šm—¦–‚–@‰ñ”ğ+3
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
+                                                        //ç¢ºç‡é­”æ³•å›é¿+2         //ç¢ºç‡é­”æ³•å›é¿+3
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
                         op2.HP += 5;                    //HP+5                  //HP+50
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 7:
                                                                                 //AC-5
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+3
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
                                                                                 //MR+7
-                                                        //Šm—¦–‚–@‰ñ”ğ+2         //Šm—¦–‚–@‰ñ”ğ+1
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
+                                                        //ç¢ºç‡é­”æ³•å›é¿+2         //ç¢ºç‡é­”æ³•å›é¿+1
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
                         op2.HP += 5;                    //HP+5                  //HP+45
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //Šd—Ê‘‰Á+360
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 6:
                         op2.AC--;                       //AC-1                  //AC-5
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
                                                                                 //MR+7
-                        op2.ailment[STUN] += 5;         //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
+                        op2.ailment[STUN] += 5;         //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
                         op2.HP += 5;                    //HP+5                  //HP+40
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 5:
                                                                                 //AC-4
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
                                                                                 //MR+7
                         op2.HP += 5;                    //HP+5                  //HP+35
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 4:
                         op2.AC--;                       //AC-1                  //AC-4
                                                                                 //MR+7
                         op2.HP += 5;                    //HP+5                  //HP+30
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 3:
                         op2.AC--;                       //AC-3                  //AC-3
                                                                                 //MR+7
                         op2.HP += 5;                    //HP+5                  //HP+25
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 2:
                         op2.AC--;                       //AC-1                  //AC-2
                                                                                 //MR+7
                         op2.HP += 5;                    //HP+5                  //HP+20                      
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                     case 1:
                                                                                 //AC-1
                                                                                 //MR+7
                         op2.HP += 15;                   //HP+5                  //HP+15
-                                                                                //Šd—Ê‘‰Á+360                        
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360                        
                 }
             } else {
                     switch (enchant) {
                     case 8:
                                                                                 //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+50
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+4
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+4
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+9
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+2
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360 
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+4
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+9
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360 
                     case 7:
                                                                                 //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+45
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+3
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+3
-                        op2.ailment[STUN] += 2;         //ƒXƒ^ƒ“‘Ï«+2           //ƒXƒ^ƒ“‘Ï«+7
-                        op2.PVP++;                      //PVP’Ç‰Áƒ_ƒ[ƒW+1      //PVP’Ç‰Áƒ_ƒ[ƒW+1
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360 
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+3
+                        op2.ailment[STUN] += 2;         //ã‚¹ã‚¿ãƒ³è€æ€§+2           //ã‚¹ã‚¿ãƒ³è€æ€§+7
+                        op2.PVP++;                      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1      //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360 
                     case 6:
                                                                                 //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+40
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+2
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+2
-                        op2.ailment[STUN] += 5;         //ƒXƒ^ƒ“‘Ï«+5           //ƒXƒ^ƒ“‘Ï«+5
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360 
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+2
+                        op2.ailment[STUN] += 5;         //ã‚¹ã‚¿ãƒ³è€æ€§+5           //ã‚¹ã‚¿ãƒ³è€æ€§+5
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360 
                     case 5:
                                                                                 //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+35
-                        op2.DMG_LONG++;                 //‰“‹——£ƒ_ƒ[ƒW+1       //‰“‹——£ƒ_ƒ[ƒW+1
-                        op2.DMG_SHORT++;                //‹ß‹——£ƒ_ƒ[ƒW+1       //‹ß‹——£ƒ_ƒ[ƒW+1
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360 
+                        op2.DMG_LONG++;                 //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                        op2.DMG_SHORT++;                //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1       //è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360 
                     case 4:
                         op2.AC--;                       //AC-1                  //AC-4
                         op2.HP += 5;                    //HP+5                  //HP+30
-                                                                                //MP©‘R‰ñ•œ+1
-                                                                                //Šd—Ê‘‰Á+360 
+                                                                                //MPè‡ªç„¶å›å¾©+1
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360 
                     case 3:
                         op2.AC--;                       //AC-1                  //AC-3
                         op2.HP += 5;                    //HP+5                  //HP+25
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360 
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360 
                     case 2:
                         op2.AC--;                       //AC-1                  //AC-2
                         op2.HP += 5;                    //HP+5                  //HP+20
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                     case 1:
                         op2.HP += 15;                   //HP+5                  //HP+15
-                                                                                //MP©‘R‰ñ•œ+1          //MP+30            //HP©‘R‰ñ•œ+2
-                                                                                //Šd—Ê‘‰Á+360
+                                                                                //MPè‡ªç„¶å›å¾©+1          //MP+30            //HPè‡ªç„¶å›å¾©+2
+                                                                                //æ‰€æŒé‡é‡å¢—åŠ +360
                 }
             }
         }
 
-        if (name.equals("ŒŒí‚Ìƒ}ƒ“ƒg")) {
+        if (name.equals("è¡€æˆ¦ã®ãƒãƒ³ãƒˆ")) {
             if (enchant >= 5) {
                 op2.AC = -2;
             }
@@ -1075,12 +1122,12 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[STR] = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[Šd—Ê‘‰Á+240]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[æ‰€æŒé‡é‡å¢—åŠ +240]
             if (enchant >= 10) {
                 op2.c_weight = 240;
             }
         }
-        if (name.equals("ŒŒí‚ÌƒP[ƒv")) {
+        if (name.equals("è¡€æˆ¦ã®ã‚±ãƒ¼ãƒ—")) {
             if (enchant >= 5) {
                 op2.AC = -2;
             }
@@ -1096,12 +1143,12 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[DEX] = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[Šd—Ê‘‰Á+240]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[æ‰€æŒé‡é‡å¢—åŠ +240]
             if (enchant >= 10) {
                 op2.c_weight = 240;
             }                
         }
-        if (name.equals("ŒŒí‚ÌƒNƒ[ƒN")) {
+        if (name.equals("è¡€æˆ¦ã®ã‚¯ãƒ­ãƒ¼ã‚¯")) {
             if (enchant >= 5) {
                 op2.AC = -2;
             }
@@ -1117,19 +1164,19 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[INT] = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[Šd—Ê‘‰Á+240]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[æ‰€æŒé‡é‡å¢—åŠ +240]
             if (enchant >= 10) {
                 op2.c_weight = 240;
             }
         }
 
-        if (name.contains("ƒŠƒbƒ`ƒ[ƒu")) {
+        if (name.contains("ãƒªãƒƒãƒãƒ­ãƒ¼ãƒ–")) {
             if (enchant >= 3) {
                 op2.SP = enchant - 2;
             }
         }
 
-        if (name.equals("ŒƒV‚ÌƒOƒ[ƒu")) {
+        if (name.equals("æ¿€æ˜‚ã®ã‚°ãƒ­ãƒ¼ãƒ–")) {
             if (enchant >= 7) {
                 op2.HIT_SHORT = enchant - 3;
             }
@@ -1137,7 +1184,7 @@ public class Bougu implements Common {
                 op2.HIT_SHORT =6;
             }
         }
-        if (name.equals("çŒì‹Rm‚Ìƒpƒ[ƒOƒ[ƒu")) {
+        if (name.equals("å®ˆè­·é¨å£«ã®ãƒ‘ãƒ¯ãƒ¼ã‚°ãƒ­ãƒ¼ãƒ–")) {
             if (enchant >= 5) {
                 op2.HIT_SHORT = enchant - 4;
             }
@@ -1145,7 +1192,7 @@ public class Bougu implements Common {
                 op2.HIT_SHORT =5;
             }
         }
-        if (name.equals("çŒì‹Rm‚ÌƒuƒŒƒCƒT[")) {
+        if (name.equals("å®ˆè­·é¨å£«ã®ãƒ–ãƒ¬ã‚¤ã‚µãƒ¼")) {
             if (enchant >= 5) {
                 op2.HIT_LONG = enchant - 4;
             }
@@ -1154,54 +1201,54 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("K‰^‚ÌƒT[ƒNƒŒƒbƒg")) {
+        if (name.equals("å¹¸é‹ã®ã‚µãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆ")) {
             if (enchant > 0) {
                 op2.SP = 1;
             }
         }
 
-        if (name.equals("‘å–‚–@g‚¢‚Ì–Xq")) {
+        if (name.equals("å¤§é­”æ³•ä½¿ã„ã®å¸½å­")) {
             op2.MP = 10 * enchant;
         }
 
-        if (name.equals("ƒVƒ“ƒZƒVƒXƒQ[ƒgƒ‹")) {
+        if (name.equals("ã‚·ãƒ³ã‚»ã‚·ã‚¹ã‚²ãƒ¼ãƒˆãƒ«")) {
             op2.HP = 5 * enchant;
         }
 
-        //˜r—Í‚ÌƒQ[ƒgƒ‹‚Í+9[‹ß‹——£ƒ_ƒ[ƒW+1]
-        if (name.equals("ƒ†ƒjƒR[ƒ“‚Ì˜r—Í‚ÌƒQ[ƒgƒ‹")) {
+        //è…•åŠ›ã®ã‚²ãƒ¼ãƒˆãƒ«ã¯+9[è¿‘è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1]
+        if (name.equals("ãƒ¦ãƒ‹ã‚³ãƒ¼ãƒ³ã®è…•åŠ›ã®ã‚²ãƒ¼ãƒˆãƒ«")) {
             if (enchant >= 9) {
                 op2.DMG_SHORT = 1;
 	    }
         } 
 
-        //‹@•q‚ÌƒQ[ƒgƒ‹‚Í+9[‰“‹——£ƒ_ƒ[ƒW+1]
-        if (name.equals("ƒ†ƒjƒR[ƒ“‚Ì‹@•q‚ÌƒQ[ƒgƒ‹")) {
+        //æ©Ÿæ•ã®ã‚²ãƒ¼ãƒˆãƒ«ã¯+9[é è·é›¢ãƒ€ãƒ¡ãƒ¼ã‚¸+1]
+        if (name.equals("ãƒ¦ãƒ‹ã‚³ãƒ¼ãƒ³ã®æ©Ÿæ•ã®ã‚²ãƒ¼ãƒˆãƒ«")) {
             if (enchant >= 9) {
                 op2.DMG_LONG = 1;
 	    }
         } 
 
-        //’m—Í‚ÌƒQ[ƒgƒ‹+9[SP+1] 
-        if (name.equals("ƒ†ƒjƒR[ƒ“‚Ì’m—Í‚ÌƒQ[ƒgƒ‹")) {
+        //çŸ¥åŠ›ã®ã‚²ãƒ¼ãƒˆãƒ«+9[SP+1] 
+        if (name.equals("ãƒ¦ãƒ‹ã‚³ãƒ¼ãƒ³ã®çŸ¥åŠ›ã®ã‚²ãƒ¼ãƒˆãƒ«")) {
             if (enchant >= 9) {
                 op2.SP = 1;
 	    }
         }
 
-        //çŒì‚ÌƒQ[ƒgƒ‹‚Í+5‚©‚ç[Å‘åHP]+10‘‰Á
-        if (name.equals("ƒ†ƒjƒR[ƒ“‚ÌçŒì‚ÌƒQ[ƒgƒ‹")) {
+        //å®ˆè­·ã®ã‚²ãƒ¼ãƒˆãƒ«ã¯+5ã‹ã‚‰[æœ€å¤§HP]+10å¢—åŠ 
+        if (name.equals("ãƒ¦ãƒ‹ã‚³ãƒ¼ãƒ³ã®å®ˆè­·ã®ã‚²ãƒ¼ãƒˆãƒ«")) {
             if (enchant >= 5) {
                 op2.HP = 10;
 	    }
         }        
 
-        //’ïR‚ÌƒQ[ƒgƒ‹‚Í+1‹­‰»–ˆ‚É[MR]1%‘‰Á(‘•”õ‚Ìƒpƒ‰ƒ[ƒ^[[MR‹­‰»=]‚ÅÀ‘•Ï)
-        //if (name.equals("ƒ†ƒjƒR[ƒ“‚Ì’ïR‚ÌƒQ[ƒgƒ‹")) {
+        //æŠµæŠ—ã®ã‚²ãƒ¼ãƒˆãƒ«ã¯+1å¼·åŒ–æ¯ã«[MR]1%å¢—åŠ (è£…å‚™ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼[MRå¼·åŒ–=]ã§å®Ÿè£…æ¸ˆ)
+        //if (name.equals("ãƒ¦ãƒ‹ã‚³ãƒ¼ãƒ³ã®æŠµæŠ—ã®ã‚²ãƒ¼ãƒˆãƒ«")) {
         //    op2.MR = 1 * enchant;
         //}
                       
-        if (name.equals("ŒŒí‚ÌƒOƒ[ƒu")) {
+        if (name.equals("è¡€æˆ¦ã®ã‚°ãƒ­ãƒ¼ãƒ–")) {
             if (enchant >= 5) {
                 op2.HP = 30;
             }
@@ -1217,12 +1264,12 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.DMG_SHORT = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[ƒ_ƒ[ƒWŒyŒ¸+1]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+1]
             if (enchant >= 10) {
                 op2.DR = 1;
             }
         }
-        if (name.equals("ŒŒí‚ÌƒuƒŒƒCƒT[")) {
+        if (name.equals("è¡€æˆ¦ã®ãƒ–ãƒ¬ã‚¤ã‚µãƒ¼")) {
             if (enchant >= 5) {
                 op2.HP = 30;
             }
@@ -1238,12 +1285,12 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.DMG_LONG = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[ƒ_ƒ[ƒWŒyŒ¸+1]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+1]
             if (enchant >= 10) {
                 op2.DR = 1;
             }
         }
-        if (name.equals("ŒŒí‚Ìƒ~ƒgƒ“")) {
+        if (name.equals("è¡€æˆ¦ã®ãƒŸãƒˆãƒ³")) {
             if (enchant >= 5) {
                 op2.HP = 30;
             }
@@ -1259,13 +1306,13 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.SP = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[ƒ_ƒ[ƒWŒyŒ¸+1]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+1]
             if (enchant >= 10) {
                 op2.DR = 1;
             }
         }
 
-        if (name.equals("ŒŒí‚ÌƒOƒŠ[ƒ”")) {
+        if (name.equals("è¡€æˆ¦ã®ã‚°ãƒªãƒ¼ãƒ´")) {
             if (enchant >= 5) {
                 op2.HP = 25;
             }
@@ -1281,12 +1328,12 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[STR] = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[Å‘åHP+80]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[æœ€å¤§HP+80]
             if (enchant >= 10) {
                 op2.HP = 80;
             }
         }
-        if (name.equals("ŒŒí‚Ìƒu[ƒc")) {
+        if (name.equals("è¡€æˆ¦ã®ãƒ–ãƒ¼ãƒ„")) {
             if (enchant >= 5) {
                 op2.HP = 25;
             }
@@ -1302,12 +1349,12 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[DEX] = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[Å‘åHP+80]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[æœ€å¤§HP+80]
             if (enchant >= 10) {
                 op2.HP = 80;
             }
         }
-        if (name.equals("ŒŒí‚ÌƒoƒXƒLƒ“")) {
+        if (name.equals("è¡€æˆ¦ã®ãƒã‚¹ã‚­ãƒ³")) {
             if (enchant >= 5) {
                 op2.HP = 25;
             }
@@ -1323,522 +1370,522 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ST[INT] = 1;
             }
-            //+10‹­‰»ƒIƒvƒVƒ‡ƒ“[Å‘åHP+80]
+            //+10å¼·åŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³[æœ€å¤§HP+80]
             if (enchant >= 10) {
                 op2.HP = 80;
             }
         }
 
-        //+1‹­‰»‚·‚é‚²‚Æ‚ÉAC-1‚³‚ê‚È‚¢–h‹ïEƒAƒCƒeƒ€
-        if (type.equals("ƒŠƒ“ƒO") || type.equals("ƒAƒ~ƒ…ƒŒƒbƒg") || type.equals("ƒCƒAƒŠƒ“ƒO") || type.equals("ƒxƒ‹ƒg") || type.equals("–äÍ") || type.equals("ƒCƒ“ƒVƒOƒjƒA")) {
+        //+1å¼·åŒ–ã™ã‚‹ã”ã¨ã«AC-1ã•ã‚Œãªã„é˜²å…·ãƒ»ã‚¢ã‚¤ãƒ†ãƒ 
+        if (type.equals("ãƒªãƒ³ã‚°") || type.equals("ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ") || type.equals("ã‚¤ã‚¢ãƒªãƒ³ã‚°") || type.equals("ãƒ™ãƒ«ãƒˆ") || type.equals("ç´‹ç« ") || type.equals("ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
 
-            if (name.equals("‰ñ•œ‚Ì–äÍ")) {
-                op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
-                op2.effect += "‰ñ•œˆ«‰»–hŒä +" + (enchant * 2 + 2) + "%,";
+            if (name.equals("å›å¾©ã®ç´‹ç« ")) {
+                op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +" + (enchant * 2 + 2) + "% +" + (enchant * 2 + 2) + ",";
+                op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +" + (enchant * 2 + 2) + "%,";
             }
 
             switch (name) {
-                case "˜r—Í‚Ì–äÍ":          //+0˜r—Í‚Ì–äÍ‚ÅSTR=1
+                case "è…•åŠ›ã®ç´‹ç« ":          //+0è…•åŠ›ã®ç´‹ç« ã§STR=1
                     switch (enchant) {
                         case 1:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +2%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2%,";
                             break;
                         case 2:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +4,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +4%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +4,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4%,";
                             break;
                         case 3:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +6% +6,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +6%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +6% +6,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +6%,";
                             break;
                         case 4:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +8%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8%,";
                             break;
                         case 5:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +9% +9,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +9%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +9% +9,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +9%,";
                             op2.HIT_SHORT = 1;
                             break;
                         case 6:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10%,";
                             op2.HIT_SHORT = 1;
                             op2.DMG_SHORT = 1;
                             break;
                         case 7:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +11% +11,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +11%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +11% +11,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +11%,";
                             op2.HIT_SHORT = 2;
                             op2.DMG_SHORT = 2;
                             break;
                         case 8:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
                             op2.HIT_SHORT = 3;
                             op2.DMG_SHORT = 3;
                             break;
                         case 9:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +13% +13,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +13%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +13% +13,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +13%,";
                             op2.HIT_SHORT = 4;
                             op2.DMG_SHORT = 4;
                             break;
                         case 10:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
                             op2.HIT_SHORT = 5;
                             op2.DMG_SHORT = 5;
                             break;
                     }
                     break;                   
-                case "‹@•q‚Ì–äÍ":          //+0‹@•q‚Ì–äÍ‚ÅDEX=1
+                case "æ©Ÿæ•ã®ç´‹ç« ":          //+0æ©Ÿæ•ã®ç´‹ç« ã§DEX=1
                     switch (enchant) {
                         case 1:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +2%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2%,";
                             break;
                         case 2:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +4,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +4%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +4,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4%,";
                             break;
                         case 3:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +6% +6,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +6%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +6% +6,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +6%,";
                             break;
                         case 4:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +8%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8%,";
                             break;
                         case 5:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +9% +9,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +9%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +9% +9,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +9%,";
                             op2.HIT_LONG = 1;
                             break;
                         case 6:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10%,";
                             op2.HIT_LONG = 1;
                             op2.DMG_LONG = 1;
                             break;
                         case 7:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +11% +11,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +11%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +11% +11,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +11%,";
                             op2.HIT_LONG = 2;
                             op2.DMG_LONG = 2;
                             break;
                         case 8:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
                             op2.HIT_LONG = 3;
                             op2.DMG_LONG = 3;
                             break;
                         case 9:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +13% +13,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +13%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +13% +13,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +13%,";
                             op2.HIT_LONG = 4;
                             op2.DMG_LONG = 4;
                             break;
                         case 10:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
                             op2.HIT_LONG = 5;
                             op2.DMG_LONG = 5;
                             break;
                     }
                     break;                  
-                case "’m—Í‚Ì–äÍ":          //+0’m—Í‚Ì–äÍ‚ÅSTR=1
+                case "çŸ¥åŠ›ã®ç´‹ç« ":          //+0çŸ¥åŠ›ã®ç´‹ç« ã§STR=1
                     switch (enchant) {
                         case 1:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +2%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2%,";
                             break;
                         case 2:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +4,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +4%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +4,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4%,";
                             break;
                         case 3:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +6% +6,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +6%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +6% +6,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +6%,";
                             break;
                         case 4:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +8%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8%,";
                             break;
                         case 5:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +9% +9,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +9%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +9% +9,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +9%,";
                             op2.HIT_MAGIC = 1;
                             break;
                         case 6:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10%,";
                             op2.HIT_MAGIC = 1;
                             op2.SP = 1;
                             break;
                         case 7:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +11% +11,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +11%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +11% +11,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +11%,";
                             op2.HIT_MAGIC = 2;
                             op2.SP = 2;
                             break;
                         case 8:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
                             op2.HIT_MAGIC = 3;
                             op2.SP = 3;
                             break;
                         case 9:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +13% +13,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +13%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +13% +13,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +13%,";
                             op2.HIT_MAGIC = 4;
                             op2.SP = 4;
                             break;
                         case 10:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
                             op2.HIT_MAGIC = 5;
                             op2.SP = 5;
                             break;
                     }
                     break; 
-                case "¬’·‚Ì–äÍ":          //+0¬’·‚Ì–äÍ‚ÅEXP+1%
+                case "æˆé•·ã®ç´‹ç« ":          //+0æˆé•·ã®ç´‹ç« ã§EXP+1%
                     switch (enchant) {
                         case 0:
                             op2.effect = "EXP +1%,";
                             break;
                         case 1:
                             op2.effect = "EXP +2%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +2%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2%,";
                             break;
                         case 2:
                             op2.effect = "EXP +3%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +4,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +4%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +4,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4%,";
                             break;
                         case 3:
                             op2.effect = "EXP +4%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +6% +6,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +6%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +6% +6,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +6%,";
                             break;
                         case 4:
                             op2.effect = "EXP +5%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +8%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8%,";
                             break;
                         case 5:
                             op2.effect = "EXP +6%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +9% +9,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +9%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +9% +9,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +9%,";
                             break;
                         case 6:
                             op2.effect = "EXP +7%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +10%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10%,";
                             break;
                         case 7:
                             op2.effect = "EXP +9%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +11% +11,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +11%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +11% +11,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +11%,";
                             break;
                         case 8:
                             op2.effect = "EXP +11%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
                             break;
                         case 9:
                             op2.effect = "EXP +13%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +13% +13,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +13%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +13% +13,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +13%,";
                             break;
                         case 10:
                             op2.effect = "EXP +15%,";
-                            op2.effect += "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
+                            op2.effect += "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
                             break;
                     }
                     break;         
-                case "çŒì‚Ì–äÍ":          //+0çŒì‚Ì–äÍ‚ÅAC=-1
+                case "å®ˆè­·ã®ç´‹ç« ":          //+0å®ˆè­·ã®ç´‹ç« ã§AC=-1
                     switch (enchant) {
                         case 1:
-                            op2.effect = "Šl“¾EXP +1%,";
+                            op2.effect = "ç²å¾—EXP +1%,";
                             break;
                         case 2:
-                            op2.effect = "Šl“¾EXP +2%,";
+                            op2.effect = "ç²å¾—EXP +2%,";
                             break;
                         case 3:
-                            op2.effect = "Šl“¾EXP +3%,";
+                            op2.effect = "ç²å¾—EXP +3%,";
                             break;
                         case 4:
-                            op2.effect = "Šl“¾EXP +4%,";
+                            op2.effect = "ç²å¾—EXP +4%,";
                             op2.MR = 1;
                             break;
                         case 5:
-                            op2.effect = "Šl“¾EXP +5%,";
+                            op2.effect = "ç²å¾—EXP +5%,";
                             op2.MR = 2;
                             break;
                         case 6:
-                            op2.effect = "Šl“¾EXP +6%,";
+                            op2.effect = "ç²å¾—EXP +6%,";
                             op2.MR = 3;
                             break;
                         case 7:
-                            op2.effect = "Šl“¾EXP +7%,";
+                            op2.effect = "ç²å¾—EXP +7%,";
                             op2.MR = 4;
                             break;
                         case 8:
-                            op2.effect = "Šl“¾EXP +8%,";
+                            op2.effect = "ç²å¾—EXP +8%,";
                             op2.MR = 5;
                             break;
                     } 
                     break;
-                case "“¬m‚Ì–äÍ":          //+0“¬m‚Ì–äÍ‚ÅSTR=1
+                case "é—˜å£«ã®ç´‹ç« ":          //+0é—˜å£«ã®ç´‹ç« ã§STR=1
                     switch (enchant) {
                         case 1:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +2%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2%,";
                             break;
                         case 2:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +4,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +4%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +4,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4%,";
                             break;
                         case 3:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +8%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8%,";
                             break;
                         case 4:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10%,";
                             break;
                         case 5:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
                             op2.DMG_SHORT = 1;
                             op2.HIT_SHORT = 1;
                             break;
                         case 6:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
                             op2.DMG_SHORT = 2;
                             op2.HIT_SHORT = 2;
                             break;
                         case 7:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +16% +16,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +16%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +16% +16,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +16%,";
                             op2.DMG_SHORT = 3;
                             op2.HIT_SHORT = 3;
                             break;
                         case 8:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +18% +18,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +18%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +18% +18,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +18%,";
                             op2.DMG_SHORT = 4;
                             op2.HIT_SHORT = 4;
                             break;
                     }
                     break;
-                case "Ëè‚Ì–äÍ":          //+0Ëè‚Ì–äÍ‚ÅDEX=1
+                case "å°„æ‰‹ã®ç´‹ç« ":          //+0å°„æ‰‹ã®ç´‹ç« ã§DEX=1
                     switch (enchant) {
                         case 1:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +2%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2%,";
                             break;
                         case 2:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +4,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +4%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +4,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4%,";
                             break;
                         case 3:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +8%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8%,";
                             break;
                         case 4:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10%,";
                             break;
                         case 5:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
                             op2.DMG_LONG= 1;
                             op2.HIT_LONG = 1;
                             break;
                         case 6:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
                             op2.DMG_LONG = 2;
                             op2.HIT_LONG = 2;
                             break;
                         case 7:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +16% +16,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +16%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +16% +16,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +16%,";
                             op2.DMG_LONG = 3;
                             op2.HIT_LONG = 3;
                             break;
                         case 8:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +18% +18,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +18%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +18% +18,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +18%,";
                             op2.DMG_LONG = 4;
                             op2.HIT_LONG = 4;
                             break;
                     }
                     break;
-                case "Œ«Ò‚Ì–äÍ":          //+0Œ«Ò‚Ì–äÍ‚ÅINT=1
+                case "è³¢è€…ã®ç´‹ç« ":          //+0è³¢è€…ã®ç´‹ç« ã§INT=1
                     switch (enchant) {
                         case 1:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +2%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2%,";
                             break;
                         case 2:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +4,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +4%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +4,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4%,";
                             break;
                         case 3:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +8%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8%,";
                             break;
                         case 4:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10%,";
                             break;
                         case 5:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
                             op2.HIT_MAGIC = 1;
                             op2.SP = 1;
                             break;
                         case 6:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
                             op2.HIT_MAGIC = 2;
                             op2.SP = 2;
                             break;
                         case 7:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +16% +16,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +16%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +16% +16,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +16%,";
                             op2.HIT_MAGIC = 3;
                             op2.SP = 3;
                             break;
                         case 8:
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +18% +18,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +18%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +18% +18,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +18%,";
                             op2.HIT_MAGIC = 4;
                             op2.SP = 4;
                             break;
                     }
                     break;
-                case "“¬m‚ÌçŒì–äÍ":                      //+5“¬m‚ÌçŒì–äÍ‚©‚ç
+                case "é—˜å£«ã®å®ˆè­·ç´‹ç« ":                      //+5é—˜å£«ã®å®ˆè­·ç´‹ç« ã‹ã‚‰
                     switch (enchant) {
                         case 5:
                             op2.ST[STR] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +3%,";                            
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +3%,";                            
                             op2.DMG_SHORT = 1;
                             op2.HIT_SHORT = 2;
                             op2.MR = 4;
                             break;
                         case 6:
                             op2.ST[STR] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +5%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +5%,";
                             op2.DMG_SHORT = 2;
                             op2.HIT_SHORT = 3;
                             op2.MR = 6;
                             break;
                         case 7:
                             op2.ST[STR] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +16% +16,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +16%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +7%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +16% +16,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +16%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +7%,";
                             op2.DMG_SHORT = 3;
                             op2.HIT_SHORT = 4;
                             op2.MR = 8;
                             break;
                         case 8:
                             op2.ST[STR] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +18% +18,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +18%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +18% +18,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +18%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +10%,";
                             op2.DMG_SHORT = 4;
                             op2.HIT_SHORT = 5;
                             op2.MR = 10;
                             break;
                     }
                     break;
-                case "Ëè‚ÌçŒì–äÍ":                      //+5Ëè‚ÌçŒì–äÍ‚©‚ç
+                case "å°„æ‰‹ã®å®ˆè­·ç´‹ç« ":                      //+5å°„æ‰‹ã®å®ˆè­·ç´‹ç« ã‹ã‚‰
                     switch (enchant) {
                             case 5:
                             op2.ST[DEX] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +3%,";                            
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +3%,";                            
                             op2.DMG_LONG = 1;
                             op2.HIT_LONG = 2;
                             op2.MR = 4;
                             break;
                         case 6:
                             op2.ST[DEX] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +5%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +5%,";
                             op2.DMG_LONG = 2;
                             op2.HIT_LONG = 3;
                             op2.MR = 6;
                             break;
                         case 7:
                             op2.ST[DEX] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +16% +16,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +16%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +7%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +16% +16,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +16%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +7%,";
                             op2.DMG_LONG = 3;
                             op2.HIT_LONG = 4;
                             op2.MR = 8;
                             break;
                         case 8:
                             op2.ST[DEX] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +18% +18,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +18%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +18% +18,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +18%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +10%,";
                             op2.DMG_LONG = 4;
                             op2.HIT_LONG = 5;
                             op2.MR = 10;
                             break;
                     }
                     break;
-                case "Œ«Ò‚ÌçŒì–äÍ":                      //+5Œ«Ò‚ÌçŒì–äÍ‚©‚ç
+                case "è³¢è€…ã®å®ˆè­·ç´‹ç« ":                      //+5è³¢è€…ã®å®ˆè­·ç´‹ç« ã‹ã‚‰
                     switch (enchant) {
                         case 5:
                             op2.ST[INT] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +12%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +3%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +3%,";
                             op2.SP = 1;
                             op2.HIT_MAGIC = 2;
                             op2.MR = 6;
                             break;
                         case 6:
                             op2.ST[INT] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +14%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +5%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +5%,";
                             op2.SP = 2;
                             op2.HIT_MAGIC = 3;
                             op2.MR = 6;
                             break;
                         case 7:
                             op2.ST[INT] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +16% +16,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +16%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +7%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +16% +16,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +16%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +7%,";
                             op2.SP = 3;
                             op2.HIT_MAGIC = 4;
                             op2.MR = 8;
                             break;
                         case 8:
                             op2.ST[INT] = 1;
-                            op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +18% +18,";
-                            op2.effect += "‰ñ•œˆ«‰»–hŒä +18%,";
-                            op2.effect += "j•ŸÁ–ÕŒø—¦ +10%,";
+                            op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +18% +18,";
+                            op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +18%,";
+                            op2.effect += "ç¥ç¦æ¶ˆè€—åŠ¹ç‡ +10%,";
                             op2.SP = 4;
                             op2.HIT_MAGIC = 5;
                             op2.MR = 10;
@@ -1846,8 +1893,8 @@ public class Bougu implements Common {
                     }
             }
 
-            //ƒV[ƒNƒŒƒbƒgƒIƒvƒVƒ‡ƒ“
-            if (name.contains("ŒŒõ‚Ì") || name.contains("¯‚Ì")) {
+            //ã‚·ãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆã‚ªãƒ—ã‚·ãƒ§ãƒ³
+            if (name.contains("æœˆå…‰ã®") || name.contains("æ˜Ÿã®")) {
                 if (enchant == 7) {
                     op2.PVP = 1;
                 }
@@ -1856,7 +1903,7 @@ public class Bougu implements Common {
                 }
             }
 
-            if (tokusei.equals("î”M")) {
+            if (tokusei.equals("æƒ…ç†±")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -1887,13 +1934,13 @@ public class Bougu implements Common {
                         op2.DMG_SHORT = 3;
                         op2.SP = 1;
                         op2.MR = 3;
-                        op2.PVP = 1;        //PVP’Ç‰Áƒ_ƒ[ƒW+1
+                        op2.PVP = 1;        //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+1
                         break;
                     case 8:
                         op2.HP = 50;
                         op2.DMG_LONG = 4;
                         op2.DMG_SHORT = 4;
-                        op2.PVP = 2;        //PVP’Ç‰Áƒ_ƒ[ƒW+2
+                        op2.PVP = 2;        //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+2
                         op2.SP = 2;
                         op2.MR = 5;
                         break;
@@ -1901,14 +1948,14 @@ public class Bougu implements Common {
                         op2.HP = 60;
                         op2.DMG_LONG = 5;
                         op2.DMG_SHORT = 5;
-                        op2.PVP = 3;        //PVP’Ç‰Áƒ_ƒ[ƒW+3
+                        op2.PVP = 3;        //PVPè¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸+3
                         op2.SP = 3;
                         op2.MR = 7;
                         break;
                 }
             }
 
-            if (tokusei.equals("ª«")) {
+            if (tokusei.equals("æ ¹æ€§")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -1924,34 +1971,34 @@ public class Bougu implements Common {
                         break;
                     case 5:
                         op2.HP = 40;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +0,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +2% (‹°•|),";
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +0,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2% (ææ€–),";
                         op2.AC -= 1;
                         break;
                     case 6:
                         op2.HP = 40;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +4% +2,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +4% (‹°•|),";
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +4% +2,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +4% (ææ€–),";
                         op2.AC -= 2;                      
                         break;
                     case 7:
                         op2.HP = 50;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +6% +4,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +6% (‹°•|),";
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +6% +4,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +6% (ææ€–),";
                         op2.AC -= 3;
                         op2.ailment[STUN] += 2;
                         break;
                     case 8:
                         op2.HP = 50;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +6,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +8% (‹°•|),";
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +6,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8% (ææ€–),";
                         op2.AC -= 4;
                         op2.ailment[STUN] += 3;
                         break;
                     case 9:
                         op2.HP = 60;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +9% +7,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +9% (‹°•|),";
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +9% +7,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +9% (ææ€–),";
                         op2.AC -= 4;
                         op2.ailment[STUN] += 4;
                         break;
@@ -1959,7 +2006,7 @@ public class Bougu implements Common {
 
             }
 
-            if (tokusei.equals("ˆÓ’n")) {
+            if (tokusei.equals("æ„åœ°")) {
                 switch (enchant) {
                     case 1:
                         op2.MP = 5;
@@ -1986,24 +2033,24 @@ public class Bougu implements Common {
                         op2.HP = 30;
                         op2.MP = 50;
                         op2.DR = 3;
-                        op2.PVPDR=2;        //PVPƒ_ƒ[ƒWŒyŒ¸+2
+                        op2.PVP_DR=2;        //PVPãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+2
                         break;
                     case 8:
                         op2.HP = 40;
                         op2.MP = 50;
                         op2.DR = 4;
-                        op2.PVPDR=3;        //PVPƒ_ƒ[ƒWŒyŒ¸+3                        
+                        op2.PVP_DR=3;        //PVPãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+3                        
                         break;
                     case 9:
                         op2.HP = 50;
                         op2.MP = 60;
                         op2.DR = 5;
-                        op2.PVPDR=4;        //PVPƒ_ƒ[ƒWŒyŒ¸+4
+                        op2.PVP_DR=4;        //PVPãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+4
                         break;
                 }
             }
 
-            if (grade.equals("“Á‹‰")) {     //Šeí[10ü”N‹L”OƒŠƒ“ƒO]>>>‹­‰»5‚Ü‚Å
+            if (grade.equals("ç‰¹ç´š")) {     //å„ç¨®[10å‘¨å¹´è¨˜å¿µãƒªãƒ³ã‚°]>>>å¼·åŒ–5ã¾ã§
                 switch (enchant) {
                     case 1:
                         op2.HP = 15;
@@ -2046,9 +2093,9 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.contains("ƒ‹[ƒ€ƒeƒBƒX ƒŒƒbƒh ƒCƒAƒŠƒ“ƒO")) {
+            if (name.contains("ãƒ«ãƒ¼ãƒ ãƒ†ã‚£ã‚¹ ãƒ¬ãƒƒãƒ‰ ã‚¤ã‚¢ãƒªãƒ³ã‚°")) {
                 int e = enchant;
-                if (name.contains("j•Ÿ‚³‚ê‚½")) {
+                if (name.contains("ç¥ç¦ã•ã‚ŒãŸ")) {
                     e++;
                 }
                 switch (e) {
@@ -2072,43 +2119,43 @@ public class Bougu implements Common {
                     case 5:
                         op2.HP = 70;
                         op2.DR = 2;
-                        op2.effect = "ƒ_ƒ[ƒWŒyŒ¸+20 2%,";
+                        op2.effect = "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+20 2%,";
                         break;
                     case 6:
                         op2.HP = 80;
                         op2.DR = 3;
-                        op2.effect = "ƒ_ƒ[ƒWŒyŒ¸+20 3%,";
+                        op2.effect = "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+20 3%,";
                         op2.AC = -7;
                         break;
                     case 7:
                         op2.HP = 90;
                         op2.DR = 4;
-                        op2.effect = "ƒ_ƒ[ƒWŒyŒ¸+20 4%,";
-                        op2.HIT_SHORT = 1;      //‹ß‹——£–½’†+1
-                        op2.HIT_LONG = 1;       //‰“‹——£–½’†+1
+                        op2.effect = "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+20 4%,";
+                        op2.HIT_SHORT = 1;      //è¿‘è·é›¢å‘½ä¸­+1
+                        op2.HIT_LONG = 1;       //é è·é›¢å‘½ä¸­+1
                         op2.AC = -8;            //AC-8
                         break;
                     case 8:
                         op2.HP = 100;
                         op2.DR = 5;
-                        op2.effect = "ƒ_ƒ[ƒWŒyŒ¸+20 5%,";
-                        op2.HIT_SHORT = 3;      //‹ß‹——£–½’†+3
-                        op2.HIT_LONG = 3;       //‰“‹——£–½’†+3
+                        op2.effect = "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+20 5%,";
+                        op2.HIT_SHORT = 3;      //è¿‘è·é›¢å‘½ä¸­+3
+                        op2.HIT_LONG = 3;       //é è·é›¢å‘½ä¸­+3
                         op2.AC = -9;            //AC-9
                         break;
                     case 9:
                         op2.HP = 150;
                         op2.DR = 6;
-                        op2.effect = "ƒ_ƒ[ƒWŒyŒ¸+20 6%,";
-                        op2.HIT_SHORT = 5;      //‹ß‹——£–½’†+5
-                        op2.HIT_LONG = 5;       //‰“‹——£–½’†+5
+                        op2.effect = "ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›+20 6%,";
+                        op2.HIT_SHORT = 5;      //è¿‘è·é›¢å‘½ä¸­+5
+                        op2.HIT_LONG = 5;       //é è·é›¢å‘½ä¸­+5
                         op2.AC = -10;           //AC-10
                         break;
                 }
             }
-            if (name.contains("ƒ‹[ƒ€ƒeƒBƒX ƒp[ƒvƒ‹ ƒCƒAƒŠƒ“ƒO")) {
+            if (name.contains("ãƒ«ãƒ¼ãƒ ãƒ†ã‚£ã‚¹ ãƒ‘ãƒ¼ãƒ—ãƒ« ã‚¤ã‚¢ãƒªãƒ³ã‚°")) {
                 int e = enchant;
-                if (name.contains("j•Ÿ‚³‚ê‚½")) {
+                if (name.contains("ç¥ç¦ã•ã‚ŒãŸ")) {
                 switch (e) {
                     case 3:
                         op2.MP = 40;
@@ -2131,21 +2178,21 @@ public class Bougu implements Common {
                         op2.MR = 12;
                         op2.SP = 3;
                         op2.AC = -2;            //AC-2
-                        op2.HIT_MAGIC = 1;      //–‚–@–½’†+1
+                        op2.HIT_MAGIC = 1;      //é­”æ³•å‘½ä¸­+1
                         break;
                     case 7:
                         op2.MP = 100;
                         op2.MR = 15;
                         op2.SP = 3;
                         op2.AC = -3;            //AC-3
-                        op2.HIT_MAGIC = 3;      //–‚–@–½’†+3
+                        op2.HIT_MAGIC = 3;      //é­”æ³•å‘½ä¸­+3
                         break;
                     case 8:
                         op2.MP = 130;
                         op2.MR = 20;
                         op2.SP = 4;
                         op2.AC = -4;            //AC-5
-                        op2.HIT_MAGIC = 5;      //–‚–@–½’†+5
+                        op2.HIT_MAGIC = 5;      //é­”æ³•å‘½ä¸­+5
                         break;
                 }
             }
@@ -2189,74 +2236,74 @@ public class Bougu implements Common {
                         op2.MR = 12;
                         op2.SP = 3;
                         op2.AC = -2;            //AC-2
-                        op2.HIT_MAGIC = 1;      //–‚–@–½’†+1
+                        op2.HIT_MAGIC = 1;      //é­”æ³•å‘½ä¸­+1
                         break;
                     case 8:
                         op2.MP = 100;
                         op2.MR = 15;
                         op2.SP = 3;
                         op2.AC = -3;            //AC-3
-                        op2.HIT_MAGIC = 2;      //–‚–@–½’†+2
+                        op2.HIT_MAGIC = 2;      //é­”æ³•å‘½ä¸­+2
                         break;
                 }
             }
             }
-            if (name.contains("ƒ‹[ƒ€ƒeƒBƒX ƒuƒ‹[ ƒCƒAƒŠƒ“ƒO")) {
+            if (name.contains("ãƒ«ãƒ¼ãƒ ãƒ†ã‚£ã‚¹ ãƒ–ãƒ«ãƒ¼ ã‚¤ã‚¢ãƒªãƒ³ã‚°")) {
                 int e = enchant;
-                if (name.contains("j•Ÿ‚³‚ê‚½")) {
+                if (name.contains("ç¥ç¦ã•ã‚ŒãŸ")) {
                     e++;
                 }
                 switch (e) {
                     case 0:
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +2% +2,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +2% (‹°•|),";    //‰ñ•œˆ«‰»–hŒä +2% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +2% +2,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +2% (ææ€–),";    //å›å¾©æ‚ªåŒ–é˜²å¾¡ +2% (ææ€–)
                         break;
                     case 1:
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +6% +6,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +6% (‹°•|),";    //‰ñ•œˆ«‰»–hŒä +6% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +6% +6,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +6% (ææ€–),";    //å›å¾©æ‚ªåŒ–é˜²å¾¡ +6% (ææ€–)
                         break;
                     case 2:
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +8% +8,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +8% (‹°•|),";    //‰ñ•œˆ«‰»–hŒä +8% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +8% +8,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +8% (ææ€–),";    //å›å¾©æ‚ªåŒ–é˜²å¾¡ +8% (ææ€–)
                         break;
                     case 3:
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +10% +10,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +10% (‹°•|),";   //‰ñ•œˆ«‰»–hŒä +10% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +10% +10,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +10% (ææ€–),";   //å›å¾©æ‚ªåŒ–é˜²å¾¡ +10% (ææ€–)
                         break;
                     case 4:
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +12% +12,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +12% (‹°•|),";   //‰ñ•œˆ«‰»–hŒä +12% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +12% +12,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +12% (ææ€–),";   //å›å¾©æ‚ªåŒ–é˜²å¾¡ +12% (ææ€–)
                         break;
                     case 5:
                         op2.AC = -1;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +14% +14,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +14% (‹°•|),";   //‰ñ•œˆ«‰»–hŒä +14% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +14% +14,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +14% (ææ€–),";   //å›å¾©æ‚ªåŒ–é˜²å¾¡ +14% (ææ€–)
                         break;
                     case 6:
                         op2.AC = -2;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +16% +16,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +16% (‹°•|),";   //‰ñ•œˆ«‰»–hŒä +16% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +16% +16,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +16% (ææ€–),";   //å›å¾©æ‚ªåŒ–é˜²å¾¡ +16% (ææ€–)
                         break;
                     case 7:
                         op2.AC = -2;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +18% +18,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +18% (‹°•|),";   //‰ñ•œˆ«‰»–hŒä +18% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +18% +18,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +18% (ææ€–),";   //å›å¾©æ‚ªåŒ–é˜²å¾¡ +18% (ææ€–)
                         break;
                     case 8:
                         op2.AC = -3;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +20% +20,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +20% (‹°•|),";   //‰ñ•œˆ«‰»–hŒä +20% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +20% +20,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +20% (ææ€–),";   //å›å¾©æ‚ªåŒ–é˜²å¾¡ +20% (ææ€–)
                         break;
                     case 9:
                         op2.AC = -4;
-                        op2.effect = "ƒ|[ƒVƒ‡ƒ“‰ñ•œ—Ê +22% +22,";
-                        op2.effect += "‰ñ•œˆ«‰»–hŒä +22% (‹°•|),";   //‰ñ•œˆ«‰»–hŒä +22% (‹°•|)
+                        op2.effect = "ãƒãƒ¼ã‚·ãƒ§ãƒ³å›å¾©é‡ +22% +22,";
+                        op2.effect += "å›å¾©æ‚ªåŒ–é˜²å¾¡ +22% (ææ€–),";   //å›å¾©æ‚ªåŒ–é˜²å¾¡ +22% (ææ€–)
                         break;
                 }
             }
-            if (name.contains("ƒ‹[ƒ€ƒeƒBƒX ƒuƒ‰ƒbƒN ƒCƒAƒŠƒ“ƒO")) {
+            if (name.contains("ãƒ«ãƒ¼ãƒ ãƒ†ã‚£ã‚¹ ãƒ–ãƒ©ãƒƒã‚¯ ã‚¤ã‚¢ãƒªãƒ³ã‚°")) {
                 int e = enchant;
-                if (name.contains("j•Ÿ‚³‚ê‚½")) {
+                if (name.contains("ç¥ç¦ã•ã‚ŒãŸ")) {
                     e++;
                 }
                 switch (e) {
@@ -2283,31 +2330,31 @@ public class Bougu implements Common {
                         op2.AC = -6;
                         op2.DMG_SHORT = 2;
                         op2.DMG_LONG = 2;
-                        op2.effect = "’Ç‰Áƒ_ƒ[ƒW +20 2%,";
+                        op2.effect = "è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸ +20 2%,";
                         break;
                     case 6:
                         op2.AC = -7;
                         op2.DMG_SHORT = 3;
                         op2.DMG_LONG = 3;
-                        op2.effect = "’Ç‰Áƒ_ƒ[ƒW +20 3%,";
+                        op2.effect = "è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸ +20 3%,";
                         break;
                     case 7:
                         op2.AC = -8;
                         op2.DMG_SHORT = 4;
                         op2.DMG_LONG = 4;
-                        op2.effect = "’Ç‰Áƒ_ƒ[ƒW +20 4%,";
+                        op2.effect = "è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸ +20 4%,";
                         break;
                     case 8:
                         op2.AC = -9;
                         op2.DMG_SHORT = 5;
                         op2.DMG_LONG = 5;
-                        op2.effect = "’Ç‰Áƒ_ƒ[ƒW +20 5%,";
+                        op2.effect = "è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸ +20 5%,";
                         break;
                     case 9:
                         op2.AC = -10;
                         op2.DMG_SHORT = 6;
                         op2.DMG_LONG = 6;
-                        op2.effect = "’Ç‰Áƒ_ƒ[ƒW +20 6%,";
+                        op2.effect = "è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸ +20 6%,";
                         break;
                 }
             }
@@ -2315,8 +2362,8 @@ public class Bougu implements Common {
             op2.AC += -enchant;
             op2.MR += enchant * mr_enchant;
             }
-//ƒCƒ“ƒVƒOƒjƒA
-            if (name.equals("“¬m‚ÌƒCƒ“ƒVƒOƒjƒA")) {
+//ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢
+            if (name.equals("é—˜å£«ã®ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -2355,8 +2402,8 @@ public class Bougu implements Common {
                         op2.CRI_SHORT = 5;
                         break;
                 }
-            }        
-            if (name.equals("Ëè‚ÌƒCƒ“ƒVƒOƒjƒA")) {
+            }
+            if (name.equals("å°„æ‰‹ã®ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -2396,7 +2443,7 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.equals("Œ«Ò‚ÌƒCƒ“ƒVƒOƒjƒA")) {
+            if (name.equals("è³¢è€…ã®ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -2436,7 +2483,7 @@ public class Bougu implements Common {
                         break;
                 }
             }
-            if (name.equals("çŒì‚ÌƒCƒ“ƒVƒOƒjƒA")) {
+            if (name.equals("å®ˆè­·ã®ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
                 switch (enchant) {
                     case 1:
                         op2.HP = 5;
@@ -2474,6 +2521,105 @@ public class Bougu implements Common {
                         op2.AC = -7;
                         op2.DR = 4;
                         op2.MR = 7;
+                        break;
+                }
+            }
+            if (name.equals("ã‚«ãƒ¼ãƒ„ã®é—˜å£«ã®å®ˆè­·ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
+                switch (enchant) {                          
+                    case 6:
+                        op2.AC = -5;
+                        op2.HP = 35;
+                        op2.DR = 2;
+                        op2.DMG_SHORT = 2;
+                        op2.MR = 3;
+                        op2.CRI_SHORT = 1;
+                        op2.HIT_SHORT = 1;
+                        break;              
+                    case 7:
+                        op2.AC = -6;
+                        op2.HP = 40;
+                        op2.DR = 3;
+                        op2.DMG_SHORT = 3;
+                        op2.MR = 5;
+                        op2.CRI_SHORT = 3;
+                        op2.HIT_SHORT = 3;
+                        op2.PVP_DR = 1;
+                        break;              
+                    case 8:
+                        op2.AC = -7;
+                        op2.HP = 50;
+                        op2.DR = 4;
+                        op2.DMG_SHORT = 4;
+                        op2.MR = 7;
+                        op2.CRI_SHORT = 5;
+                        op2.HIT_SHORT = 5;
+                        op2.PVP_DR = 2;
+                        break;
+                }
+            }
+            if (name.equals("ã‚«ãƒ¼ãƒ„ã®å°„æ‰‹ã®å®ˆè­·ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
+                switch (enchant) {                          
+                    case 6:
+                        op2.AC = -5;
+                        op2.HP = 35;
+                        op2.DR = 2;
+                        op2.DMG_LONG = 2;
+                        op2.MR = 3;
+                        op2.CRI_LONG = 1;
+                        op2.HIT_LONG = 1;
+                        break;              
+                    case 7:
+                        op2.AC = -6;
+                        op2.HP = 40;
+                        op2.DR = 3;
+                        op2.DMG_LONG = 3;
+                        op2.MR = 5;
+                        op2.CRI_LONG = 3;
+                        op2.HIT_LONG = 3;
+                        op2.PVP_DR = 1;
+                        break;              
+                    case 8:
+                        op2.AC = -7;
+                        op2.HP = 50;
+                        op2.DR = 4;
+                        op2.DMG_LONG = 4;
+                        op2.MR = 7;
+                        op2.CRI_LONG = 5;
+                        op2.HIT_LONG = 5;
+                        op2.PVP_DR = 2;
+                        break;
+                }
+            }
+            if (name.equals("ã‚«ãƒ¼ãƒ„ã®è³¢è€…ã®å®ˆè­·ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢")) {
+                switch (enchant) {                          
+                    case 6:
+                        op2.AC = -5;
+                        op2.HP = 35;
+                        op2.DR = 2;
+                        op2.MR = 3;
+                        op2.HIT_SHORT = 2;
+                        op2.CRI_MAGIC = 1;
+                        op2.HIT_MAGIC = 1;
+                        break;              
+                    case 7:
+                        op2.AC = -6;
+                        op2.HP = 40;
+                        op2.DR = 3;
+                        op2.MR = 5;
+                        op2.HIT_SHORT = 3;
+                        op2.CRI_MAGIC = 2;
+                        op2.HIT_MAGIC = 3;
+                        op2.PVP_DR = 1;
+                        break;              
+                    case 8:
+                        op2.AC = -7;
+                        op2.HP = 50;
+                        op2.DR = 4;
+                        op2.MR = 7;
+                        op2.HIT_SHORT = 4;
+                        op2.CRI_MAGIC = 4;
+                        op2.HIT_MAGIC = 5;
+                        op2.PVP_DR = 2;
                         break;
                 }
             }

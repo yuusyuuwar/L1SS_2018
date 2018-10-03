@@ -2,7 +2,7 @@ package lss;
 
 public class Morph implements Common {
 
-    //[L99]•ª‘«‚µ‚½‚Ì‚Å14‚©‚ç15ŒÂ‚Ö‘‰Á
+    //[L99]åˆ†è¶³ã—ãŸã®ã§14ã‹ã‚‰15å€‹ã¸å¢—åŠ 
     //int data[][][] = new int[14][2][BUKI_TYPE_LIST.length + 2];
 int data[][][] = new int[15][2][BUKI_TYPE_LIST.length + 2];
     {
