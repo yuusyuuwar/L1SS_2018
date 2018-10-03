@@ -3,6 +3,13 @@ LineageStatusSimulator_fork2018
 変更点
 2018/10/3
 Update
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	オルタストーンの+7強化を実装
+	2017/11/22 Update
+	http://event2.ncsoft.jp/1.0/lineage/1711alterstone/
+
+Update
 LSS/data/E.zip
         /E/クローク
 	フィアバンパイアマント修正(AC-4)

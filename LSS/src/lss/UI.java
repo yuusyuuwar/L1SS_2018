@@ -790,8 +790,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(cb_pattern_r2);
 
         //オルタストーン
-        //String[] en_list = {"", "+1", "+2", "+3", "+4", "+5"};
-        String[] en_list = {"", "+1", "+2", "+3", "+4", "+5", "+6"};
+        String[] en_list = {"", "+1", "+2", "+3", "+4", "+5", "+6", "+7"};
         cb_alterstone_en = new JComboBox(en_list);
         cb_alterstone_en.setBounds(0, 400 + 140, 50, 20);
         cb_alterstone_en.addActionListener(this);

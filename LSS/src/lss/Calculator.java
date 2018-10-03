@@ -1993,7 +1993,18 @@ public class Calculator implements Common {
                         buff.DMG_SHORT += 1;
                         buff.MR += 5;
                         buff.DR += 1;
-                        break;                       
+                        break;     
+                    //オルターストーン7段階
+                    case 7:
+                        buff.AC += 1;
+                        buff.ST[STR] += 1;
+                        buff.DMG_SHORT += 1;
+                        buff.HIT_SHORT += 2;
+                        buff.DR += 1;
+                        buff.MR += 6;
+                        buff.HP += 70;
+                        buff.MP += 50;
+                        break;
                 }
                 break;
             case 7:
@@ -2035,6 +2046,17 @@ public class Calculator implements Common {
                         buff.MR += 5;
                         buff.DR += 1;
                         break;
+                    //オルターストーン7段階
+                    case 7:
+                        buff.AC += 1;
+                        buff.ST[DEX] += 1;
+                        buff.DMG_LONG += 1;
+                        buff.HIT_LONG += 2;
+                        buff.DR += 1;
+                        buff.MR += 6;
+                        buff.HP += 60;
+                        buff.MP += 60;
+                        break;
                 }
                 break;
             case 8:
@@ -2074,6 +2096,17 @@ public class Calculator implements Common {
                         buff.SP += 1;
                         buff.MR += 5;
                         buff.DR += 1;
+                        break;
+                    //オルターストーン7段階
+                    case 7:
+                        buff.AC += 1;
+                        buff.ST[INT] += 1;
+                        buff.SP += 1;
+                        buff.DR += 1;
+                        buff.MR += 6;
+                        buff.HP += 50;
+                        buff.MP += 70;
+                        buff.MPR += 2;
                         break;
                 }
                 break;
