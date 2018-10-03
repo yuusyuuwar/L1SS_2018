@@ -3,6 +3,13 @@ LineageStatusSimulator_fork2018
 変更点
 2018/10/3
 Update
+SS/src/lss/Calculator.java
+	[pvp_dg]と[pvp_dgr]を追加しPVP追加ダメージとPVPダメージリダクションを計算
+
+SS/src/lss/UI.java
+	表示用に[lab_pvp_dg]と[lab_pvp_dgr]を追加しPVP追加ダメージとPVPダメージリダクションを表示
+
+Update
 LSS/data/E.zip
 	ダメージリダクション無視=3を設定
 	ヴァラカスフレイムプレートメイル

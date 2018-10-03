@@ -103,6 +103,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JLabel lab_dr;
     JLabel lab_dri;
     JLabel lab_mr;
+    JLabel lab_pvp_dg;
+    JLabel lab_pvp_dgr;
 
     JLabel lab_pot1;
     JLabel lab_pot2;
@@ -577,6 +579,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_cri_short = new JLabel();
         lab_cri_long = new JLabel();
         lab_cri_mag = new JLabel();
+        lab_pvp_dg = new JLabel();
+        lab_pvp_dgr = new JLabel();
         lab_ac_short = new JLabel();
         lab_ac_long = new JLabel();
         lab_dmg_short.setBounds(420, 20 + 20, 150, 20);
@@ -588,6 +592,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_cri_short.setBounds(420 + 260, 20 + 20, 250, 20);
         lab_cri_long.setBounds(420 + 260, 20 + 20 + 20, 250, 20);
         lab_cri_mag.setBounds(420 + 260, 20 + 40 + 20, 150, 20);
+        lab_pvp_dg.setBounds(420, 20 + 60 + 20, 200, 20);
+        lab_pvp_dgr.setBounds(420 + 150, 20 + 60 + 20, 200, 20);
         lab_ac_short.setBounds(420 + 125 + 100, 20 + 20, 150, 20);
         lab_ac_long.setBounds(420 + 125 + 100, 20 + 20 + 20, 150, 20);
         panels[0].add(lab_dmg_short);
@@ -599,6 +605,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(lab_cri_short);
         panels[0].add(lab_cri_long);
         panels[0].add(lab_cri_mag);
+        panels[0].add(lab_pvp_dg);
+        panels[0].add(lab_pvp_dgr);
         panels[0].add(lab_ac_short);
         panels[0].add(lab_ac_long);
         commons.add(lab_dmg_short);
@@ -610,6 +618,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         commons.add(lab_cri_short);
         commons.add(lab_cri_long);
         commons.add(lab_cri_mag);
+        commons.add(lab_pvp_dg);
+        commons.add(lab_pvp_dgr);
         commons.add(lab_ac_long);
         commons.add(lab_ac_short);
 

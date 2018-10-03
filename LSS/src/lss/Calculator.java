@@ -113,7 +113,11 @@ public class Calculator implements Common {
     int res_ail[] = new int[AILMENT_LIST.length];
 
     double cons_mp;
+    
+    int dr;
     int dri;
+    int pvp_dg;
+    int pvp_dgr;
 
     DecimalFormat format_dmg = new DecimalFormat("#0.0");
     DecimalFormat format_rate = new DecimalFormat("#0.0%");
@@ -2571,7 +2575,8 @@ public class Calculator implements Common {
         dmg_magic = base_dmg_magic + buff.DMG_MAGIC;
         //sp = buff.SP + buki.op.SP + buki2.op.SP;
         sp = buff.SP + buki.op.SP + buki.op2.SP;
-        
+        pvp_dg = buff.PVP + buki.op.PVP + buki.op2.PVP;
+        pvp_dgr = buff.PVP_DR + buki.op.PVP_DR + buki.op2.PVP_DR;        
         hit_magic = base_hit_magic;
 
         for (Bougu bougu1 : bougu) {
@@ -3805,6 +3810,9 @@ System.out.println(buki.magic_enchant);
         ui.lab_cri_short.setText("クリティカル(近) : " + cri_short);
         ui.lab_cri_long.setText("クリティカル(遠) : " + cri_long);
         ui.lab_cri_mag.setText("クリティカル(魔) : " + cri_magic);
+        ui.lab_pvp_dg.setText("PVP追加ダメージ : " + pvp_dg);
+        ui.lab_pvp_dgr.setText("PVPダメージリダクション : " + pvp_dgr);
+        
 //        ui.lab_sp.setText("SP " + sp);
 //        ui.lab_ml.setText("ML " + ml);
 //        ui.lab_mb.setText("MB " + mb);
@@ -3866,9 +3874,13 @@ System.out.println(buki.magic_enchant);
 
         ac = base_ac + buff.AC + equip_ac;
         int er = base_er + buff.ER;
-        int dr = buff.DR;
-        int dri= buff.DR_IGNORED;
-
+//        int dr = buff.DR;
+//        int dri= buff.DR_IGNORED;
+        dr = buff.DR;
+        dri= buff.DR_IGNORED;
+        pvp_dg= buff.PVP;
+        pvp_dgr= buff.PVP_DR;
+        
         if (ui.cb_buff[F_AG].isSelected()) {
             dr += -ac / 10;
         }
@@ -3877,11 +3889,17 @@ System.out.println(buki.magic_enchant);
             dr += bougu1.op.DR;
             dr += bougu1.op2.DR;
             dri += bougu1.op.DR_IGNORED;
-            dri += bougu1.op2.DR_IGNORED;            
+            dri += bougu1.op2.DR_IGNORED;
+            pvp_dg += bougu1.op.PVP;
+            pvp_dg += bougu1.op2.PVP;
+            pvp_dgr += bougu1.op.PVP_DR;
+            pvp_dgr += bougu1.op2.PVP_DR;
         }
         dg = 0;
         dr += buki.op.DR + buki.op2.DR;
         dri += buki.op.DR_IGNORED + buki.op2.DR_IGNORED; 
+        pvp_dg += buki.op.PVP + buki.op2.PVP;
+        pvp_dgr += buki.op.PVP_DR + buki.op2.PVP_DR;       
         
         //アンキャニードッジ 消費MP20/3mins
         if (ui.cb_buff[D_UD].isSelected()) {
@@ -3914,7 +3932,7 @@ System.out.println(buki.magic_enchant);
         ui.lab_dg.setText(Integer.toString(dg));
         ui.lab_er.setText(Integer.toString(er));
         ui.lab_dr.setText(Integer.toString(dr));
-        ui.lab_dri.setText(Integer.toString(dri));        
+        ui.lab_dri.setText(Integer.toString(dri));
         ui.lab_sp.setText(Integer.toString(sp));
         ui.lab_ml.setText(Integer.toString(ml)); 
         ui.lab_mb.setText(Integer.toString(mb));
@@ -4601,6 +4619,12 @@ System.out.println(buki.magic_enchant);
         }
         if (!buki.material.equals("")) {
             buki_text += " 材質:" + buki.material;
+        }
+        if (buki.op.PVP > 0) {
+            buki_text += " PVP追加ダメージ " + (buki.op.PVP + buki.op2.PVP);
+        }
+        if (buki.op.PVP_DR > 0) {
+            buki_text += " PVPダメージリダクション " + (buki.op.PVP_DR + buki.op2.PVP_DR);
         }
         if (buki.op.DR > 0) {
             buki_text += " ダメージリダクション " + (buki.op.DR + buki.op2.DR);
