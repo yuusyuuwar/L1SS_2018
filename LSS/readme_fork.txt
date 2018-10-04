@@ -1,7 +1,71 @@
 LineageStatusSimulator_fork2018
 
 変更点
-2018/10/3
+2018/10/05
+Update
+SS/src/lss/Bougu.java
+SS/src/lss/Buff.java
+SS/src/lss/Buki.java
+SS/src/lss/Calculator.java
+SS/src/lss/Common.java
+SS/src/lss/FSCalclator.java
+SS/src/lss/HitRateCalculator.java
+SS/src/lss/LEV.java
+SS/src/lss/LSS.java
+SS/src/lss/Morph.java
+SS/src/lss/MyToggleButton.java
+SS/src/lss/UI.java
+SS/src/lss/WideComboBox.java
+LSS/data/E.zip
+	開発環境では動作するが、他PCでは起動しないことが判明した。
+	原因は文字コードみたいだが解決方法が見つからない為、元に戻すことに決定する。
+	(2018/10/01に行った作業の逆"SHIFT-JISのCR+LFへ変更"を行う)
+
+LSS/nbproject/project.properties
+	NetBeansIDE 8.2のプロジェクト用の初期設定をUTF-8からShift-JISへ変更
+	1.システム環境変数の[JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8]を削除
+	2.C:\Program Files\NetBeans 8.2\etc\netbeans.conf
+		[netbeans_default_optionsの -J-Dfile.encoding=UTF-8]を削除
+
+ビルド時にでる6個の警告の修正作業(4個は改善)
+	jdepend-2.9.1
+	https://github.com/clarkware/jdepend#download
+	から[jdepend-2.9.1.zip]を展開して[/lib/jdepend-2.9.1.jar]を
+	C:\Program Files\Java\jdk1.8.0_181\libの中へ追加しNetBeans IDE 8.2の[ツール]の[オプション]の[Ant]の
+	クラスパスに[C:\Program Files\Java\jdk1.8.0_181\lib\jdepend-2.9.1.jar]を追加
+[処理前]
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+	Could not load a dependent class (jdepend/xmlui/JDepend) for type jdepend
+	Could not load a dependent class (javax/media/jai/PlanarImage) for type image
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+	Could not load a dependent class (jdepend/xmlui/JDepend) for type jdepend
+	Could not load a dependent class (javax/media/jai/PlanarImage) for type image
+[処理後]
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+	Could not load a dependent class (javax/media/jai/PlanarImage) for type image
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+	Could not load a dependent class (javax/media/jai/PlanarImage) for type image
+
+	Java Advanced Imaging API 1.1.2_01
+	https://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-java-client-419417.html
+ 	Windows CLASSPATH Installから[jai-1_1_2_01-lib-windows-i586.exe]をダウンロードして実行し
+	インストール後の[C:\jai-1_1_2_01\lib\jai_core.jar]を
+	C:\Program Files\Java\jdk1.8.0_181\libの中へ追加しNetBeans IDE 8.2の[ツール]の[オプション]の[Ant]の
+	クラスパスに[C:\Program Files\Java\jdk1.8.0_181\lib\jai_core.jar]を追加
+[処理後]
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+	Could not load a dependent class (com/sun/media/jai/codec/FileSeekableStream) for type image
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+	Could not load a dependent class (com/sun/media/jai/codec/FileSeekableStream) for type image
+	
+	インストール後の[C:\jai-1_1_2_01\lib\jai_codec.jar]を
+	C:\Program Files\Java\jdk1.8.0_181\libの中へ追加しNetBeans IDE 8.2の[ツール]の[オプション]の[Ant]の
+	クラスパスに[C:\Program Files\Java\jdk1.8.0_181\lib\jai_codec.jar]を追加
+[処理後]
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+	Could not load class (org.apache.tools.ant.taskdefs.repository.MavenRepository) for type mavenrepository
+
+2018/10/03
 Update
 LSS/dist/LSS.jar	
 	NetBeans IDE 8.2上では動くのにビルドしてLSS_launcher.exe経由だと立ち上がらない

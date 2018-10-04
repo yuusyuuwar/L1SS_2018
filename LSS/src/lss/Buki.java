@@ -9,9 +9,9 @@ public class Buki implements Common {
     int big = 0;
     String name = "";
     String type = "";
-    double critical_rate = 0;// ã‚¯ãƒ­ã‚¦ ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
-    double double_hit_rate = 0;// ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰ ãƒ€ãƒ–ãƒ«ãƒ’ãƒƒãƒˆ
-    double week_point_exposure = 0;// ãƒã‚§ãƒ¼ãƒ³ã‚½ãƒ¼ãƒ‰ å¼±ç‚¹éœ²å‡º
+    double critical_rate = 0;// ƒNƒƒE ƒNƒŠƒeƒBƒJƒ‹
+    double double_hit_rate = 0;// ƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh ƒ_ƒuƒ‹ƒqƒbƒg
+    double week_point_exposure = 0;// ƒ`ƒF[ƒ“ƒ\[ƒh Žã“_˜Io
     boolean two_hands = false;
     String equip = "";
     String material = "";
@@ -31,9 +31,9 @@ public class Buki implements Common {
     
     int safety = 0;
     boolean element_enchant = false;
-    // ã‚­ãƒ¼ãƒªãƒ³ã‚¯ç”¨
+    // ƒL[ƒŠƒ“ƒN—p
     int x, y, z;
-    // é­”æ³•æ­¦å™¨ç”¨
+    // –‚–@•Ší—p
     String magic_name = "";
     boolean magic_motion = false;
     double magic_rate = 0;
@@ -102,7 +102,7 @@ public class Buki implements Common {
                 if (line.startsWith("type=")) {
                     type = line.split("=")[1];
                 }
-                if (line.startsWith("ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒ€ã‚¤ã‚¹=")) {
+                if (line.startsWith("ƒ_ƒ[ƒWƒ_ƒCƒX=")) {
                     x = Integer.parseInt(line.split("=")[1].split("d")[0]);
                     y = Integer.parseInt(line.split("=")[1].split("d")[1]
                             .split("\\+")[0]);
@@ -115,53 +115,53 @@ public class Buki implements Common {
                 if (line.startsWith("name=")) {
                     name = line.split("=")[1];
                 }
-                if (line.startsWith("ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«=")) {
+                if (line.startsWith("ƒNƒŠƒeƒBƒJƒ‹=")) {
                     critical_rate = Double.parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("ãƒ€ãƒ–ãƒ«ãƒ’ãƒƒãƒˆ=")) {
+                if (line.startsWith("ƒ_ƒuƒ‹ƒqƒbƒg=")) {
                     double_hit_rate = Double.parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("å®‰å…¨=")) {
+                if (line.startsWith("ˆÀ‘S=")) {
                     safety = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("å¼·åŒ–é™ç•Œ=")) {
+                if (line.startsWith("‹­‰»ŒÀŠE=")) {
                     max_enchant = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("æè³ª=")) {
+                if (line.startsWith("ÞŽ¿=")) {
                     material = line.split("=")[1];
                 }
-                if (line.startsWith("ä¸¡æ‰‹æ­¦å™¨=")) {
+                if (line.startsWith("—¼Žè•Ší=")) {
                     two_hands = Boolean.parseBoolean(line.split("=")[1]);
                 }
-                if (line.startsWith("å±žæ€§å¼·åŒ–=")) {
+                if (line.startsWith("‘®«‹­‰»=")) {
                     element_enchant = Boolean.parseBoolean(line.split("=")[1]);
                 }
-                if (line.startsWith("é­”æ³•ãƒ€ãƒ¡ãƒ¼ã‚¸=")) {
+                if (line.startsWith("–‚–@ƒ_ƒ[ƒW=")) {
                     magic_power = Double.parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("é­”æ³•ç™ºå‹•çŽ‡=")) {
+                if (line.startsWith("–‚–@”­“®—¦=")) {
                     magic_rate = Double.parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("é­”æ³•ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³")) {
+                if (line.startsWith("–‚–@ƒ‚[ƒVƒ‡ƒ“")) {
                     magic_motion = Boolean.parseBoolean(line.split("=")[1]);
                 }
-                if (line.startsWith("é­”æ³•å±žæ€§=")) {
+                if (line.startsWith("–‚–@‘®«=")) {
                     magic_element = line.split("=")[1];
                 }
-                if (line.startsWith("é­”æ³•ç™ºå‹•çŽ‡å¼·åŒ–=")) {
+                if (line.startsWith("–‚–@”­“®—¦‹­‰»=")) {
                     magic_rate_plus = Double.parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("é­”æ³•=")) {
+                if (line.startsWith("–‚–@=")) {
                     magic_name = line.split("=")[1];
                 }
-                if (line.startsWith("é­”æ³•ãƒ‡ã‚£ãƒ¬ã‚¤=")) {
+                if (line.startsWith("–‚–@ƒfƒBƒŒƒC=")) {
                     magic_delay = Double.parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("å¼±ç‚¹éœ²å‡º=")) {
+                if (line.startsWith("Žã“_˜Io=")) {
                     week_point_exposure = Double
                             .parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("é‡ã•=")) {
+                if (line.startsWith("d‚³=")) {
                     weight = Integer.parseInt(line.split("=")[1]);
                 }
             }
@@ -184,16 +184,16 @@ public class Buki implements Common {
 //                if (line.startsWith("big")) {
 //                    arrow_big = Integer.parseInt(line.split("=")[1]);
 //                }
-                if (line.startsWith("è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸")) {
+                if (line.startsWith("’Ç‰Áƒ_ƒ[ƒW")) {
                     arrow_dmg = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("å±žæ€§ãƒ€ãƒ¡ãƒ¼ã‚¸")) {
+                if (line.startsWith("‘®«ƒ_ƒ[ƒW")) {
                     arrow_elementdmg = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("é è·é›¢å‘½ä¸­")) {
+                if (line.startsWith("‰“‹——£–½’†")) {
                     arrow_hit = Integer.parseInt(line.split("=")[1]);
                 }
-                if (line.startsWith("æè³ª")) {
+                if (line.startsWith("ÞŽ¿")) {
                     arrow_material = line.split("=")[1];
                 }
             }
@@ -204,71 +204,71 @@ public class Buki implements Common {
 
     public void checkEnchant() {
         op2 = new Buff();
-        if (name.equals("çž‘æƒ³ã®ã‚¹ã‚¿ãƒƒãƒ•")) {
+        if (name.equals("áÒ‘z‚ÌƒXƒ^ƒbƒt")) {
             op2.MPR += enchant;
         }
-        //çœŸå†¥çŽ‹ã®åŸ·è¡Œå‰£    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2 +1å¼·åŒ–æ¯Žã«[è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«][ã‚¹ã‚¿ãƒ³å‘½ä¸­]+1å¢—åŠ 
-        if (name.equals("çœŸå†¥çŽ‹ã®åŸ·è¡Œå‰£")) {
+        //^–»‰¤‚ÌŽ·sŒ•    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2 +1‹­‰»–ˆ‚É[‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹][ƒXƒ^ƒ“–½’†]+1‘‰Á
+        if (name.equals("^–»‰¤‚ÌŽ·sŒ•")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
-            op2.CRI_SHORT += enchant;                   //è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
-            op2.ailment[HIT_STUN] += enchant;           //ã‚¹ã‚¿ãƒ³å‘½ä¸­
+            op2.DMG_SHORT += enchant;                   //’Ç‰Áƒ_ƒ[ƒW
+            op2.CRI_SHORT += enchant;                   //‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹
+            op2.ailment[HIT_STUN] += enchant;           //ƒXƒ^ƒ“–½’†
             }
         }
-        //ã‚¦ã‚£ãƒ³ãƒ‰ãƒ–ãƒ¬ãƒ¼ãƒ‰ã‚½ãƒ¼ãƒ‰    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2
-        if (name.equals("ã‚¦ã‚£ãƒ³ãƒ‰ãƒ–ãƒ¬ãƒ¼ãƒ‰ã‚½ãƒ¼ãƒ‰")) {
+        //ƒEƒBƒ“ƒhƒuƒŒ[ƒhƒ\[ƒh    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2
+        if (name.equals("ƒEƒBƒ“ƒhƒuƒŒ[ƒhƒ\[ƒh")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
+            op2.DMG_SHORT += enchant;                   //’Ç‰Áƒ_ƒ[ƒW
             }
         } 
-        //ãƒ¬ãƒƒãƒ‰ã‚·ãƒ£ãƒ‰ã‚¦ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2 +1å¼·åŒ–æ¯Žã«[ç ´å£Šå‘½ä¸­]+1å¢—åŠ 
-        if (name.equals("ãƒ¬ãƒƒãƒ‰ã‚·ãƒ£ãƒ‰ã‚¦ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰")) {
+        //ƒŒƒbƒhƒVƒƒƒhƒEƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2 +1‹­‰»–ˆ‚É[”j‰ó–½’†]+1‘‰Á
+        if (name.equals("ƒŒƒbƒhƒVƒƒƒhƒEƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
-            op2.ailment[HIT_DESTRUCTION] += enchant;    //ç ´å£Šå‘½ä¸­
+            op2.DMG_SHORT += enchant;                   //’Ç‰Áƒ_ƒ[ƒW
+            op2.ailment[HIT_DESTRUCTION] += enchant;    //”j‰ó–½’†
             }
         }
-        //ãƒ›ãƒ¼ãƒªãƒ¼ãƒ˜ãƒ‰ãƒ­ãƒ³ã‚¹ã‚¿ãƒƒãƒ•    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2 +1å¼·åŒ–æ¯Žã«[SP][é­”æ³•å‘½ä¸­]+1å¢—åŠ 
-        if (name.equals("ãƒ›ãƒ¼ãƒªãƒ¼ãƒ˜ãƒ‰ãƒ­ãƒ³ã‚¹ã‚¿ãƒƒãƒ•")) {
+        //ƒz[ƒŠ[ƒwƒhƒƒ“ƒXƒ^ƒbƒt    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2 +1‹­‰»–ˆ‚É[SP][–‚–@–½’†]+1‘‰Á
+        if (name.equals("ƒz[ƒŠ[ƒwƒhƒƒ“ƒXƒ^ƒbƒt")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
+            op2.DMG_SHORT += enchant;                   //’Ç‰Áƒ_ƒ[ƒW
             op2.SP += enchant;                          //SP 
-            op2.HIT_MAGIC += enchant;                   //é­”æ³•å‘½ä¸­   
+            op2.HIT_MAGIC += enchant;                   //–‚–@–½’†   
             }
         }
-        //ã‚¯ãƒ­ãƒŽã‚¹ã®ææ€–    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2 +1å¼·åŒ–æ¯Žã«[è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«]+1%å¢—åŠ  
-        if (name.equals("ã‚¯ãƒ­ãƒŽã‚¹ã®ææ€–")) {
+        //ƒNƒƒmƒX‚Ì‹°•|    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2 +1‹­‰»–ˆ‚É[‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹]+1%‘‰Á 
+        if (name.equals("ƒNƒƒmƒX‚Ì‹°•|")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
-            op2.CRI_SHORT += enchant;                   //è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
+            op2.DMG_SHORT += enchant;                   //’Ç‰Áƒ_ƒ[ƒW
+            op2.CRI_SHORT += enchant;                   //‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹
             }
         }
-        //ãƒ’ãƒ¥ãƒšãƒªã‚ªãƒ³ã®çµ¶æœ›    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2 +1å¼·åŒ–æ¯Žã«[SP][é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«][ã‚¹ã‚¿ãƒ³å‘½ä¸­]+1å¢—åŠ 
-        if (name.equals("ãƒ’ãƒ¥ãƒšãƒªã‚ªãƒ³ã®çµ¶æœ›")) {
+        //ƒqƒ…ƒyƒŠƒIƒ“‚Ìâ–]    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2 +1‹­‰»–ˆ‚É[SP][–‚–@ƒNƒŠƒeƒBƒJƒ‹][ƒXƒ^ƒ“–½’†]+1‘‰Á
+        if (name.equals("ƒqƒ…ƒyƒŠƒIƒ“‚Ìâ–]")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
+            op2.DMG_SHORT += enchant;                   //’Ç‰Áƒ_ƒ[ƒW
             op2.SP += enchant;                          //SP 
-            op2.CRI_MAGIC += enchant;                   //é­”æ³•ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
-            op2.ailment[HIT_STUN] += enchant;           //ã‚¹ã‚¿ãƒ³å‘½ä¸­
+            op2.CRI_MAGIC += enchant;                   //–‚–@ƒNƒŠƒeƒBƒJƒ‹
+            op2.ailment[HIT_STUN] += enchant;           //ƒXƒ^ƒ“–½’†
             }
         }
-        //ã‚¿ã‚¤ã‚¿ãƒ³ã®æ†¤æ€’    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2 +1å¼·åŒ–æ¯Žã«[è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«][ææ€–å‘½ä¸­]+1å¢—åŠ  
-        if (name.equals("ã‚¿ã‚¤ã‚¿ãƒ³ã®æ†¤æ€’")) {
+        //ƒ^ƒCƒ^ƒ“‚Ì•®“{    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2 +1‹­‰»–ˆ‚É[‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹][‹°•|–½’†]+1‘‰Á 
+        if (name.equals("ƒ^ƒCƒ^ƒ“‚Ì•®“{")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
-            op2.CRI_SHORT += enchant;                   //è¿‘è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
-            op2.ailment[HIT_TERROR] += enchant;         //ææ€–å‘½ä¸­
+            op2.DMG_SHORT += enchant;                   //’Ç‰Áƒ_ƒ[ƒW
+            op2.CRI_SHORT += enchant;                   //‹ß‹——£ƒNƒŠƒeƒBƒJƒ‹
+            op2.ailment[HIT_TERROR] += enchant;         //‹°•|–½’†
             }
         }
-        //ã‚¬ã‚¤ã‚¢ã®æ¿€æ€’    ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2 +1å¼·åŒ–æ¯Žã«[é è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«][ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›ç„¡è¦–]+1å¢—åŠ  
-        if (name.equals("ã‚¬ã‚¤ã‚¢ã®æ¿€æ€’")) {
+        //ƒKƒCƒA‚ÌŒƒ“{    ƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2 +1‹­‰»–ˆ‚É[‰“‹——£ƒNƒŠƒeƒBƒJƒ‹][ƒ_ƒ[ƒWŒyŒ¸–³Ž‹]+1‘‰Á 
+        if (name.equals("ƒKƒCƒA‚ÌŒƒ“{")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;    //è¿½åŠ ãƒ€ãƒ¡ãƒ¼ã‚¸
-            op2.CRI_LONG += enchant;     //é è·é›¢ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
-            op2.DR_IGNORED += enchant;   //ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒªãƒ€ã‚¯ã‚·ãƒ§ãƒ³ç„¡è¦–
+            op2.DMG_SHORT += enchant;    //’Ç‰Áƒ_ƒ[ƒW
+            op2.CRI_LONG += enchant;     //‰“‹——£ƒNƒŠƒeƒBƒJƒ‹
+            op2.DR_IGNORED += enchant;   //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“–³Ž‹
             }
         }
-        //å¼·åŒ–+10ä»¥ä¸Šã¯ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã«ã‚ˆã‚‹è¿½åŠ æ‰“æ’ƒãŒ+2(æ—¢å­˜å‡¦ç†ã«è¿½åŠ ã§+1)
+        //‹­‰»+10ˆÈã‚ÍƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2(Šù‘¶ˆ—‚É’Ç‰Á‚Å+1)
         if (enchant >= 10) {
             op2.DMG_SHORT = enchant - 9;
             op2.DMG_LONG = enchant - 9;

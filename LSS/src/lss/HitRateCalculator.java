@@ -33,8 +33,8 @@ public class HitRateCalculator {
             if (AC < 0) {
                 int avoid = 0;
                 int hit = 0;
-                for (int i = HIT - 9; i <= HIT + 10; i++) {//æ”»æ’ƒå´ãƒ€ã‚¤ã‚¹
-                    for (int j = 10; j < 10 - (int) (1.5 * AC); j++) {//é˜²å¾¡å´ãƒ€ã‚¤ã‚¹
+                for (int i = HIT - 9; i <= HIT + 10; i++) {//UŒ‚‘¤ƒ_ƒCƒX
+                    for (int j = 10; j < 10 - (int) (1.5 * AC); j++) {//–hŒä‘¤ƒ_ƒCƒX
                         int dice_attack = i;
                         int dice_defence = j;
 
@@ -45,19 +45,19 @@ public class HitRateCalculator {
                             dice_attack += 5;
                         }
 
-                        if (dice_attack <= HIT - 9) {//ãƒ•ã‚¡ãƒ³ãƒ–ãƒ«
+                        if (dice_attack <= HIT - 9) {//ƒtƒ@ƒ“ƒuƒ‹
                             avoid++;
                             continue;
                         }
-                        if (dice_attack >= HIT + 10) {//ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
+                        if (dice_attack >= HIT + 10) {//ƒNƒŠƒeƒBƒJƒ‹
                             hit++;
                             continue;
                         }
-                        if (dice_attack > dice_defence) {//å‘½ä¸­
+                        if (dice_attack > dice_defence) {//–½’†
                             hit++;
                             continue;
                         }
-                        if (dice_attack <= dice_defence) {//å›žé¿
+                        if (dice_attack <= dice_defence) {//‰ñ”ð
                             avoid++;
                         }
                     }
@@ -66,7 +66,7 @@ public class HitRateCalculator {
             } else {
                 int avoid = 0;
                 int hit = 0;
-                for (int i = HIT - 9; i <= HIT + 10; i++) {//æ”»æ’ƒå´ãƒ€ã‚¤ã‚¹
+                for (int i = HIT - 9; i <= HIT + 10; i++) {//UŒ‚‘¤ƒ_ƒCƒX
                     int dice_attack = i;
                     int dice_defence = 10 - AC;
 
@@ -77,19 +77,19 @@ public class HitRateCalculator {
                         dice_attack += 5;
                     }
 
-                    if (dice_attack <= HIT - 9) {//ãƒ•ã‚¡ãƒ³ãƒ–ãƒ«
+                    if (dice_attack <= HIT - 9) {//ƒtƒ@ƒ“ƒuƒ‹
                         avoid++;
                         continue;
                     }
-                    if (dice_attack >= HIT + 10) {//ã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«
+                    if (dice_attack >= HIT + 10) {//ƒNƒŠƒeƒBƒJƒ‹
                         hit++;
                         continue;
                     }
-                    if (dice_attack > dice_defence) {//å‘½ä¸­
+                    if (dice_attack > dice_defence) {//–½’†
                         hit++;
                         continue;
                     }
-                    if (dice_attack <= dice_defence) {//å›žé¿
+                    if (dice_attack <= dice_defence) {//‰ñ”ð
                         avoid++;
                     }
                 }
