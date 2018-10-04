@@ -3,7 +3,7 @@
 LineageStatusSimulator is a character simulation of PC game "Lineage".
 
 # Screen shot
-<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_1_4.bmp" alt="image" width="640" height="480">
+<img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_1_5.bmp" alt="image" width="640" height="480">
 
 <img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_3_4.bmp" alt="image" width="640" height="480">
 
