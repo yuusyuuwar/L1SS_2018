@@ -10,14 +10,14 @@ package lss;
  */
 public class FSCalclator {
 
-    static double step = 0.001;//1ãƒŸãƒªç§’åˆ»ã¿
-    static double calc_time = 1200;//20åˆ†
+    static double step = 0.001;//1ƒ~ƒŠ•b‚İ
+    static double calc_time = 1200;//20•ª
 
     /**
      *
-     * @param fs_delay FSå‘¨æœŸ
-     * @param speed é€šå¸¸æ”»æ’ƒé€Ÿåº¦
-     * @return FSä½¿ç”¨æ™‚ã®æ”»æ’ƒé€Ÿåº¦[/min]
+     * @param fs_delay FSüŠú
+     * @param speed ’ÊíUŒ‚‘¬“x
+     * @return FSg—p‚ÌUŒ‚‘¬“x[/min]
      */
     static double calc(double fs_delay, double speed) {
 
@@ -29,7 +29,7 @@ public class FSCalclator {
 //            return 0.0;
 //        }
 //
-//        double atk_speed = 60 / speed;//1å›ã®æ”»æ’ƒæ™‚é–“[sec]
+//        double atk_speed = 60 / speed;//1‰ñ‚ÌUŒ‚ŠÔ[sec]
 //        
 //        double time = 0.0;
 //        int cnt_atk = 0;

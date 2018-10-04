@@ -78,7 +78,7 @@ public class LSS implements WindowListener {
     }
 
     static void show_error(Throwable e) {
-        JOptionPane.showMessageDialog(ui, e.toString(), "ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸ", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(ui, e.toString(), "ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½", JOptionPane.ERROR_MESSAGE);
         System.exit(0);
     }
 

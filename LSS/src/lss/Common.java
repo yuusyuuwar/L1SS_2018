@@ -20,7 +20,7 @@ public interface Common {
     final int CHA = 5;
 
     final String[] CLASS_LIST = {"P", "K", "E", "W", "D", "R", "I", "F"};
-    final String[] CLASS_LIST2 = {"å›ä¸»", "ãƒŠã‚¤ãƒˆ", "ã‚¨ãƒ«ãƒ•", "ã‚¦ã‚£ã‚¶ãƒ¼ãƒ‰", "ãƒ€ãƒ¼ã‚¯ã‚¨ãƒ«ãƒ•", "ãƒ‰ãƒ©ã‚´ãƒ³ãƒŠã‚¤ãƒˆ", "ã‚¤ãƒªãƒ¥ãƒ¼ã‚¸ãƒ§ãƒ‹ã‚¹ãƒˆ", "ã‚¦ã‚©ãƒªã‚¢ãƒ¼"};
+    final String[] CLASS_LIST2 = {"ŒNŽå", "ƒiƒCƒg", "ƒGƒ‹ƒt", "ƒEƒBƒU[ƒh", "ƒ_[ƒNƒGƒ‹ƒt", "ƒhƒ‰ƒSƒ“ƒiƒCƒg", "ƒCƒŠƒ…[ƒWƒ‡ƒjƒXƒg", "ƒEƒHƒŠƒA["};
     final int P = 0;
     final int K = 1;
     final int E = 2;
@@ -30,15 +30,15 @@ public interface Common {
     final int I = 6;
     final int F = 7;
 
-    //final String[] ELEM_LIST = {"ç«", "æ°´", "é¢¨", "åœ°"};
-    final String[] ELEM_LIST = {"ç«å±žæ€§", "æ°´å±žæ€§", "é¢¨å±žæ€§", "åœ°å±žæ€§"};
+    //final String[] ELEM_LIST = {"‰Î", "…", "•—", "’n"};
+    final String[] ELEM_LIST = {"‰Î‘®«", "…‘®«", "•—‘®«", "’n‘®«"};
     final int FIRE = 0;
     final int WATER = 1;
     final int WIND = 2;
     final int EARTH = 3;
 
-    final String[] BUKI_TYPE_LIST = {"ãƒ€ã‚¬ãƒ¼", "ç‰‡æ‰‹å‰£", "ä¸¡æ‰‹å‰£", "ã‚¹ã‚¿ãƒƒãƒ•", "éˆå™¨",
-        "ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ–ãƒ¬ãƒ¼ãƒ‰", "ã‚¯ãƒ­ã‚¦", "æ§", "ãƒœã‚¦", "ã‚¬ãƒ³ãƒˆãƒ¬ãƒƒãƒˆ", "ã‚­ãƒ¼ãƒªãƒ³ã‚¯", "ãƒã‚§ãƒ¼ãƒ³ã‚½ãƒ¼ãƒ‰", "åŒæ–§"};
+    final String[] BUKI_TYPE_LIST = {"ƒ_ƒK[", "•ÐŽèŒ•", "—¼ŽèŒ•", "ƒXƒ^ƒbƒt", "“ÝŠí",
+        "ƒfƒ…ƒAƒ‹ƒuƒŒ[ƒh", "ƒNƒƒE", "‘„", "ƒ{ƒE", "ƒKƒ“ƒgƒŒƒbƒg", "ƒL[ƒŠƒ“ƒN", "ƒ`ƒF[ƒ“ƒ\[ƒh", "‘o•€"};
     final int W_D = 0;
     final int W_LS = 1;
     final int W_TS = 2;
@@ -73,15 +73,15 @@ public interface Common {
     final int L80 = 11;
     final int L82 = 12;
     final int L84 = 13;
-    final int L99 = 14;         //Heroç”¨
+    final int L99 = 14;         //Hero—p
 
-    //final String[] EQ_LIST = {"æ­¦å™¨", "æ­¦å™¨", "ã‚·ãƒ¼ãƒ«ãƒ‰", "ãƒ˜ãƒ«ãƒ ", "ã‚°ãƒ­ãƒ¼ãƒ–", "ã‚·ãƒ£ãƒ„",
-    //    "ã‚¢ãƒ¼ãƒžãƒ¼", "ã‚¯ãƒ­ãƒ¼ã‚¯", "ãƒ–ãƒ¼ãƒ„", "ã‚²ãƒ¼ãƒˆãƒ«", "ãƒ™ãƒ«ãƒˆ", "ã‚¤ã‚¢ãƒªãƒ³ã‚°", "ã‚¤ã‚¢ãƒªãƒ³ã‚°", "ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ", "ãƒªãƒ³ã‚°", "ãƒªãƒ³ã‚°",
-    //    "ãƒªãƒ³ã‚°", "ãƒªãƒ³ã‚°", "ãƒ«ãƒ¼ãƒ³", "ãƒ«ãƒ¼ãƒ³","ãƒ‰ãƒ­ãƒ³","ã‚¨ãƒ³ãƒ–ãƒ¬ãƒ "};
-    //ãƒ‘ãƒãƒ«1ã®ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆã€ã‚¤ã‚¢ãƒªãƒ³ã‚°ã®å…¥åŠ›ä½ç½®ã®å¤‰æ›´åŠã³ãƒ«ãƒ¼ãƒ³ã€ãƒ‰ãƒ­ãƒ³ã€ã‚¨ãƒ³ãƒ–ãƒ¬ãƒ ã®é †ã‚’å¤‰æ›´
-    final String[] EQ_LIST = {"æ­¦å™¨", "æ­¦å™¨", "ã‚·ãƒ¼ãƒ«ãƒ‰", "ãƒ˜ãƒ«ãƒ ", "ã‚°ãƒ­ãƒ¼ãƒ–", "ã‚·ãƒ£ãƒ„",
-        "ã‚¢ãƒ¼ãƒžãƒ¼", "ã‚¯ãƒ­ãƒ¼ã‚¯", "ãƒ–ãƒ¼ãƒ„", "ã‚²ãƒ¼ãƒˆãƒ«", "ãƒ™ãƒ«ãƒˆ", "ã‚¢ãƒŸãƒ¥ãƒ¬ãƒƒãƒˆ", "ã‚¤ã‚¢ãƒªãƒ³ã‚°", "ã‚¤ã‚¢ãƒªãƒ³ã‚°", "ãƒªãƒ³ã‚°", "ãƒªãƒ³ã‚°",
-        "ãƒªãƒ³ã‚°", "ãƒªãƒ³ã‚°", "ã‚¤ãƒ³ã‚·ã‚°ãƒ‹ã‚¢", "ã‚¹ãƒãƒ¼ãƒ«ãƒ€ãƒ¼","ç´‹ç« "};
+    //final String[] EQ_LIST = {"•Ší", "•Ší", "ƒV[ƒ‹ƒh", "ƒwƒ‹ƒ€", "ƒOƒ[ƒu", "ƒVƒƒƒc",
+    //    "ƒA[ƒ}[", "ƒNƒ[ƒN", "ƒu[ƒc", "ƒQ[ƒgƒ‹", "ƒxƒ‹ƒg", "ƒCƒAƒŠƒ“ƒO", "ƒCƒAƒŠƒ“ƒO", "ƒAƒ~ƒ…ƒŒƒbƒg", "ƒŠƒ“ƒO", "ƒŠƒ“ƒO",
+    //    "ƒŠƒ“ƒO", "ƒŠƒ“ƒO", "ƒ‹[ƒ“", "ƒ‹[ƒ“","ƒhƒƒ“","ƒGƒ“ƒuƒŒƒ€"};
+    //ƒpƒlƒ‹1‚ÌƒAƒ~ƒ…ƒŒƒbƒgAƒCƒAƒŠƒ“ƒO‚Ì“ü—ÍˆÊ’u‚Ì•ÏX‹y‚Ñƒ‹[ƒ“Aƒhƒƒ“AƒGƒ“ƒuƒŒƒ€‚Ì‡‚ð•ÏX
+    final String[] EQ_LIST = {"•Ší", "•Ší", "ƒV[ƒ‹ƒh", "ƒwƒ‹ƒ€", "ƒOƒ[ƒu", "ƒVƒƒƒc",
+        "ƒA[ƒ}[", "ƒNƒ[ƒN", "ƒu[ƒc", "ƒQ[ƒgƒ‹", "ƒxƒ‹ƒg", "ƒAƒ~ƒ…ƒŒƒbƒg", "ƒCƒAƒŠƒ“ƒO", "ƒCƒAƒŠƒ“ƒO", "ƒŠƒ“ƒO", "ƒŠƒ“ƒO",
+        "ƒŠƒ“ƒO", "ƒŠƒ“ƒO", "ƒCƒ“ƒVƒOƒjƒA", "ƒXƒ|[ƒ‹ƒ_[","–äÍ"};
     
     final int RING1 = 14;
     final int RING2 = 15;
@@ -91,7 +91,7 @@ public interface Common {
     final int EARRING1 = 11;
     final int EARRING2 = 12;
 
-    // ã‚¨ãƒ³ãƒãƒ£ãƒ³ãƒˆã®ID
+    // ƒGƒ“ƒ`ƒƒƒ“ƒg‚ÌID
     final int ACC1 = 0;
     final int ACC2 = 1;
     final int ACC3 = 2;
@@ -102,22 +102,22 @@ public interface Common {
     final int P_G = 7;
     final int P_B = 8;
     final int P_S = 9;
-    //final int E_WS = 10;      //ã‚¦ã‚£ãƒ³ãƒ‰ã‚·ãƒ§ãƒƒãƒˆ
-    final int E_AS = 10;        //ã‚¢ã‚¯ã‚¢ã‚·ãƒ§ãƒƒãƒˆ
+    //final int E_WS = 10;      //ƒEƒBƒ“ƒhƒVƒ‡ƒbƒg
+    final int E_AS = 10;        //ƒAƒNƒAƒVƒ‡ƒbƒg
     final int E_EF = 11;
     final int E_CM = 12;
-    final int E_SE = 13;        //ã‚¹ãƒˆãƒ¼ãƒ ã‚¢ã‚¤
-    final int E_SS = 14;        //ã‚¹ãƒˆãƒ¼ãƒ ã‚·ãƒ§ãƒƒãƒˆ
-    final int E_SF = 15;        //ã‚½ã‚¦ãƒ«ã‚ªãƒ–ãƒ•ãƒ¬ã‚¤ãƒ 
-    final int E_NT = 16;        //ãƒã‚¤ãƒãƒ£ãƒ¼ã‚ºã‚¿ãƒƒãƒ
-    final int E_BW = 17;        //ãƒãƒ¼ãƒ‹ãƒ³ã‚°ã‚¦ã‚§ãƒãƒ³
-    //final int E_FW = 18;      //ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼ã‚¦ã‚§ãƒãƒ³
-    final int E_EW = 18;        //ã‚¢ãƒ¼ã‚¹ã‚¦ã‚§ãƒãƒ³
+    final int E_SE = 13;        //ƒXƒg[ƒ€ƒAƒC
+    final int E_SS = 14;        //ƒXƒg[ƒ€ƒVƒ‡ƒbƒg
+    final int E_SF = 15;        //ƒ\ƒEƒ‹ƒIƒuƒtƒŒƒCƒ€
+    final int E_NT = 16;        //ƒlƒCƒ`ƒƒ[ƒYƒ^ƒbƒ`
+    final int E_BW = 17;        //ƒo[ƒjƒ“ƒOƒEƒFƒ|ƒ“
+    //final int E_FW = 18;      //ƒtƒ@ƒCƒA[ƒEƒFƒ|ƒ“
+    final int E_EW = 18;        //ƒA[ƒXƒEƒFƒ|ƒ“
     final int E_RE = 19;
     final int E_RM = 20;
-    final int E_AP = 21;        //ã‚¢ã‚¯ã‚¢ãƒ—ãƒ­ãƒ†ã‚¯ã‚¿ãƒ¼
-    final int E_EV = 22;        //ã‚¨ã‚­ã‚¾ãƒãƒƒã‚¯ãƒã‚¤ã‚¿ãƒ©ã‚¤ã‚º
-    final int E_AF = 23;        //ã‚¢ãƒ‡ã‚£ã‚·ãƒ§ãƒŠãƒ«ãƒ•ã‚¡ã‚¤ãƒ¤ãƒ¼
+    final int E_AP = 21;        //ƒAƒNƒAƒvƒƒeƒNƒ^[
+    final int E_EV = 22;        //ƒGƒLƒ]ƒ`ƒbƒNƒoƒCƒ^ƒ‰ƒCƒY
+    final int E_AF = 23;        //ƒAƒfƒBƒVƒ‡ƒiƒ‹ƒtƒ@ƒCƒ„[
     final int W_ADS = 24;
     final int W_BSK = 25;
     final int W_DW = 26;
@@ -155,7 +155,7 @@ public interface Common {
     final int KOMA = 58;
     final int P_BA = 59;
     final int E_DB = 60;
-    final int E_EG = 61;        //ã‚¢ãƒ¼ã‚¹ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³
+    final int E_EG = 61;        //ƒA[ƒXƒK[ƒfƒBƒAƒ“
     final int I_RW = 62;
     final int WAR = 63;
     final int ITEM_MD_OP = 64;
@@ -177,29 +177,29 @@ public interface Common {
     final int D_MA = 79;
     final int D_VR = 80;
     
-    //final int E_WW = 81;      //ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚©ãƒ¼ã‚¯
-    final int E_QE = 81;        //ã‚¯ã‚¨ã‚¤ã‚¯
+    //final int E_WW = 81;      //ƒEƒBƒ“ƒhƒEƒH[ƒN
+    final int E_QE = 81;        //ƒNƒGƒCƒN
     
     final int BS_COIN = 82;
-    //y_ikedaã•ã‚“ã«ã‚ˆã‚‹ä¿®æ­£ã‚’å‚è€ƒã«
-    final int L_HST = 83;       //æˆé•·ã®æžœå®Ÿ
-    final int E_EE = 84;        //ã‚¤ãƒ¼ã‚°ãƒ«ã‚¢ã‚¤
-    final int E_CE = 85;        //ã‚µã‚¤ã‚¯ãƒ­ãƒ³(æœªå®Ÿè£…)
-    final int E_IO = 86;        //ã‚¤ãƒ³ãƒ•ã‚§ãƒ«ãƒŽ(æœªå®Ÿè£…)
-    final int P_GA = 87;        //ã‚°ãƒ¬ãƒ¼ã‚¹ã‚¢ãƒã‚¿ãƒ¼(æœªå®Ÿè£…)
-    final int K_PD = 88;        //ãƒ—ãƒ©ã‚¤ãƒ‰(æœªå®Ÿè£…)
-    final int K_BK = 89;        //ãƒ–ãƒ­ãƒ¼ã‚¢ã‚¿ãƒƒã‚¯(æœªå®Ÿè£…)
-    final int R_LINDVIOL = 90;  //è¦šé†’[ãƒªãƒ³ãƒ‰ãƒ“ã‚ªãƒ«](æœªå®Ÿè£…)
-    final int I_FS = 91;        //ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚¹ãƒ”ãƒƒãƒ„(æœªå®Ÿè£…)
-    final int I_IT = 92;        //ã‚¤ãƒ³ãƒ‘ã‚¯ãƒˆ(æœªå®Ÿè£…)
-    final int H_HP = 93;        //ç”Ÿå‘½ã®ãƒœãƒ¼ãƒŠã‚¹(æœªå®Ÿè£…)
-    final int H_AC = 94;        //é‰„ç”²ã®ãƒœãƒ¼ãƒŠã‚¹(æœªå®Ÿè£…)
-    final int H_PVPDR = 95;     //ç”Ÿå­˜ã®ãƒœãƒ¼ãƒŠã‚¹(æœªå®Ÿè£…)
-    final int H_PVP = 96;       //æš—æ®ºã®ãƒœãƒ¼ãƒŠã‚¹(æœªå®Ÿè£…) 
-    final int H_RK = 97;        //ãƒ©ãƒ³ã‚«ãƒ¼ãƒœãƒ¼ãƒŠã‚¹(æœªå®Ÿè£…)     
+    //y_ikeda‚³‚ñ‚É‚æ‚éC³‚ðŽQl‚É
+    final int L_HST = 83;       //¬’·‚Ì‰ÊŽÀ
+    final int E_EE = 84;        //ƒC[ƒOƒ‹ƒAƒC
+    final int E_CE = 85;        //ƒTƒCƒNƒƒ“(–¢ŽÀ‘•)
+    final int E_IO = 86;        //ƒCƒ“ƒtƒFƒ‹ƒm(–¢ŽÀ‘•)
+    final int P_GA = 87;        //ƒOƒŒ[ƒXƒAƒoƒ^[(–¢ŽÀ‘•)
+    final int K_PD = 88;        //ƒvƒ‰ƒCƒh(–¢ŽÀ‘•)
+    final int K_BK = 89;        //ƒuƒ[ƒAƒ^ƒbƒN(–¢ŽÀ‘•)
+    final int R_LINDVIOL = 90;  //ŠoÁ[ƒŠƒ“ƒhƒrƒIƒ‹](–¢ŽÀ‘•)
+    final int I_FS = 91;        //ƒtƒH[ƒJƒXƒXƒsƒbƒc(–¢ŽÀ‘•)
+    final int I_IT = 92;        //ƒCƒ“ƒpƒNƒg(–¢ŽÀ‘•)
+    final int H_HP = 93;        //¶–½‚Ìƒ{[ƒiƒX(–¢ŽÀ‘•)
+    final int H_AC = 94;        //“Sb‚Ìƒ{[ƒiƒX(–¢ŽÀ‘•)
+    final int H_PVPDR = 95;     //¶‘¶‚Ìƒ{[ƒiƒX(–¢ŽÀ‘•)
+    final int H_PVP = 96;       //ˆÃŽE‚Ìƒ{[ƒiƒX(–¢ŽÀ‘•) 
+    final int H_RK = 97;        //ƒ‰ƒ“ƒJ[ƒ{[ƒiƒX(–¢ŽÀ‘•)     
 
-//    final String[] AILMENT_LIST = {"çŸ³åŒ–", "ç¡çœ ", "å‡çµ", "æš—é—‡", "æ°—çµ¶", "æ‹˜æŸ", "ææ€–"};
-    final String[] AILMENT_LIST = {"çŸ³åŒ–è€æ€§", "ç¡çœ è€æ€§", "å‡çµè€æ€§", "æš—é—‡è€æ€§", "æ°—çµ¶è€æ€§", "æ‹˜æŸè€æ€§", "ææ€–è€æ€§","ç ´å£Šè€æ€§","çŸ³åŒ–å‘½ä¸­", "ç¡çœ å‘½ä¸­", "å‡çµå‘½ä¸­", "æš—é—‡å‘½ä¸­", "æ°—çµ¶å‘½ä¸­", "æ‹˜æŸå‘½ä¸­", "ææ€–å‘½ä¸­","ç ´å£Šå‘½ä¸­"};
+//    final String[] AILMENT_LIST = {"Î‰»", "‡–°", "“€Œ‹", "ˆÃˆÅ", "‹Câ", "S‘©", "‹°•|"};
+    final String[] AILMENT_LIST = {"Î‰»‘Ï«", "‡–°‘Ï«", "“€Œ‹‘Ï«", "ˆÃˆÅ‘Ï«", "‹Câ‘Ï«", "S‘©‘Ï«", "‹°•|‘Ï«","”j‰ó‘Ï«","Î‰»–½’†", "‡–°–½’†", "“€Œ‹–½’†", "ˆÃˆÅ–½’†", "‹Câ–½’†", "S‘©–½’†", "‹°•|–½’†","”j‰ó–½’†"};
     final int STONE = 0;
     final int SLEEP = 1;
     final int FREEZE = 2;
@@ -217,17 +217,17 @@ public interface Common {
     final int HIT_TERROR = 14;
     final int HIT_DESTRUCTION = 15;
 
-    final String[] ENEMY_TYPE_LIST = {"é€šå¸¸", "æ‚ªé­”", "ä¸æ­»"};
+    final String[] ENEMY_TYPE_LIST = {"’Êí", "ˆ«–‚", "•sŽ€"};
     final int NORMAL = 0;
     final int CURSED = 1;
     final int UNDEAD = 2;
 
     String[] EQ_EN_LIST = {"0", "1", "2", "3", "4", "5", "6", "7", "8",
         "9", "10", "11", "12", "13", "14", "15"};
-    String[] EQ_ELEM_LIST = {"ç„¡å±žæ€§", "ç«éœŠ:1æ®µ", "ç«éœŠ:2æ®µ", "ç«éœŠ:3æ®µ", "ç«éœŠ:4æ®µ",
-        "ç«éœŠ:5æ®µ", "æ°´éœŠ:1æ®µ", "æ°´éœŠ:2æ®µ", "æ°´éœŠ:3æ®µ", "æ°´éœŠ:4æ®µ", "æ°´éœŠ:5æ®µ", "é¢¨éœŠ:1æ®µ",
-        "é¢¨éœŠ:2æ®µ", "é¢¨éœŠ:3æ®µ", "é¢¨éœŠ:4æ®µ", "é¢¨éœŠ:5æ®µ", "åœ°éœŠ:1æ®µ", "åœ°éœŠ:2æ®µ", "åœ°éœŠ:3æ®µ",
-        "åœ°éœŠ:4æ®µ", "åœ°éœŠ:5æ®µ"};
+    String[] EQ_ELEM_LIST = {"–³‘®«", "‰Î—ì:1’i", "‰Î—ì:2’i", "‰Î—ì:3’i", "‰Î—ì:4’i",
+        "‰Î—ì:5’i", "…—ì:1’i", "…—ì:2’i", "…—ì:3’i", "…—ì:4’i", "…—ì:5’i", "•——ì:1’i",
+        "•——ì:2’i", "•——ì:3’i", "•——ì:4’i", "•——ì:5’i", "’n—ì:1’i", "’n—ì:2’i", "’n—ì:3’i",
+        "’n—ì:4’i", "’n—ì:5’i"};
 
-    String[] EQ_TS_LIST = {"0æ®µéšŽ", "1æ®µéšŽ", "2æ®µéšŽ", "3æ®µéšŽ", "4æ®µéšŽ", "5æ®µéšŽ"};
+    String[] EQ_TS_LIST = {"0’iŠK", "1’iŠK", "2’iŠK", "3’iŠK", "4’iŠK", "5’iŠK"};
 }
