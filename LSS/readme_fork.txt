@@ -3,6 +3,20 @@ LineageStatusSimulator_fork2018
 変更点
 2018/10/05
 Update
+LSS_launcher/Updater.java
+	インストールが面倒orわかりにくいとのことでオリジナルと同じようなLSS_launcher.exeが必要と判断
+	GitHubのサイトに合わせてソースコードを変更、app_ver3.0.0、data_ver3.0.0とした。
+	[LSS_launcher.jar]を作成し[LSS_launcher_2018.jar]とリネームしてlaunch4j Ver 3.12を使用し
+	[LSS_launcher_2018.exe]を作成する
+
+	launch4jの設定項目は3か所のみ
+	[BASIC]
+	Output files:C:\Users\ユーザー名\Desktop\LSS_2018\LSS_launcher_2018.exe
+	         Jar:C:\Users\ユーザー名\Desktop\LSS_2018\LSS_launcher_2018.jar
+	[JRE]
+	Min JRE version:1.8.0
+
+Update
 SS/src/lss/Bougu.java
 SS/src/lss/Buff.java
 SS/src/lss/Buki.java
