@@ -503,6 +503,11 @@ public class Bougu implements Common {
                 op2.DMG_LONG = 1;
             }
         }
+        if (name.equals("裂空のTシャツ")) {
+            if (enchant > 0) {
+                op2.ailment[STUN] += enchant;
+            }
+        }
         if (name.contains("アンタラスグランド")) {
             if (enchant > 6) {
                 op2.DR += enchant - 6;
