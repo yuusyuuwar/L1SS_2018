@@ -2,6 +2,13 @@ LineageStatusSimulator_fork2018
 
 変更点
 2018/10/07
+Update 3.0.3
+LSS/data/E.zip
+	裂空のTシャツのTが全角になっていた為修正
+
+SS/src/lss/Bougu.java
+	裂空のTシャツの+1強化毎にスタン耐性+1増加に対応
+
 Update 3.0.2
 SS/src/lss/Calculator.java
 	オルターストーン7段階に[AC+1] 処理を[AC-1]へ修正
