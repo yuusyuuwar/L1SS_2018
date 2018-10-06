@@ -8,26 +8,16 @@ LineageStatusSimulator is a character simulation of PC game "Lineage".
 <img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_SS_3_4.bmp" alt="image" width="640" height="480">
 
 # How to use
-- Install Original LineageStatusSimulator.
+- Push:Green button"Clone or download"
 
-- Start "LSS_launcher.exe".
+- Choice:"Download ZIP"
 
-- Quit "LineageStatusSimulator ver2.4.8".
+- Unzip "L1SS_2018-master.zip".
 
-- Get "LSS.jar"and"E.zip" at this site.  (Push:Green button"Clone or download" and Choice:"Download ZIP")
-  
-      "\L1SS_2018-master\LSS\dist\LSS.jar"
-      "\L1SS_2018-master\data\E.zip"
-
-- Change "LSS.jar"and"E.zip".
-  
-      "\LSS\bin\LSS.jar"
-      "\LSS\data\E.zip"
-
-- Start "LSS_launcher.exe".
+- Start "LSS_launcher_2018.exe".
 <img src="https://raw.githubusercontent.com/TrickMasterJP/L1SS_2018/master/LSS_ScreenShot/LSS_launcher_SS_1_1.bmp" alt="image" width="396" height="118">
 
-- Choice "No:いいえ".
+- Choice "Yes:はい".
 
 - Enjoy LineageStatusSimulator!!
 
