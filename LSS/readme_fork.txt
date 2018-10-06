@@ -1,7 +1,57 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/07
+Update 3.0.2
+SS/src/lss/Calculator.java
+	オルターストーン7段階に[AC+1] 処理を[AC-1]へ修正
+
+SS/src/lss/Bougu.java
+	マミーロードクラウン
+	+7から[遠距離ダメージ]+1増加(最大+3)
+
+	闘士の守護紋章
+	射手の守護紋章
+	賢者の守護紋章
+	+5強化時[AC=0]を[AC=-2]へ
+	
+LSS/data/E.zip
+	カーツの闘士の守護インシグニア
+	カーツの射手の守護インシグニア
+	カーツの賢者の守護インシグニア
+	[AC=3]を[AC=-3]へ
+
+	02_激昂のグローブ.txt
+	[STR=0]を[STR=2]へ
+
+2018/10/06
+Update 3.0.1
+LSS/data/E.zip
+	チェーンソードの露出確率の訂正
+	殲滅者のチェーンソード
+	[弱点露出=0.125]を[弱点露出=0.1875]
+
+	幸運のチェーンソード
+	[弱点露出=0.25]を[弱点露出=0.3333]
+
+	*露出4段の場合のFSのダメージ計算はよくわからないので保留
+	http://line-zatta.seesaa.net/article/361203254.html(露出3段)
+
 2018/10/05
+Update 3.0.0
+LSS_launcher/Updater.java
+	インストールが面倒orわかりにくいとのことでオリジナルと同じようなLSS_launcher.exeが必要と判断
+	GitHubのサイトに合わせてソースコードを変更、app_ver3.0.0、data_ver3.0.0とした。
+	[LSS_launcher.jar]を作成し[LSS_launcher_2018.jar]とリネームしてlaunch4j Ver 3.12を使用し
+	[LSS_launcher_2018.exe]を作成する
+
+	launch4jの設定項目は3か所のみ
+	[BASIC]
+	Output files:C:\Users\ユーザー名\Desktop\LSS_2018\LSS_launcher_2018.exe
+	         Jar:C:\Users\ユーザー名\Desktop\LSS_2018\LSS_launcher_2018.jar
+	[JRE]
+	Min JRE version:1.8.0
+
 Update
 SS/src/lss/Bougu.java
 SS/src/lss/Buff.java

@@ -1996,7 +1996,7 @@ public class Calculator implements Common {
                         break;     
                     //オルターストーン7段階
                     case 7:
-                        buff.AC += 1;
+                        buff.AC -= 1;
                         buff.ST[STR] += 1;
                         buff.DMG_SHORT += 1;
                         buff.HIT_SHORT += 2;
@@ -2048,7 +2048,7 @@ public class Calculator implements Common {
                         break;
                     //オルターストーン7段階
                     case 7:
-                        buff.AC += 1;
+                        buff.AC -= 1;
                         buff.ST[DEX] += 1;
                         buff.DMG_LONG += 1;
                         buff.HIT_LONG += 2;
@@ -2099,7 +2099,7 @@ public class Calculator implements Common {
                         break;
                     //オルターストーン7段階
                     case 7:
-                        buff.AC += 1;
+                        buff.AC -= 1;
                         buff.ST[INT] += 1;
                         buff.SP += 1;
                         buff.DR += 1;
