@@ -494,7 +494,15 @@ public class Bougu implements Common {
                 op2.SP = 1;
             }
         }
-
+        if (name.equals("マミーロードクラウン")) {
+            if (enchant >= 9) {
+                op2.DMG_LONG = 3;
+            } else if (enchant >= 8) {
+                op2.DMG_LONG = 2;
+            } else if (enchant >= 7) {
+                op2.DMG_LONG = 1;
+            }
+        }
         if (name.contains("アンタラスグランド")) {
             if (enchant > 6) {
                 op2.DR += enchant - 6;
@@ -1775,6 +1783,7 @@ public class Bougu implements Common {
                 case "闘士の守護紋章":                      //+5闘士の守護紋章から
                     switch (enchant) {
                         case 5:
+                            op2.AC =-2;
                             op2.ST[STR] = 1;
                             op2.effect = "ポーション回復量 +12% +12,";
                             op2.effect += "回復悪化防御 +12%,";
@@ -1784,6 +1793,7 @@ public class Bougu implements Common {
                             op2.MR = 4;
                             break;
                         case 6:
+                            op2.AC =-2;
                             op2.ST[STR] = 1;
                             op2.effect = "ポーション回復量 +14% +14,";
                             op2.effect += "回復悪化防御 +14%,";
@@ -1793,6 +1803,7 @@ public class Bougu implements Common {
                             op2.MR = 6;
                             break;
                         case 7:
+                            op2.AC =-2;
                             op2.ST[STR] = 1;
                             op2.effect = "ポーション回復量 +16% +16,";
                             op2.effect += "回復悪化防御 +16%,";
@@ -1802,6 +1813,7 @@ public class Bougu implements Common {
                             op2.MR = 8;
                             break;
                         case 8:
+                            op2.AC =-2;
                             op2.ST[STR] = 1;
                             op2.effect = "ポーション回復量 +18% +18,";
                             op2.effect += "回復悪化防御 +18%,";
@@ -1815,6 +1827,7 @@ public class Bougu implements Common {
                 case "射手の守護紋章":                      //+5射手の守護紋章から
                     switch (enchant) {
                             case 5:
+                            op2.AC =-2;
                             op2.ST[DEX] = 1;
                             op2.effect = "ポーション回復量 +12% +12,";
                             op2.effect += "回復悪化防御 +12%,";
@@ -1824,6 +1837,7 @@ public class Bougu implements Common {
                             op2.MR = 4;
                             break;
                         case 6:
+                            op2.AC =-2;
                             op2.ST[DEX] = 1;
                             op2.effect = "ポーション回復量 +14% +14,";
                             op2.effect += "回復悪化防御 +14%,";
@@ -1833,6 +1847,7 @@ public class Bougu implements Common {
                             op2.MR = 6;
                             break;
                         case 7:
+                            op2.AC =-2;
                             op2.ST[DEX] = 1;
                             op2.effect = "ポーション回復量 +16% +16,";
                             op2.effect += "回復悪化防御 +16%,";
@@ -1842,6 +1857,7 @@ public class Bougu implements Common {
                             op2.MR = 8;
                             break;
                         case 8:
+                            op2.AC =-2;
                             op2.ST[DEX] = 1;
                             op2.effect = "ポーション回復量 +18% +18,";
                             op2.effect += "回復悪化防御 +18%,";
@@ -1855,6 +1871,7 @@ public class Bougu implements Common {
                 case "賢者の守護紋章":                      //+5賢者の守護紋章から
                     switch (enchant) {
                         case 5:
+                            op2.AC =-2;
                             op2.ST[INT] = 1;
                             op2.effect = "ポーション回復量 +12% +12,";
                             op2.effect += "回復悪化防御 +12%,";
@@ -1864,6 +1881,7 @@ public class Bougu implements Common {
                             op2.MR = 6;
                             break;
                         case 6:
+                            op2.AC =-2;
                             op2.ST[INT] = 1;
                             op2.effect = "ポーション回復量 +14% +14,";
                             op2.effect += "回復悪化防御 +14%,";
@@ -1873,6 +1891,7 @@ public class Bougu implements Common {
                             op2.MR = 6;
                             break;
                         case 7:
+                            op2.AC =-2;
                             op2.ST[INT] = 1;
                             op2.effect = "ポーション回復量 +16% +16,";
                             op2.effect += "回復悪化防御 +16%,";
@@ -1882,6 +1901,7 @@ public class Bougu implements Common {
                             op2.MR = 8;
                             break;
                         case 8:
+                            op2.AC =-2;
                             op2.ST[INT] = 1;
                             op2.effect = "ポーション回復量 +18% +18,";
                             op2.effect += "回復悪化防御 +18%,";

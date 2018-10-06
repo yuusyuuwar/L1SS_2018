@@ -1,8 +1,31 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/07
+Update 3.0.2
+SS/src/lss/Calculator.java
+	オルターストーン7段階に[AC+1] 処理を[AC-1]へ修正
+
+SS/src/lss/Bougu.java
+	マミーロードクラウン
+	+7から[遠距離ダメージ]+1増加(最大+3)
+
+	闘士の守護紋章
+	射手の守護紋章
+	賢者の守護紋章
+	+5強化時[AC=0]を[AC=-2]へ
+	
+LSS/data/E.zip
+	カーツの闘士の守護インシグニア
+	カーツの射手の守護インシグニア
+	カーツの賢者の守護インシグニア
+	[AC=3]を[AC=-3]へ
+
+	02_激昂のグローブ.txt
+	[STR=0]を[STR=2]へ
+
 2018/10/06
-Update
+Update 3.0.1
 LSS/data/E.zip
 	チェーンソードの露出確率の訂正
 	殲滅者のチェーンソード
@@ -15,7 +38,7 @@ LSS/data/E.zip
 	http://line-zatta.seesaa.net/article/361203254.html(露出3段)
 
 2018/10/05
-Update
+Update 3.0.0
 LSS_launcher/Updater.java
 	インストールが面倒orわかりにくいとのことでオリジナルと同じようなLSS_launcher.exeが必要と判断
 	GitHubのサイトに合わせてソースコードを変更、app_ver3.0.0、data_ver3.0.0とした。
