@@ -1,6 +1,19 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/06
+Update
+LSS/data/E.zip
+	チェーンソードの露出確率の訂正
+	殲滅者のチェーンソード
+	[弱点露出=0.125]を[弱点露出=0.1875]
+
+	幸運のチェーンソード
+	[弱点露出=0.25]を[弱点露出=0.3333]
+
+	*露出4段の場合のFSのダメージ計算はよくわからないので保留
+	http://line-zatta.seesaa.net/article/361203254.html(露出3段)
+
 2018/10/05
 Update
 LSS_launcher/Updater.java
