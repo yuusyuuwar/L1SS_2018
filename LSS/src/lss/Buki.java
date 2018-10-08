@@ -196,10 +196,31 @@ public class Buki implements Common {
 
     public void checkEnchant() {
         op2 = new Buff();
+        //瞑想のスタッフ
         if (name.equals("瞑想のスタッフ")) {
             op2.MPR += enchant;
         }
-        //真冥王の執行剣    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][スタン命中]+1増加
+        //バフォメットスタッフ      +7以降強化1毎にSP+1(+9まで適用)
+        if (name.equals("バフォメットスタッフ")) {
+            if (enchant >= 9) {
+            op2.SP += 3;                                //SP+3
+            } else if (enchant >= 8) {
+            op2.SP += 2;                                //SP+2
+            } else if (enchant >= 7) {
+            op2.SP += 1;                                //SP+1
+            }
+        }
+        //テンペストアックス        +8以降強化1毎に恐怖的中+1(+10強化まで適用)
+        if (name.equals("テンペストアックス")) {
+            if (enchant >= 10) {
+            op2.ailment[HIT_TERROR] += 3;               //恐怖的中+3
+            } else if (enchant >= 9) {
+            op2.ailment[HIT_TERROR] += 2;               //恐怖的中+2
+            } else if (enchant >= 8) {
+            op2.ailment[HIT_TERROR] += 1;               //恐怖的中+1
+            }
+        }
+        //真冥王の執行剣            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][スタン命中]+1増加
         if (name.equals("真冥王の執行剣")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
@@ -220,7 +241,7 @@ public class Buki implements Common {
             op2.ailment[HIT_DESTRUCTION] += enchant;    //破壊命中
             }
         }
-        //ホーリーヘドロンスタッフ    エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法命中]+1増加
+        //ホーリーヘドロンスタッフ  エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法命中]+1増加
         if (name.equals("ホーリーヘドロンスタッフ")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
@@ -228,14 +249,14 @@ public class Buki implements Common {
             op2.HIT_MAGIC += enchant;                   //魔法命中   
             }
         }
-        //クロノスの恐怖    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル]+1%増加 
+        //クロノスの恐怖            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル]+1%増加 
         if (name.equals("クロノスの恐怖")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
             op2.CRI_SHORT += enchant;                   //近距離クリティカル
             }
         }
-        //ヒュペリオンの絶望    エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][スタン命中]+1増加
+        //ヒュペリオンの絶望        エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][スタン命中]+1増加
         if (name.equals("ヒュペリオンの絶望")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
@@ -244,7 +265,7 @@ public class Buki implements Common {
             op2.ailment[HIT_STUN] += enchant;           //スタン命中
             }
         }
-        //タイタンの憤怒    エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][恐怖命中]+1増加 
+        //タイタンの憤怒            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][恐怖命中]+1増加 
         if (name.equals("タイタンの憤怒")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
@@ -252,12 +273,12 @@ public class Buki implements Common {
             op2.ailment[HIT_TERROR] += enchant;         //恐怖命中
             }
         }
-        //ガイアの激怒    エンチャントによる追加打撃が+2 +1強化毎に[遠距離クリティカル][ダメージ軽減無視]+1増加 
+        //ガイアの激怒              エンチャントによる追加打撃が+2 +1強化毎に[遠距離クリティカル][ダメージ軽減無視]+1増加 
         if (name.equals("ガイアの激怒")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;    //追加ダメージ
-            op2.CRI_LONG += enchant;     //遠距離クリティカル
-            op2.DR_IGNORED += enchant;   //ダメージリダクション無視
+            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.CRI_LONG += enchant;                    //遠距離クリティカル
+            op2.DR_IGNORED += enchant;                  //ダメージリダクション無視
             }
         }
         //強化+10以上はエンチャントによる追加打撃が+2(既存処理に追加で+1)

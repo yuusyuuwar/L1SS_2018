@@ -500,6 +500,75 @@ public class Bougu implements Common {
                 op2.DMG_LONG = 1;
             }
         }
+        if (name.equals("ブラックナイトヘルム")) {
+            if (enchant >= 5) {
+                op2.MR += 4 * (enchant -4);
+            }
+        }
+        if (name.equals("腕力のブーツ")) {
+            if (enchant >= 9) {
+                op2.DR = 1;
+                op2.HP = 60;
+            } else if (enchant >= 8) {
+                op2.HP = 40;
+            } else if (enchant >= 7) {
+                op2.HP = 20;
+            }
+        }
+        if (name.equals("機敏のブーツ")) {
+            if (enchant >= 9) {
+                op2.DR = 1;
+                op2.HP = 60;
+            } else if (enchant >= 8) {
+                op2.HP = 40;
+            } else if (enchant >= 7) {
+                op2.HP = 20;
+            }
+        }
+        if (name.equals("知識のブーツ")) {
+            if (enchant >= 9) {
+                op2.DR = 1;
+                op2.HP = 60;
+            } else if (enchant >= 8) {
+                op2.HP = 40;
+            } else if (enchant >= 7) {
+                op2.HP = 20;
+            }
+        }
+        if (name.equals("知恵のブーツ")) {
+            if (enchant >= 9) {
+                op2.DR = 1;
+                op2.HP = 60;
+            } else if (enchant >= 8) {
+                op2.HP = 40;
+            } else if (enchant >= 7) {
+                op2.HP = 20;
+            }
+        }
+        if (name.equals("漆黒のマント")) {
+            if (enchant >= 9) {
+                op2.ST[CHA] = 3;
+            } else if (enchant >= 8) {
+                op2.ST[CHA] = 2;
+            } else if (enchant >= 7) {
+                op2.ST[CHA] = 1;
+            }
+        }
+        if (name.equals("マンボハット")) {
+            if (enchant >= 7) {
+                op2.ST[CHA] = 1;
+            }
+        }
+        if (name.equals("マンボコート")) {
+            if (enchant >= 7) {
+                op2.ST[CHA] = 1;
+            }
+        }
+        if (name.equals("漆黒の水晶球")) {
+            if (enchant >= 9) {
+                op2.ST[CHA] = 1;
+            }
+        }
         if (name.equals("裂空のTシャツ")) {
             if (enchant > 0) {
                 op2.ailment[STUN] += enchant;
