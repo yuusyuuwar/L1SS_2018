@@ -142,11 +142,9 @@ public class Bougu implements Common {
             text += " CHA" + op.ST[CHA];
         }
         if (op.DMG_SHORT + op2.DMG_SHORT > 0) {
-            //text += " 追加打撃+" + (op.DMG_SHORT + op2.DMG_SHORT);
             text += " 近距離ダメージ+" + (op.DMG_SHORT + op2.DMG_SHORT);
         }
         if (op.HIT_SHORT + op2.HIT_SHORT > 0) {
-            //text += " 攻撃成功+" + (op.HIT_SHORT + op2.HIT_SHORT);
             text += " 近距離命中+" + (op.HIT_SHORT + op2.HIT_SHORT);
         }
         if (op.DMG_LONG + op2.DMG_LONG > 0) {
@@ -251,7 +249,6 @@ public class Bougu implements Common {
         if (op.PVP_DR + op2.PVP_DR > 0) {
             text += " PVPダメージ減少+" + (op.PVP_DR + op2.PVP_DR);
         }
-        //所持重量の追加
         if (op.c_weight + op2.c_weight > 0) {
             text += " 所持重量増加+" + (op.c_weight + op2.c_weight);
         }
@@ -1214,12 +1211,6 @@ public class Bougu implements Common {
             }
         }
 
-        if (name.equals("幸運のサークレット")) {
-            if (enchant > 0) {
-                op2.SP = 1;
-            }
-        }
-
         if (name.equals("大魔法使いの帽子")) {
             op2.MP = 10 * enchant;
         }
@@ -1227,40 +1218,34 @@ public class Bougu implements Common {
         if (name.equals("シンセシスゲートル")) {
             op2.HP = 5 * enchant;
         }
-
-        //腕力のゲートルは+9[近距離ダメージ+1]
+        //腕力のゲートルは+9[近距離ダメージ+1]追加
         if (name.equals("ユニコーンの腕力のゲートル")) {
             if (enchant >= 9) {
                 op2.DMG_SHORT = 1;
 	    }
         } 
-
-        //機敏のゲートルは+9[遠距離ダメージ+1]
+        //機敏のゲートルは+9[遠距離ダメージ+1]追加
         if (name.equals("ユニコーンの機敏のゲートル")) {
             if (enchant >= 9) {
                 op2.DMG_LONG = 1;
 	    }
         } 
-
-        //知力のゲートル+9[SP+1] 
+        //知力のゲートルは+9[SP+1]追加
         if (name.equals("ユニコーンの知力のゲートル")) {
             if (enchant >= 9) {
                 op2.SP = 1;
 	    }
         }
-
         //守護のゲートルは+5から[最大HP]+10増加
         if (name.equals("ユニコーンの守護のゲートル")) {
             if (enchant >= 5) {
                 op2.HP = 10;
 	    }
-        }        
-
+        }
         //抵抗のゲートルは+1強化毎に[MR]1%増加(装備のパラメーター[MR強化=]で実装済)
         //if (name.equals("ユニコーンの抵抗のゲートル")) {
         //    op2.MR = 1 * enchant;
         //}
-                      
         if (name.equals("血戦のグローブ")) {
             if (enchant >= 5) {
                 op2.HP = 30;
@@ -1324,7 +1309,6 @@ public class Bougu implements Common {
                 op2.DR = 1;
             }
         }
-
         if (name.equals("血戦のグリーヴ")) {
             if (enchant >= 5) {
                 op2.HP = 25;
