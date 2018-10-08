@@ -1,6 +1,38 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/08
+Update 3.0.4
+LSS/data/E.zip
+	02_シルバーマント.txtを
+		02_ディヴァインプロテクションクローク.txtへ変更
+	[name=シルバーマント]を[name=ディヴァインプロテクションクローク]へ変更
+	[AC=-2]を[AC=-3]へ変更
+	[MR=6]を[MR=2]へ変更
+	[MR強化=2]を[MR強化=3]へ変更
+
+	02_アントクイーンゴールドウィング.txtを
+		02_アントクイーンゴールデンウィング.txtへ変更
+	[name=アントクイーンゴールドウィング]を[name=アントクイーンゴールデンウィング]へ変更
+	[MR=5]を[MR=6]へ変更
+	[MR強化=2]を[MR強化=3]へ変更
+
+	02_アントクイーンシルバーウィング.txt
+	[材質=シルバー]を[材質=布]へ変更
+	[MP=50]を[MP=70]へ変更
+	[MPR=3]を[MPR=5]へ変更
+	[MR強化=2]を[MR強化=3]へ変更
+
+	g_幸運のサークレット.txt
+	[SP=0]を[SP=1]へ変更
+
+SS/src/lss/Bougu.java
+	幸運のサークレットのSP+1の処理がBougu.javaで行われていたので修正
+	不要なコメント削除
+
+SS/src/lss/Buki.java
+	不要なコメント削除
+
 2018/10/07
 Update 3.0.3
 LSS/data/E.zip
@@ -1132,6 +1164,7 @@ LSS/src/lss/Bougu.java
 	http://www.ncsoft.jp/lineage/news/notice/view?bbsNo=3101&articleNo=1936
 	それ以外
 	http://event2.ncsoft.jp/1.0/lineage/1610ring/
+	http://event2.ncsoft.jp/1.0/lineage/1801enchant/
 	https://www34.atwiki.jp/line1library/pages/259.html
 
 修正
@@ -1337,7 +1370,6 @@ LSS/data/E.zip
 	不思議な回復/集中/マナ/体力/魔法抵抗リングがスナッパーの回復/集中/マナ/体力/魔法抵抗リングに変更になる。
 
 LSS/src/lss/Bougu.java
-
 	リング強化オプション[特級]の強化項目確認と対象リングをコメントに追加
 	//各種[10周年記念リング]>>>強化5まで
 
