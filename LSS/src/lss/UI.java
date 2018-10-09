@@ -148,7 +148,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     JToggleButton tb_blessed2;
     JComboBox cb_arrow;
     
-    //JComboBox elixir_rune_en;   //エリクサールーンレベル
+    JComboBox elixir_rune_en;   //エリクサールーンレベル
     WideComboBox elixir_rune;   //エリクサールーン
 
     WideComboBox cb_pattern_l;  //左手
@@ -748,13 +748,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_eq_en[1].setEnabled(false);
         
         //エリクサールーン
-//        String[] elixir_rune_en_list = {"LV", "55", "70", "85", "90"};
-//        elixir_rune_en = new JComboBox(elixir_rune_en_list);
-//        elixir_rune_en.setBounds(0, 460, 50, 20);
-//        elixir_rune_en.addActionListener(this);
-//        panels[0].add(elixir_rune_en);
+        String[] elixir_rune_en_list = {"", "L70", "L80", "L85", "L90"};
+        elixir_rune_en = new JComboBox(elixir_rune_en_list);
+        elixir_rune_en.setBounds(0, 460, 50, 20);
+        elixir_rune_en.addActionListener(this);
+        panels[0].add(elixir_rune_en);
         
-        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
+//        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
+        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン","古代の加護","アルカの遺物","強化されたアルカの遺物"};
         elixir_rune = new WideComboBox(elixir_rune_list);
         elixir_rune.setBounds(50, 460, 150, 20);
         elixir_rune.addActionListener(this);
@@ -1002,10 +1003,19 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             lab_elem[i].setBounds(420 + 60 + 80 * i, 440, 100, 20);
             panels[0].add(lab_elem[i]);
         }
-        for (int i = 0; i < AILMENT_LIST.length; i++) {
+//        for (int i = 0; i < AILMENT_LIST.length; i++) {
+//            lab_ailment[i] = new JLabel();
+//            lab_ailment[i].setBounds(420 + 60 + 80 * (i % 4), 460 + 20 + 20 * (i / 4), 100, 20);
+//            panels[0].add(lab_ailment[i]);
+//        }
+        for (int i = 0, cnt = 0; i < AILMENT_LIST.length; i++, cnt++) {
             lab_ailment[i] = new JLabel();
-            lab_ailment[i].setBounds(420 + 60 + 80 * (i % 4), 460 + 20 + 20 * (i / 4), 100, 20);
+            lab_ailment[i].setBounds(420 + 60 + 80 * (cnt % 4), 460 + 20 + 20 * (cnt / 4), 100, 20);
             panels[0].add(lab_ailment[i]);
+//表示位置を1個右にずらす場合に使用
+//            if (i == 3) {
+//                cnt++;
+//            }
         }
             
         //----------
@@ -1179,7 +1189,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[P_BA].setBounds(0, 20 * col++, 150, 20);
         cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
           
-        String list_P_GA[] = {"君主LV80", "君主LV81", "君主LV82", "君主LV83", "君主LV84", "君主LV85"};
+        String list_P_GA[] = {"君主L80", "君主L81", "君主L82", "君主L83", "君主L84", "君主L85+"};
         cb_buff_group[P_GA] = new WideComboBox(list_P_GA);
         cb_buff_group[P_GA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_GA] = new JCheckBox("グレースアバター");

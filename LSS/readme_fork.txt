@@ -2,6 +2,18 @@ LineageStatusSimulator_fork2018
 
 変更点
 2018/10/09
+Update 3.0.7
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	古代の加護/アルカの遺物/強化されたアルカの遺物を実装
+	今後のLV80/LV85/LV90のエリクサールーンも暫定で実装
+	2017/01/25 Update
+	http://www.ncsoft.jp/lineage/news/notice/view?bbsNo=3101&articleNo=1790
+
+	今後Updateの技術命中/精霊命中/竜語命中/恐怖命中/技術耐性/精霊耐性/竜語耐性/恐怖耐性(計4+4=8)の表示修正
+	グレースアバターの[君主LV80][君主LV81][君主LV82][君主LV83][君主LV84][君主LV85]表示を
+	[君主L80][君主L81][君主L82][君主L83][君主L84][君主L85+]へ変更
+
 Update 3.0.6
 LSS/data/E.zip
 	[重量=]を[重さ=]へ変更
