@@ -1744,65 +1744,198 @@ public class Calculator implements Common {
 
         //ƒGƒŠƒNƒT[ƒ‹[ƒ“
         int e = ui.elixir_rune.getSelectedIndex();
-        boolean q = false;
-        if (e > 0) {
-            if (e > 5) {
-                e -= 5;
-                q = true;
-            }
+        int q = ui.elixir_rune_en.getSelectedIndex();
+        if (e > 0 && e<6) {
             buff.ST[e - 1]++;
-
             switch (cls) {
                 case P:
                     buff.DR += 3;
-                    if (q) {
-                        buff.HIT_SHORT += 2;
+                    if (q==1) {
+                        buff.HIT_SHORT += 2;            //‹ß‹——£–½’†+2
+                    }
+                    else if (q==2) {
+                        buff.HIT_SHORT += 2;            //‹ß‹——£–½’†+2
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.HIT_SHORT += 2;            //‹ß‹——£–½’†+2
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_STUN] += 5;    //‹Zp–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.HIT_SHORT += 2;            //‹ß‹——£–½’†+2
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_STUN] += 10;   //‹Zp–½’†+10
                     }
                     break;
                 case K:
                     buff.HP += 50;
-                    if (q) {
-                        buff.DMG_SHORT += 1;
+                    if (q==1) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                    }
+                    else if (q==2) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_STUN] += 5;    //‹Zp–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_STUN] += 10;   //‹Zp–½’†+10
                     }
                     break;
                 case E:
                     buff.MP += 50;
-                    if (q) {
-                        buff.DMG_LONG += 1;
-                        buff.DMG_SHORT += 1;
+                    if (q==1) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                        buff.DMG_LONG += 1;             //‰“‹——£ƒ_ƒ[ƒW+1
+                    }
+                    else if (q==2) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                        buff.DMG_LONG += 1;             //‰“‹——£ƒ_ƒ[ƒW+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                        buff.DMG_LONG += 1;             //‰“‹——£ƒ_ƒ[ƒW+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+//                    buff.ailment[****] += 5;            //¸—ì–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
+                        buff.DMG_LONG += 1;             //‰“‹——£ƒ_ƒ[ƒW+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+//                    buff.ailment[****] += 10;           //¸—ì–½’†+10
                     }
                     break;
                 case W:
                     buff.MPR += 3;
-                    if (q) {
-                        buff.SP += 1;
+                    if (q==1) {
+                        buff.SP += 1;                   //SP+1
+                    }
+                    else if (q==2) {
+                        buff.SP += 1;                   //SP+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.SP += 1;                   //SP+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.HIT_MAGIC += 5;            //–‚–@–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.SP += 1;                   //SP+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.HIT_MAGIC += 10;           //–‚–@–½’†+10
                     }
                     break;
                 case D:
                     buff.AC -= 3;
-                    if (q) {
-                        buff.MP += 30;
+                    if (q==1) {
+                        buff.MP += 30;                  //Å‘åMP+30
+                    }
+                    else if (q==2) {
+                        buff.MP += 30;                  //Å‘åMP+30
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.MP += 30;                  //Å‘åMP+30
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+//                    buff.ailment[****] += 5;           //¸—ì–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.MP += 30;                  //Å‘åMP+30
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+//                    buff.ailment[****] += 10;           //¸—ì–½’†+10
                     }
                     break;
                 case R:
                     buff.HIT_SHORT += 3;
-                    if (q) {
-                        buff.DR += 1;
+                    if (q==1) {
+                        buff.DR += 1;                   //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+1
+                    }
+                    else if (q==2) {
+                        buff.DR += 1;                   //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.DR += 1;                   //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+//                    buff.ailment[****] += 5;           //—³Œê–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.DR += 1;                   //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+//                    buff.ailment[****] += 10;           //—³Œê–½’†+10
                     }
                     break;
                 case I:
                     buff.r_weight += 0.05;
-                    if (q) {
-                        buff.HP += 50;
+                    if (q==1) {
+                        buff.HP += 50;                  //Å‘åHP+50
+                    }
+                    else if (q==2) {
+                        buff.HP += 50;                  //Å‘åHP+50
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.HP += 50;                  //Å‘åHP+50
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_STUN] += 5;    //‹Zp–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.HP += 50;                  //Å‘åHP+50
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_STUN] += 10;   //‹Zp–½’†+10
                     }
                     break;
                 case F:
                     buff.HP += 50;
-                    if (q) {
-                        buff.MR += 5;
+                    if (q==1) {
+                        buff.MR += 5;                   //MR+5%
+                    }
+                    else if (q==2) {
+                        buff.MR += 5;                   //MR+5%
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                    }
+                    else if (q==3) {
+                        buff.MR += 5;                   //MR+5%1
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_TERROR] += 5;  //‹Zp–½’†+5
+                    }
+                    else if (q==4) {
+                        buff.MR += 5;                   //MR+5%
+                                                        //j•ŸÁ–ÕŒø—¦+5%
+                        buff.ailment[HIT_TERROR] += 10; //‹Zp–½’†+10
                     }
                     break;
             }
+        }else if (e == 6){                              //ŒÃ‘ã‚Ì‰ÁŒì
+                        buff.AC -= 2;                   //AC-2
+        }else if (e == 7){                              //ƒAƒ‹ƒJ‚Ìˆâ•¨
+                    buff.AC -= 3;                       //AC-3
+                    buff.DMG_SHORT += 2;                //‹ß‹——£ƒ_ƒ[ƒW+2
+                    buff.HIT_SHORT += 2;                //‹ß‹——£–½’†+2
+                    buff.DMG_LONG += 2;                 //‰“‹——£ƒ_ƒ[ƒW+2
+                    buff.HIT_LONG += 2;                 //‰“‹——£–½’†+2
+                    buff.SP += 2;                       //SP+2
+                    buff.HIT_MAGIC += 2;                //–‚–@–½’†+2
+                    buff.MR += 5;                       //MR+5%
+                                                        //Šl“¾ŒoŒ±’l+2%
+        }else if (e == 8){                              //‹­‰»‚³‚ê‚½ƒAƒ‹ƒJ‚Ìˆâ•¨
+                    buff.AC -= 3;                       //AC-3
+                    buff.DMG_SHORT += 2;                //‹ß‹——£ƒ_ƒ[ƒW+2
+                    buff.HIT_SHORT += 2;                //‹ß‹——£–½’†+2
+                    buff.DMG_LONG += 2;                 //‰“‹——£ƒ_ƒ[ƒW+2
+                    buff.HIT_LONG += 2;                 //‰“‹——£–½’†+2
+                    buff.SP += 2;                       //SP+2
+                    buff.HIT_MAGIC += 2;                //–‚–@–½’†+2
+                    buff.MR += 5;                       //MR+5%
+                    buff.ailment[TERROR] += 5;          //‹°•|‘Ï«+5
+                                                        //Šl“¾ŒoŒ±’l+5%            
         }
         //ƒ^ƒŠƒXƒ}ƒ“
             switch (ui.cb_pattern_l2.getSelectedIndex()) {
