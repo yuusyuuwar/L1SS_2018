@@ -252,6 +252,9 @@ public class Bougu implements Common {
         if (op.c_weight + op2.c_weight > 0) {
             text += " 所持重量増加+" + (op.c_weight + op2.c_weight);
         }
+        if (op.WEIGHT > 0) {
+            text += " 重さ " + op.WEIGHT;
+        }
 
         if (!op.effect.equals("")) {
             text += " " + op.effect;
@@ -488,6 +491,15 @@ public class Bougu implements Common {
             } else if (enchant >= 7) {
                 op2.SP = 2;
             } else if (enchant >= 5) {
+                op2.SP = 1;
+            }
+        }
+        if (name.equals("マミーロードのグローブ")) {
+            if (enchant >= 9) {
+                op2.SP = 3;
+            } else if (enchant >= 8) {
+                op2.SP = 2;
+            } else if (enchant >= 7) {
                 op2.SP = 1;
             }
         }

@@ -34,6 +34,7 @@ public class Buff implements Common {
     int PVP;
     int PVP_DR;
     int DR_IGNORED;
+    int WEIGHT;
 
     int[] ailment = new int[AILMENT_LIST.length];
 
@@ -118,6 +119,9 @@ public class Buff implements Common {
             }
             if (line.startsWith("MR=")) {
                 MR = Integer.parseInt(line.split("=")[1]);
+            }
+            if (line.startsWith("èdÇ≥=")) {
+                WEIGHT = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("èdó åyå∏=")) {
                 r_weight = Double.parseDouble(line.split("=")[1]);

@@ -4689,8 +4689,8 @@ System.out.println(buki.magic_enchant);
         if (buki.op.DR_IGNORED > 0) {
             buki_text += " ダメージリダクション無視 " + (buki.op.DR_IGNORED + buki.op2.DR_IGNORED);
         }
-        if (buki.weight > 0) {
-            buki_text += " 重さ " + buki.weight;
+        if (buki.op.WEIGHT > 0) {
+            buki_text += " 重さ " + buki.op.WEIGHT;
         }
         if (!buki.op.effect.equals("")) {
             buki_text += " " + buki.op.effect;

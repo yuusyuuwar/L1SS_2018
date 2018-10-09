@@ -1,6 +1,32 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/09
+Update 3.0.6
+LSS/data/E.zip
+	[重量=]を[重さ=]へ変更
+
+削除
+	02_リッチローブ(KR).txt
+修正
+	02_マミーロードのグローブ.txt
+	[特殊=+7から[SP]+1増加(最大+3)]を削除
+
+SS/src/lss/Buff.java
+	防具のツールチップに重さを表示する為に変数を武器の変数と統一[WEIGHT]へ
+	[重さ=]を読み取り[WEIGHT]へ入力処理
+
+SS/src/lss/Buki.java
+	武器のツールチップだけで使用してた[weight]を削除
+
+SS/src/lss/Calculator.java
+	統一した[WEIGHT]を使用し[重さ]を表示
+
+SS/src/lss/Bougu.java
+	マミーロードのグローブの特殊=+7から[SP]+1増加(最大+3)の処理追加
+	防具のツールチップに[WEIGHT]を使用し[重さ]を表示
+	[重さ=]の登録がない装備は重さ表示はされない
+
 2018/10/08
 Update 3.0.5
 LSS/data/E.zip
