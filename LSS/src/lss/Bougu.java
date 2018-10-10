@@ -494,6 +494,112 @@ public class Bougu implements Common {
                 op2.SP = 1;
             }
         }
+        if (name.equals("ƒN[ƒK[‚ÌƒK[ƒ_[")) {
+            if (enchant >= 9) {
+                op2.HIT_SHORT = 5;          //‹ß‹——£–½’†
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«
+            } else if (enchant >= 8) {
+                op2.HIT_SHORT = 4;          //‹ß‹——£–½’†
+                op2.ailment[STUN] = 4;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«
+            } else if (enchant >= 7) {
+                op2.HIT_SHORT = 3;          //‹ß‹——£–½’†
+                op2.ailment[STUN] = 3;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«
+            } else if (enchant >= 6) {
+                op2.HIT_SHORT = 2;          //‹ß‹——£–½’†
+                op2.ailment[STUN] = 2;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«
+            } else if (enchant >= 5) {
+                op2.HIT_SHORT = 1;          //‹ß‹——£–½’†
+                op2.ailment[STUN] = 1;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«
+            }
+        }
+        if (name.equals("ƒEƒYƒkƒX‚ÌƒK[ƒ_[")) {
+            if (enchant >= 9) {
+                op2.HIT_LONG = 5;           //‰“‹——£–½’†
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«
+            } else if (enchant >= 8) {
+                op2.HIT_LONG = 4;           //‰“‹——£–½’†
+                op2.ailment[STUN] = 4;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«
+            } else if (enchant >= 7) {
+                op2.HIT_LONG = 3;           //‰“‹——£–½’†
+                op2.ailment[STUN] = 3;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«
+            } else if (enchant >= 6) {
+                op2.HIT_LONG = 2;           //‰“‹——£–½’†
+                op2.ailment[STUN] = 2;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«
+            } else if (enchant >= 5) {
+                op2.HIT_LONG = 1;           //‰“‹——£–½’†
+                op2.ailment[STUN] = 1;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«
+            }
+        }
+        if (name.equals("ƒtƒ@ƒCƒA[ƒK[ƒ_[")) {
+            if (enchant >= 7) {
+                op2.DMG_SHORT = enchant-6;  //‹ß‹——£ƒ_ƒ[ƒW+(enchant-6)
+                op2.HIT_SHORT = enchant-4;  //‹ß‹——£–½’†+(enchant-4)
+            } else if (enchant >= 6) {
+                op2.HIT_SHORT = 2;          //‹ß‹——£–½’†+2
+            } else if (enchant >= 5) {
+                op2.HIT_SHORT = 1;          //‹ß‹——£–½’†+1
+            }
+        }
+        if (name.equals("ƒEƒBƒ“ƒhƒK[ƒ_[")) {
+            if (enchant >= 7) {
+                op2.DMG_LONG = enchant-6;   //‰“‹——£ƒ_ƒ[ƒW+(enchant-6)
+                op2.HIT_LONG = enchant-4;   //‰“‹——£–½’†+(enchant-4)
+            } else if (enchant >= 6) {
+                op2.HIT_LONG = 2;           //‰“‹——£–½’†+2
+            } else if (enchant >= 5) {
+                op2.HIT_LONG = 1;           //‰“‹——£–½’†+1
+            }
+        }
+        if (name.equals("ƒEƒH[ƒ^[ƒK[ƒ_[")) {
+            if (enchant >= 7) {
+                op2.SP = enchant-6;         //SP+(enchant-6)
+                op2.HIT_MAGIC = enchant-4;  //–‚–@–½’†+(enchant-4)
+            } else if (enchant >= 6) {
+                op2.HIT_MAGIC = 2;          //–‚–@–½’†+2
+            } else if (enchant >= 5) {
+                op2.HIT_MAGIC = 1;          //–‚–@–½’†+1
+            }
+        }
+        if (name.equals("ƒtƒ@ƒCƒA[ƒK[ƒ_[")) {
+            if (enchant >= 7) {
+                op2.DR = enchant-6;         //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+(enchant-6)
+                op2.MR = enchant-4;         //MR+(enchant-4)
+            } else if (enchant >= 6) {
+                op2.MR = 2;                 //MR+2
+            } else if (enchant >= 5) {
+                op2.MR = 1;                 //MR+1
+            }
+        }
         if (name.equals("ƒ}ƒ~[ƒ[ƒh‚ÌƒOƒ[ƒu")) {
             if (enchant >= 9) {
                 op2.SP = 3;
@@ -537,7 +643,7 @@ public class Bougu implements Common {
                 op2.HP = 20;
             }
         }
-        if (name.equals("’mŽ¯‚Ìƒu[ƒc")) {
+        if (name.equals("’m—Í‚Ìƒu[ƒc")) {
             if (enchant >= 9) {
                 op2.DR = 1;
                 op2.HP = 60;
@@ -555,6 +661,34 @@ public class Bougu implements Common {
                 op2.HP = 40;
             } else if (enchant >= 7) {
                 op2.HP = 20;
+            }
+        }
+        if (name.equals("ƒAƒCƒŠƒX‚Ìƒu[ƒc")) {
+            if (enchant >= 9) {
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«
+            } else if (enchant >= 8) {
+                op2.ailment[STUN] = 4;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«
+            } else if (enchant >= 7) {
+                op2.ailment[STUN] = 3;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«
+            } else if (enchant >= 6) {
+                op2.ailment[STUN] = 2;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«
+            } else if (enchant >= 5) {
+                op2.ailment[STUN] = 1;      //‹Zp‘Ï«
+//                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï« 
+//                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«
+                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«
             }
         }
         if (name.equals("Ž½•‚Ìƒ}ƒ“ƒg")) {
@@ -1327,6 +1461,48 @@ public class Bougu implements Common {
         //if (name.equals("ƒ†ƒjƒR[ƒ“‚Ì’ïR‚ÌƒQ[ƒgƒ‹")) {
         //    op2.MR = 1 * enchant;
         //}
+        //ƒiƒCƒgƒoƒ‹ƒh‚ÌƒQ[ƒgƒ‹‚Í+5‚©‚ç[‹ß‹——£–½’†]+1‘‰Á(Å‘å+5)
+        if (name.equals("ƒiƒCƒgƒoƒ‹ƒh‚ÌƒQ[ƒgƒ‹")) {
+            if (enchant >= 9) {
+                op2.HIT_SHORT = 5;          //‹ß‹——£–½’†+5
+            } else if (enchant >= 8) {
+                op2.HIT_SHORT = 4;          //‹ß‹——£–½’†+4
+            } else if (enchant >= 7) {
+                op2.HIT_SHORT = 3;          //‹ß‹——£–½’†+3
+            } else if (enchant >= 6) {
+                op2.HIT_SHORT = 2;          //‹ß‹——£–½’†+2
+            } else if (enchant >= 5) {
+                op2.HIT_SHORT = 1;          //‹ß‹——£–½’†+1
+            }
+        }
+        //ƒAƒCƒŠƒX‚ÌƒQ[ƒgƒ‹‚Í+5‚©‚ç[‰“‹——£–½’†]+1‘‰Á(Å‘å+5)
+        if (name.equals("ƒAƒCƒŠƒX‚ÌƒQ[ƒgƒ‹")) {
+            if (enchant >= 9) {
+                op2.HIT_LONG = 5;          //‰“‹——£–½’†+5
+            } else if (enchant >= 8) {
+                op2.HIT_LONG = 4;          //‰“‹——£–½’†+4
+            } else if (enchant >= 7) {
+                op2.HIT_LONG = 3;          //‰“‹——£–½’†+3
+            } else if (enchant >= 6) {
+                op2.HIT_LONG = 2;          //‰“‹——£–½’†+2
+            } else if (enchant >= 5) {
+                op2.HIT_LONG = 1;          //‰“‹——£–½’†+1
+            }
+        }
+        //ƒoƒ“ƒpƒCƒA‚ÌƒQ[ƒgƒ‹‚Í+5‚©‚ç[–‚–@–½’†]+1‘‰Á(Å‘å+5)
+        if (name.equals("ƒoƒ“ƒpƒCƒA‚ÌƒQ[ƒgƒ‹")) {
+            if (enchant >= 9) {
+                op2.HIT_MAGIC = 5;          //–‚–@–½’†+5
+            } else if (enchant >= 8) {
+                op2.HIT_MAGIC = 4;          //–‚–@–½’†+4
+            } else if (enchant >= 7) {
+                op2.HIT_MAGIC = 3;          //–‚–@–½’†+3
+            } else if (enchant >= 6) {
+                op2.HIT_MAGIC = 2;          //–‚–@–½’†+2
+            } else if (enchant >= 5) {
+                op2.HIT_MAGIC = 1;          //–‚–@–½’†+1
+            }
+        }
         if (name.equals("ŒŒí‚ÌƒOƒ[ƒu")) {
             if (enchant >= 5) {
                 op2.HP = 30;
