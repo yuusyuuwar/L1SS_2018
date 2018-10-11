@@ -1,6 +1,20 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/11
+Update 3.0.9
+LSS/data/E.zip
+	幸運のアロー追加
+
+SS/src/lss/Bougu.java
+SS/src/lss/Buki.java
+SS/src/lss/Calculator.java
+SS/src/lss/FSCalclator.java
+SS/src/lss/UI.java
+	全体的なソースコードの修正
+	NetBeans IDEでFindBugs Integration[バグパターンに合致する箇所を検出するツール]という
+	便利なプラグインがあり、使用しわかる範囲で修正
+
 2018/10/10
 Update 3.0.8
 LSS/data/E.zip
