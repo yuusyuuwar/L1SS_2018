@@ -699,6 +699,7 @@ public class Calculator implements Common {
                     break;
                 case 5:
                     buff.effect += "特殊攻撃(クラスタシアン/ウェアウルフ),";
+                    break;
                 case 6:
                     buff.AC -= 3;
                     buff.ailment[FREEZE] += 7;
@@ -723,16 +724,21 @@ public class Calculator implements Common {
                     break;
                 case 17:// ブルート
                     buff.r_weight += 0.02;
+                    break;
                 case 16:
                     buff.r_weight += 0.02;
+                    break;
                 case 15:
                     buff.r_weight += 0.02;
                     buff.DMG_SHORT++;
+                    break;
                 case 14:
                     buff.r_weight += 0.02;
+                    break;
                 case 13:
                     buff.r_weight += 0.02;
                     buff.HPR += 15;
+                    break;
                 case 12:
                     buff.r_weight += 0.10;
                     ui.cb_buff[ACC1].setSelected(true);
@@ -795,6 +801,8 @@ public class Calculator implements Common {
                     buff.HP += 40;
                     buff.effect += "MP回復 +16,";
                     break;
+                default:
+                        break;
             }
         }
 
@@ -863,6 +871,8 @@ public class Calculator implements Common {
                 case 17:
                     buff.HIT_SHORT += 4;
                     buff.HIT_LONG += 4;
+                    break;
+                default:
                     break;
             }
         }
@@ -1063,6 +1073,8 @@ public class Calculator implements Common {
                     buff.ailment[HIT_TERROR] += 5;
                     ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+3 近距離命中+3  最大HP+120 AC-4 ダメージ軽減+4 恐怖命中+5");
                     break;
+                default:
+                    break;
             }
         }
 
@@ -1075,6 +1087,7 @@ public class Calculator implements Common {
                     buff.HIT_SHORT += 3;
                     buff.HIT_LONG += 3;
                     buff.SP += 3;
+                    break;                    
                 case 1:
                     buff.DMG_SHORT += 2;
                     buff.DMG_LONG += 2;
@@ -1098,6 +1111,8 @@ public class Calculator implements Common {
                     break;
                 case 7:
                     buff.ST[WIS] += 2;
+                    break;
+                default:
                     break;
             }
         }
@@ -1125,6 +1140,8 @@ public class Calculator implements Common {
                 case 6:
                     buff.HP += 100;
                     buff.HPR += 8;
+                    break;
+                default:
                     break;
             }
         }
@@ -1182,6 +1199,8 @@ public class Calculator implements Common {
                     buff.element_resist[WIND] += 10;
                     buff.element_resist[EARTH] += 10;
                     break;
+                default:
+                    break;
 
             }
         }
@@ -1199,6 +1218,8 @@ public class Calculator implements Common {
                     break;
                 case 3:
                     buff.DR += 5;
+                    break;
+                default:
                     break;
             }
         }
@@ -1260,6 +1281,9 @@ public class Calculator implements Common {
                     buff.HIT_SHORT += 5;
                     buff.AC -= 8;
                     buff.SP += 1;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -1688,6 +1712,8 @@ public class Calculator implements Common {
                 buff.HPR += 5;
                 buff.MPR += 3;
                 break;
+            default:
+                break;
         }
         switch (ui.cb_pattern_r.getSelectedIndex()) {
             case 1:
@@ -1740,6 +1766,8 @@ public class Calculator implements Common {
                 buff.SP += 3;
                 buff.MR += 10;
                 break;
+            default:
+                break;
         }
 
         //エリクサールーン
@@ -1750,167 +1778,201 @@ public class Calculator implements Common {
             switch (cls) {
                 case P:
                     buff.DR += 3;
-                    if (q==1) {
-                        buff.HIT_SHORT += 2;            //近距離命中+2
-                    }
-                    else if (q==2) {
-                        buff.HIT_SHORT += 2;            //近距離命中+2
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.HIT_SHORT += 2;            //近距離命中+2
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_STUN] += 5;    //技術命中+5
-                    }
-                    else if (q==4) {
-                        buff.HIT_SHORT += 2;            //近距離命中+2
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                    switch (q) {
+                        case 1:
+                            buff.HIT_SHORT += 2;            //近距離命中+2
+                            break;
+                        case 2:
+                            buff.HIT_SHORT += 2;            //近距離命中+2
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.HIT_SHORT += 2;            //近距離命中+2
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_STUN] += 5;    //技術命中+5
+                            break;
+                        case 4:
+                            buff.HIT_SHORT += 2;            //近距離命中+2
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case K:
                     buff.HP += 50;
-                    if (q==1) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                    }
-                    else if (q==2) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_STUN] += 5;    //技術命中+5
-                    }
-                    else if (q==4) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                    switch (q) {
+                        case 1:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                            break;
+                        case 2:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_STUN] += 5;    //技術命中+5
+                            break;
+                        case 4:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case E:
                     buff.MP += 50;
-                    if (q==1) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                        buff.DMG_LONG += 1;             //遠距離ダメージ+1
-                    }
-                    else if (q==2) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                        buff.DMG_LONG += 1;             //遠距離ダメージ+1
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                        buff.DMG_LONG += 1;             //遠距離ダメージ+1
-                                                        //祝福消耗効率+5%
-//                    buff.ailment[****] += 5;            //精霊命中+5
-                    }
-                    else if (q==4) {
-                        buff.DMG_SHORT += 1;            //近距離ダメージ+1
-                        buff.DMG_LONG += 1;             //遠距離ダメージ+1
-                                                        //祝福消耗効率+5%
-//                    buff.ailment[****] += 10;           //精霊命中+10
+                    switch (q) {
+                        case 1:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                            buff.DMG_LONG += 1;             //遠距離ダメージ+1
+                            break;
+                        case 2:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                            buff.DMG_LONG += 1;             //遠距離ダメージ+1
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                            buff.DMG_LONG += 1;             //遠距離ダメージ+1
+                                                            //祝福消耗効率+5%
+//                            buff.ailment[****] += 5;        //精霊命中+5
+                            break;
+                        case 4:
+                            buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                            buff.DMG_LONG += 1;             //遠距離ダメージ+1
+                                                            //祝福消耗効率+5%
+//                            buff.ailment[****] += 10;       //精霊命中+10
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case W:
                     buff.MPR += 3;
-                    if (q==1) {
-                        buff.SP += 1;                   //SP+1
-                    }
-                    else if (q==2) {
-                        buff.SP += 1;                   //SP+1
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.SP += 1;                   //SP+1
-                                                        //祝福消耗効率+5%
-                        buff.HIT_MAGIC += 5;            //魔法命中+5
-                    }
-                    else if (q==4) {
-                        buff.SP += 1;                   //SP+1
-                                                        //祝福消耗効率+5%
-                        buff.HIT_MAGIC += 10;           //魔法命中+10
+                    switch (q) {
+                        case 1:
+                            buff.SP += 1;                   //SP+1
+                            break;
+                        case 2:
+                            buff.SP += 1;                   //SP+1
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.SP += 1;                   //SP+1
+                                                            //祝福消耗効率+5%
+                            buff.HIT_MAGIC += 5;            //魔法命中+5
+                            break;
+                        case 4:
+                            buff.SP += 1;                   //SP+1
+                                                            //祝福消耗効率+5%
+                            buff.HIT_MAGIC += 10;           //魔法命中+10
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case D:
                     buff.AC -= 3;
-                    if (q==1) {
-                        buff.MP += 30;                  //最大MP+30
-                    }
-                    else if (q==2) {
-                        buff.MP += 30;                  //最大MP+30
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.MP += 30;                  //最大MP+30
-                                                        //祝福消耗効率+5%
-//                    buff.ailment[****] += 5;           //精霊命中+5
-                    }
-                    else if (q==4) {
-                        buff.MP += 30;                  //最大MP+30
-                                                        //祝福消耗効率+5%
-//                    buff.ailment[****] += 10;           //精霊命中+10
+                    switch (q) {
+                        case 1:
+                            buff.MP += 30;                  //最大MP+30
+                            break;
+                        case 2:
+                            buff.MP += 30;                  //最大MP+30
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.MP += 30;                  //最大MP+30
+                                                            //祝福消耗効率+5%
+//                            buff.ailment[****] += 5;        //精霊命中+5
+                            break;
+                        case 4:
+                            buff.MP += 30;                  //最大MP+30
+                                                            //祝福消耗効率+5%
+//                            buff.ailment[****] += 10;       //精霊命中+10
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case R:
                     buff.HIT_SHORT += 3;
-                    if (q==1) {
-                        buff.DR += 1;                   //ダメージリダクション+1
-                    }
-                    else if (q==2) {
-                        buff.DR += 1;                   //ダメージリダクション+1
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.DR += 1;                   //ダメージリダクション+1
-                                                        //祝福消耗効率+5%
-//                    buff.ailment[****] += 5;           //竜語命中+5
-                    }
-                    else if (q==4) {
-                        buff.DR += 1;                   //ダメージリダクション+1
-                                                        //祝福消耗効率+5%
-//                    buff.ailment[****] += 10;           //竜語命中+10
+                    switch (q) {
+                        case 1:
+                            buff.DR += 1;                   //ダメージリダクション+1
+                            break;
+                        case 2:
+                            buff.DR += 1;                   //ダメージリダクション+1
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.DR += 1;                   //ダメージリダクション+1
+                                                            //祝福消耗効率+5%
+//                            buff.ailment[****] += 5;        //竜語命中+5
+                            break;
+                        case 4:
+                            buff.DR += 1;                   //ダメージリダクション+1
+                                                            //祝福消耗効率+5%
+//                            buff.ailment[****] += 10;       //竜語命中+10
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case I:
                     buff.r_weight += 0.05;
-                    if (q==1) {
-                        buff.HP += 50;                  //最大HP+50
-                    }
-                    else if (q==2) {
-                        buff.HP += 50;                  //最大HP+50
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.HP += 50;                  //最大HP+50
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_STUN] += 5;    //技術命中+5
-                    }
-                    else if (q==4) {
-                        buff.HP += 50;                  //最大HP+50
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                    switch (q) {
+                        case 1:
+                            buff.HP += 50;                  //最大HP+50
+                            break;
+                        case 2:
+                            buff.HP += 50;                  //最大HP+50
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.HP += 50;                  //最大HP+50
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_STUN] += 5;    //技術命中+5
+                            break;
+                        case 4:
+                            buff.HP += 50;                  //最大HP+50
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case F:
                     buff.HP += 50;
-                    if (q==1) {
-                        buff.MR += 5;                   //MR+5%
+                    switch (q) {
+                        case 1:
+                            buff.MR += 5;                   //MR+5%
+                            break;
+                        case 2:
+                            buff.MR += 5;                   //MR+5%
+                                                            //祝福消耗効率+5%
+                            break;
+                        case 3:
+                            buff.MR += 5;                   //MR+5%1
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_TERROR] += 5;  //技術命中+5
+                            break;
+                        case 4:
+                            buff.MR += 5;                   //MR+5%
+                                                            //祝福消耗効率+5%
+                            buff.ailment[HIT_TERROR] += 10; //技術命中+10
+                            break;
+                        default:
+                            break;
                     }
-                    else if (q==2) {
-                        buff.MR += 5;                   //MR+5%
-                                                        //祝福消耗効率+5%
-                    }
-                    else if (q==3) {
-                        buff.MR += 5;                   //MR+5%1
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_TERROR] += 5;  //技術命中+5
-                    }
-                    else if (q==4) {
-                        buff.MR += 5;                   //MR+5%
-                                                        //祝福消耗効率+5%
-                        buff.ailment[HIT_TERROR] += 10; //技術命中+10
-                    }
+                    break;
+                default:
                     break;
             }
         }else if (e == 6){                              //古代の加護
@@ -1963,6 +2025,8 @@ public class Calculator implements Common {
                     break;
                 case 4:
                     break;
+                default:
+                    break;
             }
         //オルターストーン
         if (ui.cb_pattern_r2.getSelectedIndex() >= 6 && ui.cb_pattern_r2.getSelectedIndex() <= 8) {
@@ -1995,6 +2059,8 @@ public class Calculator implements Common {
                     case 8:
                                                     //一撃必殺(1%確率で追加ダメージ50) 3216行で追加処理
                         break;
+                    default:
+                        break;
                 }
             } else {
                 ui.cb_alterstone_op[0].setEnabled(false);
@@ -2026,6 +2092,8 @@ public class Calculator implements Common {
                     case 8:
                                                     //一撃必殺(1%確率で追加ダメージ50) 3216行で追加処理
                         break;
+                    default:
+                        break;
                 }
             } else {
                 ui.cb_alterstone_op[1].setEnabled(false);
@@ -2056,6 +2124,8 @@ public class Calculator implements Common {
                         break;
                     case 8:
                                                     //一撃必殺(1%確率で追加ダメージ50) 3216行で追加処理
+                        break;
+                    default:
                         break;
                 }
             } else {
@@ -2138,6 +2208,8 @@ public class Calculator implements Common {
                         buff.HP += 70;
                         buff.MP += 50;
                         break;
+                    default:
+                        break;
                 }
                 break;
             case 7:
@@ -2190,6 +2262,8 @@ public class Calculator implements Common {
                         buff.HP += 60;
                         buff.MP += 60;
                         break;
+                    default:
+                        break;
                 }
                 break;
             case 8:
@@ -2241,6 +2315,8 @@ public class Calculator implements Common {
                         buff.MP += 70;
                         buff.MPR += 2;
                         break;
+                    default:
+                        break;
                 }
                 break;
         }
@@ -2265,6 +2341,8 @@ public class Calculator implements Common {
                 case 3:
                     buff.ST[STR] += 7;
                     break;
+                default:
+                    break;
             }
         }
         if (ui.cb_buff[B_DEX].isSelected()) {
@@ -2286,6 +2364,8 @@ public class Calculator implements Common {
                     break;
                 case 3:
                     buff.ST[DEX] += 7;
+                    break;
+                default:
                     break;
             }
         }
@@ -2321,6 +2401,8 @@ public class Calculator implements Common {
                     break;
                 case 1:
                     acc *= acc_ew;
+                    break;
+                default:
                     break;
             }
         }
@@ -2360,6 +2442,8 @@ public class Calculator implements Common {
                     if (ui.cb_buff[BUKI].getForeground().equals(Color.BLUE)) {
                         cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 3;
                     }
+                    break;
+                default:
                     break;
             }
         }
@@ -2431,6 +2515,8 @@ public class Calculator implements Common {
                     buff.ailment[HOLD] += 15;
                     buff.ailment[TERROR] += 15;
                     break;
+                default:
+                    break;
             }
         }
         //ACスキル
@@ -2456,6 +2542,8 @@ public class Calculator implements Common {
                     if (ui.cb_buff[B_AC].getForeground().equals(Color.BLUE)) {
                         cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
                     }
+                    break;
+                default:
                     break;
             }
         }
@@ -2519,6 +2607,8 @@ public class Calculator implements Common {
                     buff.MR += 12;
                     buff.AC -= 5;
                     break;
+                default:
+                    break;
             }
         }
         //セキュリティ
@@ -2562,6 +2652,8 @@ public class Calculator implements Common {
                     buff.AC -= 5;
                     buff.DR += 2;
                     break;
+                default:
+                    break;
             }
         }
         //生命のボーナス
@@ -2578,6 +2670,8 @@ public class Calculator implements Common {
                 case "HP+200":
                     ui.cb_buff[H_HP].setToolTipText("HP+200");
                     buff.HP += 200;
+                    break;
+                default:
                     break;
             }
         }
@@ -2596,6 +2690,8 @@ public class Calculator implements Common {
                     ui.cb_buff[H_AC].setToolTipText("AC-3");
                     buff.AC -= 3;
                     break;
+                default:
+                    break;
             }
         }
         //生存のボーナス
@@ -2609,6 +2705,8 @@ public class Calculator implements Common {
                     ui.cb_buff[H_PVPDR].setToolTipText("PVPダメージリダクション+2");
                     buff.PVP_DR += 2;
                     break;
+                default:
+                    break;
             }
         }
         //暗殺のボーナス
@@ -2621,6 +2719,8 @@ public class Calculator implements Common {
                 case "PVP ダメ+2":
                     ui.cb_buff[H_PVP].setToolTipText("PVPダメージ+2");
                     buff.PVP += 2;
+                    break;
+                default:
                     break;
             }
         }
@@ -2661,7 +2761,9 @@ public class Calculator implements Common {
                 case F:
                     //ui.cb_buff[H_RK].setToolTipText("STR+1");
                     buff.ST[STR] += 1;
-                    break;       
+                    break;
+                default:
+                    break;
             }
         }
         //重量ペナルティ
@@ -2841,6 +2943,8 @@ public class Calculator implements Common {
                     ml = 1;
                 }
                 break;
+            default:
+                break;
         }
 
         mb = (int) (st_int / 4) + _C[MB][INT][cls];
@@ -2874,6 +2978,8 @@ public class Calculator implements Common {
                     break;
                 case "チェーンソード":
                     we = Double.parseDouble(ui.tf_buki_sp_rate.getText());
+                    break;
+                default:
                     break;
             }
         }
@@ -3466,6 +3572,8 @@ System.out.println(buki.magic_enchant);
                         hit *= ta_rate;
                     }
                     break;
+                default:
+                    break;
             }
         }
 
@@ -3560,6 +3668,7 @@ System.out.println(buki.magic_enchant);
             default:
                 dmg_big_ave += dmg_short;
                 dmg_small_ave += dmg_short;
+                break;
 
         }
 
@@ -3884,6 +3993,9 @@ System.out.println(buki.magic_enchant);
                         break;
                     case "不死":
                         ATK = (dmg_small_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
+                        break;
+                    default:
+                        break;
                 }
 
                 double E_HP = Integer.parseInt(ui.tf_e_hp.getText());
@@ -3916,6 +4028,9 @@ System.out.println(buki.magic_enchant);
                         break;
                     case "不死":
                         ATK = (dmg_big_ave + dmg_cursed + dmg_undead) * hit * speed + mag_dmg_min + week;
+                        break;
+                    default:
+                        break;
                 }
 
                 E_HP = Integer.parseInt(ui.tf_e_hp.getText());
@@ -4054,6 +4169,8 @@ System.out.println(buki.magic_enchant);
             case F:
                 c = 6;
                 break;
+            default:
+                break;
         }
         base_ac = 10 - (int) (dex / 3) - (int) (level / c);
 
@@ -4186,6 +4303,9 @@ System.out.println(buki.magic_enchant);
                 break;
             case 3:
                 ui.tf_weight.setText(Integer.toString(weight * 5 / 6));
+                break;
+            default:
+                break;
         }
         int wis = _ST[BASE][WIS] + _ST[REM][WIS] + _ST[LEVEL][WIS]
                 + _ST[ELIXIR][WIS] + _ST[ENCHANT][WIS];
@@ -4387,6 +4507,8 @@ System.out.println(buki.magic_enchant);
                 hp = 14;
                 mp = 5;
                 break;
+            default:
+                break;
         }
 
         double[] c1 = {1.0, 2.0 / 3.0, 1.5, 2.0, 1.5, 0.7, 1.7, 2.0 / 3.0};
@@ -4496,6 +4618,8 @@ System.out.println(buki.magic_enchant);
                 break;
             case I:
                 eq_hp += _ST[ENCHANT][CON] * 8;
+                break;
+            default:
                 break;
         }
 

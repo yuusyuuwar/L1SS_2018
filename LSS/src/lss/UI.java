@@ -2024,6 +2024,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     } catch (IOException ex) {
                         System.out.println(ex);
                     }
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -2246,6 +2249,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 case "CHA":
                     calc.addRem(CHA);
                     break;
+                default:
+                    break;
             }
         }
         if (e.getActionCommand().contains("down")) {
@@ -2267,6 +2272,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     break;
                 case "CHA":
                     calc.removeRem(CHA);
+                    break;
+                default:
                     break;
             }
         }
@@ -2871,6 +2878,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                         case "CHA":
                             calc.addRem(CHA);
                             break;
+                        default:
+                            break;
                     }
                 }
             }
@@ -2953,6 +2962,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                     break;
                 case "‰E˜r":
                     cb_pattern_r2.setSelectedItem(pattern.getChildNodes().item(i).getTextContent());
+                    break;
+                default:
                     break;
             }
         }

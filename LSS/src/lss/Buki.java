@@ -13,7 +13,7 @@ public class Buki implements Common {
     double double_hit_rate = 0;// デュアルブレード ダブルヒット
     double week_point_exposure = 0;// チェーンソード 弱点露出
     boolean two_hands = false;
-    String equip = "";
+//    String equip = "";
     String material = "";
     Buff op = new Buff();
     Buff op2 = new Buff();
@@ -22,9 +22,9 @@ public class Buki implements Common {
     int max_enchant = 0;
     String arrow_name = "";
     String arrow_material = "";
-    String arrow_type = "";
-    int arrow_small = 0;
-    int arrow_big = 0;
+//    String arrow_type = "";
+//    int arrow_small = 0;
+//    int arrow_big = 0;
     int arrow_dmg = 0;
     int arrow_elementdmg = 0; 
     int arrow_hit = 0;
@@ -35,13 +35,12 @@ public class Buki implements Common {
     int x, y, z;
     // 魔法武器用
     String magic_name = "";
-    boolean magic_motion = false;
+//    boolean magic_motion = false;
     double magic_rate = 0;
     double magic_rate_plus = 0;
     String magic_element = "";
     double magic_power = 0;
     double magic_delay = 0;
-
 //    int weight = 0;
 
     private void reset() {
@@ -60,7 +59,7 @@ public class Buki implements Common {
         magic_enchant = 0;
         arrow_name = "";
         arrow_material = "";
-        arrow_type = "";
+//        arrow_type = "";
         arrow_dmg = 0;
         arrow_elementdmg = 0;
         arrow_hit = 0;
@@ -69,7 +68,7 @@ public class Buki implements Common {
         element_enchant = false;
 
         magic_name = "";
-        magic_motion = false;
+//        magic_motion = false;
         magic_rate = 0;
         magic_element = "";
         magic_power = 0;
@@ -107,9 +106,9 @@ public class Buki implements Common {
                     z = Integer.parseInt(line.split("=")[1].split("d")[1]
                             .split("\\+")[1]);
                 }
-                if (line.startsWith("equip=")) {
-                    equip = line.split("=")[1];
-                }
+//                if (line.startsWith("equip=")) {
+//                    equip = line.split("=")[1];
+//                }
                 if (line.startsWith("name=")) {
                     name = line.split("=")[1];
                 }
@@ -140,9 +139,9 @@ public class Buki implements Common {
                 if (line.startsWith("魔法発動率=")) {
                     magic_rate = Double.parseDouble(line.split("=")[1]);
                 }
-                if (line.startsWith("魔法モーション")) {
-                    magic_motion = Boolean.parseBoolean(line.split("=")[1]);
-                }
+//                if (line.startsWith("魔法モーション=")) {
+//                    magic_motion = Boolean.parseBoolean(line.split("=")[1]);
+//                }
                 if (line.startsWith("魔法属性=")) {
                     magic_element = line.split("=")[1];
                 }

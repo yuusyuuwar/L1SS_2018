@@ -9,8 +9,8 @@ public class Bougu implements Common {
     Buff op2 = new Buff();
     String name = "";
     String type = "";
-    String material = "";
-    String equip = "";
+//    String material = "";
+//    String equip = "";
     String grade = "";
     int enchant = 0;
     int max_enchant = 0;
@@ -25,8 +25,8 @@ public class Bougu implements Common {
         op2 = new Buff();
         name = "";
         type = "";
-        material = "";
-        equip = "";
+//        material = "";
+//        equip = "";
         grade = "";
         enchant = 0;
         safety = 0;
@@ -48,9 +48,9 @@ public class Bougu implements Common {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.startsWith("equip=")) {
-                    equip = line.split("=")[1];
-                }
+//                if (line.startsWith("equip=")) {
+//                    equip = line.split("=")[1];
+//                }
                 if (line.startsWith("name=")) {
                     name = line.split("=")[1];
                 }
@@ -63,9 +63,9 @@ public class Bougu implements Common {
                 if (line.startsWith("type=")) {
                     type = line.split("=")[1];
                 }
-                if (line.startsWith("材質=")) {
-                    material = line.split("=")[1];
-                }
+//                if (line.startsWith("材質=")) {
+//                    material = line.split("=")[1];
+//                }
                 if (line.startsWith("グレード=")) {
                     grade = line.split("=")[1];
                 }
@@ -296,6 +296,8 @@ public class Bougu implements Common {
                         op2.ST[STR] = 1;
                         op2.PVP = 2;
                         break;
+                    default:
+                        break;
                 }
             }
             if (name.contains("機敏")) {
@@ -323,6 +325,8 @@ public class Bougu implements Common {
                         op2.DMG_LONG = 3;
                         op2.ST[DEX] = 1;
                         op2.PVP = 2;
+                        break;
+                    default:
                         break;
                 }
             }
@@ -352,6 +356,8 @@ public class Bougu implements Common {
                         op2.ST[INT] = 1;
                         op2.PVP = 2;
                         break;
+                    default:
+                        break;
                 }
             }
         }
@@ -377,6 +383,9 @@ public class Bougu implements Common {
                 case 10:
                     op2.MR = 14;
                     op2.DR = 3;
+                    break;
+                default:
+                    break;
             }
         }
         if (name.equals("火竜のTシャツ")) {
@@ -400,6 +409,9 @@ public class Bougu implements Common {
                 case 10:
                     op2.HP = 100;
                     op2.DMG_SHORT = 2;
+                    break;
+                default:
+                    break;
             }
         }
         if (name.equals("風竜のTシャツ")) {
@@ -423,6 +435,9 @@ public class Bougu implements Common {
                 case 10:
                     op2.HP = 100;
                     op2.DMG_LONG = 2;
+                    break;
+                default:
+                    break;
             }
         }
         if (name.equals("水竜のTシャツ")) {
@@ -446,6 +461,9 @@ public class Bougu implements Common {
                 case 10:
                     op2.HP = 100;
                     op2.SP = 2;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -1394,13 +1412,11 @@ public class Bougu implements Common {
                 op2.c_weight = 240;
             }
         }
-
         if (name.contains("リッチローブ")) {
             if (enchant >= 3) {
                 op2.SP = enchant - 2;
             }
         }
-
         if (name.equals("激昂のグローブ")) {
             if (enchant >= 7) {
                 op2.HIT_SHORT = enchant - 3;
@@ -1692,6 +1708,8 @@ public class Bougu implements Common {
                             op2.HIT_SHORT = 5;
                             op2.DMG_SHORT = 5;
                             break;
+                        default:
+                            break;
                     }
                     break;                   
                 case "機敏の紋章":          //+0機敏の紋章でDEX=1
@@ -1747,6 +1765,8 @@ public class Bougu implements Common {
                             op2.HIT_LONG = 5;
                             op2.DMG_LONG = 5;
                             break;
+                        default:
+                            break;
                     }
                     break;                  
                 case "知力の紋章":          //+0知力の紋章でSTR=1
@@ -1801,6 +1821,8 @@ public class Bougu implements Common {
                             op2.effect += "回復悪化防御 +14%,";
                             op2.HIT_MAGIC = 5;
                             op2.SP = 5;
+                            break;
+                        default:
                             break;
                     }
                     break; 
@@ -1859,6 +1881,8 @@ public class Bougu implements Common {
                             op2.effect += "ポーション回復量 +14% +14,";
                             op2.effect += "回復悪化防御 +14%,";
                             break;
+                        default:
+                            break;
                     }
                     break;         
                 case "守護の紋章":          //+0守護の紋章でAC=-1
@@ -1891,6 +1915,8 @@ public class Bougu implements Common {
                         case 8:
                             op2.effect = "獲得EXP +8%,";
                             op2.MR = 5;
+                            break;
+                        default:
                             break;
                     } 
                     break;
@@ -1936,6 +1962,8 @@ public class Bougu implements Common {
                             op2.DMG_SHORT = 4;
                             op2.HIT_SHORT = 4;
                             break;
+                        default:
+                            break;
                     }
                     break;
                 case "射手の紋章":          //+0射手の紋章でDEX=1
@@ -1979,6 +2007,8 @@ public class Bougu implements Common {
                             op2.effect += "回復悪化防御 +18%,";
                             op2.DMG_LONG = 4;
                             op2.HIT_LONG = 4;
+                            break;
+                        default:
                             break;
                     }
                     break;
@@ -2024,6 +2054,8 @@ public class Bougu implements Common {
                             op2.HIT_MAGIC = 4;
                             op2.SP = 4;
                             break;
+                        default:
+                            break;
                     }
                     break;
                 case "闘士の守護紋章":                      //+5闘士の守護紋章から
@@ -2067,6 +2099,8 @@ public class Bougu implements Common {
                             op2.DMG_SHORT = 4;
                             op2.HIT_SHORT = 5;
                             op2.MR = 10;
+                            break;
+                        default:
                             break;
                     }
                     break;
@@ -2112,6 +2146,8 @@ public class Bougu implements Common {
                             op2.HIT_LONG = 5;
                             op2.MR = 10;
                             break;
+                        default:
+                            break;
                     }
                     break;
                 case "賢者の守護紋章":                      //+5賢者の守護紋章から
@@ -2155,6 +2191,8 @@ public class Bougu implements Common {
                             op2.SP = 4;
                             op2.HIT_MAGIC = 5;
                             op2.MR = 10;
+                            break;
+                        default:
                             break;
                     }
             }
@@ -2218,6 +2256,8 @@ public class Bougu implements Common {
                         op2.SP = 3;
                         op2.MR = 7;
                         break;
+                    default:
+                        break;
                 }
             }
 
@@ -2268,6 +2308,8 @@ public class Bougu implements Common {
                         op2.AC -= 4;
                         op2.ailment[STUN] += 4;
                         break;
+                    default:
+                        break;
                 }
 
             }
@@ -2313,6 +2355,8 @@ public class Bougu implements Common {
                         op2.DR = 5;
                         op2.PVP_DR=4;        //PVPダメージ軽減+4
                         break;
+                    default:
+                        break;
                 }
             }
 
@@ -2356,6 +2400,8 @@ public class Bougu implements Common {
                         op2.AC = -3;
                         op2.DMG_SHORT = 4;
                         op2.DMG_LONG = 4;
+                        break;
+                    default:
                         break;
                 }
             }
@@ -2417,6 +2463,8 @@ public class Bougu implements Common {
                         op2.HIT_LONG = 5;       //遠距離命中+5
                         op2.AC = -10;           //AC-10
                         break;
+                    default:
+                        break;
                 }
             }
             if (name.contains("ルームティス パープル イアリング")) {
@@ -2459,6 +2507,8 @@ public class Bougu implements Common {
                         op2.SP = 4;
                         op2.AC = -4;            //AC-5
                         op2.HIT_MAGIC = 5;      //魔法命中+5
+                        break;
+                    default:
                         break;
                 }
             }
@@ -2510,6 +2560,8 @@ public class Bougu implements Common {
                         op2.SP = 3;
                         op2.AC = -3;            //AC-3
                         op2.HIT_MAGIC = 2;      //魔法命中+2
+                        break;
+                    default:
                         break;
                 }
             }
@@ -2564,6 +2616,8 @@ public class Bougu implements Common {
                         op2.AC = -4;
                         op2.effect = "ポーション回復量 +22% +22,";
                         op2.effect += "回復悪化防御 +22% (恐怖),";   //回復悪化防御 +22% (恐怖)
+                        break;
+                    default:
                         break;
                 }
             }
@@ -2622,6 +2676,8 @@ public class Bougu implements Common {
                         op2.DMG_LONG = 6;
                         op2.effect = "追加ダメージ +20 6%,";
                         break;
+                    default:
+                        break;
                 }
             }
         } else {
@@ -2667,6 +2723,8 @@ public class Bougu implements Common {
                         op2.DMG_SHORT = 4;
                         op2.CRI_SHORT = 5;
                         break;
+                    default:
+                        break;
                 }
             }
             if (name.equals("射手のインシグニア")) {
@@ -2707,6 +2765,8 @@ public class Bougu implements Common {
                         op2.DMG_LONG = 4;
                         op2.CRI_LONG = 5;
                         break;
+                    default:
+                        break;
                 }
             }
             if (name.equals("賢者のインシグニア")) {
@@ -2746,6 +2806,8 @@ public class Bougu implements Common {
                         op2.AC = -3;
                         op2.HIT_SHORT = 4;
                         op2.CRI_MAGIC = 4;
+                        break;
+                    default:
                         break;
                 }
             }
@@ -2788,6 +2850,8 @@ public class Bougu implements Common {
                         op2.DR = 4;
                         op2.MR = 7;
                         break;
+                    default:
+                        break;
                 }
             }
             if (name.equals("カーツの闘士の守護インシグニア")) {
@@ -2820,6 +2884,8 @@ public class Bougu implements Common {
                         op2.CRI_SHORT = 5;
                         op2.HIT_SHORT = 5;
                         op2.PVP_DR = 2;
+                        break;
+                    default:
                         break;
                 }
             }
@@ -2854,6 +2920,8 @@ public class Bougu implements Common {
                         op2.HIT_LONG = 5;
                         op2.PVP_DR = 2;
                         break;
+                    default:
+                        break;
                 }
             }
             if (name.equals("カーツの賢者の守護インシグニア")) {
@@ -2886,6 +2954,8 @@ public class Bougu implements Common {
                         op2.CRI_MAGIC = 4;
                         op2.HIT_MAGIC = 5;
                         op2.PVP_DR = 2;
+                        break;
+                    default:
                         break;
                 }
             }
