@@ -1997,7 +1997,34 @@ public class Calculator implements Common {
                     buff.HIT_MAGIC += 2;                //魔法命中+2
                     buff.MR += 5;                       //MR+5%
                     buff.ailment[TERROR] += 5;          //恐怖耐性+5
-                                                        //獲得経験値+5%            
+                                                        //獲得経験値+5%                    
+        }else if (e == 9){                              //ドラゴンの遺物
+                    buff.AC -= 3;                       //AC-3
+                    buff.DMG_SHORT += 2;                //近距離ダメージ+2
+                    buff.HIT_SHORT += 2;                //近距離命中+2
+                    buff.DMG_LONG += 2;                 //遠距離ダメージ+2
+                    buff.HIT_LONG += 2;                 //遠距離命中+2
+                    buff.SP += 2;                       //SP+2
+                    buff.HIT_MAGIC += 2;                //魔法命中+2
+                                                        //獲得経験値+2%
+        }else if (e == 10){                             //強化されたドラゴンの遺物(腕力)
+                    buff.AC -= 4;                       //AC-4
+                    buff.ST[STR] += 1;                  //STR+1
+                    buff.DMG_SHORT += 4;                //近距離ダメージ+4
+                    buff.HIT_SHORT += 6;                //近距離命中+6
+                                                        //獲得経験値+10%
+        }else if (e == 11){                             //強化されたドラゴンの遺物(知力)
+                    buff.AC -= 4;                       //AC-4
+                    buff.ST[INT] += 1;                  //INT+1
+                    buff.SP += 4;                       //SP+4
+                    buff.HIT_MAGIC += 6;                //魔法命中+6
+                                                        //獲得経験値+10%
+        }else if (e == 12){                             //強化されたドラゴンの遺物(機敏)
+                    buff.AC -= 4;                       //AC-4
+                    buff.ST[DEX] += 1;                  //DEX+1
+                    buff.DMG_LONG += 4;                 //遠距離ダメージ+4
+                    buff.HIT_LONG += 6;                 //遠距離命中+6
+                                                        //獲得経験値+10%          
         }
         //タリスマン
             switch (ui.cb_pattern_l2.getSelectedIndex()) {
