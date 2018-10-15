@@ -2,6 +2,12 @@ LineageStatusSimulator_fork2018
 
 変更点
 2018/10/15
+Update 3.1.1
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	2017/07/19 Update
+	エリクサー最大使用数6個(LV75時)に対応
+
 Update 3.1.0
 SS/src/lss/Calculator.java
 SS/src/lss/UI.java

@@ -191,8 +191,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     //ƒpƒlƒ‹‚Q
     JLabel[][] pure_status_bonus = new JLabel[2][25];
 
-    JComboBox[] cb_elixir = new JComboBox[5];
-    JComboBox[] cb_elixir_level = new JComboBox[5];
+    JComboBox[] cb_elixir = new JComboBox[6];
+    JComboBox[] cb_elixir_level = new JComboBox[6];
     LEV lev = new LEV();
 
     //ƒpƒlƒ‹‚R
@@ -1075,7 +1075,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         String elixir_list[] = {"---", "STR", "DEX", "CON", "INT", "WIS",
             "CHA"};
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             cb_elixir[i] = new JComboBox(elixir_list);
             cb_elixir_level[i] = new JComboBox(lev_list);
             cb_elixir[i].setBounds(30 + 100 * i, 500, 50, 20);

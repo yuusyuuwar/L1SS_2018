@@ -422,7 +422,7 @@ public class Calculator implements Common {
             _ST[LEVEL][i] = 0;
             _ST[ELIXIR][i] = 0;
         }
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             int st = ui.cb_elixir[i].getSelectedIndex() - 1;
             if (st >= 0) {
                 if (ui.cb_elixir_level[i].getSelectedIndex() + 1 <= level) {
