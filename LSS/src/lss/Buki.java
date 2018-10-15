@@ -84,7 +84,7 @@ public class Buki implements Common {
             return;
         }
         try {
-            reader.mark(1000000);
+            reader.mark(1_000_000);
             reader.reset();
             op.loadOption(reader);
             reader.reset();
@@ -163,7 +163,7 @@ public class Buki implements Common {
 //                }
             }
         } catch (IOException | NullPointerException e) {
-            System.err.println(e);
+//            System.err.println(e);
 
         }
     }

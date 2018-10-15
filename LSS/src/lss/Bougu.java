@@ -41,7 +41,7 @@ public class Bougu implements Common {
             return;
         }
         try {
-            reader.mark(1000000);
+            reader.mark(1_000_000);
             reader.reset();
             op.loadOption(reader);
             reader.reset();
@@ -80,7 +80,7 @@ public class Bougu implements Common {
                 }
             }
         } catch (IOException | NullPointerException e) {
-            System.out.println(e);
+//            System.out.println(e);
         }
     }
 
@@ -256,10 +256,10 @@ public class Bougu implements Common {
             text += " èdÇ≥ " + op.WEIGHT;
         }
 
-        if (!op.effect.equals("")) {
+        if (!op.effect.isEmpty()) {
             text += " " + op.effect;
         }
-        if (!op2.effect.equals("")) {
+        if (!op2.effect.isEmpty()) {
             text += " " + op2.effect;
         }
         return text;

@@ -1,6 +1,32 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/15
+Update 3.1.0
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+	ドラゴンの遺物/強化されたドラゴンの遺物(腕力/知力/機敏)を実装
+	2018/04/25 Update
+	http://event2.ncsoft.jp/1.0/lineage/1804dragonItem/
+
+SS/src/lss/Bougu.java
+SS/src/lss/Buki.java
+SS/src/lss/Calculator.java
+SS/src/lss/UI.java
+SS/src/lss/WideComboBox.java
+	全体的なソースコードの修正
+	NetBeans IDEでFindBugs Integration[バグパターンに合致する箇所を検出するツール]という
+	便利なプラグインがあり、使用しわかる範囲で修正
+
+日本語Javadocの設定
+	デフォルトでは、Java SE APIおよびJavaFX APIのJavadocへの参照設定は英語版
+	[ツール] > [Javaプラットフォーム] > [Javaプラットフォームマネージャ] > [Javadoc]タブを選択
+	デフォルトで登録されているJDKのJavadocおよびJavaFXのjavadocを、次のURLに差し替える。
+	[URLの追加]ボタンで追加
+	http://docs.oracle.com/javase/jp/8/docs/api/
+	http://docs.oracle.com/javase/jp/8/javafx/api/
+	*コード補完でポップアップされる表示は、JDKのソースコードから直接生成されているので日本語にはならない。
+
 2018/10/11
 Update 3.0.9
 LSS/data/E.zip

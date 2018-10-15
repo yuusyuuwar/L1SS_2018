@@ -42,10 +42,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
+import javax.swing.ToolTipManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.ToolTipManager;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -276,7 +276,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         setResizable(false);
 
         ToolTipManager.sharedInstance().setInitialDelay(100);   //初期値:750
-        ToolTipManager.sharedInstance().setDismissDelay(6000);  //初期値:4000
+        ToolTipManager.sharedInstance().setDismissDelay(6_000);  //初期値:4000
 //        System.out.println(ToolTipManager.sharedInstance().getDismissDelay());    //初期値確認用
 
         tabpane = new JTabbedPane();
@@ -755,7 +755,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(elixir_rune_en);
         
 //        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
-        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン","古代の加護","アルカの遺物","強化されたアルカの遺物"};
+        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン","古代の加護","アルカの遺物","強化されたアルカの遺物","ドラゴンの遺物","強化されたドラゴンの遺物(腕力)","強化されたドラゴンの遺物(知力)","強化されたドラゴンの遺物(機敏)"};
         elixir_rune = new WideComboBox(elixir_rune_list);
         elixir_rune.setBounds(50, 460, 150, 20);
         elixir_rune.addActionListener(this);
@@ -1058,7 +1058,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             pure_status_bonus[1][i] = new JLabel("0");
             pure_status_bonus[0][i].setBounds(30 + 150 * (i / 5), 220 + 20 * (i % 5), 100, 20);
             pure_status_bonus[1][i].setBounds(130 + 150 * (i / 5), 220 + 20 * (i % 5), 50, 20);
-            if (pure_status_bonus[0][i].getText().equals("")) {
+            if (pure_status_bonus[0][i].getText().isEmpty()) {
                 continue;
             }
             panels[1].add(pure_status_bonus[0][i]);
@@ -1973,8 +1973,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                         file = f;
                         setTitle(file.getPath());
                     }
-                } catch (IOException | NumberFormatException ex) {
-                } catch (ParserConfigurationException | SAXException ex) {
+                } catch (IOException | NumberFormatException | ParserConfigurationException | SAXException ex) {
                 }
             }
             bt_ow.setEnabled(file != null);
@@ -2003,7 +2002,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                             }
                         }
                     } catch (IOException ex) {
-                        System.out.println(ex);
+//                        System.out.println(ex);
                     }
                     break;
                 case "ガントレット":
@@ -2022,7 +2021,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                             }
                         }
                     } catch (IOException ex) {
-                        System.out.println(ex);
+//                        System.out.println(ex);
                     }
                     break;
                 default:
@@ -2076,7 +2075,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                 }
 
                                 //魔法ディレイ
-                                if (calc.buki.magic_name.equals("")) {
+                                if (calc.buki.magic_name.isEmpty()) {
                                     tf_mag_delay.setEnabled(false);
                                     tf_mag_delay.setText("0.0");
                                     tf_mag_power.setEnabled(false);
@@ -2148,7 +2147,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                                     }
 
                                 } catch (IOException ex) {
-                                    System.out.println(ex);
+//                                    System.out.println(ex);
                                 }
                                 break;
                             case 1:
@@ -2367,10 +2366,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 cb_e_type.setSelectedItem(reader.readLine());
                 cb_e_size.setSelectedItem(reader.readLine());
             }
-        } catch (IOException ex) {
-        } catch (Exception ex) {
-            System.out.println(ex);
+        } catch (IOException | NumberFormatException ex) {
         }
+//            System.out.println(ex);  
     }
 
     final void load_res() {
