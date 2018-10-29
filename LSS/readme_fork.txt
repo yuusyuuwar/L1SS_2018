@@ -1,6 +1,25 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/10/30
+Update 3.1.2
+LSS/data/E.zip
+SS/src/lss/Buki.java
+装備追加
+	http://event2.ncsoft.jp/1.0/lineage/1810halloween/
+	ハロウィンソード
+	ハロウィンツーハンドソード
+	ハロウィンアックス
+	ハロウィンスタッフ
+	ハロウィンデュアルブレード
+	ハロウィンチェーンソード
+	ハロウィンキーリンク
+	ハロウィンボウ
+	魔法発動:ブレイズショック[火属性] 発動率+1強化毎に1%増加
+
+	幸運のキーリンク
+	魔法発動:ブレイズショック[火属性] 発動率+1強化毎に2%増加
+
 2018/10/15
 Update 3.1.1
 SS/src/lss/Calculator.java
