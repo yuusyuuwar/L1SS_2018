@@ -286,9 +286,9 @@ public class Buki implements Common {
         }
         //‹­‰»+10ˆÈã‚ÍƒGƒ“ƒ`ƒƒƒ“ƒg‚É‚æ‚é’Ç‰Á‘ÅŒ‚‚ª+2(Šù‘¶ˆ—‚É’Ç‰Á‚Å+1)
         if (enchant >= 10) {
-            op2.DMG_SHORT = enchant - 9;
-            op2.DMG_LONG = enchant - 9;
-            op2.DMG_MAGIC = enchant - 9;
+            op2.DMG_SHORT += enchant - 9;
+            op2.DMG_LONG += enchant - 9;
+            op2.DMG_MAGIC += enchant - 9;
         }
     }
 }
