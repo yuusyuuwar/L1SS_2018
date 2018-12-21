@@ -269,99 +269,87 @@ public class Bougu implements Common {
 
         op2 = new Buff();
 
-        if (name.contains("テイパーガーダー")) {
-            if (name.contains("腕力")) {
-                switch (enchant) {
-                    case 5:
-                        op2.HIT_SHORT = 1;
-                        break;
-                    case 6:
-                        op2.HIT_SHORT = 2;
-                        op2.DMG_SHORT = 1;
-                        break;
-                    case 7:
-                        op2.HIT_SHORT = 2;
-                        op2.DMG_SHORT = 1;
-                        op2.ST[STR] = 1;
-                        break;
-                    case 8:
-                        op2.HIT_SHORT = 2;
-                        op2.DMG_SHORT = 2;
-                        op2.ST[STR] = 1;
-                        op2.PVP = 1;
-                        break;
-                    case 9:
-                        op2.HIT_SHORT = 3;
-                        op2.DMG_SHORT = 3;
-                        op2.ST[STR] = 1;
-                        op2.PVP = 2;
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (name.contains("機敏")) {
-                switch (enchant) {
-                    case 5:
-                        op2.HIT_LONG = 1;
-                        break;
-                    case 6:
-                        op2.HIT_LONG = 2;
-                        op2.DMG_LONG = 1;
-                        break;
-                    case 7:
-                        op2.HIT_LONG = 2;
-                        op2.DMG_LONG = 1;
-                        op2.ST[DEX] = 1;
-                        break;
-                    case 8:
-                        op2.HIT_LONG = 2;
-                        op2.DMG_LONG = 2;
-                        op2.ST[DEX] = 1;
-                        op2.PVP = 1;
-                        break;
-                    case 9:
-                        op2.HIT_LONG = 3;
-                        op2.DMG_LONG = 3;
-                        op2.ST[DEX] = 1;
-                        op2.PVP = 2;
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (name.contains("知力")) {
-                switch (enchant) {
-                    case 5:
-                        op2.MPR = 2;
-                        break;
-                    case 6:
-                        op2.MPR = 2;
-                        op2.SP = 1;
-                        break;
-                    case 7:
-                        op2.MPR = 4;
-                        op2.SP = 1;
-                        op2.ST[INT] = 1;
-                        break;
-                    case 8:
-                        op2.MPR = 4;
-                        op2.SP = 2;
-                        op2.ST[INT] = 1;
-                        op2.PVP = 1;
-                        break;
-                    case 9:
-                        op2.MPR = 6;
-                        op2.SP = 3;
-                        op2.ST[INT] = 1;
-                        op2.PVP = 2;
-                        break;
-                    default:
-                        break;
-                }
+        if (name.equals("テイパーガーダー(腕力)")) {
+            if (enchant >= 9) {
+                op2.HIT_SHORT = 3;           	//近距離命中+3
+                op2.DMG_SHORT = 3;           	//近距離ダメージ+3
+                op2.ST[STR] = 1;           	//STR+1
+                op2.PVP = 2;			//PVP+2
+
+            } else if (enchant >= 8) {
+                op2.HIT_SHORT = 2;           	//近距離命中+2
+                op2.DMG_SHORT = 2;           	//近距離ダメージ+2
+                op2.ST[STR] = 1;           	//STR+1
+                op2.PVP = 1;           		//PVP+1
+
+            } else if (enchant >= 7) {
+                op2.HIT_SHORT = 2;           	//近距離命中+2
+                op2.DMG_SHORT = 1;           	//近距離ダメージ+1
+                op2.ST[STR] = 1;           	//STR+1
+
+            } else if (enchant >= 6) {
+                op2.HIT_SHORT = 2;           	//近距離命中+2
+                op2.DMG_SHORT = 1;           	//近距離ダメージ+1
+
+            } else if (enchant >= 5) {
+                op2.HIT_SHORT = 1;           	//近距離命中+1
+
             }
         }
+        if (name.equals("テイパーガーダー(機敏)")) {
+            if (enchant >= 9) {
+                op2.HIT_LONG = 3;           	//遠距離命中+3
+                op2.DMG_LONG = 3;           	//遠距離ダメージ+3
+                op2.ST[DEX] = 1;           	//DEX+1
+                op2.PVP = 2;			//PVP+2
 
+            } else if (enchant >= 8) {
+                op2.HIT_LONG = 2;           	//遠距離命中+2
+                op2.DMG_LONG = 2;           	//遠距離ダメージ+2
+                op2.ST[DEX] = 1;           	//DEX+1
+                op2.PVP = 1;           		//PVP+1
+
+            } else if (enchant >= 7) {
+                op2.HIT_LONG = 2;           	//遠距離命中+2
+                op2.DMG_LONG = 1;           	//遠距離ダメージ+1
+                op2.ST[DEX] = 1;           	//DEX+1
+
+            } else if (enchant >= 6) {
+                op2.HIT_LONG = 2;           	//遠距離命中+2
+                op2.DMG_LONG = 1;           	//遠距離ダメージ+1
+
+            } else if (enchant >= 5) {
+                op2.HIT_LONG = 1;           	//遠距離命中+1
+
+            }
+        }
+        if (name.equals("テイパーガーダー(知力)")) {
+            if (enchant >= 9) {
+                op2.MPR = 6;           		//MPR+6
+                op2.SP = 3;           		//SP+3
+                op2.ST[INT] = 1;           	//INT+1
+                op2.PVP = 2;			//PVP+2
+
+            } else if (enchant >= 8) {
+                op2.MPR = 4;           		//MPR+4
+                op2.SP = 2;           		//SP+2
+                op2.ST[INT] = 1;           	//INT+1
+                op2.PVP = 1;           		//PVP+1
+
+            } else if (enchant >= 7) {
+                op2.MPR = 4;           		//MPR+4
+                op2.SP = 1;           		//SP+1
+                op2.ST[INT] = 1;           	//INT+1
+
+            } else if (enchant >= 6) {
+                op2.MPR = 2;           		//MPR+2
+                op2.SP = 1;           		//SP+1
+
+            } else if (enchant >= 5) {
+                op2.MPR = 2;           		//MPR+2
+
+            }
+        }
         if (name.equals("地竜のTシャツ")) {
             switch (enchant) {
                 case 5:
@@ -545,70 +533,178 @@ public class Bougu implements Common {
                 op2.ailment[TERROR] = 1;    //恐怖耐性
             }
         }
-        if (name.equals("ウズヌスのガーダー")) {
+        if (name.equals("ウグヌスのガーダー")) {
             if (enchant >= 9) {
-                op2.HIT_LONG = 5;           //遠距離命中
-                op2.ailment[STUN] = 5;      //技術耐性
-//                op2.ailment[SPIRIT] = 5;    //精霊耐性 
-//                op2.ailment[DRAGON] = 5;    //竜語耐性
-                op2.ailment[TERROR] = 5;    //恐怖耐性
+                op2.HIT_LONG = 5;           //遠距離命中+5
+                op2.ailment[STUN] = 5;      //技術耐性+5
+//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+                op2.ailment[TERROR] = 5;    //恐怖耐性+5
             } else if (enchant >= 8) {
-                op2.HIT_LONG = 4;           //遠距離命中
-                op2.ailment[STUN] = 4;      //技術耐性
-//                op2.ailment[SPIRIT] = 4;    //精霊耐性 
-//                op2.ailment[DRAGON] = 4;    //竜語耐性
-                op2.ailment[TERROR] = 4;    //恐怖耐性
+                op2.HIT_LONG = 4;           //遠距離命中+4
+                op2.ailment[STUN] = 4;      //技術耐性+4
+//                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+//                op2.ailment[DRAGON] = 4;    //竜語耐性+4
+                op2.ailment[TERROR] = 4;    //恐怖耐性+4
             } else if (enchant >= 7) {
-                op2.HIT_LONG = 3;           //遠距離命中
-                op2.ailment[STUN] = 3;      //技術耐性
-//                op2.ailment[SPIRIT] = 3;    //精霊耐性 
-//                op2.ailment[DRAGON] = 3;    //竜語耐性
-                op2.ailment[TERROR] = 3;    //恐怖耐性
+                op2.HIT_LONG = 3;           //遠距離命中+3
+                op2.ailment[STUN] = 3;      //技術耐性+3
+//                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+//                op2.ailment[DRAGON] = 3;    //竜語耐性+3
+                op2.ailment[TERROR] = 3;    //恐怖耐性+3
             } else if (enchant >= 6) {
-                op2.HIT_LONG = 2;           //遠距離命中
-                op2.ailment[STUN] = 2;      //技術耐性
-//                op2.ailment[SPIRIT] = 2;    //精霊耐性 
-//                op2.ailment[DRAGON] = 2;    //竜語耐性
-                op2.ailment[TERROR] = 2;    //恐怖耐性
+                op2.HIT_LONG = 2;           //遠距離命中+2
+                op2.ailment[STUN] = 2;      //技術耐性+2
+//                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+//                op2.ailment[DRAGON] = 2;    //竜語耐性+2
+                op2.ailment[TERROR] = 2;    //恐怖耐性+2
             } else if (enchant >= 5) {
-                op2.HIT_LONG = 1;           //遠距離命中
-                op2.ailment[STUN] = 1;      //技術耐性
-//                op2.ailment[SPIRIT] = 1;    //精霊耐性 
-//                op2.ailment[DRAGON] = 1;    //竜語耐性
-                op2.ailment[TERROR] = 1;    //恐怖耐性
+                op2.HIT_LONG = 1;           //遠距離命中+1
+                op2.ailment[STUN] = 1;      //技術耐性+1
+//                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+//                op2.ailment[DRAGON] = 1;    //竜語耐性+1
+                op2.ailment[TERROR] = 1;    //恐怖耐性+1
             }
         }
-        if (name.equals("ファイアーガーダー")) {
-            if (enchant >= 7) {
+        if (name.equals("火霊のガーダー")) {
+            if (enchant >= 11) {
                 op2.DMG_SHORT = enchant-6;  //近距離ダメージ+(enchant-6)
                 op2.HIT_SHORT = enchant-4;  //近距離命中+(enchant-4)
+//                op2.ailment[STUN] = 5;      //技術耐性+5
+//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+//                op2.ailment[TERROR] = 5;    //恐怖耐性+5               
+            } else if (enchant >= 10) {
+                op2.DMG_SHORT = 4;          //近距離ダメージ+4
+                op2.HIT_SHORT = 6;          //近距離命中+6
+//                op2.ailment[STUN] = 5;      //技術耐性+5
+//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+//                op2.ailment[TERROR] = 5;    //恐怖耐性+5
+            } else if (enchant >= 9) {
+                op2.DMG_SHORT = 3;          //近距離ダメージ+3
+                op2.HIT_SHORT = 5;          //近距離命中+5
+//                op2.ailment[STUN] = 4;      //技術耐性+4
+//                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+//                op2.ailment[DRAGON] = 4;    //竜語耐性+4
+//                op2.ailment[TERROR] = 4;    //恐怖耐性+4
+            } else if (enchant >= 8) {
+                op2.DMG_SHORT = 2;          //近距離ダメージ+2
+                op2.HIT_SHORT = 4;          //近距離命中+4
+//                op2.ailment[STUN] = 3;      //技術耐性+3
+//                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+//                op2.ailment[DRAGON] = 3;    //竜語耐性+3
+//                op2.ailment[TERROR] = 3;    //恐怖耐性+3  
+            } else if (enchant >= 7) {
+                op2.DMG_SHORT = 1;          //近距離ダメージ+1
+                op2.HIT_SHORT = 3;          //近距離命中+3
+//                op2.ailment[STUN] = 2;      //技術耐性+2
+//                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+//                op2.ailment[DRAGON] = 2;    //竜語耐性+2
+//                op2.ailment[TERROR] = 2;    //恐怖耐性+2
             } else if (enchant >= 6) {
                 op2.HIT_SHORT = 2;          //近距離命中+2
+//                op2.ailment[STUN] = 1;      //技術耐性+1
+//                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+//                op2.ailment[DRAGON] = 1;    //竜語耐性+1
+//                op2.ailment[TERROR] = 1;    //恐怖耐性+1
             } else if (enchant >= 5) {
                 op2.HIT_SHORT = 1;          //近距離命中+1
             }
         }
-        if (name.equals("ウィンドガーダー")) {
-            if (enchant >= 7) {
+        if (name.equals("風霊のガーダー")) {
+            if (enchant >= 11) {
                 op2.DMG_LONG = enchant-6;   //遠距離ダメージ+(enchant-6)
                 op2.HIT_LONG = enchant-4;   //遠距離命中+(enchant-4)
+//                op2.ailment[STUN] = 5;      //技術耐性+5
+//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+//                op2.ailment[TERROR] = 5;    //恐怖耐性+5               
+            } else if (enchant >= 10) {
+                op2.DMG_LONG = 4;           //遠距離ダメージ+4
+                op2.HIT_LONG = 6;           //遠距離命中+6
+//                op2.ailment[STUN] = 5;      //技術耐性+5
+//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+//                op2.ailment[TERROR] = 5;    //恐怖耐性+5
+            } else if (enchant >= 9) {
+                op2.DMG_LONG = 3;           //遠距離ダメージ+3
+                op2.HIT_LONG = 5;           //遠距離命中+5
+//                op2.ailment[STUN] = 4;      //技術耐性+4
+//                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+//                op2.ailment[DRAGON] = 4;    //竜語耐性+4
+//                op2.ailment[TERROR] = 4;    //恐怖耐性+4
+            } else if (enchant >= 8) {
+                op2.DMG_LONG = 2;           //遠距離ダメージ+2
+                op2.HIT_LONG = 4;           //遠距離命中+4
+//                op2.ailment[STUN] = 3;      //技術耐性+3
+//                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+//                op2.ailment[DRAGON] = 3;    //竜語耐性+3
+//                op2.ailment[TERROR] = 3;    //恐怖耐性+3
+            } else if (enchant >= 7) {
+                op2.DMG_LONG = 1;           //遠距離ダメージ+1
+                op2.HIT_LONG = 3;           //遠距離命中+3
+//                op2.ailment[STUN] = 2;      //技術耐性+2
+//                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+//                op2.ailment[DRAGON] = 2;    //竜語耐性+2
+//                op2.ailment[TERROR] = 2;    //恐怖耐性+2
             } else if (enchant >= 6) {
                 op2.HIT_LONG = 2;           //遠距離命中+2
+//                op2.ailment[STUN] = 1;      //技術耐性+1
+//                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+//                op2.ailment[DRAGON] = 1;    //竜語耐性+1
+//                op2.ailment[TERROR] = 1;    //恐怖耐性+1
             } else if (enchant >= 5) {
                 op2.HIT_LONG = 1;           //遠距離命中+1
             }
         }
-        if (name.equals("ウォーターガーダー")) {
-            if (enchant >= 7) {
+        if (name.equals("水霊のガーダー")) {
+            if (enchant >= 11) {
                 op2.SP = enchant-6;         //SP+(enchant-6)
                 op2.HIT_MAGIC = enchant-4;  //魔法命中+(enchant-4)
+//                op2.ailment[STUN] = 5;      //技術耐性+5
+//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+//                op2.ailment[TERROR] = 5;    //恐怖耐性+5
+            } else if (enchant >= 10) {
+                op2.SP = 4;                 //SP+4
+                op2.HIT_MAGIC = 6;          //魔法命中+6
+//                op2.ailment[STUN] = 5;      //技術耐性+5
+//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+//                op2.ailment[TERROR] = 5;    //恐怖耐性+5
+            } else if (enchant >= 9) {
+                op2.SP = 3;                 //SP+3
+                op2.HIT_MAGIC = 5;          //魔法命中+5
+//                op2.ailment[STUN] = 4;      //技術耐性+4
+//                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+//                op2.ailment[DRAGON] = 4;    //竜語耐性+4
+//                op2.ailment[TERROR] = 4;    //恐怖耐性+4
+            } else if (enchant >= 8) {
+                op2.SP = 2;                 //SP+2
+                op2.HIT_MAGIC = 4;          //魔法命中+4
+//                op2.ailment[STUN] = 3;      //技術耐性+3
+//                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+//                op2.ailment[DRAGON] = 3;    //竜語耐性+3
+//                op2.ailment[TERROR] = 3;    //恐怖耐性+3
+            } else if (enchant >= 7) {
+                op2.SP = 1;                 //SP+1
+                op2.HIT_MAGIC = 3;          //魔法命中+3
+//                op2.ailment[STUN] = 2;      //技術耐性+2
+//                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+//                op2.ailment[DRAGON] = 2;    //竜語耐性+2
+//                op2.ailment[TERROR] = 2;    //恐怖耐性+2
             } else if (enchant >= 6) {
                 op2.HIT_MAGIC = 2;          //魔法命中+2
+//                op2.ailment[STUN] = 1;      //技術耐性+1
+//                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+//                op2.ailment[DRAGON] = 1;    //竜語耐性+1
+//                op2.ailment[TERROR] = 1;    //恐怖耐性+1
             } else if (enchant >= 5) {
                 op2.HIT_MAGIC = 1;          //魔法命中+1
             }
         }
-        if (name.equals("ファイアーガーダー")) {
+        if (name.equals("地霊のガーダー")) {
             if (enchant >= 7) {
                 op2.DR = enchant-6;         //ダメージリダクション+(enchant-6)
                 op2.MR = enchant-4;         //MR+(enchant-4)
