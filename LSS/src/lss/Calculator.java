@@ -4899,28 +4899,28 @@ System.out.println(buki.magic_enchant);
             buki_text += " 魔法クリティカル+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
         if (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE] > 0) {
-            buki_text += " 石化命中" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
+            buki_text += " 石化命中+" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
         }
         if (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP] > 0) {
-            buki_text += " 睡眠命中" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
+            buki_text += " 睡眠命中+" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
         }
         if (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE] > 0) {
-            buki_text += " 凍結命中" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
+            buki_text += " 凍結命中+" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
         }
         if (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS] > 0) {
-            buki_text += " 暗闇命中" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
+            buki_text += " 暗闇命中+" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
         }
         if (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN] > 0) {
-            buki_text += " スタン命中" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
+            buki_text += " スタン命中+" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
         }
         if (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD] > 0) {
-            buki_text += " ホールド命中" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
+            buki_text += " ホールド命中+" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
         }
         if (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR] > 0) {
-            buki_text += " 恐怖命中" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
+            buki_text += " 恐怖命中+" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
         }
         if (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION] > 0) {
-            buki_text += " 破壊命中" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
+            buki_text += " 破壊命中+" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
         }
         if (buki.op.HP > 0) {
             buki_text += " HP+" + buki.op.HP;

@@ -151,7 +151,7 @@ public interface Common {
     final int ITEM_COOKING = 54;
     final int ITEM_DESSERT = 55;
     final int ITEM_MD = 56;
-    final int DRAGON = 57;
+    final int DRAGON = 57;      //ñ¢é¿ëï(ó\ñÒï™)
     final int KOMA = 58;
     final int P_BA = 59;
     final int E_DB = 60;
@@ -216,6 +216,10 @@ public interface Common {
     final int HIT_HOLD = 13;
     final int HIT_TERROR = 14;
     final int HIT_DESTRUCTION = 15;
+//    final int DRAGON = 16;
+//    final int HIT_DRAGON = 17;
+//    final int SPIRIT = 18;
+//    final int HIT_SPIRIT = 19;   
 
     final String[] ENEMY_TYPE_LIST = {"í èÌ", "à´ñÇ", "ïséÄ"};
     final int NORMAL = 0;
