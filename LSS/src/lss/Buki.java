@@ -223,6 +223,22 @@ public class Buki implements Common {
             op2.ailment[HIT_TERROR] += 1;               //恐怖的中+1
             }
         }
+        //殺意のキーリンク          +7以降強化1毎に竜語命中+1魔法クリティカル+1(+10強化まで適用)
+        if (name.equals("殺意のキーリンク")) {
+            if (enchant >= 10) {
+        //    op2.ailment[HIT_DRAGON] += 4;               //竜語命中+4
+            op2.CRI_MAGIC += 4;                         //魔法クリティカル+4
+            } else if (enchant >= 9) {
+        //    op2.ailment[HIT_DRAGON] += 3;               //竜語命中+3
+            op2.CRI_MAGIC += 3;                         //魔法クリティカル+3
+            } else if (enchant >= 8) {
+        //    op2.ailment[HIT_DRAGON] += 2;               //竜語命中+2
+            op2.CRI_MAGIC += 2;                         //魔法クリティカル+2
+            } else if (enchant >= 7) {
+        //    op2.ailment[HIT_DRAGON] += 1;               //竜語命中+1
+            op2.CRI_MAGIC += 1;                         //魔法クリティカル+1
+            }
+        }
         //真冥王の執行剣            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][スタン命中]+1増加
         if (name.equals("真冥王の執行剣")) {
             if (enchant >= 0) {
