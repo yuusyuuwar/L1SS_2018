@@ -1118,6 +1118,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff_group[B_STR].setBounds(100, 20 * col, 80, 20);
         cb_buff_group[B_STR].setSelectedIndex(1);
         cb_buff[B_STR] = new JCheckBox("STR");
+                cb_buff[B_STR].setToolTipText("<html>"+ "ドレスマイティ STR+3"
+                + "<br>"+ "フィジカルエンチャント STR+5"
+                + "<br>"+ "激励のポーション STR+6"
+                + "<br>"+ "フローラのポーション STR+6(DEX+6)"
+                + "<br>"+ "四季のポーション STR+6(DEX+6 AC-5)"
+                + "<br>"+ "偉大な勇者のスクロール DEX+7"
+                + "<br>"+ "クリスマスキャンディー STR+7(DEX+7)"+"</html>");
         cb_buff[B_STR].setBounds(0, 20 * col++, 100, 20);
 
         String list_dex[] = {"+3", "+5", "+6", "+7"};
@@ -1125,6 +1132,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff_group[B_DEX].setBounds(100, 20 * col, 80, 20);
         cb_buff_group[B_DEX].setSelectedIndex(1);
         cb_buff[B_DEX] = new JCheckBox("DEX");
+                cb_buff[B_DEX].setToolTipText("<html>"+ "ドレスデクスタリティー DEX+3"
+                + "<br>"+ "フィジカルエンチャント DEX+5"
+                + "<br>"+ "才能のポーション DEX+6"
+                + "<br>"+ "フローラのポーション DEX+6(STR+6)"
+                + "<br>"+ "四季のポーション DEX+6(STR+6 AC-5)"
+                + "<br>"+ "偉大な名弓のスクロール DEX+7"
+                + "<br>"+ "クリスマスキャンディー DEX+7(STR+7)"+"</html>");
         cb_buff[B_DEX].setBounds(0, 20 * col++, 100, 20);
 
         //String list_ac[] = {"-2", "-5", "-6", "-7", "-10"};
@@ -1138,11 +1152,15 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 + "<br>"+ "アイアンスキン      AC-10"+"</html>");
         cb_buff[B_AC].setBounds(0, 20 * col++, 100, 20);
 
-        String list_buki[] = {"+1", "+2", "+2 HIT+2", "+5"};
+        String list_buki[] = {"+1 HIT+1", "+2", "+2 HIT+2", "+5"};
         cb_buff_group[BUKI] = new WideComboBox(list_buki);
         cb_buff_group[BUKI].setBounds(100, 20 * col, 80, 20);
         cb_buff_group[BUKI].setSelectedIndex(2);
         cb_buff[BUKI] = new JCheckBox("武器");
+        cb_buff[BUKI].setToolTipText("<html>"+ "ホーリーウェポン 近距離ダメージ+1 近距離命中+1"
+                + "<br>"+ "エンチャントウェポン 近距離ダメージ+2"
+                + "<br>"+ "ブレスウェポン 近距離ダメージ+2 近距離命中+2"
+                + "<br>"+ "シャドウファング 近距離ダメージ+5"+"</html>");
         cb_buff[BUKI].setBounds(0, 20 * col++, 100, 20);
 
         col++;
@@ -1477,14 +1495,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "魔法抵抗のポーション", "術士のポーション", "剣士のポーション"};
         cb_buff_group[ITEM_BREEZE] = new WideComboBox(list_breeze);
         cb_buff_group[ITEM_BREEZE].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_BREEZE] = new JCheckBox("潮風");
+        cb_buff[ITEM_BREEZE] = new JCheckBox("潮風の力");
         cb_buff[ITEM_BREEZE].setBounds(200 * row, 20 * col++, 100, 20);
 
         String list_sea[] = {"ドラゴンの石", "憤怒のポーション", "集中のポーション", "腕力のポーション",
-            "機敏のポーション", "体力のポーション", "知力のポーション", "精神のポーション"};
+            "機敏のポーション", "体力のポーション", "知力のポーション", "精神のポーション", "闘士の戦闘強化スクロール", "射手の戦闘強化スクロール", "賢者の戦闘強化スクロール"};
         cb_buff_group[ITEM_SEA] = new WideComboBox(list_sea);
         cb_buff_group[ITEM_SEA].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[ITEM_SEA] = new JCheckBox("深海");
+        cb_buff[ITEM_SEA] = new JCheckBox("深海の力");
         cb_buff[ITEM_SEA].setBounds(200 * row, 20 * col++, 100, 20);
 
         String list_md[] = {"ウェアウルフ", "バグベアー", "サキュバス", "エルダー", "ストーンゴーレム",
@@ -1522,10 +1540,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[ITEM_MD2] = new JCheckBox("新マジックドール");
         cb_buff[ITEM_MD2].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_koma[] = {"3種類", "5種類"};
+        String list_koma[] = {"欠片3個", "欠片5個"};
         cb_buff_group[KOMA] = new WideComboBox(list_koma);
         cb_buff_group[KOMA].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[KOMA] = new JCheckBox("コマ");
+        cb_buff[KOMA] = new JCheckBox("コマのエンチャ");
         cb_buff[KOMA].setBounds(200 * row, 20 * col++, 100, 20);
 
         cb_buff[SEC] = new JCheckBox("セキュリティ");

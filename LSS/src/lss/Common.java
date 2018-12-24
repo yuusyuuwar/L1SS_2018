@@ -151,7 +151,7 @@ public interface Common {
     final int ITEM_COOKING = 54;
     final int ITEM_DESSERT = 55;
     final int ITEM_MD = 56;
-    final int DRAGON = 57;      //–¢ŽÀ‘•(—\–ñ•ª)
+    final int DRAGONRAID = 57;      //–¢ŽÀ‘•(—\–ñ•ª)
     final int KOMA = 58;
     final int P_BA = 59;
     final int E_DB = 60;

@@ -1,6 +1,20 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/12/24
+Update 3.1.7
+SS/src/lss/Common.java
+	変数DRAGONをDRAGONRAIDへ予約変更(2018/12/21 Update 3.1.4)の修正
+
+SS/src/lss/Calculator.java
+	マジックドールの効果の修正
+	ツールチップの追加及び修正
+	闘士の戦闘強化スクロール/射手の戦闘強化スクロール/賢者の戦闘強化スクロールを追加
+	キーリンクのBIGダメージにクリティカルダメージが反映されてない為、処理を修正
+
+SS/src/lss/UI.java
+	パネル3(エンチャント)のUI修正
+
 2018/12/22
 Update 3.1.6
 LSS/data/E.zip
