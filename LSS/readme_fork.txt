@@ -1,6 +1,19 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/12/26
+Update 3.1.8
+SS/src/lss/Calculator.java
+	轟音のデュアルブレードは存在しないので処理の削除
+	咆哮のデュアルブレードのダメージ処理式の修正
+
+遠距離命中の計算式の修正(現在は遠距離命中には近距離命中分は含まない仕様)
+	訂正前:hit_long += bougu1.op.HIT_LONG + bougu1.op.HIT_SHORT + bougu1.op2.HIT_LONG + bougu1.op2.HIT_SHORT;
+	訂正後:hit_long += bougu1.op.HIT_LONG +                       bougu1.op2.HIT_LONG;
+
+"追加ダメージ +XX X%"の表記されているアイテムのsmallダメージに追加ダメージが反映されていない為､処理を修正
+	例.強化+5以上のルームティスブラックイアリング/強化+4以上の祝福されたルームティスブラックイアリング
+
 2018/12/24
 Update 3.1.7
 SS/src/lss/Common.java
@@ -10,7 +23,7 @@ SS/src/lss/Calculator.java
 	マジックドールの効果の修正
 	ツールチップの追加及び修正
 	闘士の戦闘強化スクロール/射手の戦闘強化スクロール/賢者の戦闘強化スクロールを追加
-	キーリンクのBIGダメージにクリティカルダメージが反映されてない為、処理を修正
+	キーリンクのbigダメージにクリティカルダメージが反映されてない為、処理を修正
 
 SS/src/lss/UI.java
 	パネル3(エンチャント)のUI修正

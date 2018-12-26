@@ -3186,7 +3186,8 @@ buki.arrow_elementdmg=0;
 
         for (Bougu bougu1 : bougu) {
             hit_short += bougu1.op.HIT_SHORT + bougu1.op2.HIT_SHORT;
-            hit_long += bougu1.op.HIT_LONG + bougu1.op.HIT_SHORT + bougu1.op2.HIT_LONG + bougu1.op2.HIT_SHORT;
+            //hit_long += bougu1.op.HIT_LONG + bougu1.op.HIT_SHORT + bougu1.op2.HIT_LONG + bougu1.op2.HIT_SHORT;
+            hit_long += bougu1.op.HIT_LONG + bougu1.op2.HIT_LONG;
         }
 
         //属性ダメージ
@@ -3549,7 +3550,7 @@ System.out.println(buki.magic_enchant);
         }
 
         if (buki.type.equals("デュアルブレード")) {
-            if ((buki.name.contains("轟音") || buki.name.contains("咆哮")) && ui.cb_mag_auto.isSelected()) {
+            if (buki.name.contains("咆哮") && ui.cb_mag_auto.isSelected()) {
                 ui.tf_buki_sp_rate.setText(Double.toString(((int) ((wh + buki.enchant * 0.01) * 100)) / 100.0));
                 dmg_big_ave *= 2.0 * (wh + buki.enchant * 0.01)
                         + (1.0 - (wh + buki.enchant * 0.01));
@@ -3565,8 +3566,10 @@ System.out.println(buki.magic_enchant);
             } else {
                 dmg_big_ave *= 2.0 * wh
                         + (1.0 - wh);
+//                dmg_small_ave *= 2.0 * wh
+//                        + (1.0 - buki.double_hit_rate);
                 dmg_small_ave *= 2.0 * wh
-                        + (1.0 - buki.double_hit_rate);
+                        + (1.0 - wh);
 
                 //ダブルヒットに銀特効+悪魔特効を乗せる
                 dmg_undead *= 2.0 * wh
@@ -4044,6 +4047,7 @@ System.out.println(buki.magic_enchant);
                 }
 //                System.out.println(dmg + " " + dmg_rate);
 //                System.out.println((dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0));
+                dmg_small_ave += (dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0);
                 dmg_big_ave += (dmg - Integer.parseInt((String) ui.cb_target_dr.getSelectedItem())) * (dmg_rate / 100.0);
             }
         }
