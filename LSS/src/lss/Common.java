@@ -196,7 +196,8 @@ public interface Common {
     final int H_AC = 94;        //鉄甲のボーナス(未実装)
     final int H_PVPDR = 95;     //生存のボーナス(未実装)
     final int H_PVP = 96;       //暗殺のボーナス(未実装) 
-    final int H_RK = 97;        //ランカーボーナス(未実装)     
+    final int H_RK = 97;        //ランカーボーナス(未実装)
+    final int ITEM_MAGAN = 98;  //魔眼
 
 //    final String[] AILMENT_LIST = {"石化", "睡眠", "凍結", "暗闇", "気絶", "拘束", "恐怖"};
     final String[] AILMENT_LIST = {"石化耐性", "睡眠耐性", "凍結耐性", "暗闇耐性", "気絶耐性", "拘束耐性", "恐怖耐性","破壊耐性","石化命中", "睡眠命中", "凍結命中", "暗闇命中", "気絶命中", "拘束命中", "恐怖命中","破壊命中"};

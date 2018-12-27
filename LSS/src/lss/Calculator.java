@@ -845,7 +845,7 @@ public class Calculator implements Common {
                     break;
             }
         }
-//マジックドール　パック/パオのオプション
+//マジックドール パック/パオのオプション
         if (ui.cb_buff[ITEM_MD_OP].isSelected()) {
             switch (ui.cb_buff_group[ITEM_MD_OP].getSelectedIndex()) {
                 case 0:                                 //AC-2
@@ -1660,7 +1660,7 @@ public class Calculator implements Common {
                 }
             }
         }
-        //覚醒[ヴァラカス]　消費MP50/10mins
+        //覚醒[ヴァラカス] 消費MP50/10mins
         if (ui.cb_buff[R_VALAKAS].isSelected()) {
             if (ui.cb_buff[R_ANTHARAS].isSelected()
                     || ui.cb_buff[R_FAFURION].isSelected()
@@ -2297,7 +2297,7 @@ public class Calculator implements Common {
                 buff.MR += 5;
                 break;
             case 6:
-                //オルターストーン　勇猛
+                //オルターストーン 勇猛
                 switch (ui.cb_alterstone_en.getSelectedIndex()) {
                     case 1:
                         buff.HP += 20;
@@ -2350,7 +2350,7 @@ public class Calculator implements Common {
                 }
                 break;
             case 7:
-                //オルターストーン　魔弾
+                //オルターストーン 魔弾
                 switch (ui.cb_alterstone_en.getSelectedIndex()) {
                     case 1:
                         buff.HP += 10;
@@ -2404,7 +2404,7 @@ public class Calculator implements Common {
                 }
                 break;
             case 8:
-                //オルターストーン　叡智
+                //オルターストーン 叡智
                 switch (ui.cb_alterstone_en.getSelectedIndex()) {
                     case 1:
                         buff.MP += 20;
@@ -2763,6 +2763,61 @@ public class Calculator implements Common {
             buff.DR += 3;
             buff.ailment[DARKNESS] += 10;
             ui.cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ軽減+3 暗闇耐性+10");
+        }
+        //魔眼
+        if (ui.cb_buff[ITEM_MAGAN].isSelected()) {
+            switch (ui.cb_buff_group[ITEM_MAGAN].getSelectedIndex()) {
+                case 0://地竜の魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("物理攻撃回避+10%(未実装) 竜語耐性+5(未実装)");
+                    //物理攻撃回避+10%(未実装)
+                    //buff.ailment[DRAGON] += 5;
+                    break;
+                case 1://水竜の魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("10%の確率で魔法ダメージ半減(未実装) 精霊耐性+5(未実装)");
+                    //10%の確率で魔法ダメージ半減(未実装)
+                    //buff.ailment[SPIRIT] += 5;
+                    break;
+                case 2://風竜の魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で魔法クリティカル+2%(未実装) ER+10 恐怖耐性+5");  
+                    //一定確率で魔法クリティカル+2%(未実装)
+                    buff.ER+= 10;
+                    buff.ailment[TERROR] += 5;
+                    break;
+                case 3://火竜の魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で近距離ダメージ+2 遠距離ダメージ+2(未実装) 技術耐性+5");
+                    //一定確率で近距離ダメージ+2 遠距離ダメージ+2(未実装)
+                    buff.ailment[STUN] += 5;
+                    break;
+                case 4://誕生の魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で[物理攻撃回避][魔法ダメージ半減](未実装) 精霊耐性+5(未実装) 竜語耐性+5(未実装)");
+                    //一定確率で[物理攻撃回避][魔法ダメージ半減](未実装)
+                    //buff.ailment[SPIRIT] += 5;
+                    //buff.ailment[DRAGON] += 5;
+                    break;
+                case 5://形状の魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%](未実装) 精霊耐性+5(未実装) 竜語耐性+5(未実装) 恐怖耐性+5");
+                    //一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%](未実装)
+                    //buff.ailment[SPIRIT] += 5;
+                    //buff.ailment[DRAGON] += 5;
+                    buff.ailment[TERROR] += 5;
+                    break;
+                case 6://生命の魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%][近距離ダメージ+2 遠距離ダメージ+2](未実装) 技術耐性+5 精霊耐性+5(未実装) 竜語耐性+5(未実装) 恐怖耐性+5");
+                    //一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%][近距離ダメージ+2 遠距離ダメージ+2](未実装)
+                    buff.ailment[STUN] += 5;
+                    //buff.ailment[SPIRIT] += 5;
+                    //buff.ailment[DRAGON] += 5;
+                    buff.ailment[TERROR] += 5;
+                    break;
+                case 7://グレムリンの魔眼
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("近距離ダメージ+2 遠距離ダメージ+2 SP+1");
+                    buff.DMG_SHORT += 2;
+                    buff.DMG_LONG += 2;
+                    buff.SP += 1;
+                    break;
+                default:
+                    break;
+            }
         }
         //成長の果実 y_ikedaさんによる修正を参考に
         if (ui.cb_buff[L_HST].isSelected()) {
@@ -3516,7 +3571,7 @@ System.out.println(buki.magic_enchant);
                 dmg_small_ave -= 0.5;
                 break;
             case "ボウ":
-                //エルフ イーグルアイ　2%  消費MP20/2mins
+                //エルフ イーグルアイ 2% 消費MP20/2mins
                 cri_long += cr * 100;
                 if (ui.cb_buff[E_EE].isSelected()) {
                     cri_long += 2;
@@ -4366,7 +4421,7 @@ System.out.println(buki.magic_enchant);
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 20;
             }
         }
-        //覚醒[リンドビオル]　消費MP40/10mins
+        //覚醒[リンドビオル] 消費MP40/10mins
         if (ui.cb_buff[R_LINDVIOL].isSelected()) {
             if (ui.cb_buff[R_ANTHARAS].isSelected()
                     || ui.cb_buff[R_FAFURION].isSelected()
@@ -4498,10 +4553,13 @@ System.out.println(buki.magic_enchant);
 
         int hp_pot;
 
+        //魔力回復ポーション(魔力回復ポーション/古代の魔力回復ポーション/神秘の濃縮マナポーション)
         if (ui.cb_buff[ITEM_BLUE].isSelected()) {
             if (wis >= 10) {
-                mpr += (wis - 10) / 2;
-                ui.pure_status_bonus[1][22].setText(Integer.toString((wis - 10) / 2));
+                //mpr += (wis - 10) / 2;
+                //ui.pure_status_bonus[1][22].setText(Integer.toString((wis - 10) / 2));
+                mpr += (wis - 8) / 2;
+                ui.pure_status_bonus[1][22].setText(Integer.toString((wis - 8) / 2));
             } else {
                 mpr++;
             }

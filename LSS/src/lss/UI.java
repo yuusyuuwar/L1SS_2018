@@ -206,8 +206,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     //P_GA = 87;(グレースアバター)K_PD = 88;(プライド)K_BK = 89;(ブローアタック)R_LINDVIOL = 90;覚醒[リンドビオル])
     //I_FS = 91;(フォーカススピッツ)I_IT = 92;(インパクト)H_HP = 93;(生命のボーナス)H_AC = 94;(鉄甲のボーナス)
     //H_PVPDR = 95;(生存のボーナス)H_PVP = 96;(暗殺のボーナス)H_RK = 97;(ランカーボーナス)で計98個分(0から97)
-    JCheckBox[] cb_buff = new JCheckBox[98];
-    JComboBox[] cb_buff_group = new JComboBox[98]; 
+    //JCheckBox[] cb_buff = new JCheckBox[98];
+    //JComboBox[] cb_buff_group = new JComboBox[98]; 
+    //ITEM_MAGAN = 98;(魔眼)で計99個分(0から98)
+    JCheckBox[] cb_buff = new JCheckBox[99];
+    JComboBox[] cb_buff_group = new JComboBox[99]; 
 
     //パネル４
     JComboBox cb_npc_level;
@@ -1163,7 +1166,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 + "<br>"+ "シャドウファング 近距離ダメージ+5"+"</html>");
         cb_buff[BUKI].setBounds(0, 20 * col++, 100, 20);
 
-        col++;
+        cb_buff[SEC] = new JCheckBox("セキュリティ");
+        cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
+
+//        col++;
 
         lab_tmp = new JLabel("一般魔法");
         lab_tmp.setBounds(100 * row, 20 * col++, 200, 20);
@@ -1313,10 +1319,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         //cb_buff[E_WS].setToolTipText("遠距離命中+6");
         cb_buff[E_SE] = new JCheckBox("ストームアイ");
         cb_buff[E_SE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SE].setToolTipText("風属性遠距離ダメージ+3　遠距離命中+2");
+        cb_buff[E_SE].setToolTipText("風属性遠距離ダメージ+3 遠距離命中+2");
         cb_buff[E_SS] = new JCheckBox("ストームショット");
         cb_buff[E_SS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_SS].setToolTipText("風属性遠距離ダメージ+6　遠距離命中+3");
+        cb_buff[E_SS].setToolTipText("風属性遠距離ダメージ+6 遠距離命中+3");
         //cb_buff[E_WW] = new JCheckBox("ウインドウォーク");
         //cb_buff[E_WW].setBounds(200 * row, 20 * col++, 150, 20);
         //cb_buff[E_WW].setToolTipText("移動速度上昇");
@@ -1344,7 +1350,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_QE].setToolTipText("一定の確率で近距離ダメージ1.5倍");
         cb_buff[E_EW] = new JCheckBox("アースウェポン");
         cb_buff[E_EW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EW].setToolTipText("地属性近距離ダメージ+2　近距離命中+4");
+        cb_buff[E_EW].setToolTipText("地属性近距離ダメージ+2 近距離命中+4");
 
         col = 0;
         row = 2;
@@ -1474,8 +1480,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        cb_buff[ITEM_BLUE] = new JCheckBox("ブルーポーション");
+        //魔力回復ポーション(魔力回復ポーション/古代の魔力回復ポーション/神秘の濃縮マナポーション)
+        cb_buff[ITEM_BLUE] = new JCheckBox("魔力回復ポーション");
         cb_buff[ITEM_BLUE].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[ITEM_BLUE].setToolTipText("<html>"+ "魔力回復ポーション"
+                                     + "<br>"+ "古代の魔力回復ポーション"
+                                     + "<br>"+ "神秘の濃縮マナポーション"+"</html>");       
+
         cb_buff[ITEM_WIZP] = new JCheckBox("ウィズダムポーション");
         cb_buff[ITEM_WIZP].setBounds(200 * row, 20 * col++, 150, 20);
 
@@ -1546,9 +1557,16 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[KOMA] = new JCheckBox("コマのエンチャ");
         cb_buff[KOMA].setBounds(200 * row, 20 * col++, 100, 20);
 
-        cb_buff[SEC] = new JCheckBox("セキュリティ");
-        cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
+//基本(前半)部分へ移動の為､コメントアウト
+//        cb_buff[SEC] = new JCheckBox("セキュリティ");
+//        cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
 
+        String list_magan[] = {"地竜の魔眼","水竜の魔眼","風竜の魔眼","火竜の魔眼","誕生の魔眼","形状の魔眼","生命の魔眼", "グレムリンの魔眼"};
+        cb_buff_group[ITEM_MAGAN] = new WideComboBox(list_magan);
+        cb_buff_group[ITEM_MAGAN].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[ITEM_MAGAN] = new JCheckBox("魔眼");
+        cb_buff[ITEM_MAGAN].setBounds(200 * row, 20 * col++, 100, 20);
+        
         String list_vip[] = {"Red", "Gold", "Platinum"};
         cb_buff_group[VIP] = new WideComboBox(list_vip);
         cb_buff_group[VIP].setBounds(200 * row + 100, 20 * col, 80, 20);
