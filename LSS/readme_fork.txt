@@ -1,10 +1,22 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/12/28
+Update 3.2.0
+LSS/src/lss/LEV.java
+	LV96までの対応(エリクサー最大仕様数10個に対応する為)
+
+LSS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+	LV96までの対応(LV92から変更)
+	パネル2(レベル/エリクサー)のエリクサー最大使用数10個(LV95時)に対応
+	パネル3(エンチャント)のSTR部分のツールチップ修正
+	パネル4(耐性設定)のMRを標準100に設定
+
 2018/12/27
 Update 3.1.9
-SS/src/lss/UI.java
-SS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+LSS/src/lss/Calculator.java
 位置移動
 	UIのセキュリティの位置移動
 
@@ -40,13 +52,13 @@ SS/src/lss/Calculator.java
 
 	グレムリンの魔眼 近距離ダメージ+2 遠距離ダメージ+2 SP+1
 
-SS/src/lss/Common.java
+LSS/src/lss/Common.java
 変数追加
 	ITEM_MAGAN = 98;(魔眼)で計99個分(0から98)
 
 2018/12/26
 Update 3.1.8
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 	轟音のデュアルブレードは存在しないので処理の削除
 	咆哮のデュアルブレードのダメージ処理式の修正
 
@@ -59,16 +71,16 @@ SS/src/lss/Calculator.java
 
 2018/12/24
 Update 3.1.7
-SS/src/lss/Common.java
+LSS/src/lss/Common.java
 	変数DRAGONをDRAGONRAIDへ予約変更(2018/12/21 Update 3.1.4)の修正
 
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 	マジックドールの効果の修正
 	ツールチップの追加及び修正
 	闘士の戦闘強化スクロール/射手の戦闘強化スクロール/賢者の戦闘強化スクロールを追加
 	キーリンクのbigダメージにクリティカルダメージが反映されてない為、処理を修正
 
-SS/src/lss/UI.java
+LSS/src/lss/UI.java
 	パネル3(エンチャント)のUI修正
 
 2018/12/22
@@ -81,7 +93,7 @@ LSS/data/E.zip
 	ファイアーガーダー	>>>	火霊のガーダー
 	クーガーのガーダー 	>>>	クーガーのガーダー(名前の後ろに半角スペースがあり削除)
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 処理部分の名称修正
 	アースガーダー		>>>	地霊のガーダー
 	ウォーターガーダー	>>>	水霊のガーダー
@@ -131,13 +143,13 @@ LSS/data/E.zip
 	光るエルモアキーリンク
 	[SP=1]と設定するところ[SP+1]としていた為､修正
 
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 ツールチップの修正
 	石化命中/睡眠命中/凍結命中/暗闇命中/スタン命中/ホールド命中/恐怖命中/破壊命中の表記を
 	石化命中+/睡眠命中+/凍結命中+/暗闇命中+/スタン命中+/ホールド命中+/恐怖命中+/破壊命中+へ変更
 
-SS/src/lss/Buki.java
-SS/src/lss/Common.java
+LSS/src/lss/Buki.java
+LSS/src/lss/Common.java
 	殺意のキーリンクの強化時の追加オプションの反映
 	*注意:竜語命中+7から+1増加(最大+4)は準備のみで未実装
 	//final int DRAGON = 16;
@@ -233,13 +245,13 @@ LSS/data/E.zip
 	追加ダメージ+8 近距離命中+2
 	装備可能クラス:ウォリアー
 
-SS/src/lss/Buki.java
+LSS/src/lss/Buki.java
 	+10以上のレジェンド武器のエンチャントによる追加打撃を修正
 
 2018/10/30
 Update 3.1.2
 LSS/data/E.zip
-SS/src/lss/Buki.java
+LSS/src/lss/Buki.java
 装備追加
 	http://event2.ncsoft.jp/1.0/lineage/1810halloween/
 	ハロウィンソード
@@ -257,23 +269,23 @@ SS/src/lss/Buki.java
 
 2018/10/15
 Update 3.1.1
-SS/src/lss/Calculator.java
-SS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
 	2017/07/19 Update
 	エリクサー最大使用数6個(LV75時)に対応
 
 Update 3.1.0
-SS/src/lss/Calculator.java
-SS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
 	ドラゴンの遺物/強化されたドラゴンの遺物(腕力/知力/機敏)を実装
 	2018/04/25 Update
 	http://event2.ncsoft.jp/1.0/lineage/1804dragonItem/
 
-SS/src/lss/Bougu.java
-SS/src/lss/Buki.java
-SS/src/lss/Calculator.java
-SS/src/lss/UI.java
-SS/src/lss/WideComboBox.java
+LSS/src/lss/Bougu.java
+LSS/src/lss/Buki.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+LSS/src/lss/WideComboBox.java
 	全体的なソースコードの修正
 	NetBeans IDEでFindBugs Integration[バグパターンに合致する箇所を検出するツール]という
 	便利なプラグインがあり、使用しわかる範囲で修正
@@ -292,11 +304,11 @@ Update 3.0.9
 LSS/data/E.zip
 	幸運のアロー追加
 
-SS/src/lss/Bougu.java
-SS/src/lss/Buki.java
-SS/src/lss/Calculator.java
-SS/src/lss/FSCalclator.java
-SS/src/lss/UI.java
+LSS/src/lss/Bougu.java
+LSS/src/lss/Buki.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/FSCalclator.java
+LSS/src/lss/UI.java
 	全体的なソースコードの修正
 	NetBeans IDEでFindBugs Integration[バグパターンに合致する箇所を検出するツール]という
 	便利なプラグインがあり、使用しわかる範囲で修正
@@ -328,7 +340,7 @@ LSS/data/E.zip
 	x10_アースガーダー.txt
 	02_アイリスのブーツ.txt
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 処理の修正
 	[知識のブーツ]の処理してたところの名前を[知力のブーツ]に修正
 
@@ -368,8 +380,8 @@ SS/src/lss/Bougu.java
 
 2018/10/09
 Update 3.0.7
-SS/src/lss/Calculator.java
-SS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
 	古代の加護/アルカの遺物/強化されたアルカの遺物を実装
 	今後のLV80/LV85/LV90のエリクサールーンも暫定で実装
 	2017/01/25 Update
@@ -389,17 +401,17 @@ LSS/data/E.zip
 	02_マミーロードのグローブ.txt
 	[特殊=+7から[SP]+1増加(最大+3)]を削除
 
-SS/src/lss/Buff.java
+LSS/src/lss/Buff.java
 	防具のツールチップに重さを表示する為に変数を武器の変数と統一[WEIGHT]へ
 	[重さ=]を読み取り[WEIGHT]へ入力処理
 
-SS/src/lss/Buki.java
+LSS/src/lss/Buki.java
 	武器のツールチップだけで使用してた[weight]を削除
 
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 	統一した[WEIGHT]を使用し[重さ]を表示
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	マミーロードのグローブの特殊=+7から[SP]+1増加(最大+3)の処理追加
 	防具のツールチップに[WEIGHT]を使用し[重さ]を表示
 	[重さ=]の登録がない装備は重さ表示はされない
@@ -506,7 +518,7 @@ http://www.ncsoft.jp/lineage/news/notice/view?bbsNo=3101&articleNo=1877
 0710008_ロンドゥデュアルブレード.txt
 	[魔法=イラプション]を[魔法=リベンジ]へ変更
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	[ブラックナイトヘルム]
 	+5以上1強化毎にMR+4の処理追加
 
@@ -534,7 +546,7 @@ SS/src/lss/Bougu.java
 	[漆黒の水晶球]
 	+9強化でCHA+1の処理追加
 
-SS/src/lss/Buki.java
+LSS/src/lss/Buki.java
 	[バフォメットスタッフ]
 	+7以降強化1毎にSP+1(+9まで適用)の処理追加
 
@@ -572,11 +584,11 @@ LSS/data/E.zip
 	g_幸運のサークレット.txt
 	[SP=0]を[SP=1]へ変更
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	幸運のサークレットのSP+1の処理がBougu.javaで行われていたので修正
 	不要なコメント削除
 
-SS/src/lss/Buki.java
+LSS/src/lss/Buki.java
 	不要なコメント削除
 
 2018/10/07
@@ -584,14 +596,14 @@ Update 3.0.3
 LSS/data/E.zip
 	裂空のTシャツのTが全角になっていた為修正
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	裂空のTシャツの+1強化毎にスタン耐性+1増加に対応
 
 Update 3.0.2
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 	オルターストーン7段階に[AC+1] 処理を[AC-1]へ修正
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	マミーロードクラウン
 	+7から[遠距離ダメージ]+1増加(最大+3)
 
@@ -638,19 +650,19 @@ LSS_launcher/Updater.java
 	Min JRE version:1.8.0
 
 Update
-SS/src/lss/Bougu.java
-SS/src/lss/Buff.java
-SS/src/lss/Buki.java
-SS/src/lss/Calculator.java
-SS/src/lss/Common.java
-SS/src/lss/FSCalclator.java
-SS/src/lss/HitRateCalculator.java
-SS/src/lss/LEV.java
-SS/src/lss/LSS.java
-SS/src/lss/Morph.java
-SS/src/lss/MyToggleButton.java
-SS/src/lss/UI.java
-SS/src/lss/WideComboBox.java
+LSS/src/lss/Bougu.java
+LSS/src/lss/Buff.java
+LSS/src/lss/Buki.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/Common.java
+LSS/src/lss/FSCalclator.java
+LSS/src/lss/HitRateCalculator.java
+LSS/src/lss/LEV.java
+LSS/src/lss/LSS.java
+LSS/src/lss/Morph.java
+LSS/src/lss/MyToggleButton.java
+LSS/src/lss/UI.java
+LSS/src/lss/WideComboBox.java
 LSS/data/E.zip
 	開発環境では動作するが、他PCでは起動しないことが判明した。
 	原因は文字コードみたいだが解決方法が見つからない為、元に戻すことに決定する。
@@ -710,8 +722,8 @@ LSS/dist/LSS.jar
 		[netbeans_default_optionsに -J-Dfile.encoding=UTF-8]を追加
 
 Update
-SS/src/lss/Calculator.java
-SS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
 	オルタストーンの+7強化を実装
 	2017/11/22 Update
 	http://event2.ncsoft.jp/1.0/lineage/1711alterstone/
@@ -728,7 +740,7 @@ LSS/data/E.zip
 	06_カーツの射手の守護インシグニア.txt
 	07_カーツの賢者の守護インシグニア.txt
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	新規インシグニアの追加
 	2018/08/15 Update
 	https://event2.ncsoft.jp/1.0/lineage/1808insigniaofKurtz/
@@ -737,8 +749,8 @@ SS/src/lss/Bougu.java
 	カーツの賢者の守護インシグニア
 
 Update
-SS/src/lss/Calculator.java
-SS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
 	新規マジックドールの追加(カーツ/バフォメット/堕落)
 	2017/09/27 Update
 	http://event2.ncsoft.jp/1.0/lineage/1709magicdoll/
@@ -747,10 +759,10 @@ SS/src/lss/UI.java
 	堕落          SP+5 魔法命中+5 MP絶対回復+16(64秒)
 
 Update
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 	[pvp_dg]と[pvp_dgr]を追加しPVP追加ダメージとPVPダメージリダクションを計算
 
-SS/src/lss/UI.java
+LSS/src/lss/UI.java
 	表示用に[lab_pvp_dg]と[lab_pvp_dgr]を追加しPVP追加ダメージとPVPダメージリダクションを表示
 
 Update
@@ -761,23 +773,23 @@ LSS/data/E.zip
 	ヴァラカスフレイムレザーアーマー
 	ヴァラカスフレイムローブ
 
-SS/src/lss/Buff.java
-SS/src/lss/Buki.java
-SS/src/lss/Calculator.java
+LSS/src/lss/Buff.java
+LSS/src/lss/Buki.java
+LSS/src/lss/Calculator.java
 	変数の統一
 	[dr_ignored]を[DR_IGNORED]へ
 	[PVPDR]を[PVP_DR]へ
 
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	防具のダメージリダクション無視を実装
 
-SS/src/lss/Calculator.java
-SS/src/lss/UI.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
 	パネル1に武器と防具のダメージリダクション無視を合計したものを表示
 	近距離/遠距離/魔法クリティカルもすぐに確認できるようにパネル1でも表示
 
 Update
-SS/src/lss/Bougu.java
+LSS/src/lss/Bougu.java
 	強化値で[近距離クリティカル][遠距離クリティカル][魔法クリティカル]が反映されるように修正
 	[ダメージリダクション無視]は未実装
 	ヴァラカスフレイムプレートメイル
@@ -787,19 +799,19 @@ SS/src/lss/Bougu.java
 
 2018/10/01
 Update
-SS/src/lss/Bougu.java
-SS/src/lss/Buff.java
-SS/src/lss/Buki.java
-SS/src/lss/Calculator.java
-SS/src/lss/Common.java
-SS/src/lss/FSCalclator.java
-SS/src/lss/HitRateCalculator.java
-SS/src/lss/LEV.java
-SS/src/lss/LSS.java
-SS/src/lss/Morph.java
-SS/src/lss/MyToggleButton.java
-SS/src/lss/UI.java
-SS/src/lss/WideComboBox.java
+LSS/src/lss/Bougu.java
+LSS/src/lss/Buff.java
+LSS/src/lss/Buki.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/Common.java
+LSS/src/lss/FSCalclator.java
+LSS/src/lss/HitRateCalculator.java
+LSS/src/lss/LEV.java
+LSS/src/lss/LSS.java
+LSS/src/lss/Morph.java
+LSS/src/lss/MyToggleButton.java
+LSS/src/lss/UI.java
+LSS/src/lss/WideComboBox.java
 	ソースコードが文字コードANSI(Shift-JIS)の為、GitHub Desktopで文字化けを起こす
 	ので文字化けを起こさないUTF-8にする。またBOM無しにして今後メモ帳を使わずに
 	TeraPadかNetBeans IDEで修正する。
@@ -812,16 +824,16 @@ LSS/nbproject/project.properties
 	NetBeansIDE 8.2のプロジェクト用の初期設定をShift-JISからUTF-8へ変更
 
 Update
-SS/src/lss/UI.java
+LSS/src/lss/UI.java
 	現在のエリクサルーンの位置にタリスマンを実装
 	スポールダーと紋章の間にエリクサルーンの位置を移動
 
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 	タリスマンの効果を実装
 
 2018/09/30
 Update
-SS/src/lss/UI.java
+LSS/src/lss/UI.java
 	ToolTipManagerを使用して実装
 	ツールチップの表示時間を4秒(4000)から6秒(6000)へ
 
@@ -840,7 +852,7 @@ LSS/src/lss/Buff.java
 	武器のダメージリダクションを実装
 	DRの表示に武器分のダメージリダクションも反映するように修正
 
-SS/src/lss/Calculator.java
+LSS/src/lss/Calculator.java
 	武器のチップセットにダメージリダクションを追加
 
 Update
