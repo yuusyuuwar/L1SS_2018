@@ -191,8 +191,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
     //パネル２
     JLabel[][] pure_status_bonus = new JLabel[2][25];
 
-    JComboBox[] cb_elixir = new JComboBox[6];
-    JComboBox[] cb_elixir_level = new JComboBox[6];
+    JComboBox[] cb_elixir = new JComboBox[10];
+    JComboBox[] cb_elixir_level = new JComboBox[10];
     LEV lev = new LEV();
 
     //パネル３
@@ -350,7 +350,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(lab_tmp);
         commons.add(lab_tmp);
 
-        String lev_list[] = new String[92];
+        //String lev_list[] = new String[92];
+        String lev_list[] = new String[96];     //LV96対応
         for (int i = 0; i < lev_list.length; i++) {
             lev_list[i] = Integer.toString(i + 1);
         }
@@ -1078,12 +1079,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         String elixir_list[] = {"---", "STR", "DEX", "CON", "INT", "WIS",
             "CHA"};
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 10; i++) {
             cb_elixir[i] = new JComboBox(elixir_list);
             cb_elixir_level[i] = new JComboBox(lev_list);
-            cb_elixir[i].setBounds(30 + 100 * i, 500, 50, 20);
+            cb_elixir[i].setBounds(30 + 70 * i, 500, 50, 20);
             cb_elixir[i].addActionListener(this);
-            cb_elixir_level[i].setBounds(30 + 100 * i, 520, 100, 20);
+            cb_elixir_level[i].setBounds(30 + 70 * i, 520, 70, 20);
             cb_elixir_level[i].setSelectedItem(Integer.toString(50 + 5 * i));
             cb_elixir_level[i].addActionListener(this);
             panels[1].add(cb_elixir[i]);
@@ -1126,7 +1127,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 + "<br>"+ "激励のポーション STR+6"
                 + "<br>"+ "フローラのポーション STR+6(DEX+6)"
                 + "<br>"+ "四季のポーション STR+6(DEX+6 AC-5)"
-                + "<br>"+ "偉大な勇者のスクロール DEX+7"
+                + "<br>"+ "偉大な勇者のスクロール STR+7"
                 + "<br>"+ "クリスマスキャンディー STR+7(DEX+7)"+"</html>");
         cb_buff[B_STR].setBounds(0, 20 * col++, 100, 20);
 
@@ -1656,11 +1657,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp = new JLabel("MR", SwingConstants.CENTER);
         lab_tmp.setBounds(0, 125, 100, 25);
         panels[3].add(lab_tmp);
-        s_target_mr = new JSlider(0, 200, 0);
+        s_target_mr = new JSlider(0, 200, 100);
         s_target_mr.setBounds(100, 125, 100, 25);
         s_target_mr.addChangeListener(this);
         panels[3].add(s_target_mr);
-        lab_target_mr = new JLabel("0", SwingConstants.CENTER);
+        lab_target_mr = new JLabel("100", SwingConstants.CENTER);
         lab_target_mr.setBounds(200, 125, 100, 25);
         panels[3].add(lab_target_mr);
 
