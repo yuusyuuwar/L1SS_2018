@@ -529,7 +529,6 @@ int data[][][] = new int[15][2][BUKI_TYPE_LIST.length + 2];
             return data[L75][mode][type];
         } else if (level < 82) {
             return data[L80][mode][type];
-        //} else if (level < 85) {
         } else if (level < 84) {
             return data[L82][mode][type];
         } else if (level < 99) {

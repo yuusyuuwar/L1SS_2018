@@ -1,6 +1,21 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2018/12/30
+Update 3.2.1
+LSS/src/lss/UI.java
+	コメントの修正
+	設定したエリクサールーンレベルとエリクサルーンの保存と読込に対応
+
+LSS/src/lss/Calculator.java
+	デバッグ用のコードのコメントアウト
+
+LSS/src/lss/Common.java
+	変数にコメント追加(使用/未使用の把握の為)
+
+LSS/src/lss/Morph.java
+	コメントの削除
+
 2018/12/28
 Update 3.2.0
 LSS/src/lss/LEV.java
