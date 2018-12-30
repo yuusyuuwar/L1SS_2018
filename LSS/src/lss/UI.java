@@ -751,14 +751,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_eq[1].setEnabled(false);
         cb_eq_en[1].setEnabled(false);
         
-        //エリクサールーン
+        //エリクサールーンレベル
         String[] elixir_rune_en_list = {"", "L70", "L80", "L85", "L90"};
         elixir_rune_en = new JComboBox(elixir_rune_en_list);
         elixir_rune_en.setBounds(0, 460, 50, 20);
         elixir_rune_en.addActionListener(this);
         panels[0].add(elixir_rune_en);
-        
-//        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン", "力のエリクサールーン(Lv70)", "機敏のエリクサールーン(Lv70)", "体力のエリクサールーン(Lv70)", "知力のエリクサールーン(Lv70)", "知恵のエリクサールーン(Lv70)"};
+
+        //エリクサールーン
         String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン","古代の加護","アルカの遺物","強化されたアルカの遺物","ドラゴンの遺物","強化されたドラゴンの遺物(腕力)","強化されたドラゴンの遺物(知力)","強化されたドラゴンの遺物(機敏)"};
         elixir_rune = new WideComboBox(elixir_rune_list);
         elixir_rune.setBounds(50, 460, 150, 20);
@@ -794,16 +794,14 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(cb_pattern_l2);
         panels[0].add(cb_pattern_r2);
 
-        //オルタストーン
+        //オルターストーン
         String[] en_list = {"", "+1", "+2", "+3", "+4", "+5", "+6", "+7"};
         cb_alterstone_en = new JComboBox(en_list);
         cb_alterstone_en.setBounds(0, 400 + 140, 50, 20);
         cb_alterstone_en.addActionListener(this);
         panels[0].add(cb_alterstone_en);
 
-        //String[] alterstone_op_list = {"", "近距離命中 +2", "遠距離命中 +2", "魔法致命打",
-        //    "遠距離ダメージ +1", "SP +1", "魔法消耗減少",
-        //    "一撃必殺(1%確率で追加ダメージ50)", "近距離ダメージ +1"};
+        //オルターストーンオプション
         String[] alterstone_op_list = {"", "近距離ダメージ +1", "遠距離ダメージ +1","近距離命中 +2",
             "遠距離命中 +2", "SP +1", "魔法クリティカル +1", "魔法消耗減少＋2", "一撃必殺(1%確率で追加ダメージ50)"};
         for (int i = 0; i < cb_alterstone_op.length; i++) {
@@ -1577,7 +1575,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
 
-        cb_buff[BS_COIN] = new JCheckBox("黒蛇の加護");
+        cb_buff[BS_COIN] = new JCheckBox("黒蛇のコイン");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ減少+3 闇耐性+10");
 
@@ -2727,6 +2725,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
     }
 
+//キャラクターデーター保存
     private Document createDocument() throws ParserConfigurationException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -2831,6 +2830,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         pattern.appendChild(e_pattern_r2);
         e_pattern_r2.setTextContent(cb_pattern_r2.getSelectedItem().toString());
 
+        Element e_elixir_rune = document.createElement("エリクサールーン");
+        e_elixir_rune.setAttribute("enchant", (String) elixir_rune_en.getSelectedItem());
+        e_elixir_rune.setAttribute("id", (String) elixir_rune.getSelectedItem());
+        root.appendChild(e_elixir_rune);
+
         Element e_alterstone = document.createElement("オルターストーン");
         e_alterstone.setAttribute("enchant", (String) cb_alterstone_en.getSelectedItem());
         e_alterstone.setAttribute("op1", (String) cb_alterstone_op[0].getSelectedItem());
@@ -2884,6 +2888,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         return document;
     }
 
+//キャラクターデーター読込
     private void loadDocument(Document document) {
         calc.rem_reset();
         cb_cls.setSelectedItem(document.getDocumentElement().getElementsByTagName("クラス").item(0).getTextContent());
@@ -3001,6 +3006,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 default:
                     break;
             }
+        }
+
+        if (document.getDocumentElement().getElementsByTagName("エリクサールーン").getLength() == 1) {
+            Node en_elixir_rune = document.getDocumentElement().getElementsByTagName("エリクサールーン").item(0);
+            elixir_rune_en.setSelectedItem(en_elixir_rune.getAttributes().getNamedItem("enchant").getNodeValue());
+            elixir_rune.setSelectedItem(en_elixir_rune.getAttributes().getNamedItem("id").getNodeValue());
         }
 
         if (document.getDocumentElement().getElementsByTagName("オルターストーン").getLength() == 1) {
