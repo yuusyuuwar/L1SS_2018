@@ -1210,15 +1210,16 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[P_BA] = new JCheckBox("ブレイブアバター");
         cb_buff[P_BA].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
-          
+//        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
+        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 技術耐性+2 精霊耐性+2 竜語耐性+2 恐怖耐性+2");
+
         String list_P_GA[] = {"君主L80", "君主L81", "君主L82", "君主L83", "君主L84", "君主L85+"};
         cb_buff_group[P_GA] = new WideComboBox(list_P_GA);
         cb_buff_group[P_GA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_GA] = new JCheckBox("グレースアバター");
         cb_buff[P_GA].setBounds(0, 20 * col++, 100, 20);
-        cb_buff[P_GA].setToolTipText("スタン耐性+10 ホールド耐性+10 恐怖耐性+10 LV80からLV1毎に耐性+1増加[最大+15]");
-
+//        cb_buff[P_GA].setToolTipText("スタン耐性+10 ホールド耐性+10 恐怖耐性+10 LV80からLV1毎に耐性+1増加[最大+15]");
+//        cb_buff[P_GA].setToolTipText("技術耐性+5 精霊耐性+5 竜語耐性+5 恐怖耐性+5 LV80からLV1毎に耐性+1増加[最大+15]");
         col++;
 
         lab_tmp = new JLabel("騎士技術");
@@ -1241,11 +1242,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[K_CB].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_CB].setToolTipText("両手剣装備時 一定確率で近接攻撃回避+反撃");
         
-        cb_buff[K_PD] = new JCheckBox("プライド(未実装)");
+        cb_buff[K_PD] = new JCheckBox("プライド");
         cb_buff[K_PD].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_PD].setToolTipText("最大HP Lv/4% 増加");
 
-        cb_buff[K_BK] = new JCheckBox("ブローアタック(未実装)");
+        cb_buff[K_BK] = new JCheckBox("ブローアタック");
         cb_buff[K_BK].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_BK].setToolTipText("一定確率で近接ダメージを1.5倍 LV75からLV1毎に発動率1%増加");
         
@@ -1400,8 +1401,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[R_FAFURION].setToolTipText("重量オーバ時でも自然回復 凍結耐性+10");
         cb_buff[R_VALAKAS] = new JCheckBox("覚醒[ヴァラカス]");
         cb_buff[R_VALAKAS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_VALAKAS].setToolTipText("近接命中+5 スタン耐性+10");
-        cb_buff[R_LINDVIOL] = new JCheckBox("覚醒[リンドビオル](未実装)");
+//        cb_buff[R_VALAKAS].setToolTipText("近接命中+5 スタン耐性+10");
+        cb_buff[R_VALAKAS].setToolTipText("近接命中+5 技術耐性+10");
+        cb_buff[R_LINDVIOL] = new JCheckBox("覚醒[リンドビオル]");
         cb_buff[R_LINDVIOL].setBounds(200 * row, 20 * col++, 180, 20);
         cb_buff[R_LINDVIOL].setToolTipText("DG+7");
 
@@ -1428,7 +1430,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[I_RW].setToolTipText("重量-180");
         cb_buff[I_IO] = new JCheckBox("幻術[オーガ]");
         cb_buff[I_IO].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_IO].setToolTipText("ダメージ+4 命中+4");
+        cb_buff[I_IO].setToolTipText("近距離ダメージ+4 近距離命中+4 遠距離ダメージ+4 遠距離命中+4");
         cb_buff[I_IR] = new JCheckBox("幻術[リッチ]");
         cb_buff[I_IR].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_IR].setToolTipText("SP+2");
@@ -1437,11 +1439,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[I_ID].setToolTipText("AC-8");
         cb_buff[I_IA] = new JCheckBox("幻術[アバター]");
         cb_buff[I_IA].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_IA].setToolTipText("与ダメージ+10 被ダメージ+5%");
-        cb_buff[I_FS] = new JCheckBox("フォーカススピリッツ(未実装)");
+        cb_buff[I_IA].setToolTipText("近距離ダメージ+10 遠距離ダメージ+10 魔法ダメージ+10 被ダメージ+5%");
+        cb_buff[I_FS] = new JCheckBox("フォーカススピリッツ");
         cb_buff[I_FS].setBounds(200 * row, 20 * col++, 180, 20);
         cb_buff[I_FS].setToolTipText("魔法クリティカル+5%");
-        cb_buff[I_IT] = new JCheckBox("インパクト(未実装)");
+        cb_buff[I_IT] = new JCheckBox("インパクト");
         cb_buff[I_IT].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_IT].setToolTipText("技術命中+5 精霊命中+5 竜語命中+5 恐怖命中+5");        
 
@@ -2668,6 +2670,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             if (e.getActionCommand().equals("paste")) {
                 mem.load_from_mem(copy);
             }
+            //リセットボタン押した時の動作
             if (e.getActionCommand().equals("reset")) {
 
                 for (int i = 0; i < EQ_LIST.length; i++) {

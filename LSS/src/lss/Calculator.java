@@ -710,7 +710,7 @@ public class Calculator implements Common {
                     break;
                 case 6:                             //ƒCƒGƒeƒB
                     buff.AC -= 3;
-                    buff.ailment[FREEZE] += 7;
+//                    buff.ailment[FREEZE] += 7;
                     ui.cb_buff[ITEM_MD].setToolTipText("AC-3 “€Œ‹‘Ï«+7");
                     break;
                 case 7:                             //ƒRƒJƒgƒŠƒX
@@ -1641,7 +1641,7 @@ public class Calculator implements Common {
                 ui.cb_buff[R_ANTHARAS].setSelected(false);
             } else {
                 buff.AC -= 3;
-                buff.ailment[HOLD] += 10;
+//                buff.ailment[HOLD] += 10;
                 if (ui.cb_buff[R_ANTHARAS].getForeground().equals(Color.BLUE)) {
                     cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
                 }
@@ -1654,7 +1654,7 @@ public class Calculator implements Common {
                     || ui.cb_buff[R_LINDVIOL].isSelected()) {
                 ui.cb_buff[R_FAFURION].setSelected(false);
             } else {
-                buff.ailment[FREEZE] += 10;
+//                buff.ailment[FREEZE] += 10;
                 if (ui.cb_buff[R_FAFURION].getForeground().equals(Color.BLUE)) {
                     cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
                 }
@@ -1736,13 +1736,17 @@ public class Calculator implements Common {
                     cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 0.25;
                 }
             	if (level >= 85) {
-        	    buff.ailment[HIT_STUN] += 10;                       //ƒXƒ^ƒ“–½’†+10
-        	    buff.ailment[HIT_DESTRUCTION] += 10;                //”j‰ó–½’†+10
+        	    buff.ailment[HIT_STUN] += 10;                       //‹Zp–½’†+10
+//        	    buff.ailment[HIT_DESTRUCTION] += 10;                //”j‰ó–½’†+10
+        	    buff.ailment[HIT_SPIRIT] += 10;                     //¸—ì–½’†+10
+        	    buff.ailment[HIT_DRAGON] += 10;                     //—³Œê–½’†+10
         	    buff.ailment[HIT_TERROR] += 10;                     //‹°•|–½’†+10      
         	} else if (level >= 80) {
-        	    buff.ailment[HIT_STUN] += 5 + (level - 80);         //ƒXƒ^ƒ“–½’†+(level - 75)
-        	    buff.ailment[HIT_DESTRUCTION] += 5 + (level - 80);  //”j‰ó–½’†+(level - 75)
-        	    buff.ailment[HIT_TERROR] += 5 + (level - 80);       //‹°•|–½’†+(level - 75)
+        	    buff.ailment[HIT_STUN] += 5 + (level - 80);         //‹Zp–½’†+(level - 75)
+//        	    buff.ailment[HIT_DESTRUCTION] += 5 + (level - 80);  //”j‰ó–½’†+(level - 75)
+        	    buff.ailment[HIT_SPIRIT] += 5 + (level - 80);       //¸—ì–½’†+(level - 75)
+        	    buff.ailment[HIT_DRAGON] += 5 + (level - 80);       //—³Œê–½’†+(level - 75)
+                    buff.ailment[HIT_TERROR] += 5 + (level - 80);       //‹°•|–½’†+(level - 75)
         	}
             } else {
                 ui.cb_buff[I_IT].setSelected(false);
@@ -2600,57 +2604,61 @@ public class Calculator implements Common {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ƒuƒŒƒCƒuƒAƒoƒ^[ Á”ïMP0/íŽž
+        //ƒuƒŒƒCƒuƒAƒoƒ^[ Á”ïMP0/íŽž STR+1 DEX+1 INT+1 MR+10% ‹Zp‘Ï«+2 ¸—ì‘Ï«+2 —³Œê‘Ï«+2 ‹°•|‘Ï«+2
         if (ui.cb_buff[P_BA].isSelected()) {
             buff.MR += 10;
             buff.ailment[STUN] += 2;
-            buff.ailment[HOLD] += 2;
+            buff.ailment[SPIRIT] += 2;
+            buff.ailment[DRAGON] += 2;
+            buff.ailment[TERROR] += 2;
             buff.ST[STR] += 1;
             buff.ST[DEX] += 1;
             buff.ST[INT] += 1;
         }
-        //ƒOƒŒ[ƒXƒAƒoƒ^[ Á”ïMP15/15•b
+        //ƒOƒŒ[ƒXƒAƒoƒ^[ Á”ïMP15/15•b ‹Zp‘Ï«+5 ¸—ì‘Ï«+5 —³Œê‘Ï«+5 ‹°•|‘Ï«+5 ƒŒƒxƒ‹80‚©‚ç+1‚¸‚Â‘‰Á(Å‘å+10)
         if (ui.cb_buff[P_GA].isSelected()) {
             switch ((String) ui.cb_buff_group[P_GA].getSelectedItem()) {
-                case "ŒNŽåLV80":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+10 ƒz[ƒ‹ƒh‘Ï«+10 ‹°•|‘Ï«+10");
-                    buff.ailment[STONE] += 0;
-                    buff.ailment[SLEEP] += 0;
-                    buff.ailment[FREEZE] += 0;
-                    buff.ailment[DARKNESS] += 0;
+                case "ŒNŽåL80":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+5 ¸—ì‘Ï«+5 —³Œê‘Ï«+5 ‹°•|‘Ï«+5");
+                    buff.ailment[STUN] += 5;
+                    buff.ailment[SPIRIT] += 5;
+                    buff.ailment[DRAGON] += 5;
+                    buff.ailment[TERROR] += 5;
+                    break;
+                case "ŒNŽåL81":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+6 ¸—ì‘Ï«+6 —³Œê‘Ï«+6 ‹°•|‘Ï«+6");
+                    buff.ailment[STUN] += 6;
+                    buff.ailment[SPIRIT] += 6;
+                    buff.ailment[DRAGON] += 6;
+                    buff.ailment[TERROR] += 6;
+                    break;
+                case "ŒNŽåL82":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+7 ¸—ì‘Ï«+7 —³Œê‘Ï«+7 ‹°•|‘Ï«+7");
+                    buff.ailment[STUN] += 7;
+                    buff.ailment[SPIRIT] += 7;
+                    buff.ailment[DRAGON] += 7;
+                    buff.ailment[TERROR] += 7;
+                    break;
+                case "ŒNŽåL83":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+8 ¸—ì‘Ï«+8 —³Œê‘Ï«+8 ‹°•|‘Ï«+8");
+                    buff.ailment[STUN] += 8;
+                    buff.ailment[SPIRIT] += 8;
+                    buff.ailment[DRAGON] += 8;
+                    buff.ailment[TERROR] += 8;
+                    break;
+                case "ŒNŽåL84":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+9 ¸—ì‘Ï«+9 —³Œê‘Ï«+9 ‹°•|‘Ï«+9");
+                    buff.ailment[STUN] += 9;
+                    buff.ailment[SPIRIT] += 9;
+                    buff.ailment[DRAGON] += 9;
+                    buff.ailment[TERROR] += 9;
+                    break;
+                case "ŒNŽåL85+":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+10 ¸—ì‘Ï«+10 —³Œê‘Ï«+10 ‹°•|‘Ï«+10");
                     buff.ailment[STUN] += 10;
-                    buff.ailment[HOLD] += 10;
+                    buff.ailment[SPIRIT] += 10;
+                    buff.ailment[DRAGON] += 10;
                     buff.ailment[TERROR] += 10;
-                    break;
-                case "ŒNŽåLV81":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+11 ƒz[ƒ‹ƒh‘Ï«+11 ‹°•|‘Ï«+11");
-                    buff.ailment[STUN] += 11;
-                    buff.ailment[HOLD] += 11;
-                    buff.ailment[TERROR] += 11;
-                    break;
-                case "ŒNŽåLV82":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+12 ƒz[ƒ‹ƒh‘Ï«+12 ‹°•|‘Ï«+12");
-                    buff.ailment[STUN] += 12;
-                    buff.ailment[HOLD] += 12;
-                    buff.ailment[TERROR] += 12;
-                    break;
-                case "ŒNŽåLV83":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+13 ƒz[ƒ‹ƒh‘Ï«+13 ‹°•|‘Ï«+13");
-                    buff.ailment[STUN] += 13;
-                    buff.ailment[HOLD] += 13;
-                    buff.ailment[TERROR] += 13;
-                    break;
-                case "ŒNŽåLV84":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+14 ƒz[ƒ‹ƒh‘Ï«+14 ‹°•|‘Ï«+14");
-                    buff.ailment[STUN] += 14;
-                    buff.ailment[HOLD] += 14;
-                    buff.ailment[TERROR] += 14;
-                    break;
-                case "ŒNŽåLV85":
-                    ui.cb_buff[P_GA].setToolTipText("ƒXƒ^ƒ“‘Ï«+15 ƒz[ƒ‹ƒh‘Ï«+15 ‹°•|‘Ï«+15");
-                    buff.ailment[STUN] += 15;
-                    buff.ailment[HOLD] += 15;
-                    buff.ailment[TERROR] += 15;
                     break;
                 default:
                     break;
@@ -2761,7 +2769,7 @@ public class Calculator implements Common {
             buff.MP += 13;
             buff.AC -= 2;
             buff.DR += 3;
-            buff.ailment[DARKNESS] += 10;
+//            buff.ailment[DARKNESS] += 10;
             ui.cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ƒ_ƒ[ƒWŒyŒ¸+3 ˆÃˆÅ‘Ï«+10");
         }
         //–‚Šá
@@ -5073,29 +5081,41 @@ buki.arrow_elementdmg=0;
         if (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC > 0) {
             buki_text += " –‚–@ƒNƒŠƒeƒBƒJƒ‹+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
-        if (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE] > 0) {
-            buki_text += " Î‰»–½’†+" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
-        }
-        if (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP] > 0) {
-            buki_text += " ‡–°–½’†+" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
-        }
-        if (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE] > 0) {
-            buki_text += " “€Œ‹–½’†+" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
-        }
-        if (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS] > 0) {
-            buki_text += " ˆÃˆÅ–½’†+" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
-        }
+//        if (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE] > 0) {
+//            buki_text += " Î‰»–½’†+" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
+//        }
+//        if (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP] > 0) {
+//            buki_text += " ‡–°–½’†+" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
+//        }
+//        if (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE] > 0) {
+//            buki_text += " “€Œ‹–½’†+" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
+//        }
+//        if (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS] > 0) {
+//            buki_text += " ˆÃˆÅ–½’†+" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
+//        }
+//        if (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN] > 0) {
+//            buki_text += " ƒXƒ^ƒ“–½’†+" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
+//        }
+//        if (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD] > 0) {
+//            buki_text += " ƒz[ƒ‹ƒh–½’†+" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
+//        }
+//        if (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR] > 0) {
+//            buki_text += " ‹°•|–½’†+" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
+//        }
+//        if (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION] > 0) {
+//            buki_text += " ”j‰ó–½’†+" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
+//        }
         if (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN] > 0) {
-            buki_text += " ƒXƒ^ƒ“–½’†+" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
+            buki_text += " ‹Zp–½’†+" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
         }
-        if (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD] > 0) {
-            buki_text += " ƒz[ƒ‹ƒh–½’†+" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
+        if (buki.op.ailment[HIT_SPIRIT] + buki.op2.ailment[HIT_SPIRIT] > 0) {
+            buki_text += " ¸—ì–½’†+" + (buki.op.ailment[HIT_SPIRIT] + buki.op2.ailment[HIT_SPIRIT]);
+        }
+        if (buki.op.ailment[HIT_DRAGON] + buki.op2.ailment[HIT_DRAGON] > 0) {
+            buki_text += " —³Œê–½’†+" + (buki.op.ailment[HIT_DRAGON] + buki.op2.ailment[HIT_DRAGON]);
         }
         if (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR] > 0) {
             buki_text += " ‹°•|–½’†+" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
-        }
-        if (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION] > 0) {
-            buki_text += " ”j‰ó–½’†+" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
         }
         if (buki.op.HP > 0) {
             buki_text += " HP+" + buki.op.HP;

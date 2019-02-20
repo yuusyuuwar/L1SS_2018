@@ -1,6 +1,153 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/02/20
+Update 3.2.2
+	2019/02/20 Updateに暫定対応
+
+LSS/data/E.zip
+名称変更
+	グリムリーパーリング	>>死神のリング
+	リッチリング		>>リッチのリング
+	
+命中/耐性の変更
+	スタン耐性	>>技術耐性
+	ホールド耐性	>>精霊耐性
+	スタン命中	>>技術命中
+	ホールド命中	>>精霊命中
+	破壊命中	>>精霊命中
+
+	02_ドッペルゲンガーアミュレット.txt
+	02_神聖な永生のアミュレット.txt
+	12_苦悩のアミュレット.txt
+	12_苦痛のアミュレット.txt
+	e_月光の敏捷ネックレス.txt
+	e_月光の知識ネックレス.txt
+	e_月光の腕力ネックレス.txt
+	e_ハロウィンパンプキンアーマー.txt
+	e_ハロウィンパンプキンアーマー2012.txt
+	10004_裂空のTシャツ.txt
+	20601_スタン耐性のTシャツ.txt"
+	20602_スタン耐性の特性Tシャツ(DR).txt"
+	20603_スタン耐性の特性Tシャツ(自然回復).txt"
+	20604_スタン耐性の特性Tシャツ(追加打撃).txt"
+	20701_ホールド耐性のTシャツ.txt
+	20702_ホールド耐性の特性Tシャツ(DR).txt
+	20703_ホールド耐性の特性Tシャツ(自然回復).txt
+	20704_ホールド耐性の特性Tシャツ(追加打撃).txt
+	60102_腕力のスタン耐性Tシャツ.txt"
+	60103_腕力のホールド耐性Tシャツ.txt
+	60202_機敏のスタン耐性Tシャツ.txt"
+	60203_機敏のホールド耐性Tシャツ.txt
+	60302_知力のスタン耐性Tシャツ.txt"
+	60303_知力のホールド耐性Tシャツ.txt
+	01_ククルカンシールド.txt
+	x10_体力のガーダー.txt
+	x10_地霊のガーダー.txt
+	x10_水霊のガーダー.txt
+	x10_火霊のガーダー.txt
+	x10_風霊のガーダー.txt
+	02_マミーロードクラウン.txt
+	02_指揮官のヘルム.txt
+	10006_ライアリング.txt
+	10013_ドッペルゲンガーレフトリング.txt
+	10014_ドッペルゲンガーライトリング.txt
+	10101_気迫のリング.txt
+	10101_神聖な気迫のリング.txt
+	10102_神聖な魔王のリング.txt
+	10103_リッチのリング
+	10104_死神のリング.txt
+	e_ラオンの最高級リング(スタン).txt
+	e_ラオンの最高級リング(ホールド).txt
+	n_地の精霊のリング.txt
+	n_風の精霊のリング.txt
+	0310004_ナイトバルドのツーハンドソード.txt
+	0310005_真冥王の執行剣.txt
+	1010007_ヒュペリオンの絶望.txt
+	0710007_レッドシャドウデュアルブレード.txt
+
+LSS/src/lss/Bougu.java
+LSS/src/lss/Buff.java
+LSS/src/lss/Common.java
+変更前:耐性
+	ailment[STUN]		スタン耐性
+	ailment[HOLD] 		ホールド耐性
+	ailment[SLEEP]		睡眠耐性
+	ailment[FREEZE]		凍結耐性
+	ailment[STONE]		石化耐性
+	ailment[DARKNESS]	暗闇耐性
+	ailment[TERROR]		恐怖耐性
+	ailment[DESTRUCTION]	破壊耐性
+
+変更後:耐性
+	ailment[STUN]		技術耐性
+	ailment[SPIRIT]		精霊耐性
+	ailment[DRAGON]		竜語耐性
+	ailment[TERROR]		恐怖耐性
+
+変更前:命中
+	ailment[HIT_STUN]	スタン命中
+	ailment[HIT_HOLD]	ホールド命中
+	ailment[HIT_SLEEP]	睡眠命中
+	ailment[HIT_FREEZE]	凍結命中
+	ailment[HIT_STONE]	石化命中
+	ailment[HIT_DARKNESS]	暗闇命中
+	ailment[HIT_TERROR]	恐怖命中
+	ailment[HIT_DESTRUCTION]破壊命中
+
+変更後:命中
+	ailment[HIT_STUN]	技術命中
+	ailment[HIT_SPIRIT]	精霊命中
+	ailment[HIT_DRAGON]	竜語命中
+	ailment[HIT_TERROR]	恐怖命中
+
+LSS/src/lss/Bougu.java
+処理の修正
+	クーガーのガーダー
+	ウグヌスのガーダー
+	アイリスのブーツ
+	地竜のTシャツ/火竜のTシャツ/風竜のTシャツ/水竜のTシャツ
+
+コメント修正
+	スナッパーリング
+
+LSS/src/lss/UI.java
+	ツールチップの修正/コメント追加
+	ブレイブアバター
+	グレースアバター
+	プライド
+	ブローアタック
+	覚醒[ヴァラカス]
+	覚醒[リンドビオル]
+	幻術[オーガ]
+	幻術[アバター]
+	フォーカススピリッツ
+	インパクト
+	注意:Tシャツの処理の"のスタン耐性"/"のホールド耐性"については変更しない(名称不明な為)
+
+LSS/src/lss/Calculator.java
+処理の修正
+	インパクト
+	ブレイブアバタ
+	グレースアバター
+
+不明(後日確認)
+	覚醒[アンタラス]
+	覚醒[パプリオン]
+	イエティ
+	魔眼
+	黒蛇の気
+
+LSS/src/lss/Buki.java
+処理の修正
+	レッドシャドウデュアルブレード
+	修正前:op2.ailment[HIT_DESTRUCTION] += enchant;	破壊命中から
+	修正後:op2.ailment[HIT_SPIRIT] += enchant;	精霊命中へ
+
+コメント修正/追加
+	スタン命中を技術命中へ
+	破壊命中を精霊命中へ
+
 2018/12/30
 Update 3.2.1
 LSS/src/lss/UI.java

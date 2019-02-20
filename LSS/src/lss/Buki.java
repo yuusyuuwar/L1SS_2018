@@ -239,12 +239,12 @@ public class Buki implements Common {
             op2.CRI_MAGIC += 1;                         //魔法クリティカル+1
             }
         }
-        //真冥王の執行剣            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][スタン命中]+1増加
+        //真冥王の執行剣            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][技術命中]+1増加
         if (name.equals("真冥王の執行剣")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
             op2.CRI_SHORT += enchant;                   //近距離クリティカル
-            op2.ailment[HIT_STUN] += enchant;           //スタン命中
+            op2.ailment[HIT_STUN] += enchant;           //技術命中
             }
         }
         //ウィンドブレードソード    エンチャントによる追加打撃が+2
@@ -253,11 +253,11 @@ public class Buki implements Common {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
             }
         } 
-        //レッドシャドウデュアルブレード    エンチャントによる追加打撃が+2 +1強化毎に[破壊命中]+1増加
+        //レッドシャドウデュアルブレード    エンチャントによる追加打撃が+2 +1強化毎に[精霊命中]+1増加
         if (name.equals("レッドシャドウデュアルブレード")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
-            op2.ailment[HIT_DESTRUCTION] += enchant;    //破壊命中
+            op2.ailment[HIT_SPIRIT] += enchant;         //精霊命中
             }
         }
         //ホーリーヘドロンスタッフ  エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法命中]+1増加
@@ -275,13 +275,13 @@ public class Buki implements Common {
             op2.CRI_SHORT += enchant;                   //近距離クリティカル
             }
         }
-        //ヒュペリオンの絶望        エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][スタン命中]+1増加
+        //ヒュペリオンの絶望        エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][技術命中]+1増加
         if (name.equals("ヒュペリオンの絶望")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
             op2.SP += enchant;                          //SP 
             op2.CRI_MAGIC += enchant;                   //魔法クリティカル
-            op2.ailment[HIT_STUN] += enchant;           //スタン命中
+            op2.ailment[HIT_STUN] += enchant;           //技術命中
             }
         }
         //タイタンの憤怒            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][恐怖命中]+1増加 
