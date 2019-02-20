@@ -189,53 +189,74 @@ public class Bougu implements Common {
         if (mr_enchant > 0) {
             text += " (強化毎にMR+" + mr_enchant + ")";
         }
+//        if (op.ailment[STUN] + op2.ailment[STUN] > 0) {
+//            text += " スタン耐性+" + (op.ailment[STUN] + op2.ailment[STUN]);
+//        }
+//        if (op.ailment[HOLD] + op2.ailment[HOLD] > 0) {
+//            text += " ホールド耐性+" + (op.ailment[HOLD] + op2.ailment[HOLD]);
+//        }
+//        if (op.ailment[SLEEP] + op2.ailment[SLEEP] > 0) {
+//            text += " 睡眠耐性+" + (op.ailment[SLEEP] + op2.ailment[SLEEP]);
+//        }
+//        if (op.ailment[FREEZE] + op2.ailment[FREEZE] > 0) {
+//            text += " 凍結耐性+" + (op.ailment[FREEZE] + op2.ailment[FREEZE]);
+//        }
+//        if (op.ailment[STONE] + op2.ailment[STONE] > 0) {
+//            text += " 石化耐性+" + (op.ailment[STONE] + op2.ailment[STONE]);
+//        }
+//        if (op.ailment[DARKNESS] + op2.ailment[DARKNESS] > 0) {
+//            text += " 暗闇耐性+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
+//        }
+//        if (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION] > 0) {
+//            text += " 破壊耐性+" + (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION]);
+//        }
         if (op.ailment[STUN] + op2.ailment[STUN] > 0) {
-            text += " スタン耐性+" + (op.ailment[STUN] + op2.ailment[STUN]);
+            text += " 技術耐性+" + (op.ailment[STUN] + op2.ailment[STUN]);
         }
-        if (op.ailment[HOLD] + op2.ailment[HOLD] > 0) {
-            text += " ホールド耐性+" + (op.ailment[HOLD] + op2.ailment[HOLD]);
+        if (op.ailment[SPIRIT] + op2.ailment[SPIRIT] > 0) {
+            text += " 精霊耐性+" + (op.ailment[SPIRIT] + op2.ailment[SPIRIT]);
         }
-        if (op.ailment[SLEEP] + op2.ailment[SLEEP] > 0) {
-            text += " 睡眠耐性+" + (op.ailment[SLEEP] + op2.ailment[SLEEP]);
-        }
-        if (op.ailment[FREEZE] + op2.ailment[FREEZE] > 0) {
-            text += " 凍結耐性+" + (op.ailment[FREEZE] + op2.ailment[FREEZE]);
-        }
-        if (op.ailment[STONE] + op2.ailment[STONE] > 0) {
-            text += " 石化耐性+" + (op.ailment[STONE] + op2.ailment[STONE]);
-        }
-        if (op.ailment[DARKNESS] + op2.ailment[DARKNESS] > 0) {
-            text += " 暗闇耐性+" + (op.ailment[DARKNESS] + op2.ailment[DARKNESS]);
+        if (op.ailment[DRAGON] + op2.ailment[DRAGON] > 0) {
+            text += " 竜語耐性+" + (op.ailment[DRAGON] + op2.ailment[DRAGON]);
         }
         if (op.ailment[TERROR] + op2.ailment[TERROR] > 0) {
             text += " 恐怖耐性+" + (op.ailment[TERROR] + op2.ailment[TERROR]);
         }
-        if (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION] > 0) {
-            text += " 破壊耐性+" + (op.ailment[DESTRUCTION] + op2.ailment[DESTRUCTION]);
-        }
+//        if (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN] > 0) {
+//            text += " スタン命中+" + (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN]);
+//        }
+//        if (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD] > 0) {
+//            text += " ホールド命中+" + (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD]);
+//        }
+//        if (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP] > 0) {
+//            text += " 睡眠命中+" + (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP]);
+//        }
+//        if (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE] > 0) {
+//            text += " 凍結命中+" + (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE]);
+//        }
+//        if (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE] > 0) {
+//            text += " 石化命中+" + (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE]);
+//        }
+//        if (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS] > 0) {
+//            text += " 暗闇命中+" + (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS]);
+//        }
+//        if (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR] > 0) {
+//            text += " 恐怖命中+" + (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR]);
+//        }
+//        if (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION] > 0) {
+//            text += " 破壊命中+" + (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION]);
+//        }
         if (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN] > 0) {
-            text += " スタン命中+" + (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN]);
+            text += " 技術命中+" + (op.ailment[HIT_STUN] + op2.ailment[HIT_STUN]);
         }
-        if (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD] > 0) {
-            text += " ホールド命中+" + (op.ailment[HIT_HOLD] + op2.ailment[HIT_HOLD]);
+        if (op.ailment[HIT_SPIRIT] + op2.ailment[HIT_SPIRIT] > 0) {
+            text += " 精霊命中+" + (op.ailment[HIT_SPIRIT] + op2.ailment[HIT_SPIRIT]);
         }
-        if (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP] > 0) {
-            text += " 睡眠命中+" + (op.ailment[HIT_SLEEP] + op2.ailment[HIT_SLEEP]);
-        }
-        if (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE] > 0) {
-            text += " 凍結命中+" + (op.ailment[HIT_FREEZE] + op2.ailment[HIT_FREEZE]);
-        }
-        if (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE] > 0) {
-            text += " 石化命中+" + (op.ailment[HIT_STONE] + op2.ailment[HIT_STONE]);
-        }
-        if (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS] > 0) {
-            text += " 暗闇命中+" + (op.ailment[HIT_DARKNESS] + op2.ailment[HIT_DARKNESS]);
+        if (op.ailment[HIT_DRAGON] + op2.ailment[HIT_DRAGON] > 0) {
+            text += " 竜語命中+" + (op.ailment[HIT_DRAGON] + op2.ailment[HIT_DRAGON]);
         }
         if (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR] > 0) {
             text += " 恐怖命中+" + (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR]);
-        }
-        if (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION] > 0) {
-            text += " 破壊命中+" + (op.ailment[HIT_DESTRUCTION] + op2.ailment[HIT_DESTRUCTION]);
         }
         if (op.DR + op2.DR > 0) {
             text += " ダメージリダクション+" + (op.DR + op2.DR);
@@ -351,110 +372,73 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("地竜のTシャツ")) {
-            switch (enchant) {
-                case 5:
-                    op2.MR = 4;
-                    break;
-                case 6:
-                    op2.MR = 5;
-                    break;
-                case 7:
-                    op2.MR = 6;
-                    break;
-                case 8:
-                    op2.MR = 8;
-                    break;
-                case 9:
-                    op2.MR = 11;
-                    op2.DR = 2;
-                    break;
-                case 10:
+            if (enchant >= 10) {
                     op2.MR = 14;
                     op2.DR = 3;
-                    break;
-                default:
-                    break;
+            } else if (enchant >= 9) {
+                    op2.MR = 11;
+                    op2.DR = 2;
+            } else if (enchant >= 8) {
+                    op2.MR = 8;
+            } else if (enchant >= 7) {
+                    op2.MR = 6;
+            } else if (enchant >= 6) {
+                    op2.MR = 5;
+            } else if (enchant >= 5) {
+                    op2.MR = 4;
             }
         }
         if (name.equals("火竜のTシャツ")) {
-            switch (enchant) {
-                case 5:
-                    op2.HP = 20;
-                    break;
-                case 6:
-                    op2.HP = 30;
-                    break;
-                case 7:
-                    op2.HP = 50;
-                    break;
-                case 8:
-                    op2.HP = 70;
-                    break;
-                case 9:
-                    op2.HP = 90;
-                    op2.DMG_SHORT = 1;
-                    break;
-                case 10:
+            if (enchant >= 10) {
                     op2.HP = 100;
                     op2.DMG_SHORT = 2;
-                    break;
-                default:
-                    break;
+            } else if (enchant >= 9) {
+                    op2.HP = 90;
+                    op2.DMG_SHORT = 1;
+            } else if (enchant >= 8) {
+                    op2.HP = 70;
+            } else if (enchant >= 7) {
+                    op2.HP = 50;
+            } else if (enchant >= 6) {
+                    op2.HP = 30;
+            } else if (enchant >= 5) {
+                    op2.HP = 20;
             }
         }
         if (name.equals("風竜のTシャツ")) {
-            switch (enchant) {
-                case 5:
-                    op2.HP = 20;
-                    break;
-                case 6:
-                    op2.HP = 30;
-                    break;
-                case 7:
-                    op2.HP = 50;
-                    break;
-                case 8:
-                    op2.HP = 70;
-                    break;
-                case 9:
-                    op2.HP = 90;
-                    op2.DMG_LONG = 1;
-                    break;
-                case 10:
+            if (enchant >= 10) {
                     op2.HP = 100;
                     op2.DMG_LONG = 2;
-                    break;
-                default:
-                    break;
+            } else if (enchant >= 9) {
+                    op2.HP = 90;
+                    op2.DMG_LONG = 1;
+            } else if (enchant >= 8) {
+                    op2.HP = 70;
+            } else if (enchant >= 7) {
+                    op2.HP = 50;
+            } else if (enchant >= 6) {
+                    op2.HP = 30;
+            } else if (enchant >= 5) {
+                    op2.HP = 20;
             }
         }
         if (name.equals("水竜のTシャツ")) {
-            switch (enchant) {
-                case 5:
-                    op2.HP = 20;
-                    break;
-                case 6:
-                    op2.HP = 30;
-                    break;
-                case 7:
-                    op2.HP = 50;
-                    break;
-                case 8:
-                    op2.HP = 70;
-                    break;
-                case 9:
-                    op2.HP = 90;
-                    op2.SP = 1;
-                    break;
-                case 10:
+            if (enchant >= 10) {
                     op2.HP = 100;
                     op2.SP = 2;
-                    break;
-                default:
-                    break;
+            } else if (enchant >= 9) {
+                    op2.HP = 90;
+                    op2.SP = 1;
+            } else if (enchant >= 8) {
+                    op2.HP = 70;
+            } else if (enchant >= 7) {
+                    op2.HP = 50;
+            } else if (enchant >= 6) {
+                    op2.HP = 30;
+            } else if (enchant >= 5) {
+                    op2.HP = 20;
             }
         }
-
         if (name.equals("古代弓射手のガーダー")) {
             if (enchant >= 9) {
                 op2.DMG_LONG = 3;
@@ -504,32 +488,32 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.HIT_SHORT = 5;          //近距離命中
                 op2.ailment[STUN] = 5;      //技術耐性
-//                op2.ailment[SPIRIT] = 5;    //精霊耐性 
-//                op2.ailment[DRAGON] = 5;    //竜語耐性
+                op2.ailment[SPIRIT] = 5;    //精霊耐性 
+                op2.ailment[DRAGON] = 5;    //竜語耐性
                 op2.ailment[TERROR] = 5;    //恐怖耐性
             } else if (enchant >= 8) {
                 op2.HIT_SHORT = 4;          //近距離命中
                 op2.ailment[STUN] = 4;      //技術耐性
-//                op2.ailment[SPIRIT] = 4;    //精霊耐性 
-//                op2.ailment[DRAGON] = 4;    //竜語耐性
+                op2.ailment[SPIRIT] = 4;    //精霊耐性 
+                op2.ailment[DRAGON] = 4;    //竜語耐性
                 op2.ailment[TERROR] = 4;    //恐怖耐性
             } else if (enchant >= 7) {
                 op2.HIT_SHORT = 3;          //近距離命中
                 op2.ailment[STUN] = 3;      //技術耐性
-//                op2.ailment[SPIRIT] = 3;    //精霊耐性 
-//                op2.ailment[DRAGON] = 3;    //竜語耐性
+                op2.ailment[SPIRIT] = 3;    //精霊耐性 
+                op2.ailment[DRAGON] = 3;    //竜語耐性
                 op2.ailment[TERROR] = 3;    //恐怖耐性
             } else if (enchant >= 6) {
                 op2.HIT_SHORT = 2;          //近距離命中
                 op2.ailment[STUN] = 2;      //技術耐性
-//                op2.ailment[SPIRIT] = 2;    //精霊耐性 
-//                op2.ailment[DRAGON] = 2;    //竜語耐性
+                op2.ailment[SPIRIT] = 2;    //精霊耐性 
+                op2.ailment[DRAGON] = 2;    //竜語耐性
                 op2.ailment[TERROR] = 2;    //恐怖耐性
             } else if (enchant >= 5) {
                 op2.HIT_SHORT = 1;          //近距離命中
                 op2.ailment[STUN] = 1;      //技術耐性
-//                op2.ailment[SPIRIT] = 1;    //精霊耐性 
-//                op2.ailment[DRAGON] = 1;    //竜語耐性
+                op2.ailment[SPIRIT] = 1;    //精霊耐性 
+                op2.ailment[DRAGON] = 1;    //竜語耐性
                 op2.ailment[TERROR] = 1;    //恐怖耐性
             }
         }
@@ -537,32 +521,32 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.HIT_LONG = 5;           //遠距離命中+5
                 op2.ailment[STUN] = 5;      //技術耐性+5
-//                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
-//                op2.ailment[DRAGON] = 5;    //竜語耐性+5
+                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+                op2.ailment[DRAGON] = 5;    //竜語耐性+5
                 op2.ailment[TERROR] = 5;    //恐怖耐性+5
             } else if (enchant >= 8) {
                 op2.HIT_LONG = 4;           //遠距離命中+4
                 op2.ailment[STUN] = 4;      //技術耐性+4
-//                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
-//                op2.ailment[DRAGON] = 4;    //竜語耐性+4
+                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+                op2.ailment[DRAGON] = 4;    //竜語耐性+4
                 op2.ailment[TERROR] = 4;    //恐怖耐性+4
             } else if (enchant >= 7) {
                 op2.HIT_LONG = 3;           //遠距離命中+3
                 op2.ailment[STUN] = 3;      //技術耐性+3
-//                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
-//                op2.ailment[DRAGON] = 3;    //竜語耐性+3
+                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+                op2.ailment[DRAGON] = 3;    //竜語耐性+3
                 op2.ailment[TERROR] = 3;    //恐怖耐性+3
             } else if (enchant >= 6) {
                 op2.HIT_LONG = 2;           //遠距離命中+2
                 op2.ailment[STUN] = 2;      //技術耐性+2
-//                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
-//                op2.ailment[DRAGON] = 2;    //竜語耐性+2
+                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+                op2.ailment[DRAGON] = 2;    //竜語耐性+2
                 op2.ailment[TERROR] = 2;    //恐怖耐性+2
             } else if (enchant >= 5) {
                 op2.HIT_LONG = 1;           //遠距離命中+1
                 op2.ailment[STUN] = 1;      //技術耐性+1
-//                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
-//                op2.ailment[DRAGON] = 1;    //竜語耐性+1
+                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+                op2.ailment[DRAGON] = 1;    //竜語耐性+1
                 op2.ailment[TERROR] = 1;    //恐怖耐性+1
             }
         }
@@ -780,28 +764,28 @@ public class Bougu implements Common {
         if (name.equals("アイリスのブーツ")) {
             if (enchant >= 9) {
                 op2.ailment[STUN] = 5;      //技術耐性
-//                op2.ailment[SPIRIT] = 5;    //精霊耐性 
-//                op2.ailment[DRAGON] = 5;    //竜語耐性
+                op2.ailment[SPIRIT] = 5;    //精霊耐性 
+                op2.ailment[DRAGON] = 5;    //竜語耐性
                 op2.ailment[TERROR] = 5;    //恐怖耐性
             } else if (enchant >= 8) {
                 op2.ailment[STUN] = 4;      //技術耐性
-//                op2.ailment[SPIRIT] = 4;    //精霊耐性 
-//                op2.ailment[DRAGON] = 4;    //竜語耐性
+                op2.ailment[SPIRIT] = 4;    //精霊耐性 
+                op2.ailment[DRAGON] = 4;    //竜語耐性
                 op2.ailment[TERROR] = 4;    //恐怖耐性
             } else if (enchant >= 7) {
                 op2.ailment[STUN] = 3;      //技術耐性
-//                op2.ailment[SPIRIT] = 3;    //精霊耐性 
-//                op2.ailment[DRAGON] = 3;    //竜語耐性
+                op2.ailment[SPIRIT] = 3;    //精霊耐性 
+                op2.ailment[DRAGON] = 3;    //竜語耐性
                 op2.ailment[TERROR] = 3;    //恐怖耐性
             } else if (enchant >= 6) {
                 op2.ailment[STUN] = 2;      //技術耐性
-//                op2.ailment[SPIRIT] = 2;    //精霊耐性 
-//                op2.ailment[DRAGON] = 2;    //竜語耐性
+                op2.ailment[SPIRIT] = 2;    //精霊耐性 
+                op2.ailment[DRAGON] = 2;    //竜語耐性
                 op2.ailment[TERROR] = 2;    //恐怖耐性
             } else if (enchant >= 5) {
                 op2.ailment[STUN] = 1;      //技術耐性
-//                op2.ailment[SPIRIT] = 1;    //精霊耐性 
-//                op2.ailment[DRAGON] = 1;    //竜語耐性
+                op2.ailment[SPIRIT] = 1;    //精霊耐性 
+                op2.ailment[DRAGON] = 1;    //竜語耐性
                 op2.ailment[TERROR] = 1;    //恐怖耐性
             }
         }
@@ -902,7 +886,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+5
                             op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+5
                             op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+5
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+9
                                                                                 //HP+30
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
                                                                                 //HP自然回復+2
@@ -913,7 +897,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+4
                             op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+4
                             op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+4
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+7
                             op2.HP += 5;                //HP+5                  //HP+30
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
                                                                                 //HP自然回復+2
@@ -924,7 +908,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //遠距離ダメージ+1       //遠距離ダメージ+13
                             op2.HIT_SHORT++;            //近距離命中+1           //近距離命中+3
                             op2.HIT_LONG++;             //遠距離命中+1           //遠距離命中+3
-                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.ailment[STUN] += 5;     //技術耐性+5           //技術耐性+5
                             op2.HP += 5;                //HP+5                  //HP+25
                                                                                 //HP自然回復+2
                                                                                 //所持重量増加+360
@@ -958,7 +942,7 @@ public class Bougu implements Common {
                                                                                 //AC-6
                             op2.SP++;                   //SP+1                  //SP+5
                             op2.HIT_MAGIC++;            //魔法命中+1             //魔法命中+3                        
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9                          
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+9                          
                             op2.HP += 10;               //HP+10                 //HP+50
                             op2.MP += 5;                //MP+5                  //MP+35
                                                                                 //MP自然回復+1
@@ -968,7 +952,7 @@ public class Bougu implements Common {
                             op2.AC--;                   //AC-1                  //AC-5
                             op2.SP++;                   //SP+1                  //SP+4
                             op2.HIT_MAGIC++;            //魔法命中+1             //魔法命中+2
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+7
                             op2.HP += 5;                //HP+5                  //HP+40
                             op2.MP += 5;                //MP+5                  //MP+30
                                                                                 //MP自然回復+1
@@ -978,7 +962,7 @@ public class Bougu implements Common {
                                                                                 //AC-5 
                             op2.SP++;                   //SP+1                  //SP+3
                             op2.HIT_MAGIC++;            //魔法命中+1             //魔法命中+1
-                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.ailment[STUN] += 5;     //技術耐性+5           //技術耐性+5
                             op2.HP += 5;                //HP+5                  //HP+35
                             op2.MP += 10;               //MP+10                 //MP+25
                                                                                 //MP自然回復+1
@@ -1012,7 +996,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+5
                             op2.DR++;                   //DR+1                  //DR+3
                                                         //確率ダメージ低下20 +1% //確率ダメージ低下20 +3%
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+9
                             op2.HP += 10;               //HP+10                 //HP+115
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
                                                                                 //所持重量増加+360
@@ -1022,7 +1006,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+4
                             op2.DR++;                   //DR+1                  //DR+2
                                                         //確率ダメージ低下20 +1% //確率ダメージ低下20 +2%
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+7
                             op2.HP += 10;               //HP+10                 //HP+105
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
                                                                                 //所持重量増加+360
@@ -1032,7 +1016,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+3
                             op2.DR++;                   //DR+1                  //DR+1
                                                         //確率ダメージ低下20 +1% //確率ダメージ低下20 +1%
-                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.ailment[STUN] += 5;     //技術耐性+5           //技術耐性+5
                             op2.HP += 5;                //HP+5                  //HP+95
                                                                                 //所持重量増加+360
                         case 5:
@@ -1060,7 +1044,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+5
                             op2.MR++;                   //MR+1                  //MR+10
                                                         //確率魔法回避+2         //確率魔法回避+5
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+9
                                                                                 //HP+50
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
                                                                                 //所持重量増加+360
@@ -1070,7 +1054,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+4
                             op2.MR++;                   //MR+1                  //MR+9
                                                         //確率魔法回避+2         //確率魔法回避+3
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+7
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+7
                             op2.HP += 5;                //HP+5                  //HP+50
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
                                                                                 //所持重量増加+360
@@ -1080,7 +1064,7 @@ public class Bougu implements Common {
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+3
                             op2.MR++;                   //MR+1                  //MR+8
                                                         //確率魔法回避+1         //確率魔法回避+1
-                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.ailment[STUN] += 5;     //技術耐性+5           //技術耐性+5
                             op2.HP += 5;                //HP+5                  //HP+45
                                                                                 //所持重量増加+360
                         case 5:
@@ -1110,7 +1094,7 @@ public class Bougu implements Common {
                                                                                 //HP+50
                             op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+5
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+5
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+9
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+2
                                                                                 //MP自然回復+1          //MP+30            //HP自然回復+2
                                                                                 //所持重量増加+360
@@ -1119,7 +1103,7 @@ public class Bougu implements Common {
                             op2.HP += 5;                //HP+5                  //HP+50
                             op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+4
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+4
-                            op2.ailment[STUN] += 2;     //スタン耐性+2           //スタン耐性+9
+                            op2.ailment[STUN] += 2;     //技術耐性+2           //技術耐性+9
                             op2.PVP++;                  //PVP追加ダメージ+1      //PVP追加ダメージ+1
                                                                                 //MP自然回復+1          //MP+30            //HP自然回復+2
                                                                                 //所持重量増加+360
@@ -1128,7 +1112,7 @@ public class Bougu implements Common {
                             op2.HP += 5;                //HP+5                  //HP+45
                             op2.DMG_LONG++;             //遠距離ダメージ+1       //遠距離ダメージ+3
                             op2.DMG_SHORT++;            //近距離ダメージ+1       //近距離ダメージ+3
-                            op2.ailment[STUN] += 5;     //スタン耐性+5           //スタン耐性+5
+                            op2.ailment[STUN] += 5;     //技術耐性+5           //技術耐性+5
                                                                                 //MP自然回復+1          //MP+30            //HP自然回復+2
                                                                                 //所持重量増加+360
                         case 5:
@@ -1162,7 +1146,7 @@ public class Bougu implements Common {
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
                         op2.HIT_SHORT++;                //近距離命中+1           //近距離命中+2
                         op2.HIT_LONG++;                 //遠距離命中+1           //遠距離命中+2
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+9
                                                                                 //HP自然回復+2
                                                                                 //所持重量増加+360
                     case 7:
@@ -1173,7 +1157,7 @@ public class Bougu implements Common {
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
                         op2.HIT_SHORT++;                //近距離命中+1           //近距離命中+2
                         op2.HIT_LONG++;                 //遠距離命中+1           //遠距離命中+2
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+7
                                                                                 //HP自然回復+2
                                                                                 //所持重量増加+360
                     case 6:
@@ -1183,7 +1167,7 @@ public class Bougu implements Common {
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
                         op2.HIT_SHORT++;                //近距離命中+1           //近距離命中+2
                         op2.HIT_LONG++;                 //遠距離命中+1           //遠距離命中+2
-                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                        op2.ailment[STUN] += 5;         //技術耐性+5           //技術耐性+5
                                                                                 //HP自然回復+2
                                                                                 //所持重量増加+360
                     case 5:
@@ -1220,7 +1204,7 @@ public class Bougu implements Common {
                         op2.AC--;                       //AC-1                  //AC-6
                         op2.HP += 5;                    //HP+5                  //HP+40
                         op2.SP++;                       //SP+1                  //SP+4
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+9
                         op2.HIT_MAGIC++;                //魔法命中+1             //魔法命中+2
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
                         op2.MP += 15;                   //MP+15                 //MP+30
@@ -1230,7 +1214,7 @@ public class Bougu implements Common {
                                                                                 //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+35
                         op2.SP++;                       //SP+1                  //SP+3
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+7
                         op2.HIT_MAGIC++;                //魔法命中+1             //魔法命中+1
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1                       
                                                                                 //MP+15
@@ -1240,7 +1224,7 @@ public class Bougu implements Common {
                         op2.AC--;                       //AC-1                  //AC-5
                         op2.HP += 5;                    //HP+5                  //HP+30
                         op2.SP++;                       //SP+1                  //SP+2
-                        op2.ailment[STUN] += 5;         //スタン耐性+2           //スタン耐性+5                      
+                        op2.ailment[STUN] += 5;         //技術耐性+2           //技術耐性+5                      
                                                                                 //MP+15
                                                                                 //MP自然回復+1
                                                                                 //所持重量増加+360                      
@@ -1284,7 +1268,7 @@ public class Bougu implements Common {
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+4
                         op2.DR++;                       //DR+1                  //DR+2
                                                         //確率ダメージ低下20 +1% //確率ダメージ低下20 +2%
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+9
                         op2.HP += 5;                    //HP+5                  //HP+100
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
                                                                                 //所持重量増加+360
@@ -1294,7 +1278,7 @@ public class Bougu implements Common {
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+3
                         op2.DR++;                       //DR+1                  //DR+1
                                                         //確率ダメージ低下20 +1% //確率ダメージ低下20 +1%
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+7
                         op2.HP += 5;                    //HP+5                  //HP+95
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
                                                                                 //所持重量増加+360
@@ -1302,7 +1286,7 @@ public class Bougu implements Common {
                         op2.AC--;                       //AC-1                  //AC-5
                         op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+2
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
-                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                        op2.ailment[STUN] += 5;         //技術耐性+5           //技術耐性+5
                         op2.HP += 5;                    //HP+5                  //HP+90
                                                                                 //所持重量増加+360
                     case 5:
@@ -1336,7 +1320,7 @@ public class Bougu implements Common {
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+4
                                                                                 //MR+7
                                                         //確率魔法回避+2         //確率魔法回避+3
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+9
                         op2.HP += 5;                    //HP+5                  //HP+50
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
                                                                                 //所持重量増加+360
@@ -1346,7 +1330,7 @@ public class Bougu implements Common {
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+3
                                                                                 //MR+7
                                                         //確率魔法回避+2         //確率魔法回避+1
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+7
                         op2.HP += 5;                    //HP+5                  //HP+45
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
                                                                                 //所持重量増加+360
@@ -1355,7 +1339,7 @@ public class Bougu implements Common {
                         op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+2
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
                                                                                 //MR+7
-                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                        op2.ailment[STUN] += 5;         //技術耐性+5           //技術耐性+5
                         op2.HP += 5;                    //HP+5                  //HP+40
                                                                                 //所持重量増加+360
                     case 5:
@@ -1393,7 +1377,7 @@ public class Bougu implements Common {
                         op2.HP += 5;                    //HP+5                  //HP+50
                         op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+4
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+4
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+9
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+9
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+2
                                                                                 //MP自然回復+1          //MP+30            //HP自然回復+2
                                                                                 //所持重量増加+360 
@@ -1402,7 +1386,7 @@ public class Bougu implements Common {
                         op2.HP += 5;                    //HP+5                  //HP+45
                         op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+3
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+3
-                        op2.ailment[STUN] += 2;         //スタン耐性+2           //スタン耐性+7
+                        op2.ailment[STUN] += 2;         //技術耐性+2           //技術耐性+7
                         op2.PVP++;                      //PVP追加ダメージ+1      //PVP追加ダメージ+1
                                                                                 //MP自然回復+1          //MP+30            //HP自然回復+2
                                                                                 //所持重量増加+360 
@@ -1411,7 +1395,7 @@ public class Bougu implements Common {
                         op2.HP += 5;                    //HP+5                  //HP+40
                         op2.DMG_LONG++;                 //遠距離ダメージ+1       //遠距離ダメージ+2
                         op2.DMG_SHORT++;                //近距離ダメージ+1       //近距離ダメージ+2
-                        op2.ailment[STUN] += 5;         //スタン耐性+5           //スタン耐性+5
+                        op2.ailment[STUN] += 5;         //技術耐性+5           //技術耐性+5
                                                                                 //MP自然回復+1          //MP+30            //HP自然回復+2
                                                                                 //所持重量増加+360 
                     case 5:
