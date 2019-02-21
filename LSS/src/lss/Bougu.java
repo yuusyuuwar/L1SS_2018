@@ -290,87 +290,7 @@ public class Bougu implements Common {
 
         op2 = new Buff();
 
-        if (name.equals("テイパーガーダー(腕力)")) {
-            if (enchant >= 9) {
-                op2.HIT_SHORT = 3;           	//近距離命中+3
-                op2.DMG_SHORT = 3;           	//近距離ダメージ+3
-                op2.ST[STR] = 1;           	//STR+1
-                op2.PVP = 2;			//PVP+2
-
-            } else if (enchant >= 8) {
-                op2.HIT_SHORT = 2;           	//近距離命中+2
-                op2.DMG_SHORT = 2;           	//近距離ダメージ+2
-                op2.ST[STR] = 1;           	//STR+1
-                op2.PVP = 1;           		//PVP+1
-
-            } else if (enchant >= 7) {
-                op2.HIT_SHORT = 2;           	//近距離命中+2
-                op2.DMG_SHORT = 1;           	//近距離ダメージ+1
-                op2.ST[STR] = 1;           	//STR+1
-
-            } else if (enchant >= 6) {
-                op2.HIT_SHORT = 2;           	//近距離命中+2
-                op2.DMG_SHORT = 1;           	//近距離ダメージ+1
-
-            } else if (enchant >= 5) {
-                op2.HIT_SHORT = 1;           	//近距離命中+1
-
-            }
-        }
-        if (name.equals("テイパーガーダー(機敏)")) {
-            if (enchant >= 9) {
-                op2.HIT_LONG = 3;           	//遠距離命中+3
-                op2.DMG_LONG = 3;           	//遠距離ダメージ+3
-                op2.ST[DEX] = 1;           	//DEX+1
-                op2.PVP = 2;			//PVP+2
-
-            } else if (enchant >= 8) {
-                op2.HIT_LONG = 2;           	//遠距離命中+2
-                op2.DMG_LONG = 2;           	//遠距離ダメージ+2
-                op2.ST[DEX] = 1;           	//DEX+1
-                op2.PVP = 1;           		//PVP+1
-
-            } else if (enchant >= 7) {
-                op2.HIT_LONG = 2;           	//遠距離命中+2
-                op2.DMG_LONG = 1;           	//遠距離ダメージ+1
-                op2.ST[DEX] = 1;           	//DEX+1
-
-            } else if (enchant >= 6) {
-                op2.HIT_LONG = 2;           	//遠距離命中+2
-                op2.DMG_LONG = 1;           	//遠距離ダメージ+1
-
-            } else if (enchant >= 5) {
-                op2.HIT_LONG = 1;           	//遠距離命中+1
-
-            }
-        }
-        if (name.equals("テイパーガーダー(知力)")) {
-            if (enchant >= 9) {
-                op2.MPR = 6;           		//MPR+6
-                op2.SP = 3;           		//SP+3
-                op2.ST[INT] = 1;           	//INT+1
-                op2.PVP = 2;			//PVP+2
-
-            } else if (enchant >= 8) {
-                op2.MPR = 4;           		//MPR+4
-                op2.SP = 2;           		//SP+2
-                op2.ST[INT] = 1;           	//INT+1
-                op2.PVP = 1;           		//PVP+1
-
-            } else if (enchant >= 7) {
-                op2.MPR = 4;           		//MPR+4
-                op2.SP = 1;           		//SP+1
-                op2.ST[INT] = 1;           	//INT+1
-
-            } else if (enchant >= 6) {
-                op2.MPR = 2;           		//MPR+2
-                op2.SP = 1;           		//SP+1
-
-            } else if (enchant >= 5) {
-                op2.MPR = 2;           		//MPR+2
-
-            }
-        }
+//Tシャツ
         if (name.equals("地竜のTシャツ")) {
             if (enchant >= 10) {
                     op2.MR = 14;
@@ -437,6 +357,44 @@ public class Bougu implements Common {
                     op2.HP = 30;
             } else if (enchant >= 5) {
                     op2.HP = 20;
+            }
+        }
+        if (name.equals("裂空のTシャツ")) {
+            if (enchant >= 10) {
+                op2.DR = 5;                 //ダメージ低下+5
+                op2.MR = 5;                 //MR+5
+                op2.ailment[STUN] = 5;      //技術耐性+5
+                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
+                op2.ailment[TERROR] = 5;    //恐怖耐性+5
+            } else if (enchant >= 9) {
+                op2.DR = 4;                 //ダメージ低下+4
+                op2.MR = 4;                 //MR+4
+                op2.ailment[STUN] = 4;      //技術耐性+4
+                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
+                op2.ailment[TERROR] = 4;    //恐怖耐性+4
+            } else if (enchant >= 8) {
+                op2.DR = 3;                 //ダメージ低下+3
+                op2.MR = 3;                 //MR+3
+                op2.ailment[STUN] = 3;      //技術耐性+3
+                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+                op2.ailment[TERROR] = 3;    //恐怖耐性+3
+            } else if (enchant >= 7) {
+                op2.DR = 2;                 //ダメージ低下+2
+                op2.MR = 2;                 //MR+2
+                op2.ailment[STUN] = 2;      //技術耐性+2
+                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+                op2.ailment[TERROR] = 2;    //恐怖耐性+2
+            } else if (enchant >= 6) {
+                op2.DR = 1;                 //ダメージ低下+1
+                op2.MR = 1;                 //MR+1
+                op2.ailment[STUN] = 1;      //技術耐性+1
+                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
+                op2.ailment[TERROR] = 1;    //恐怖耐性+1
             }
         }
         if (name.equals("闘士の竜Tシャツ")) {             //AC-2 STR+1 近距離ダメージ+1
@@ -572,6 +530,33 @@ public class Bougu implements Common {
                     op2.MR = 4;                          //MR+4                 
             }
         }
+//シールド&ガーダー
+        if (name.equals("シアーの心眼")) {
+            if (enchant >= 9) {
+                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+            } else if (enchant >= 8) {
+                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+            } else if (enchant >= 7) {
+                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+            }
+        }
+        if (name.equals("エヴァのシールド")) {
+            if (enchant >= 9) {
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
+            } else if (enchant >= 8) {
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
+            } else if (enchant >= 7) {
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
+            }
+        }
         if (name.equals("古代弓射手のガーダー")) {
             if (enchant >= 9) {
                 op2.DMG_LONG = 3;
@@ -615,6 +600,87 @@ public class Bougu implements Common {
                 op2.SP = 2;
             } else if (enchant >= 5) {
                 op2.SP = 1;
+            }
+        }
+        if (name.equals("テイパーガーダー(腕力)")) {
+            if (enchant >= 9) {
+                op2.HIT_SHORT = 3;           	//近距離命中+3
+                op2.DMG_SHORT = 3;           	//近距離ダメージ+3
+                op2.ST[STR] = 1;           	//STR+1
+                op2.PVP = 2;			//PVP+2
+
+            } else if (enchant >= 8) {
+                op2.HIT_SHORT = 2;           	//近距離命中+2
+                op2.DMG_SHORT = 2;           	//近距離ダメージ+2
+                op2.ST[STR] = 1;           	//STR+1
+                op2.PVP = 1;           		//PVP+1
+
+            } else if (enchant >= 7) {
+                op2.HIT_SHORT = 2;           	//近距離命中+2
+                op2.DMG_SHORT = 1;           	//近距離ダメージ+1
+                op2.ST[STR] = 1;           	//STR+1
+
+            } else if (enchant >= 6) {
+                op2.HIT_SHORT = 2;           	//近距離命中+2
+                op2.DMG_SHORT = 1;           	//近距離ダメージ+1
+
+            } else if (enchant >= 5) {
+                op2.HIT_SHORT = 1;           	//近距離命中+1
+
+            }
+        }
+        if (name.equals("テイパーガーダー(機敏)")) {
+            if (enchant >= 9) {
+                op2.HIT_LONG = 3;           	//遠距離命中+3
+                op2.DMG_LONG = 3;           	//遠距離ダメージ+3
+                op2.ST[DEX] = 1;           	//DEX+1
+                op2.PVP = 2;			//PVP+2
+
+            } else if (enchant >= 8) {
+                op2.HIT_LONG = 2;           	//遠距離命中+2
+                op2.DMG_LONG = 2;           	//遠距離ダメージ+2
+                op2.ST[DEX] = 1;           	//DEX+1
+                op2.PVP = 1;           		//PVP+1
+
+            } else if (enchant >= 7) {
+                op2.HIT_LONG = 2;           	//遠距離命中+2
+                op2.DMG_LONG = 1;           	//遠距離ダメージ+1
+                op2.ST[DEX] = 1;           	//DEX+1
+
+            } else if (enchant >= 6) {
+                op2.HIT_LONG = 2;           	//遠距離命中+2
+                op2.DMG_LONG = 1;           	//遠距離ダメージ+1
+
+            } else if (enchant >= 5) {
+                op2.HIT_LONG = 1;           	//遠距離命中+1
+
+            }
+        }
+        if (name.equals("テイパーガーダー(知力)")) {
+            if (enchant >= 9) {
+                op2.MPR = 6;           		//MPR+6
+                op2.SP = 3;           		//SP+3
+                op2.ST[INT] = 1;           	//INT+1
+                op2.PVP = 2;			//PVP+2
+
+            } else if (enchant >= 8) {
+                op2.MPR = 4;           		//MPR+4
+                op2.SP = 2;           		//SP+2
+                op2.ST[INT] = 1;           	//INT+1
+                op2.PVP = 1;           		//PVP+1
+
+            } else if (enchant >= 7) {
+                op2.MPR = 4;           		//MPR+4
+                op2.SP = 1;           		//SP+1
+                op2.ST[INT] = 1;           	//INT+1
+
+            } else if (enchant >= 6) {
+                op2.MPR = 2;           		//MPR+2
+                op2.SP = 1;           		//SP+1
+
+            } else if (enchant >= 5) {
+                op2.MPR = 2;           		//MPR+2
+
             }
         }
         if (name.equals("クーガーのガーダー")) {
@@ -831,15 +897,7 @@ public class Bougu implements Common {
                 op2.MR = 1;                 //MR+1
             }
         }
-        if (name.equals("マミーロードのグローブ")) {
-            if (enchant >= 9) {
-                op2.SP = 3;
-            } else if (enchant >= 8) {
-                op2.SP = 2;
-            } else if (enchant >= 7) {
-                op2.SP = 1;
-            }
-        }
+//ヘルム
         if (name.equals("マミーロードクラウン")) {
             if (enchant >= 9) {
                 op2.DMG_LONG = 3;
@@ -855,18 +913,25 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("大魔術師の帽子")) {
+            op2.MP = 10 * enchant;
             if (enchant >= 9) {
-                op2.ailment[SPIRIT] = 1;         //精霊耐性+5
+                op2.ailment[SPIRIT] = 5;         //精霊耐性+5
             } else if (enchant >= 8) {
-                op2.ailment[SPIRIT] = 1;         //精霊耐性+4
+                op2.ailment[SPIRIT] = 4;         //精霊耐性+4
             } else if (enchant >= 7) {
-                op2.ailment[SPIRIT] = 1;         //精霊耐性+3
+                op2.ailment[SPIRIT] = 3;         //精霊耐性+3
             } else if (enchant >= 6) {
-                op2.ailment[SPIRIT] = 1;         //精霊耐性+2
+                op2.ailment[SPIRIT] = 2;         //精霊耐性+2
             } else if (enchant >= 5) {
                 op2.ailment[SPIRIT] = 1;         //精霊耐性+1
             }
         }
+        if (name.equals("マンボハット")) {
+            if (enchant >= 7) {
+                op2.ST[CHA] = 1;
+            }
+        }
+//ブーツ
         if (name.equals("腕力のブーツ")) {
             if (enchant >= 9) {
                 op2.DR = 1;
@@ -907,34 +972,98 @@ public class Bougu implements Common {
                 op2.HP = 20;
             }
         }
-        if (name.equals("アイリスのブーツ")) {
+        if (name.equals("血戦のグリーヴ")) {
+            if (enchant >= 5) {
+                op2.HP = 25;
+            }
+            if (enchant >= 6) {
+                op2.MP = 20;
+            }
+            if (enchant >= 7) {
+                op2.AC = -2;
+            }
+            if (enchant >= 8) {
+                op2.ST[WIS] = 1;
+            }
             if (enchant >= 9) {
-                op2.ailment[STUN] = 5;      //技術耐性
-                op2.ailment[SPIRIT] = 5;    //精霊耐性 
-                op2.ailment[SECRET] = 5;    //秘技耐性
-                op2.ailment[TERROR] = 5;    //恐怖耐性
-            } else if (enchant >= 8) {
-                op2.ailment[STUN] = 4;      //技術耐性
-                op2.ailment[SPIRIT] = 4;    //精霊耐性 
-                op2.ailment[SECRET] = 4;    //秘技耐性
-                op2.ailment[TERROR] = 4;    //恐怖耐性
-            } else if (enchant >= 7) {
-                op2.ailment[STUN] = 3;      //技術耐性
-                op2.ailment[SPIRIT] = 3;    //精霊耐性 
-                op2.ailment[SECRET] = 3;    //秘技耐性
-                op2.ailment[TERROR] = 3;    //恐怖耐性
-            } else if (enchant >= 6) {
-                op2.ailment[STUN] = 2;      //技術耐性
-                op2.ailment[SPIRIT] = 2;    //精霊耐性 
-                op2.ailment[SECRET] = 2;    //秘技耐性
-                op2.ailment[TERROR] = 2;    //恐怖耐性
-            } else if (enchant >= 5) {
-                op2.ailment[STUN] = 1;      //技術耐性
-                op2.ailment[SPIRIT] = 1;    //精霊耐性 
-                op2.ailment[SECRET] = 1;    //秘技耐性
-                op2.ailment[TERROR] = 1;    //恐怖耐性
+                op2.ST[STR] = 1;
+            }
+            //+10強化オプション[最大HP+80]
+            if (enchant >= 10) {
+                op2.HP = 80;
             }
         }
+        if (name.equals("血戦のブーツ")) {
+            if (enchant >= 5) {
+                op2.HP = 25;
+            }
+            if (enchant >= 6) {
+                op2.MP = 20;
+            }
+            if (enchant >= 7) {
+                op2.AC = -2;
+            }
+            if (enchant >= 8) {
+                op2.ST[WIS] = 1;
+            }
+            if (enchant >= 9) {
+                op2.ST[DEX] = 1;
+            }
+            //+10強化オプション[最大HP+80]
+            if (enchant >= 10) {
+                op2.HP = 80;
+            }
+        }
+        if (name.equals("血戦のバスキン")) {
+            if (enchant >= 5) {
+                op2.HP = 25;
+            }
+            if (enchant >= 6) {
+                op2.MP = 20;
+            }
+            if (enchant >= 7) {
+                op2.AC = -2;
+            }
+            if (enchant >= 8) {
+                op2.ST[WIS] = 1;
+            }
+            if (enchant >= 9) {
+                op2.ST[INT] = 1;
+            }
+            //+10強化オプション[最大HP+80]
+            if (enchant >= 10) {
+                op2.HP = 80;
+            }
+        }
+        if (name.equals("アイリスのブーツ")) {
+            if (enchant >= 9) {
+                op2.ailment[STUN] = 5;      //技術耐性+5
+                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
+                op2.ailment[TERROR] = 5;    //恐怖耐性+5
+            } else if (enchant >= 8) {
+                op2.ailment[STUN] = 4;      //技術耐性+4
+                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
+                op2.ailment[TERROR] = 4;    //恐怖耐性+4
+            } else if (enchant >= 7) {
+                op2.ailment[STUN] = 3;      //技術耐性+3
+                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+                op2.ailment[TERROR] = 3;    //恐怖耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[STUN] = 2;      //技術耐性+2
+                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+                op2.ailment[TERROR] = 2;    //恐怖耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[STUN] = 1;      //技術耐性+1
+                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
+                op2.ailment[TERROR] = 1;    //恐怖耐性+1
+            }
+        }
+//クローク
         if (name.equals("漆黒のマント")) {
             if (enchant >= 9) {
                 op2.ST[CHA] = 3;
@@ -944,117 +1073,315 @@ public class Bougu implements Common {
                 op2.ST[CHA] = 1;
             }
         }
-        if (name.equals("マンボハット")) {
-            if (enchant >= 7) {
-                op2.ST[CHA] = 1;
+        if (name.equals("フィアバンパイアマント")) {
+            if (enchant >= 9) {
+                op2.ailment[TERROR] = 5;    //恐怖耐性+5
+            } else if (enchant >= 8) {
+                op2.ailment[TERROR] = 4;    //恐怖耐性+4
+            } else if (enchant >= 7) {
+                op2.ailment[TERROR] = 3;    //恐怖耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[TERROR] = 2;    //恐怖耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[TERROR] = 1;    //恐怖耐性+1
             }
         }
+        if (name.equals("アントクイーンゴールデンウィング") || name.equals("アントクイーンシルバーウィング")) {
+            if (enchant >= 9) {
+                op2.ailment[SPIRIT] = 5;    //精霊耐性+5
+            } else if (enchant >= 8) {
+                op2.ailment[SPIRIT] = 4;    //精霊耐性+4
+            } else if (enchant >= 7) {
+                op2.ailment[SPIRIT] = 3;    //精霊耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SPIRIT] = 2;    //精霊耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SPIRIT] = 1;    //精霊耐性+1
+            }
+        }
+        if (name.equals("血戦のマント")) {
+            if (enchant >= 5) {
+                op2.AC = -2;
+            }
+            if (enchant >= 6) {
+                op2.MR = 20;
+            }
+            if (enchant >= 7) {
+                op2.HP = 40;
+                op2.MP = 40;
+            }
+            if (enchant >= 8) {
+                op2.DR = 1;
+            }
+            if (enchant >= 9) {
+                op2.ST[STR] = 1;
+            }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
+            }
+        }
+        if (name.equals("血戦のケープ")) {
+            if (enchant >= 5) {
+                op2.AC = -2;
+            }
+            if (enchant >= 6) {
+                op2.MR = 20;
+            }
+            if (enchant >= 7) {
+                op2.DMG_LONG = 1;
+            }
+            if (enchant >= 8) {
+                op2.DR = 1;
+            }
+            if (enchant >= 9) {
+                op2.ST[DEX] = 1;
+            }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
+            }                
+        }
+        if (name.equals("血戦のクローク")) {
+            if (enchant >= 5) {
+                op2.AC = -2;
+            }
+            if (enchant >= 6) {
+                op2.MR = 20;
+            }
+            if (enchant >= 7) {
+                op2.MPR = 4;
+            }
+            if (enchant >= 8) {
+                op2.DR = 1;
+            }
+            if (enchant >= 9) {
+                op2.ST[INT] = 1;
+            }
+            //+10強化オプション[所持重量増加+240]
+            if (enchant >= 10) {
+                op2.c_weight = 240;
+            }
+        }
+//アーマ
         if (name.equals("マンボコート")) {
             if (enchant >= 7) {
                 op2.ST[CHA] = 1;
             }
         }
-        if (name.equals("漆黒の水晶球")) {
-            if (enchant >= 9) {
-                op2.ST[CHA] = 1;
-            }
-        }
-        if (name.equals("裂空のTシャツ")) {
-            if (enchant >= 10) {
-                op2.DR = 5;                 //ダメージ低下+5
-                op2.MR = 5;                 //MR+5
-                op2.ailment[STUN] = 5;      //技術耐性
-                op2.ailment[SPIRIT] = 5;    //精霊耐性 
-                op2.ailment[SECRET] = 5;    //秘技耐性
-                op2.ailment[TERROR] = 5;    //恐怖耐性
-            } else if (enchant >= 9) {
-                op2.DR = 4;                 //ダメージ低下+4
-                op2.MR = 4;                 //MR+4
-                op2.ailment[STUN] = 4;      //技術耐性
-                op2.ailment[SPIRIT] = 4;    //精霊耐性 
-                op2.ailment[SECRET] = 4;    //秘技耐性
-                op2.ailment[TERROR] = 4;    //恐怖耐性
-            } else if (enchant >= 8) {
-                op2.DR = 3;                 //ダメージ低下+3
-                op2.MR = 3;                 //MR+3
-                op2.ailment[STUN] = 3;      //技術耐性
-                op2.ailment[SPIRIT] = 3;    //精霊耐性 
-                op2.ailment[SECRET] = 3;    //秘技耐性
-                op2.ailment[TERROR] = 3;    //恐怖耐性
-            } else if (enchant >= 7) {
-                op2.DR = 2;                 //ダメージ低下+2
-                op2.MR = 2;                 //MR+2
-                op2.ailment[STUN] = 2;      //技術耐性
-                op2.ailment[SPIRIT] = 2;    //精霊耐性 
-                op2.ailment[SECRET] = 2;    //秘技耐性
-                op2.ailment[TERROR] = 2;    //恐怖耐性
-            } else if (enchant >= 6) {
-                op2.DR = 1;                 //ダメージ低下+1
-                op2.MR = 1;                 //MR+1
-                op2.ailment[STUN] = 1;      //技術耐性
-                op2.ailment[SPIRIT] = 1;    //精霊耐性 
-                op2.ailment[SECRET] = 1;    //秘技耐性
-                op2.ailment[TERROR] = 1;    //恐怖耐性
+        if (name.contains("リッチローブ")) {
+            if (enchant >= 3) {
+                op2.SP = enchant - 2;
             }
         }
         if (name.contains("アンタラスグランド")) {
-            if (enchant > 6) {
-                op2.DR += enchant - 6;
+            if (enchant >= 9) {
+                op2.DR += enchant - 6;      //ダメージ低下+(強化値-6)
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
+            } else if (enchant >= 8) {
+                op2.DR += 2;                //ダメージ低下+2
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
+            } else if (enchant >= 7) {
+                op2.DR += 1;                //ダメージ低下+1
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
+            }
+        }
+        if (name.contains("パプリオンハイドロ") || name.contains("リンドビオルストーム")){
+            if (enchant >= 9) {
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
+            } else if (enchant >= 8) {
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
+            } else if (enchant >= 7) {
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
             }
         }
         if (name.equals("ヴァラカスフレイムプレートメイル")) {
             if (enchant >= 9) {
                 op2.CRI_SHORT = 3;
                 op2.DR_IGNORED = 3;
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
             } else if (enchant >= 8) {
                 op2.CRI_SHORT = 2;
                 op2.DR_IGNORED = 2;
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
             } else if (enchant >= 7) {
                 op2.CRI_SHORT = 1;
                 op2.DR_IGNORED = 1;
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SECRET] = 1;    //秘技耐性+1   
             }
         }
         if (name.equals("ヴァラカスフレイムスケイルメイル")) {
             if (enchant >= 9) {
                 op2.CRI_SHORT = 3;
                 op2.DR_IGNORED = 2;
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
             } else if (enchant >= 8) {
                 op2.CRI_SHORT = 2;
                 op2.DR_IGNORED = 2;
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
             } else if (enchant >= 7) {
                 op2.CRI_SHORT = 1;
                 op2.DR_IGNORED = 1;
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
             }
         }
         if (name.equals("ヴァラカスフレイムレザーアーマー")) {
             if (enchant >= 9) {
                 op2.CRI_LONG = 3;
                 op2.DR_IGNORED = 2;
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
             } else if (enchant >= 8) {
                 op2.CRI_LONG = 2;
                 op2.DR_IGNORED = 2;
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
             } else if (enchant >= 7) {
                 op2.CRI_LONG = 1;
                 op2.DR_IGNORED = 1;
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
             }
         }
         if (name.equals("ヴァラカスフレイムローブ")) {
             if (enchant >= 9) {
                 op2.CRI_MAGIC = 3;
                 op2.DR_IGNORED = 2;
+                op2.ailment[SECRET] = 5;    //秘技耐性+5
             } else if (enchant >= 8) {
                 op2.CRI_MAGIC = 2;
                 op2.DR_IGNORED = 2;
+                op2.ailment[SECRET] = 4;    //秘技耐性+4
             } else if (enchant >= 7) {
                 op2.CRI_MAGIC = 1;
                 op2.DR_IGNORED = 1;
+                op2.ailment[SECRET] = 3;    //秘技耐性+3
+            } else if (enchant >= 6) {
+                op2.ailment[SECRET] = 2;    //秘技耐性+2
+            } else if (enchant >= 5) {
+                op2.ailment[SECRET] = 1;    //秘技耐性+1
             }
         }
+//グローブ
         if (name.equals("輝く魔力のグローブ")) {
             if (enchant > 4) {
                 op2.c_weight += 60 * (enchant - 4);
             }
         }
+        if (name.equals("マミーロードのグローブ")) {
+            if (enchant >= 9) {
+                op2.SP = 3;
+            } else if (enchant >= 8) {
+                op2.SP = 2;
+            } else if (enchant >= 7) {
+                op2.SP = 1;
+            }
+        }
+        if (name.equals("激昂のグローブ")) {
+            if (enchant >= 7) {
+                op2.HIT_SHORT = enchant - 3;
+            }
+            if (enchant >= 9) {
+                op2.HIT_SHORT =6;
+            }
+        }
+        if (name.equals("守護騎士のパワーグローブ")) {
+            if (enchant >= 5) {
+                op2.HIT_SHORT = enchant - 4;
+            }
+            if (enchant >= 9) {
+                op2.HIT_SHORT =5;
+            }
+        }
+        if (name.equals("守護騎士のブレイサー")) {
+            if (enchant >= 5) {
+                op2.HIT_LONG = enchant - 4;
+            }
+            if (enchant >= 9) {
+                op2.HIT_LONG =5;
+            }
+        }
+        if (name.equals("血戦のグローブ")) {
+            if (enchant >= 5) {
+                op2.HP = 30;
+            }
+            if (enchant >= 6) {
+                op2.MR = 2;
+            }
+            if (enchant >= 7) {
+                op2.ST[STR] = 1;
+            }
+            if (enchant >= 8) {
+                op2.MP = 20;
+            }
+            if (enchant >= 9) {
+                op2.DMG_SHORT = 1;
+            }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
+        }
+        if (name.equals("血戦のブレイサー")) {
+            if (enchant >= 5) {
+                op2.HP = 30;
+            }
+            if (enchant >= 6) {
+                op2.MPR = 1;
+            }
+            if (enchant >= 7) {
+                op2.ST[DEX] = 1;
+            }
+            if (enchant >= 8) {
+                op2.MP = 20;
+            }
+            if (enchant >= 9) {
+                op2.DMG_LONG = 1;
+            }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
+        }
+        if (name.equals("血戦のミトン")) {
+            if (enchant >= 5) {
+                op2.HP = 30;
+            }
+            if (enchant >= 6) {
+                op2.MPR = 1;
+            }
+            if (enchant >= 7) {
+                op2.ST[WIS] = 1;
+            }
+            if (enchant >= 8) {
+                op2.MP = 20;
+            }
+            if (enchant >= 9) {
+                op2.SP = 1;
+            }
+            //+10強化オプション[ダメージ軽減+1]
+            if (enchant >= 10) {
+                op2.DR = 1;
+            }
+        }
+//スナッパーリング
         if (name.contains("スナッパー")) {
             if (name.contains("祝福された")) {
                 if (name.contains("勇士")) {
@@ -1606,105 +1933,7 @@ public class Bougu implements Common {
                 }
             }
         }
-
-        if (name.equals("血戦のマント")) {
-            if (enchant >= 5) {
-                op2.AC = -2;
-            }
-            if (enchant >= 6) {
-                op2.MR = 20;
-            }
-            if (enchant >= 7) {
-                op2.HP = 40;
-                op2.MP = 40;
-            }
-            if (enchant >= 8) {
-                op2.DR = 1;
-            }
-            if (enchant >= 9) {
-                op2.ST[STR] = 1;
-            }
-            //+10強化オプション[所持重量増加+240]
-            if (enchant >= 10) {
-                op2.c_weight = 240;
-            }
-        }
-        if (name.equals("血戦のケープ")) {
-            if (enchant >= 5) {
-                op2.AC = -2;
-            }
-            if (enchant >= 6) {
-                op2.MR = 20;
-            }
-            if (enchant >= 7) {
-                op2.DMG_LONG = 1;
-            }
-            if (enchant >= 8) {
-                op2.DR = 1;
-            }
-            if (enchant >= 9) {
-                op2.ST[DEX] = 1;
-            }
-            //+10強化オプション[所持重量増加+240]
-            if (enchant >= 10) {
-                op2.c_weight = 240;
-            }                
-        }
-        if (name.equals("血戦のクローク")) {
-            if (enchant >= 5) {
-                op2.AC = -2;
-            }
-            if (enchant >= 6) {
-                op2.MR = 20;
-            }
-            if (enchant >= 7) {
-                op2.MPR = 4;
-            }
-            if (enchant >= 8) {
-                op2.DR = 1;
-            }
-            if (enchant >= 9) {
-                op2.ST[INT] = 1;
-            }
-            //+10強化オプション[所持重量増加+240]
-            if (enchant >= 10) {
-                op2.c_weight = 240;
-            }
-        }
-        if (name.contains("リッチローブ")) {
-            if (enchant >= 3) {
-                op2.SP = enchant - 2;
-            }
-        }
-        if (name.equals("激昂のグローブ")) {
-            if (enchant >= 7) {
-                op2.HIT_SHORT = enchant - 3;
-            }
-            if (enchant >= 9) {
-                op2.HIT_SHORT =6;
-            }
-        }
-        if (name.equals("守護騎士のパワーグローブ")) {
-            if (enchant >= 5) {
-                op2.HIT_SHORT = enchant - 4;
-            }
-            if (enchant >= 9) {
-                op2.HIT_SHORT =5;
-            }
-        }
-        if (name.equals("守護騎士のブレイサー")) {
-            if (enchant >= 5) {
-                op2.HIT_LONG = enchant - 4;
-            }
-            if (enchant >= 9) {
-                op2.HIT_LONG =5;
-            }
-        }
-
-        if (name.equals("大魔法使いの帽子")) {
-            op2.MP = 10 * enchant;
-        }
-
+//ゲートル
         if (name.equals("シンセシスゲートル")) {
             op2.HP = 5 * enchant;
         }
@@ -1778,134 +2007,8 @@ public class Bougu implements Common {
                 op2.HIT_MAGIC = 1;          //魔法命中+1
             }
         }
-        if (name.equals("血戦のグローブ")) {
-            if (enchant >= 5) {
-                op2.HP = 30;
-            }
-            if (enchant >= 6) {
-                op2.MR = 2;
-            }
-            if (enchant >= 7) {
-                op2.ST[STR] = 1;
-            }
-            if (enchant >= 8) {
-                op2.MP = 20;
-            }
-            if (enchant >= 9) {
-                op2.DMG_SHORT = 1;
-            }
-            //+10強化オプション[ダメージ軽減+1]
-            if (enchant >= 10) {
-                op2.DR = 1;
-            }
-        }
-        if (name.equals("血戦のブレイサー")) {
-            if (enchant >= 5) {
-                op2.HP = 30;
-            }
-            if (enchant >= 6) {
-                op2.MPR = 1;
-            }
-            if (enchant >= 7) {
-                op2.ST[DEX] = 1;
-            }
-            if (enchant >= 8) {
-                op2.MP = 20;
-            }
-            if (enchant >= 9) {
-                op2.DMG_LONG = 1;
-            }
-            //+10強化オプション[ダメージ軽減+1]
-            if (enchant >= 10) {
-                op2.DR = 1;
-            }
-        }
-        if (name.equals("血戦のミトン")) {
-            if (enchant >= 5) {
-                op2.HP = 30;
-            }
-            if (enchant >= 6) {
-                op2.MPR = 1;
-            }
-            if (enchant >= 7) {
-                op2.ST[WIS] = 1;
-            }
-            if (enchant >= 8) {
-                op2.MP = 20;
-            }
-            if (enchant >= 9) {
-                op2.SP = 1;
-            }
-            //+10強化オプション[ダメージ軽減+1]
-            if (enchant >= 10) {
-                op2.DR = 1;
-            }
-        }
-        if (name.equals("血戦のグリーヴ")) {
-            if (enchant >= 5) {
-                op2.HP = 25;
-            }
-            if (enchant >= 6) {
-                op2.MP = 20;
-            }
-            if (enchant >= 7) {
-                op2.AC = -2;
-            }
-            if (enchant >= 8) {
-                op2.ST[WIS] = 1;
-            }
-            if (enchant >= 9) {
-                op2.ST[STR] = 1;
-            }
-            //+10強化オプション[最大HP+80]
-            if (enchant >= 10) {
-                op2.HP = 80;
-            }
-        }
-        if (name.equals("血戦のブーツ")) {
-            if (enchant >= 5) {
-                op2.HP = 25;
-            }
-            if (enchant >= 6) {
-                op2.MP = 20;
-            }
-            if (enchant >= 7) {
-                op2.AC = -2;
-            }
-            if (enchant >= 8) {
-                op2.ST[WIS] = 1;
-            }
-            if (enchant >= 9) {
-                op2.ST[DEX] = 1;
-            }
-            //+10強化オプション[最大HP+80]
-            if (enchant >= 10) {
-                op2.HP = 80;
-            }
-        }
-        if (name.equals("血戦のバスキン")) {
-            if (enchant >= 5) {
-                op2.HP = 25;
-            }
-            if (enchant >= 6) {
-                op2.MP = 20;
-            }
-            if (enchant >= 7) {
-                op2.AC = -2;
-            }
-            if (enchant >= 8) {
-                op2.ST[WIS] = 1;
-            }
-            if (enchant >= 9) {
-                op2.ST[INT] = 1;
-            }
-            //+10強化オプション[最大HP+80]
-            if (enchant >= 10) {
-                op2.HP = 80;
-            }
-        }
-
-        //+1強化するごとにAC-1されない防具・アイテム
+//リング&アミュレット&ベルト&紋章&インシグニア
+//+1強化するごとにAC-1されない防具・アイテム
         if (type.equals("リング") || type.equals("アミュレット") || type.equals("イアリング") || type.equals("ベルト") || type.equals("紋章") || type.equals("インシグニア")) {
 
             if (name.equals("回復の紋章")) {

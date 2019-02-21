@@ -199,6 +199,11 @@ public class Buki implements Common {
         if (name.equals("瞑想のスタッフ")) {
             op2.MPR += enchant;
         }
+        if (name.equals("漆黒の水晶球")) {
+            if (enchant >= 9) {
+                op2.ST[CHA] += 1;
+            }
+        }
         //ハロウィン武器*8種類      強化1毎にPVPダメージ+1
         if (name.equals("ハロウィンソード") || name.equals("ハロウィンツーハンドソード") || name.equals("ハロウィンアックス") || name.equals("ハロウィンスタッフ") || name.equals("ハロウィンデュアルブレード") || name.equals("ハロウィンチェーンソード") || name.equals("ハロウィンキーリンク") || name.equals("ハロウィンボウ")) {
             op2.PVP += enchant;                         //PVPダメージ+強化分
