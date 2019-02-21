@@ -2,6 +2,21 @@ LineageStatusSimulator_fork2018
 
 変更点
 2019/02/22
+Update 3.2.5
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+修正
+	覚醒[アンタラス]
+		[Update前]AC-3 ホールド耐性+10
+		[Update後]AC-3
+	覚醒[パプリオン]
+		[Update前]重さが50~82%でも､HPとMPが自然回復する 凍結耐性+10
+		[Update後]重さが50~82%でも､HPとMPが自然回復する
+	黒蛇のコイン
+		[Update前]HP+20 MP+13 AC-2 ダメージ軽減+3 暗闇耐性+10
+		[Update後]HP+20 MP+13 AC-2 ダメージ軽減+4(*表記はAC-1でも実際の効果はAC-2)
+	術士たちの護符>>術師たちの護符
+	
 Update 3.2.4
 LSS/data/E.zip
 新規

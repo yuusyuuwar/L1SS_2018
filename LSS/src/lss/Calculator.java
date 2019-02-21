@@ -1641,7 +1641,6 @@ public class Calculator implements Common {
                 ui.cb_buff[R_ANTHARAS].setSelected(false);
             } else {
                 buff.AC -= 3;
-//                buff.ailment[HOLD] += 10;
                 if (ui.cb_buff[R_ANTHARAS].getForeground().equals(Color.BLUE)) {
                     cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
                 }
@@ -1654,7 +1653,6 @@ public class Calculator implements Common {
                     || ui.cb_buff[R_LINDVIOL].isSelected()) {
                 ui.cb_buff[R_FAFURION].setSelected(false);
             } else {
-//                buff.ailment[FREEZE] += 10;
                 if (ui.cb_buff[R_FAFURION].getForeground().equals(Color.BLUE)) {
                     cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
                 }
@@ -2797,14 +2795,13 @@ public class Calculator implements Common {
             buff.DR += 1;
             ui.cb_buff[SEC].setToolTipText("AC-1 MR+2% ダメージ軽減+1");
         }
-        //黒蛇の気
+        //黒蛇のコイン 
         if (ui.cb_buff[BS_COIN].isSelected()) {
             buff.HP += 20;
             buff.MP += 13;
             buff.AC -= 2;
-            buff.DR += 3;
-//            buff.ailment[DARKNESS] += 10;
-            ui.cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ軽減+3 暗闇耐性+10");
+            buff.DR += 4;
+            ui.cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ軽減+4"); //表記はHP+20 MP+13 AC-1 ダメージ軽減+4
         }
         //魔眼
         if (ui.cb_buff[ITEM_MAGAN].isSelected()) {
