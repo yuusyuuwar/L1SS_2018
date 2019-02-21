@@ -772,7 +772,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "耐水の紋様", "耐風の紋様", "耐地の紋様", "属性抵抗の紋様", "生命の防御紋様", "魔力の防御紋様", "上級防御の紋様", "偉大なる者の遺物"};
         String center_list[] = {"背中", "祈りの紋様", "祈りの紋様II", "祈りの紋様III", "祈りの紋様IV", "祈りの紋様V"};
         String left2_list[] = {"左手", "四つ星(近距離)", "四つ星(遠距離)", "六つ星(近/遠距離)", "象牙の塔のタリスマン"};
-        String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術士たちの護符", "勇猛のオルターストーン", "魔弾のオルターストーン", "叡智のオルターストーン"};
+        String right2_list[] = {"右手", "鎮守の護符(体力)", "鎮守の護符(魔力)", "戦士たちの護符", "射手たちの護符", "術師たちの護符", "勇猛のオルターストーン", "魔弾のオルターストーン", "叡智のオルターストーン"};
         cb_pattern_l = new WideComboBox(left_list);
         cb_pattern_r = new WideComboBox(right_list);
         cb_pattern_c = new WideComboBox(center_list);
@@ -1395,13 +1395,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[R_MB].setToolTipText("一定確率でAC/2（最低40）ダメージの反撃");
         cb_buff[R_ANTHARAS] = new JCheckBox("覚醒[アンタラス]");
         cb_buff[R_ANTHARAS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_ANTHARAS].setToolTipText("AC-3 ホールド耐性+10");
+        cb_buff[R_ANTHARAS].setToolTipText("AC-3");
         cb_buff[R_FAFURION] = new JCheckBox("覚醒[パプリオン]");
         cb_buff[R_FAFURION].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_FAFURION].setToolTipText("重量オーバ時でも自然回復 凍結耐性+10");
+        cb_buff[R_FAFURION].setToolTipText("重さが50~82%でも､HPとMPが自然回復する");
         cb_buff[R_VALAKAS] = new JCheckBox("覚醒[ヴァラカス]");
         cb_buff[R_VALAKAS].setBounds(200 * row, 20 * col++, 150, 20);
-//        cb_buff[R_VALAKAS].setToolTipText("近接命中+5 スタン耐性+10");
         cb_buff[R_VALAKAS].setToolTipText("近接命中+5 技術耐性+10");
         cb_buff[R_LINDVIOL] = new JCheckBox("覚醒[リンドビオル]");
         cb_buff[R_LINDVIOL].setBounds(200 * row, 20 * col++, 180, 20);
@@ -1544,9 +1543,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             "サイクロプス", "ナイトバルド", "シアー",
             "デスナイト", "デーモン", "覚醒パオ", "マミーロード",
             "アイリス", "バンパイア", "バランカ", "アイスクイーン","カーツ","バフォメット","堕落",
-            "アンタラス", "パプリオン", "リンドビオル", "ヴァラカス"
-        };
-
+            "アンタラス", "パプリオン", "リンドビオル", "ヴァラカス"};
         cb_buff_group[ITEM_MD2] = new WideComboBox(list_md2);
         cb_buff_group[ITEM_MD2].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_MD2] = new JCheckBox("新マジックドール");
@@ -1579,7 +1576,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[BS_COIN] = new JCheckBox("黒蛇のコイン");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ減少+3 闇耐性+10");
 
         //y_ikedaさんによる修正を参考に
         String list_hst[] = {"1個", "2個", "3個", "4個", "5個"};
