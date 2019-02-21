@@ -711,7 +711,7 @@ public class Calculator implements Common {
                 case 6:                             //イエティ
                     buff.AC -= 3;
 //                    buff.ailment[FREEZE] += 7;
-                    ui.cb_buff[ITEM_MD].setToolTipText("AC-3 凍結耐性+7");
+                    ui.cb_buff[ITEM_MD].setToolTipText("AC-3");
                     break;
                 case 7:                             //コカトリス
                     buff.DMG_LONG++;
@@ -1064,9 +1064,9 @@ public class Calculator implements Common {
                     buff.DMG_SHORT += 6;
                     buff.HIT_SHORT += 6;
                     buff.DR += 2;
+                    buff.ailment[HIT_SPIRIT] += 10;
                     buff.effect += "MP回復 +12,";
-                    buff.effect += "破壊的中+10,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("最大HP+120 近距離ダメージ+6 近距離命中+6 ダメージ軽減+2 破壊的中+10 64秒毎にMPが12回復");
+                    ui.cb_buff[ITEM_MD2].setToolTipText("最大HP+120 近距離ダメージ+6 近距離命中+6 ダメージ軽減+2 精霊命中+10 64秒毎にMPが12回復");
                     break;
                 case "アイスクイーン":
                     buff.HP += 80;
@@ -2810,46 +2810,42 @@ public class Calculator implements Common {
         if (ui.cb_buff[ITEM_MAGAN].isSelected()) {
             switch (ui.cb_buff_group[ITEM_MAGAN].getSelectedIndex()) {
                 case 0://地竜の魔眼
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("物理攻撃回避+10%(未実装) 秘技耐性+5(未実装)");
-                    //物理攻撃回避+10%(未実装)
-                    //buff.ailment[SECRET] += 5;
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("秘技耐性+5");
+                    buff.ailment[SECRET] += 5;
                     break;
                 case 1://水竜の魔眼
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("10%の確率で魔法ダメージ半減(未実装) 精霊耐性+5(未実装)");
-                    //10%の確率で魔法ダメージ半減(未実装)
-                    //buff.ailment[SPIRIT] += 5;
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("精霊耐性+5");
+                    buff.ailment[SPIRIT] += 5;
                     break;
-                case 2://風竜の魔眼
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で魔法クリティカル+2%(未実装) ER+10 恐怖耐性+5");  
-                    //一定確率で魔法クリティカル+2%(未実装)
-                    buff.ER+= 10;
+                case 2://風竜の魔眼 
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("恐怖耐性+5"); 
                     buff.ailment[TERROR] += 5;
                     break;
                 case 3://火竜の魔眼
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で近距離ダメージ+2 遠距離ダメージ+2(未実装) 技術耐性+5");
-                    //一定確率で近距離ダメージ+2 遠距離ダメージ+2(未実装)
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("技術耐性+5");
                     buff.ailment[STUN] += 5;
                     break;
                 case 4://誕生の魔眼
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で[物理攻撃回避][魔法ダメージ半減](未実装) 精霊耐性+5(未実装) 秘技耐性+5(未実装)");
-                    //一定確率で[物理攻撃回避][魔法ダメージ半減](未実装)
-                    //buff.ailment[SPIRIT] += 5;
-                    //buff.ailment[SECRET] += 5;
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("精霊耐性+5 秘技耐性+5");
+                    buff.ailment[SPIRIT] += 5;
+                    buff.ailment[SECRET] += 5;
                     break;
                 case 5://形状の魔眼
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%](未実装) 精霊耐性+5(未実装) 秘技耐性+5(未実装) 恐怖耐性+5");
-                    //一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%](未実装)
-                    //buff.ailment[SPIRIT] += 5;
-                    //buff.ailment[SECRET] += 5;
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("精霊耐性+5 秘技耐性+5 恐怖耐性+5");
+                    buff.ailment[SPIRIT] += 5;
+                    buff.ailment[SECRET] += 5;
                     buff.ailment[TERROR] += 5;
                     break;
                 case 6://生命の魔眼
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%][近距離ダメージ+2 遠距離ダメージ+2](未実装) 技術耐性+5 精霊耐性+5(未実装) 秘技耐性+5(未実装) 恐怖耐性+5");
-                    //一定確率で[物理攻撃回避][魔法ダメージ半減][魔法クリティカル+1%][近距離ダメージ+2 遠距離ダメージ+2](未実装)
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("技術耐性+5 精霊耐性+5 秘技耐性+5 恐怖耐性+5 技術命中+3 精霊命中+3 秘技命中+3 恐怖命中+3");
                     buff.ailment[STUN] += 5;
-                    //buff.ailment[SPIRIT] += 5;
-                    //buff.ailment[SECRET] += 5;
+                    buff.ailment[SPIRIT] += 5;
+                    buff.ailment[SECRET] += 5;
                     buff.ailment[TERROR] += 5;
+                    buff.ailment[HIT_STUN] += 3;
+                    buff.ailment[HIT_SPIRIT] += 3;
+                    buff.ailment[HIT_SECRET] += 3;
+                    buff.ailment[HIT_TERROR] += 3;
                     break;
                 case 7://グレムリンの魔眼
                     ui.cb_buff[ITEM_MAGAN].setToolTipText("近距離ダメージ+2 遠距離ダメージ+2 SP+1");
