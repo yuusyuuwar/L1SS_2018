@@ -214,14 +214,14 @@ public interface Common {
 //    final int SPIRIT = 18;
 //    final int HIT_SPIRIT = 19;
     
-    final String[] AILMENT_LIST = {"‹Zp‘Ï«", "¸—ì‘Ï«", "—³Œê‘Ï«", "‹°•|‘Ï«", "‹Zp–½’†", "¸—ì–½’†", "—³Œê–½’†","‹°•|–½’†"};
+    final String[] AILMENT_LIST = {"‹Zp‘Ï«", "¸—ì‘Ï«", "”é‹Z‘Ï«", "‹°•|‘Ï«", "‹Zp–½’†", "¸—ì–½’†", "”é‹Z–½’†","‹°•|–½’†"};
     final int STUN = 0;
     final int SPIRIT = 1;
-    final int DRAGON = 2;
+    final int SECRET = 2;
     final int TERROR = 3;
     final int HIT_STUN = 4;
     final int HIT_SPIRIT = 5; 
-    final int HIT_DRAGON = 6; 
+    final int HIT_SECRET = 6; 
     final int HIT_TERROR = 7; 
 
     final String[] ENEMY_TYPE_LIST = {"’Êí", "ˆ«–‚", "•s€"};

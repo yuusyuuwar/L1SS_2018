@@ -216,8 +216,8 @@ public class Bougu implements Common {
         if (op.ailment[SPIRIT] + op2.ailment[SPIRIT] > 0) {
             text += " ¸—ì‘Ï«+" + (op.ailment[SPIRIT] + op2.ailment[SPIRIT]);
         }
-        if (op.ailment[DRAGON] + op2.ailment[DRAGON] > 0) {
-            text += " —³Œê‘Ï«+" + (op.ailment[DRAGON] + op2.ailment[DRAGON]);
+        if (op.ailment[SECRET] + op2.ailment[SECRET] > 0) {
+            text += " ”é‹Z‘Ï«+" + (op.ailment[SECRET] + op2.ailment[SECRET]);
         }
         if (op.ailment[TERROR] + op2.ailment[TERROR] > 0) {
             text += " ‹°•|‘Ï«+" + (op.ailment[TERROR] + op2.ailment[TERROR]);
@@ -252,8 +252,8 @@ public class Bougu implements Common {
         if (op.ailment[HIT_SPIRIT] + op2.ailment[HIT_SPIRIT] > 0) {
             text += " ¸—ì–½’†+" + (op.ailment[HIT_SPIRIT] + op2.ailment[HIT_SPIRIT]);
         }
-        if (op.ailment[HIT_DRAGON] + op2.ailment[HIT_DRAGON] > 0) {
-            text += " —³Œê–½’†+" + (op.ailment[HIT_DRAGON] + op2.ailment[HIT_DRAGON]);
+        if (op.ailment[HIT_SECRET] + op2.ailment[HIT_SECRET] > 0) {
+            text += " ”é‹Z–½’†+" + (op.ailment[HIT_SECRET] + op2.ailment[HIT_SECRET]);
         }
         if (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR] > 0) {
             text += " ‹°•|–½’†+" + (op.ailment[HIT_TERROR] + op2.ailment[HIT_TERROR]);
@@ -439,6 +439,139 @@ public class Bougu implements Common {
                     op2.HP = 20;
             }
         }
+        if (name.equals("“¬m‚Ì—³TƒVƒƒƒc")) {             //AC-2 STR+1 ‹ß‹——£ƒ_ƒ[ƒW+1
+            if (enchant >= 10) {
+                    op2.DMG_SHORT = 1;                   //‹ß‹——£ƒ_ƒ[ƒW+1(‡Œv2)
+                    op2.HIT_SHORT = 7;                   //‹ß‹——£–½’†+7
+                    op2.HP = 100;                        //HP+100
+                    op2.PVP = 1;                         //PVP’Ç‰Áƒ_ƒ[ƒW+1
+                    op2.PVP_DR = 1;                      //PVPƒ_ƒ[ƒW’á‰º+1
+                    op2.ailment[STUN] = 18;              //‹Zp‘Ï«+18
+                    op2.ailment[SPIRIT] = 6;             //¸—ì‘Ï«+6
+                    op2.ailment[SECRET] = 6;             //”é‹Z‘Ï«+6
+                    op2.ailment[TERROR] = 6;             //‹°•|‘Ï«+6
+            } else if (enchant >= 9) {
+                    op2.DMG_SHORT = 1;                   //‹ß‹——£ƒ_ƒ[ƒW+1(‡Œv2)
+                    op2.HIT_SHORT = 5;                   //‹ß‹——£–½’†+5
+                    op2.ailment[STUN] = 15;              //‹Zp‘Ï«+15
+                    op2.ailment[SPIRIT] = 4;             //¸—ì‘Ï«+4
+                    op2.ailment[SECRET] = 4;             //”é‹Z‘Ï«+4
+                    op2.ailment[TERROR] = 4;             //‹°•|‘Ï«+4
+            } else if (enchant >= 8) {
+                    op2.HIT_SHORT = 3;                   //‹ß‹——£–½’†+3
+                    op2.ailment[STUN] = 12;              //‹Zp‘Ï«+12
+                    op2.ailment[SPIRIT] = 1;             //¸—ì‘Ï«+2
+                    op2.ailment[SECRET] = 1;             //”é‹Z‘Ï«+2
+                    op2.ailment[TERROR] = 1;             //‹°•|‘Ï«+2
+            } else if (enchant >= 7) {
+                    op2.HIT_SHORT = 1;                   //‹ß‹——£–½’†+1
+                    op2.ailment[STUN] = 10;              //‹Zp‘Ï«+10
+                    op2.ailment[SPIRIT] = 1;             //¸—ì‘Ï«+1
+                    op2.ailment[SECRET] = 1;             //”é‹Z‘Ï«+1
+                    op2.ailment[TERROR] = 1;             //‹°•|‘Ï«+1
+            } else if (enchant >= 6) {
+                    op2.ailment[STUN] = 9;               //‹Zp‘Ï«+9
+            } else if (enchant >= 5) {
+                    op2.ailment[STUN] = 8;               //‹Zp‘Ï«+8                  
+            }
+        }
+        if (name.equals("Ëè‚Ì—³TƒVƒƒƒc")) {             //AC-2 DEX+1 ‰“‹——£ƒ_ƒ[ƒW+1
+            if (enchant >= 10) {
+                    op2.DMG_LONG = 1;                    //‰“‹——£ƒ_ƒ[ƒW+1(‡Œv2)
+                    op2.HIT_LONG = 7;                    //‰“‹——£–½’†+7
+                    op2.HP = 100;                        //HP+100
+                    op2.PVP = 1;                         //PVP’Ç‰Áƒ_ƒ[ƒW+1
+                    op2.PVP_DR = 1;                      //PVPƒ_ƒ[ƒW’á‰º+1
+                    op2.ailment[STUN] = 18;              //‹Zp‘Ï«+18
+                    op2.ailment[SPIRIT] = 6;             //¸—ì‘Ï«+6
+                    op2.ailment[SECRET] = 6;             //”é‹Z‘Ï«+6
+                    op2.ailment[TERROR] = 6;             //‹°•|‘Ï«+6
+            } else if (enchant >= 9) {
+                    op2.DMG_LONG = 1;                    //‰“‹——£ƒ_ƒ[ƒW+1(‡Œv2)
+                    op2.HIT_LONG = 5;                    //‰“‹——£–½’†+5
+                    op2.ailment[STUN] = 15;              //‹Zp‘Ï«+15
+                    op2.ailment[SPIRIT] = 4;             //¸—ì‘Ï«+4
+                    op2.ailment[SECRET] = 4;             //”é‹Z‘Ï«+4
+                    op2.ailment[TERROR] = 4;             //‹°•|‘Ï«+4
+            } else if (enchant >= 8) {
+                    op2.HIT_LONG = 3;                    //‰“‹——£–½’†+3
+                    op2.ailment[STUN] = 12;              //‹Zp‘Ï«+12
+                    op2.ailment[SPIRIT] = 1;             //¸—ì‘Ï«+2
+                    op2.ailment[SECRET] = 1;             //”é‹Z‘Ï«+2
+                    op2.ailment[TERROR] = 1;             //‹°•|‘Ï«+2
+            } else if (enchant >= 7) {
+                    op2.HIT_LONG = 1;                    //‰“‹——£–½’†+1
+                    op2.ailment[STUN] = 10;              //‹Zp‘Ï«+10
+                    op2.ailment[SPIRIT] = 1;             //¸—ì‘Ï«+1
+                    op2.ailment[SECRET] = 1;             //”é‹Z‘Ï«+1
+                    op2.ailment[TERROR] = 1;             //‹°•|‘Ï«+1
+            } else if (enchant >= 6) {
+                    op2.ailment[STUN] = 9;               //‹Zp‘Ï«+9
+            } else if (enchant >= 5) {
+                    op2.ailment[STUN] = 8;               //‹Zp‘Ï«+8                  
+            }
+        }
+        if (name.equals("Œ«Ò‚Ì—³TƒVƒƒƒc")) {             //AC-2 INT+1 SP+1
+            if (enchant >= 10) {
+                    op2.SP = 2;                          //SP+2(‡Œv3)
+                    op2.HIT_MAGIC = 5;                   //–‚–@–½’†+5
+                    op2.HP = 100;                        //HP+100
+                    op2.PVP = 1;                         //PVP’Ç‰Áƒ_ƒ[ƒW+1
+                    op2.PVP_DR = 1;                      //PVPƒ_ƒ[ƒW’á‰º+1
+                    op2.ailment[STUN] = 18;              //‹Zp‘Ï«+18
+                    op2.ailment[SPIRIT] = 6;             //¸—ì‘Ï«+6
+                    op2.ailment[SECRET] = 6;             //”é‹Z‘Ï«+6
+                    op2.ailment[TERROR] = 6;             //‹°•|‘Ï«+6
+            } else if (enchant >= 9) {
+                    op2.SP = 1;                          //SP+1(‡Œv2)
+                    op2.HIT_MAGIC = 4;                   //–‚–@–½’†+4
+                    op2.ailment[STUN] = 15;              //‹Zp‘Ï«+15
+                    op2.ailment[SPIRIT] = 4;             //¸—ì‘Ï«+4
+                    op2.ailment[SECRET] = 4;             //”é‹Z‘Ï«+4
+                    op2.ailment[TERROR] = 4;             //‹°•|‘Ï«+4
+            } else if (enchant >= 8) {
+                    op2.SP = 1;                          //SP+1(‡Œv2)
+                    op2.HIT_MAGIC = 2;                   //–‚–@–½’†+2
+                    op2.ailment[STUN] = 12;              //‹Zp‘Ï«+12
+                    op2.ailment[SPIRIT] = 1;             //¸—ì‘Ï«+2
+                    op2.ailment[SECRET] = 1;             //”é‹Z‘Ï«+2
+                    op2.ailment[TERROR] = 1;             //‹°•|‘Ï«+2
+            } else if (enchant >= 7) {
+                    op2.SP = 1;                          //SP+1(‡Œv2)
+                    op2.ailment[STUN] = 10;              //‹Zp‘Ï«+10
+                    op2.ailment[SPIRIT] = 1;             //¸—ì‘Ï«+1
+                    op2.ailment[SECRET] = 1;             //”é‹Z‘Ï«+1
+                    op2.ailment[TERROR] = 1;             //‹°•|‘Ï«+1
+            } else if (enchant >= 6) {
+                    op2.ailment[STUN] = 9;               //‹Zp‘Ï«+9
+            } else if (enchant >= 5) {
+                    op2.ailment[STUN] = 8;               //‹Zp‘Ï«+8                  
+            }
+        }
+        if (name.equals("çŒì‚Ì—³TƒVƒƒƒc")) {             //AC-2 WIS+1 ƒ_ƒ[ƒW’á‰º+1
+            if (enchant >= 10) {
+                    op2.DR = 1;                          //ƒ_ƒ[ƒW’á‰º+1(‡Œv2)
+                    op2.MR = 14;                         //MR+14
+                    op2.HP = 100;                        //HP+100
+                    op2.PVP = 1;                         //PVP’Ç‰Áƒ_ƒ[ƒW+1
+                    op2.PVP_DR = 1;                      //PVPƒ_ƒ[ƒW’á‰º+1
+                                                         //EXP+8%
+            } else if (enchant >= 9) {
+                    op2.DR = 1;                          //ƒ_ƒ[ƒW’á‰º+1(‡Œv2)
+                    op2.MR = 11;                         //MR+11
+                                                         //EXP+6%
+            } else if (enchant >= 8) {
+                    op2.MR = 8;                          //MR+8
+                                                         //EXP+4%
+            } else if (enchant >= 7) {
+                    op2.MR = 5;                          //MR+6
+                                                         //EXP+2%
+            } else if (enchant >= 6) {
+                    op2.MR = 5;                          //MR+5
+            } else if (enchant >= 5) {
+                    op2.MR = 4;                          //MR+4                 
+            }
+        }
         if (name.equals("ŒÃ‘ã‹|Ëè‚ÌƒK[ƒ_[")) {
             if (enchant >= 9) {
                 op2.DMG_LONG = 3;
@@ -489,31 +622,31 @@ public class Bougu implements Common {
                 op2.HIT_SHORT = 5;          //‹ß‹——£–½’†
                 op2.ailment[STUN] = 5;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 5;    //‹°•|‘Ï«
             } else if (enchant >= 8) {
                 op2.HIT_SHORT = 4;          //‹ß‹——£–½’†
                 op2.ailment[STUN] = 4;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 4;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 4;    //‹°•|‘Ï«
             } else if (enchant >= 7) {
                 op2.HIT_SHORT = 3;          //‹ß‹——£–½’†
                 op2.ailment[STUN] = 3;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 3;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 3;    //‹°•|‘Ï«
             } else if (enchant >= 6) {
                 op2.HIT_SHORT = 2;          //‹ß‹——£–½’†
                 op2.ailment[STUN] = 2;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 2;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 2;    //‹°•|‘Ï«
             } else if (enchant >= 5) {
                 op2.HIT_SHORT = 1;          //‹ß‹——£–½’†
                 op2.ailment[STUN] = 1;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 1;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 1;    //‹°•|‘Ï«
             }
         }
@@ -522,31 +655,31 @@ public class Bougu implements Common {
                 op2.HIT_LONG = 5;           //‰“‹——£–½’†+5
                 op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
                 op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
-                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«+5
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«+5
                 op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
             } else if (enchant >= 8) {
                 op2.HIT_LONG = 4;           //‰“‹——£–½’†+4
                 op2.ailment[STUN] = 4;      //‹Zp‘Ï«+4
                 op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï«+4
-                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«+4
+                op2.ailment[SECRET] = 4;    //”é‹Z‘Ï«+4
                 op2.ailment[TERROR] = 4;    //‹°•|‘Ï«+4
             } else if (enchant >= 7) {
                 op2.HIT_LONG = 3;           //‰“‹——£–½’†+3
                 op2.ailment[STUN] = 3;      //‹Zp‘Ï«+3
                 op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï«+3
-                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«+3
+                op2.ailment[SECRET] = 3;    //”é‹Z‘Ï«+3
                 op2.ailment[TERROR] = 3;    //‹°•|‘Ï«+3
             } else if (enchant >= 6) {
                 op2.HIT_LONG = 2;           //‰“‹——£–½’†+2
                 op2.ailment[STUN] = 2;      //‹Zp‘Ï«+2
                 op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï«+2
-                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«+2
+                op2.ailment[SECRET] = 2;    //”é‹Z‘Ï«+2
                 op2.ailment[TERROR] = 2;    //‹°•|‘Ï«+2
             } else if (enchant >= 5) {
                 op2.HIT_LONG = 1;           //‰“‹——£–½’†+1
                 op2.ailment[STUN] = 1;      //‹Zp‘Ï«+1
                 op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï«+1
-                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«+1
+                op2.ailment[SECRET] = 1;    //”é‹Z‘Ï«+1
                 op2.ailment[TERROR] = 1;    //‹°•|‘Ï«+1
             }
         }
@@ -554,44 +687,44 @@ public class Bougu implements Common {
             if (enchant >= 11) {
                 op2.DMG_SHORT = enchant-6;  //‹ß‹——£ƒ_ƒ[ƒW+(enchant-6)
                 op2.HIT_SHORT = enchant-4;  //‹ß‹——£–½’†+(enchant-4)
-//                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
-//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
-//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«+5
-//                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5               
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
+                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«+5
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5               
             } else if (enchant >= 10) {
                 op2.DMG_SHORT = 4;          //‹ß‹——£ƒ_ƒ[ƒW+4
                 op2.HIT_SHORT = 6;          //‹ß‹——£–½’†+6
-//                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
-//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
-//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«+5
-//                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
+                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«+5
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
             } else if (enchant >= 9) {
                 op2.DMG_SHORT = 3;          //‹ß‹——£ƒ_ƒ[ƒW+3
                 op2.HIT_SHORT = 5;          //‹ß‹——£–½’†+5
-//                op2.ailment[STUN] = 4;      //‹Zp‘Ï«+4
-//                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï«+4
-//                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«+4
-//                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«+4
+                op2.ailment[STUN] = 4;      //‹Zp‘Ï«+4
+                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï«+4
+                op2.ailment[SECRET] = 4;    //”é‹Z‘Ï«+4
+                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«+4
             } else if (enchant >= 8) {
                 op2.DMG_SHORT = 2;          //‹ß‹——£ƒ_ƒ[ƒW+2
                 op2.HIT_SHORT = 4;          //‹ß‹——£–½’†+4
-//                op2.ailment[STUN] = 3;      //‹Zp‘Ï«+3
-//                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï«+3
-//                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«+3
-//                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«+3  
+                op2.ailment[STUN] = 3;      //‹Zp‘Ï«+3
+                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï«+3
+                op2.ailment[SECRET] = 3;    //”é‹Z‘Ï«+3
+                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«+3  
             } else if (enchant >= 7) {
                 op2.DMG_SHORT = 1;          //‹ß‹——£ƒ_ƒ[ƒW+1
                 op2.HIT_SHORT = 3;          //‹ß‹——£–½’†+3
-//                op2.ailment[STUN] = 2;      //‹Zp‘Ï«+2
-//                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï«+2
-//                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«+2
-//                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«+2
+                op2.ailment[STUN] = 2;      //‹Zp‘Ï«+2
+                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï«+2
+                op2.ailment[SECRET] = 2;    //”é‹Z‘Ï«+2
+                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«+2
             } else if (enchant >= 6) {
                 op2.HIT_SHORT = 2;          //‹ß‹——£–½’†+2
-//                op2.ailment[STUN] = 1;      //‹Zp‘Ï«+1
-//                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï«+1
-//                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«+1
-//                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«+1
+                op2.ailment[STUN] = 1;      //‹Zp‘Ï«+1
+                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï«+1
+                op2.ailment[SECRET] = 1;    //”é‹Z‘Ï«+1
+                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«+1
             } else if (enchant >= 5) {
                 op2.HIT_SHORT = 1;          //‹ß‹——£–½’†+1
             }
@@ -600,44 +733,44 @@ public class Bougu implements Common {
             if (enchant >= 11) {
                 op2.DMG_LONG = enchant-6;   //‰“‹——£ƒ_ƒ[ƒW+(enchant-6)
                 op2.HIT_LONG = enchant-4;   //‰“‹——£–½’†+(enchant-4)
-//                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
-//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
-//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«+5
-//                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5               
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
+                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«+5
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5               
             } else if (enchant >= 10) {
                 op2.DMG_LONG = 4;           //‰“‹——£ƒ_ƒ[ƒW+4
                 op2.HIT_LONG = 6;           //‰“‹——£–½’†+6
-//                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
-//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
-//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«+5
-//                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
+                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«+5
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
             } else if (enchant >= 9) {
                 op2.DMG_LONG = 3;           //‰“‹——£ƒ_ƒ[ƒW+3
                 op2.HIT_LONG = 5;           //‰“‹——£–½’†+5
-//                op2.ailment[STUN] = 4;      //‹Zp‘Ï«+4
-//                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï«+4
-//                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«+4
-//                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«+4
+                op2.ailment[STUN] = 4;      //‹Zp‘Ï«+4
+                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï«+4
+                op2.ailment[SECRET] = 4;    //”é‹Z‘Ï«+4
+                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«+4
             } else if (enchant >= 8) {
                 op2.DMG_LONG = 2;           //‰“‹——£ƒ_ƒ[ƒW+2
                 op2.HIT_LONG = 4;           //‰“‹——£–½’†+4
-//                op2.ailment[STUN] = 3;      //‹Zp‘Ï«+3
-//                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï«+3
-//                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«+3
-//                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«+3
+                op2.ailment[STUN] = 3;      //‹Zp‘Ï«+3
+                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï«+3
+                op2.ailment[SECRET] = 3;    //”é‹Z‘Ï«+3
+                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«+3
             } else if (enchant >= 7) {
                 op2.DMG_LONG = 1;           //‰“‹——£ƒ_ƒ[ƒW+1
                 op2.HIT_LONG = 3;           //‰“‹——£–½’†+3
-//                op2.ailment[STUN] = 2;      //‹Zp‘Ï«+2
-//                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï«+2
-//                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«+2
-//                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«+2
+                op2.ailment[STUN] = 2;      //‹Zp‘Ï«+2
+                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï«+2
+                op2.ailment[SECRET] = 2;    //”é‹Z‘Ï«+2
+                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«+2
             } else if (enchant >= 6) {
                 op2.HIT_LONG = 2;           //‰“‹——£–½’†+2
-//                op2.ailment[STUN] = 1;      //‹Zp‘Ï«+1
-//                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï«+1
-//                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«+1
-//                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«+1
+                op2.ailment[STUN] = 1;      //‹Zp‘Ï«+1
+                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï«+1
+                op2.ailment[SECRET] = 1;    //”é‹Z‘Ï«+1
+                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«+1
             } else if (enchant >= 5) {
                 op2.HIT_LONG = 1;           //‰“‹——£–½’†+1
             }
@@ -646,44 +779,44 @@ public class Bougu implements Common {
             if (enchant >= 11) {
                 op2.SP = enchant-6;         //SP+(enchant-6)
                 op2.HIT_MAGIC = enchant-4;  //–‚–@–½’†+(enchant-4)
-//                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
-//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
-//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«+5
-//                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
+                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«+5
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
             } else if (enchant >= 10) {
                 op2.SP = 4;                 //SP+4
                 op2.HIT_MAGIC = 6;          //–‚–@–½’†+6
-//                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
-//                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
-//                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«+5
-//                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«+5
+                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï«+5
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«+5
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«+5
             } else if (enchant >= 9) {
                 op2.SP = 3;                 //SP+3
                 op2.HIT_MAGIC = 5;          //–‚–@–½’†+5
-//                op2.ailment[STUN] = 4;      //‹Zp‘Ï«+4
-//                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï«+4
-//                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«+4
-//                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«+4
+                op2.ailment[STUN] = 4;      //‹Zp‘Ï«+4
+                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï«+4
+                op2.ailment[SECRET] = 4;    //”é‹Z‘Ï«+4
+                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«+4
             } else if (enchant >= 8) {
                 op2.SP = 2;                 //SP+2
                 op2.HIT_MAGIC = 4;          //–‚–@–½’†+4
-//                op2.ailment[STUN] = 3;      //‹Zp‘Ï«+3
-//                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï«+3
-//                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«+3
-//                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«+3
+                op2.ailment[STUN] = 3;      //‹Zp‘Ï«+3
+                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï«+3
+                op2.ailment[SECRET] = 3;    //”é‹Z‘Ï«+3
+                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«+3
             } else if (enchant >= 7) {
                 op2.SP = 1;                 //SP+1
                 op2.HIT_MAGIC = 3;          //–‚–@–½’†+3
-//                op2.ailment[STUN] = 2;      //‹Zp‘Ï«+2
-//                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï«+2
-//                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«+2
-//                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«+2
+                op2.ailment[STUN] = 2;      //‹Zp‘Ï«+2
+                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï«+2
+                op2.ailment[SECRET] = 2;    //”é‹Z‘Ï«+2
+                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«+2
             } else if (enchant >= 6) {
                 op2.HIT_MAGIC = 2;          //–‚–@–½’†+2
-//                op2.ailment[STUN] = 1;      //‹Zp‘Ï«+1
-//                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï«+1
-//                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«+1
-//                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«+1
+                op2.ailment[STUN] = 1;      //‹Zp‘Ï«+1
+                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï«+1
+                op2.ailment[SECRET] = 1;    //”é‹Z‘Ï«+1
+                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«+1
             } else if (enchant >= 5) {
                 op2.HIT_MAGIC = 1;          //–‚–@–½’†+1
             }
@@ -719,6 +852,19 @@ public class Bougu implements Common {
         if (name.equals("ƒuƒ‰ƒbƒNƒiƒCƒgƒwƒ‹ƒ€")) {
             if (enchant >= 5) {
                 op2.MR += 4 * (enchant -4);
+            }
+        }
+        if (name.equals("‘å–‚pt‚Ì–Xq")) {
+            if (enchant >= 9) {
+                op2.ailment[SPIRIT] = 1;         //¸—ì‘Ï«+5
+            } else if (enchant >= 8) {
+                op2.ailment[SPIRIT] = 1;         //¸—ì‘Ï«+4
+            } else if (enchant >= 7) {
+                op2.ailment[SPIRIT] = 1;         //¸—ì‘Ï«+3
+            } else if (enchant >= 6) {
+                op2.ailment[SPIRIT] = 1;         //¸—ì‘Ï«+2
+            } else if (enchant >= 5) {
+                op2.ailment[SPIRIT] = 1;         //¸—ì‘Ï«+1
             }
         }
         if (name.equals("˜r—Í‚Ìƒu[ƒc")) {
@@ -765,27 +911,27 @@ public class Bougu implements Common {
             if (enchant >= 9) {
                 op2.ailment[STUN] = 5;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 5;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 5;    //‹°•|‘Ï«
             } else if (enchant >= 8) {
                 op2.ailment[STUN] = 4;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 4;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 4;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 4;    //‹°•|‘Ï«
             } else if (enchant >= 7) {
                 op2.ailment[STUN] = 3;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 3;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 3;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 3;    //‹°•|‘Ï«
             } else if (enchant >= 6) {
                 op2.ailment[STUN] = 2;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 2;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 2;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 2;    //‹°•|‘Ï«
             } else if (enchant >= 5) {
                 op2.ailment[STUN] = 1;      //‹Zp‘Ï«
                 op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï« 
-                op2.ailment[DRAGON] = 1;    //—³Œê‘Ï«
+                op2.ailment[SECRET] = 1;    //”é‹Z‘Ï«
                 op2.ailment[TERROR] = 1;    //‹°•|‘Ï«
             }
         }
@@ -814,8 +960,41 @@ public class Bougu implements Common {
             }
         }
         if (name.equals("—ô‹ó‚ÌTƒVƒƒƒc")) {
-            if (enchant > 0) {
-                op2.ailment[STUN] += enchant;
+            if (enchant >= 10) {
+                op2.DR = 5;                 //ƒ_ƒ[ƒW’á‰º+5
+                op2.MR = 5;                 //MR+5
+                op2.ailment[STUN] = 5;      //‹Zp‘Ï«
+                op2.ailment[SPIRIT] = 5;    //¸—ì‘Ï« 
+                op2.ailment[SECRET] = 5;    //”é‹Z‘Ï«
+                op2.ailment[TERROR] = 5;    //‹°•|‘Ï«
+            } else if (enchant >= 9) {
+                op2.DR = 4;                 //ƒ_ƒ[ƒW’á‰º+4
+                op2.MR = 4;                 //MR+4
+                op2.ailment[STUN] = 4;      //‹Zp‘Ï«
+                op2.ailment[SPIRIT] = 4;    //¸—ì‘Ï« 
+                op2.ailment[SECRET] = 4;    //”é‹Z‘Ï«
+                op2.ailment[TERROR] = 4;    //‹°•|‘Ï«
+            } else if (enchant >= 8) {
+                op2.DR = 3;                 //ƒ_ƒ[ƒW’á‰º+3
+                op2.MR = 3;                 //MR+3
+                op2.ailment[STUN] = 3;      //‹Zp‘Ï«
+                op2.ailment[SPIRIT] = 3;    //¸—ì‘Ï« 
+                op2.ailment[SECRET] = 3;    //”é‹Z‘Ï«
+                op2.ailment[TERROR] = 3;    //‹°•|‘Ï«
+            } else if (enchant >= 7) {
+                op2.DR = 2;                 //ƒ_ƒ[ƒW’á‰º+2
+                op2.MR = 2;                 //MR+2
+                op2.ailment[STUN] = 2;      //‹Zp‘Ï«
+                op2.ailment[SPIRIT] = 2;    //¸—ì‘Ï« 
+                op2.ailment[SECRET] = 2;    //”é‹Z‘Ï«
+                op2.ailment[TERROR] = 2;    //‹°•|‘Ï«
+            } else if (enchant >= 6) {
+                op2.DR = 1;                 //ƒ_ƒ[ƒW’á‰º+1
+                op2.MR = 1;                 //MR+1
+                op2.ailment[STUN] = 1;      //‹Zp‘Ï«
+                op2.ailment[SPIRIT] = 1;    //¸—ì‘Ï« 
+                op2.ailment[SECRET] = 1;    //”é‹Z‘Ï«
+                op2.ailment[TERROR] = 1;    //‹°•|‘Ï«
             }
         }
         if (name.contains("ƒAƒ“ƒ^ƒ‰ƒXƒOƒ‰ƒ“ƒh")) {

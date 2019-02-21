@@ -186,8 +186,8 @@ public class Buff implements Common {
             if (line.startsWith("¸—ì‘Ï«=")) {
                 ailment[SPIRIT] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("—³Œê‘Ï«=")) {
-                ailment[DRAGON] = Integer.parseInt(line.split("=")[1]);
+            if (line.startsWith("”é‹Z‘Ï«=")) {
+                ailment[SECRET] = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("‹°•|‘Ï«=")) {
                 ailment[TERROR] = Integer.parseInt(line.split("=")[1]);
@@ -198,8 +198,8 @@ public class Buff implements Common {
             if (line.startsWith("¸—ì–½’†=")) {
                 ailment[HIT_SPIRIT] = Integer.parseInt(line.split("=")[1]);
             }
-            if (line.startsWith("—³Œê–½’†=")) {
-                ailment[HIT_DRAGON] = Integer.parseInt(line.split("=")[1]);
+            if (line.startsWith("”é‹Z–½’†=")) {
+                ailment[HIT_SECRET] = Integer.parseInt(line.split("=")[1]);
             }
             if (line.startsWith("‹°•|–½’†=")) {
                 ailment[HIT_TERROR] = Integer.parseInt(line.split("=")[1]);
