@@ -1213,7 +1213,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 //        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
         cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 技術耐性+2 精霊耐性+2 竜語耐性+2 恐怖耐性+2");
 
-        String list_P_GA[] = {"君主L80", "君主L81", "君主L82", "君主L83", "君主L84", "君主L85+"};
+        String list_P_GA[] = {"君主L80", "君主L81", "君主L82", "君主L83", "君主L84", "君主L85","君主L86","君主L87","君主L88","君主L89","君主L90+"};
         cb_buff_group[P_GA] = new WideComboBox(list_P_GA);
         cb_buff_group[P_GA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_GA] = new JCheckBox("グレースアバター");
@@ -1430,7 +1430,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[I_RW].setToolTipText("重量-180");
         cb_buff[I_IO] = new JCheckBox("幻術[オーガ]");
         cb_buff[I_IO].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_IO].setToolTipText("近距離ダメージ+4 近距離命中+4 遠距離ダメージ+4 遠距離命中+4");
+        cb_buff[I_IO].setToolTipText("近距離ダメージ+4 近距離命中+4");
         cb_buff[I_IR] = new JCheckBox("幻術[リッチ]");
         cb_buff[I_IR].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_IR].setToolTipText("SP+2");

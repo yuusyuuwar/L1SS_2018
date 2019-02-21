@@ -1702,7 +1702,6 @@ public class Calculator implements Common {
         //Œ¶p[ƒI[ƒK] Á”ïMP20/2mins
         if (ui.cb_buff[I_IO].isSelected()) {
             buff.DMG_SHORT += 4;
-            buff.DMG_LONG += 4;
             buff.HIT_SHORT += 4;
             if (ui.cb_buff[I_IO].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 2;
@@ -1739,13 +1738,13 @@ public class Calculator implements Common {
         	    buff.ailment[HIT_STUN] += 10;                       //‹Zp–½’†+10
 //        	    buff.ailment[HIT_DESTRUCTION] += 10;                //”j‰ó–½’†+10
         	    buff.ailment[HIT_SPIRIT] += 10;                     //¸—ì–½’†+10
-        	    buff.ailment[HIT_DRAGON] += 10;                     //—³Œê–½’†+10
+        	    buff.ailment[HIT_SECRET] += 10;                     //”é‹Z–½’†+10
         	    buff.ailment[HIT_TERROR] += 10;                     //‹°•|–½’†+10      
         	} else if (level >= 80) {
         	    buff.ailment[HIT_STUN] += 5 + (level - 80);         //‹Zp–½’†+(level - 75)
 //        	    buff.ailment[HIT_DESTRUCTION] += 5 + (level - 80);  //”j‰ó–½’†+(level - 75)
         	    buff.ailment[HIT_SPIRIT] += 5 + (level - 80);       //¸—ì–½’†+(level - 75)
-        	    buff.ailment[HIT_DRAGON] += 5 + (level - 80);       //—³Œê–½’†+(level - 75)
+        	    buff.ailment[HIT_SECRET] += 5 + (level - 80);       //”é‹Z–½’†+(level - 75)
                     buff.ailment[HIT_TERROR] += 5 + (level - 80);       //‹°•|–½’†+(level - 75)
         	}
             } else {
@@ -1884,7 +1883,7 @@ public class Calculator implements Common {
                 break;
         }
 
-        //ƒGƒŠƒNƒT[ƒ‹[ƒ“
+        //ƒGƒŠƒNƒT[ƒ‹[ƒ“(LV70/80/85/90)
         int e = ui.elixir_rune.getSelectedIndex();
         int q = ui.elixir_rune_en.getSelectedIndex();
         if (e > 0 && e<6) {
@@ -1954,13 +1953,13 @@ public class Calculator implements Common {
                             buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
                             buff.DMG_LONG += 1;             //‰“‹——£ƒ_ƒ[ƒW+1
                                                             //j•ŸÁ–ÕŒø—¦+5%
-//                            buff.ailment[HIT_SPIRIT] += 5;        //¸—ì–½’†+5
+                            buff.ailment[HIT_SPIRIT] += 5;  //¸—ì–½’†+5
                             break;
                         case 4:
                             buff.DMG_SHORT += 1;            //‹ß‹——£ƒ_ƒ[ƒW+1
                             buff.DMG_LONG += 1;             //‰“‹——£ƒ_ƒ[ƒW+1
                                                             //j•ŸÁ–ÕŒø—¦+5%
-//                            buff.ailment[HIT_SPIRIT] += 10;       //¸—ì–½’†+10
+                            buff.ailment[HIT_SPIRIT] += 10; //¸—ì–½’†+10
                             break;
                         default:
                             break;
@@ -2003,12 +2002,12 @@ public class Calculator implements Common {
                         case 3:
                             buff.MP += 30;                  //Å‘åMP+30
                                                             //j•ŸÁ–ÕŒø—¦+5%
-//                            buff.ailment[HIT_SPIRIT] += 5;        //¸—ì–½’†+5
+                            buff.ailment[HIT_SPIRIT] += 5;  //¸—ì–½’†+5
                             break;
                         case 4:
                             buff.MP += 30;                  //Å‘åMP+30
                                                             //j•ŸÁ–ÕŒø—¦+5%
-//                            buff.ailment[HIT_SPIRIT] += 10;       //¸—ì–½’†+10
+                            buff.ailment[HIT_SPIRIT] += 10; //¸—ì–½’†+10
                             break;
                         default:
                             break;
@@ -2027,12 +2026,12 @@ public class Calculator implements Common {
                         case 3:
                             buff.DR += 1;                   //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+1
                                                             //j•ŸÁ–ÕŒø—¦+5%
-//                            buff.ailment[HIT_DRAGON] += 5;        //—³Œê–½’†+5
+                            buff.ailment[HIT_SECRET] += 5;  //”é‹Z–½’†+5
                             break;
                         case 4:
                             buff.DR += 1;                   //ƒ_ƒ[ƒWƒŠƒ_ƒNƒVƒ‡ƒ“+1
                                                             //j•ŸÁ–ÕŒø—¦+5%
-//                            buff.ailment[HIT_DRAGON] += 10;       //—³Œê–½’†+10
+                            buff.ailment[HIT_SECRET] += 10; //”é‹Z–½’†+10
                             break;
                         default:
                             break;
@@ -2051,12 +2050,12 @@ public class Calculator implements Common {
                         case 3:
                             buff.HP += 50;                  //Å‘åHP+50
                                                             //j•ŸÁ–ÕŒø—¦+5%
-                            buff.ailment[HIT_STUN] += 5;    //‹Zp–½’†+5
+                            buff.ailment[HIT_SECRET] += 5;  //”é‹Z–½’†+5
                             break;
                         case 4:
                             buff.HP += 50;                  //Å‘åHP+50
                                                             //j•ŸÁ–ÕŒø—¦+5%
-                            buff.ailment[HIT_STUN] += 10;   //‹Zp–½’†+10
+                            buff.ailment[HIT_SECRET] += 10; //”é‹Z–½’†+10
                             break;
                         default:
                             break;
@@ -2604,60 +2603,95 @@ public class Calculator implements Common {
                 cons_mp += (25.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
-        //ƒuƒŒƒCƒuƒAƒoƒ^[ Á”ïMP0/íŽž STR+1 DEX+1 INT+1 MR+10% ‹Zp‘Ï«+2 ¸—ì‘Ï«+2 —³Œê‘Ï«+2 ‹°•|‘Ï«+2
+        //ƒuƒŒƒCƒuƒAƒoƒ^[ Á”ïMP0/íŽž STR+1 DEX+1 INT+1 MR+10% ‹Zp‘Ï«+2 ¸—ì‘Ï«+2 ”é‹Z‘Ï«+2 ‹°•|‘Ï«+2
         if (ui.cb_buff[P_BA].isSelected()) {
             buff.MR += 10;
             buff.ailment[STUN] += 2;
             buff.ailment[SPIRIT] += 2;
-            buff.ailment[DRAGON] += 2;
+            buff.ailment[SECRET] += 2;
             buff.ailment[TERROR] += 2;
             buff.ST[STR] += 1;
             buff.ST[DEX] += 1;
             buff.ST[INT] += 1;
         }
-        //ƒOƒŒ[ƒXƒAƒoƒ^[ Á”ïMP15/15•b ‹Zp‘Ï«+5 ¸—ì‘Ï«+5 —³Œê‘Ï«+5 ‹°•|‘Ï«+5 ƒŒƒxƒ‹80‚©‚ç+1‚¸‚Â‘‰Á(Å‘å+10)
+        //ƒOƒŒ[ƒXƒAƒoƒ^[ Á”ïMP15/15•b ‹Zp‘Ï«+5 ¸—ì‘Ï«+5 ”é‹Z‘Ï«+5 ‹°•|‘Ï«+5 ƒŒƒxƒ‹80‚©‚ç+1‚¸‚Â‘‰Á(Å‘å+15)
         if (ui.cb_buff[P_GA].isSelected()) {
             switch ((String) ui.cb_buff_group[P_GA].getSelectedItem()) {
                 case "ŒNŽåL80":
-                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+5 ¸—ì‘Ï«+5 —³Œê‘Ï«+5 ‹°•|‘Ï«+5");
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+5 ¸—ì‘Ï«+5 ”é‹Z‘Ï«+5 ‹°•|‘Ï«+5");
                     buff.ailment[STUN] += 5;
                     buff.ailment[SPIRIT] += 5;
-                    buff.ailment[DRAGON] += 5;
+                    buff.ailment[SECRET] += 5;
                     buff.ailment[TERROR] += 5;
                     break;
                 case "ŒNŽåL81":
-                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+6 ¸—ì‘Ï«+6 —³Œê‘Ï«+6 ‹°•|‘Ï«+6");
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+6 ¸—ì‘Ï«+6 ”é‹Z‘Ï«+6 ‹°•|‘Ï«+6");
                     buff.ailment[STUN] += 6;
                     buff.ailment[SPIRIT] += 6;
-                    buff.ailment[DRAGON] += 6;
+                    buff.ailment[SECRET] += 6;
                     buff.ailment[TERROR] += 6;
                     break;
                 case "ŒNŽåL82":
-                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+7 ¸—ì‘Ï«+7 —³Œê‘Ï«+7 ‹°•|‘Ï«+7");
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+7 ¸—ì‘Ï«+7 ”é‹Z‘Ï«+7 ‹°•|‘Ï«+7");
                     buff.ailment[STUN] += 7;
                     buff.ailment[SPIRIT] += 7;
-                    buff.ailment[DRAGON] += 7;
+                    buff.ailment[SECRET] += 7;
                     buff.ailment[TERROR] += 7;
                     break;
                 case "ŒNŽåL83":
-                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+8 ¸—ì‘Ï«+8 —³Œê‘Ï«+8 ‹°•|‘Ï«+8");
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+8 ¸—ì‘Ï«+8 ”é‹Z‘Ï«+8 ‹°•|‘Ï«+8");
                     buff.ailment[STUN] += 8;
                     buff.ailment[SPIRIT] += 8;
-                    buff.ailment[DRAGON] += 8;
+                    buff.ailment[SECRET] += 8;
                     buff.ailment[TERROR] += 8;
                     break;
                 case "ŒNŽåL84":
-                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+9 ¸—ì‘Ï«+9 —³Œê‘Ï«+9 ‹°•|‘Ï«+9");
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+9 ¸—ì‘Ï«+9 ”é‹Z‘Ï«+9 ‹°•|‘Ï«+9");
                     buff.ailment[STUN] += 9;
                     buff.ailment[SPIRIT] += 9;
-                    buff.ailment[DRAGON] += 9;
+                    buff.ailment[SECRET] += 9;
                     buff.ailment[TERROR] += 9;
                     break;
-                case "ŒNŽåL85+":
-                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+10 ¸—ì‘Ï«+10 —³Œê‘Ï«+10 ‹°•|‘Ï«+10");
+                case "ŒNŽåL85":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+10 ¸—ì‘Ï«+10 ”é‹Z‘Ï«+10 ‹°•|‘Ï«+10");
                     buff.ailment[STUN] += 10;
                     buff.ailment[SPIRIT] += 10;
-                    buff.ailment[DRAGON] += 10;
+                    buff.ailment[SECRET] += 10;
+                    buff.ailment[TERROR] += 10;
+                    break;
+                case "ŒNŽåL86":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+11 ¸—ì‘Ï«+11 ”é‹Z‘Ï«+11 ‹°•|‘Ï«+11");
+                    buff.ailment[STUN] += 11;
+                    buff.ailment[SPIRIT] += 11;
+                    buff.ailment[SECRET] += 11;
+                    buff.ailment[TERROR] += 11;
+                    break;
+                case "ŒNŽåL87":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+12 ¸—ì‘Ï«+12 ”é‹Z‘Ï«+12 ‹°•|‘Ï«+12");
+                    buff.ailment[STUN] += 12;
+                    buff.ailment[SPIRIT] += 12;
+                    buff.ailment[SECRET] += 12;
+                    buff.ailment[TERROR] += 12;
+                    break;
+                case "ŒNŽåL88":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+13 ¸—ì‘Ï«+13 ”é‹Z‘Ï«+13 ‹°•|‘Ï«+13");
+                    buff.ailment[STUN] += 13;
+                    buff.ailment[SPIRIT] += 13;
+                    buff.ailment[SECRET] += 13;
+                    buff.ailment[TERROR] += 13;
+                    break;
+                case "ŒNŽåL89":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+14 ¸—ì‘Ï«+14 ”é‹Z‘Ï«+14 ‹°•|‘Ï«+14");
+                    buff.ailment[STUN] += 14;
+                    buff.ailment[SPIRIT] += 14;
+                    buff.ailment[SECRET] += 14;
+                    buff.ailment[TERROR] += 14;
+                    break;
+                case "ŒNŽåL90+":
+                    ui.cb_buff[P_GA].setToolTipText("‹Zp‘Ï«+10 ¸—ì‘Ï«+10 ”é‹Z‘Ï«+10 ‹°•|‘Ï«+10");
+                    buff.ailment[STUN] += 10;
+                    buff.ailment[SPIRIT] += 10;
+                    buff.ailment[SECRET] += 10;
                     buff.ailment[TERROR] += 10;
                     break;
                 default:
@@ -2776,9 +2810,9 @@ public class Calculator implements Common {
         if (ui.cb_buff[ITEM_MAGAN].isSelected()) {
             switch (ui.cb_buff_group[ITEM_MAGAN].getSelectedIndex()) {
                 case 0://’n—³‚Ì–‚Šá
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("•¨—UŒ‚‰ñ”ð+10%(–¢ŽÀ‘•) —³Œê‘Ï«+5(–¢ŽÀ‘•)");
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("•¨—UŒ‚‰ñ”ð+10%(–¢ŽÀ‘•) ”é‹Z‘Ï«+5(–¢ŽÀ‘•)");
                     //•¨—UŒ‚‰ñ”ð+10%(–¢ŽÀ‘•)
-                    //buff.ailment[DRAGON] += 5;
+                    //buff.ailment[SECRET] += 5;
                     break;
                 case 1://…—³‚Ì–‚Šá
                     ui.cb_buff[ITEM_MAGAN].setToolTipText("10%‚ÌŠm—¦‚Å–‚–@ƒ_ƒ[ƒW”¼Œ¸(–¢ŽÀ‘•) ¸—ì‘Ï«+5(–¢ŽÀ‘•)");
@@ -2797,24 +2831,24 @@ public class Calculator implements Common {
                     buff.ailment[STUN] += 5;
                     break;
                 case 4://’a¶‚Ì–‚Šá
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸](–¢ŽÀ‘•) ¸—ì‘Ï«+5(–¢ŽÀ‘•) —³Œê‘Ï«+5(–¢ŽÀ‘•)");
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸](–¢ŽÀ‘•) ¸—ì‘Ï«+5(–¢ŽÀ‘•) ”é‹Z‘Ï«+5(–¢ŽÀ‘•)");
                     //ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸](–¢ŽÀ‘•)
                     //buff.ailment[SPIRIT] += 5;
-                    //buff.ailment[DRAGON] += 5;
+                    //buff.ailment[SECRET] += 5;
                     break;
                 case 5://Œ`ó‚Ì–‚Šá
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸][–‚–@ƒNƒŠƒeƒBƒJƒ‹+1%](–¢ŽÀ‘•) ¸—ì‘Ï«+5(–¢ŽÀ‘•) —³Œê‘Ï«+5(–¢ŽÀ‘•) ‹°•|‘Ï«+5");
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸][–‚–@ƒNƒŠƒeƒBƒJƒ‹+1%](–¢ŽÀ‘•) ¸—ì‘Ï«+5(–¢ŽÀ‘•) ”é‹Z‘Ï«+5(–¢ŽÀ‘•) ‹°•|‘Ï«+5");
                     //ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸][–‚–@ƒNƒŠƒeƒBƒJƒ‹+1%](–¢ŽÀ‘•)
                     //buff.ailment[SPIRIT] += 5;
-                    //buff.ailment[DRAGON] += 5;
+                    //buff.ailment[SECRET] += 5;
                     buff.ailment[TERROR] += 5;
                     break;
                 case 6://¶–½‚Ì–‚Šá
-                    ui.cb_buff[ITEM_MAGAN].setToolTipText("ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸][–‚–@ƒNƒŠƒeƒBƒJƒ‹+1%][‹ß‹——£ƒ_ƒ[ƒW+2 ‰“‹——£ƒ_ƒ[ƒW+2](–¢ŽÀ‘•) ‹Zp‘Ï«+5 ¸—ì‘Ï«+5(–¢ŽÀ‘•) —³Œê‘Ï«+5(–¢ŽÀ‘•) ‹°•|‘Ï«+5");
+                    ui.cb_buff[ITEM_MAGAN].setToolTipText("ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸][–‚–@ƒNƒŠƒeƒBƒJƒ‹+1%][‹ß‹——£ƒ_ƒ[ƒW+2 ‰“‹——£ƒ_ƒ[ƒW+2](–¢ŽÀ‘•) ‹Zp‘Ï«+5 ¸—ì‘Ï«+5(–¢ŽÀ‘•) ”é‹Z‘Ï«+5(–¢ŽÀ‘•) ‹°•|‘Ï«+5");
                     //ˆê’èŠm—¦‚Å[•¨—UŒ‚‰ñ”ð][–‚–@ƒ_ƒ[ƒW”¼Œ¸][–‚–@ƒNƒŠƒeƒBƒJƒ‹+1%][‹ß‹——£ƒ_ƒ[ƒW+2 ‰“‹——£ƒ_ƒ[ƒW+2](–¢ŽÀ‘•)
                     buff.ailment[STUN] += 5;
                     //buff.ailment[SPIRIT] += 5;
-                    //buff.ailment[DRAGON] += 5;
+                    //buff.ailment[SECRET] += 5;
                     buff.ailment[TERROR] += 5;
                     break;
                 case 7://ƒOƒŒƒ€ƒŠƒ“‚Ì–‚Šá
@@ -5111,8 +5145,8 @@ buki.arrow_elementdmg=0;
         if (buki.op.ailment[HIT_SPIRIT] + buki.op2.ailment[HIT_SPIRIT] > 0) {
             buki_text += " ¸—ì–½’†+" + (buki.op.ailment[HIT_SPIRIT] + buki.op2.ailment[HIT_SPIRIT]);
         }
-        if (buki.op.ailment[HIT_DRAGON] + buki.op2.ailment[HIT_DRAGON] > 0) {
-            buki_text += " —³Œê–½’†+" + (buki.op.ailment[HIT_DRAGON] + buki.op2.ailment[HIT_DRAGON]);
+        if (buki.op.ailment[HIT_SECRET] + buki.op2.ailment[HIT_SECRET] > 0) {
+            buki_text += " ”é‹Z–½’†+" + (buki.op.ailment[HIT_SECRET] + buki.op2.ailment[HIT_SECRET]);
         }
         if (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR] > 0) {
             buki_text += " ‹°•|–½’†+" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);

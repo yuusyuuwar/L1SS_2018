@@ -223,19 +223,31 @@ public class Buki implements Common {
             op2.ailment[HIT_TERROR] += 1;               //恐怖的中+1
             }
         }
-        //殺意のキーリンク          +7以降強化1毎に竜語命中+1魔法クリティカル+1(+10強化まで適用)
+        //殲滅者のチェーンソード      +7以降強化1毎に秘技命中+1(+10強化まで適用)
+        if (name.equals("殲滅者のチェーンソード") || name.equals("殲滅者のチェーンソード(殲滅発動)")) {
+            if (enchant >= 10) {
+            op2.ailment[HIT_SECRET] += 4;               //秘技命中+4
+            } else if (enchant >= 9) {
+            op2.ailment[HIT_SECRET] += 3;               //秘技命中+3
+            } else if (enchant >= 8) {
+            op2.ailment[HIT_SECRET] += 2;               //秘技命中+2
+            } else if (enchant >= 7) {
+            op2.ailment[HIT_SECRET] += 1;               //秘技命中+1
+            }
+        }
+        //殺意のキーリンク          +7以降強化1毎に秘技命中+1魔法クリティカル+1(+10強化まで適用)
         if (name.equals("殺意のキーリンク")) {
             if (enchant >= 10) {
-        //    op2.ailment[HIT_DRAGON] += 4;               //竜語命中+4
+            op2.ailment[HIT_SECRET] += 4;               //秘技命中+4
             op2.CRI_MAGIC += 4;                         //魔法クリティカル+4
             } else if (enchant >= 9) {
-        //    op2.ailment[HIT_DRAGON] += 3;               //竜語命中+3
+            op2.ailment[HIT_SECRET] += 3;               //秘技命中+3
             op2.CRI_MAGIC += 3;                         //魔法クリティカル+3
             } else if (enchant >= 8) {
-        //    op2.ailment[HIT_DRAGON] += 2;               //竜語命中+2
+            op2.ailment[HIT_SECRET] += 2;               //秘技命中+2
             op2.CRI_MAGIC += 2;                         //魔法クリティカル+2
             } else if (enchant >= 7) {
-        //    op2.ailment[HIT_DRAGON] += 1;               //竜語命中+1
+            op2.ailment[HIT_SECRET] += 1;               //秘技命中+1
             op2.CRI_MAGIC += 1;                         //魔法クリティカル+1
             }
         }
@@ -268,20 +280,21 @@ public class Buki implements Common {
             op2.HIT_MAGIC += enchant;                   //魔法命中   
             }
         }
-        //クロノスの恐怖            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル]+1%増加 
+        //クロノスの恐怖            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル]+1%増加 [秘技命中]+1増加
         if (name.equals("クロノスの恐怖")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
             op2.CRI_SHORT += enchant;                   //近距離クリティカル
+            op2.ailment[HIT_SECRET] += enchant;         //秘技命中
             }
         }
-        //ヒュペリオンの絶望        エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][技術命中]+1増加
+        //ヒュペリオンの絶望        エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][秘技命中]+1増加
         if (name.equals("ヒュペリオンの絶望")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
             op2.SP += enchant;                          //SP 
             op2.CRI_MAGIC += enchant;                   //魔法クリティカル
-            op2.ailment[HIT_STUN] += enchant;           //技術命中
+            op2.ailment[HIT_SECRET] += enchant;         //秘技命中
             }
         }
         //タイタンの憤怒            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][恐怖命中]+1増加 
@@ -292,12 +305,13 @@ public class Buki implements Common {
             op2.ailment[HIT_TERROR] += enchant;         //恐怖命中
             }
         }
-        //ガイアの激怒              エンチャントによる追加打撃が+2 +1強化毎に[遠距離クリティカル][ダメージ軽減無視]+1増加 
+        //ガイアの激怒              エンチャントによる追加打撃が+2 +1強化毎に[遠距離クリティカル][ダメージ軽減無視][精霊命中]+1増加 
         if (name.equals("ガイアの激怒")) {
             if (enchant >= 0) {
             op2.DMG_SHORT += enchant;                   //追加ダメージ
             op2.CRI_LONG += enchant;                    //遠距離クリティカル
             op2.DR_IGNORED += enchant;                  //ダメージリダクション無視
+            op2.ailment[HIT_SPIRIT] += enchant;         //精霊命中
             }
         }
         //強化+10以上はエンチャントによる追加打撃が+2(既存処理に追加で+1)
