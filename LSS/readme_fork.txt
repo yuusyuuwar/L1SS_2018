@@ -2,6 +2,24 @@ LineageStatusSimulator_fork2018
 
 変更点
 2019/02/22
+Update 3.2.6
+LSS/src/lss/Common.java
+LSS/src/lss/UI.java
+修正
+	火属性耐性/水属性耐性/風属性耐性/地属性耐性の表示位置
+
+	属性抵抗
+	地属性抵抗/火属性抵抗
+	水属性抵抗/風属性抵抗
+
+	技術耐性/精霊耐性/秘技耐性/恐怖耐性/技術命中/精霊命中/秘技命中/恐怖命中の表示位置
+
+	命中/耐性
+	技術命中/技術耐性
+	精霊命中/精霊耐性
+	秘技命中/秘技耐性
+	恐怖耐性/恐怖命中
+
 Update 3.2.5
 LSS/src/lss/Calculator.java
 LSS/src/lss/UI.java
