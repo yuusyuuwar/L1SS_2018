@@ -166,7 +166,7 @@ public interface Common {
     final int F_TB = 71;        //タイタンブリッツ
     final int VIP = 72;         //VIPエンチャント
     final int COIN = 73;        //*********************************未実装(予約分)
-    final int BS = 74;          //*********************************未実装(予約分)
+    final int MBSC = 74;        //真心のこもった祝福スクロール
     final int SEC = 75;         //セキュリティ
     final int F_G = 76;         //ギガンティック
     final int CLAY = 77;        //クレイ
@@ -179,17 +179,17 @@ public interface Common {
     final int E_EE = 84;        //イーグルアイ
     final int E_CE = 85;        //サイクロン(未実装)
     final int E_IO = 86;        //インフェルノ(未実装)
-    final int P_GA = 87;        //グレースアバター(未実装)
-    final int K_PD = 88;        //プライド(未実装)
-    final int K_BK = 89;        //ブローアタック(未実装)
-    final int R_LINDVIOL = 90;  //覚醒[リンドビオル](未実装)
-    final int I_FS = 91;        //フォーカススピッツ(未実装)
-    final int I_IT = 92;        //インパクト(未実装)
-    final int H_HP = 93;        //生命のボーナス(未実装)
-    final int H_AC = 94;        //鉄甲のボーナス(未実装)
-    final int H_PVPDR = 95;     //生存のボーナス(未実装)
-    final int H_PVP = 96;       //暗殺のボーナス(未実装) 
-    final int H_RK = 97;        //ランカーボーナス(未実装)
+    final int P_GA = 87;        //グレースアバター
+    final int K_PD = 88;        //プライド
+    final int K_BK = 89;        //ブローアタック
+    final int R_LINDVIOL = 90;  //覚醒[リンドビオル]
+    final int I_FS = 91;        //フォーカススピッツ
+    final int I_IT = 92;        //インパクト
+    final int H_HP = 93;        //生命のボーナス
+    final int H_AC = 94;        //鉄甲のボーナス
+    final int H_PVPDR = 95;     //生存のボーナス
+    final int H_PVP = 96;       //暗殺のボーナス
+    final int H_RK = 97;        //ランカーボーナス
     final int ITEM_MAGAN = 98;  //魔眼
 
 //    final String[] AILMENT_LIST = {"石化耐性", "睡眠耐性", "凍結耐性", "暗闇耐性", "気絶耐性", "拘束耐性", "恐怖耐性","破壊耐性","石化命中", "睡眠命中", "凍結命中", "暗闇命中", "気絶命中", "拘束命中", "恐怖命中","破壊命中"};

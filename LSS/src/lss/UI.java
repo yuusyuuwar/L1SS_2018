@@ -1173,6 +1173,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[SEC] = new JCheckBox("セキュリティ");
         cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
 
+        String list_vip[] = {"Red", "Gold", "Platinum"};
+        cb_buff_group[VIP] = new WideComboBox(list_vip);
+        cb_buff_group[VIP].setBounds(200 * row + 100, 20 * col, 80, 20);
+        cb_buff[VIP] = new JCheckBox("VIP");
+        cb_buff[VIP].setBounds(200 * row, 20 * col++, 100, 20);
+
 //        col++;
 
         lab_tmp = new JLabel("一般魔法");
@@ -1195,7 +1201,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[W_ADS].setBounds(0, 20 * col++, 150, 20);
         cb_buff[W_ADS].setToolTipText("最大HP/MP+20%");
 
-        col++;
+//        col++;
 
         lab_tmp = new JLabel("君主魔法");
         lab_tmp.setBounds(100 * row, 20 * col++, 150, 20);
@@ -1495,13 +1501,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[ITEM_WIZP] = new JCheckBox("ウィズダムポーション");
         cb_buff[ITEM_WIZP].setBounds(200 * row, 20 * col++, 150, 20);
 
-        String list_cooking[] = {"力強い和牛ステーキ", "素早い鮭の煮付", "賢い七面鳥焼き", "小粋な麺料理"};
+        String list_cooking[] = {"力強い和牛ステーキ", "素早い鮭の煮付", "賢い七面鳥焼き", "小粋な麺料理", "真心がこもった料理"};
         cb_buff_group[ITEM_COOKING] = new WideComboBox(list_cooking);
         cb_buff_group[ITEM_COOKING].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_COOKING] = new JCheckBox("料理");
         cb_buff[ITEM_COOKING].setBounds(200 * row, 20 * col++, 100, 20);
 
-        String list_dessert[] = {"修練の鶏スープ", "幻想のバシリスクの卵スープ", "幻想のショートケーキ", "小粋な携帯飲料"};
+        String list_dessert[] = {"修練の鶏スープ", "幻想のバシリスクの卵スープ", "幻想のショートケーキ", "小粋な携帯飲料", "真心がこもったスープ"};
         cb_buff_group[ITEM_DESSERT] = new WideComboBox(list_dessert);
         cb_buff_group[ITEM_DESSERT].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_DESSERT] = new JCheckBox("デザート");
@@ -1569,18 +1575,22 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff_group[ITEM_MAGAN].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_MAGAN] = new JCheckBox("魔眼");
         cb_buff[ITEM_MAGAN].setBounds(200 * row, 20 * col++, 100, 20);
-        
-        String list_vip[] = {"Red", "Gold", "Platinum"};
-        cb_buff_group[VIP] = new WideComboBox(list_vip);
-        cb_buff_group[VIP].setBounds(200 * row + 100, 20 * col, 80, 20);
-        cb_buff[VIP] = new JCheckBox("VIP");
-        cb_buff[VIP].setBounds(200 * row, 20 * col++, 100, 20);
+
+//基本(前半)部分へ移動の為､コメントアウト
+//        String list_vip[] = {"Red", "Gold", "Platinum"};
+//        cb_buff_group[VIP] = new WideComboBox(list_vip);
+//        cb_buff_group[VIP].setBounds(200 * row + 100, 20 * col, 80, 20);
+//        cb_buff[VIP] = new JCheckBox("VIP");
+//        cb_buff[VIP].setBounds(200 * row, 20 * col++, 100, 20);
 
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
 
         cb_buff[BS_COIN] = new JCheckBox("黒蛇のコイン");
         cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
+
+        cb_buff[MBSC] = new JCheckBox("真心のこもった祝福スクロール");
+        cb_buff[MBSC].setBounds(200 * row, 20 * col++, 200, 20);
 
         //y_ikedaさんによる修正を参考に
         String list_hst[] = {"1個", "2個", "3個", "4個", "5個"};
