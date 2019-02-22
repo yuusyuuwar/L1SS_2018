@@ -1241,6 +1241,24 @@ public class Calculator implements Common {
         // 料理
         if (ui.cb_buff[ITEM_COOKING].isSelected()) {
             switch (ui.cb_buff_group[ITEM_COOKING].getSelectedIndex()) {
+                case 4:                                 //真心がこもった料理
+                    buff.DR += 5;
+                    buff.SP += 2;
+                    buff.HPR += 3;
+                    buff.MPR += 4;
+                    buff.MR += 15;
+                    buff.DMG_LONG += 2;
+                    buff.HIT_LONG += 2;
+                    buff.DMG_SHORT += 2;
+                    buff.HIT_SHORT += 2;
+                    buff.element_resist[FIRE] += 10;
+                    buff.element_resist[WIND] += 10;
+                    buff.element_resist[EARTH] += 10;
+                    buff.element_resist[WATER] += 10;
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
+                                                           + "<br>"+ "近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+2"
+                                                           + "<br>"+ "MR+15 HPR+3 MPR+4 SP+2 ダメージ軽減+5 15分20秒"+"</html>");
+                    break;
                 case 3:                                 //小粋な麺料理
                     buff.DR += 5;
                     buff.SP += 2;
@@ -1255,9 +1273,9 @@ public class Calculator implements Common {
                     buff.element_resist[WIND] += 10;
                     buff.element_resist[EARTH] += 10;
                     buff.element_resist[WATER] += 10;
-                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性防御+10 地属性防御+10 風属性防御+10 火属性防御+10"
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
                                                            + "<br>"+ "近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+2"
-                                                           + "<br>"+ "MR+15 HPR+3 MPR+4 SP+2 ダメージ軽減+5"+"</html>");
+                                                           + "<br>"+ "MR+15 HPR+3 MPR+4 SP+2 ダメージ軽減+5 15分20秒"+"</html>");
                     break;
                 case 2:                                 //賢い七面鳥焼き
                     buff.DR += 2;
@@ -1269,8 +1287,8 @@ public class Calculator implements Common {
                     buff.element_resist[WATER] += 10;
                     buff.element_resist[WIND] += 10;
                     buff.element_resist[EARTH] += 10;
-                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性防御+10 地属性防御+10 風属性防御+10 火属性防御+10"
-                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 SP+2 ダメージ軽減+2"+"</html>");
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
+                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 SP+2 ダメージ軽減+2 30分"+"</html>");
                     break;
                 case 1:                                 //素早い鮭の煮付
                     buff.DR += 2;
@@ -1283,8 +1301,8 @@ public class Calculator implements Common {
                     buff.element_resist[WATER] += 10;
                     buff.element_resist[WIND] += 10;
                     buff.element_resist[EARTH] += 10;
-                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性防御+10 地属性防御+10 風属性防御+10 火属性防御+10"
-                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 遠距離ダメージ+2 遠距離命中+1 ダメージ軽減+2"+"</html>");
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
+                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 遠距離ダメージ+2 遠距離命中+1 ダメージ軽減+2 30分"+"</html>");
                     break;
                 case 0:                                 //力強い和牛ステーキ
                     buff.DR += 2;
@@ -1297,8 +1315,8 @@ public class Calculator implements Common {
                     buff.element_resist[WATER] += 10;
                     buff.element_resist[WIND] += 10;
                     buff.element_resist[EARTH] += 10;
-                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性防御+10 地属性防御+10 風属性防御+10 火属性防御+10"
-                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 近距離ダメージ+2 近距離命中+1 ダメージ軽減+2"+"</html>");
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
+                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 近距離ダメージ+2 近距離命中+1 ダメージ軽減+2 30分"+"</html>");
                     break;
                 default:
                     break;
@@ -1310,65 +1328,28 @@ public class Calculator implements Common {
             switch (ui.cb_buff_group[ITEM_DESSERT].getSelectedIndex()) {
                 case 0:                                 //修練の鶏スープ
                     buff.DR += 2;
-                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+2");
+                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+2 獲得経験値+4% 30分");
                     break;
                 case 1:                                 //幻想のバシリスクの卵スープ
                     buff.DR += 5;
-                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5");
+                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5 獲得経験値+3% 15分20秒");
                     break;
                 case 2:                                 //幻想のショートケーキ
                     buff.DR += 3;
-                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+3");
+                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+3 獲得経験値+5% 15分20秒");
                     break;
                 case 3:                                 //小粋な携帯飲料
                     buff.DR += 5;
-                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5");
+                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5 獲得経験値+5% 15分20秒");
+                    break;
+                case 4:                                 //真心がこもったスープ
+                    buff.DR += 5;
+                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5 獲得経験値+5% 15分20秒");
                     break;
                 default:
                     break;
             }
         }
-
-//        if (ui.cb_buff[DRAGONRAID].isSelected()) {
-//            switch (ui.cb_buff_group[DRAGONRAID].getSelectedIndex()) {
-//                case 0:
-//                    buff.HP += 100;
-//                    buff.MP += 50;
-//                    buff.HPR += 3;
-//                    buff.MPR += 3;
-//                    buff.d_short += 1;
-//                    buff.d_long += 1;
-//                    buff.HIT_CLOSE += 5;
-//                    buff.element_resisit[EARTH] += 30;
-//                    buff.element_coefficient[EARTH] += (int) (30 / 3.125);
-//                    ui.cb_buff[W_DW].setSelected(true);
-//                    break;
-//                case 1:
-//                    buff.HP += 100;
-//                    buff.MP += 50;
-//                    buff.HPR += 3;
-//                    buff.MPR += 3;
-//                    buff.d_short += 1;
-//                    buff.d_long += 1;
-//                    buff.HIT_CLOSE += 5;
-//                    buff.element_resisit[WATER] += 30;
-//                    buff.element_coefficient[WATER] += (int) (30 / 3.125);
-//                    ui.cb_buff[W_DW].setSelected(true);
-//                    break;
-//                case 2:
-//                    buff.HP += 100;
-//                    buff.MP += 50;
-//                    buff.HPR += 3;
-//                    buff.MPR += 3;
-//                    buff.d_short += 1;
-//                    buff.d_long += 1;
-//                    buff.HIT_CLOSE += 5;
-//                    buff.element_resisit[WIND] += 30;
-//                    buff.element_coefficient[WIND] += (int) (30 / 3.125);
-//                    ui.cb_buff[W_DW].setSelected(true);
-//
-//            }
-//        }
             //コマエンチャ
             if (ui.cb_buff[KOMA].isSelected()) {
             switch (ui.cb_buff_group[KOMA].getSelectedIndex()) {
@@ -1762,7 +1743,7 @@ public class Calculator implements Common {
             ui.cb_buff[UI.W_DW].setSelected(true);
             ui.cb_buff[CLAY].setToolTipText("<html>"+"HP+100 MP+50 HPR+3 MPR+3"
                     + "<br>"+ "近距離ダメージ+1 遠距離ダメージ+1 近距離命中+5"
-                    + "<br>"+ "地属性防御+30 ディクリースウェイト"+"</html>");
+                    + "<br>"+ "地属性抵抗+30 ディクリースウェイト"+"</html>");
         }
 
         switch (ui.cb_pattern_l.getSelectedIndex()) {
@@ -2794,6 +2775,22 @@ public class Calculator implements Common {
             buff.MR += 2;
             buff.DR += 1;
             ui.cb_buff[SEC].setToolTipText("AC-1 MR+2% ダメージ軽減+1");
+        }
+        //真心のこもった祝福スクロール
+        if (ui.cb_buff[MBSC].isSelected()) {
+            buff.DR += 1;
+            buff.DMG_SHORT += 2;
+            buff.DMG_LONG += 2;
+            buff.HIT_SHORT += 2;
+            buff.HIT_LONG += 2;
+            buff.HIT_MAGIC += 2;
+            buff.SP += 2;
+            buff.HP += 50;
+            buff.HPR += 3;
+            buff.MP += 30;
+            buff.MPR += 3;
+            ui.cb_buff[MBSC].setToolTipText("<html>"+ "ダメージリダクション+3 近距離ダメージ+2 遠距離ダメージ+2 近距離命中+2 遠距離命中+2"
+                    + "<br>"+ "魔法命中+2 SP+2 最大HP+50 HP回復+3 最大MP+30 MP回復+3 獲得経験値+5% 30分"+"</html>");
         }
         //黒蛇のコイン 
         if (ui.cb_buff[BS_COIN].isSelected()) {
