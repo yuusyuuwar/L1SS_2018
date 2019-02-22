@@ -992,18 +992,23 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 //        cb_weight_auto.setBounds(420 + 280, 380 + 25 + 20, 80, 25);
 //        panels[0].add(cb_weight_auto);
 //        cb_weight_auto.addActionListener(this);
-        lab_tmp = new JLabel("耐性");
-        lab_tmp.setBounds(420, 440, 80, 25);
+        lab_tmp = new JLabel("属性抵抗");
+//        lab_tmp.setBounds(420, 440, 80, 25);
+        lab_tmp.setBounds(420, 520, 100, 20);
         panels[0].add(lab_tmp);
         
-//        lab_tmp = new JLabel("命中");
-//        lab_tmp.setBounds(420, 500, 80, 25);
-//        panels[0].add(lab_tmp);
+        lab_tmp = new JLabel("命中/耐性");
+        lab_tmp.setBounds(420, 440, 100, 20);
+        panels[0].add(lab_tmp);
 
-        for (int i = 0; i < ELEM_LIST.length; i++) {
+        for (int i = 0, cnt = 0; i < ELEM_LIST.length; i++, cnt++) {
             lab_elem[i] = new JLabel();
-            lab_elem[i].setBounds(420 + 60 + 80 * i, 440, 100, 20);
+            lab_elem[i].setBounds(420 + 80 + 80 * (cnt % 2), 520 + 20 * (cnt / 2), 100, 20);
             panels[0].add(lab_elem[i]);
+            //表示位置を1個右にずらす場合に使用
+            //if (i == 3) {
+            //    cnt++;
+            //}
         }
 //        for (int i = 0; i < AILMENT_LIST.length; i++) {
 //            lab_ailment[i] = new JLabel();
@@ -1012,7 +1017,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 //        }
         for (int i = 0, cnt = 0; i < AILMENT_LIST.length; i++, cnt++) {
             lab_ailment[i] = new JLabel();
-            lab_ailment[i].setBounds(420 + 60 + 80 * (cnt % 4), 460 + 20 + 20 * (cnt / 4), 100, 20);
+            lab_ailment[i].setBounds(420 + 80 + 80 * (cnt % 2), 440 + 20 * (cnt / 2), 100, 20);
             panels[0].add(lab_ailment[i]);
 //表示位置を1個右にずらす場合に使用
 //            if (i == 3) {

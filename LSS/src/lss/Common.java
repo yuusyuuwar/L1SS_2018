@@ -31,11 +31,11 @@ public interface Common {
     final int F = 7;
 
     //final String[] ELEM_LIST = {"火", "水", "風", "地"};
-    final String[] ELEM_LIST = {"火属性", "水属性", "風属性", "地属性"};
-    final int FIRE = 0;
-    final int WATER = 1;
-    final int WIND = 2;
-    final int EARTH = 3;
+    final String[] ELEM_LIST = {"地", "火", "水", "風"};
+    final int EARTH = 0;
+    final int FIRE = 1;
+    final int WATER = 2;
+    final int WIND = 3;
 
     final String[] BUKI_TYPE_LIST = {"ダガー", "片手剣", "両手剣", "スタッフ", "鈍器",
         "デュアルブレード", "クロウ", "槍", "ボウ", "ガントレット", "キーリンク", "チェーンソード", "双斧"};
@@ -214,15 +214,16 @@ public interface Common {
 //    final int SPIRIT = 18;
 //    final int HIT_SPIRIT = 19;
     
-    final String[] AILMENT_LIST = {"技術耐性", "精霊耐性", "秘技耐性", "恐怖耐性", "技術命中", "精霊命中", "秘技命中","恐怖命中"};
-    final int STUN = 0;
-    final int SPIRIT = 1;
-    final int SECRET = 2;
-    final int TERROR = 3;
-    final int HIT_STUN = 4;
-    final int HIT_SPIRIT = 5; 
-    final int HIT_SECRET = 6; 
-    final int HIT_TERROR = 7; 
+//    final String[] AILMENT_LIST = {"技術命中", "技術耐性", "精霊命中", "精霊耐性", "秘技命中","秘技耐性", "恐怖命中", "恐怖耐性"};
+    final String[] AILMENT_LIST = {"技術", "技術", "精霊", "精霊", "秘技","秘技", "恐怖", "恐怖"};
+    final int HIT_STUN = 0;
+    final int STUN = 1;
+    final int HIT_SPIRIT = 2;
+    final int SPIRIT = 3;
+    final int HIT_SECRET = 4;
+    final int SECRET = 5;
+    final int HIT_TERROR = 6;
+    final int TERROR = 7; 
 
     final String[] ENEMY_TYPE_LIST = {"通常", "悪魔", "不死"};
     final int NORMAL = 0;
