@@ -710,7 +710,6 @@ public class Calculator implements Common {
                     break;
                 case 6:                             //イエティ
                     buff.AC -= 3;
-//                    buff.ailment[FREEZE] += 7;
                     ui.cb_buff[ITEM_MD].setToolTipText("AC-3");
                     break;
                 case 7:                             //コカトリス
@@ -935,55 +934,54 @@ public class Calculator implements Common {
             }
         }
 
-        ui.cb_buff[ITEM_MD2].setToolTipText("   ");
         if (ui.cb_buff[ITEM_MD2].isSelected()) {
-            switch ((String) ui.cb_buff_group[ITEM_MD2].getSelectedItem()) {
-                case "カカシ":
+            switch (ui.cb_buff_group[ITEM_MD2].getSelectedIndex()) {
+                case 0:                             //カカシ
                     buff.HP += 50;
                     ui.cb_buff[ITEM_MD2].setToolTipText("最大HP+50");
                     break;
-                case "スノーマン":
+                case 1:                             //スノーマン
                     buff.DMG_SHORT += 1;
                     buff.HIT_SHORT += 1;
                     ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+1 近距離命中+1");
                     break;
-                case "マーメイド":
+                case 2:                             //マーメイド
                     ui.cb_buff[ITEM_MD2].setToolTipText("経験値増加+3%");
                     break;
-                case "ラヴァゴーレム":
+                case 3:                             //ラヴァゴーレム
                     buff.DMG_SHORT += 1;
                     buff.DR += 1;
                     ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+1 ダメージ軽減+1");
                     break;
-                case "ジャイアント":
+                case 4:                             //ジャイアント
                     buff.DR += 1;
                     ui.cb_buff[ITEM_MD2].setToolTipText("経験値増加+10% ダメージ軽減+1");
                     break;
-                case "ブラックエルダー":
+                case 5:                             //ブラックエルダー
                     buff.effect += "MP回復 +15,";
                     buff.effect += "コールライトニング,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("64秒毎にMPが15回復 魔法発動(コールライトニング)");
                     break;
-                case "サキュバスクイーン":
+                case 6:                             //サキュバスクイーン
                     buff.effect += "MP回復 +15,";
                     buff.SP += 1;
                     ui.cb_buff[ITEM_MD2].setToolTipText("SP+1 64秒毎にMPが15回復");
                     break;
-                case "ドレイク":
+                case 7:                             //ドレイク
                     buff.DMG_LONG += 2;
                     buff.effect += "MP回復 +6,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("遠距離ダメージ+2 64秒毎にMPが6回復");
                     break;
-                case "キングバグベアー":
+                case 8:                             //キングバグベアー
                     buff.ailment[STUN] += 8;
                     buff.effect += "MP回復 +10,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("スタン耐性+8 64秒毎にMPが10回復");
                     break;
-                case "ダイアゴーレム":
+                case 9:                             //ダイアゴーレム
                     buff.DR += 2;
                     ui.cb_buff[ITEM_MD2].setToolTipText("ダメージ軽減+2");
                     break;
-                case "サイクロプス":
+                case 10:                            //サイクロプス
                     buff.AC -= 1;
                     buff.DMG_SHORT += 6;
                     buff.DMG_LONG += 6;
@@ -991,7 +989,7 @@ public class Calculator implements Common {
                     buff.effect += "アースジェイル,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 近距離ダメージ+6 遠距離ダメージ+6 SP+4 魔法発動(アースジェイル)");
                     break;
-                case "ナイトバルド":
+                case 11:                            //ナイトバルド
                     buff.AC -= 2;
                     buff.DMG_SHORT += 4;
                     buff.HIT_SHORT += 2;
@@ -1000,7 +998,7 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +8,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 最大HP+120 近距離ダメージ+4 近距離命中+2 ダメージ軽減+2 64秒毎にMPが8回復");
                     break;
-                case "シアー":
+                case 12:                            //シアー
                     buff.AC -= 2;
                     buff.DMG_LONG += 4;
                     buff.HIT_LONG += 2;
@@ -1009,7 +1007,7 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +12,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 最大HP+80 遠距離ダメージ+4 遠距離命中+2 ダメージ軽減+2 64秒毎にMPが12回復");
                     break;
-                case "デスナイト":
+                case 13:                            //デスナイト
                     buff.AC -= 2;
                     buff.DMG_SHORT += 8;
                     buff.DMG_LONG += 8;
@@ -1017,7 +1015,7 @@ public class Calculator implements Common {
                     buff.effect += "ヘルファイアー,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 近距離ダメージ+8 遠距離ダメージ+8 SP+5 魔法発動(ヘルファイア)");
                     break;
-                case "デーモン":
+                case 14:                            //デーモン
                     buff.AC -= 4;
                     buff.DMG_SHORT += 6;
                     buff.HIT_SHORT += 4;
@@ -1026,7 +1024,7 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +8,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 最大HP+120 近距離ダメージ+6 近距離命中+4 ダメージ軽減+4 64秒毎にMPが8回復");
                     break;
-                case "覚醒パオ":
+                case 15:                            //覚醒パオ
                     buff.AC -= 4;
                     buff.SP += 3;
                     buff.DR += 4;
@@ -1034,7 +1032,7 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +16,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 最大HP+40 SP+3ダメージ軽減+4 64秒毎にMPが16回復");
                     break;
-                case "マミーロード":
+                case 16:                            //マミーロード
                     buff.AC -= 4;
                     buff.DMG_LONG += 6;
                     buff.HIT_LONG += 4;
@@ -1043,14 +1041,14 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +12,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-4 最大HP+80 遠距離ダメージ+6 遠距離命中+4 ダメージ軽減+4 64秒毎にMPが12回復");
                     break;
-                case "アイリス":
+                case 17:                            //アイリス
                     buff.DMG_SHORT += 2;
                     buff.HIT_SHORT += 2;
                     buff.DR += 3;
                     buff.effect += "フォースレイヤーダメージ+10,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+2 近距離命中+2 ダメージ軽減+3 フォースレイヤー追加ダメージ+10");
                     break;
-                case "バンパイア":
+                case 18:                            //バンパイア
                     buff.HP += 80;
                     buff.AC -= 2;
                     buff.DMG_SHORT += 2;
@@ -1059,7 +1057,7 @@ public class Calculator implements Common {
                     buff.effect += "タイタン系列発動区間+5%,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 最大HP+80 近距離ダメージ+2 近距離命中+2 ダメージ軽減+2 タイタン系技術の発動HP区間が5%増加");
                     break;
-                case "バランカ":
+                case 19:                            //バランカ
                     buff.HP += 120;
                     buff.DMG_SHORT += 6;
                     buff.HIT_SHORT += 6;
@@ -1068,7 +1066,7 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +12,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("最大HP+120 近距離ダメージ+6 近距離命中+6 ダメージ軽減+2 精霊命中+10 64秒毎にMPが12回復");
                     break;
-                case "アイスクイーン":
+                case 20:                            //アイスクイーン
                     buff.HP += 80;
                     buff.SP += 1;
                     buff.DMG_LONG += 4;
@@ -1077,14 +1075,14 @@ public class Calculator implements Common {
                     buff.effect += "攻撃時一定確率で魔法発動,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("最大HP+80 遠距離ダメージ+4 遠距離命中+8 ダメージ軽減+2 魔法発動");
                     break;
-                case "アンタラス":
+                case 21:                            //アンタラス
                     buff.AC -= 7;
                     buff.HP += 120;
                     buff.DR += 7;
                     buff.effect += "MP回復 +15,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-7 最大HP+120 ダメージ軽減+7 64秒毎にMPが15回復 祝福消耗効率+7%");
                     break;
-                case "パプリオン":
+                case 22:                            //パプリオン
                     buff.AC -= 1;
                     buff.DR += 1;
                     buff.SP += 7;
@@ -1092,7 +1090,7 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +10,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 ダメージ軽減+1 SP+7 魔法命中+7 64秒毎にMPが10回復 祝福消耗効率+7%");
                     break;
-                case "リンドビオル":
+                case 23:                            //リンドビオル
                     buff.AC -= 2;
                     buff.DR += 2;
                     buff.DMG_LONG += 7;
@@ -1100,14 +1098,14 @@ public class Calculator implements Common {
                     buff.effect += "MP回復 +5,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 ダメージ軽減+2 遠距離ダメージ+7 遠距離命中+7 64秒毎にMPが5回復 祝福消耗効率+7%");
                     break;
-                case "ヴァラカス":
+                case 24:                            //ヴァラカス
                     buff.AC -= 3;
                     buff.DR += 3;
                     buff.DMG_SHORT += 7;
                     buff.HIT_SHORT += 7;
                     ui.cb_buff[ITEM_MD2].setToolTipText("AC-3 ダメージ軽減+3 近距離ダメージ+7 近距離命中+7 祝福消耗効率+7%");
                     break;
-                case "カーツ":
+                case 25:                            //カーツ
                     buff.DMG_SHORT += 4;
                     buff.HIT_SHORT += 4;
                     buff.HP += 120;
@@ -1116,13 +1114,13 @@ public class Calculator implements Common {
                     buff.effect += "フォースレイヤーダメージ+10,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+4 近距離命中+4 最大HP+120 AC-3 ダメージ軽減+3 フォースレイヤー追加ダメージ+10");
                     break;
-                case "堕落":
+                case 26:                            //堕落
                     buff.SP += 5;
                     buff.HIT_MAGIC += 5;                    
                     buff.effect += "MP回復 +16,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("SP+5 魔法命中+5 64秒毎にMPが16回復");
                     break;
-                case "バフォメット":
+                case 27:                            //バフォメット
                     buff.HP += 120;
                     buff.AC -= 4;
                     buff.DMG_SHORT += 2;
@@ -3133,16 +3131,16 @@ public class Calculator implements Common {
                     ml = 1;
                 }
                 break;
-            case E:
+            case E:                     //エルフ:マジックレベル最大6から7へ変更
                 ml = level / 8;
-                if (ml > 6) {
-                    ml = 6;
+                if (ml > 7) {
+                    ml = 7;
                 }
                 break;
-            case W:
+            case W:                     //エルフ:マジックレベル最大13から14へ変更
                 ml = level / 4;
-                if (ml > 13) {
-                    ml = 13;
+                if (ml > 14) {
+                    ml = 14;
                 }
                 break;
             case D:
