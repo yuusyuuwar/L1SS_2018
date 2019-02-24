@@ -1,6 +1,16 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/02/24
+Update 3.2.9
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+修正
+	エリクサールーンのツールチップの表示
+	スキルのコメント
+削除
+	古代の加護
+
 2019/02/23
 Update 3.2.8
 LSS/src/lss/Calculator.java
