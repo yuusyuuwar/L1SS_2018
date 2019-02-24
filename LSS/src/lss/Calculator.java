@@ -1868,47 +1868,58 @@ public class Calculator implements Common {
             switch (cls) {
                 case P:
                     buff.DR += 3;
+                    ui.elixir_rune.setToolTipText("ステ+1 ダメージリダクション+3");
                     switch (q) {
                         case 1:
                             buff.HIT_SHORT += 2;            //近距離命中+2
+                            ui.elixir_rune.setToolTipText("ステ+1 ダメージリダクション+3 近距離命中+2");
                             break;
                         case 2:
                             buff.HIT_SHORT += 2;            //近距離命中+2
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 ダメージリダクション+3 近距離命中+2 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.HIT_SHORT += 2;            //近距離命中+2
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_STUN] += 5;    //技術命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 ダメージリダクション+3 近距離命中+2 祝福消耗効率+5% 技術命中+5");
                             break;
                         case 4:
                             buff.HIT_SHORT += 2;            //近距離命中+2
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 ダメージリダクション+3 近距離命中+2 祝福消耗効率+5% 技術命中+10");
                             break;
                         default:
+                            
                             break;
                     }
                     break;
                 case K:
                     buff.HP += 50;
+                    ui.elixir_rune.setToolTipText("ステ+1 HP+50");
                     switch (q) {
                         case 1:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 近距離ダメージ+1");
                             break;
                         case 2:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 近距離ダメージ+1 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_STUN] += 5;    //技術命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 近距離ダメージ+1 祝福消耗効率+5% 技術命中+5");
                             break;
                         case 4:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_STUN] += 10;   //技術命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 近距離ダメージ+1 祝福消耗効率+5% 技術命中+10");
                             break;
                         default:
                             break;
@@ -1916,27 +1927,32 @@ public class Calculator implements Common {
                     break;
                 case E:
                     buff.MP += 50;
+                    ui.elixir_rune.setToolTipText("ステ+1 MP+50");
                     switch (q) {
                         case 1:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
                             buff.DMG_LONG += 1;             //遠距離ダメージ+1
+                            ui.elixir_rune.setToolTipText("ステ+1 MP+50 近距離ダメージ+1 遠距離ダメージ+1");
                             break;
                         case 2:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
                             buff.DMG_LONG += 1;             //遠距離ダメージ+1
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 MP+50 近距離ダメージ+1 遠距離ダメージ+1 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
                             buff.DMG_LONG += 1;             //遠距離ダメージ+1
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SPIRIT] += 5;  //精霊命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 MP+50 近距離ダメージ+1 遠距離ダメージ+1 祝福消耗効率+5% 精霊命中+5");
                             break;
                         case 4:
                             buff.DMG_SHORT += 1;            //近距離ダメージ+1
                             buff.DMG_LONG += 1;             //遠距離ダメージ+1
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SPIRIT] += 10; //精霊命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 MP+50 近距離ダメージ+1 遠距離ダメージ+1 祝福消耗効率+5% 精霊命中+10");
                             break;
                         default:
                             break;
@@ -1944,23 +1960,28 @@ public class Calculator implements Common {
                     break;
                 case W:
                     buff.MPR += 3;
+                    ui.elixir_rune.setToolTipText("ステ+1 MPR+3");
                     switch (q) {
                         case 1:
                             buff.SP += 1;                   //SP+1
+                            ui.elixir_rune.setToolTipText("ステ+1 MPR+3　SP+1");
                             break;
                         case 2:
                             buff.SP += 1;                   //SP+1
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 MPR+3 SP+1 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.SP += 1;                   //SP+1
                                                             //祝福消耗効率+5%
                             buff.HIT_MAGIC += 5;            //魔法命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 MPR+3 SP+1 祝福消耗効率+5% 魔法命中+5");
                             break;
                         case 4:
                             buff.SP += 1;                   //SP+1
                                                             //祝福消耗効率+5%
                             buff.HIT_MAGIC += 10;           //魔法命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 MPR+3 SP+1 祝福消耗効率+5% 魔法命中+10");
                             break;
                         default:
                             break;
@@ -1968,23 +1989,28 @@ public class Calculator implements Common {
                     break;
                 case D:
                     buff.AC -= 3;
+                    ui.elixir_rune.setToolTipText("ステ+1 AC-3");
                     switch (q) {
                         case 1:
                             buff.MP += 30;                  //最大MP+30
+                            ui.elixir_rune.setToolTipText("ステ+1 AC-3 MP+30");
                             break;
                         case 2:
                             buff.MP += 30;                  //最大MP+30
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 AC-3 MP+30 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.MP += 30;                  //最大MP+30
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SPIRIT] += 5;  //精霊命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 AC-3 MP+30 祝福消耗効率+5% 精霊命中+5");
                             break;
                         case 4:
                             buff.MP += 30;                  //最大MP+30
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SPIRIT] += 10; //精霊命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 AC-3 MP+30 祝福消耗効率+5% 精霊命中+10");
                             break;
                         default:
                             break;
@@ -1992,47 +2018,58 @@ public class Calculator implements Common {
                     break;
                 case R:
                     buff.HIT_SHORT += 3;
+                    ui.elixir_rune.setToolTipText("ステ+1 近距離命中+3");
                     switch (q) {
                         case 1:
                             buff.DR += 1;                   //ダメージリダクション+1
+                            ui.elixir_rune.setToolTipText("ステ+1 近距離命中+3 ダメージリダクション+1");
                             break;
                         case 2:
                             buff.DR += 1;                   //ダメージリダクション+1
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 近距離命中+3 ダメージリダクション+1 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.DR += 1;                   //ダメージリダクション+1
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SECRET] += 5;  //秘技命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 近距離命中+3 ダメージリダクション+1 祝福消耗効率+5% 秘技命中+5");
                             break;
                         case 4:
                             buff.DR += 1;                   //ダメージリダクション+1
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SECRET] += 10; //秘技命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 近距離命中+3 ダメージリダクション+1 祝福消耗効率+5% 秘技命中+10");
                             break;
                         default:
                             break;
                     }
                     break;
                 case I:
-                    buff.r_weight += 0.05;
+                    buff.r_weight += 0.12;
+//                    buff.c_weight += 300;
+                    ui.elixir_rune.setToolTipText("ステ+1 所持重量増加+300");
                     switch (q) {
                         case 1:
                             buff.HP += 50;                  //最大HP+50
+                            ui.elixir_rune.setToolTipText("ステ+1 所持重量増加+300 HP+50");
                             break;
                         case 2:
                             buff.HP += 50;                  //最大HP+50
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 所持重量増加+300 HP+50 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.HP += 50;                  //最大HP+50
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SECRET] += 5;  //秘技命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 所持重量増加+300 HP+50 祝福消耗効率+5% 秘技命中+5");
                             break;
                         case 4:
                             buff.HP += 50;                  //最大HP+50
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_SECRET] += 10; //秘技命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 所持重量増加+300 HP+50 祝福消耗効率+5% 秘技命中+10");
                             break;
                         default:
                             break;
@@ -2040,23 +2077,28 @@ public class Calculator implements Common {
                     break;
                 case F:
                     buff.HP += 50;
+                    ui.elixir_rune.setToolTipText("ステ+1 HP+50");
                     switch (q) {
                         case 1:
                             buff.MR += 5;                   //MR+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 MR+5%");
                             break;
                         case 2:
                             buff.MR += 5;                   //MR+5%
                                                             //祝福消耗効率+5%
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 MR+5% 祝福消耗効率+5%");
                             break;
                         case 3:
                             buff.MR += 5;                   //MR+5%1
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_TERROR] += 5;  //技術命中+5
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 MR+5% 祝福消耗効率+5% 技術命中+5");
                             break;
                         case 4:
                             buff.MR += 5;                   //MR+5%
                                                             //祝福消耗効率+5%
                             buff.ailment[HIT_TERROR] += 10; //技術命中+10
+                            ui.elixir_rune.setToolTipText("ステ+1 HP+50 MR+5% 祝福消耗効率+5% 技術命中+10");
                             break;
                         default:
                             break;
@@ -2065,9 +2107,10 @@ public class Calculator implements Common {
                 default:
                     break;
             }
-        }else if (e == 6){                              //古代の加護
-                        buff.AC -= 2;                   //AC-2
-        }else if (e == 7){                              //アルカの遺物
+
+        }else if (e == 0){                              //未使用
+                    ui.elixir_rune.setToolTipText("");
+        }else if (e == 6){                              //アルカの遺物
                     buff.AC -= 3;                       //AC-3
                     buff.DMG_SHORT += 2;                //近距離ダメージ+2
                     buff.HIT_SHORT += 2;                //近距離命中+2
@@ -2077,7 +2120,8 @@ public class Calculator implements Common {
                     buff.HIT_MAGIC += 2;                //魔法命中+2
                     buff.MR += 5;                       //MR+5%
                                                         //獲得経験値+2%
-        }else if (e == 8){                              //強化されたアルカの遺物
+                    ui.elixir_rune.setToolTipText("AC-4 DEX+1 遠距離ダメージ+4 遠距離命中+6 獲得経験値+10%");
+        }else if (e == 7){                              //強化されたアルカの遺物
                     buff.AC -= 3;                       //AC-3
                     buff.DMG_SHORT += 2;                //近距離ダメージ+2
                     buff.HIT_SHORT += 2;                //近距離命中+2
@@ -2088,7 +2132,9 @@ public class Calculator implements Common {
                     buff.MR += 5;                       //MR+5%
                     buff.ailment[TERROR] += 5;          //恐怖耐性+5
                                                         //獲得経験値+5%                    
-        }else if (e == 9){                              //ドラゴンの遺物
+                    ui.elixir_rune.setToolTipText("AC-3 近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+ SP+2 魔法命中+2 MR+5% 恐怖耐性+5"
+                            + " 獲得経験値+5%");
+        }else if (e == 8){                              //ドラゴンの遺物
                     buff.AC -= 3;                       //AC-3
                     buff.DMG_SHORT += 2;                //近距離ダメージ+2
                     buff.HIT_SHORT += 2;                //近距離命中+2
@@ -2097,24 +2143,28 @@ public class Calculator implements Common {
                     buff.SP += 2;                       //SP+2
                     buff.HIT_MAGIC += 2;                //魔法命中+2
                                                         //獲得経験値+2%
-        }else if (e == 10){                             //強化されたドラゴンの遺物(腕力)
+                    ui.elixir_rune.setToolTipText("AC-3 近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+2 SP+2 魔法命中+2 獲得経験値+2%");
+        }else if (e == 9){                             //強化されたドラゴンの遺物(腕力)
                     buff.AC -= 4;                       //AC-4
                     buff.ST[STR] += 1;                  //STR+1
                     buff.DMG_SHORT += 4;                //近距離ダメージ+4
                     buff.HIT_SHORT += 6;                //近距離命中+6
                                                         //獲得経験値+10%
-        }else if (e == 11){                             //強化されたドラゴンの遺物(知力)
+                    ui.elixir_rune.setToolTipText("AC-4 STR+1 近距離ダメージ+4 近距離命中+6 獲得経験値+10%");
+        }else if (e == 10){                             //強化されたドラゴンの遺物(知力)
                     buff.AC -= 4;                       //AC-4
                     buff.ST[INT] += 1;                  //INT+1
                     buff.SP += 4;                       //SP+4
                     buff.HIT_MAGIC += 6;                //魔法命中+6
                                                         //獲得経験値+10%
-        }else if (e == 12){                             //強化されたドラゴンの遺物(機敏)
+                    ui.elixir_rune.setToolTipText("AC-4 INT+1 SP+4 魔法命中+6 獲得経験値+10%");
+        }else if (e == 11){                             //強化されたドラゴンの遺物(機敏)
                     buff.AC -= 4;                       //AC-4
                     buff.ST[DEX] += 1;                  //DEX+1
                     buff.DMG_LONG += 4;                 //遠距離ダメージ+4
                     buff.HIT_LONG += 6;                 //遠距離命中+6
                                                         //獲得経験値+10%          
+                    ui.elixir_rune.setToolTipText("AC-4 DEX+1 遠距離ダメージ+4 遠距離命中+6 獲得経験値+10%");
         }
         //タリスマン
             switch (ui.cb_pattern_l2.getSelectedIndex()) {

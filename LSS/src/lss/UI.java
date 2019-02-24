@@ -683,7 +683,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             panels[0].add(cb_eq[i]);
             cb_eq[i].addActionListener(this);
 
-                    //リスト19個から21個へ拡張(スポールダー、インシグニア分)2個追加
+            //リスト19個から21個へ拡張(スポールダー、インシグニア分)2個追加
             if (i >= 21) {              
                 cb_eq[i].setEnabled(false);
                 cb_eq_en[i].setEnabled(false);
@@ -759,7 +759,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(elixir_rune_en);
 
         //エリクサールーン
-        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン","古代の加護","アルカの遺物","強化されたアルカの遺物","ドラゴンの遺物","強化されたドラゴンの遺物(腕力)","強化されたドラゴンの遺物(知力)","強化されたドラゴンの遺物(機敏)"};
+        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン","アルカの遺物","強化されたアルカの遺物","ドラゴンの遺物","強化されたドラゴンの遺物(腕力)","強化されたドラゴンの遺物(知力)","強化されたドラゴンの遺物(機敏)"};
         elixir_rune = new WideComboBox(elixir_rune_list);
         elixir_rune.setBounds(50, 460, 150, 20);
         elixir_rune.addActionListener(this);
@@ -1005,10 +1005,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
             lab_elem[i] = new JLabel();
             lab_elem[i].setBounds(420 + 80 + 80 * (cnt % 2), 520 + 20 * (cnt / 2), 100, 20);
             panels[0].add(lab_elem[i]);
-            //表示位置を1個右にずらす場合に使用
-            //if (i == 3) {
-            //    cnt++;
-            //}
         }
 //        for (int i = 0; i < AILMENT_LIST.length; i++) {
 //            lab_ailment[i] = new JLabel();
@@ -1148,7 +1144,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
                 + "<br>"+ "クリスマスキャンディー DEX+7(STR+7)"+"</html>");
         cb_buff[B_DEX].setBounds(0, 20 * col++, 100, 20);
 
-        //String list_ac[] = {"-2", "-5", "-6", "-7", "-10"};
         String list_ac[] = {"-2", "-4", "-5", "-10"};
         cb_buff_group[B_AC] = new WideComboBox(list_ac);
         cb_buff_group[B_AC].setBounds(100, 20 * col, 80, 20);
@@ -1221,7 +1216,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[P_BA] = new JCheckBox("ブレイブアバター");
         cb_buff[P_BA].setBounds(0, 20 * col++, 150, 20);
-//        cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 スタン耐性+2 ホールド耐性+2");
         cb_buff[P_BA].setToolTipText("STR+1 DEX+1 INT+1 MR+10 技術耐性+2 精霊耐性+2 竜語耐性+2 恐怖耐性+2");
 
         String list_P_GA[] = {"君主L80", "君主L81", "君主L82", "君主L83", "君主L84", "君主L85","君主L86","君主L87","君主L88","君主L89","君主L90+"};
@@ -1229,8 +1223,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff_group[P_GA].setBounds(100, 20 * col, 80, 20);
         cb_buff[P_GA] = new JCheckBox("グレースアバター");
         cb_buff[P_GA].setBounds(0, 20 * col++, 100, 20);
-//        cb_buff[P_GA].setToolTipText("スタン耐性+10 ホールド耐性+10 恐怖耐性+10 LV80からLV1毎に耐性+1増加[最大+15]");
-//        cb_buff[P_GA].setToolTipText("技術耐性+5 精霊耐性+5 竜語耐性+5 恐怖耐性+5 LV80からLV1毎に耐性+1増加[最大+15]");
+
         col++;
 
         lab_tmp = new JLabel("騎士技術");
@@ -1284,9 +1277,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        //cb_buff[E_FW] = new JCheckBox("ファイアーウエポン");
-        //cb_buff[E_FW].setBounds(200 * row, 20 * col++, 150, 20);
-        //cb_buff[E_FW].setToolTipText("火属性追加打撃+4");
         cb_buff[E_BW] = new JCheckBox("バーニングウエポン");
         cb_buff[E_BW].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_BW].setToolTipText("火属性追加打撃+6 近接命中+6");
@@ -1325,18 +1315,12 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
         panels[2].add(lab_tmp);
 
-        //cb_buff[E_WS] = new JCheckBox("ウインドショット");
-        //cb_buff[E_WS].setBounds(200 * row, 20 * col++, 150, 20);
-        //cb_buff[E_WS].setToolTipText("遠距離命中+6");
         cb_buff[E_SE] = new JCheckBox("ストームアイ");
         cb_buff[E_SE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_SE].setToolTipText("風属性遠距離ダメージ+3 遠距離命中+2");
         cb_buff[E_SS] = new JCheckBox("ストームショット");
         cb_buff[E_SS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_SS].setToolTipText("風属性遠距離ダメージ+6 遠距離命中+3");
-        //cb_buff[E_WW] = new JCheckBox("ウインドウォーク");
-        //cb_buff[E_WW].setBounds(200 * row, 20 * col++, 150, 20);
-        //cb_buff[E_WW].setToolTipText("移動速度上昇");
         cb_buff[E_EE] = new JCheckBox("イーグルアイ");
         cb_buff[E_EE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EE].setToolTipText("遠距離クリティカル+2%");
@@ -1566,22 +1550,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[KOMA] = new JCheckBox("コマのエンチャ");
         cb_buff[KOMA].setBounds(200 * row, 20 * col++, 100, 20);
 
-//基本(前半)部分へ移動の為､コメントアウト
-//        cb_buff[SEC] = new JCheckBox("セキュリティ");
-//        cb_buff[SEC].setBounds(200 * row, 20 * col++, 150, 20);
-
         String list_magan[] = {"地竜の魔眼","水竜の魔眼","風竜の魔眼","火竜の魔眼","誕生の魔眼","形状の魔眼","生命の魔眼", "グレムリンの魔眼"};
         cb_buff_group[ITEM_MAGAN] = new WideComboBox(list_magan);
         cb_buff_group[ITEM_MAGAN].setBounds(200 * row + 100, 20 * col, 80, 20);
         cb_buff[ITEM_MAGAN] = new JCheckBox("魔眼");
         cb_buff[ITEM_MAGAN].setBounds(200 * row, 20 * col++, 100, 20);
-
-//基本(前半)部分へ移動の為､コメントアウト
-//        String list_vip[] = {"Red", "Gold", "Platinum"};
-//        cb_buff_group[VIP] = new WideComboBox(list_vip);
-//        cb_buff_group[VIP].setBounds(200 * row + 100, 20 * col, 80, 20);
-//        cb_buff[VIP] = new JCheckBox("VIP");
-//        cb_buff[VIP].setBounds(200 * row, 20 * col++, 100, 20);
 
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
@@ -1592,7 +1565,6 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[MBSC] = new JCheckBox("真心のこもった祝福スクロール");
         cb_buff[MBSC].setBounds(200 * row, 20 * col++, 200, 20);
 
-        //y_ikedaさんによる修正を参考に
         String list_hst[] = {"1個", "2個", "3個", "4個", "5個"};
         cb_buff_group[L_HST] = new WideComboBox(list_hst);
         cb_buff_group[L_HST].setBounds(200 * row + 100, 20 * col, 80, 20);
