@@ -120,7 +120,7 @@ public interface Common {
     final int W_BSK = 25;       //バーサーカー
     final int W_DW = 26;        //ディクリースウェイト
     final int W_BA = 27;        //ブレスドアーマー
-    final int W_I2H = 28;       //*********************************未実装(予約分)
+    final int D_DB2 = 28;       //ダブルブレイク:デスティニー
     final int D_DB = 29;        //ダブルブレイク
     final int D_BS = 30;        //バーニングスピリッツ
     final int D_DE = 31;        //ドレスイベイジョン
@@ -152,7 +152,7 @@ public interface Common {
     final int DRAGONRAID = 57;  //*********************************未実装(予約分)
     final int KOMA = 58;        //コマのエンチャ
     final int P_BA = 59;        //ブレイブアバター
-    final int E_DB = 60;        //*********************************未実装(予約分)
+    final int R_FS2 = 60;       //フォースレイヤー:ブレイブ
     final int E_EG = 61;        //アースガーディアン
     final int I_RW = 62;        //リデュースウェイト
     final int WAR = 63;         //*********************************未実装(予約分)
@@ -165,7 +165,7 @@ public interface Common {
     final int F_TM = 70;        //タイタンマジック
     final int F_TB = 71;        //タイタンブリッツ
     final int VIP = 72;         //VIPエンチャント
-    final int COIN = 73;        //*********************************未実装(予約分)
+    final int K_CB2 = 73;       //カウンターバリア:ベテラン
     final int MBSC = 74;        //真心のこもった祝福スクロール
     final int SEC = 75;         //セキュリティ
     final int F_G = 76;         //ギガンティック

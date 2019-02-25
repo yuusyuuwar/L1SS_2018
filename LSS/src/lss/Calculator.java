@@ -1399,7 +1399,7 @@ public class Calculator implements Common {
         }
         //カウンターバリア 消費MP10/1mins
         if (ui.cb_buff[K_CB].isSelected()) {
-            if (level >= 50 && cls == K
+            if (level >= 80 && cls == K
                     && buki.type.equals("両手剣")) {
                 if (ui.cb_buff[K_CB].getForeground().equals(Color.BLUE)) {
                     cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 1;
@@ -1407,6 +1407,20 @@ public class Calculator implements Common {
                 // CB効果未実装
             } else {
                 ui.cb_buff[K_CB].setSelected(false);
+                ui.cb_buff[K_CB2].setSelected(false);
+            }
+        }
+        //カウンターバリア:ベテラン
+        if (ui.cb_buff[K_CB2].isSelected()) {
+            if (level >= 85 && cls == K
+                    && buki.type.equals("両手剣")) {
+                if (ui.cb_buff[K_CB2].getForeground().equals(Color.BLUE)) {
+                }
+                // CB効果未実装
+                ui.cb_buff[K_CB].setSelected(true);
+            } else {
+                ui.cb_buff[K_CB].setSelected(false);
+                ui.cb_buff[K_CB2].setSelected(false);
             }
         }
         //バウンスアタック 消費MP10/1mins
@@ -1614,41 +1628,29 @@ public class Calculator implements Common {
         }
         //覚醒[アンタラス] 消費MP20/10mins
         if (ui.cb_buff[R_ANTHARAS].isSelected()) {
-            if (ui.cb_buff[R_FAFURION].isSelected()
-                    || ui.cb_buff[R_VALAKAS].isSelected()
-                    || ui.cb_buff[R_LINDVIOL].isSelected()) {
-                ui.cb_buff[R_ANTHARAS].setSelected(false);
-            } else {
-                buff.AC -= 3;
-                if (ui.cb_buff[R_ANTHARAS].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
-                }
+            buff.AC -= 3;
+            if (ui.cb_buff[R_ANTHARAS].getForeground().equals(Color.BLUE)) {
+                cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
         //覚醒[パプリオン] 消費MP30/10mins
-        if (ui.cb_buff[R_FAFURION].isSelected()) {
-            if (ui.cb_buff[R_ANTHARAS].isSelected()
-                    || ui.cb_buff[R_VALAKAS].isSelected()
-                    || ui.cb_buff[R_LINDVIOL].isSelected()) {
-                ui.cb_buff[R_FAFURION].setSelected(false);
-            } else {
-                if (ui.cb_buff[R_FAFURION].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
-                }
-            }
-        }
+        //if (ui.cb_buff[R_FAFURION].isSelected()) {
+        //    if (ui.cb_buff[R_ANTHARAS].isSelected()
+        //            || ui.cb_buff[R_VALAKAS].isSelected()
+        //            || ui.cb_buff[R_LINDVIOL].isSelected()) {
+        //        ui.cb_buff[R_FAFURION].setSelected(false);
+        //    } else {
+        //        if (ui.cb_buff[R_FAFURION].getForeground().equals(Color.BLUE)) {
+        //            cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
+        //        }
+        //    }
+        //}
         //覚醒[ヴァラカス] 消費MP50/10mins
         if (ui.cb_buff[R_VALAKAS].isSelected()) {
-            if (ui.cb_buff[R_ANTHARAS].isSelected()
-                    || ui.cb_buff[R_FAFURION].isSelected()
-                    || ui.cb_buff[R_LINDVIOL].isSelected()) {
-                ui.cb_buff[R_VALAKAS].setSelected(false);
-            } else {
-                buff.HIT_SHORT += 5;
-                buff.ailment[STUN] += 10;
-                if (ui.cb_buff[R_VALAKAS].getForeground().equals(Color.BLUE)) {
-                    cons_mp += (50.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
-                }
+            buff.HIT_SHORT += 5;
+            buff.ailment[STUN] += 10;
+            if (ui.cb_buff[R_VALAKAS].getForeground().equals(Color.BLUE)) {
+                cons_mp += (50.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
         }
         //コンセントレーション 消費MP30/10mins
@@ -1713,13 +1715,11 @@ public class Calculator implements Common {
                 }
             	if (level >= 85) {
         	    buff.ailment[HIT_STUN] += 10;                       //技術命中+10
-//        	    buff.ailment[HIT_DESTRUCTION] += 10;                //破壊命中+10
         	    buff.ailment[HIT_SPIRIT] += 10;                     //精霊命中+10
         	    buff.ailment[HIT_SECRET] += 10;                     //秘技命中+10
         	    buff.ailment[HIT_TERROR] += 10;                     //恐怖命中+10      
         	} else if (level >= 80) {
         	    buff.ailment[HIT_STUN] += 5 + (level - 80);         //技術命中+(level - 75)
-//        	    buff.ailment[HIT_DESTRUCTION] += 5 + (level - 80);  //破壊命中+(level - 75)
         	    buff.ailment[HIT_SPIRIT] += 5 + (level - 80);       //精霊命中+(level - 75)
         	    buff.ailment[HIT_SECRET] += 5 + (level - 80);       //秘技命中+(level - 75)
                     buff.ailment[HIT_TERROR] += 5 + (level - 80);       //恐怖命中+(level - 75)
@@ -3909,6 +3909,30 @@ buki.arrow_elementdmg=0;
                         + (1.0 - (db_rate + lv_bonus));
                 dmg_cursed *= 2.0 * (db_rate + lv_bonus)
                         + (1.0 - (db_rate + lv_bonus));
+            } else {
+                ui.cb_buff[D_DB].setSelected(false);
+                ui.cb_buff[D_DB2].setSelected(false);
+            }
+        }
+                //ダブルブレイク:デスティニー
+        if (ui.cb_buff[D_DB2].isSelected()) {
+            if (level >= 80 && cls == D
+                    && buki_id == W_DB || buki_id == W_C) {
+                double lv_bonus =((level - 80) * 0.01);
+
+                dmg_big_ave *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
+                dmg_small_ave *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
+
+                dmg_undead *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
+                dmg_cursed *= 2.0 * (db_rate + lv_bonus)
+                        + (1.0 - (db_rate + lv_bonus));
+                ui.cb_buff[D_DB].setSelected(true);
+            } else {
+                ui.cb_buff[D_DB].setSelected(false);
+                ui.cb_buff[D_DB2].setSelected(false);
             }
         }
         //武器属性
@@ -4503,15 +4527,9 @@ buki.arrow_elementdmg=0;
         }
         //覚醒[リンドビオル] 消費MP40/10mins
         if (ui.cb_buff[R_LINDVIOL].isSelected()) {
-            if (ui.cb_buff[R_ANTHARAS].isSelected()
-                    || ui.cb_buff[R_FAFURION].isSelected()
-                    || ui.cb_buff[R_VALAKAS].isSelected()){
-                ui.cb_buff[R_LINDVIOL].setSelected(false);
-            } else {
-                dg = 10;
-                if (ui.cb_buff[R_LINDVIOL].getForeground().equals(Color.BLUE)) {
+            dg = 7;
+            if (ui.cb_buff[R_LINDVIOL].getForeground().equals(Color.BLUE)) {
                     cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
-                }
             }
         }
         ui.lab_ac.setText(Integer.toString(ac));
