@@ -1224,7 +1224,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[P_GA] = new JCheckBox("グレースアバター");
         cb_buff[P_GA].setBounds(0, 20 * col++, 100, 20);
 
-        col++;
+//        col++;
 
         lab_tmp = new JLabel("騎士技術");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1242,9 +1242,13 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[K_BA].setBounds(0, 20 * col++, 150, 20);
         cb_buff[K_BA].setToolTipText("近接命中+6");
 
-        cb_buff[K_CB] = new JCheckBox("カウンターバリア");
-        cb_buff[K_CB].setBounds(0, 20 * col++, 150, 20);
+        cb_buff[K_CB] = new JCheckBox("カウンターバリア(未実装)");
+        cb_buff[K_CB].setBounds(0, 20 * col++, 200, 20);
         cb_buff[K_CB].setToolTipText("両手剣装備時 一定確率で近接攻撃回避+反撃");
+
+        cb_buff[K_CB2] = new JCheckBox("カウンターバリア:ベテラン(未実装)");
+        cb_buff[K_CB2].setBounds(0, 20 * col++, 200, 20);
+        cb_buff[K_CB2].setToolTipText("カウンターバリア発動確率上昇 85レベルから1レベル毎に発動確率1%増加");
         
         cb_buff[K_PD] = new JCheckBox("プライド");
         cb_buff[K_PD].setBounds(0, 20 * col++, 150, 20);
@@ -1360,6 +1364,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[D_DB] = new JCheckBox("ダブルブレイク");
         cb_buff[D_DB].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_DB].setToolTipText("一定確率で武器ダメージ2倍");
+        cb_buff[D_DB2] = new JCheckBox("ダブルブレイク:デスティニー(未実装)");
+        cb_buff[D_DB2].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[D_DB2].setToolTipText("ダブルブレイク発動確率上昇 80レベルから1レベル毎に発動確率1%増加");
         cb_buff[D_UD] = new JCheckBox("アンキャニードッジ");
         cb_buff[D_UD].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_UD].setToolTipText("DG+50");
@@ -1376,7 +1383,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[D_VR].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_VR].setToolTipText("毒無効");
 
-        col++;
+//        col++;
 
         lab_tmp = new JLabel("竜騎士秘技");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1391,17 +1398,20 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[R_ANTHARAS] = new JCheckBox("覚醒[アンタラス]");
         cb_buff[R_ANTHARAS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[R_ANTHARAS].setToolTipText("AC-3");
-        cb_buff[R_FAFURION] = new JCheckBox("覚醒[パプリオン]");
-        cb_buff[R_FAFURION].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_FAFURION].setToolTipText("重さが50~82%でも､HPとMPが自然回復する");
+//        cb_buff[R_FAFURION] = new JCheckBox("覚醒[パプリオン]");
+//        cb_buff[R_FAFURION].setBounds(200 * row, 20 * col++, 150, 20);
+//        cb_buff[R_FAFURION].setToolTipText("重さが50~82%でも､HPとMPが自然回復する");
         cb_buff[R_VALAKAS] = new JCheckBox("覚醒[ヴァラカス]");
         cb_buff[R_VALAKAS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[R_VALAKAS].setToolTipText("近接命中+5 技術耐性+10");
         cb_buff[R_LINDVIOL] = new JCheckBox("覚醒[リンドビオル]");
         cb_buff[R_LINDVIOL].setBounds(200 * row, 20 * col++, 180, 20);
         cb_buff[R_LINDVIOL].setToolTipText("DG+7");
-
-        col++;
+        cb_buff[R_FS2] = new JCheckBox("フォースレイヤー:ブレイブ(未実装)");
+        cb_buff[R_FS2].setBounds(200 * row, 20 * col++, 180, 20);
+        cb_buff[R_FS2].setToolTipText("弱点露出4段目が解放");
+        
+//        col++;
 
         lab_tmp = new JLabel("幻術魔法");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1409,7 +1419,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[I_MI] = new JCheckBox("ミラーイメージ");
         cb_buff[I_MI].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_MI].setToolTipText("DG+50");
+        cb_buff[I_MI].setToolTipText("DG+60");
         cb_buff[I_CON] = new JCheckBox("コンセントレーション");
         cb_buff[I_CON].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_CON].setToolTipText("MPR+4");
