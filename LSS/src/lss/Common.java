@@ -132,7 +132,7 @@ public interface Common {
     final int R_DS = 37;        //ドラゴンスキン
     final int R_MB = 38;        //モータルボディー
     final int R_ANTHARAS = 39;  //覚醒[アンタラス]
-    final int R_FAFURION = 40;  //覚醒[パプリオン]
+    final int R_FAFURION = 40;  //覚醒[パプリオン]******************未実装(予約分)
     final int R_VALAKAS = 41;   //覚醒[ヴァラカス]
     final int I_IO = 42;        //幻術[オーガ]
     final int I_IR = 43;        //幻術[リッチ]
