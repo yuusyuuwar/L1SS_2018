@@ -132,54 +132,6 @@ public class Buff implements Common {
             if (line.startsWith("“Áê=")) {
                 effect = line.split("=")[1];
             }
-//            if (line.startsWith("ƒXƒ^ƒ“‘Ï«=")) {
-//                ailment[STUN] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("ˆÃˆÅ‘Ï«=")) {
-//                ailment[DARKNESS] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("ƒz[ƒ‹ƒh‘Ï«=")) {
-//                ailment[HOLD] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("“€Œ‹‘Ï«=")) {
-//                ailment[FREEZE] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("Î‰»‘Ï«=")) {
-//                ailment[STONE] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("‡–°‘Ï«=")) {
-//                ailment[SLEEP] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("‹°•|‘Ï«=")) {
-//                ailment[TERROR] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("”j‰ó‘Ï«=")) {
-//                ailment[DESTRUCTION] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("ƒXƒ^ƒ“–½’†=")) {
-//                ailment[HIT_STUN] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("ˆÃˆÅ–½’†=")) {
-//                ailment[HIT_DARKNESS] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("ƒz[ƒ‹ƒh–½’†=")) {
-//                ailment[HIT_HOLD] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("“€Œ‹–½’†=")) {
-//                ailment[HIT_FREEZE] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("Î‰»–½’†=")) {
-//                ailment[HIT_STONE] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("‡–°–½’†=")) {
-//                ailment[HIT_SLEEP] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("‹°•|–½’†=")) {
-//                ailment[HIT_TERROR] = Integer.parseInt(line.split("=")[1]);
-//            }
-//            if (line.startsWith("”j‰ó–½’†=")) {
-//                ailment[HIT_DESTRUCTION] = Integer.parseInt(line.split("=")[1]);
-//            }
             if (line.startsWith("‹Zp‘Ï«=")) {
                 ailment[STUN] = Integer.parseInt(line.split("=")[1]);
             }

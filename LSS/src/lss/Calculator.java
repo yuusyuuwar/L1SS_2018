@@ -1584,17 +1584,6 @@ public class Calculator implements Common {
                 }
             }
         }
-        //if (ui.cb_buff[E_WS].isSelected()) {
-        //    if (ui.cb_buff[E_SS].isSelected()
-        //            || ui.cb_buff[E_SE].isSelected()) {
-        //        ui.cb_buff[E_WS].setSelected(false);
-        //    } else {
-        //        buff.HIT_LONG += 6;
-        //        if (ui.cb_buff[E_WS].getForeground().equals(Color.BLUE)) {
-        //            cons_mp += (15.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
-        //        }
-        //    }
-        //}
         //アースガーディアン 消費MP30/10mins
         if (ui.cb_buff[E_EG].isSelected()) {
             buff.DR += 2;
@@ -2845,7 +2834,7 @@ public class Calculator implements Common {
             buff.HP += 20;
             buff.MP += 13;
             buff.AC -= 2;
-            buff.DR += 4;
+            buff.DR += 3;
             ui.cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ軽減+4"); //表記はHP+20 MP+13 AC-1 ダメージ軽減+4
         }
         //魔眼

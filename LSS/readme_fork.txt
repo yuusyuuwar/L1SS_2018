@@ -1,6 +1,25 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/03/02
+Update 3.3.1
+LSS/src/lss/Bougu.java
+LSS/src/lss/Buff.java
+LSS/src/lss/Calculator.java
+LSS/src/lss/Common.java
+LSS/src/lss/UI.java
+削除
+	不必要なコメント
+
+LSS/src/lss/Calculator.java
+修正
+	黒蛇のコイン
+		[Update前]HP+20 MP+13 AC-2 ダメージ軽減+3 暗闇耐性+10
+		[Update後]HP+20 MP+13 AC-2 ダメージ軽減+4(*表記はAC-1でも実際の効果はAC-2)
+	黒蛇の加護に関する不具合
+	https://www.ncsoft.jp/lineage/news/trouble/view?bbsNo=3111&articleNo=47
+		[Update後]HP+20 MP+13 AC-2 ダメージ軽減+3
+
 2019/02/25
 Update 3.3.0
 LSS/src/lss/Calculator.java
