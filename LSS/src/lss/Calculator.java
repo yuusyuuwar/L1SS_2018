@@ -2835,7 +2835,7 @@ public class Calculator implements Common {
             buff.MP += 13;
             buff.AC -= 2;
             buff.DR += 3;
-            ui.cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ軽減+4"); //表記はHP+20 MP+13 AC-1 ダメージ軽減+4
+            ui.cb_buff[BS_COIN].setToolTipText("HP+20 MP+13 AC-2 ダメージ軽減+3");
         }
         //魔眼
         if (ui.cb_buff[ITEM_MAGAN].isSelected()) {
