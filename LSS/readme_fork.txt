@@ -1,6 +1,15 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/03/03
+Update 3.3.2
+LSS/src/lss/Calculator.java
+修正
+	黒蛇のコインのツールチップ
+
+LSS/src/lss/UI.java
+	ダメージリダクションの範囲(-30から30)を(0から60)へ
+
 2019/03/02
 Update 3.3.1
 LSS/src/lss/Bougu.java

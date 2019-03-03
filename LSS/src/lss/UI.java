@@ -1684,7 +1684,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         String[] dr_list = new String[61];
         for (int i = 0; i <= 60; i++) {
         //    dr_list[i] = Integer.toString(i - 30);
-            dr_list[i] = Integer.toString(i - 10);
+            dr_list[i] = Integer.toString(i);
         }
 
         cb_target_dr = new JComboBox(dr_list);
