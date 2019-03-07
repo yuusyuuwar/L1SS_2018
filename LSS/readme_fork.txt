@@ -1,6 +1,14 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/03/07
+Update 3.3.3
+LSS/data/E.zip
+	2019/03/06 Update
+	https://event2.ncsoft.jp/1.0/lineage/1903Arrogance/
+新規
+	アラガンスゲートル 重さ:80
+
 2019/03/03
 Update 3.3.2
 LSS/src/lss/Calculator.java

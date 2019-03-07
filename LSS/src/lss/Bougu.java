@@ -1920,6 +1920,16 @@ public class Bougu implements Common {
         //if (name.equals("ユニコーンの抵抗のゲートル")) {
         //    op2.MR = 1 * enchant;
         //}
+        //アラガンスゲートルは+7から[MR]+1増加(スタートMR+2)
+        if (name.equals("アラガンスゲートル")) {
+            if (enchant >= 9) {
+                op2.MR = 4;                 //MR+4
+            } else if (enchant >= 8) {
+                op2.MR = 3;                 //MR+3
+            } else if (enchant >= 7) {
+                op2.MR = 2;                 //MR+2
+            }
+        }
         //ナイトバルドのゲートルは+5から[近距離命中]+1増加(最大+5)
         if (name.equals("ナイトバルドのゲートル")) {
             if (enchant >= 9) {
