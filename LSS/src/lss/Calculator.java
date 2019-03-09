@@ -1075,37 +1075,7 @@ public class Calculator implements Common {
                     buff.effect += "攻撃時一定確率で魔法発動,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("最大HP+80 遠距離ダメージ+4 遠距離命中+8 ダメージ軽減+2 魔法発動");
                     break;
-                case 21:                            //アンタラス
-                    buff.AC -= 7;
-                    buff.HP += 120;
-                    buff.DR += 7;
-                    buff.effect += "MP回復 +15,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-7 最大HP+120 ダメージ軽減+7 64秒毎にMPが15回復 祝福消耗効率+7%");
-                    break;
-                case 22:                            //パプリオン
-                    buff.AC -= 1;
-                    buff.DR += 1;
-                    buff.SP += 7;
-                    buff.HIT_MAGIC += 7;                    
-                    buff.effect += "MP回復 +10,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 ダメージ軽減+1 SP+7 魔法命中+7 64秒毎にMPが10回復 祝福消耗効率+7%");
-                    break;
-                case 23:                            //リンドビオル
-                    buff.AC -= 2;
-                    buff.DR += 2;
-                    buff.DMG_LONG += 7;
-                    buff.HIT_LONG += 7;
-                    buff.effect += "MP回復 +5,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 ダメージ軽減+2 遠距離ダメージ+7 遠距離命中+7 64秒毎にMPが5回復 祝福消耗効率+7%");
-                    break;
-                case 24:                            //ヴァラカス
-                    buff.AC -= 3;
-                    buff.DR += 3;
-                    buff.DMG_SHORT += 7;
-                    buff.HIT_SHORT += 7;
-                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-3 ダメージ軽減+3 近距離ダメージ+7 近距離命中+7 祝福消耗効率+7%");
-                    break;
-                case 25:                            //カーツ
+                case 21:                            //カーツ
                     buff.DMG_SHORT += 4;
                     buff.HIT_SHORT += 4;
                     buff.HP += 120;
@@ -1113,14 +1083,8 @@ public class Calculator implements Common {
                     buff.DR += 3;
                     buff.effect += "フォースレイヤーダメージ+10,";
                     ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+4 近距離命中+4 最大HP+120 AC-3 ダメージ軽減+3 フォースレイヤー追加ダメージ+10");
-                    break;
-                case 26:                            //堕落
-                    buff.SP += 5;
-                    buff.HIT_MAGIC += 5;                    
-                    buff.effect += "MP回復 +16,";
-                    ui.cb_buff[ITEM_MD2].setToolTipText("SP+5 魔法命中+5 64秒毎にMPが16回復");
-                    break;
-                case 27:                            //バフォメット
+                    break;                    
+                case 22:                            //バフォメット
                     buff.HP += 120;
                     buff.AC -= 4;
                     buff.DMG_SHORT += 2;
@@ -1128,6 +1092,42 @@ public class Calculator implements Common {
                     buff.DR += 4;
                     buff.ailment[HIT_TERROR] += 5;
                     ui.cb_buff[ITEM_MD2].setToolTipText("近距離ダメージ+3 近距離命中+3 最大HP+120 AC-4 ダメージ軽減+4 恐怖命中+5");
+                    break;                    
+                case 23:                            //堕落
+                    buff.SP += 5;
+                    buff.HIT_MAGIC += 5;                    
+                    buff.effect += "MP回復 +16,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("SP+5 魔法命中+5 64秒毎にMPが16回復");
+                    break;
+                case 24:                            //アンタラス
+                    buff.AC -= 7;
+                    buff.HP += 120;
+                    buff.DR += 7;
+                    buff.effect += "MP回復 +15,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-7 最大HP+120 ダメージ軽減+7 64秒毎にMPが15回復 祝福消耗効率+7%");
+                    break;
+                case 25:                            //パプリオン
+                    buff.AC -= 1;
+                    buff.DR += 1;
+                    buff.SP += 7;
+                    buff.HIT_MAGIC += 7;                    
+                    buff.effect += "MP回復 +10,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-1 ダメージ軽減+1 SP+7 魔法命中+7 64秒毎にMPが10回復 祝福消耗効率+7%");
+                    break;
+                case 26:                            //リンドビオル
+                    buff.AC -= 2;
+                    buff.DR += 2;
+                    buff.DMG_LONG += 7;
+                    buff.HIT_LONG += 7;
+                    buff.effect += "MP回復 +5,";
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-2 ダメージ軽減+2 遠距離ダメージ+7 遠距離命中+7 64秒毎にMPが5回復 祝福消耗効率+7%");
+                    break;
+                case 27:                            //ヴァラカス
+                    buff.AC -= 3;
+                    buff.DR += 3;
+                    buff.DMG_SHORT += 7;
+                    buff.HIT_SHORT += 7;
+                    ui.cb_buff[ITEM_MD2].setToolTipText("AC-3 ダメージ軽減+3 近距離ダメージ+7 近距離命中+7 祝福消耗効率+7%");
                     break;
                 default:
                     break;
