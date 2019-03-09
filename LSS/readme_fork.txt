@@ -1,6 +1,12 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/03/09
+Update 3.3.4
+LSS/src/lss/Calculator.java
+修正
+	新マジックドールの種類と効果が一部違う(アイスクイーン以降のMD)
+
 2019/03/07
 Update 3.3.3
 LSS/data/E.zip
