@@ -1,6 +1,26 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/04/17
+Update 3.3.5
+LSS/data/E.zip
+新規
+	レッドナイトソード
+	レッドナイトソード(REMASTERED)
+	刀
+	刀(REMASTERED)	*片手剣からダガーに変更
+	ツルギ
+	ツルギ(REMASTERED)
+
+LSS/src/lss/Calculator.java
+修正
+	ブローアタック
+		ON/OFFを繰り返すと((level - 74) * 0.01)%分ダメージが追加されていく
+	ダブルブレイク:デスティニー
+		ダメージ計算式の修正
+	ダブルブレイク
+		ダメージ計算式の修正
+
 2019/03/09
 Update 3.3.4
 LSS/src/lss/Calculator.java

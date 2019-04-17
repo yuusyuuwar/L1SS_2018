@@ -3887,38 +3887,38 @@ buki.arrow_elementdmg=0;
         //ダブルブレイク
         if (ui.cb_buff[D_DB].isSelected()) {
             if (buki_id == W_DB || buki_id == W_C) {
-                double lv_bonus = ((level - 45) / 5) * 0.01;
+                double db_lv_bonus = ((level - 45) / 5) * 0.01;
 
-                dmg_big_ave *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
-                dmg_small_ave *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
+                dmg_big_ave *= 2.0 * (db_rate + db_lv_bonus)
+                        + (1.0 - (db_rate + db_lv_bonus));
+                dmg_small_ave *= 2.0 * (db_rate + db_lv_bonus)
+                        + (1.0 - (db_rate + db_lv_bonus));
 
-                dmg_undead *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
-                dmg_cursed *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
+                dmg_undead *= 2.0 * (db_rate + db_lv_bonus)
+                        + (1.0 - (db_rate + db_lv_bonus));
+                dmg_cursed *= 2.0 * (db_rate + db_lv_bonus)
+                        + (1.0 - (db_rate + db_lv_bonus));
             } else {
                 ui.cb_buff[D_DB].setSelected(false);
                 ui.cb_buff[D_DB2].setSelected(false);
             }
         }
-                //ダブルブレイク:デスティニー
+        //ダブルブレイク:デスティニー
         if (ui.cb_buff[D_DB2].isSelected()) {
             if (level >= 80 && cls == D
                     && buki_id == W_DB || buki_id == W_C) {
-                double lv_bonus =((level - 80) * 0.01);
+                double db2_lv_bonus =(((level - 45) / 5) * 0.01)+((level - 79) * 0.01);
 
-                dmg_big_ave *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
-                dmg_small_ave *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
+                dmg_big_ave *= 2.0 * (db_rate + db2_lv_bonus)
+                        + (1.0 - (db_rate + db2_lv_bonus));
+                dmg_small_ave *= 2.0 * (db_rate + db2_lv_bonus)
+                        + (1.0 - (db_rate + db2_lv_bonus));
 
-                dmg_undead *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
-                dmg_cursed *= 2.0 * (db_rate + lv_bonus)
-                        + (1.0 - (db_rate + lv_bonus));
-                ui.cb_buff[D_DB].setSelected(true);
+                dmg_undead *= 2.0 * (db_rate + db2_lv_bonus)
+                        + (1.0 - (db_rate + db2_lv_bonus));
+                dmg_cursed *= 2.0 * (db_rate + db2_lv_bonus)
+                        + (1.0 - (db_rate + db2_lv_bonus));
+                ui.cb_buff[D_DB].setSelected(false);
             } else {
                 ui.cb_buff[D_DB].setSelected(false);
                 ui.cb_buff[D_DB2].setSelected(false);
@@ -4148,32 +4148,34 @@ buki.arrow_elementdmg=0;
         }
         //ブローアタック 消費MP10/5mins
         if (ui.cb_buff[K_BK].isSelected()) {
-            if (level >= 75) {
-                bk_rate += (level - 74) * 0.01;
-            }
-            if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
-                dmg_big_ave *= 1.5 * bk_rate
-                        + 1.0 * (1.0 - bk_rate);
-                dmg_small_ave *= 1.5 * bk_rate
-                        + 1.0 * (1.0 - bk_rate);
+            if (level >= 75 && cls == K
+                    && buki_id == W_D || buki_id == W_LS || buki_id == W_A|| buki_id == W_L) {
+                double bk_lv_bonus =((level - 74) * 0.01);
+            
+                dmg_big_ave *= 1.5 * (bk_rate + bk_lv_bonus)
+                        + 1.0 * (1.0 - (bk_rate + bk_lv_bonus));
+                dmg_small_ave *= 1.5 * (bk_rate + bk_lv_bonus)
+                        + 1.0 * (1.0 - (bk_rate + bk_lv_bonus));
 
-                dmg_big_ave -= 0.25 * bk_rate;
-                dmg_small_ave -= 0.25 * bk_rate;
+                dmg_big_ave -= 0.25 * (bk_rate + bk_lv_bonus);
+                dmg_small_ave -= 0.25 * (bk_rate + bk_lv_bonus);
 
-                dmg_undead *= 1.5 * bk_rate
-                        + 1.0 * (1.0 - bk_rate);
-                dmg_cursed *= 1.5 * bk_rate
-                        + 1.0 * (1.0 - bk_rate);
+                dmg_undead *= 1.5 * (bk_rate + bk_lv_bonus)
+                        + 1.0 * (1.0 - (bk_rate + bk_lv_bonus));
+                dmg_cursed *= 1.5 * (bk_rate + bk_lv_bonus)
+                        + 1.0 * (1.0 - (bk_rate + bk_lv_bonus));
 
                 if (dmg_undead != 0) {
-                    dmg_undead -= 0.25 * bk_rate;
+                    dmg_undead -= 0.25 * (bk_rate + bk_lv_bonus);
                 }
                 if (dmg_cursed != 0) {
-                    dmg_cursed -= 0.25 * bk_rate;
+                    dmg_cursed -= 0.25 * (bk_rate + bk_lv_bonus);
                 }
                 if (ui.cb_buff[K_BK].getForeground().equals(Color.BLUE)) {
                     cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 5;
                 }
+            } else {
+                ui.cb_buff[K_BK].setSelected(false);
             }
         }
         if (buff.effect.contains("特殊攻撃(パック/パオ)")) {
