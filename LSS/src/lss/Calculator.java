@@ -2133,7 +2133,7 @@ public class Calculator implements Common {
                     buff.HIT_MAGIC += 2;                //魔法命中+2
                                                         //獲得経験値+2%
                     ui.elixir_rune.setToolTipText("AC-3 近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+2 SP+2 魔法命中+2 獲得経験値+2%");
-        }else if (e == 9){                             //強化されたドラゴンの遺物(腕力)
+        }else if (e == 9){                              //強化されたドラゴンの遺物(腕力)
                     buff.AC -= 4;                       //AC-4
                     buff.ST[STR] += 1;                  //STR+1
                     buff.DMG_SHORT += 4;                //近距離ダメージ+4
@@ -2154,6 +2154,55 @@ public class Calculator implements Common {
                     buff.HIT_LONG += 6;                 //遠距離命中+6
                                                         //獲得経験値+10%          
                     ui.elixir_rune.setToolTipText("AC-4 DEX+1 遠距離ダメージ+4 遠距離命中+6 獲得経験値+10%");
+        }else if (e == 12){                             //真デスナイトの遺物
+                    buff.AC -= 3;                       //AC-3
+                    buff.DMG_SHORT += 2;                //近距離ダメージ+2
+                    buff.HIT_SHORT += 2;                //近距離命中+2
+                    buff.DMG_LONG += 2;                 //遠距離ダメージ+2
+                    buff.HIT_LONG += 2;                 //遠距離命中+2
+                    buff.SP += 2;                       //SP+2
+                    buff.HIT_MAGIC += 2;                //魔法命中+2
+                                                        //獲得経験値+2%
+                    ui.elixir_rune.setToolTipText("AC-3 近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+2 SP+2 魔法命中+2 獲得経験値+2%");
+        }else if (e == 13){                             //強化された真デスナイトの遺物(腕力)
+                    buff.AC -= 4;                       //AC-4
+                    buff.ST[STR] += 1;                  //STR+1
+                    buff.DMG_SHORT += 4;                //近距離ダメージ+4
+                    buff.HIT_SHORT += 6;                //近距離命中+6
+                                                        //獲得経験値+10%
+                                                        //祝福消耗効率+5%
+                                                        //全耐性+3
+                    buff.ailment[STUN] += 3;            //技術耐性+3
+                    buff.ailment[SPIRIT] += 3;          //精霊耐性+3
+                    buff.ailment[SECRET] += 3;          //秘儀耐性+3
+                    buff.ailment[TERROR] += 3;          //恐怖耐性+3
+                    ui.elixir_rune.setToolTipText("AC-4 STR+1 近距離ダメージ+4 近距離命中+6 獲得経験値+10% 祝福消耗効率+5% 全耐性+3");
+        }else if (e == 14){                             //強化された真デスナイトの遺物(知力)
+                    buff.AC -= 4;                       //AC-4
+                    buff.ST[INT] += 1;                  //INT+1
+                    buff.SP += 4;                       //SP+4
+                    buff.HIT_MAGIC += 6;                //魔法命中+6
+                                                        //獲得経験値+10%
+                                                        //祝福消耗効率+5%
+                                                        //全耐性+3
+                    buff.ailment[STUN] += 3;            //技術耐性+3
+                    buff.ailment[SPIRIT] += 3;          //精霊耐性+3
+                    buff.ailment[SECRET] += 3;          //秘儀耐性+3
+                    buff.ailment[TERROR] += 3;          //恐怖耐性+3
+                    ui.elixir_rune.setToolTipText("AC-4 INT+1 SP+4 魔法命中+6 獲得経験値+10% 祝福消耗効率+5% 全耐性+3");
+        }else if (e == 15){                             //強化された真デスナイトの遺物(機敏)
+                    buff.AC -= 4;                       //AC-4
+                    buff.ST[DEX] += 1;                  //DEX+1
+                    buff.DMG_LONG += 4;                 //遠距離ダメージ+4
+                    buff.HIT_LONG += 6;                 //遠距離命中+6
+                                                        //獲得経験値+10%          
+                                                        //祝福消耗効率+5%
+                                                        //全耐性+3
+                    buff.ailment[STUN] += 3;            //技術耐性+3
+                    buff.ailment[SPIRIT] += 3;          //精霊耐性+3
+                    buff.ailment[SECRET] += 3;          //秘儀耐性+3
+                    buff.ailment[TERROR] += 3;          //恐怖耐性+3
+                    ui.elixir_rune.setToolTipText("AC-4 DEX+1 遠距離ダメージ+4 遠距離命中+6 獲得経験値+10% 祝福消耗効率+5% 全耐性+3");
         }
         //タリスマン
             switch (ui.cb_pattern_l2.getSelectedIndex()) {

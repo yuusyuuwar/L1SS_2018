@@ -2,6 +2,14 @@ LineageStatusSimulator_fork2018
 
 変更点
 2019/04/17
+Update 3.3.6
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+	2019/04/17 Update
+	https://event2.ncsoft.jp/1.0/lineage/1904deathknight/
+新規
+	真デスナイトの遺物/強化された真デスナイトの遺物(腕力)/(知力)/(機敏)
+
 Update 3.3.5
 LSS/data/E.zip
 新規
