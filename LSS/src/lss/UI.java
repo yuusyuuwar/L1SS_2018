@@ -759,7 +759,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         panels[0].add(elixir_rune_en);
 
         //エリクサールーン
-        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン","アルカの遺物","強化されたアルカの遺物","ドラゴンの遺物","強化されたドラゴンの遺物(腕力)","強化されたドラゴンの遺物(知力)","強化されたドラゴンの遺物(機敏)"};
+        String elixir_rune_list[] = {"エリクサールーン", "力のエリクサールーン", "機敏のエリクサールーン", "体力のエリクサールーン", "知力のエリクサールーン", "知恵のエリクサールーン"
+                ,"アルカの遺物","強化されたアルカの遺物"
+                ,"ドラゴンの遺物","強化されたドラゴンの遺物(腕力)","強化されたドラゴンの遺物(知力)","強化されたドラゴンの遺物(機敏)"
+                ,"真デスナイトの遺物","強化された真デスナイトの遺物(腕力)","強化された真デスナイトの遺物(知力)","強化された真デスナイトの遺物(機敏)"};
         elixir_rune = new WideComboBox(elixir_rune_list);
         elixir_rune.setBounds(50, 460, 150, 20);
         elixir_rune.addActionListener(this);
