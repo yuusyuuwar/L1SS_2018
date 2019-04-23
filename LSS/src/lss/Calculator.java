@@ -379,7 +379,7 @@ public class Calculator implements Common {
     double ef_rate = 0.4000;    //エレメンタルファイアーの確率40%
     double qe_rate = 0.4000;    //クエイクの確率40%
     double ce_rate = 0.4000;    //サイクロンの確率40%
-    double bk_rate = 0.4000;    //ブローアタックの確率40%
+    double bk_rate = 0.0500;    //ブローアタックの確率5%
     double bs_rate = 0.3333;    //バーニングスピッツの確率33%
 
     public Calculator(UI ui) {
