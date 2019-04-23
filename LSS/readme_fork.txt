@@ -1,6 +1,31 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/04/23
+Update 3.3.7
+LSS/data/E.zip
+	2016/08/03 Update
+	https://www.ncsoft.jp/lineage/launcher/popup/view?bbsNo=3101&articleNo=1734
+新規
+	隠された魔族のソード　　　　　　*ホステリティーソードと同等
+	隠された魔族のボウ　　　　　　　*ホステリティーボウと同等(KR仕様)
+	隠された魔族のスタッフ　　　　　*ホステリティースタッフと同等
+	隠された魔族のクロウ　　　　　　*ホステリティークロウと同等
+	隠された魔族のチェーンソード　　*ホステリティーチェーンソードと同等
+	隠された魔族のキーリンク　　　　*ホステリティーキーリンクと同等
+	隠された魔族のアックス
+
+修正
+	ホステリティースタッフ
+		近距離命中=3 >>> 近距離命中=4
+	ホステリティーキーリンク
+		近距離命中=3 >>> 近距離命中=0
+
+LSS/src/lss/Calculator.java
+修正
+	ブローアタック
+		基礎値40%+LVUP分から基礎値5%+LVUP分へ変更
+
 2019/04/17
 Update 3.3.6
 LSS/src/lss/Calculator.java
