@@ -1691,7 +1691,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         }
 
         cb_target_dr = new JComboBox(dr_list);
-        cb_target_dr.setSelectedIndex(30);
+        //cb_target_dr.setSelectedIndex(30);
+        cb_target_dr.setSelectedIndex(0);                   //‰ŠúDR‚Ì’l
         lab_tmp = new JLabel("DR", SwingConstants.CENTER);
         cb_target_dr.addActionListener(this);
         cb_target_dr.setBounds(100, 225, 100, 25);

@@ -2,6 +2,11 @@ LineageStatusSimulator_fork2018
 
 変更点
 2019/04/23
+Update 3.3.8
+LSS/src/lss/UI.java
+修正
+	初期DRを30から0へ
+
 Update 3.3.7
 LSS/data/E.zip
 	2016/08/03 Update
