@@ -1,6 +1,12 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/05/10
+Update 3.3.9
+LSS/data/E.zip
+新規
+	デスブレード
+
 2019/04/23
 Update 3.3.8
 LSS/src/lss/UI.java
