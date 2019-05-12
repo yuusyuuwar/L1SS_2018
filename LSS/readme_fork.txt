@@ -1,6 +1,13 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/05/12
+Update 3.4.0
+LSS/data/E.zip
+修正
+	神聖な腕力のリング
+		AC=0 >>> AC=-2
+
 2019/05/10
 Update 3.3.9
 LSS/data/E.zip
