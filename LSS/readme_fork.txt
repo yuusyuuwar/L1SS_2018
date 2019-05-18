@@ -1,6 +1,13 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/05/18
+Update 3.4.1
+LSS/data/E.zip
+修正
+	月光の知力ネックレス
+		月光の知識ネックレス >>> 月光の知力ネックレス
+
 2019/05/12
 Update 3.4.0
 LSS/data/E.zip
