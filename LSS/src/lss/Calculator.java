@@ -518,8 +518,14 @@ public class Calculator implements Common {
         int set10 = 0, set11 = 0, set12 = 0;//釣りセット
         int set13 = 0;//軍王セット
         int set14 = 0;//DKセット
+        int set15 = 0;//セマオリムセット セマのリング+オリムのアミュレット
 
         for (Bougu bougu1 : bougu) {
+            if (bougu1.name.equals("セマのリング")
+                    || bougu1.name.equals("オリムのアミュレット")) {
+                set15++;
+            }
+
             if (bougu1.name.equals("デスナイトヘルム")
                     || bougu1.name.equals("デスナイトグローブ")
                     || bougu1.name.equals("デスナイトアーマー")
@@ -669,6 +675,17 @@ public class Calculator implements Common {
             //  下記メソッド実行のたびに追加ボーナスが累積される模様（本来+2個で追加ボーナスが3倍になる）
             //ui.cb_morph_level.setSelectedItem("80");
             //ui.cb_morph_type.setSelectedItem("近/遠特化");
+        }
+        //セマ・オリムセット AC-5 STR+1 DEX+1 CON+1 INT+1 WIS+1 CHA+1 最大HP+50
+        if (set15 >= 2) {
+            buff.AC -= 5;
+            buff.ST[STR] += 1;
+            buff.ST[DEX] += 1;
+            buff.ST[CON] += 1;
+            buff.ST[INT] += 1;
+            buff.ST[WIS] += 1;
+            buff.ST[CHA] += 1;
+            buff.HP += 50;
         }
         //ウィズダムポーション
         if (ui.cb_buff[ITEM_WIZP].isSelected()) {
