@@ -1,6 +1,19 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/05/20
+Update 3.4.2
+LSS/data/E.zip
+新規
+	ポルセの剣(REMASTERED)
+	シバインのシールド
+	オリムのアミュレット
+	セマのリング
+
+LSS/src/lss/Calculator.java
+追加
+	セマオリムセットの処理
+
 2019/05/18
 Update 3.4.1
 LSS/data/E.zip
