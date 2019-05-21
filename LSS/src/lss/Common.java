@@ -149,13 +149,13 @@ public interface Common {
     final int ITEM_COOKING = 54;//料理
     final int ITEM_DESSERT = 55;//デザート
     final int ITEM_MD = 56;     //旧マジックドール
-    final int DRAGONRAID = 57;  //*********************************未実装(予約分)
+    final int E_EGR = 57;       //エルヴングラヴィティー
     final int KOMA = 58;        //コマのエンチャ
     final int P_BA = 59;        //ブレイブアバター
     final int R_FS2 = 60;       //フォースレイヤー:ブレイブ
     final int E_EG = 61;        //アースガーディアン
     final int I_RW = 62;        //リデュースウェイト
-    final int WAR = 63;         //*********************************未実装(予約分)
+    final int BUFF_COIN = 63;   //バフコイン
     final int ITEM_MD_OP = 64;  //パック/パオ OP
     final int K_BA = 65;        //バウンスアタック
     final int F_AG = 66;        //アーマーガード

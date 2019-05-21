@@ -2,6 +2,24 @@ LineageStatusSimulator_fork2018
 
 変更点
 2019/05/21
+Update 3.4.4
+LSS/src/lss/Calculator.java
+LSS/src/lss/Common.java
+LSS/src/lss/UI.java
+追加
+	バフコイン
+		近距離ダメージ+1 遠距離ダメージ+1 SP+1
+		final int WAR = 63; 		>>> final int BUFF_COIN = 63;	//バフコイン
+
+	エルブングラヴィティ
+		所持重量増加+300
+		final int DRAGONRAID = 57; 	>>> final int E_EGR = 57;	//エルブングラヴィティ
+
+修正
+	ディクリースウェイト
+		ツールチップの表示
+		重量-150		 	>>> 所持重量増加+180
+
 Update 3.4.3
 LSS/data/E.zip
 修正

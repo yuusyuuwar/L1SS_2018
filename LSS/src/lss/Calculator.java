@@ -2895,6 +2895,13 @@ public class Calculator implements Common {
             ui.cb_buff[MBSC].setToolTipText("<html>"+ "ダメージリダクション+3 近距離ダメージ+2 遠距離ダメージ+2 近距離命中+2 遠距離命中+2"
                     + "<br>"+ "魔法命中+2 SP+2 最大HP+50 HP回復+3 最大MP+30 MP回復+3 獲得経験値+5% 30分"+"</html>");
         }
+        //バフコイン 
+        if (ui.cb_buff[BUFF_COIN].isSelected()) {
+            buff.DMG_SHORT += 1;
+            buff.DMG_LONG += 1;
+            buff.SP += 1;
+            ui.cb_buff[BUFF_COIN].setToolTipText("近距離ダメージ+1 遠距離ダメージ+1 SP+1");
+        }
         //黒蛇のコイン 
         if (ui.cb_buff[BS_COIN].isSelected()) {
             buff.HP += 20;
@@ -4624,7 +4631,15 @@ buki.arrow_elementdmg=0;
         }
 
         weight += c_eq;
-
+        //エルヴングラヴィティー    消費MP:30 所持重量増加+300
+        if (ui.cb_buff[E_EGR].isSelected()) {
+            ui.cb_buff[W_DW].setSelected(false);
+            weight += 300;
+            if (ui.cb_buff[E_EGR].getForeground().equals(Color.BLUE)) {
+                cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
+            }
+        }
+        //リデュースウェイト        消費MP:50 所持重量増加+480 
         if (ui.cb_buff[I_RW].isSelected()) {
             ui.cb_buff[W_DW].setSelected(false);
             weight += 480;
@@ -4632,8 +4647,9 @@ buki.arrow_elementdmg=0;
                 cons_mp += (50.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
+        //ディクリースウェイト      消費MP:10 所持重量増加+180
         if (ui.cb_buff[W_DW].isSelected()) {
-            weight += 150;
+            weight += 180;
             if (ui.cb_buff[W_DW].getForeground().equals(Color.BLUE)) {
                 cons_mp += (10.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
