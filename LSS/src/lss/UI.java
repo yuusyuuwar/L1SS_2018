@@ -1193,7 +1193,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[W_DW] = new JCheckBox("ディクリースウェイト");
         cb_buff[W_DW].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[W_DW].setToolTipText("重量-150");
+        cb_buff[W_DW].setToolTipText("所持重量増加+180");
 
         cb_buff[W_ADS] = new JCheckBox("アドバンスドスピリッツ");
         cb_buff[W_ADS].setBounds(0, 20 * col++, 150, 20);
@@ -1277,8 +1277,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_CM] = new JCheckBox("クリアマインド");
         cb_buff[E_CM].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_CM].setToolTipText("WIS+3");
+        cb_buff[E_EGR] = new JCheckBox("エルヴングラヴィティー");
+        cb_buff[E_EGR].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[E_EGR].setToolTipText("所持重量増加+300");
 
-        col++;
+        //col++;
 
         lab_tmp = new JLabel("精霊魔法(火)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1434,7 +1437,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[I_INS].setToolTipText("CHAを除く全ステータス+1");
         cb_buff[I_RW] = new JCheckBox("リデュースウェイト");
         cb_buff[I_RW].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_RW].setToolTipText("重量-180");
+        cb_buff[I_RW].setToolTipText("所持重量増加+480");
         cb_buff[I_IO] = new JCheckBox("幻術[オーガ]");
         cb_buff[I_IO].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_IO].setToolTipText("近距離ダメージ+4 近距離命中+4");
@@ -1572,8 +1575,11 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[CLAY] = new JCheckBox("クレイ");
         cb_buff[CLAY].setBounds(200 * row, 20 * col++, 150, 20);
 
+        cb_buff[BUFF_COIN] = new JCheckBox("バフコイン");
+        cb_buff[BUFF_COIN].setBounds(200 * row +100, 20 * col, 100, 20);
+        
         cb_buff[BS_COIN] = new JCheckBox("黒蛇のコイン");
-        cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 150, 20);
+        cb_buff[BS_COIN].setBounds(200 * row, 20 * col++, 100, 20);
 
         cb_buff[MBSC] = new JCheckBox("真心のこもった祝福スクロール");
         cb_buff[MBSC].setBounds(200 * row, 20 * col++, 200, 20);
