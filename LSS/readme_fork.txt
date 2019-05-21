@@ -1,6 +1,14 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/05/22
+Update 3.4.5
+LSS/src/lss/Calculator.java
+	2019/02/20 Update
+	https://www.ncsoft.jp/lineage/news/notice/view?bbsNo=3101&articleNo=2185
+	AC-100以上からAC-10ごとにDG,ERが+1
+	効果:AC110時:DG+1/ER+1 AC120時:DG+2/ER+2･･･
+
 2019/05/21
 Update 3.4.4
 LSS/src/lss/Calculator.java
