@@ -4550,6 +4550,10 @@ buki.arrow_elementdmg=0;
         int er = base_er + buff.ER;
 //        int dr = buff.DR;
 //        int dri= buff.DR_IGNORED;
+        //AC-100以上からAC-10ごとにERが+1
+        if (ac <= -100){
+                er += -ac / 10-10;
+        }
         dr = buff.DR;
         dri= buff.DR_IGNORED;
         pvp_dg= buff.PVP;
@@ -4570,6 +4574,10 @@ buki.arrow_elementdmg=0;
             pvp_dgr += bougu1.op2.PVP_DR;
         }
         dg = 0;
+        //AC-100以上からAC-10ごとにDGが+1
+        if (ac <= -100){
+        dg += -ac / 10-10;
+        }
         dr += buki.op.DR + buki.op2.DR;
         dri += buki.op.DR_IGNORED + buki.op2.DR_IGNORED; 
         pvp_dg += buki.op.PVP + buki.op2.PVP;
@@ -4577,21 +4585,21 @@ buki.arrow_elementdmg=0;
         
         //アンキャニードッジ 消費MP20/3mins
         if (ui.cb_buff[D_UD].isSelected()) {
-            dg = 60;
+            dg += 60;
             if (ui.cb_buff[D_UD].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 3;
             }
         }
         //ミラーイメージ 消費MP20/20mins
         if (ui.cb_buff[I_MI].isSelected()) {
-            dg = 60;
+            dg += 60;
             if (ui.cb_buff[I_MI].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 20;
             }
         }
         //覚醒[リンドビオル] 消費MP40/10mins
         if (ui.cb_buff[R_LINDVIOL].isSelected()) {
-            dg = 7;
+            dg += 7;
             if (ui.cb_buff[R_LINDVIOL].getForeground().equals(Color.BLUE)) {
                     cons_mp += (40.0 * (1.0 - red_mp * 0.01) - red_mp2) / 10;
             }
