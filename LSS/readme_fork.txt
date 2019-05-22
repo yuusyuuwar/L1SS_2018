@@ -2,6 +2,17 @@ LineageStatusSimulator_fork2018
 
 変更点
 2019/05/22
+Update 3.4.6
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+修正
+	ミラーイメージ
+		物理回避DG+60からDG+30へ変更、ツールチップ表示も修正
+	アンキャニードッジ
+		物理回避DG+60からDG+30へ変更、ツールチップ表示も修正
+	ディクリースウェイト/エルブングラヴィティ/リデュースウェイト
+		コメント修正
+
 Update 3.4.5
 LSS/src/lss/Calculator.java
 	2019/02/20 Update

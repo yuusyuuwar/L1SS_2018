@@ -4585,14 +4585,14 @@ buki.arrow_elementdmg=0;
         
         //アンキャニードッジ 消費MP20/3mins
         if (ui.cb_buff[D_UD].isSelected()) {
-            dg += 60;
+            dg += 30;
             if (ui.cb_buff[D_UD].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 3;
             }
         }
         //ミラーイメージ 消費MP20/20mins
         if (ui.cb_buff[I_MI].isSelected()) {
-            dg += 60;
+            dg += 30;
             if (ui.cb_buff[I_MI].getForeground().equals(Color.BLUE)) {
                 cons_mp += (20.0 * (1.0 - red_mp * 0.01) - red_mp2) / 20;
             }
@@ -4639,7 +4639,7 @@ buki.arrow_elementdmg=0;
         }
 
         weight += c_eq;
-        //エルヴングラヴィティー    消費MP:30 所持重量増加+300
+        //エルヴングラヴィティー    消費MP:30/30mins 所持重量増加+300
         if (ui.cb_buff[E_EGR].isSelected()) {
             ui.cb_buff[W_DW].setSelected(false);
             weight += 300;
@@ -4647,7 +4647,7 @@ buki.arrow_elementdmg=0;
                 cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
-        //リデュースウェイト        消費MP:50 所持重量増加+480 
+        //リデュースウェイト        消費MP:50/30mins 所持重量増加+480 
         if (ui.cb_buff[I_RW].isSelected()) {
             ui.cb_buff[W_DW].setSelected(false);
             weight += 480;
@@ -4655,7 +4655,7 @@ buki.arrow_elementdmg=0;
                 cons_mp += (50.0 * (1.0 - red_mp * 0.01) - red_mp2) / 30;
             }
         }
-        //ディクリースウェイト      消費MP:10 所持重量増加+180
+        //ディクリースウェイト      消費MP:10/30mins 所持重量増加+180
         if (ui.cb_buff[W_DW].isSelected()) {
             weight += 180;
             if (ui.cb_buff[W_DW].getForeground().equals(Color.BLUE)) {
