@@ -378,7 +378,7 @@ public class Calculator implements Common {
     double db_rate = 0.3333;    //ダブルブレイクの確率33%
     double ef_rate = 0.4000;    //エレメンタルファイアーの確率40%
     double qe_rate = 0.4000;    //クエイクの確率40%
-    double ce_rate = 0.4000;    //サイクロンの確率40%
+    double ce_rate = 0.0500;    //サイクロンの確率5%
     double bk_rate = 0.0500;    //ブローアタックの確率5%
     double bs_rate = 0.3333;    //バーニングスピッツの確率33%
 
@@ -4160,35 +4160,43 @@ buki.arrow_elementdmg=0;
                 }
             }
         }
-        //サイクロン 消費MP30/16mins
+        //サイクロン 消費MP30/16mins LV75取得可能 一定確率で遠距離ダメージ1.5倍 LV85からLV1毎に発動率1%増加
         if (ui.cb_buff[E_CE].isSelected()) {
-            if (!(buki.type.equals("両手剣") || buki.type.equals("キーリンク") || buki.type.equals("デュアルブレード")
-                    || buki.type.equals("槍") || buki.type.equals("ダガー") || buki.type.equals("片手剣")|| buki.type.equals("鈍器")
-                    || buki.type.equals("スタッフ") || buki.type.equals("クロウ") || buki.type.equals("チェーンソード"))) {
-                dmg_big_ave *= 1.5 * ce_rate
-                        + 1.0 * (1.0 - ce_rate);
-                dmg_small_ave *= 1.5 * ce_rate
-                        + 1.0 * (1.0 - ce_rate);
+            if (level >= 75 && cls == E && buki_id == W_B) {
+                double ce_lv_bonus =0;
 
-                dmg_big_ave -= 0.25 * ce_rate;
-                dmg_small_ave -= 0.25 * ce_rate;
+                //LV85からのボーナス処理
+		if (level >= 85) {
+			ce_lv_bonus +=((level - 84) * 0.01);
+		}
 
-                dmg_undead *= 1.5 * ce_rate
-                        + 1.0 * (1.0 - ce_rate);
-                dmg_cursed *= 1.5 * ce_rate
-                        + 1.0 * (1.0 - ce_rate);
+                dmg_big_ave *= 1.5 * (ce_rate + ce_lv_bonus)
+                        + 1.0 * (1.0 - (ce_rate + ce_lv_bonus));
+                dmg_small_ave *= 1.5 * (ce_rate + ce_lv_bonus)
+                        + 1.0 * (1.0 - (ce_rate + ce_lv_bonus));
+
+                dmg_big_ave -= 0.25 * (ce_rate + ce_lv_bonus);
+                dmg_small_ave -= 0.25 * (ce_rate + ce_lv_bonus);
+
+                dmg_undead *= 1.5 * (ce_rate + ce_lv_bonus)
+                        + 1.0 * (1.0 - (ce_rate + ce_lv_bonus));
+                dmg_cursed *= 1.5 * (ce_rate + ce_lv_bonus)
+                        + 1.0 * (1.0 - (ce_rate + ce_lv_bonus));
 
                 if (dmg_undead != 0) {
-                    dmg_undead -= 0.25 * ce_rate;
+                    dmg_undead -= 0.25 * (ce_rate + ce_lv_bonus);
                 }
                 if (dmg_cursed != 0) {
-                    dmg_cursed -= 0.25 * ce_rate;
+                    dmg_cursed -= 0.25 * (ce_rate + ce_lv_bonus);
                 }
                 if (ui.cb_buff[E_CE].getForeground().equals(Color.BLUE)) {
                     cons_mp += (30.0 * (1.0 - red_mp * 0.01) - red_mp2) / 16;
                 }
+            } else {
+                ui.cb_buff[E_CE].setSelected(false);
             }
-        } 
+        }
+         
         //ブレイブメンタル 消費MP25/10mins
         if (ui.cb_buff[P_B].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
