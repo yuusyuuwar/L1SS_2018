@@ -1375,7 +1375,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[D_DB2].setToolTipText("ダブルブレイク発動確率上昇 80レベルから1レベル毎に発動確率1%増加");
         cb_buff[D_UD] = new JCheckBox("アンキャニードッジ");
         cb_buff[D_UD].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_UD].setToolTipText("DG+50");
+        cb_buff[D_UD].setToolTipText("DG+30");
         cb_buff[D_DE] = new JCheckBox("ドレスイベイジョン");
         cb_buff[D_DE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_DE].setToolTipText("ER+18");
@@ -1425,7 +1425,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[I_MI] = new JCheckBox("ミラーイメージ");
         cb_buff[I_MI].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[I_MI].setToolTipText("DG+60");
+        cb_buff[I_MI].setToolTipText("DG+30");
         cb_buff[I_CON] = new JCheckBox("コンセントレーション");
         cb_buff[I_CON].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[I_CON].setToolTipText("MPR+4");
