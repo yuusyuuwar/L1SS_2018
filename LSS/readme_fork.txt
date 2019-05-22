@@ -1,6 +1,17 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/05/23
+Update 3.4.7
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+修正
+	2019/05/22 Update
+	https://event2.ncsoft.jp/1.0/lineage/1905update
+	サイクロン
+		LV75取得可能 一定確率で遠距離ダメージ1.5倍 LV85からLV1毎に発動率1%増加
+		基礎値40%から基礎値5%+LVUP分へ変更
+
 2019/05/22
 Update 3.4.6
 LSS/src/lss/Calculator.java
@@ -15,6 +26,7 @@ LSS/src/lss/UI.java
 
 Update 3.4.5
 LSS/src/lss/Calculator.java
+修正
 	2019/02/20 Update
 	https://www.ncsoft.jp/lineage/news/notice/view?bbsNo=3101&articleNo=2185
 	AC-100以上からAC-10ごとにDG,ERが+1

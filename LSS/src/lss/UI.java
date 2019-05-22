@@ -1259,7 +1259,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[K_BK] = new JCheckBox("ブローアタック");
         cb_buff[K_BK].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[K_BK].setToolTipText("一定確率で近接ダメージを1.5倍 LV75からLV1毎に発動率1%増加");
+        cb_buff[K_BK].setToolTipText("一定確率(5%)で近接ダメージを1.5倍 LV75からLV1毎に発動率1%増加");
         
         col = 0;
         row = 1;
@@ -1292,7 +1292,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_BW].setToolTipText("火属性追加打撃+6 近接命中+6");
         cb_buff[E_EF] = new JCheckBox("エレメンタルファイアー");
         cb_buff[E_EF].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_EF].setToolTipText("一定確率で近接ダメージ1.5倍");
+        cb_buff[E_EF].setToolTipText("一定確率(40%)で近距離ダメージ1.5倍");
         cb_buff[E_SF] = new JCheckBox("ソウルオブフレイム");
         cb_buff[E_SF].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_SF].setToolTipText("武器ダメージが常に最大値 損傷しない");
@@ -1334,9 +1334,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_EE] = new JCheckBox("イーグルアイ");
         cb_buff[E_EE].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EE].setToolTipText("遠距離クリティカル+2%");
-        cb_buff[E_CE] = new JCheckBox("サイクロン(未実装)");
+        cb_buff[E_CE] = new JCheckBox("サイクロン");
         cb_buff[E_CE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_CE].setToolTipText("一定の確率で遠距離ダメージ1.5倍");
+        cb_buff[E_CE].setToolTipText("一定確率(5%)で遠距離ダメージ1.5倍 LV85からLV1毎に発動率1%増加");
 
         col++;
 
@@ -1352,7 +1352,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_EV].setToolTipText("重量50%以上でのHP/MP回復");
         cb_buff[E_QE] = new JCheckBox("クエイク");
         cb_buff[E_QE].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_QE].setToolTipText("一定の確率で近距離ダメージ1.5倍");
+        cb_buff[E_QE].setToolTipText("一定確率(40%)で近距離ダメージ1.5倍");
         cb_buff[E_EW] = new JCheckBox("アースウェポン");
         cb_buff[E_EW].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EW].setToolTipText("地属性近距離ダメージ+2 近距離命中+4");
@@ -1366,10 +1366,10 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[D_BS] = new JCheckBox("バーニングスピリッツ");
         cb_buff[D_BS].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_BS].setToolTipText("一定確率で近接ダメージ1.5倍");
+        cb_buff[D_BS].setToolTipText("一定確率(33%)で近距離ダメージ1.5倍");
         cb_buff[D_DB] = new JCheckBox("ダブルブレイク");
         cb_buff[D_DB].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[D_DB].setToolTipText("一定確率で武器ダメージ2倍");
+        cb_buff[D_DB].setToolTipText("一定確率(33%)で武器ダメージ2倍");
         cb_buff[D_DB2] = new JCheckBox("ダブルブレイク:デスティニー(未実装)");
         cb_buff[D_DB2].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[D_DB2].setToolTipText("ダブルブレイク発動確率上昇 80レベルから1レベル毎に発動確率1%増加");
