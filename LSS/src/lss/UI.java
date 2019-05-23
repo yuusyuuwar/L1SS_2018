@@ -1211,7 +1211,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[P_B] = new JCheckBox("ブレイブメンタル");
         cb_buff[P_B].setBounds(0, 20 * col++, 150, 20);
-        cb_buff[P_B].setToolTipText("一定確率で近接ダメージ1.5倍");
+        cb_buff[P_B].setToolTipText("一定確率(40%)で近接ダメージ1.5倍");
 
         cb_buff[P_S] = new JCheckBox("シャイニングシールド");
         cb_buff[P_S].setBounds(0, 20 * col++, 150, 20);
@@ -1247,7 +1247,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
 
         cb_buff[K_CB] = new JCheckBox("カウンターバリア(未実装)");
         cb_buff[K_CB].setBounds(0, 20 * col++, 200, 20);
-        cb_buff[K_CB].setToolTipText("両手剣装備時 一定確率で近接攻撃回避+反撃");
+        cb_buff[K_CB].setToolTipText("<html>"+ "両手剣装備時 一定確率(20%)で近距離攻撃回避+反撃"
+                                     + "<br>"+ "カウンターダメージは武器の[BIG打撃値]+[追加ダメージ]+[強化数]x[2]"+"</html>");
 
         cb_buff[K_CB2] = new JCheckBox("カウンターバリア:ベテラン(未実装)");
         cb_buff[K_CB2].setBounds(0, 20 * col++, 200, 20);
@@ -1281,7 +1282,7 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_EGR].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[E_EGR].setToolTipText("所持重量増加+300");
 
-        //col++;
+        col++;
 
         lab_tmp = new JLabel("精霊魔法(火)");
         lab_tmp.setBounds(200 * row, 20 * col++, 200, 20);
@@ -1301,7 +1302,8 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[E_AF].setToolTipText("重量50%以上でのHP/MP回復");
         cb_buff[E_IO] = new JCheckBox("インフェルノ(未実装)");
         cb_buff[E_IO].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[E_IO].setToolTipText("一定確率で近距離ダメージを50%軽減しカウンター攻撃");
+        cb_buff[E_IO].setToolTipText("<html>"+ "一定確率(不明)で近距離ダメージを50%軽減しカウンター攻撃"
+                                     + "<br>"+ "カウンターダメージは武器の[SMALL打撃値]+[追加ダメージ]+[強化数]x[1~4(ランダム)]"+"</html>");
 
         col++;
 
@@ -1398,9 +1400,9 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[R_DS] = new JCheckBox("ドラゴンスキン");
         cb_buff[R_DS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[R_DS].setToolTipText("DR+5 Lv80でDR6 以降Lv2ごとにDR+1");
-        cb_buff[R_MB] = new JCheckBox("モータルボディー");
+        cb_buff[R_MB] = new JCheckBox("モータルボディー(未実装)");
         cb_buff[R_MB].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[R_MB].setToolTipText("一定確率でAC/2（最低40）ダメージの反撃");
+        cb_buff[R_MB].setToolTipText("一定確率(25%)でAC/2(最低40)ダメージの反撃");
         cb_buff[R_ANTHARAS] = new JCheckBox("覚醒[アンタラス]");
         cb_buff[R_ANTHARAS].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[R_ANTHARAS].setToolTipText("AC-3");
@@ -1469,19 +1471,22 @@ public class UI extends JFrame implements Common, ActionListener, ChangeListener
         cb_buff[F_AG].setToolTipText("DR増加 -AC/5");
         cb_buff[F_CR] = new JCheckBox("クラッシュ");
         cb_buff[F_CR].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_CR].setToolTipText("一定確率でダメージ増加 Lv/2");
+        cb_buff[F_CR].setToolTipText("一定確率(15%)でダメージ増加 Lv/2");
         cb_buff[F_FU] = new JCheckBox("フューリー");
         cb_buff[F_FU].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_FU].setToolTipText("クラッシュ発動時、一定確率でダメージ2倍");
-        cb_buff[F_TL] = new JCheckBox("タイタンロック");
+        cb_buff[F_FU].setToolTipText("クラッシュ発動時、一定確率(10%)でダメージ2倍");
+        cb_buff[F_TL] = new JCheckBox("タイタンロック(未実装)");
         cb_buff[F_TL].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_TL].setToolTipText("HP40%以下時一定確率で近接攻撃回避+反撃");
-        cb_buff[F_TM] = new JCheckBox("タイタンマジック");
+        cb_buff[F_TL].setToolTipText("<html>"+ "HP40%以下時一定確率(35%)で近距離攻撃回避+反撃"
+                                     + "<br>"+ "カウンターダメージは武器の[BIG打撃値]+[追加ダメージ]+[強化数]x[2]"+"</html>");
+        cb_buff[F_TM] = new JCheckBox("タイタンマジック(未実装)");
         cb_buff[F_TM].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_TM].setToolTipText("HP40%以下時一定確率で魔法攻撃回避+反撃");
-        cb_buff[F_TB] = new JCheckBox("タイタンブリッツ");
+        cb_buff[F_TM].setToolTipText("<html>"+ "HP40%以下時一定確率(35%)で魔法攻撃回避+反撃"
+                                     + "<br>"+ "カウンターダメージは武器の[BIG打撃値]+[追加ダメージ]+[強化数]x[2]"+"</html>");
+        cb_buff[F_TB] = new JCheckBox("タイタンブリッツ(未実装)");
         cb_buff[F_TB].setBounds(200 * row, 20 * col++, 150, 20);
-        cb_buff[F_TB].setToolTipText("HP40%以下時一定確率で遠距離攻撃回避+反撃");
+        cb_buff[F_TB].setToolTipText("<html>"+ "HP40%以下時一定確率(35%)で遠距離攻撃回避+反撃"
+                                     + "<br>"+ "カウンターダメージは武器の[BIG打撃値]+[追加ダメージ]+[強化数]x[2]"+"</html>");
         cb_buff[F_G] = new JCheckBox("ギガンティック");
         cb_buff[F_G].setBounds(200 * row, 20 * col++, 150, 20);
         cb_buff[F_G].setToolTipText("最大HP Lv/2% 増加");

@@ -375,12 +375,13 @@ public class Calculator implements Common {
     double acc_3 = 1.125;
     double key_delay = 0.1815;
 
-    double db_rate = 0.3333;    //ダブルブレイクの確率33%
-    double ef_rate = 0.4000;    //エレメンタルファイアーの確率40%
-    double qe_rate = 0.4000;    //クエイクの確率40%
     double ce_rate = 0.0500;    //サイクロンの確率5%
     double bk_rate = 0.0500;    //ブローアタックの確率5%
     double bs_rate = 0.3333;    //バーニングスピッツの確率33%
+    double db_rate = 0.3333;    //ダブルブレイクの確率33%
+    double ef_rate = 0.4000;    //エレメンタルファイアーの確率40%
+    double qe_rate = 0.4000;    //クエイクの確率40%
+    double pb_rate = 0.4000;    //ブレイブメンタルの確率40% 
 
     public Calculator(UI ui) {
         this.ui = ui;
@@ -4162,7 +4163,7 @@ buki.arrow_elementdmg=0;
         }
         //サイクロン 消費MP30/16mins LV75取得可能 一定確率で遠距離ダメージ1.5倍 LV85からLV1毎に発動率1%増加
         if (ui.cb_buff[E_CE].isSelected()) {
-            if (level >= 75 && cls == E && buki_id == W_B) {
+            if (level >= 75 && cls == E ) {
                 double ce_lv_bonus =0;
 
                 //LV85からのボーナス処理
@@ -4200,24 +4201,24 @@ buki.arrow_elementdmg=0;
         //ブレイブメンタル 消費MP25/10mins
         if (ui.cb_buff[P_B].isSelected()) {
             if (!(buki.type.equals("ボウ") || buki.type.equals("ガントレット"))) {
-                dmg_big_ave *= 1.5 * 0.3333
-                        + 1.0 * (1.0 - 0.3333);
-                dmg_small_ave *= 1.5 * 0.3333
-                        + 1.0 * (1.0 - 0.3333);
+                dmg_big_ave *= 1.5 * pb_rate
+                        + 1.0 * (1.0 - pb_rate);
+                dmg_small_ave *= 1.5 * pb_rate
+                        + 1.0 * (1.0 - pb_rate);
 
-                dmg_big_ave -= 0.25 * 0.3333;
-                dmg_small_ave -= 0.25 * 0.3333;
+                dmg_big_ave -= 0.25 * pb_rate;
+                dmg_small_ave -= 0.25 * pb_rate;
 
-                dmg_undead *= 1.5 * 0.3333
-                        + 1.0 * (1.0 - 0.3333);
-                dmg_cursed *= 1.5 * 0.3333
-                        + 1.0 * (1.0 - 0.3333);
+                dmg_undead *= 1.5 * pb_rate
+                        + 1.0 * (1.0 - pb_rate);
+                dmg_cursed *= 1.5 * pb_rate
+                        + 1.0 * (1.0 - pb_rate);
 
                 if (dmg_undead != 0) {
-                    dmg_undead -= 0.25 * 0.3333;
+                    dmg_undead -= 0.25 * pb_rate;
                 }
                 if (dmg_cursed != 0) {
-                    dmg_cursed -= 0.25 * 0.3333;
+                    dmg_cursed -= 0.25 * pb_rate;
                 }
 
                 if (ui.cb_buff[P_B].getForeground().equals(Color.BLUE)) {
