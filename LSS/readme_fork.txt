@@ -1,6 +1,23 @@
 LineageStatusSimulator_fork2018
 
 変更点
+2019/06/19
+Update 3.4.9
+LSS/src/lss/Calculator.java
+LSS/src/lss/UI.java
+VIPエンチャントのツールチップ追加
+	Platinum        HP+150 MP+150 MR+12 AC-5
+	Gold            HP+150 MP+120 MR+10 AC-5
+	Red             HP+120 MP+120 MR+10 AC-5
+
+新料理追加
+	祝福された力強い和牛ステーキ
+	祝福された素早い鮭の煮付け
+	祝福された賢い七面鳥焼き
+	祝福された修練の鶏スープ
+		メインが素の効果に全クラススキル命中+3を追加
+		スープが素の効果に全クラススキル耐性+2 PvPDR+2を追加
+
 2019/05/24
 Update 3.4.8
 LSS/src/lss/Calculator.java

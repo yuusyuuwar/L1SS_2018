@@ -1257,7 +1257,7 @@ public class Calculator implements Common {
         // 料理
         if (ui.cb_buff[ITEM_COOKING].isSelected()) {
             switch (ui.cb_buff_group[ITEM_COOKING].getSelectedIndex()) {
-                case 4:                                 //真心がこもった料理
+                case 7:                                 //真心がこもった料理
                     buff.DR += 5;
                     buff.SP += 2;
                     buff.HPR += 3;
@@ -1275,7 +1275,7 @@ public class Calculator implements Common {
                                                            + "<br>"+ "近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+2"
                                                            + "<br>"+ "MR+15 HPR+3 MPR+4 SP+2 ダメージ軽減+5 15分20秒"+"</html>");
                     break;
-                case 3:                                 //小粋な麺料理
+                case 6:                                 //小粋な麺料理
                     buff.DR += 5;
                     buff.SP += 2;
                     buff.HPR += 3;
@@ -1293,7 +1293,24 @@ public class Calculator implements Common {
                                                            + "<br>"+ "近距離ダメージ+2 近距離命中+2 遠距離ダメージ+2 遠距離命中+2"
                                                            + "<br>"+ "MR+15 HPR+3 MPR+4 SP+2 ダメージ軽減+5 15分20秒"+"</html>");
                     break;
-                case 2:                                 //賢い七面鳥焼き
+                case 5:                                 //祝福された賢い七面鳥焼き
+                    buff.DR += 2;
+                    buff.SP += 2;
+                    buff.HPR += 2;
+                    buff.MPR += 3;
+                    buff.MR += 10;
+                    buff.element_resist[FIRE] += 10;
+                    buff.element_resist[WATER] += 10;
+                    buff.element_resist[WIND] += 10;
+                    buff.element_resist[EARTH] += 10;
+                    buff.ailment[HIT_STUN] += 3;            //技術命中+3
+        	    buff.ailment[HIT_SPIRIT] += 3;          //精霊命中+3
+        	    buff.ailment[HIT_SECRET] += 3;          //秘技命中+3
+        	    buff.ailment[HIT_TERROR] += 3;          //恐怖命中+3
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
+                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 SP+2 ダメージ軽減+2 全クラススキル命中+3 30分"+"</html>");
+                    break;
+                case 4:                                 //賢い七面鳥焼き
                     buff.DR += 2;
                     buff.SP += 2;
                     buff.HPR += 2;
@@ -1306,7 +1323,25 @@ public class Calculator implements Common {
                     ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
                                                            + "<br>"+ "MR+10 HPR+2 MPR+3 SP+2 ダメージ軽減+2 30分"+"</html>");
                     break;
-                case 1:                                 //素早い鮭の煮付
+                case 3:                                 //祝福された素早い鮭の煮付
+                    buff.DR += 2;
+                    buff.DMG_LONG += 2;
+                    buff.HIT_LONG += 1;
+                    buff.HPR += 2;
+                    buff.MPR += 2;
+                    buff.MR += 10;
+                    buff.element_resist[FIRE] += 10;
+                    buff.element_resist[WATER] += 10;
+                    buff.element_resist[WIND] += 10;
+                    buff.element_resist[EARTH] += 10;
+                    buff.ailment[HIT_STUN] += 3;            //技術命中+3
+        	    buff.ailment[HIT_SPIRIT] += 3;          //精霊命中+3
+        	    buff.ailment[HIT_SECRET] += 3;          //秘技命中+3
+        	    buff.ailment[HIT_TERROR] += 3;          //恐怖命中+3
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
+                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 遠距離ダメージ+2 遠距離命中+1 ダメージ軽減+2 全クラススキル命中+3 30分"+"</html>");
+                    break;
+                case 2:                                 //素早い鮭の煮付
                     buff.DR += 2;
                     buff.DMG_LONG += 2;
                     buff.HIT_LONG += 1;
@@ -1319,6 +1354,24 @@ public class Calculator implements Common {
                     buff.element_resist[EARTH] += 10;
                     ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
                                                            + "<br>"+ "MR+10 HPR+2 MPR+3 遠距離ダメージ+2 遠距離命中+1 ダメージ軽減+2 30分"+"</html>");
+                    break;
+                case 1:                                 //祝福された力強い和牛ステーキ
+                    buff.DR += 2;
+                    buff.DMG_SHORT += 2;
+                    buff.HIT_SHORT += 1;
+                    buff.HPR += 2;
+                    buff.MPR += 2;
+                    buff.MR += 10;
+                    buff.element_resist[FIRE] += 10;
+                    buff.element_resist[WATER] += 10;
+                    buff.element_resist[WIND] += 10;
+                    buff.element_resist[EARTH] += 10;
+                    buff.ailment[HIT_STUN] += 3;            //技術命中+3
+        	    buff.ailment[HIT_SPIRIT] += 3;          //精霊命中+3
+        	    buff.ailment[HIT_SECRET] += 3;          //秘技命中+3
+        	    buff.ailment[HIT_TERROR] += 3;          //恐怖命中+3
+                    ui.cb_buff[ITEM_COOKING].setToolTipText("<html>"+"水属性抵抗+10 地属性抵抗+10 風属性抵抗+10 火属性抵抗+10"
+                                                           + "<br>"+ "MR+10 HPR+2 MPR+3 近距離ダメージ+2 近距離命中+1 ダメージ軽減+2 全クラススキル命中+3 30分"+"</html>");
                     break;
                 case 0:                                 //力強い和牛ステーキ
                     buff.DR += 2;
@@ -1346,19 +1399,28 @@ public class Calculator implements Common {
                     buff.DR += 2;
                     ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+2 獲得経験値+4% 30分");
                     break;
-                case 1:                                 //幻想のバシリスクの卵スープ
+                case 1:                                 //祝福された修練の鶏スープ
+                    buff.DR += 2;
+        	    buff.ailment[STUN] += 2;            //技術耐性+2
+        	    buff.ailment[SPIRIT] += 2;          //精霊耐性+2
+        	    buff.ailment[SECRET] += 2;          //秘技耐性+2
+        	    buff.ailment[TERROR] += 2;          //恐怖耐性+2
+                    buff.PVP_DR += 2;                   //PvPDR+2
+                    ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+2 全クラススキル耐性+2 PvPDR+2 獲得経験値+4% 30分");
+                    break;
+                case 2:                                 //幻想のバシリスクの卵スープ
                     buff.DR += 5;
                     ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5 獲得経験値+3% 15分20秒");
                     break;
-                case 2:                                 //幻想のショートケーキ
+                case 3:                                 //幻想のショートケーキ
                     buff.DR += 3;
                     ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+3 獲得経験値+5% 15分20秒");
                     break;
-                case 3:                                 //小粋な携帯飲料
+                case 4:                                 //小粋な携帯飲料
                     buff.DR += 5;
                     ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5 獲得経験値+5% 15分20秒");
                     break;
-                case 4:                                 //真心がこもったスープ
+                case 5:                                 //真心がこもったスープ
                     buff.DR += 5;
                     ui.cb_buff[ITEM_DESSERT].setToolTipText("ダメージ軽減+5 獲得経験値+5% 15分20秒");
                     break;
@@ -2845,24 +2907,26 @@ public class Calculator implements Common {
 //            }
 //        }
         //VIP
-        ui.cb_buff[VIP].setToolTipText("");
+        ui.cb_buff[VIP].setToolTipText("<html>"+ "Red      HP+120 MP+120 MR+10 AC-5"
+                                       + "<br>"+ "Gold     HP+150 MP+120 MR+10 AC-5"
+                                       + "<br>"+ "Platinum HP+150 MP+150 MR+12 AC-5");
         if (ui.cb_buff[VIP].isSelected()) {
             switch ((String) ui.cb_buff_group[VIP].getSelectedItem()) {
-                case "Red":
+                case "Red":         //HP+120 MP+120 MR+10 AC-5
                     ui.cb_buff[VIP].setToolTipText("HP+120 MP+120 MR+10 AC-5");
                     buff.HP += 120;
                     buff.MP += 120;
                     buff.MR += 10;
                     buff.AC -= 5;
                     break;
-                case "Gold":
+                case "Gold":        //HP+150 MP+120 MR+10 AC-5
                     ui.cb_buff[VIP].setToolTipText("HP+150 MP+120 MR+10 AC-5");
                     buff.HP += 150;
                     buff.MP += 120;
                     buff.MR += 10;
                     buff.AC -= 5;
                     break;
-                case "Platinum":
+                case "Platinum":    //HP+150 MP+150 MR+12 AC-5
                     ui.cb_buff[VIP].setToolTipText("HP+150 MP+150 MR+120 AC-5");
                     buff.HP += 150;
                     buff.MP += 150;
