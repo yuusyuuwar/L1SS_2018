@@ -3590,7 +3590,11 @@ buki.arrow_elementdmg=0;
             if (buki.material.equals("シルバー")
                     || buki.material.equals("ミスリル")
                     || buki.material.equals("オリハルコン")) {
-                dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
+//アンデッド追加ダメージ(武器2分)
+//旧仕様　1から20ダメージ 平均10.5/2
+//          dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
+//新仕様　1から40ダメージ 平均20.5/2
+            dmg_undead += (1.0 + 40.0) / 2.0 / 2.0;
             }
             if (ui.tb_blessed1.isSelected()) {
                 dmg_cursed += ((1.0 + 3.0) / 2.0 + 3.0) / 2.0;
@@ -3631,7 +3635,11 @@ buki.arrow_elementdmg=0;
             if (buki2.material.equals("シルバー")
                     || buki2.material.equals("ミスリル")
                     || buki2.material.equals("オリハルコン")) {
-                dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
+//アンデッド追加ダメージ(武器1分)
+//旧仕様　1から20ダメージ 平均10.5/2
+//          dmg_undead += (1.0 + 20.0) / 2.0 / 2.0;
+//新仕様　1から40ダメージ 平均20.5/2
+            dmg_undead += (1.0 + 40.0) / 2.0 / 2.0;
             }
             if (ui.tb_blessed2.isSelected()) {
                 dmg_cursed += ((1.0 + 3.0) / 2.0 + 3.0) / 2.0;
@@ -3700,7 +3708,11 @@ buki.arrow_elementdmg=0;
                     if (buki.arrow_material.equals("シルバー")
                             || buki.arrow_material.equals("ミスリル")
                             || buki.arrow_material.equals("オリハルコン")) {
-                        dmg_undead = (1.0 + 20) / 2;
+//アンデッド追加ダメージ
+//旧仕様　1から20ダメージ 平均10.5
+//                      dmg_undead = (1.0 + 20.0) / 2.0;
+//新仕様　1から40ダメージ 平均20.5
+                        dmg_undead = (1.0 + 40.0) / 2.0;
                     }
                     break;
                 case "キーリンク":
@@ -3743,7 +3755,11 @@ buki.arrow_elementdmg=0;
                     if (buki.material.equals("シルバー")
                             || buki.material.equals("ミスリル")
                             || buki.material.equals("オリハルコン")) {
-                        dmg_undead = (1.0 + 20) / 2;
+//アンデッド追加ダメージ
+//1から20ダメージ 平均10.5
+//                      dmg_undead = (1.0 + 20.0) / 2.0;
+//1から40ダメージ 平均20.5
+                        dmg_undead = (1.0 + 40.0) / 2.0;
                     } else {
                         dmg_undead = 0;
                     }
@@ -5272,12 +5288,12 @@ buki.arrow_elementdmg=0;
     void createToolTip() {
 
         String buki_text = "";
-        if ((buki.enchant + buki.op2.DMG_SHORT) == 0) {
+        if ((buki.enchant + buki.op2.DMG_SHORT + buki.op2.DMG_LONG) == 0) {
             buki_text += "ダメージ" + buki.small + "/" + buki.big;
         }
-        if ((buki.enchant + buki.op2.DMG_SHORT) > 0) {
+        if ((buki.enchant + buki.op2.DMG_SHORT + buki.op2.DMG_LONG) > 0) {
             //buki_text += "ダメージ" + buki.small + "/" + buki.big;
-            buki_text += "ダメージ" + buki.small + "+" + (buki.enchant + buki.op2.DMG_SHORT) + "/" + buki.big + "+" + (buki.enchant + buki.op2.DMG_SHORT);
+            buki_text += "ダメージ" + buki.small + "+" + (buki.enchant + buki.op2.DMG_SHORT + buki.op2.DMG_LONG) + "/" + buki.big + "+" + (buki.enchant + buki.op2.DMG_SHORT + buki.op2.DMG_LONG);
         }
         if (buki.two_hands) {
             buki_text += " 両手武器";
@@ -5325,30 +5341,6 @@ buki.arrow_elementdmg=0;
         if (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC > 0) {
             buki_text += " 魔法クリティカル+" + (buki.op.CRI_MAGIC + buki.op2.CRI_MAGIC);
         }
-//        if (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE] > 0) {
-//            buki_text += " 石化命中+" + (buki.op.ailment[HIT_STONE] + buki.op2.ailment[HIT_STONE]);
-//        }
-//        if (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP] > 0) {
-//            buki_text += " 睡眠命中+" + (buki.op.ailment[HIT_SLEEP] + buki.op2.ailment[HIT_SLEEP]);
-//        }
-//        if (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE] > 0) {
-//            buki_text += " 凍結命中+" + (buki.op.ailment[HIT_FREEZE] + buki.op2.ailment[HIT_FREEZE]);
-//        }
-//        if (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS] > 0) {
-//            buki_text += " 暗闇命中+" + (buki.op.ailment[HIT_DARKNESS] + buki.op2.ailment[HIT_DARKNESS]);
-//        }
-//        if (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN] > 0) {
-//            buki_text += " スタン命中+" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
-//        }
-//        if (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD] > 0) {
-//            buki_text += " ホールド命中+" + (buki.op.ailment[HIT_HOLD] + buki.op2.ailment[HIT_HOLD]);
-//        }
-//        if (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR] > 0) {
-//            buki_text += " 恐怖命中+" + (buki.op.ailment[HIT_TERROR] + buki.op2.ailment[HIT_TERROR]);
-//        }
-//        if (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION] > 0) {
-//            buki_text += " 破壊命中+" + (buki.op.ailment[HIT_DESTRUCTION] + buki.op2.ailment[HIT_DESTRUCTION]);
-//        }
         if (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN] > 0) {
             buki_text += " 技術命中+" + (buki.op.ailment[HIT_STUN] + buki.op2.ailment[HIT_STUN]);
         }
