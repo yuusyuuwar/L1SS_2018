@@ -256,74 +256,84 @@ public class Buki implements Common {
             op2.CRI_MAGIC += 1;                         //魔法クリティカル+1
             }
         }
-        //真冥王の執行剣            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][技術命中]+1増加
+        //真冥王の執行剣            +1強化毎に[近距離追加ダメージ+2(既存処理+1)][近距離クリティカル+1][技術命中+1]増加
         if (name.equals("真冥王の執行剣")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
             op2.CRI_SHORT += enchant;                   //近距離クリティカル
             op2.ailment[HIT_STUN] += enchant;           //技術命中
             }
         }
-        //ウィンドブレードソード    エンチャントによる追加打撃が+2
+        //ウィンドブレードソード    +1強化毎に[近距離追加ダメージ+2(既存処理+1)]増加
         if (name.equals("ウィンドブレードソード")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
             }
         } 
-        //レッドシャドウデュアルブレード    エンチャントによる追加打撃が+2 +1強化毎に[精霊命中]+1増加
+        //レッドシャドウデュアルブレード    +1強化毎に[近距離追加ダメージ+2(既存処理+1)][精霊命中+1]増加
         if (name.equals("レッドシャドウデュアルブレード")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
             op2.ailment[HIT_SPIRIT] += enchant;         //精霊命中
             }
         }
-        //ホーリーヘドロンスタッフ  エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法命中]+1増加
+        //ホーリーヘドロンスタッフ  +1強化毎に[近距離追加ダメージ+2(既存処理+1)][SP+1][魔法命中+1]増加
         if (name.equals("ホーリーヘドロンスタッフ")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
             op2.SP += enchant;                          //SP 
             op2.HIT_MAGIC += enchant;                   //魔法命中   
             }
         }
-        //クロノスの恐怖            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル]+1%増加 [秘技命中]+1増加
+        //クロノスの恐怖            +1強化毎に[近距離追加ダメージ+2(既存処理+1)][近距離クリティカル+1%][秘技命中+1]増加
         if (name.equals("クロノスの恐怖")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
             op2.CRI_SHORT += enchant;                   //近距離クリティカル
             op2.ailment[HIT_SECRET] += enchant;         //秘技命中
             }
         }
-        //ヒュペリオンの絶望        エンチャントによる追加打撃が+2 +1強化毎に[SP][魔法クリティカル][秘技命中]+1増加
+        //ヒュペリオンの絶望        +1強化毎に[近距離追加ダメージ+2(既存処理+1)][SP][魔法クリティカル+1%][秘技命中+1]増加
         if (name.equals("ヒュペリオンの絶望")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
             op2.SP += enchant;                          //SP 
             op2.CRI_MAGIC += enchant;                   //魔法クリティカル
             op2.ailment[HIT_SECRET] += enchant;         //秘技命中
             }
         }
-        //タイタンの憤怒            エンチャントによる追加打撃が+2 +1強化毎に[近距離クリティカル][恐怖命中]+1増加 
+        //タイタンの憤怒            +1強化毎に[近距離追加ダメージ+2(既存処理+1)][近距離クリティカル+1%][恐怖命中+1]増加 
         if (name.equals("タイタンの憤怒")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
             op2.CRI_SHORT += enchant;                   //近距離クリティカル
             op2.ailment[HIT_TERROR] += enchant;         //恐怖命中
             }
         }
-        //ガイアの激怒              エンチャントによる追加打撃が+2 +1強化毎に[遠距離クリティカル][ダメージ軽減無視][精霊命中]+1増加 
+        //ガイアの激怒              +1強化毎に[遠距離追加ダメージ+2(既存処理+1)][遠距離クリティカル+1%][ダメージ軽減無視][精霊命中+1]増加 
         if (name.equals("ガイアの激怒")) {
             if (enchant >= 0) {
-            op2.DMG_SHORT += enchant;                   //追加ダメージ
+            op2.DMG_LONG += enchant;                    //遠距離追加ダメージ
             op2.CRI_LONG += enchant;                    //遠距離クリティカル
             op2.DR_IGNORED += enchant;                  //ダメージリダクション無視
             op2.ailment[HIT_SPIRIT] += enchant;         //精霊命中
             }
         }
-        //強化+10以上はエンチャントによる追加打撃が+2(既存処理に追加で+1)
+        //死神の剣(REMASTERED)      +1強化毎に[近距離追加ダメージ+2(既存処理+1)][近距離クリティカル+1%][技術命中+1][精霊命中+1][恐怖命中+1]増加 
+        if (name.equals("死神の剣(REMASTERED)")) {
+            if (enchant >= 0) {
+            op2.DMG_SHORT += enchant;                   //近距離追加ダメージ
+            op2.CRI_SHORT += enchant;                   //近距離クリティカル
+            op2.ailment[HIT_STUN] += enchant;           //技術命中
+            op2.ailment[HIT_SPIRIT] += enchant;         //精霊命中
+            op2.ailment[HIT_TERROR] += enchant;         //恐怖命中
+            }
+        }
+        //強化+10以上はエンチャントによる追加ダメージが+2(既存処理に追加で+1)
         if (enchant >= 10) {
-            op2.DMG_SHORT += enchant - 9;
-            op2.DMG_LONG += enchant - 9;
-            op2.DMG_MAGIC += enchant - 9;
+            op2.DMG_SHORT += enchant - 9;               //近距離追加ダメージ
+            op2.DMG_LONG += enchant - 9;                //遠距離追加ダメージ
+            op2.DMG_MAGIC += enchant - 9;               //魔法追加ダメージ
         }
     }
 }
